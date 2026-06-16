@@ -43,6 +43,9 @@ markdown_extensions:
 nav:
   - Accueil: wiki/index.md
   - 🎯 Vision: wiki/vision.md
+  - 🏗️ Architecture: wiki/architecture.md
+  - 🔍 Audit & Optimisation:
+      - Analyse complète: wiki/audit/index.md
   - 🏢 PRO (Solidaris):
       - Vue d'ensemble: wiki/pro/index.md
       - Robert — Conseil IT: wiki/pro/robert.md
