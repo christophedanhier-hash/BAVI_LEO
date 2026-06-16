@@ -31,6 +31,14 @@
 - Dispatch conditionnel (économie de tokens)
 - Interopérabilité formelle Robert↔AO↔Sophie
 - LEO Admin documenté comme bureau PRIVÉ
+- Règle formats : .md travail interne → Google Workspace pour partage PRO
+
+### Dashboard KPI BAVI LEO
+- Nouveau dashboard de monitoring avec KPIs temps réel
+- Sessions, tokens, coûts, budget, sources, modèles
+- Collecteur Python + déploiement GitHub Actions
+- Cron toutes les heures
+- 📊 https://christophedanhier-hash.github.io/bavi-leo-dashboard/
 
 ---
 

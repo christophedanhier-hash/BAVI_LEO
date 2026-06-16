@@ -45,7 +45,8 @@ Collecte → Traitement → Dashboard → Livraison
 
 | Dashboard | URL | Met à jour |
 |-----------|-----|------------|
-| Hermes KPI | dashboard-leo | Toutes les heures |
+|| BAVI LEO KPIs | bavi-leo-dashboard | Toutes les heures |
+|| Hermes KPI | dashboard-leo | Toutes les heures |
 | Machines | leo-metrics | Toutes les heures |
 | Crons | crons-dashboard | Toutes les heures |
 | GitHub | github-dashboard | Toutes les 4h |
