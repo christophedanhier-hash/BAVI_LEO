@@ -147,3 +147,15 @@ Tous ────→ BAVI LEO wiki  (connaissance des bureaux)
 | Parallélisation | Non | Marché+Risques, HW+FW | 2x plus rapide |
 | Interopérabilité | Tacite | Formelle (skills) | Traçable |
 | Documentation | 6 pages wiki | 12 pages wiki | 2x plus complet |
+
+---
+
+## Règle de format des livrables
+
+| Contexte | Format | Outil | Bureaux concernés |
+|----------|--------|-------|:-----------------:|
+| 💻 Travail interne (analyses, brouillons) | `.md` — natif BAVI | Wiki BAVI LEO | Tous |
+| 📄 Partage / Impression (direction, comité) | **Google Docs** | `google-workspace` skill | 🏛️ Robert, 🛡️ AO |
+| 📊 Modèle financier (tableaux, chiffres) | **Google Sheets** | `google-workspace` skill | 💰 Sophie |
+| 📽️ Présentation (comité de direction) | **Google Slides** | `google-workspace` skill | 🏛️ Robert |
+| 🏠 Projets personnels (T600, voyages) | `.md` — wiki | Wiki OCA / Voyages | 📝 Gérard, 🧭 Sylvie |

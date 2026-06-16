@@ -18,13 +18,13 @@ Bureau Robert, analyse le dossier INAMI
 
 Chaque bureau produit un livrable structuré :
 
-| Bureau | Format | Exemple |
-|--------|--------|--------|
-| Robert | Note structurée .md | Analyse IT + recommandations |
-| Sophie | Business case .md | TCO/ROI, VAN, scenarii |
-| AO | Relecture métier .md | Impacts AO |
-| Gérard | Documentation .md | Manuel, procédure |
-| Sylvie | Carnet de voyage .md | Itinéraire, journal |
+| Bureau | Format | Exemple | Partage/Impression |
+|--------|--------|--------|:------------------:|
+| Robert | Note structurée .md | Analyse IT + recommandations | → Google Docs / Slides |
+| Sophie | Business case .md | TCO/ROI, VAN, scenarii | → Google Sheets / Docs |
+| AO | Relecture métier .md | Impacts AO | → Google Docs |
+| Gérard | Documentation .md | Manuel, procédure | Wiki OCA (.md) |
+| Sylvie | Carnet de voyage .md | Itinéraire, journal | Wiki Voyages (.md) |
 
 ## Combiner les bureaux
 
