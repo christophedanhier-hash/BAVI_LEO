@@ -1,0 +1,62 @@
+site_name: Wiki BAVI LEO — Bureaux Agentiques Virtuels
+site_description: Base de connaissance des bureaux IA — PRO (Solidaris) & PRIVÉ (T600, Voyages, LEO)
+site_author: Christophe (Tofdan) & LEO
+repo_url: https://github.com/christophedanhier-hash/BAVI_LEO
+edit_uri: edit/main/docs/wiki/
+copyright: "&copy; 2026 Christophe Danhier — Propulsé par Hermes Agent"
+
+theme:
+  name: material
+  language: fr
+  palette:
+    primary: indigo
+    accent: deep purple
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/christophedanhier-hash
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/tofdan
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Accueil: wiki/index.md
+  - 🎯 Vision: wiki/vision.md
+  - 🏢 PRO (Solidaris):
+      - Vue d'ensemble: wiki/pro/index.md
+      - Robert — Conseil IT: wiki/pro/robert.md
+      - Sophie — Finance IT: wiki/pro/sophie.md
+      - Assurance Obligatoire: wiki/pro/assurance-obligatoire.md
+  - 🏠 PRIVÉ:
+      - Vue d'ensemble: wiki/prive/index.md
+      - Gérard — Documentation T600: wiki/prive/gerard.md
+      - Sylvie — Voyages: wiki/prive/sylvie.md
+      - LEO Admin — Infra: wiki/prive/leo-admin.md
+  - 📚 Skills:
+      - Catalogue: wiki/skills/index.md
+      - Créer un skill: wiki/skills/creer.md
+  - 📖 Guide:
+      - Utilisation: wiki/guide/utilisation.md
+      - Évolution: wiki/guide/evolution.md
+  - 📋 Changelog: wiki/changelog.md
