@@ -50,7 +50,9 @@ nav:
       - Assurance Obligatoire: wiki/pro/assurance-obligatoire.md
   - 🏠 PRIVÉ:
       - Vue d'ensemble: wiki/prive/index.md
-      - Gérard — Documentation T600: wiki/prive/gerard.md
+      - Gérard — Documentation T600:
+          - Présentation: wiki/prive/gerard.md
+          - Les 8 agents: wiki/prive/gerard/agents.md
       - Sylvie — Voyages: wiki/prive/sylvie.md
       - LEO Admin — Infra: wiki/prive/leo-admin.md
   - 📚 Skills:
