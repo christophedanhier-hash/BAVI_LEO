@@ -37,6 +37,16 @@
 
 ---
 
+## 🌐 Wikis de l'écosystème
+
+| Wiki | Description |
+|------|-------------|
+| 🛡️ [Portail LEO](https://christophedanhier-hash.github.io/hermes-wiki/) | Portail central — wikis, dashboards, bots, monitoring |
+| 🔭 [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/) | Documentation T600 — Bureau Gérard |
+| 🧭 [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) | Roadbooks camping-car — Bureau Sylvie |
+
+---
+
 ## Commencer
 
 👉 Parler à LEO sur Telegram :
