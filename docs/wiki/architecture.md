@@ -6,38 +6,48 @@
 
 ## Vue d'ensemble
 
-```
-                         ┌──────────────────────────────────┐
-                         │         Telegram / CLI           │
-                         │       Christophe (Tofdan)        │
-                         └────────────┬─────────────────────┘
-                                      │
-                         ┌────────────┴─────────────────────┐
-                         │       LEO (Hermes Agent)         │
-                         │   Détection → Aiguillage → Skill │
-                         └────────────┬─────────────────────┘
-                                      │
-            ┌─────────────────────────┼─────────────────────────┐
-            │                         │                         │
-       ┌────┴─────┐            ┌──────┴──────┐           ┌─────┴─────┐
-       │  PRO     │            │  TRANSVERSE │           │  PRIVÉ    │
-       │Solidaris │            │             │           │ Personnel │
-       │          │            │             │           │           │
-  ┌────┴─────┐    │      ┌────┴─────┐  ┌────┴─────┐     │           │
-  │  🏛️     │    │      │  🛡️ AO  │  │  📝     │     │           │
-  │ Robert   │────┼─────→│ (Métier) │  │ Gérard  │     │           │
-  │ (Conseil)│    │      └──────────┘  │ (Doc)   │     │           │
-  └────┬─────┘    │                    └────┬─────┘     │           │
-       │         │                         │           │           │
-  ┌────┴─────┐   │                  ┌───────┴───────┐   │           │
-  │  💰     │   │                  │  🧭 Sylvie   │   │           │
-  │ Sophie   │───┘                  │  (Voyages)   │   │           │
-  │(Finance) │                     └───────────────┘   │           │
-  └──────────┘                                        │           │
-                                                ┌──────┴───────┐   │
-                                                │  ⚙️ LEO     │   │
-                                                │  Admin(Infra)│   │
-                                                └──────────────┘   │
+```mermaid
+flowchart TD
+    Telegram["Telegram / CLI<br/>Christophe (Tofdan)"]
+    LEO["LEO (Hermes Agent)<br/>Détection → Aiguillage → Skill"]
+
+    Telegram --> LEO
+    LEO --> PRO_GRP
+    LEO --> TRANSVERSE_GRP
+    LEO --> PRIVE_GRP
+
+    subgraph PRO_GRP["PRO — Solidaris"]
+        direction TB
+        Robert["🏛️ Robert<br/>(Conseil)"]
+        Sophie["💰 Sophie<br/>(Finance)"]
+    end
+
+    subgraph TRANSVERSE_GRP["TRANSVERSE"]
+        direction TB
+        AO["🛡️ AO (Métier)"]
+        Gerard["📝 Gérard<br/>(Doc)"]
+        Sylvie["🧭 Sylvie<br/>(Voyages)"]
+        Gerard --> Sylvie
+    end
+
+    subgraph PRIVE_GRP["PRIVÉ — Personnel"]
+        Admin["⚙️ LEO Admin<br/>(Infra)"]
+    end
+
+    Robert -.->|interop| AO
+
+    style Telegram fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style LEO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style PRO_GRP fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    style TRANSVERSE_GRP fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    style PRIVE_GRP fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    linkStyle default stroke-width:2px,fill:none
 ```
 
 ---
@@ -97,19 +107,40 @@ Tous les bureaux suivent le même squelette :
 
 ### Appels formels (skills)
 
-```
-Robert ──→ Assurance Obligatoire  (phase ③ ou ④, par skill `assurance-obligatoire`)
-Robert ──→ Sophie                 (phase ③ ou ④, par skill `bureau-sophie`)
-Sophie ──→ Robert                 (phase ③ ou ④, par skill `bureau-robert`)
+```mermaid
+flowchart LR
+    Robert["Robert"]
+    AO["Assurance Obligatoire"]
+    Sophie["Sophie"]
+
+    Robert -->|"phase ③ ou ④ / skill `assurance-obligatoire`"| AO
+    Robert -->|"phase ③ ou ④ / skill `bureau-sophie`"| Sophie
+    Sophie -->|"phase ③ ou ④ / skill `bureau-robert`"| Robert
+
+    style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    linkStyle default stroke-width:2px,fill:none
 ```
 
 ### Flux de livraison
 
-```
-Gérard ──→ Wiki OCA       (docs techniques T600)
-Sylvie ──→ Wiki Voyages   (journaux de bord)
-Admin ───→ Dashboards     (métriques temps réel)
-Tous ────→ BAVI LEO wiki  (connaissance des bureaux)
+```mermaid
+flowchart LR
+    Gerard["Gérard"] -->|"docs techniques T600"| WikiOCA["Wiki OCA"]
+    Sylvie["Sylvie"] -->|"journaux de bord"| WikiVoyages["Wiki Voyages"]
+    Admin["Admin"] -->|"métriques temps réel"| Dashboards["Dashboards"]
+    Tous["Tous"] -->|"connaissance des bureaux"| BAVI["BAVI LEO wiki"]
+
+    style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Tous fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style WikiOCA fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style WikiVoyages fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Dashboards fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style BAVI fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    linkStyle default stroke-width:2px,fill:none
 ```
 
 ---

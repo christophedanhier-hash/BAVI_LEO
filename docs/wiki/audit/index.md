@@ -147,31 +147,45 @@ J'harmonise tous les bureaux sur un modèle commun :
 
 ## 3. Architecture Inter-Bureaux
 
-```
-                        ┌─────────────────────────────────┐
-                        │        LEO (Orchestrateur)       │
-                        │   Aiguillage → bon bureau + skill │
-                        └──────────┬──────────────────────┘
-                                   │
-            ┌──────────────────────┼──────────────────────┐
-            │                      │                      │
-       ┌────┴─────┐         ┌──────┴──────┐        ┌─────┴─────┐
-       │   PRO    │         │   TRANSVERSE │        │   PRIVÉ   │
-       │          │         │              │        │           │
-┌──────┴──────┐   │    ┌────┴─────┐  ┌────┴──────┐   │
-│ 🏛️ Robert  │   │    │ 🛡️ AO   │  │ 📝 Gérard │   │
-│  (Conseil)  │───┼───→│ (Métier) │  │   (Doc)   │   │
-└──────┬──────┘   │    └──────────┘  └────┬───────┘   │
-       │         │                       │           │
-┌──────┴──────┐   │              ┌───────┴───────┐   │
-│ 💰 Sophie   │   │              │ 🧭 Sylvie     │   │
-│ (Finance)   │───┘              │   (Voyages)   │   │
-└─────────────┘                  └───────────────┘   │
-                                                     │
-                                              ┌──────┴───────┐
-                                              │ ⚙️ LEO Admin │
-                                              │   (Infra)    │
-                                              └──────────────┘
+```mermaid
+flowchart TD
+    LEO["LEO (Orchestrateur)<br/>Aiguillage → bon bureau + skill"]
+
+    LEO --> PRO
+    LEO --> TRANSVERSE
+    LEO --> PRIVE
+
+    subgraph PRO["PRO"]
+        direction TB
+        Robert["🏛️ Robert<br/>(Conseil)"]
+        Sophie["💰 Sophie<br/>(Finance)"]
+    end
+
+    subgraph TRANSVERSE["TRANSVERSE"]
+        direction TB
+        AO["🛡️ AO<br/>(Métier)"]
+        Gerard["📝 Gérard<br/>(Doc)"]
+        Sylvie["🧭 Sylvie<br/>(Voyages)"]
+        Gerard --> Sylvie
+    end
+
+    subgraph PRIVE["PRIVÉ"]
+        Admin["⚙️ LEO Admin<br/>(Infra)"]
+    end
+
+    Robert -.->|interop| AO
+
+    style LEO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style PRO fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    style TRANSVERSE fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    style PRIVE fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    linkStyle default stroke-width:2px,fill:none
 ```
 
 ### Flux inter-bureaux

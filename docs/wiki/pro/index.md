@@ -16,11 +16,21 @@ Les bureaux PRO couvrent le périmètre métier de Christophe chez Solidaris : c
 
 ## Relations entre bureaux PRO
 
-```
-Robert ──────→ Assurance Obligatoire (impact AO)
-Robert ──────→ Sophie (business case)
-Sophie ──────→ Robert (alignement stratégique)
-Assurance Obligatoire ←→ Robert / Direct (double mode)
+```mermaid
+flowchart LR
+    Robert["Robert"]
+    AO["Assurance Obligatoire"]
+    Sophie["Sophie"]
+
+    Robert -->|"impact AO"| AO
+    Robert -->|"business case"| Sophie
+    Sophie -->|"alignement stratégique"| Robert
+    AO <-->|"double mode"| Robert
+
+    style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    linkStyle default stroke-width:2px,fill:none
 ```
 
 ---

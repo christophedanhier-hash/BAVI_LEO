@@ -52,13 +52,32 @@ Les skills Hermes sont les modules d'expertise de chaque bureau BAVI LEO. Chaque
 
 ## Emplacement des fichiers
 
-```bash
-~/.hermes/skills/
-├── bavi-leo/
-│   ├── bureau-robert/SKILL.md
-│   ├── bureau-sophie/SKILL.md
-│   ├── assurance-obligatoire/SKILL.md
-│   └── bureau-sylvie/SKILL.md
-└── software-development/
-    └── bureau-gerard/SKILL.md
+```mermaid
+flowchart LR
+    Root["~/.hermes/skills/"]
+    Bavi["bavi-leo/"]
+    SW["software-development/"]
+    Robert["bureau-robert/SKILL.md"]
+    Sophie["bureau-sophie/SKILL.md"]
+    AO["assurance-obligatoire/SKILL.md"]
+    Sylvie["bureau-sylvie/SKILL.md"]
+    Gerard["bureau-gerard/SKILL.md"]
+
+    Root --> Bavi
+    Root --> SW
+    Bavi --> Robert
+    Bavi --> Sophie
+    Bavi --> AO
+    Bavi --> Sylvie
+    SW --> Gerard
+
+    style Root fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Bavi fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style SW fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    linkStyle default stroke-width:2px,fill:none
 ```
