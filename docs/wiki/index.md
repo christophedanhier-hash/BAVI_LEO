@@ -45,3 +45,5 @@
 - `assurance-obligatoire : impacts AO du projet X`
 - `bureau-gerard : produis le manuel du T600`
 - `bureau-sylvie : planifie le voyage en Ardèche`
+
+👉 **[🛡️ Portail LEO — Écosystème complet](https://christophedanhier-hash.github.io/hermes-wiki/)**
