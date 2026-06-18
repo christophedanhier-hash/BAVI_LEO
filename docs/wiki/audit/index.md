@@ -152,24 +152,19 @@ flowchart TD
     LEO["LEO (Orchestrateur)<br/>Aiguillage → bon bureau + skill"]
 
     LEO --> PRO
-    LEO --> TRANSVERSE
     LEO --> PRIVE
 
-    subgraph PRO["PRO"]
+    subgraph PRO["PRO — Solidaris"]
         direction TB
         Robert["🏛️ Robert<br/>(Conseil)"]
         Sophie["💰 Sophie<br/>(Finance)"]
-    end
-
-    subgraph TRANSVERSE["TRANSVERSE"]
-        direction TB
         AO["🛡️ AO<br/>(Métier)"]
-        Gerard["📝 Gérard<br/>(Doc)"]
-        Sylvie["🧭 Sylvie<br/>(Voyages)"]
-        Gerard --> Sylvie
     end
 
-    subgraph PRIVE["PRIVÉ"]
+    subgraph PRIVE["PRIVÉ — Personnel"]
+        direction TB
+        Gerard["📝 Gérard<br/>(Doc T600)"]
+        Sylvie["🧭 Sylvie<br/>(Voyages)"]
         Admin["⚙️ LEO Admin<br/>(Infra)"]
     end
 
@@ -183,7 +178,6 @@ flowchart TD
     style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style PRO fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
-    style TRANSVERSE fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
     style PRIVE fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
     linkStyle default stroke-width:2px,fill:none
 ```
