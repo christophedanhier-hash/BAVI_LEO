@@ -128,5 +128,3 @@ flowchart LR
     style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     linkStyle default stroke-width:2px,fill:none
 ```
-
-> **Note :** Les 8 fiches détaillées des sous-agents de Gérard (ethnographe, astro-optique, hardware, firmware, rédacteur technique, secrétariat, formateur) sont disponibles dans [`skills/bavi-leo/bureau-gerard/`](https://github.com/christophedanhier-hash/BAVI_LEO/tree/main/skills/bavi-leo/bureau-gerard) à titre de documentation.
