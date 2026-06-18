@@ -12,13 +12,13 @@
 - 6 axes d'optimisation identifiés
 
 ### Optimisations skills
-| Skill | v1.0 → v2.0 | Changement |
-|-------|:-----------:|------------|
-| `bureau-robert` | 473→370 lignes | Dispatch 7 experts, interop AO+Sophie, workflow 7 phases |
-| `bureau-sophie` | 575→320 lignes | Parallélisation Marché+Risques, interop Robert |
-| `assurance-obligatoire` | 202→220 lignes | Double rôle documenté, workflow 3 phases |
-| `bureau-gerard` | 406→340 lignes | Dispatch conditionnel, croisement HW↔FW |
-| `bureau-sylvie` | 392→310 lignes | Cartographie OSM parallélisée, règles renforcées |
+|| Skill | v1.0 | v2.0 (audit) | Actuel |
+||-------|:---:|:-----------:|:------:|
+|| `bureau-robert` | 473→370 lignes | Dispatch 7 experts, interop AO+Sophie | 110 lignes |
+|| `bureau-sophie` | 575→320 lignes | Parallélisation Marché+Risques | 98 lignes |
+|| `assurance-obligatoire` | 202→220 lignes | Double rôle documenté | 85 lignes |
+|| `bureau-gerard` | 406→340 lignes | Dispatch conditionnel, croisement HW↔FW | 91 lignes |
+|| `bureau-sylvie` | 392→310 lignes | Cartographie OSM parallélisée | 229 lignes |
 
 ### Wiki enrichi
 - **Architecture BAVI LEO** — nouvelle page dédiée

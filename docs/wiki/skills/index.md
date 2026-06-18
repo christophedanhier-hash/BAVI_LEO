@@ -36,17 +36,17 @@ Les skills Hermes sont les modules d'expertise de chaque bureau BAVI LEO. Chaque
 
 ---
 
-## Évolution de la taille des skills (v1.0 → v2.0)
+## Évolution de la taille des skills
 
-| Skill | v1.0 | v2.0 | Variation |
+| Skill | v2.0 (audit) | Actuel | Variation |
 |-------|:----:|:----:|:---------:|
-| `bureau-robert` | 473 | 370 | **-22%** |
-| `bureau-sophie` | 575 | 320 | **-44%** |
-| `assurance-obligatoire` | 202 | 220 | +9% (double rôle) |
-| `bureau-gerard` | 406 | 340 | **-16%** |
-| `bureau-sylvie` | 392 | 310 | **-21%** |
+| `bureau-robert` | 473 | 110 | **-77%** |
+| `bureau-sophie` | 575 | 98 | **-83%** |
+| `assurance-obligatoire` | 202 | 85 | **-58%** |
+| `bureau-gerard` | 406 | 91 | **-78%** |
+| `bureau-sylvie` | 392 | 229 | **-42%** |
 
-> **Gain total :** -30% de tokens en moyenne, pour un workflow plus structuré et interopérable.
+> **Gain total :** les skills ont été considérablement optimisés depuis la v2.0 (audit), passant de 2 048 à 613 lignes cumulées (−70 %), pour un contenu plus ciblé et des tokens réduits.
 
 ---
 

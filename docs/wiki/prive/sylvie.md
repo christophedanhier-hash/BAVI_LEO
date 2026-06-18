@@ -59,4 +59,4 @@ Sylvie est **l'organisatrice des voyages de Christophe**. Elle planifie les itin
 
 ## Skill Hermes
 
-Le skill `bureau-sylvie` est installé dans `~/.hermes/skills/bavi-leo/bureau-sylvie/SKILL.md` — version 2.0, 310 lignes.
+Le skill `bureau-sylvie` est installé dans `~/.hermes/skills/bavi-leo/bureau-sylvie/SKILL.md` — version 2.4, 229 lignes.
