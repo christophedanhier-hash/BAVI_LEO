@@ -1,18 +1,19 @@
 # 📚 Wiki BAVI LEO
 
-Base de connaissance complète des bureaux IA — documentation outil, wikis spécialisés et catalogue des skills Hermes.
+Base de connaissance complète des bureaux IA — documentation fondatrice, wikis spécialisés et évolution.
 
 ---
 
-## Pages outil
+## 📖 Document Fondateur
 
-| Page | Description |
-|------|-------------|
-| 🎯 [Vision](vision.md) | Pourquoi BAVI LEO, principes fondateurs |
-| 🏗️ [Architecture](architecture.md) | Multi-couche, workflows, flux inter-bureaux |
-| 🔍 [Audit & Optimisation](audit/index.md) | Analyse complète, différences, gains |
-| 📚 [Skills](skills/index.md) | Catalogue des skills Hermes par bureau |
-| 📋 [Changelog](changelog.md) | Évolution de BAVI LEO |
+Le **[Document Fondateur](vision.md)** unique couvre tout ce qu'il faut savoir sur BAVI LEO :
+
+| Section | Contenu |
+|---------|---------|
+| 🎯 **Vision** | Pourquoi BAVI LEO, 6 bureaux, routage intelligent, principes, contraintes |
+| 🏗️ **Architecture** | Structure générale, flux, technique (Hermes, Docker, Tailscale, modèles) |
+| 🔍 **Audit** | Forces, opportunités, leçons apprises (DeepSeek Flash vs Pro, n8n, crons) |
+| 📚 **Skills** | Catalogue complet des 13 skills + procédure création nouveau bureau |
 
 ---
 

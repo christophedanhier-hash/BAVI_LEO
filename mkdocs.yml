@@ -54,10 +54,7 @@ nav:
     - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
     - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
   - Accueil: index.md
-  - 🎯 Vision: wiki/vision.md
-  - 🏗️ Architecture: wiki/architecture.md
-  - 🔍 Audit & Optimisation: wiki/audit/index.md
-  - 📚 Skills: wiki/skills/index.md
+  - 📖 Document Fondateur: wiki/vision.md
   - 📋 Changelog: wiki/changelog.md
   - 🏢 PRO (Solidaris): wiki/pro/index.md
   - 🔭 OCA (T600): wiki/oca/index.md
