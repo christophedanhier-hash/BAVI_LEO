@@ -56,27 +56,9 @@ nav:
   - Accueil: wiki/index.md
   - 🎯 Vision: wiki/vision.md
   - 🏗️ Architecture: wiki/architecture.md
-  - 🔍 Audit & Optimisation:
-      - Analyse complète: wiki/audit/index.md
-  - 🏢 PRO (Solidaris):
-      - Vue d'ensemble: wiki/pro/index.md
-      - Robert — Conseil IT: wiki/pro/robert.md
-      - Sophie — Finance IT: wiki/pro/sophie.md
-      - Assurance Obligatoire: wiki/pro/assurance-obligatoire.md
-  - 🏠 PRIVÉ:
-      - Vue d'ensemble: wiki/prive/index.md
-      - Gérard — Documentation T600:
-          - Présentation: wiki/prive/gerard.md
-          - Les 8 agents: wiki/prive/gerard/agents.md
-      - Sylvie — Voyages: wiki/prive/sylvie.md
-      - 🤖 Bot Voyages: wiki/prive/bot-voyages.md
-      - 🧠 Agent Pro: wiki/agent-pro/index.md
-      - Analyse n8n: wiki/agent-pro/n8n/index.md
-      - LEO Admin — Infra: wiki/prive/leo-admin.md
-  - 📚 Skills:
-      - Catalogue: wiki/skills/index.md
-      - Créer un skill: wiki/skills/creer.md
-  - 📖 Guide:
-      - Utilisation: wiki/guide/utilisation.md
-      - Évolution: wiki/guide/evolution.md
+  - 🔍 Audit & Optimisation: wiki/audit/index.md
+  - 🏢 PRO (Solidaris): wiki/pro/index.md
+  - 🏠 PRIVÉ: wiki/prive/index.md
+  - 📚 Skills: wiki/skills/index.md
+  - 📖 Guide: wiki/guide/utilisation.md
   - 📋 Changelog: wiki/changelog.md
