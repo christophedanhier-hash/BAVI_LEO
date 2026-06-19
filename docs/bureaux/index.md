@@ -4,29 +4,80 @@ Les bureaux IA de BAVI LEO. Chaque bureau a son propre wiki indépendant.
 
 ---
 
-<div class="portail-grid">
-    <a href="https://christophedanhier-hash.github.io/pro-wiki/" class="portail-card" target="_blank" rel="noreferrer noopener">
-        <div class="icon">🏢</div>
-        <div class="title">PRO — Solidaris</div>
-        <div class="desc">Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire</div>
-        <div class="url">pro-wiki</div>
-    </a>
-    <a href="https://christophedanhier-hash.github.io/wiki-oca/" class="portail-card" target="_blank" rel="noreferrer noopener">
-        <div class="icon">🔭</div>
-        <div class="title">OCA — T600</div>
-        <div class="desc">Gérard — Documentation télescope T600</div>
-        <div class="url">wiki-oca</div>
-    </a>
-    <a href="https://christophedanhier-hash.github.io/voyages-wiki/" class="portail-card" target="_blank" rel="noreferrer noopener">
-        <div class="icon">🧭</div>
-        <div class="title">Voyages</div>
-        <div class="desc">Sylvie — Roadbooks camping-car</div>
-        <div class="url">voyages-wiki</div>
-    </a>
-    <a href="https://christophedanhier-hash.github.io/general-wiki/" class="portail-card" target="_blank" rel="noreferrer noopener">
-        <div class="icon">📚</div>
-        <div class="title">Général</div>
-        <div class="desc">LEO Admin, Agent Pro — Infra, analyses transverses</div>
-        <div class="url">general-wiki</div>
-    </a>
+<style>
+.bureau-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.bureau-card {
+  display: block;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem 1.2rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: all 0.2s ease;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.bureau-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: #7c4dff;
+}
+.bureau-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.bureau-card .title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #1a237e;
+}
+.bureau-card .desc {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+}
+.bureau-card .url {
+  font-size: 0.7rem;
+  color: #999;
+  margin-top: 0.4rem;
+}
+</style>
+
+<div class="bureau-grid">
+
+<a href="https://christophedanhier-hash.github.io/pro-wiki/" class="bureau-card" target="_blank" rel="noreferrer noopener">
+  <div class="icon">🏢</div>
+  <div class="title">PRO — Solidaris</div>
+  <div class="desc">Robert (Conseil IT), Sophie (Finance),<br>Assurance Obligatoire</div>
+  <div class="url">→ pro-wiki</div>
+</a>
+
+<a href="https://christophedanhier-hash.github.io/wiki-oca/" class="bureau-card" target="_blank" rel="noreferrer noopener">
+  <div class="icon">🔭</div>
+  <div class="title">OCA — T600</div>
+  <div class="desc">Gérard — Documentation télescope T600</div>
+  <div class="url">→ wiki-oca</div>
+</a>
+
+<a href="https://christophedanhier-hash.github.io/voyages-wiki/" class="bureau-card" target="_blank" rel="noreferrer noopener">
+  <div class="icon">🧭</div>
+  <div class="title">Voyages</div>
+  <div class="desc">Sylvie — Roadbooks camping-car</div>
+  <div class="url">→ voyages-wiki</div>
+</a>
+
+<a href="https://christophedanhier-hash.github.io/general-wiki/" class="bureau-card" target="_blank" rel="noreferrer noopener">
+  <div class="icon">📚</div>
+  <div class="title">Général</div>
+  <div class="desc">LEO Admin, Agent Pro —<br>Infra, analyses transverses</div>
+  <div class="url">→ general-wiki</div>
+</a>
+
 </div>
