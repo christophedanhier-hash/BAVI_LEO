@@ -2,34 +2,24 @@
 
 **BAVI LEO** est un système de bureaux IA spécialisés, propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com).
 
----
-
-## 📚 Documentation
-
-### Document Fondateur
-
-| | |
-|:-|:--|
-| 📖 [Document Fondateur](wiki/vision.md) | Vision, architecture, routage, workflow 7 phases, audit, skills |
-
-### Wikis des bureaux
-
-| | Bureau | Contenu |
-|:-|:-------|---------|
-| 🏢 [PRO — Solidaris](wiki/pro/) | Robert, Sophie, Assurance Obligatoire | Présentation des bureaux, résultats des analyses |
-| 🔭 [OCA — T600](wiki/oca/) | Gérard — Documentation télescope | Présentation, livrables techniques |
-| 🧭 [Voyages](wiki/voyages/) | Sylvie — Roadbooks camping-car | Présentation, journaux de bord |
-| 📚 [Général](wiki/general/) | LEO Admin, Agent Pro | Infrastructure, analyses transverses |
+Chaque bureau est un expert autonome qui répond sur Telegram, utilise les modèles adaptés (DeepSeek Flash, Pro, Ollama, Gemini) et produit sa documentation dans son propre wiki.
 
 ---
 
-## 🌐 Écosystème
+## 📖 Document Fondateur
 
-| Lien | Description |
-|:----|:------------|
-| 🛡️ [Portail LEO](https://christophedanhier-hash.github.io/hermes-wiki/) | Portail central de documentation |
-| 🔭 [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/) | Documentation télescope T600 |
-| 🧭 [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) | Roadbooks camping-car |
+| Document | Contenu |
+|:---------|:--------|
+| 📖 [Document Fondateur](vision.md) | Vision, architecture, routage IA, workflow 7 phases, audit, skills |
+
+## 🏢 Bureaux
+
+| Bureau | Description | Wiki |
+|:-------|:------------|:----:|
+| 🏢 [PRO — Solidaris](https://christophedanhier-hash.github.io/pro-wiki/) | Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire | [→](https://christophedanhier-hash.github.io/pro-wiki/) |
+| 🔭 [OCA — T600](https://christophedanhier-hash.github.io/oca-wiki/) | Gérard — Documentation télescope T600 | [→](https://christophedanhier-hash.github.io/oca-wiki/) |
+| 🧭 [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) | Sylvie — Roadbooks camping-car | [→](https://christophedanhier-hash.github.io/voyages-wiki/) |
+| 📚 [Général](https://christophedanhier-hash.github.io/general-wiki/) | LEO Admin, Agent Pro — Infra, analyses | [→](https://christophedanhier-hash.github.io/general-wiki/) |
 
 ---
 
