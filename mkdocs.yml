@@ -2,7 +2,7 @@ site_name: BAVI LEO — Bureaux Agentiques Virtuels
 site_description: Portail des bureaux IA — PRO (Solidaris), OCA (T600), Voyages, Général
 site_author: Christophe (Tofdan) & LEO
 repo_url: https://github.com/christophedanhier-hash/BAVI_LEO
-edit_uri: edit/main/docs/
+edit_uri: edit/main/docs/wiki/
 copyright: "&copy; 2026 Christophe Danhier — Propulsé par Hermes Agent"
 
 theme:
@@ -56,6 +56,34 @@ nav:
     - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
     - 🏢 PRO: https://christophedanhier-hash.github.io/pro-wiki/
     - 📚 Général: https://christophedanhier-hash.github.io/general-wiki/
-  - Accueil: index.md
-  - 📖 Document Fondateur: vision.md
-  - 🏢 Bureaux: bureaux/index.md
+  - Accueil: wiki/index.md
+  - 📖 Document Fondateur: wiki/vision.md
+  - 🏗️ Architecture: wiki/architecture.md
+  - 🏢 PRO (Solidaris):
+      - Vue d'ensemble: wiki/pro/index.md
+      - Robert — Conseil IT: wiki/pro/robert.md
+      - Sophie — Finance IT: wiki/pro/sophie.md
+      - Assurance Obligatoire: wiki/pro/assurance-obligatoire.md
+  - 🏠 PRIVÉ:
+      - Vue d'ensemble: wiki/prive/index.md
+      - Gérard — Documentation T600:
+          - Présentation: wiki/prive/gerard.md
+          - Les 8 agents: wiki/prive/gerard/agents.md
+      - Sylvie — Voyages: wiki/prive/sylvie.md
+      - 🤖 Bot Voyages: wiki/prive/bot-voyages.md
+      - 🧠 Agent Pro: wiki/agent-pro/index.md
+      - Analyse n8n: wiki/agent-pro/n8n.md
+  - 🧭 Général:
+      - Présentation: wiki/general/index.md
+      - LEO Admin — Infra: wiki/general/leo-admin.md
+      - Agent Pro: wiki/general/agent-pro.md
+      - Analyse n8n: wiki/general/agent-pro-n8n-analytics.md
+  - 🔭 OCA (T600):
+      - Vue d'ensemble: wiki/oca/index.md
+      - Gérard — Documentation: wiki/oca/gerard.md
+      - Les 8 agents: wiki/oca/gerard/agents.md
+  - 🧭 Voyages:
+      - Vue d'ensemble: wiki/voyages/index.md
+      - Sylvie — Roadbooks: wiki/voyages/sylvie.md
+      - 🤖 Bot Voyages: wiki/voyages/bot-voyages.md
+  - 📋 Changelog: wiki/changelog.md
