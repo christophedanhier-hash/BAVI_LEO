@@ -4,24 +4,30 @@ Les bureaux IA de BAVI LEO. Chaque bureau a son propre wiki indépendant.
 
 ---
 
-[🏢 **PRO — Solidaris**](https://christophedanhier-hash.github.io/pro-wiki/){ .md-button }
-Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire
-→ [pro-wiki](https://christophedanhier-hash.github.io/pro-wiki/)
+<div class="grid cards" markdown>
 
----
+- :material-briefcase: __[PRO — Solidaris](https://christophedanhier-hash.github.io/pro-wiki/)__
 
-[🔭 **OCA — T600**](https://christophedanhier-hash.github.io/wiki-oca/){ .md-button }
-Gérard — Documentation télescope T600
-→ [wiki-oca](https://christophedanhier-hash.github.io/wiki-oca/)
+    Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire
 
----
+    [:octicons-arrow-right-24: pro-wiki](https://christophedanhier-hash.github.io/pro-wiki/)
 
-[🧭 **Voyages**](https://christophedanhier-hash.github.io/voyages-wiki/){ .md-button }
-Sylvie — Roadbooks camping-car
-→ [voyages-wiki](https://christophedanhier-hash.github.io/voyages-wiki/)
+- :material-telescope: __[OCA — T600](https://christophedanhier-hash.github.io/wiki-oca/)__
 
----
+    Gérard — Documentation télescope T600
 
-[📚 **Général**](https://christophedanhier-hash.github.io/general-wiki/){ .md-button }
-LEO Admin, Agent Pro — Infra, analyses transverses
-→ [general-wiki](https://christophedanhier-hash.github.io/general-wiki/)
+    [:octicons-arrow-right-24: wiki-oca](https://christophedanhier-hash.github.io/wiki-oca/)
+
+- :material-map: __[Voyages](https://christophedanhier-hash.github.io/voyages-wiki/)__
+
+    Sylvie — Roadbooks camping-car
+
+    [:octicons-arrow-right-24: voyages-wiki](https://christophedanhier-hash.github.io/voyages-wiki/)
+
+- :material-book: __[Général](https://christophedanhier-hash.github.io/general-wiki/)__
+
+    LEO Admin, Agent Pro — Infra, analyses transverses
+
+    [:octicons-arrow-right-24: general-wiki](https://christophedanhier-hash.github.io/general-wiki/)
+
+</div>
