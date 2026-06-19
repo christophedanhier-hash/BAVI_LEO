@@ -8,11 +8,11 @@
 
 | Page | Description |
 |------|-------------|
-| 🎯 [Vision](vision.md) | Pourquoi BAVI LEO, principes fondateurs |
-| 🏗️ [Architecture](architecture.md) | Multi-couche, workflows, interopérabilité |
-| 🔍 [Audit & Optimisation](audit/index.md) | Analyse détaillée, différences, gains |
-| 📚 [Skills](skills/index.md) | Catalogue des skills Hermes |
-| 📋 [Changelog](changelog.md) | Évolution de BAVI LEO |
+| 🎯 [Vision](wiki/vision.md) | Pourquoi BAVI LEO, principes fondateurs |
+| 🏗️ [Architecture](wiki/architecture.md) | Multi-couche, workflows, interopérabilité |
+| 🔍 [Audit & Optimisation](wiki/audit/index.md) | Analyse détaillée, différences, gains |
+| 📚 [Skills](wiki/skills/index.md) | Catalogue des skills Hermes |
+| 📋 [Changelog](wiki/changelog.md) | Évolution de BAVI LEO |
 
 ---
 

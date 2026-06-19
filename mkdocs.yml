@@ -53,7 +53,7 @@ nav:
     - 🏛️ BAVI LEO: https://christophedanhier-hash.github.io/BAVI_LEO/
     - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
     - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
-  - Accueil: wiki/index.md
+  - Accueil: index.md
   - 🎯 Vision: wiki/vision.md
   - 🏗️ Architecture: wiki/architecture.md
   - 🔍 Audit & Optimisation: wiki/audit/index.md
