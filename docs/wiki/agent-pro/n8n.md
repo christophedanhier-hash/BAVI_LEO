@@ -57,5 +57,3 @@ docker run -d \
 3. **Validation** : créer compte owner, vérifier persistence
 
 **Scripts disponibles :** `run-n8n.sh` et `update-n8n.sh` dans `/opt/data/n8n/`
-
-[→ Plan d'installation détaillé](./installation.md)
