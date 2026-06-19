@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 6 bureaux spécialisés · 17 crons automatisés · 7 dashboards temps réel · 3 modèles LLM
+> 7 bureaux spécialisés · 17 crons automatisés · 7 dashboards temps réel · 4 modèles LLM
 
 ---
 
@@ -28,6 +28,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 | 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
+| 🔧 **Michel** | Infrastructure, code, système (DeepSeek Pro) | PRIVÉ | 🆕 Nouveau |
 | ⚙️ **LEO Admin** | Infrastructure, monitoring, budget | PRIVÉ | 🏗️ Reconstruction |
 
 ---
@@ -41,7 +42,7 @@ flowchart LR
     Telegram["📱 Telegram"]
     LEO["🤖 LEO (Hermes Agent)"]
     PRO["🏢 PRO<br/>Robert · Sophie · AO"]
-    PRIVE["🏠 PRIVÉ<br/>Gérard · Sylvie · Admin"]
+    PRIVE["🏠 PRIVÉ<br/>Gérard · Sylvie · Michel · Admin"]
     DeepSeek["☁️ DeepSeek API<br/>Flash + Pro"]
     Ollama["🏠 Ollama<br/>qwen2.5:7b"]
     Gemini["⚡ Gemini API<br/>Fallback"]
@@ -181,6 +182,18 @@ flowchart LR
 |-------|------|
 | `budget-tracking` | Suivi budget DeepSeek |
 | `machine-metrics` | Collecte CPU/RAM/Disk 3 machines |
+
+### 🔧 Bureau Michel — Infrastructure & Système (DeepSeek Pro)
+
+Nouveau bureau technique dédié aux installations, débogage et gestion système. Particularité : tous ses sous-experts utilisent **DeepSeek Pro** en sous-agent.
+
+| Expert | Rôle |
+|--------|------|
+| **SysAdmin** | Installation OS, services, Docker |
+| **DevOps** | CI/CD, GitHub Actions, déploiements |
+| **Networker** | Debug réseau, DNS, proxy, Tailscale |
+| **Scripteur** | Scripts Python/bash, automation, crons |
+| **DataDoc** | Documentation technique, audits, rapports |
 | `dashboard-kpi` | Dashboard KPI Hermes |
 | `system-management` | Gestion machines Tailscale |
 | `leo-email-assistant` | Envoi emails Gmail OAuth2 |
@@ -192,13 +205,13 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 6 (4 PRO + 2 PRIVÉ) |
+| **Bureaux** | 7 (4 PRO + 3 PRIVÉ) |
 | **Dashboards temps réel** | 7 |
 | **Crons automatisés** | 17 ✅ tous verts |
-| **Sessions Hermes** | 82 |
-| **Messages échangés** | 4 117 |
-| **Skills installés** | ~102 |
-| **Modèles LLM** | 3 (DeepSeek + Ollama + Gemini) |
+| **Sessions Hermes** | 90 |
+| **Messages échangés** | 4 651 |
+| **Skills installés** | 103 |
+| **Modèles LLM** | 4 (DeepSeek Flash + Pro + Ollama + Gemini) |
 | **Coût DeepSeek** | Suivi dashboard (budget fr) |
 
 ---
