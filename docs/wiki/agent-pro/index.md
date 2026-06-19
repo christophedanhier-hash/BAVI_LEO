@@ -10,7 +10,7 @@ LEO utilise **DeepSeek Flash** pour le quotidien (conversation, tâches simples)
 
 | Analyse | Date | Sujet | Statut |
 |:--------|:-----|:------|:-------|
-| [n8n — Options A vs B](./agent-pro/n8n/) | 19/06/2026 | Installation n8n sur LEO | ✅ Finalisé |
+| [n8n — Options A vs B](./n8n/) | 19/06/2026 | Installation n8n sur LEO | ✅ Finalisé |
 
 ---
 
