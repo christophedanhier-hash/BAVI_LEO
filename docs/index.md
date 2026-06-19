@@ -14,13 +14,13 @@ Chaque bureau est un expert autonome qui répond sur Telegram, utilise les modè
 
 ## 🏢 Bureaux
 
-:material-briefcase: [**PRO — Solidaris**](https://christophedanhier-hash.github.io/pro-wiki/) — Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire :octicons-arrow-right-24: [pro-wiki](https://christophedanhier-hash.github.io/pro-wiki/)
+🏢 [**PRO — Solidaris**](https://christophedanhier-hash.github.io/pro-wiki/) — Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire → [pro-wiki](https://christophedanhier-hash.github.io/pro-wiki/)
 
-:material-telescope: [**OCA — T600**](https://christophedanhier-hash.github.io/oca-wiki/) — Gérard — Documentation télescope T600 :octicons-arrow-right-24: [oca-wiki](https://christophedanhier-hash.github.io/oca-wiki/)
+🔭 [**OCA — T600**](https://christophedanhier-hash.github.io/oca-wiki/) — Gérard — Documentation télescope T600 → [oca-wiki](https://christophedanhier-hash.github.io/oca-wiki/)
 
-:material-map: [**Voyages**](https://christophedanhier-hash.github.io/voyages-wiki/) — Sylvie — Roadbooks camping-car :octicons-arrow-right-24: [voyages-wiki](https://christophedanhier-hash.github.io/voyages-wiki/)
+🧭 [**Voyages**](https://christophedanhier-hash.github.io/voyages-wiki/) — Sylvie — Roadbooks camping-car → [voyages-wiki](https://christophedanhier-hash.github.io/voyages-wiki/)
 
-:material-book: [**Général**](https://christophedanhier-hash.github.io/general-wiki/) — LEO Admin, Agent Pro — Infra, analyses transverses :octicons-arrow-right-24: [general-wiki](https://christophedanhier-hash.github.io/general-wiki/)
+📚 [**Général**](https://christophedanhier-hash.github.io/general-wiki/) — LEO Admin, Agent Pro — Infra, analyses transverses → [general-wiki](https://christophedanhier-hash.github.io/general-wiki/)
 
 ---
 
