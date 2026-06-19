@@ -2,7 +2,7 @@ site_name: BAVI LEO — Bureaux Agentiques Virtuels
 site_description: Bureaux IA spécialisés — PRO (Solidaris), OCA (T600), Voyages, Général
 site_author: Christophe (Tofdan) & LEO
 repo_url: https://github.com/christophedanhier-hash/BAVI_LEO
-edit_uri: edit/main/docs/wiki/
+edit_uri: edit/main/docs/
 copyright: "&copy; 2026 Christophe Danhier — Propulsé par Hermes Agent"
 
 theme:
