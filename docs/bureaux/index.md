@@ -4,30 +4,30 @@ Les bureaux IA de BAVI LEO. Chaque bureau a son propre wiki indépendant.
 
 ---
 
-<div class="portail-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
-
-<a href="https://christophedanhier-hash.github.io/pro-wiki/" class="portail-card" style="display:block; padding:1.5rem; border:1px solid #e0e0e0; border-radius:8px; text-decoration:none; color:inherit;">
-    <div style="font-size:2rem; margin-bottom:0.5rem;">🏢</div>
-    <div style="font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">PRO — Solidaris</div>
-    <div style="font-size:0.85rem; color:#666;">Robert, Sophie, Assurance Obligatoire</div>
+<a href="https://christophedanhier-hash.github.io/pro-wiki/" class="portail-card" target="_blank" rel="noreferrer noopener">
+    <div class="icon">🏢</div>
+    <div class="title">PRO — Solidaris</div>
+    <div class="desc">Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire</div>
+    <div class="url">pro-wiki</div>
 </a>
 
-<a href="https://christophedanhier-hash.github.io/oca-wiki/" class="portail-card" style="display:block; padding:1.5rem; border:1px solid #e0e0e0; border-radius:8px; text-decoration:none; color:inherit;">
-    <div style="font-size:2rem; margin-bottom:0.5rem;">🔭</div>
-    <div style="font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">OCA — T600</div>
-    <div style="font-size:0.85rem; color:#666;">Gérard — Documentation télescope</div>
+<a href="https://christophedanhier-hash.github.io/oca-wiki/" class="portail-card" target="_blank" rel="noreferrer noopener">
+    <div class="icon">🔭</div>
+    <div class="title">OCA — T600</div>
+    <div class="desc">Gérard — Documentation télescope T600</div>
+    <div class="url">oca-wiki</div>
 </a>
 
-<a href="https://christophedanhier-hash.github.io/voyages-wiki/" class="portail-card" style="display:block; padding:1.5rem; border:1px solid #e0e0e0; border-radius:8px; text-decoration:none; color:inherit;">
-    <div style="font-size:2rem; margin-bottom:0.5rem;">🧭</div>
-    <div style="font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Voyages</div>
-    <div style="font-size:0.85rem; color:#666;">Sylvie — Roadbooks camping-car</div>
+<a href="https://christophedanhier-hash.github.io/voyages-wiki/" class="portail-card" target="_blank" rel="noreferrer noopener">
+    <div class="icon">🧭</div>
+    <div class="title">Voyages</div>
+    <div class="desc">Sylvie — Roadbooks camping-car</div>
+    <div class="url">voyages-wiki</div>
 </a>
 
-<a href="https://christophedanhier-hash.github.io/general-wiki/" class="portail-card" style="display:block; padding:1.5rem; border:1px solid #e0e0e0; border-radius:8px; text-decoration:none; color:inherit;">
-    <div style="font-size:2rem; margin-bottom:0.5rem;">📚</div>
-    <div style="font-size:1.1rem; font-weight:600; margin-bottom:0.3rem;">Général</div>
-    <div style="font-size:0.85rem; color:#666;">LEO Admin, Agent Pro — Infra, analyses</div>
+<a href="https://christophedanhier-hash.github.io/general-wiki/" class="portail-card" target="_blank" rel="noreferrer noopener">
+    <div class="icon">📚</div>
+    <div class="title">Général</div>
+    <div class="desc">LEO Admin, Agent Pro — Infra, analyses transverses</div>
+    <div class="url">general-wiki</div>
 </a>
-
-</div>
