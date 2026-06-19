@@ -52,22 +52,7 @@ nav:
   - 🌐 Écosystème:
     - 🛡️ Portail LEO: https://christophedanhier-hash.github.io/hermes-wiki/
     - 🏛️ BAVI LEO: https://christophedanhier-hash.github.io/BAVI_LEO/
-    - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
-    - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
-    - 🏢 PRO: https://christophedanhier-hash.github.io/pro-wiki/
-    - 📚 Général: https://christophedanhier-hash.github.io/general-wiki/
-  - Accueil: wiki/index.md
-  - 📖 Document Fondateur: wiki/vision.md
-  - 🏢 PRO — Solidaris:
-    - Robert — Conseil IT: wiki/pro/robert.md
-    - Sophie — Finance IT: wiki/pro/sophie.md
-    - Assurance Obligatoire: wiki/pro/assurance-obligatoire.md
-  - 🔭 OCA (T600):
-    - Gérard — Documentation: wiki/oca/gerard.md
-  - 🧭 Voyages:
-    - Sylvie — Roadbooks: wiki/voyages/sylvie.md
-    - Bot Voyages: wiki/voyages/bot-voyages.md
-  - 📚 Général:
-    - LEO Admin: wiki/general/leo-admin.md
-    - Agent Pro: wiki/agent-pro/index.md
-    - Agent Pro n8n: wiki/agent-pro/n8n.md
+    - 🔭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
+  - Accueil: index.md
+  - 📖 Document Fondateur: vision.md
+  - 🏢 Bureaux: bureaux/index.md

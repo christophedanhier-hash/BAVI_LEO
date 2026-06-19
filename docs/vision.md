@@ -1,6 +1,6 @@
 # 📖 Document Fondateur — BAVI LEO
 
-**Version :** 1.0 (fusionné 13/06/2026)
+**Version :** 2.0 (nettoyage 19/06/2026 — suppression wikis externes)
 
 ---
 
@@ -14,19 +14,19 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 
 - **Spécialisation** — chaque bureau ne fait qu'un métier
 - **Interopérabilité** — les bureaux peuvent collaborer via skills
-- **Documentation vivante** — chaque bureau produit sa propre doc dans son wiki
+- **Documentation vivante** — chaque bureau produit sa propre doc
 - **Routage adaptatif** — le bon modèle pour chaque tâche (Flash, Pro, Ollama, Gemini)
 
 ### Les bureaux
 
-| Bureau | Domaine | Wiki |
-|--------|---------|:----:|
-| 🏛️ **Robert** | Conseil IT stratégique Solidaris | [→](https://christophedanhier-hash.github.io/pro-wiki/) |
-| 💰 **Sophie** | Pilotage financier IT | [→](https://christophedanhier-hash.github.io/pro-wiki/) |
-| 🛡️ **Assurance Obligatoire** | Expertise AO | [→](https://christophedanhier-hash.github.io/pro-wiki/) |
-| 📝 **Gérard** | Documentation télescope T600 | [→](https://christophedanhier-hash.github.io/wiki-oca/) |
-| 🧭 **Sylvie** | Roadbooks camping-car | [→](https://christophedanhier-hash.github.io/voyages-wiki/) |
-| ⚙️ **LEO Admin** | Infrastructure, monitoring | [→](https://christophedanhier-hash.github.io/general-wiki/) |
+| Bureau | Domaine |
+|--------|---------|
+| 🏛️ **Robert** | Conseil IT stratégique Solidaris |
+| 💰 **Sophie** | Pilotage financier IT |
+| 🛡️ **Assurance Obligatoire** | Expertise AO |
+| 📝 **Gérard** | Documentation télescope T600 |
+| 🧭 **Sylvie** | Roadbooks camping-car |
+| ⚙️ **LEO Admin** | Infrastructure, monitoring |
 
 ---
 
@@ -72,14 +72,13 @@ flowchart LR
 
 ### Architecture technique
 
-- **Hermes Agent** v0.16.0 dans un conteneur Docker
-- **Réseau** : `network_mode: host` — partage pile réseau de l'hôte
+- **Hermes Agent** dans un conteneur Docker
+- **Réseau** : `network_mode: host`
 - **Tailscale** : 100.92.102.28
 - **Ollama** : qwen2.5:7b sur `http://100.92.102.28:11434/v1`
 - **DeepSeek** : API cloud (Flash + Pro)
 - **Gemini** : fallback API
-- **Stockage** : `/opt/data` — 63G/457G utilisés (15%)
-- **GitHub** : 5 repositories wikis + 4 dashboards
+- **Stockage** : `/opt/data`
 - **Domaine** : `*.github.io` (GitHub Pages)
 
 ### Flux inter-bureaux PRO
@@ -92,31 +91,11 @@ flowchart LR
     
     Robert -->|"phase ③ ou ④ / skill `assurance-obligatoire`"| AO
     Robert -->|"phase ③ ou ④ / skill `bureau-sophie`"| Sophie
-    Sophie -->|"phase ③ ou ④ / skill `bureau-robert`"| Robert
+    Sophie -->|"phase ③ ou ④ / skill `bureau-rochet`"| Robert
 
     style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    linkStyle default stroke-width:2px,fill:none
-```
-
-### Flux de livraison
-
-```mermaid
-flowchart LR
-    Gerard["📝 Gérard"] -->|"docs techniques T600"| WikiOCA["Wiki OCA"]
-    Sylvie["🧭 Sylvie"] -->|"journaux de bord"| WikiVoyages["Wiki Voyages"]
-    Admin["⚙️ Admin"] -->|"métriques temps réel"| Dashboards["Dashboards"]
-    Tous["Tous"] -->|"connaissance des bureaux"| BAVI["BAVI LEO wiki"]
-
-    style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Tous fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style WikiOCA fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style WikiVoyages fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Dashboards fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style BAVI fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     linkStyle default stroke-width:2px,fill:none
 ```
 
@@ -140,12 +119,8 @@ Tous les bureaux suivent le même squelette :
 | Qualité bureaux spécialisés | ✅ Différence Robert vs Sophie claire |
 | Routage intelligent | ✅ Bon modèle pour chaque tâche |
 | Documentation vivante | ✅ Wikis auto-déployés |
-| Gestion des coûts API | ✅ Budget v6 français suivi |
+| Gestion des coûts API | ✅ Budget français suivi |
 | Fiabilité crons | ✅ 17 crons, tous verts |
-
-### Opportunités d'optimisation
-
-*(Cette section a été retirée — contenu obsolète.)*
 
 ---
 
