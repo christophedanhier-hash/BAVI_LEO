@@ -1,59 +1,51 @@
 # Bienvenue sur BAVI LEO 🏛️🤖
 
-**BAVI LEO** — **B**ureau **A**gentique **V**irtuel **I**ntégré pour **L**EO — est votre système de bureaux IA spécialisés.
+**BAVI LEO** — votre système de bureaux IA spécialisés, propulsé par Hermes Agent.
 
 ---
 
-## Les bureaux
-
-### 🏢 PRO — Solidaris (métier)
-
-| Bureau | Domaine | Usage |
-|--------|---------|-------|
-| 🏛️ [Robert](pro/robert.md) | Conseil IT stratégique AO | Analyses transversales, notes, arbitrages |
-| 💰 [Sophie](pro/sophie.md) | Pilotage financier IT | Business cases, modélisation financière |
-| 🛡️ [Assurance Obligatoire](pro/assurance-obligatoire.md) | Lentille métier AO | Relecture métier des analyses IT |
-
-### 🏠 PRIVÉ — Personnel
-
-| Bureau | Domaine | Usage |
-|--------|---------|-------|
-| 📝 [Gérard](prive/gerard.md) | Documentation T600 | Manuels, procédures, formation |
-| 🧭 [Sylvie](prive/sylvie.md) | Voyages camping-car | Planification, journal de bord, cartes OSM |
-| ⚙️ [LEO Admin](prive/leo-admin.md) | Infrastructure Hermes | Monitoring, budget, dashboards, crons |
-
----
-
-## Ressources
+## Pages outil
 
 | Page | Description |
 |------|-------------|
 | 🎯 [Vision](vision.md) | Pourquoi BAVI LEO, principes fondateurs |
 | 🏗️ [Architecture](architecture.md) | Multi-couche, workflows, interopérabilité |
 | 🔍 [Audit & Optimisation](audit/index.md) | Analyse détaillée, différences, gains |
-| 📚 [Catalogue Skills](skills/index.md) | Tous les skills Hermes |
-| 📖 [Guide d'utilisation](guide/utilisation.md) | Comment lancer un bureau |
+| 📚 [Skills](skills/index.md) | Catalogue des skills Hermes |
 | 📋 [Changelog](changelog.md) | Évolution de BAVI LEO |
 
 ---
 
-## 🌐 Wikis de l'écosystème
+## Wikis de l'outil
 
-| Wiki | Description |
-|------|-------------|
-| 🛡️ [Portail LEO](https://christophedanhier-hash.github.io/hermes-wiki/) | Portail central — wikis, dashboards, bots, monitoring |
-| 🔭 [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/) | Documentation T600 — Bureau Gérard |
-| 🧭 [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) | Roadbooks camping-car — Bureau Sylvie |
+| Wiki | Description | Bureau |
+|:----:|-------------|--------|
+| 🏢 [PRO — Solidaris](wiki/pro/) | Conseil IT, finance, AO | Robert, Sophie, Assurance |
+| 🔭 [OCA — T600](wiki/oca/) | Documentation télescope | Gérard |
+| 🧭 [Voyages](wiki/voyages/) | Roadbooks camping-car | Sylvie |
+| 📚 [Général](wiki/general/) | Analyses transverses, infra | LEO Admin, Agent Pro |
+
+---
+
+## Routage intelligent
+
+BAVI LEO route chaque demande vers le bon modèle IA :
+
+| Type de demande | Modèle | Usage |
+|:---------------:|--------|-------|
+| Quotidien, conversation | **DeepSeek Flash** | Tâches simples, questions |
+| Analyse complexe | **DeepSeek Pro** | Installations, décisions techniques |
+| Réflexion, prototypage | **Ollama (qwen2.5:7b)** | Tâches gratuites, tests |
+| Fallback | **Gemini** | Si DeepSeek indisponible |
 
 ---
 
 ## Commencer
 
 👉 Parler à LEO sur Telegram :
-- `bureau-robert : analyse le dossier INAMI digitalisation`
+- `bureau-robert : analyse le dossier INAMI`
 - `bureau-sophie : business case migration cloud`
-- `assurance-obligatoire : impacts AO du projet X`
-- `bureau-gerard : produis le manuel du T600`
-- `bureau-sylvie : planifie le voyage en Ardèche`
+- `bureau-gerard : manuel du T600`
+- `bureau-sylvie : planifie l'Ardèche`
 
-👉 **[🛡️ Portail LEO — Écosystème complet](https://christophedanhier-hash.github.io/hermes-wiki/)**
+👉 **[🛡️ Portail LEO](https://christophedanhier-hash.github.io/hermes-wiki/)**
