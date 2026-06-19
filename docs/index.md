@@ -10,9 +10,9 @@
 
 <div class="grid cards" markdown>
 
-- :material-telescope: __🔭 Wiki OCA — T600__
+- :material-telescope: __[Wiki OCA — T600](https://christophedanhier-hash.github.io/wiki-oca/t600/)__
     Gérard — Documentation télescope T600
-    [:octicons-arrow-right-24: wiki-oca](https://christophedanhier-hash.github.io/wiki-oca/)
+    [:octicons-arrow-right-24: wiki-oca/t600](https://christophedanhier-hash.github.io/wiki-oca/t600/)
 
 - :material-map: __🧭 Voyages__
     Sylvie — Roadbooks camping-car
