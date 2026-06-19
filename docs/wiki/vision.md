@@ -62,13 +62,42 @@
 
 ### Structure générale
 
-```
-Telegram ←→ LEO (Hermes Agent) ←→ Bureaux IA
-                                 ↕
-                           Wiki BAVI LEO
-                                 ↕
-                           4 modèles IA
-                   (Flash, Pro, Ollama, Gemini)
+```mermaid
+flowchart TD
+    Telegram["Telegram / CLI<br/>Christophe (Tofdan)"]
+    LEO["LEO (Hermes Agent)<br/>Détection → Aiguillage → Skill"]
+
+    Telegram --> LEO
+    LEO --> PRO_GRP
+    LEO --> PRIVE_GRP
+
+    subgraph PRO_GRP["PRO — Solidaris"]
+        direction TB
+        Robert["🏛️ Robert<br/>(Conseil)"]
+        Sophie["💰 Sophie<br/>(Finance)"]
+        AO["🛡️ AO (Métier)"]
+    end
+
+    subgraph PRIVE_GRP["PRIVÉ — Personnel"]
+        direction TB
+        Gerard["📝 Gérard<br/>(Doc T600)"]
+        Sylvie["🧭 Sylvie<br/>(Voyages)"]
+        Admin["⚙️ LEO Admin<br/>(Infra)"]
+    end
+
+    Robert -.->|interop| AO
+
+    style Telegram fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style LEO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style PRO_GRP fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    style PRIVE_GRP fill:#e8f5f9,stroke:#0288d1,stroke-width:3px,color:#01579b
+    linkStyle default stroke-width:2px,fill:none
 ```
 
 ### Niveaux d'abstraction
@@ -114,6 +143,52 @@ docs/
     ├── oca/              ← Gérard (T600)
     ├── voyages/          ← Sylvie
     └── general/          ← LEO Admin, Agent Pro
+```
+
+### Flux inter-bureaux
+
+```mermaid
+flowchart LR
+    Robert["🏛️ Robert"]
+    AO["🛡️ Assurance Obligatoire"]
+    Sophie["💰 Sophie"]
+    
+    Robert -->|"phase ③ ou ④ / skill `assurance-obligatoire`"| AO
+    Robert -->|"phase ③ ou ④ / skill `bureau-sophie`"| Sophie
+    Sophie -->|"phase ③ ou ④ / skill `bureau-robert`"| Robert
+
+    style Robert fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style AO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sophie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    linkStyle default stroke-width:2px,fill:none
+```
+
+### Flux de livraison
+
+```mermaid
+flowchart LR
+    Gerard["📝 Gérard"] -->|"docs techniques T600"| WikiOCA["Wiki OCA"]
+    Sylvie["🧭 Sylvie"] -->|"journaux de bord"| WikiVoyages["Wiki Voyages"]
+    Admin["⚙️ Admin"] -->|"métriques temps réel"| Dashboards["Dashboards"]
+    Tous["Tous"] -->|"connaissance des bureaux"| BAVI["BAVI LEO wiki"]
+
+    style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Tous fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style WikiOCA fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style WikiVoyages fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Dashboards fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style BAVI fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    linkStyle default stroke-width:2px,fill:none
+```
+
+### Workflow standardisé — 7 phases
+
+Tous les bureaux suivent le même squelette :
+
+```
+① CADRAGE → ② DISPATCH → ③ PRODUCTION → ④ CROISEMENT → ⑤ SYNTHÈSE → ⑥ LIVRABLE → ⑦ ARCHIVAGE
 ```
 
 ---
