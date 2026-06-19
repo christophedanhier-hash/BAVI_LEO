@@ -253,19 +253,13 @@ Gestion des serveurs, déploiements, sync Drive, routage LLM et sauvegardes.
 
 ### Répartition par catégorie
 
-```
-BAVI LEO         ████████░░ 6
-Productivité     ████████████████████░░ 16
-Créatif          ████████████████████░░ 16
-Infrastructure   █████████████████░░ 13
-Software Dev     ██████████░░ 8
-MLOps            ██████████░░ 8
-Hermes Core      ████████░░ 6
-Research         ████████░░ 6
-GitHub           ████████░░ 6
-Media            ██████░░ 4
-Email            ████░░ 3
-Autres           ██████░░ 4
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e3f2fd', 'fontSize': '14px'}}}%%
+xychart-beta
+    title "Skills par catégorie"
+    x-axis "Catégorie" ["BAVI LEO", "Productivité", "Créatif", "Infrastructure", "Software Dev", "MLOps", "Hermes Core", "Research", "GitHub", "Media", "Email", "Autres"]
+    y-axis "Nb Skills" 0 --> 16
+    bar [6, 16, 16, 13, 8, 8, 6, 6, 6, 4, 3, 4]
 ```
 
 ---
