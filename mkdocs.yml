@@ -20,6 +20,9 @@ theme:
     - content.code.copy
     - content.action.edit
 
+extra_css:
+  - extra.css
+
 extra:
   social:
     - icon: fontawesome/brands/github
