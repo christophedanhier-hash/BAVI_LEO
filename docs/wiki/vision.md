@@ -206,14 +206,7 @@ Tous les bureaux suivent le même squelette :
 | Gestion des coûts API | ✅ Budget v6 français suivi |
 | Fiabilité crons | ✅ 17 crons, tous verts |
 
-### Opportunités d'optimisation
 
-| Sujet | Problème | Solution |
-|-------|----------|----------|
-| Yoga éteint | Machine déconnectée depuis 16/06 | Redémarrage manuel ou script Wake-on-LAN |
-| Pas de dashboard temps réel | Données figées à J-1 | Tailscale Funnel (à déployer) |
-| GPU insuffisant | RTX 3090 via John Lanuit | Upgrade à planifier |
-| Double `.hermes/` | Légère confusion sur l'installation | Documenté, pas critique |
 
 ### Leçons apprises
 
@@ -252,12 +245,3 @@ Les skills sont la **mémoire procédurale** de BAVI LEO — des approches réut
 4. **Mettre à jour** `mkdocs.yml` pour l'indexer dans la navigation
 5. **Commit & push** : `git add . && git commit -m "Nouveau bureau : X" && git push`
 
----
-
-## Évolution (Changelog)
-
-| Date | Changement |
-|:----:|------------|
-| 13/06/2026 | Fusion des 4 documents fondateurs (vision, architecture, audit, skills) en un seul |
-| 13/06/2026 | Refonte BAVI LEO : landing page, navigation plate 10 onglets, Écosystème restauré |
-| 13/06/2026 | Dernier déploiement des 4 dashboards (LEO, BAVI, Machines, Crons, GitHub) |
