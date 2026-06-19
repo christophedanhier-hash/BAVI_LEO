@@ -48,11 +48,6 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
 
 nav:
-  - 🌐 Écosystème:
-    - 🛡️ Portail LEO: https://christophedanhier-hash.github.io/hermes-wiki/
-    - 🏛️ BAVI LEO: https://christophedanhier-hash.github.io/BAVI_LEO/
-    - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
-    - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
   - Accueil: index.md
   - 📖 Document Fondateur: wiki/vision.md
   - 🏢 PRO (Solidaris): wiki/pro/index.md

@@ -138,7 +138,6 @@ docs/
 ├── mkdocs.yml
 └── wiki/
     ├── index.md          ← Entrée wiki
-    ├── changelog.md
     ├── pro/              ← Robert, Sophie, AO
     ├── oca/              ← Gérard (T600)
     ├── voyages/          ← Sylvie

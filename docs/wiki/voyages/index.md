@@ -1,12 +1,18 @@
-# 🧭 Wiki Voyages
+# 🧭 Voyages
 
 Organisation des **voyages camping-car** de Christophe, orchestrée par le **Bureau Sylvie**.
 
-## Pages
+---
 
-| Page | Description |
-|------|-------------|
-| 🧭 [Bureau Sylvie](sylvie.md) | Présentation, workflow, règles |
-| 🤖 [Bot Voyages](bot-voyages.md) | Assistant de planification automatisé |
+## Bureau et skills
 
-🔗 **Wiki Voyages complet** : [christophedanhier-hash.github.io/voyages-wiki](https://christophedanhier-hash.github.io/voyages-wiki/)
+| Bureau | Rôle | Skills utilisés |
+|:-------|:-----|:----------------|
+| 🧭 **Sylvie** | Planification, roadbooks, cartes, budgets voyage | `gif-search`, `maps`, `songwriting-and-ai-music` |
+| 🤖 **Bot Voyages** | Bot autonome — roadbooks, cartes, coûts, export PDF/DOCX | `youtube-content`, `gif-search` |
+
+## Travaux réalisés
+
+| Date | Sujet | Livrable | Statut |
+|:----:|:------|:---------|:------:|
+| *(à venir)* | | | |

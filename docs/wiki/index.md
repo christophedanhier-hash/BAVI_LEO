@@ -1,27 +1,15 @@
 # 📚 Wiki BAVI LEO
 
-Base de connaissance complète des bureaux IA — documentation fondatrice, wikis spécialisés et évolution.
+Bienvenue dans la base de connaissance des **Bureaux Agentiques Virtuels**.
+
+| Page | Description |
+|:----|:------------|
+| 📖 [Document Fondateur](vision.md) | Vision, architecture, routage IA, workflow 7 phases, audit, skills |
+| 🏢 [PRO — Solidaris](pro/) | Robert (Conseil IT), Sophie (Finance), Assurance Obligatoire |
+| 🔭 [OCA — T600](oca/) | Gérard — Documentation télescope |
+| 🧭 [Voyages](voyages/) | Sylvie — Roadbooks camping-car |
+| 📚 [Général](general/) | LEO Admin, Agent Pro — Infra, analyses |
 
 ---
 
-## 📖 Document Fondateur
-
-Le **[Document Fondateur](vision.md)** unique couvre tout ce qu'il faut savoir sur BAVI LEO :
-
-| Section | Contenu |
-|---------|---------|
-| 🎯 **Vision** | Pourquoi BAVI LEO, 6 bureaux, routage intelligent, principes, contraintes |
-| 🏗️ **Architecture** | Structure générale, flux, technique (Hermes, Docker, Tailscale, modèles) |
-| 🔍 **Audit** | Forces, opportunités, leçons apprises (DeepSeek Flash vs Pro, n8n, crons) |
-| 📚 **Skills** | Catalogue complet des 13 skills + procédure création nouveau bureau |
-
----
-
-## Wikis spécialisés
-
-| Wiki | Description | Bureau |
-|:----:|-------------|--------|
-| 🏢 [PRO — Solidaris](pro/) | Conseil IT Robert, Finance Sophie, AO | Robert, Sophie, Assurance |
-| 🔭 [OCA — T600](oca/) | Documentation télescope | Gérard |
-| 🧭 [Voyages](voyages/) | Roadbooks camping-car | Sylvie |
-| 📚 [Général](general/) | Analyses transverses, infrastructure | LEO Admin, Agent Pro |
+*Documentation vivante générée par LEO · 🦁*
