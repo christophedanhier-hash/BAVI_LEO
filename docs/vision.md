@@ -24,7 +24,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🏛️ **Robert** | Conseil IT stratégique Solidaris | [→](https://christophedanhier-hash.github.io/pro-wiki/) |
 | 💰 **Sophie** | Pilotage financier IT | [→](https://christophedanhier-hash.github.io/pro-wiki/) |
 | 🛡️ **Assurance Obligatoire** | Expertise AO | [→](https://christophedanhier-hash.github.io/pro-wiki/) |
-| 📝 **Gérard** | Documentation télescope T600 | [→](https://christophedanhier-hash.github.io/oca-wiki/) |
+| 📝 **Gérard** | Documentation télescope T600 | [→](https://christophedanhier-hash.github.io/wiki-oca/) |
 | 🧭 **Sylvie** | Roadbooks camping-car | [→](https://christophedanhier-hash.github.io/voyages-wiki/) |
 | ⚙️ **LEO Admin** | Infrastructure, monitoring | [→](https://christophedanhier-hash.github.io/general-wiki/) |
 
