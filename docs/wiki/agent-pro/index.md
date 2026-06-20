@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 20/06/2026 à 14:18*
+*Généré automatiquement le 20/06/2026 à 14:21*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -9,11 +9,11 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
-| [🏗️ Bureau Gérard — Documentation T600](gerard/) | Voir le skill | 3 | 12/06/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](robert/) | Voir le skill | 0 | — |
-| [💰 Bureau Sophie — Pilotage Économique & Financier](sophie/) | Voir le skill | 0 | — |
-| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](michel/) | Voir le skill | 2 | 20/06/2026 |
-| [🧭 Bureau Sylvie — Voyages](sylvie/) | Voir le skill | 0 | — |
+| [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 3 | 12/06/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
+| [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
+| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 2 | 20/06/2026 |
+| [🧭 Bureau Sylvie — Voyages](bureau-sylvie/) | Voir le skill | 0 | — |
 
 **Total : 5 analyse(s) sur l'ensemble des bureaux.**
 
@@ -37,4 +37,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 20/06/2026 14:18*
+*Index consolidé généré par `agent-pro-index.py` — 20/06/2026 14:21*
