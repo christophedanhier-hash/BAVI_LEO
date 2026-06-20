@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 20/06/2026 à 14:33*
+*Généré automatiquement le 20/06/2026 à 14:36*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -21,14 +21,14 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ## 📋 Toutes les analyses
 
-| Date | Bureau | Version | Titre | Tags | Statut |
-|:-----|:-------|:--------|:------|:-----|:-------|
-| 20/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [Étude d'Installation — n8n sur LEO](bureau-michel/n8n/rapport-n8n-leo-20260619/) | `n8n` `installation` `docker` `rapport` | ✅ Finalisé |
-| 19/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [ping-workflow](bureau-michel/n8n/ping-workflow/) | `n8n` `workflow` `ping` `test` | ✅ Finalisé |
-| 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Rapport d'Analyse des Risques — T600](bureau-gerard/t600/analyse-risques-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé |
-| 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Formation Opérateur — Télescope T600](bureau-gerard/t600/formation-operateur-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé |
-| 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Document de Référence T600 — Observatoire Centre Ardennes](bureau-gerard/t600/document-reference-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé |
+| Date | Bureau | Version | Titre | Tags | Statut | Actions |
+|:-----|:-------|:--------|:------|:-----|:-------|:--------|
+| 20/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [Étude d'Installation — n8n sur LEO](bureau-michel/n8n/rapport-n8n-leo-20260619/) | `n8n` `installation` `docker` `rapport` | ✅ Finalisé | [📥](bureau-michel/n8n/rapport-n8n-leo-20260619/?print-pdf) 🗑️ |
+| 19/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [ping-workflow](bureau-michel/n8n/ping-workflow/) | `n8n` `workflow` `ping` `test` | ✅ Finalisé | [📥](bureau-michel/n8n/ping-workflow/?print-pdf) 🗑️ |
+| 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Rapport d'Analyse des Risques — T600](bureau-gerard/t600/analyse-risques-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | [📥](bureau-gerard/t600/analyse-risques-t600/?print-pdf) 🗑️ |
+| 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Formation Opérateur — Télescope T600](bureau-gerard/t600/formation-operateur-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | [📥](bureau-gerard/t600/formation-operateur-t600/?print-pdf) 🗑️ |
+| 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Document de Référence T600 — Observatoire Centre Ardennes](bureau-gerard/t600/document-reference-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | [📥](bureau-gerard/t600/document-reference-t600/?print-pdf) 🗑️ |
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 20/06/2026 14:33*
+*Index consolidé généré par `agent-pro-index.py` — 20/06/2026 14:36*

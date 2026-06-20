@@ -75,3 +75,33 @@ statut: finalise
 | **DeepSeek Flash** | 80% des analyses — rédaction, notes, suivi courant |
 | **DeepSeek Pro** | 20% des analyses — infrastructure, code, décisions techniques |
 | **Ollama** | Prototypage gratuit, tests |
+
+---
+
+## 📥 Télécharger une analyse en PDF
+
+Deux méthodes :
+
+**Depuis le tableau des analyses :**
+Cliquer sur l'icône **📥** dans la colonne Actions → le navigateur ouvre la boîte de dialogue d'impression → choisir **"Enregistrer en PDF"** comme destination.
+
+**Depuis la page de l'analyse :**
+Un bouton PDF (icône 📄) est disponible en haut de chaque page d'analyse → cliquer → imprimer → enregistrer en PDF.
+
+> 💡 **Astuce** : Ctrl+P (ou Cmd+P sur Mac) fonctionne aussi depuis n'importe quelle page.
+
+## 🗑️ Supprimer une analyse
+
+La suppression ne se fait pas depuis le wiki (site statique). Pour supprimer une analyse :
+
+**Méthode :** Demander à LEO :
+
+> *"supprime l'analyse [titre]"*
+
+LEO va alors :
+1. Supprimer le fichier source dans `/opt/data/BAVI/AGENT-PRO/<bureau>/`
+2. Régénérer les index automatiquement
+3. Commit + push la suppression
+4. L'analyse disparaît du tableau
+
+> ⚠️ L'historique reste conservé dans Git — la version supprimée est toujours récupérable.

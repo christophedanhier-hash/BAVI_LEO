@@ -1,13 +1,13 @@
 # 💰 Bureau Sophie — Pilotage Économique & Financier
 
-*Généré automatiquement le 20/06/2026 à 14:33*
+*Généré automatiquement le 20/06/2026 à 14:36*
 
 **Total : 0 analyse(s)**
 
 *Aucune analyse enregistrée.*
 
-| Date | Version | Titre | Tags | Statut |
-|:-----|:--------|:------|:-----|:-------|
+| Date | Version | Titre | Tags | Statut | Actions |
+|:-----|:--------|:------|:-----|:-------|:--------|
 
 ---
 

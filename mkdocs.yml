@@ -47,6 +47,7 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+  - assets/js/pdf-download.js
 
 nav:
   - 🌐 Portail LEO:

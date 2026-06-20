@@ -1,13 +1,13 @@
 # 🔧 Bureau Michel — Automatisation & Infrastructure n8n
 
-*Généré automatiquement le 20/06/2026 à 14:33*
+*Généré automatiquement le 20/06/2026 à 14:36*
 
 **Total : 2 analyse(s)**
 
-| Date | Version | Titre | Tags | Statut |
-|:-----|:--------|:------|:-----|:-------|
-| 20/06/2026 | v1 | [Étude d'Installation — n8n sur LEO](n8n/rapport-n8n-leo-20260619/) | `n8n` `installation` `docker` `rapport` | ✅ Finalisé |
-| 19/06/2026 | v1 | [ping-workflow](n8n/ping-workflow/) | `n8n` `workflow` `ping` `test` | ✅ Finalisé |
+| Date | Version | Titre | Tags | Statut | Actions |
+|:-----|:--------|:------|:-----|:-------|:--------|
+| 20/06/2026 | v1 | [Étude d'Installation — n8n sur LEO](n8n/rapport-n8n-leo-20260619/) | `n8n` `installation` `docker` `rapport` | ✅ Finalisé | [📥](n8n/rapport-n8n-leo-20260619/?print-pdf) 🗑️ |
+| 19/06/2026 | v1 | [ping-workflow](n8n/ping-workflow/) | `n8n` `workflow` `ping` `test` | ✅ Finalisé | [📥](n8n/ping-workflow/?print-pdf) 🗑️ |
 
 ---
 
