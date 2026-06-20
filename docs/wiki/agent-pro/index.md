@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 20/06/2026 à 14:21*
+*Généré automatiquement le 20/06/2026 à 14:33*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -29,12 +29,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Formation Opérateur — Télescope T600](bureau-gerard/t600/formation-operateur-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé |
 | 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Document de Référence T600 — Observatoire Centre Ardennes](bureau-gerard/t600/document-reference-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé |
 
-## 📁 Autres dossiers
-
-| Dossier | Description |
-|:--------|:------------|
-| [📁 Analyses n8n](n8n/) | 2 fichier(s) |
-
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 20/06/2026 14:21*
+*Index consolidé généré par `agent-pro-index.py` — 20/06/2026 14:33*
