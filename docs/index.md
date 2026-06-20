@@ -109,6 +109,18 @@ Tous les bureaux suivent le même squelette :
 
 ## 🔗 Flux Inter-Bureaux
 
+### 🧠 Analyses Agent Pro
+
+Toutes les analyses produites par les bureaux (DeepSeek Pro/Flash) sont indexées dans le **[Portail Agent Pro](wiki/agent-pro/index.md)** — accessible depuis le menu **PRIVÉ → 🧠 Agent Pro**.
+
+| Bureau | Rôle | Accès analyses |
+|:-------|:-----|:---------------|
+| 🏗️ Gérard | Documentation T600 | [Voir les analyses](wiki/agent-pro/gerard/index.md) |
+| 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/robert/index.md) |
+| 💰 Sophie | Pilotage Économique & Financier | [Voir les analyses](wiki/agent-pro/sophie/index.md) |
+| 🔧 Michel | Automatisation & Infrastructure n8n | [Voir les analyses](wiki/agent-pro/michel/index.md) |
+| 🧭 Sylvie | Voyages | [Voir les analyses](wiki/agent-pro/sylvie/index.md) |
+
 ### Appels formels PRO
 
 ```mermaid
