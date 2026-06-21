@@ -239,6 +239,7 @@ Nouveau bureau technique dédié aux installations, débogage et gestion systèm
 | Gestion des coûts API | ✅ Budget dashboard suivi |
 | Fiabilité crons | ✅ 17 crons, tous verts, no_agent |
 | Miroir Drive ↔ GitHub | ✅ Sync bidirectionnelle 18h |
+| 📋 Suivi implémentations | ✅ [leo-tracker](https://github.com/christophedanhier-hash/leo-tracker) — Kanban Project V2, [8 issues](https://github.com/christophedanhier-hash/leo-tracker/issues/4) |
 
 ---
 
