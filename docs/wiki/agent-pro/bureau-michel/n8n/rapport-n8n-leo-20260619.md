@@ -70,27 +70,22 @@ Le mode `--network host` est le meilleur compromis pour LEO :
 
 ### 3.1 Topologie réseau actuelle
 
-```
-Internet / Tailnet
-       │
-       ▼
-  ┌───────────────────────────────────┐
-  │        LEO — Debian 13           │
-  │  Tailscale IP: 100.92.102.28     │
-  │  Réseau Docker: 172.17.0.0/16    │
-  │                                   │
-  │  ┌─────────┐  ┌──────────┐       │
-  │  │ Ollama  │  │ Hermes   │       │
-  │  │ :11434  │  │ :18791   │       │
-  │  └─────────┘  │ :18792   │       │
-  │               └──────────┘       │
-  │                                   │
-  │  ┌─────────────────────────┐     │
-  │  │  n8n (--network host)   │     │
-  │  │  Port 5678              │     │
-  │  │  SQLite: volume n8n_data│     │
-  │  └─────────────────────────┘     │
-  └───────────────────────────────────┘
+```mermaid
+flowchart TB
+    Internet["🌐 Internet / Tailnet"]:::net
+    LEO["🖥️ LEO — Debian 13<br/>100.92.102.28<br/>Docker: 172.17.0.0/16"]:::server
+    Ollama["🏠 Ollama<br/>:11434"]:::svc
+    Hermes["🤖 Hermes Agent<br/>:18791 / :18792"]:::svc
+    N8N["🔧 n8n<br/>--network host<br/>Port 5678<br/>Volume: n8n_data"]:::svc
+
+    Internet --> LEO
+    LEO --> Ollama
+    LEO --> Hermes
+    LEO --> N8N
+
+    classDef net fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    classDef server fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    classDef svc fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#1b5e20
 ```
 
 ### 3.2 Ports occupés vs libres
