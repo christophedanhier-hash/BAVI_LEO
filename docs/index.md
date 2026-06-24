@@ -28,8 +28,8 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 | 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
-| 🔧 **Michel** | Infrastructure, code, système — **Léo Copilot** | PRO | ✅ Actif |
-| 🤖 **LEO** | Dossiers & analyses personnelles | LEO | 🆕 Nouveau |
+| 🔧 **Michel** | Infrastructure, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
+| 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | 🆕 Nouveau |
 
 ---
 
@@ -205,7 +205,7 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 6 (4 PRO + 1 PRIVÉ + 1 LEO) |
+| **Bureaux** | 6 (3 PRO + 3 PRIVÉ) |
 | **Dashboards temps réel** | 7 |
 | **Crons automatisés** | 28 ✅ tous verts |
 | **Sessions Hermes** | 90+ |
