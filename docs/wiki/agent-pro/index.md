@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 24/06/2026 à 17:03*
+*Généré automatiquement le 24/06/2026 à 17:15*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -13,7 +13,8 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 2 | 20/06/2026 |
-| [🧭 Bureau Sylvie — Voyages](bureau-sylvie/) | Voir le skill | 1 | 24/06/2026 |
+| [🧭 Bureau Sylvie — Voyages](bureau-sylvie/) | Voir le skill | 0 | — |
+| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 1 | 24/06/2026 |
 
 **Total : 6 analyse(s) sur l'ensemble des bureaux.**
 
@@ -23,7 +24,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
-| 24/06/2026 | 🧭 Bureau Sylvie — Voyages | v1 | [🚗 Dossier Skoda Enyaq — Achat & Installation](bureau-sylvie/skoda-enyaq/dossier-skoda-enyaq/) | `skoda` `enyaq` `vehicule` `leasing` `borne-recharge` `eneco` | 🔄 En cours | [📥](bureau-sylvie/skoda-enyaq/dossier-skoda-enyaq/?print-pdf) 🗑️ |
+| 24/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🚗 Dossier Skoda Enyaq — Achat & Installation](bureau-leo/dossiers/dossier-skoda-enyaq/) | `skoda` `enyaq` `vehicule` `leasing` `borne-recharge` `eneco` | 🔄 En cours | [📥](bureau-leo/dossiers/dossier-skoda-enyaq/?print-pdf) 🗑️ |
 | 20/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [Étude d'Installation — n8n sur LEO](bureau-michel/n8n/rapport-n8n-leo-20260619/) | `n8n` `installation` `docker` `rapport` | ✅ Finalisé | [📥](bureau-michel/n8n/rapport-n8n-leo-20260619/?print-pdf) 🗑️ |
 | 19/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [ping-workflow](bureau-michel/n8n/ping-workflow/) | `n8n` `workflow` `ping` `test` | ✅ Finalisé | [📥](bureau-michel/n8n/ping-workflow/?print-pdf) 🗑️ |
 | 12/06/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [Rapport d'Analyse des Risques — T600](bureau-gerard/t600/analyse-risques-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | [📥](bureau-gerard/t600/analyse-risques-t600/?print-pdf) 🗑️ |
@@ -32,4 +33,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 24/06/2026 17:03*
+*Index consolidé généré par `agent-pro-index.py` — 24/06/2026 17:15*
