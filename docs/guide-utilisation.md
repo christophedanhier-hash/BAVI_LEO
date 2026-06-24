@@ -4,9 +4,9 @@
 
 L'interface de visualisation des documents produits par les bureaux BAVI se trouve dans le menu **PRIVÉ → 🧠 Agent Pro**.
 
-### Lire une analyse
+### Lire un document
 
-1. Naviguer vers [PRIVÉ → 🧠 Agent Pro](wiki/agent-pro/index.md)
+1. Naviguer vers le bureau concerné dans le menu **🧠 Bureaux**
 2. Choisir un bureau (Gérard, Robert, Sophie, Michel, Sylvie)
 3. Cliquer sur le titre de l'analyse
 
