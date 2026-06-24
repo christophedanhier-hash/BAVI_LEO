@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 5 bureaux spécialisés · 28 crons automatisés · 7 dashboards temps réel · 3 bots Telegram
+> 6 bureaux spécialisés · 28 crons automatisés · 7 dashboards temps réel · 3 bots Telegram · 🤖 Bureau LEO créé
 
 ---
 
@@ -28,8 +28,8 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 | 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
-| 🔧 **Michel** | Infrastructure, code, système (DeepSeek Pro) | PRIVÉ | 🆕 Nouveau |
-| ⚙️ **LEO Admin** | Infrastructure, monitoring, budget | PRIVÉ | 🏗️ Reconstruction |
+| 🔧 **Michel** | Infrastructure, code, système (DeepSeek Pro) | PRIVÉ | ✅ Actif |
+| 🤖 **LEO** | Dossiers & analyses personnelles | LEO | 🆕 Nouveau |
 
 ---
 
@@ -41,7 +41,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 flowchart LR
     Telegram["📱 Telegram"]
     LEO["🤖 LEO (Hermes Agent)"]
-    Bureaux["🧠 Bureaux<br/>Gérard · Michel · Robert<br/>Sophie · Sylvie"]
+    Bureaux["🧠 Bureaux<br/>Gérard · Michel · Robert<br/>Sophie · Sylvie · LEO"]
     DeepSeek["☁️ DeepSeek API<br/>Flash + Pro"]
     Ollama["🏠 Ollama<br/>qwen2.5:7b"]
     Gemini["⚡ Gemini API<br/>Fallback"]
@@ -100,7 +100,8 @@ Tous les bureaux suivent le même squelette :
 | 🛡️ AO | Workflow raccourci ①→③→⑥ (expert unique transverse) |
 | 📝 Gérard | Croisement obligatoire Hardware ↔ Firmware |
 | 🧭 Sylvie | Cartographie OSM en parallèle de l'itinéraire |
-| ⚙️ Admin | Cron-driven (collecte → traitement → dashboard) |
+| 🔧 Michel | Sous-agent DeepSeek Pro pour tâches lourdes |
+| 🤖 LEO | Cron-driven (collecte → analyse → livrable) |
 
 ---
 
@@ -108,15 +109,16 @@ Tous les bureaux suivent le même squelette :
 
 ### 🧠 Analyses Agent Pro
 
-Toutes les analyses produites par les bureaux (DeepSeek Pro/Flash) sont indexées dans le **[Portail Agent Pro](wiki/agent-pro/index.md)** — accessible depuis le menu **PRIVÉ → 🧠 Agent Pro**.
+Toutes les analyses produites par les bureaux sont indexées dans le **[Portail Agent Pro](wiki/agent-pro/index.md)** — accessible depuis le menu **🧠 Agent Pro**.
 
 | Bureau | Rôle | Accès analyses |
 |:-------|:-----|:---------------|
-| 🏗️ Gérard | Documentation T600 | [Voir les analyses](wiki/agent-pro/gerard/index.md) |
-| 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/robert/index.md) |
-| 💰 Sophie | Pilotage Économique & Financier | [Voir les analyses](wiki/agent-pro/sophie/index.md) |
-| 🔧 Michel | Automatisation & Infrastructure n8n | [Voir les analyses](wiki/agent-pro/michel/index.md) |
-| 🧭 Sylvie | Voyages | [Voir les analyses](wiki/agent-pro/sylvie/index.md) |
+| 🤖 LEO | Dossiers & analyses LEO | [Voir les analyses](wiki/agent-pro/bureau-leo/index.md) |
+| 📝 Gérard | Documentation T600 | [Voir les analyses](wiki/agent-pro/bureau-gerard/index.md) |
+| 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/bureau-robert/index.md) |
+| 💰 Sophie | Pilotage Économique & Financier | [Voir les analyses](wiki/agent-pro/bureau-sophie/index.md) |
+| 🔧 Michel | Automatisation & Infrastructure | [Voir les analyses](wiki/agent-pro/bureau-michel/index.md) |
+| 🧭 Sylvie | Voyages | [Voir les analyses](wiki/agent-pro/bureau-sylvie/index.md) |
 
 ### Appels formels PRO
 
@@ -142,16 +144,15 @@ flowchart LR
 flowchart LR
     Gerard["📝 Gérard"] -->|"docs techniques T600"| WikiOCA["Wiki OCA"]
     Sylvie["🧭 Sylvie"] -->|"journaux de bord"| WikiVoyages["Wiki Voyages"]
-    Admin["⚙️ Admin"] -->|"métriques temps réel"| Dashboards["Dashboards"]
-    Tous["Tous"] -->|"connaissance des bureaux"| BAVI["BAVI LEO wiki"]
+    Michel["🔧 Michel"] -->|"audits, analyses"| BAVI["BAVI LEO wiki"]
+    LEO["🤖 LEO"] -->|"dossiers perso"| BAVI
 
     style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Admin fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Tous fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Michel fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style LEO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style WikiOCA fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style WikiVoyages fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Dashboards fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style BAVI fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     linkStyle default stroke-width:2px,fill:none
 ```
@@ -164,7 +165,7 @@ flowchart LR
 | 📄 Partage direction | **Google Docs** | 🏛️ Robert, 🛡️ AO |
 | 📊 Modèle financier | **Google Sheets** | 💰 Sophie |
 | 📽️ Présentation comité | **Google Slides** | 🏛️ Robert |
-| 🏠 Projets personnels | `.md` — wiki | 📝 Gérard, 🧭 Sylvie |
+| 🏠 Projets personnels | `.md` — wiki | 📝 Gérard, 🧭 Sylvie, 🤖 LEO |
 
 ---
 
@@ -184,25 +185,15 @@ flowchart LR
 |-------|--------|-----------|:-----:|
 | `bureau-gerard` | 📝 Gérard | Documentation T600, 6 agents + 2 supports | 2.0 |
 | `bureau-sylvie` | 🧭 Sylvie | Voyages camping-car, 3 experts, carto OSM | 2.0 |
+| `bureau-michel` | 🔧 Michel | Infrastructure, code, système, DeepSeek Pro | ✅ Actif |
+| `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | 🆕 Nouveau |
 
-### Infrastructure — LEO Admin
+### Infrastructure — Monitoring & Outils
 
 | Skill | Rôle |
 |-------|------|
 | `budget-tracking` | Suivi budget DeepSeek |
 | `machine-metrics` | Collecte CPU/RAM/Disk 3 machines |
-
-### 🔧 Bureau Michel — Infrastructure & Système (DeepSeek Pro)
-
-Nouveau bureau technique dédié aux installations, débogage et gestion système. Particularité : tous ses sous-experts utilisent **DeepSeek Pro** en sous-agent.
-
-| Expert | Rôle |
-|--------|------|
-| **SysAdmin** | Installation OS, services, Docker |
-| **DevOps** | CI/CD, GitHub Actions, déploiements |
-| **Networker** | Debug réseau, DNS, proxy, Tailscale |
-| **Scripteur** | Scripts Python/bash, automation, crons |
-| **DataDoc** | Documentation technique, audits, rapports |
 | `dashboard-kpi` | Dashboard KPI Hermes |
 | `system-management` | Gestion machines Tailscale |
 | `leo-email-assistant` | Envoi emails Gmail OAuth2 |
@@ -214,12 +205,12 @@ Nouveau bureau technique dédié aux installations, débogage et gestion systèm
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 7 (4 PRO + 3 PRIVÉ) |
+| **Bureaux** | 6 (3 PRO + 2 PRIVÉ + 1 LEO) |
 | **Dashboards temps réel** | 7 |
-| **Crons automatisés** | 17 ✅ tous verts |
-| **Sessions Hermes** | 90 |
-| **Messages échangés** | 4 651 |
-| **Skills installés** | 103 |
+| **Crons automatisés** | 28 ✅ tous verts |
+| **Sessions Hermes** | 90+ |
+| **Messages échangés** | 4 651+ |
+| **Skills installés** | 110 |
 | **Modèles LLM** | 4 (DeepSeek Flash + Pro + Ollama + Gemini) |
 | **Coût DeepSeek** | Suivi dashboard (budget fr) |
 
@@ -234,9 +225,9 @@ Nouveau bureau technique dédié aux installations, débogage et gestion systèm
 | Routage intelligent | ✅ Bon modèle pour chaque tâche |
 | Documentation vivante | ✅ Wikis auto-déployés GH Pages |
 | Gestion des coûts API | ✅ Budget dashboard suivi |
-| Fiabilité crons | ✅ 17 crons, tous verts, no_agent |
+| Fiabilité crons | ✅ 28 crons, tous verts, no_agent |
 | Miroir Drive ↔ GitHub | ✅ Sync bidirectionnelle 18h |
-| 📋 Suivi implémentations | ✅ [leo-tracker](https://github.com/christophedanhier-hash/leo-tracker) — Kanban Project V2, [8 issues](https://github.com/christophedanhier-hash/leo-tracker/issues/4) |
+| 📋 Suivi implémentations | ✅ [leo-tracker](https://github.com/christophedanhier-hash/leo-tracker) |
 
 ---
 
