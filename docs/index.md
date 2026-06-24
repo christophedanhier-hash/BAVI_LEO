@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 7 bureaux spécialisés · 17 crons automatisés · 7 dashboards temps réel · 4 modèles LLM
+> 5 bureaux spécialisés · 28 crons automatisés · 7 dashboards temps réel · 3 bots Telegram
 
 ---
 
@@ -41,8 +41,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 flowchart LR
     Telegram["📱 Telegram"]
     LEO["🤖 LEO (Hermes Agent)"]
-    PRO["🏢 PRO<br/>Robert · Sophie · AO"]
-    PRIVE["🏠 PRIVÉ<br/>Gérard · Sylvie · Michel · Admin"]
+    Bureaux["🧠 Bureaux<br/>Gérard · Michel · Robert<br/>Sophie · Sylvie"]
     DeepSeek["☁️ DeepSeek API<br/>Flash + Pro"]
     Ollama["🏠 Ollama<br/>qwen2.5:7b"]
     Gemini["⚡ Gemini API<br/>Fallback"]
@@ -51,13 +50,11 @@ flowchart LR
     LEO -->|"routage intelligent"| DeepSeek
     LEO -->|"tâches gratuites"| Ollama
     LEO -->|"si indisponible"| Gemini
-    LEO -->|"dispatch"| PRO
-    LEO -->|"dispatch"| PRIVE
+    LEO -->|"dispatch"| Bureaux
 
     style Telegram fill:#e3f2fd,stroke:#1976d2
     style LEO fill:#e3f2fd,stroke:#1976d2
-    style PRO fill:#e3f2fd,stroke:#1976d2
-    style PRIVE fill:#e3f2fd,stroke:#1976d2
+    style Bureaux fill:#e3f2fd,stroke:#1976d2
     style DeepSeek fill:#e3f2fd,stroke:#1976d2
     style Ollama fill:#e3f2fd,stroke:#1976d2
     style Gemini fill:#e3f2fd,stroke:#1976d2
