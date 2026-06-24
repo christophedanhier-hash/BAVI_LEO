@@ -28,7 +28,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 | 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
-| 🔧 **Michel** | Infrastructure, code, système (DeepSeek Pro) | PRIVÉ | ✅ Actif |
+| 🔧 **Michel** | Infrastructure, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
 | 🤖 **LEO** | Dossiers & analyses personnelles | LEO | 🆕 Nouveau |
 
 ---
@@ -100,7 +100,7 @@ Tous les bureaux suivent le même squelette :
 | 🛡️ AO | Workflow raccourci ①→③→⑥ (expert unique transverse) |
 | 📝 Gérard | Croisement obligatoire Hardware ↔ Firmware |
 | 🧭 Sylvie | Cartographie OSM en parallèle de l'itinéraire |
-| 🔧 Michel | Sous-agent DeepSeek Pro pour tâches lourdes |
+| 🔧 **Michel** | Léo Copilot — Sous-agent DeepSeek Pro pour tâches lourdes |
 | 🤖 LEO | Cron-driven (collecte → analyse → livrable) |
 
 ---
@@ -185,7 +185,7 @@ flowchart LR
 |-------|--------|-----------|:-----:|
 | `bureau-gerard` | 📝 Gérard | Documentation T600, 6 agents + 2 supports | 2.0 |
 | `bureau-sylvie` | 🧭 Sylvie | Voyages camping-car, 3 experts, carto OSM | 2.0 |
-| `bureau-michel` | 🔧 Michel | Infrastructure, code, système, DeepSeek Pro | ✅ Actif |
+| `bureau-michel` | 🔧 Michel | Léo Copilot — Infrastructure, code, système, DeepSeek Pro | ✅ Actif |
 | `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | 🆕 Nouveau |
 
 ### Infrastructure — Monitoring & Outils
