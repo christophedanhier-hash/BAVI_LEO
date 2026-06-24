@@ -51,6 +51,7 @@ extra_javascript:
 
 nav:
   - 🌐 Portail LEO:
+    - 🤖 Wiki LEO (Hermes): https://christophedanhier-hash.github.io/hermes-wiki/
     - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
     - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
     - 📋 Tracker: https://github.com/christophedanhier-hash/leo-tracker/issues
