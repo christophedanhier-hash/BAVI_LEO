@@ -5,8 +5,6 @@
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
 
-Consultez les analyses d'architecture dans le menu **📐 Architecture & Décisions** : choix des modèles, comparatifs, décisions techniques.
-
 ## 🏢 Bureaux de production
 
 | Bureau | Rôle | Analyses | Dernière activité |

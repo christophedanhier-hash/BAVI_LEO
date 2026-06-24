@@ -62,8 +62,5 @@ nav:
     - 🏛️ Bureau Robert — Stratégie: wiki/agent-pro/bureau-robert/index.md
     - 💰 Bureau Sophie — Finance: wiki/agent-pro/bureau-sophie/index.md
     - 🧭 Bureau Sylvie — Voyages: wiki/agent-pro/bureau-sylvie/index.md
-  - 📐 Architecture & Décisions:
-    - 🦁 Pourquoi DeepSeek (pas Copilot): wiki/agent-pro/analyses/pourquoi-deepseek-pas-copilot.md
-    - 💰 Pourquoi DeepSeek (pas Gemini): wiki/agent-pro/analyses/pourquoi-deepseek-pas-gemini.md
   - 📚 Skills LEO: skills.md
   - 📖 Guide d'utilisation: guide-utilisation.md
