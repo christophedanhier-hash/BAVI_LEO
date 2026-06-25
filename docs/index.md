@@ -28,7 +28,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 | 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
-| 🔧 **Michel** | Infrastructure, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
+| 🔧 **Michel — Infra_Hermes** | Infrastructure Hermes, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
 | 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
 | 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | ✅ Actif |
 
@@ -42,7 +42,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 flowchart LR
     Telegram["📱 Telegram"]
     LEO["🤖 LEO (Hermes Agent)"]
-    Bureaux["🧠 Bureaux<br/>Gérard · Michel · Robert<br/>Sophie · Sylvie · LEO<br/>Virginie"]
+    Bureaux["🧠 Bureaux<br/>Gérard · Michel — Infra_Hermes<br/>Robert · Sophie · Sylvie<br/>LEO · Virginie"]
     DeepSeek["☁️ DeepSeek API<br/>Flash + Pro"]
     Ollama["🏠 Ollama<br/>qwen2.5:7b"]
     Gemini["⚡ Gemini API<br/>Fallback"]
@@ -101,7 +101,7 @@ Tous les bureaux suivent le même squelette :
 | 🛡️ AO | Workflow raccourci ①→③→⑥ (expert unique transverse) |
 | 📝 Gérard | Croisement obligatoire Hardware ↔ Firmware |
 | 🧭 Sylvie | Cartographie OSM en parallèle de l'itinéraire |
-| 🔧 **Michel** | Léo Copilot — Sous-agent DeepSeek Pro pour tâches lourdes |
+| 🔧 **Michel — Infra_Hermes** | Léo Copilot — Infrastructure Hermes, code, DeepSeek Pro |
 | 🩺 **Virginie** | Orchestration médicale — dispatch spécialistes + croisement des diagnostics |
 | 🤖 LEO | Cron-driven (collecte → analyse → livrable) |
 
@@ -120,7 +120,7 @@ Toutes les analyses produites par les bureaux sont indexées dans le **[Portail 
 | 📝 Gérard | Documentation T600 | [Voir les analyses](wiki/agent-pro/bureau-gerard/index.md) |
 | 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/bureau-robert/index.md) |
 | 💰 Sophie | Pilotage Économique & Financier | [Voir les analyses](wiki/agent-pro/bureau-sophie/index.md) |
-| 🔧 Michel | Automatisation & Infrastructure | [Voir les analyses](wiki/agent-pro/bureau-michel/index.md) |
+| 🔧 Michel — Infra_Hermes | Infrastructure Hermes | [Voir les analyses](wiki/agent-pro/bureau-michel/index.md) |
 | 🧭 Sylvie | Voyages | [Voir les analyses](wiki/agent-pro/bureau-sylvie/index.md) |
 
 ### Appels formels PRO
@@ -181,7 +181,7 @@ flowchart LR
 | `bureau-robert` | 🏛️ Robert | Conseil IT stratégique, 7 experts dispatch | 2.0 |
 | `bureau-sophie` | 💰 Sophie | Pilotage financier, TCO/ROI, 3 scenarii | 2.0 |
 | `assurance-obligatoire` | 🛡️ AO | Lentille métier AO, expert transverse | 2.0 |
-| `bureau-michel` | 🔧 Michel | Léo Copilot — Infrastructure, code, système, DeepSeek Pro | ✅ Actif |
+| `bureau-michel` | 🔧 Michel — Infra_Hermes | Léo Copilot — Infrastructure, code, système, DeepSeek Pro | ✅ Actif |
 
 ### Skills PRIVÉ — Personnel
 

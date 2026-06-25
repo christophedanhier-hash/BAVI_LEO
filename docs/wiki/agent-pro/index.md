@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 25/06/2026 à 11:09*
+*Généré automatiquement le 25/06/2026 à 20:15*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -12,12 +12,12 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 3 | 12/06/2026 |
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
-| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 3 | 24/06/2026 |
+| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 4 | N/A |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvie/) | Voir le skill | 0 | — |
 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 1 | 24/06/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 
-**Total : 8 analyse(s) sur l'ensemble des bureaux.**
+**Total : 9 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -25,6 +25,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
+| N/A | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | — | ~~Rapport Technique — Ollama qwen2.5:7b comme Chatbot Telegram~~ ⚠️ | — | ⚠️ Non conforme |
 | 25/06/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v2 | [🩺 Consultation Virginie — Sylvie Michaux](bureau-virginie/consultation-sylvie-michaux/) | `virginie` `consultation` `sylvie` `medical` `diagnostique` `pluridisciplinaire` | ✅ Finalisé | [📥](bureau-virginie/consultation-sylvie-michaux/?print-pdf) 🗑️ |
 | 24/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🚗 Dossier Skoda Enyaq — Achat & Installation](bureau-leo/dossiers/dossier-skoda-enyaq/) | `skoda` `enyaq` `vehicule` `leasing` `borne-recharge` `eneco` | 🔄 En cours | [📥](bureau-leo/dossiers/dossier-skoda-enyaq/?print-pdf) 🗑️ |
 | 24/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [Amélioration Bureau Michel — v1.1 → v2.0](bureau-michel/amelioration-skill-v2-20260624/) | `amelioration` `skill` `infrastructure` `bavi-leo` | proposition | [📥](bureau-michel/amelioration-skill-v2-20260624/?print-pdf) 🗑️ |
@@ -36,4 +37,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 25/06/2026 11:09*
+*Index consolidé généré par `agent-pro-index.py` — 25/06/2026 20:15*
