@@ -1,16 +1,16 @@
 ---
 date: 2026-06-25
 bureau: bureau-michel
-version: v2.1
+version: v2.2
 modele: deepseek-v4-pro
-tags: [ollama, qwen, chatbot, telegram, gemini, analyse, modele]
+tags: [ollama, qwen, chatbot, telegram, gemini, analyse, modele, memoire, pedagogique, emile]
 statut: analyse
 type: analyse
 ---
 
-# Analyse — Bot Telegram : Gemini + qwen2.5:7b (fallback)
+# Analyse — Bot Telegram : Gemini + qwen2.5 (fallback) + Scope Mémoire Pédagogique
 
-**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v2.1
+**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v2.2
 **Date :** 25/06/2026 | **Type :** Analyse (①→③→⑤→⑥→⑦)
 
 ---
@@ -20,21 +20,32 @@ type: analyse
 | Métrique | Valeur |
 |:---------|------:|
 | Sessions LEO | 1 |
-| Tokens consommés | ~15K IN · ~5K OUT |
-| Coût DeepSeek réel | **~0,01 €** |
+| Tokens consommés | ~18K IN · ~6K OUT |
+| Coût DeepSeek réel | **~0,02 €** |
 | Frais de service BAVI LEO | 1,00 € |
-| **Total facturé** | **1,01 €** |
+| **Total facturé** | **1,02 €** |
 
 ---
 
 ## ① CADRAGE
 
-**Question :** Un bot Telegram utilisant Gemini 2.0 Flash en primaire et qwen2.5:7b (Ollama local) en fallback est-il viable techniquement et économiquement ?
+### Scopes
 
-**Contexte :**
-- Ollama qwen2.5:7b sur LEO (100.92.102.28:11434), CPU, 41 tok/s
-- Gemini API key disponible
-- Objectif : bot fiable, gratuit, avec filet de sécurité local
+| Scope | Description | Contrainte clé |
+|---|---|---|
+| **Scope 1 — Chatbot général** | Bot Telegram fiable, gratuit, pour usage quotidien | Fiabilité, coût 0€ |
+| **Scope 2 — Mémoire Émile** 🆕 | Assistant de rédaction pour le mémoire de fin d'études d'Émile, sur des aspects pédagogiques | Long contexte, qualité rédactionnelle, rigueur académique |
+
+### Contexte technique
+- Ollama qwen2.5:7b sur LEO (CPU, 41 tok/s, 32K contexte)
+- Gemini 2.0 Flash : API disponible, 1M contexte, 15 RPM gratuit
+- Référence : le « bot voyage » (Sylvie) suit un pattern similaire — assistant spécialisé avec instructions système dédiées
+
+### Contraintes spécifiques Scope 2 (Mémoire)
+- **Contexte long indispensable** : un mémoire fait 50-150 pages. Le modèle doit pouvoir ingérer des chapitres entiers pour fournir des retours cohérents
+- **Qualité rédactionnelle** : français académique, structuration, citations
+- **Rigueur** : pas d'hallucinations sur des faits, dates, auteurs
+- **Pattern « bot voyage »** : système prompt dédié, personnalité adaptée, contexte persistant
 
 **Type de livrable :** Analyse (①→③→⑤→⑥→⑦)
 
@@ -49,89 +60,119 @@ type: analyse
 | **Modèle** | Gemini 2.0 Flash (Google) |
 | **Qualité français** | 9/10 |
 | **Raisonnement** | 8/10 |
-| **Contexte max** | 1M tokens |
+| **Contexte max** | 1M tokens (~700 pages) |
 | **Vision** | ✅ |
 | **Fonction calling** | ✅ |
 | **Vitesse** | ~80 tok/s (API) |
 
 ### Gemini — Tiers gratuit (Google AI Studio)
 
-| Limite | Valeur | Impact bot |
-|---|---|---|
-| **RPM** (Requests Per Minute) | 15 req/min | Si >15 msg/min → erreur 429 |
-| **TPM** (Tokens Per Minute) | 1M tok/min | Large pour du chat |
-| **RPD** (Requests Per Day) | 1 500 req/jour | ~50 msg/heure, usage perso OK |
-| **Coût** | 0€ dans ces limites | Gratuit |
+| Limite | Valeur | Impact Scope 1 | Impact Scope 2 |
+|---|---|---|---|
+| **RPM** | 15 req/min | Léger | Léger (usage solo) |
+| **TPM** | 1M tok/min | Large | OK même avec gros prompts |
+| **RPD** | 1 500 req/jour | ~50 msg/h | Large pour 1 utilisateur |
+| **Coût** | 0€ | Gratuit | Gratuit |
 
 ### qwen2.5:7b — Specifications
 
-| Critère | Valeur |
-|---|---|
-| **Modèle** | qwen2.5:7b (Alibaba) |
-| **Paramètres / RAM** | 7.6B / Q4_K_M (~4.7 Go) |
-| **Contexte max** | 32K tokens |
-| **Vitesse** | 41 tok/s (CPU) |
-| **Coût** | 0€ (local) |
+| Critère | Valeur | Compatible Scope 2 ? |
+|---|---|---|
+| **Modèle** | qwen2.5:7b | ⚠️ Limité |
+| **Contexte max** | 32K tokens (~25 pages) | ❌ Insuffisant pour un mémoire |
+| **Vitesse** | 41 tok/s (CPU) | ✅ |
+| **Coût** | 0€ (local) | ✅ |
 
-### Matrice Forces/Faiblesses
+### Impact du Scope 2 sur l'architecture
 
-| ✅ Forces | ❌ Faiblesses |
-|---|---|
-| Gemini : fiable, 9/10 français, 1M contexte | Gemini : limité à 15 RPM / 1 500 RPD |
-| qwen2.5 : 24/7 local, pas de rate limit | qwen2.5 : switch chinois, hallucinations |
-| Architecture redondante : jamais down | Double maintenance (2 APIs) |
-| Coût total : 0€ | Latence fallback : +2-3s si bascule |
+| Exigence Mémoire | Gemini 2.0 Flash | qwen2.5:7b |
+|---|---|---|
+| Contexte > 100 pages | ✅ 1M tokens | ❌ 32K max |
+| Français académique | ✅ 9/10 | ⚠️ 7/10 + risque chinois |
+| Structuration (plan, chapitres) | ✅ | ⚠️ |
+| Citations, références | ✅ | ⚠️ Hallucinations |
+| Relecture orthographique | ✅ | ✅ |
+| Recherche documentaire | ✅ | ⚠️ |
 
-### Architecture corrigée
+**Constats :** Pour le Scope 2 (mémoire), Gemini est le seul viable. qwen2.5 ne peut pas ingérer un mémoire et sa qualité rédactionnelle est insuffisante pour de l'académique. Pour le Scope 1 (chat général), l'architecture hybride fonctionne.
+
+### Architecture
 
 ```
-┌─────────────────────────────────────────┐
-│          Bot Telegram (nouveau)          │
-└─────────────────┬───────────────────────┘
-                  │
-                  ▼
-        ┌─────────────────┐
-        │ Gemini 2.0 Flash │  ← PRIMAIRE
-        │   (API Google)   │     Fiable, qualitatif
-        │     Gratuit*      │     80% des requêtes
-        └────────┬─────────┘
-                 │
-                 │  Si 429 (rate limit)
-                 │  OU timeout (>10s)
-                 │  OU erreur API
-                 ▼
-        ┌─────────────────┐
-        │   qwen2.5:7b     │  ← FALLBACK
-        │  (Ollama local)  │     Filet de sécurité
-        │      0€          │     ~20% des requêtes
-        └─────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│                   Bot Telegram (profil unique)            │
+│                                                          │
+│  ┌─────────────────────┐    ┌──────────────────────────┐ │
+│  │   Scope 1 : Chat     │    │  Scope 2 : Mémoire Émile  │ │
+│  │   (usage quotidien)  │    │  (session dédiée)         │ │
+│  └──────────┬──────────┘    └──────────┬───────────────┘ │
+│             │                          │                  │
+│             ▼                          ▼                  │
+│  ┌───────────────────┐    ┌──────────────────────────┐   │
+│  │ Gemini 2.0 Flash  │    │   Gemini 2.0 Flash ONLY   │   │
+│  │    (primaire)     │    │   (pas de fallback qwen)  │   │
+│  └────────┬──────────┘    │   Système prompt dédié :  │   │
+│           │               │   « Assistant pédagogique │   │
+│           │ 429/timeout   │    pour mémoire de fin     │   │
+│           ▼               │    d'études »             │   │
+│  ┌───────────────────┐    └──────────────────────────┘   │
+│  │   qwen2.5:7b      │                                    │
+│  │   (fallback)      │                                    │
+│  │   Usage général    │                                    │
+│  │   seulement        │                                    │
+│  └───────────────────┘                                    │
+└──────────────────────────────────────────────────────────┘
 
-* Gratuit dans les limites : 15 RPM, 1M TPM, 1500 RPD
+Règle : Scope 2 (Mémoire) → Gemini uniquement. Pas de fallback qwen
+        car 32K insuffisant + qualité académique non garantie.
 ```
+
+### Pattern « bot voyage » appliqué au Scope 2
+
+| Élément | Bot Voyage (Sylvie) | Bot Mémoire (Émile) |
+|---|---|---|
+| **Système prompt** | Assistant voyage, campings, itinéraires | Assistant pédagogique, mémoire, recherche |
+| **Personnalité** | Conseiller voyage pratique | Tuteur académique rigoureux |
+| **Contexte** | Roadbook, étapes, réservations | Plan de mémoire, chapitres, bibliographie |
+| **Session** | Persistante par roadbook | Persistante par chapitre/thématique |
+| **Modèle** | DeepSeek Pro | Gemini 2.0 Flash |
 
 ---
 
 ## ⑤ SYNTHÈSE
 
-**Verdict :** 🟢 Go
+### Scope 1 — Chat général
+🟢 Go — Gemini primary, qwen2.5 fallback. Architecture robuste, 0€.
 
-Architecture robuste et gratuite :
-- **Gemini primary** : propriétaire de la conversation, qualité garantie pour 80%+ des requêtes
-- **qwen2.5 fallback** : filet de sécurité local, absorbe les dépassements de rate limit
-- **Coût total** : 0€ (dans les limites du tiers gratuit Gemini)
-- **Risque** : faible — le fallback local assure la continuité même si l'API Google est down
+### Scope 2 — Mémoire Émile
+🟡 Go conditionnel — Gemini uniquement, sans fallback.
+
+- ✅ Gemini 2.0 Flash est **techniquement suffisant** pour l'assistance à la rédaction de mémoire
+- ✅ Le **contexte 1M tokens** permet d'ingérer des chapitres entiers
+- ✅ Le **tiers gratuit** (1 500 RPD) est large pour un usage solo étudiant
+- ⚠️ **Pas de fallback qwen** : 32K insuffisant + switch chinois = risque pour un mémoire
+- ⚠️ Si rate limit Gemini atteint → l'étudiante doit attendre (pas de plan B local)
+
+### Recommandation
+
+| Scope | Architecture | Coût |
+|---|---|---|
+| Scope 1 (Général) | Gemini primary → qwen fallback | 0€ |
+| Scope 2 (Mémoire) | Gemini uniquement | 0€ |
 
 ---
 
 ## ⑥ LIVRABLE
 
-| # | Recommandation | Priorité | Effort |
-|---|---------------|:--------:|:------:|
-| 1 | Créer un nouveau profil Hermes ou webhook Telegram | 🔴 Haute | 1h |
-| 2 | Implémenter le script de bascule : 429/timeout → qwen | 🔴 Haute | 1h |
-| 3 | Compteur RPM local pour anticiper les limites | 🟡 Moyenne | 30min |
-| 4 | Watchdog + cron healthcheck (les 2 endpoints) | 🟡 Moyenne | 30min |
-| 5 | Dashboard monitoring (requêtes, bascules, coûts) | 🟢 Basse | 2h |
+| # | Action | Scope | Priorité | Effort |
+|---|--------|:-----:|:--------:|:------:|
+| 1 | Créer le profil Hermes/webhook Telegram | 1+2 | 🔴 Haute | 1h |
+| 2 | Implémenter bascule 429 → qwen (Scope 1) | 1 | 🔴 Haute | 1h |
+| 3 | Rédiger le système prompt « Assistant Mémoire » | 2 | 🔴 Haute | 2h |
+| 4 | Blinder Scope 2 : pas de fallback, message clair si rate limit | 2 | 🔴 Haute | 30min |
+| 5 | Tests avec un extrait de mémoire réel | 2 | 🟡 Moyenne | 1h |
+| 6 | Watchdog + cron healthcheck | 1+2 | 🟡 Moyenne | 30min |
+| 7 | Dashboard monitoring (requêtes, bascules, coûts) | 1+2 | 🟢 Basse | 2h |
 
 ---
 
