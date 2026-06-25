@@ -1,16 +1,16 @@
 ---
 date: 2026-06-25
 bureau: bureau-michel
-version: v2.2
+version: v3.0
 modele: deepseek-v4-pro
-tags: [ollama, qwen, chatbot, telegram, gemini, analyse, modele, memoire, pedagogique, emile]
+tags: [deepseek, gemini, chatbot, telegram, memoire, emile, analyse]
 statut: analyse
 type: analyse
 ---
 
-# Analyse — Bot Telegram : Gemini + qwen2.5 (fallback) + Scope Mémoire Pédagogique
+# Analyse — Bot Telegram : DeepSeek v4 Flash + Gemini 3.5 Flash (fallback)
 
-**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v2.2
+**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v3.0
 **Date :** 25/06/2026 | **Type :** Analyse (①→③→⑤→⑥→⑦)
 
 ---
@@ -20,7 +20,7 @@ type: analyse
 | Métrique | Valeur |
 |:---------|------:|
 | Sessions LEO | 1 |
-| Tokens consommés | ~18K IN · ~6K OUT |
+| Tokens consommés | ~20K IN · ~8K OUT |
 | Coût DeepSeek réel | **~0,02 €** |
 | Frais de service BAVI LEO | 1,00 € |
 | **Total facturé** | **1,02 €** |
@@ -33,19 +33,15 @@ type: analyse
 
 | Scope | Description | Contrainte clé |
 |---|---|---|
-| **Scope 1 — Chatbot général** | Bot Telegram fiable, gratuit, pour usage quotidien | Fiabilité, coût 0€ |
-| **Scope 2 — Mémoire Émile** 🆕 | Assistant de rédaction pour le mémoire de fin d'études d'Émile, sur des aspects pédagogiques | Long contexte, qualité rédactionnelle, rigueur académique |
+| **Scope 1 — Chat général** | Bot Telegram quotidien | Fiabilité, coût maîtrisé |
+| **Scope 2 — Mémoire Émile** | Assistant de rédaction pour mémoire de fin d'études (aspects pédagogiques) | Qualité rédactionnelle, contexte long, rigueur |
 
-### Contexte technique
-- Ollama qwen2.5:7b sur LEO (CPU, 41 tok/s, 32K contexte)
-- Gemini 2.0 Flash : API disponible, 1M contexte, 15 RPM gratuit
-- Référence : le « bot voyage » (Sylvie) suit un pattern similaire — assistant spécialisé avec instructions système dédiées
+### Décision finale
 
-### Contraintes spécifiques Scope 2 (Mémoire)
-- **Contexte long indispensable** : un mémoire fait 50-150 pages. Le modèle doit pouvoir ingérer des chapitres entiers pour fournir des retours cohérents
-- **Qualité rédactionnelle** : français académique, structuration, citations
-- **Rigueur** : pas d'hallucinations sur des faits, dates, auteurs
-- **Pattern « bot voyage »** : système prompt dédié, personnalité adaptée, contexte persistant
+Après évaluation de qwen2.5:7b (❌ switch chinois, 32K contexte insuffisant) et des modèles Gemini Pro (💸 coût élevé dû aux *thinking tokens*), l'architecture retenue est :
+
+- **Primaire : DeepSeek v4 Flash** — fiable, économique, déjà en production (LEO Hermes)
+- **Fallback : Gemini 3.5 Flash** — 1M contexte, dernière génération (mai 2026)
 
 **Type de livrable :** Analyse (①→③→⑤→⑥→⑦)
 
@@ -53,126 +49,107 @@ type: analyse
 
 ## ③ PRODUCTION
 
-### Gemini 2.0 Flash — Specifications
+### DeepSeek v4 Flash — Primaire
 
 | Critère | Valeur |
 |---|---|
-| **Modèle** | Gemini 2.0 Flash (Google) |
-| **Qualité français** | 9/10 |
-| **Raisonnement** | 8/10 |
+| **Modèle** | deepseek-v4-flash |
+| **Fournisseur** | DeepSeek (Chine) |
+| **Contexte max** | 128K tokens (~100 pages) |
+| **Qualité français** | 8/10 |
+| **Coût input** | ~0,15 $ / 1M tokens |
+| **Coût output** | ~0,60 $ / 1M tokens |
+| **Fiabilité** | ✅ Stable, pas de switch langue |
+| **Expérience LEO** | ✅ En production (LEO Hermes, classifieur) |
+
+### Gemini 3.5 Flash — Fallback
+
+| Critère | Valeur |
+|---|---|
+| **Modèle** | gemini-3.5-flash |
+| **Sortie** | Mai 2026 (dernière génération) |
 | **Contexte max** | 1M tokens (~700 pages) |
-| **Vision** | ✅ |
-| **Fonction calling** | ✅ |
-| **Vitesse** | ~80 tok/s (API) |
+| **Qualité français** | 9/10 |
+| **Coût** | Billing Google (pay-per-use) |
+| **Activation** | Seulement si 128K insuffisant ou erreur DeepSeek |
 
-### Gemini — Tiers gratuit (Google AI Studio)
+### Modèles écartés
 
-| Limite | Valeur | Impact Scope 1 | Impact Scope 2 |
-|---|---|---|---|
-| **RPM** | 15 req/min | Léger | Léger (usage solo) |
-| **TPM** | 1M tok/min | Large | OK même avec gros prompts |
-| **RPD** | 1 500 req/jour | ~50 msg/h | Large pour 1 utilisateur |
-| **Coût** | 0€ | Gratuit | Gratuit |
+| Modèle | Raison |
+|---|---|
+| qwen2.5:7b | ❌ Switch chinois, 32K contexte, hallucinations |
+| Gemini 2.5 Pro | ❌ Thinking tokens coûteux (96% de la sortie = pensée) |
+| Gemini 3.1 Pro | ❌ Idem — Pro models trop chers pour usage étudiant |
+| Gemini 2.0 Flash | ❌ Retiré par Google |
 
-### qwen2.5:7b — Specifications
-
-| Critère | Valeur | Compatible Scope 2 ? |
-|---|---|---|
-| **Modèle** | qwen2.5:7b | ⚠️ Limité |
-| **Contexte max** | 32K tokens (~25 pages) | ❌ Insuffisant pour un mémoire |
-| **Vitesse** | 41 tok/s (CPU) | ✅ |
-| **Coût** | 0€ (local) | ✅ |
-
-### Impact du Scope 2 sur l'architecture
-
-| Exigence Mémoire | Gemini 2.0 Flash | qwen2.5:7b |
-|---|---|---|
-| Contexte > 100 pages | ✅ 1M tokens | ❌ 32K max |
-| Français académique | ✅ 9/10 | ⚠️ 7/10 + risque chinois |
-| Structuration (plan, chapitres) | ✅ | ⚠️ |
-| Citations, références | ✅ | ⚠️ Hallucinations |
-| Relecture orthographique | ✅ | ✅ |
-| Recherche documentaire | ✅ | ⚠️ |
-
-**Constats :** Pour le Scope 2 (mémoire), Gemini est le seul viable. qwen2.5 ne peut pas ingérer un mémoire et sa qualité rédactionnelle est insuffisante pour de l'académique. Pour le Scope 1 (chat général), l'architecture hybride fonctionne.
-
-### Architecture
+### Architecture finale
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                   Bot Telegram (profil unique)            │
-│                                                          │
-│  ┌─────────────────────┐    ┌──────────────────────────┐ │
-│  │   Scope 1 : Chat     │    │  Scope 2 : Mémoire Émile  │ │
-│  │   (usage quotidien)  │    │  (session dédiée)         │ │
-│  └──────────┬──────────┘    └──────────┬───────────────┘ │
-│             │                          │                  │
-│             ▼                          ▼                  │
-│  ┌───────────────────┐    ┌──────────────────────────┐   │
-│  │ Gemini 2.0 Flash  │    │   Gemini 2.0 Flash ONLY   │   │
-│  │    (primaire)     │    │   (pas de fallback qwen)  │   │
-│  └────────┬──────────┘    │   Système prompt dédié :  │   │
-│           │               │   « Assistant pédagogique │   │
-│           │ 429/timeout   │    pour mémoire de fin     │   │
-│           ▼               │    d'études »             │   │
-│  ┌───────────────────┐    └──────────────────────────┘   │
-│  │   qwen2.5:7b      │                                    │
-│  │   (fallback)      │                                    │
-│  │   Usage général    │                                    │
-│  │   seulement        │                                    │
-│  └───────────────────┘                                    │
-└──────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│               Bot Telegram (profil unique)            │
+│                                                      │
+│  ┌──────────────────┐   ┌──────────────────────────┐ │
+│  │ Scope 1 : Chat    │   │ Scope 2 : Mémoire Émile   │ │
+│  │ (quotidien)       │   │ (pédagogique)             │ │
+│  └────────┬─────────┘   └──────────┬───────────────┘ │
+│           │                        │                  │
+│           ▼                        ▼                  │
+│  ┌─────────────────────────────────────────────────┐ │
+│  │           DeepSeek v4 Flash (PRIMAIRE)           │ │
+│  │   • 128K contexte                               │ │
+│  │   • Fiable, économique, éprouvé LEO              │ │
+│  │   • Système prompt dédié par scope              │ │
+│  └────────────────────┬────────────────────────────┘ │
+│                       │                               │
+│                       │ Si erreur OU besoin >128K     │
+│                       ▼                               │
+│  ┌─────────────────────────────────────────────────┐ │
+│  │          Gemini 3.5 Flash (FALLBACK)             │ │
+│  │   • 1M contexte                                 │ │
+│  │   • Dernière génération (mai 2026)               │ │
+│  │   • Activé uniquement si nécessaire              │ │
+│  └─────────────────────────────────────────────────┘ │
+└──────────────────────────────────────────────────────┘
 
-Règle : Scope 2 (Mémoire) → Gemini uniquement. Pas de fallback qwen
-        car 32K insuffisant + qualité académique non garantie.
+Règle : Gemini 3.5 n'est appelé que si DeepSeek échoue
+        OU si le contexte dépasse 128K (chapitre complet de mémoire).
+        90%+ des requêtes → DeepSeek seul.
 ```
 
-### Pattern « bot voyage » appliqué au Scope 2
+### Pattern « bot voyage » appliqué
 
 | Élément | Bot Voyage (Sylvie) | Bot Mémoire (Émile) |
 |---|---|---|
-| **Système prompt** | Assistant voyage, campings, itinéraires | Assistant pédagogique, mémoire, recherche |
-| **Personnalité** | Conseiller voyage pratique | Tuteur académique rigoureux |
-| **Contexte** | Roadbook, étapes, réservations | Plan de mémoire, chapitres, bibliographie |
-| **Session** | Persistante par roadbook | Persistante par chapitre/thématique |
-| **Modèle** | DeepSeek Pro | Gemini 2.0 Flash |
+| **Système prompt** | Assistant voyage | Assistant pédagogique — mémoire de fin d'études |
+| **Personnalité** | Conseiller pratique | Tuteur académique rigoureux |
+| **Contexte** | Roadbook, itinéraires | Plan de mémoire, chapitres, bibliographie |
+| **Modèle primaire** | DeepSeek Pro | DeepSeek v4 Flash |
+| **Modèle fallback** | Aucun | Gemini 3.5 Flash (1M contexte) |
 
 ---
 
 ## ⑤ SYNTHÈSE
 
-### Scope 1 — Chat général
-🟢 Go — Gemini primary, qwen2.5 fallback. Architecture robuste, 0€.
+🟢 **Go pour implémentation**
 
-### Scope 2 — Mémoire Émile
-🟡 Go conditionnel — Gemini uniquement, sans fallback.
-
-- ✅ Gemini 2.0 Flash est **techniquement suffisant** pour l'assistance à la rédaction de mémoire
-- ✅ Le **contexte 1M tokens** permet d'ingérer des chapitres entiers
-- ✅ Le **tiers gratuit** (1 500 RPD) est large pour un usage solo étudiant
-- ⚠️ **Pas de fallback qwen** : 32K insuffisant + switch chinois = risque pour un mémoire
-- ⚠️ Si rate limit Gemini atteint → l'étudiante doit attendre (pas de plan B local)
-
-### Recommandation
-
-| Scope | Architecture | Coût |
-|---|---|---|
-| Scope 1 (Général) | Gemini primary → qwen fallback | 0€ |
-| Scope 2 (Mémoire) | Gemini uniquement | 0€ |
+- **DeepSeek v4 Flash primaire** : fiable, économique, déjà maîtrisé par LEO
+- **Gemini 3.5 Flash fallback** : filet de sécurité pour longs contextes (1M) et pannes DeepSeek
+- **qwen2.5 retiré** de l'architecture — plus utile
+- **Coût estimé** : < 1€/jour pour usage étudiant normal
+- **Scope Mémoire** prêt : système prompt à rédiger, pattern bot voyage à adapter
 
 ---
 
-## ⑥ LIVRABLE
+## ⑥ LIVRABLE — Plan d'implémentation
 
 | # | Action | Scope | Priorité | Effort |
 |---|--------|:-----:|:--------:|:------:|
-| 1 | Créer le profil Hermes/webhook Telegram | 1+2 | 🔴 Haute | 1h |
-| 2 | Implémenter bascule 429 → qwen (Scope 1) | 1 | 🔴 Haute | 1h |
-| 3 | Rédiger le système prompt « Assistant Mémoire » | 2 | 🔴 Haute | 2h |
-| 4 | Blinder Scope 2 : pas de fallback, message clair si rate limit | 2 | 🔴 Haute | 30min |
-| 5 | Tests avec un extrait de mémoire réel | 2 | 🟡 Moyenne | 1h |
+| 1 | Créer profil Hermes/webhook Telegram | 1+2 | 🔴 Haute | 1h |
+| 2 | Configurer DeepSeek v4 Flash comme primaire | 1+2 | 🔴 Haute | 30min |
+| 3 | Configurer Gemini 3.5 Flash comme fallback (128K+ ou erreur) | 1+2 | 🔴 Haute | 30min |
+| 4 | Rédiger système prompt « Assistant Mémoire » pour Scope 2 | 2 | 🔴 Haute | 2h |
+| 5 | Test avec extrait de mémoire réel | 2 | 🟡 Moyenne | 1h |
 | 6 | Watchdog + cron healthcheck | 1+2 | 🟡 Moyenne | 30min |
-| 7 | Dashboard monitoring (requêtes, bascules, coûts) | 1+2 | 🟢 Basse | 2h |
 
 ---
 
@@ -180,6 +157,7 @@ Règle : Scope 2 (Mémoire) → Gemini uniquement. Pas de fallback qwen
 
 - **Fichier source :** `/opt/data/hermes-christophe/BAVI/AGENT-PRO/bureau-michel/analyse-qwen-chatbot-20260625.md`
 - **Wiki :** BAVI LEO → Agent Pro → Bureau Michel — Infra_Hermes
+- **Prochaine étape :** Implémentation — session planifiée demain
 
 ---
 
