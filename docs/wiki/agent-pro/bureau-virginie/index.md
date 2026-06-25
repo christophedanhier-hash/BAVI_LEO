@@ -1,4 +1,4 @@
-# 🤖 Bureau LEO — Dossiers & Analyses
+# 🩺 Bureau Virginie — Orchestration Médicale
 
 *Généré automatiquement le 25/06/2026 à 11:04*
 
@@ -6,7 +6,7 @@
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 24/06/2026 | v1 | [🚗 Dossier Skoda Enyaq — Achat & Installation](dossiers/dossier-skoda-enyaq/) | `skoda` `enyaq` `vehicule` `leasing` `borne-recharge` `eneco` | 🔄 En cours | [📥](dossiers/dossier-skoda-enyaq/?print-pdf) 🗑️ |
+| 25/06/2026 | v1 | [🩺 Consultation Virginie — Sylvie Michaux](consultation-sylvie-michaux/) | `virginie` `consultation` `sylvie` `medical` `diagnostique` | ✅ Finalisé | [📥](consultation-sylvie-michaux/?print-pdf) 🗑️ |
 
 ---
 
