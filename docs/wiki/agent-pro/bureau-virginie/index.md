@@ -1,12 +1,12 @@
 # 🩺 Bureau Virginie — Orchestration Médicale
 
-*Généré automatiquement le 25/06/2026 à 11:04*
+*Généré automatiquement le 25/06/2026 à 11:09*
 
 **Total : 1 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 25/06/2026 | v1 | [🩺 Consultation Virginie — Sylvie Michaux](consultation-sylvie-michaux/) | `virginie` `consultation` `sylvie` `medical` `diagnostique` | ✅ Finalisé | [📥](consultation-sylvie-michaux/?print-pdf) 🗑️ |
+| 25/06/2026 | v2 | [🩺 Consultation Virginie — Sylvie Michaux](consultation-sylvie-michaux/) | `virginie` `consultation` `sylvie` `medical` `diagnostique` `pluridisciplinaire` | ✅ Finalisé | [📥](consultation-sylvie-michaux/?print-pdf) 🗑️ |
 
 ---
 
