@@ -1,16 +1,16 @@
 ---
 date: 2026-06-25
 bureau: bureau-michel
-version: v1.0
+version: v2.0
 modele: deepseek-v4-pro
-tags: [memoire, emile, pedagogique, bureau, bot, assistant, analyse]
+tags: [memoire, emile, pedagogique, bureau, bot, assistant, wiki, mermaid, analyse]
 statut: analyse
 type: analyse
 ---
 
-# Analyse — Bureau Mémoire : Assistant de rédaction pour Émile
+# Analyse — Bureau Émile : Assistant Pédagogique + Wiki + Sources
 
-**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v1.0
+**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v2.0
 **Date :** 25/06/2026 | **Type :** Analyse (①→③→⑤→⑥→⑦)
 
 ---
@@ -20,135 +20,262 @@ type: analyse
 | Métrique | Valeur |
 |:---------|------:|
 | Sessions LEO | 1 |
-| Tokens consommés | ~10K IN · ~4K OUT |
-| Coût DeepSeek réel | **~0,01 €** |
+| Tokens consommés | ~15K IN · ~6K OUT |
+| Coût DeepSeek réel | **~0,02 €** |
 | Frais de service BAVI LEO | 1,00 € |
-| **Total facturé** | **1,01 €** |
+| **Total facturé** | **1,02 €** |
 
 ---
 
 ## ① CADRAGE
 
-**Demande :** Créer un bureau BAVI dédié à l'assistance à la rédaction du mémoire de fin d'études d'Émile, sur des aspects pédagogiques. Le bot doit fonctionner comme le « bot voyage » de Sylvie : un assistant spécialisé avec personnalité, contexte persistant et instructions système dédiées.
+**Demande complète :**
+- Créer un bot Telegram assistant de rédaction pour le mémoire d'Émile
+- Lui fournir un wiki dédié pour accéder à ses documents
+- Alimenter le bot avec des sources structurées (plan, brouillons, références)
+- Pattern « bot voyage » de Sylvie, adapté à l'académique
 
-**Utilisatrice :** Émile (fille de Christophe), étudiante
-**Domaine :** Pédagogie / Sciences de l'éducation
-**Livrable :** Mémoire de fin d'études (50-150 pages)
-
-**Type de livrable :** Analyse (①→③→⑤→⑥→⑦)
+**Utilisatrice :** Émile, étudiante en sciences de l'éducation
+**Livrable final :** Mémoire de fin d'études (50-150 pages)
 
 ---
 
 ## ③ PRODUCTION
 
-### Concept du Bureau Mémoire
+### Architecture globale
 
-| Élément | Description |
-|---|---|
-| **Nom proposé** | Bureau Émile — Assistant Pédagogique 🎓 |
-| **Type** | Bureau spécialisé mono-utilisateur |
-| **Modèle** | DeepSeek v4 Flash (via API LEO) |
-| **Fallback** | Gemini 3.5 Flash (contexte 1M) |
-| **Pattern** | Inspiré du « bot voyage » (Bureau Sylvie) |
+```mermaid
+flowchart TB
+    subgraph Utilisatrice["👩‍🎓 Émile"]
+        TG[Bot Telegram]
+        WK[Wiki Émile]
+    end
 
-### Différences avec le bot voyage
+    subgraph Sources["📚 Sources de contexte"]
+        PLAN[Plan de mémoire]
+        BROU[Brouillons chapitres]
+        BIBLIO[Bibliographie]
+        NOTES[Notes de recherche]
+        PROF[Retours directeur]
+    end
 
-| Aspect | Bot Voyage (Sylvie) | Bot Mémoire (Émile) |
-|---|---|---|
-| **Domaine** | Camping-car, itinéraires, réservations | Pédagogie, recherche, rédaction académique |
-| **Personnalité** | Conseiller voyage pratique | Tuteur académique rigoureux et encourageant |
-| **Contexte** | Roadbook par voyage | Plan de mémoire, chapitres, bibliographie |
-| **Tâches** | Trouver campings, calculer étapes | Structurer plan, rédiger, relire, citer |
-| **Session** | 1 roadbook = 1 conversation | 1 chapitre = 1 session (ou session continue) |
-| **Livrable final** | Roadbook PDF | Mémoire complet |
+    subgraph LEO["🖥️ LEO - Infra Hermes"]
+        BOT[Bot Hermes - Profil Émile]
+        DS[DeepSeek v4 Flash]
+        GM[Gemini 3.5 Flash]
+        WIKI[Wiki MkDocs - Mémoire Émile]
+        GH[GitHub Pages]
+    end
 
-### Système prompt — Assistant Mémoire
-
-```markdown
-Tu es un assistant pédagogique spécialisé dans l'accompagnement 
-à la rédaction de mémoires de fin d'études. Ton interlocutrice 
-est Émile, une étudiante en sciences de l'éducation.
-
-TON RÔLE :
-- Aider à structurer le plan du mémoire
-- Proposer des axes de recherche et des problématiques
-- Relire et améliorer des passages rédigés (clarté, rigueur)
-- Suggérer des formulations académiques
-- Vérifier la cohérence des arguments
-- Aider à la mise en forme des citations et de la bibliographie
-
-TON COMPORTEMENT :
-- Encourageant mais exigeant — tu vises l'excellence académique
-- Pédagogue : tu expliques POURQUOI une formulation est meilleure
-- Rigoureux : tu signales les imprécisions, les affirmations non étayées
-- Concis : tu vas à l'essentiel, pas de blabla
-- Respectueux du travail d'Émile : tu suggères, tu n'imposes pas
-
-LIMITES :
-- Tu ne rédiges PAS le mémoire à sa place
-- Tu ne fais PAS de recherche documentaire externe (pas de web)
-- Tu ne cites PAS d'auteurs sans vérification
-- Tu travailles avec le contenu qu'Émile te fournit
+    TG <-->|chat| BOT
+    WK -->|lecture docs| WIKI
+    BOT -->|primaire| DS
+    BOT -->|fallback >128K| GM
+    WIKI --> GH
+    BOT -->|lit| WIKI
+    
+    PLAN -->|alimente| BOT
+    BROU -->|alimente| BOT
+    BIBLIO -->|alimente| BOT
+    NOTES -->|alimente| BOT
+    PROF -->|alimente| BOT
+    PLAN -->|publié sur| WIKI
+    BROU -->|publié sur| WIKI
 ```
 
-### Sessions types
+### Le Bot Telegram — Fonctionnement
 
-| Session | Contenu fourni par Émile | Rôle du bot |
-|---|---|---|
-| **Structuration** | Thème, idées générales | Aider à bâtir le plan, formuler la problématique |
-| **Rédaction** | Brouillon de chapitre | Relire, améliorer, suggérer des reformulations |
-| **Argumentation** | Idée/thèse à défendre | Aider à structurer l'argumentation, trouver des failles |
-| **Relecture finale** | Chapitre complet | Vérifier cohérence, orthographe, style académique |
-| **Bibliographie** | Liste de sources | Aider au formatage (APA, etc.) |
+```mermaid
+sequenceDiagram
+    participant E as 👩‍🎓 Émile
+    participant BOT as 🤖 Bot Mémoire
+    participant DS as 🧠 DeepSeek Flash
+    participant GM as 🌐 Gemini 3.5
+    participant WIKI as 📖 Wiki Émile
 
-### Infra technique
+    E->>BOT: "Peux-tu relire mon chapitre 2 ?"
+    BOT->>WIKI: Charger plan + chapitre 2
+    WIKI-->>BOT: Plan.md + Chapitre2.md
+    BOT->>DS: [Système prompt + plan + chapitre]
+    
+    alt Chapitre < 128K tokens
+        DS-->>BOT: Analyse, suggestions
+    else Chapitre > 128K tokens
+        BOT->>GM: [Même contexte]
+        GM-->>BOT: Analyse, suggestions
+    end
+    
+    BOT-->>E: "Voici mes suggestions : ..."
+    E->>E: Modifie son brouillon
+    E->>WIKI: Met à jour Chapitre2.md
+```
 
-| Élément | Solution |
-|---|---|
-| **Interface** | Bot Telegram (nouveau ou profil existant) |
-| **Primaire** | DeepSeek v4 Flash (128K, suffisant pour un chapitre) |
-| **Fallback** | Gemini 3.5 Flash (1M, si chapitre > 128K) |
-| **Contexte** | Envoyer le plan + le chapitre en cours à chaque session |
-| **Stockage** | Les brouillons restent chez Émile (Google Docs, Drive) |
+### Session type — Cycle complet
+
+```mermaid
+flowchart LR
+    A[📝 Émile écrit un brouillon] --> B[💾 Sauve sur Drive/PC]
+    B --> C[📤 Demande au bot de relire]
+    C --> D{⚠️ Besoin mise à jour wiki ?}
+    D -->|Oui| E[🔄 Sync Drive → Wiki GitHub]
+    D -->|Non| F[🤖 Bot charge le contexte]
+    E --> F
+    F --> G{📏 Contexte > 128K ?}
+    G -->|Non| H[🧠 DeepSeek analyse]
+    G -->|Oui| I[🌐 Gemini analyse]
+    H --> J[💬 Suggestions envoyées à Émile]
+    I --> J
+    J --> K[✏️ Émile applique les corrections]
+    K --> A
+```
+
+### Le Wiki Émile — Structure
+
+Un wiki MkDocs dédié, hébergé sur GitHub Pages, accessible 24/7. Même pattern que les autres wikis BAVI (voyages, OCA, hermes-wiki).
+
+```
+emile-wiki/                      → Nouveau dépôt GitHub
+├── docs/
+│   ├── index.md                 → Accueil : présentation, mode d'emploi
+│   ├── plan.md                  → Plan du mémoire (problématique, axes)
+│   ├── chapitres/
+│   │   ├── chapitre1.md         → Introduction
+│   │   ├── chapitre2.md         → Cadre théorique
+│   │   ├── chapitre3.md         → Méthodologie
+│   │   ├── chapitre4.md         → Résultats
+│   │   └── chapitre5.md         → Discussion
+│   ├── bibliographie.md         → Références (format APA)
+│   ├── notes.md                 → Notes de recherche, idées
+│   └── retours-directeur.md     → Commentaires du directeur de mémoire
+├── mkdocs.yml                   → Configuration MkDocs Material
+└── .github/workflows/deploy.yml → Déploiement auto sur GitHub Pages
+```
+
+**URL :** `https://christophedanhier-hash.github.io/emile-wiki/`
+
+```mermaid
+flowchart TB
+    subgraph Drive["Google Drive (Émile)"]
+        D1[Chapitre2.docx]
+        D2[Notes de recherche]
+    end
+
+    subgraph GitHub["emile-wiki"]
+        G1[chapitres/chapitre2.md]
+        G2[notes.md]
+    end
+
+    subgraph Wiki["🌐 emile-wiki GitHub Pages"]
+        W1[Chapitre 2 en HTML]
+        W2[Notes en HTML]
+    end
+
+    subgraph Bot["🤖 Bot Mémoire"]
+        BT[Contexte chargé]
+    end
+
+    D1 -->|sync Drive→GitHub| G1
+    D2 -->|sync Drive→GitHub| G2
+    G1 -->|MkDocs build| W1
+    G2 -->|MkDocs build| W2
+    W1 -->|bot lit le wiki| BT
+    W2 -->|bot lit le wiki| BT
+```
+
+### Sources et alimentation du contexte
+
+Le bot a besoin de contexte pour être pertinent. Trois mécanismes :
+
+```mermaid
+flowchart TB
+    subgraph M1["① Contexte direct (chat)"]
+        C1[Émile copie-colle un extrait]
+        C2[Bot lit le message]
+        C1 --> C2
+    end
+
+    subgraph M2["② Contexte wiki (automatique)"]
+        W1[Émile mentionne un chapitre]
+        W2[Bot fetch le .md depuis emile-wiki]
+        W3[Contexte ajouté au prompt]
+        W1 --> W2 --> W3
+    end
+
+    subgraph M3["③ Contexte Drive sync (automatique)"]
+        D1[Émile sauve dans Drive]
+        D2[Cron Drive→GitHub sync]
+        D3[Wiki mis à jour]
+        D4[Bot lit la dernière version]
+        D1 --> D2 --> D3 --> D4
+    end
+
+    M1 --> BT[Prompt final envoyé au modèle]
+    M2 --> BT
+    M3 --> BT
+```
+
+| Mécanisme | Quand | Avantage | Inconvénient |
+|---|---|---|---|
+| ① Direct | Questions rapides, petits extraits | Immédiat | Limité en taille, manuel |
+| ② Wiki | Relecture de chapitre complet | Automatique, versionné | Nécessite wiki à jour |
+| ③ Drive sync | Émile travaille hors ligne, synchro ensuite | Transparent pour Émile | Latence (cron) |
+
+### Règle de bascule DeepSeek → Gemini
+
+```mermaid
+flowchart TD
+    REQ[Requête d'Émile] --> COUNT{Taille contexte}
+    COUNT -->|< 128K tokens| DS[🧠 DeepSeek v4 Flash]
+    COUNT -->|> 128K tokens| GM[🌐 Gemini 3.5 Flash]
+    DS --> OK{Succès ?}
+    OK -->|✅| REP[💬 Réponse à Émile]
+    OK -->|❌ erreur| GM
+    GM --> REP
+```
 
 ---
 
 ## ⑤ SYNTHÈSE
 
-🟢 **Go — Bureau viable et utile**
+🟢 **Go — Écosystème complet prêt à déployer**
 
-**Forces du concept :**
-- Pattern éprouvé (bot voyage) — simple à adapter
-- DeepSeek v4 Flash suffisant pour du texte académique (128K = ~100 pages)
-- Coût quasi nul pour l'étudiante (< 0,50€/session)
-- Système prompt dédié = personnalité cohérente, pas de dérive
-- Émile garde le contrôle : le bot suggère, elle écrit
+L'architecture couvre tout le cycle :
+1. **Émile écrit** → ses brouillons (Word, Google Docs)
+2. **Sync automatique** → Drive → GitHub → wiki MkDocs
+3. **Bot Telegram** → lit le wiki, charge le contexte, assiste via DeepSeek
+4. **Fallback Gemini** → si chapitre > 128K tokens (~100 pages)
+5. **Émile corrige** → cycle recommence
 
-**Points d'attention :**
-- Le bot ne remplace pas un directeur de mémoire — c'est un assistant
-- Pas de recherche web externe = limite assumée (évite les hallucinations)
-- Si le mémoire dépasse 100 pages, Gemini 3.5 Flash prend le relais (1M)
+**Points forts :**
+- Wiki dédié accessible 24/7 (GitHub Pages, gratuit)
+- Bot toujours à jour (lit le wiki, pas de copier-coller)
+- Pattern éprouvé (bot voyage Sylvie + sync Drive existante)
+- Émile garde le contrôle total de son contenu
 
 ---
 
-## ⑥ LIVRABLE
+## ⑥ LIVRABLE — Plan d'implémentation
 
 | # | Action | Priorité | Effort |
 |---|--------|:--------:|:------:|
-| 1 | Rédiger et tester le système prompt « Assistant Mémoire » | 🔴 Haute | 2h |
-| 2 | Configurer le profil Hermes ou le bot Telegram | 🔴 Haute | 1h |
-| 3 | Créer la structure Bureau Émile dans BAVI | 🟡 Moyenne | 30min |
-| 4 | Test réel avec Émile sur un extrait de son mémoire | 🔴 Haute | 1h |
-| 5 | Ajuster le prompt après feedback | 🟡 Moyenne | 1h |
-| 6 | Ajouter le bureau à la nav BAVI_LEO | 🟢 Basse | 15min |
+| 1 | Créer le dépôt `emile-wiki` sur GitHub | 🔴 Haute | 15min |
+| 2 | Créer la structure MkDocs + template | 🔴 Haute | 30min |
+| 3 | Déployer GitHub Pages | 🔴 Haute | 10min |
+| 4 | Créer le profil Hermes « Émile » + système prompt | 🔴 Haute | 2h |
+| 5 | Connecter le bot au wiki (lecture .md) | 🔴 Haute | 1h |
+| 6 | Ajouter la sync Drive → emile-wiki (cron/n8n) | 🟡 Moyenne | 1h |
+| 7 | Configurer fallback Gemini 3.5 (>128K) | 🟡 Moyenne | 30min |
+| 8 | Test réel avec Émile — session relecture | 🔴 Haute | 1h |
+| 9 | Ajouter emile-wiki à la nav BAVI LEO | 🟢 Basse | 15min |
 
 ---
 
 ## ⑦ ARCHIVAGE
 
 - **Fichier :** `/opt/data/hermes-christophe/BAVI/AGENT-PRO/bureau-michel/analyse-bureau-memoire-20260625.md`
-- **Bureau proposé :** Bureau Émile — Assistant Pédagogique 🎓
-- **Prochaine étape :** Rédaction du système prompt + test avec Émile
+- **Wiki BAVI :** Agent Pro → Bureau Michel — Infra_Hermes
+- **Dépôt à créer :** `emile-wiki`
+- **Profil Hermes à créer :** `emile` (ou intégré au bot existant)
 
 ---
 
