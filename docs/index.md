@@ -214,7 +214,7 @@ flowchart LR
 | **Crons automatisés** | 28 ✅ tous verts |
 | **Sessions Hermes** | 90+ |
 | **Messages échangés** | 4 651+ |
-| **Skills installés** | 110 |
+| **Skills installés** | 111 |
 | **Modèles LLM** | 4 (DeepSeek Flash + Pro + Ollama + Gemini) |
 | **Coût DeepSeek** | Suivi dashboard (budget fr) |
 
