@@ -1,3 +1,12 @@
+---
+date: 2026-06-25
+bureau: bureau-michel
+version: v2.0
+modele: deepseek-v4-pro
+tags: [ollama, qwen, chatbot, telegram, gemini, analyse]
+statut: analyse
+---
+
 # Rapport Technique — Ollama qwen2.5:7b comme Chatbot Telegram
 
 **Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v2.0
