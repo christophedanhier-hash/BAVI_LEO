@@ -92,6 +92,20 @@ Tous les bureaux suivent le même squelette :
 ① CADRAGE → ② DISPATCH → ③ PRODUCTION → ④ CROISEMENT → ⑤ SYNTHÈSE → ⑥ LIVRABLE → ⑦ ARCHIVAGE
 ```
 
+### Variante par type de livrable
+
+Le workflow 7 phases s'adapte au format du livrable. Le type est déterminé en phase ① (Cadrage).
+
+| Format | Phases | Description |
+|:-------|:------:|:------------|
+| **📄 Analyse** | ①→③→⑤→⑥→⑦ | Pas de dispatch, pas de croisement |
+| **📋 Rapport** | ①→②→③→④→⑤→⑥→⑦ | Complet, 7 phases |
+| **📝 Note/Mémo** | ①→③→⑥ | Court, 3 phases |
+| **📁 Dossier** | ①→②→③→④→⑤→⑥→⑦ | Complet + archivage renforcé |
+| **🧠 Mémoire** | ①→②→③→④↺→⑤→⑥→⑦ | Croisement itératif |
+| **📊 Dashboard** | Collecte→Traitement→Publication | Cron-driven, hors 7 phases |
+| **🗺️ Roadbook** | ①→③→④→⑤→⑥→⑦ | Experts dédiés, pas de dispatch |
+
 ### Variantes par bureau
 
 | Bureau | Particularité |
