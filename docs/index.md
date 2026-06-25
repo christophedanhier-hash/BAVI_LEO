@@ -242,6 +242,7 @@ flowchart LR
 | Qualité bureaux spécialisés | ✅ Dispatch conditionnel (−60% tokens) |
 | Routage intelligent | ✅ Bon modèle pour chaque tâche |
 | Documentation vivante | ✅ Wikis auto-déployés GH Pages |
+| Distribution skills par profil | ✅ Chaque bot a ses compétences (Michel → infra, Sylvie → voyages) |
 | Gestion des coûts API | ✅ Budget dashboard suivi |
 | Fiabilité crons | ✅ 28 crons, tous verts, no_agent |
 | Miroir Drive ↔ GitHub | ✅ Sync bidirectionnelle 18h |
