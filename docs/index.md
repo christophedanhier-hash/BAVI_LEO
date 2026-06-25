@@ -29,7 +29,8 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 | 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
 | 🔧 **Michel** | Infrastructure, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
-| 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | 🆕 Nouveau |
+| 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
+| 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | ✅ Actif |
 
 ---
 
@@ -41,7 +42,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 flowchart LR
     Telegram["📱 Telegram"]
     LEO["🤖 LEO (Hermes Agent)"]
-    Bureaux["🧠 Bureaux<br/>Gérard · Michel · Robert<br/>Sophie · Sylvie · LEO"]
+    Bureaux["🧠 Bureaux<br/>Gérard · Michel · Robert<br/>Sophie · Sylvie · LEO<br/>Virginie"]
     DeepSeek["☁️ DeepSeek API<br/>Flash + Pro"]
     Ollama["🏠 Ollama<br/>qwen2.5:7b"]
     Gemini["⚡ Gemini API<br/>Fallback"]
@@ -101,6 +102,7 @@ Tous les bureaux suivent le même squelette :
 | 📝 Gérard | Croisement obligatoire Hardware ↔ Firmware |
 | 🧭 Sylvie | Cartographie OSM en parallèle de l'itinéraire |
 | 🔧 **Michel** | Léo Copilot — Sous-agent DeepSeek Pro pour tâches lourdes |
+| 🩺 **Virginie** | Orchestration médicale — dispatch spécialistes + croisement des diagnostics |
 | 🤖 LEO | Cron-driven (collecte → analyse → livrable) |
 
 ---
@@ -113,6 +115,7 @@ Toutes les analyses produites par les bureaux sont indexées dans le **[Portail 
 
 | Bureau | Rôle | Accès analyses |
 |:-------|:-----|:---------------|
+| 🩺 Virginie | Santé / Diagnostic médical | [Voir les analyses](wiki/agent-pro/bureau-virginie/index.md) |
 | 🤖 LEO | Dossiers & analyses LEO | [Voir les analyses](wiki/agent-pro/bureau-leo/index.md) |
 | 📝 Gérard | Documentation T600 | [Voir les analyses](wiki/agent-pro/bureau-gerard/index.md) |
 | 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/bureau-robert/index.md) |
@@ -186,7 +189,8 @@ flowchart LR
 |-------|--------|-----------|:-----:|
 | `bureau-gerard` | 📝 Gérard | Documentation T600, 6 agents + 2 supports | 2.0 |
 | `bureau-sylvie` | 🧭 Sylvie | Voyages camping-car, 3 experts, carto OSM | 2.0 |
-| `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | 🆕 Nouveau |
+| `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | ✅ Actif |
+| `bureau-virginie` | 🩺 Virginie | Orchestration médicale, panel de médecins | 🆕 Nouveau |
 
 ### Infrastructure — Monitoring & Outils
 
@@ -205,7 +209,7 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 6 (3 PRO + 3 PRIVÉ) |
+| **Bureaux** | 7 (3 PRO + 4 PRIVÉ) |
 | **Dashboards temps réel** | 7 |
 | **Crons automatisés** | 28 ✅ tous verts |
 | **Sessions Hermes** | 90+ |
