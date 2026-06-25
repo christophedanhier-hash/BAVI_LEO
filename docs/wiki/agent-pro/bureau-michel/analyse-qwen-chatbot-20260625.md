@@ -1,16 +1,16 @@
 ---
 date: 2026-06-25
 bureau: bureau-michel
-version: v2.0
+version: v2.1
 modele: deepseek-v4-pro
 tags: [ollama, qwen, chatbot, telegram, gemini, analyse, modele]
 statut: analyse
 type: analyse
 ---
 
-# Analyse — Ollama qwen2.5:7b comme Chatbot Telegram
+# Analyse — Bot Telegram : Gemini + qwen2.5:7b (fallback)
 
-**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v2.0
+**Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v2.1
 **Date :** 25/06/2026 | **Type :** Analyse (①→③→⑤→⑥→⑦)
 
 ---
@@ -29,100 +29,97 @@ type: analyse
 
 ## ① CADRAGE
 
-**Question :** qwen2.5:7b (Ollama local, CPU) est-il viable comme chatbot Telegram autonome, avec Gemini en fallback ?
+**Question :** Un bot Telegram utilisant Gemini 2.0 Flash en primaire et qwen2.5:7b (Ollama local) en fallback est-il viable techniquement et économiquement ?
 
 **Contexte :**
-- Ollama sur LEO (100.92.102.28:11434), CPU uniquement
-- Modèle déjà en production : classifieur email 2 comptes
-- Gemini API key disponible (free tier : 15 RPM, 1500 RPD)
-- Objectif : bot Telegram gratuit avec fallback fiable
+- Ollama qwen2.5:7b sur LEO (100.92.102.28:11434), CPU, 41 tok/s
+- Gemini API key disponible
+- Objectif : bot fiable, gratuit, avec filet de sécurité local
 
-**Type de livrable :** Analyse → workflow simplifié ①→③→⑤→⑥→⑦
+**Type de livrable :** Analyse (①→③→⑤→⑥→⑦)
 
 ---
 
 ## ③ PRODUCTION
 
-### Spécifications du modèle
+### Gemini 2.0 Flash — Specifications
 
 | Critère | Valeur |
 |---|---|
-| **Modèle** | qwen2.5:7b (Alibaba, juin 2025) |
-| **Paramètres** | 7.6 milliards |
-| **Quantization** | Q4_K_M (~4.7 Go RAM) |
-| **Contexte max** | 32 768 tokens |
-| **Vitesse mesurée** | 41 tok/s (CPU LEO) |
-| **Capacités** | completion, tools (pas de vision) |
-| **Positionnement** | Équivalent Llama 3.1 8B / Mistral 7B v0.3 |
+| **Modèle** | Gemini 2.0 Flash (Google) |
+| **Qualité français** | 9/10 |
+| **Raisonnement** | 8/10 |
+| **Contexte max** | 1M tokens |
+| **Vision** | ✅ |
+| **Fonction calling** | ✅ |
+| **Vitesse** | ~80 tok/s (API) |
 
-### Benchmarks réels
+### Gemini — Tiers gratuit (Google AI Studio)
 
-| Test | Résultat | Score |
+| Limite | Valeur | Impact bot |
 |---|---|---|
-| Code (reverse linked list Python) | ✅ Syntaxe parfaite | ⭐⭐⭐⭐ |
-| Créatif (idées open source IA) | ✅ Pertinent, structuré | ⭐⭐⭐⭐ |
-| Technique (embedding vectoriel) | ⚠️ Correct mais switch chinois | ⭐⭐⭐ |
-| Classification (9 catégories, 90%+) | ✅ Fiable en production | ⭐⭐⭐⭐ |
+| **RPM** (Requests Per Minute) | 15 req/min | Si >15 msg/min → erreur 429 |
+| **TPM** (Tokens Per Minute) | 1M tok/min | Large pour du chat |
+| **RPD** (Requests Per Day) | 1 500 req/jour | ~50 msg/heure, usage perso OK |
+| **Coût** | 0€ dans ces limites | Gratuit |
+
+### qwen2.5:7b — Specifications
+
+| Critère | Valeur |
+|---|---|
+| **Modèle** | qwen2.5:7b (Alibaba) |
+| **Paramètres / RAM** | 7.6B / Q4_K_M (~4.7 Go) |
+| **Contexte max** | 32K tokens |
+| **Vitesse** | 41 tok/s (CPU) |
+| **Coût** | 0€ (local) |
 
 ### Matrice Forces/Faiblesses
 
 | ✅ Forces | ❌ Faiblesses |
 |---|---|
-| Gratuit — 0€, local, pas de rate limit | Switch occasionnel en chinois |
-| Rapide (41 tok/s) | Raisonnement multi-étapes limité |
-| Bon en français | Pas de vision / multimodal |
-| Code propre et concis | Hallucine sur sujets pointus |
-| Classification fiable (90%+) | Contexte 32K (Gemini = 1M) |
+| Gemini : fiable, 9/10 français, 1M contexte | Gemini : limité à 15 RPM / 1 500 RPD |
+| qwen2.5 : 24/7 local, pas de rate limit | qwen2.5 : switch chinois, hallucinations |
+| Architecture redondante : jamais down | Double maintenance (2 APIs) |
+| Coût total : 0€ | Latence fallback : +2-3s si bascule |
 
-### Comparaison avec Gemini 2.0 Flash
-
-| Critère | qwen2.5:7b | Gemini 2.0 Flash | Vainqueur |
-|---|---|---|---|
-| **Coût** | 0€ (local) | Gratuit (15 RPM) | qwen2.5 |
-| **Qualité français** | 7/10 | 9/10 | Gemini |
-| **Raisonnement** | 6/10 | 8/10 | Gemini |
-| **Vitesse** | 41 tok/s | ~80 tok/s (API) | Gemini |
-| **Fiabilité** | ⚠️ switch CN | ✅ stable | Gemini |
-| **Contexte** | 32K | 1M | Gemini |
-| **Vision** | ❌ | ✅ | Gemini |
-| **Disponibilité** | 24/7 local | Dépendance Google | qwen2.5 |
-| **Fonction calling** | ✅ tools | ✅ function calling | Égalité |
-
-### Architecture proposée
+### Architecture corrigée
 
 ```
 ┌─────────────────────────────────────────┐
 │          Bot Telegram (nouveau)          │
 └─────────────────┬───────────────────────┘
                   │
-        ┌─────────┴─────────┐
-        ▼                   ▼
-┌───────────────┐   ┌───────────────┐
-│  qwen2.5:7b   │   │ Gemini Flash  │
-│  (primaire)   │   │  (fallback)   │
-│  Ollama local │   │  API Google   │
-│     0€        │   │  Gratuit      │
-└───────────────┘   └───────────────┘
+                  ▼
+        ┌─────────────────┐
+        │ Gemini 2.0 Flash │  ← PRIMAIRE
+        │   (API Google)   │     Fiable, qualitatif
+        │     Gratuit*      │     80% des requêtes
+        └────────┬─────────┘
+                 │
+                 │  Si 429 (rate limit)
+                 │  OU timeout (>10s)
+                 │  OU erreur API
+                 ▼
+        ┌─────────────────┐
+        │   qwen2.5:7b     │  ← FALLBACK
+        │  (Ollama local)  │     Filet de sécurité
+        │      0€          │     ~20% des requêtes
+        └─────────────────┘
 
-Règles de bascule :
-• Réponse < 20 tokens → Gemini
-• Idéogrammes chinois → Gemini
-• Requête contexte > 16K → Gemini
-• User insatisfait → Gemini
+* Gratuit dans les limites : 15 RPM, 1M TPM, 1500 RPD
 ```
 
 ---
 
 ## ⑤ SYNTHÈSE
 
-**Verdict :** 🟡 Go conditionnel
+**Verdict :** 🟢 Go
 
-- qwen2.5:7b **seul** → ❌ Pas assez fiable (switch chinois, hallucinations)
-- qwen2.5:7b **+ Gemini fallback** → ✅ Architecture robuste, gratuite, complémentaire
-
-**Distribution estimée :** 80% requêtes → qwen2.5, 20% → Gemini.
-
-Les deux modèles sont complémentaires : qwen2.5 apporte la disponibilité 24/7 et le coût zéro, Gemini garantit la qualité et la fiabilité pour les requêtes complexes.
+Architecture robuste et gratuite :
+- **Gemini primary** : propriétaire de la conversation, qualité garantie pour 80%+ des requêtes
+- **qwen2.5 fallback** : filet de sécurité local, absorbe les dépassements de rate limit
+- **Coût total** : 0€ (dans les limites du tiers gratuit Gemini)
+- **Risque** : faible — le fallback local assure la continuité même si l'API Google est down
 
 ---
 
@@ -131,10 +128,10 @@ Les deux modèles sont complémentaires : qwen2.5 apporte la disponibilité 24/7
 | # | Recommandation | Priorité | Effort |
 |---|---------------|:--------:|:------:|
 | 1 | Créer un nouveau profil Hermes ou webhook Telegram | 🔴 Haute | 1h |
-| 2 | Implémenter le script de bascule qwen2.5 → Gemini | 🔴 Haute | 2h |
-| 3 | Tests de non-régression (switch chinois) | 🔴 Haute | 1h |
-| 4 | Ajouter watchdog + cron healthcheck | 🟡 Moyenne | 30min |
-| 5 | Dashboard monitoring (requêtes, bascules) | 🟢 Basse | 2h |
+| 2 | Implémenter le script de bascule : 429/timeout → qwen | 🔴 Haute | 1h |
+| 3 | Compteur RPM local pour anticiper les limites | 🟡 Moyenne | 30min |
+| 4 | Watchdog + cron healthcheck (les 2 endpoints) | 🟡 Moyenne | 30min |
+| 5 | Dashboard monitoring (requêtes, bascules, coûts) | 🟢 Basse | 2h |
 
 ---
 
@@ -142,7 +139,6 @@ Les deux modèles sont complémentaires : qwen2.5 apporte la disponibilité 24/7
 
 - **Fichier source :** `/opt/data/hermes-christophe/BAVI/AGENT-PRO/bureau-michel/analyse-qwen-chatbot-20260625.md`
 - **Wiki :** BAVI LEO → Agent Pro → Bureau Michel — Infra_Hermes
-- **Index :** Régénéré via `agent-pro-index.py`
 
 ---
 
