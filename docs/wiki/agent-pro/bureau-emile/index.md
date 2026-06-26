@@ -22,7 +22,13 @@ Le Bureau Émile accompagne une étudiante dans la rédaction de son mémoire. I
 
 | Date | Sujet | Livrable |
 |------|-------|----------|
-| 26/06/2026 | Mise en place du bureau | Wiki, profil Hermes, Drive |
+| 26/06/2026 | Mise en place complète | Wiki, profil Hermes, bot Telegram, gateway s6, cron Drive sync |
+| 26/06/2026 | Documentation finale | Analyse bureau-michel, skill bureau-emile, nav BAVI LEO |
+
+## Architecture technique
+- **Profil** : `/opt/data/profiles/emile/` · DeepSeek v4 Flash + Gemini fallback
+- **Gateway** : s6-supervisé · `/run/service/gateway-emile`
+- **Cron** : `Émile — Drive Sync → Wiki` · every 60m
 
 ---
-*Bureau créé par BAVI LEO — Bureau Michel 🔧*
+*Bureau créé et maintenu par BAVI LEO — Bureau Michel 🔧*
