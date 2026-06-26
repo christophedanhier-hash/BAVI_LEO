@@ -240,12 +240,12 @@ flowchart LR
 
 ## 💳 Tarification BAVI LEO
 
-Deux formules complémentaires :
+| Qui | Abonnement | Dossiers |
+|:----|:----------:|:---------|
+| 🧑‍✈️ **Christophe** | **0 €** — pas d'abonnement | Tokens IN/OUT réels uniquement |
+| 👥 **Amis** (Pascal…) | **12 €/an** par personne | Tokens IN/OUT + **2,50 €** forfait par dossier |
 
-| Formule | Tarif | Usage |
-|:--------|:-----:|:------|
-| 🎫 **Abonnement chat** | **12 €/an** (1 €/mois) | Accès chat illimité, petites questions sans session/commit |
-| 📁 **Par dossier** | Tokens IN/OUT réels + forfait | Production complète avec session, commit, wiki |
+> L'abonnement démarre le **1er du mois** du premier dossier. Chat illimité inclus.
 
 ---
 
