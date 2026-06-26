@@ -30,6 +30,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
 | 🔧 **Michel — Infra_Hermes** | Infrastructure Hermes, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
 | 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
+| 🎓 **Emile** | Assistant pédagogique — mémoire sciences de l'éducation | PRIVÉ | 🆕 Nouveau |
 | 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | ✅ Actif |
 
 ---
@@ -42,7 +43,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 flowchart LR
     Telegram["📱 Telegram"]
     LEO["🤖 LEO (Hermes Agent)"]
-    Bureaux["🧠 Bureaux<br/>Gérard · Michel — Infra_Hermes<br/>Robert · Sophie · Sylvie<br/>LEO · Virginie"]
+    Bureaux["🧠 Bureaux<br/>Gérard · Michel — Infra_Hermes<br/>Robert · Sophie · Sylvie<br/>LEO · Virginie · Emile"]
     DeepSeek["☁️ DeepSeek API<br/>Flash + Pro"]
     Ollama["🏠 Ollama<br/>qwen2.5:7b"]
     Gemini["⚡ Gemini API<br/>Fallback"]
@@ -117,6 +118,7 @@ Le workflow 7 phases s'adapte au format du livrable. Le type est déterminé en 
 | 🧭 Sylvie | Cartographie OSM en parallèle de l'itinéraire |
 | 🔧 **Michel — Infra_Hermes** | Léo Copilot — Infrastructure Hermes, code, DeepSeek Pro |
 | 🩺 **Virginie** | Orchestration médicale — dispatch spécialistes + croisement des diagnostics |
+| 🎓 **Emile** | Assistant pédagogique — mémoire sciences éducation |
 | 🤖 LEO | Cron-driven (collecte → analyse → livrable) |
 
 ---
@@ -130,6 +132,7 @@ Toutes les analyses produites par les bureaux sont indexées dans le **[Portail 
 | Bureau | Rôle | Accès analyses |
 |:-------|:-----|:---------------|
 | 🩺 Virginie | Santé / Diagnostic médical | [Voir les analyses](wiki/agent-pro/bureau-virginie/index.md) |
+| 🎓 Emile | Mémoire / Éducation | [Voir les analyses](wiki/agent-pro/bureau-emile/index.md) |
 | 🤖 LEO | Dossiers & analyses LEO | [Voir les analyses](wiki/agent-pro/bureau-leo/index.md) |
 | 📝 Gérard | Documentation T600 | [Voir les analyses](wiki/agent-pro/bureau-gerard/index.md) |
 | 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/bureau-robert/index.md) |
@@ -205,6 +208,7 @@ flowchart LR
 | `bureau-sylvie` | 🧭 Sylvie | Voyages camping-car, 3 experts, carto OSM | 2.0 |
 | `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | ✅ Actif |
 | `bureau-virginie` | 🩺 Virginie | Orchestration médicale, panel de médecins | 🆕 Nouveau |
+| `bureau-emile` | 🎓 Emile | Assistant pédagogique, mémoire sciences éducation | 🆕 Nouveau |
 
 ### Infrastructure — Monitoring & Outils
 
@@ -223,12 +227,12 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 7 (3 PRO + 4 PRIVÉ) |
+| **Bureaux** | 8 (3 PRO + 5 PRIVÉ) |
 | **Dashboards temps réel** | 7 |
 | **Crons automatisés** | 28 ✅ tous verts |
 | **Sessions Hermes** | 90+ |
 | **Messages échangés** | 4 651+ |
-| **Skills installés** | 111 |
+| **Skills installés** | 112 |
 | **Modèles LLM** | 4 (DeepSeek Flash + Pro + Ollama + Gemini) |
 | **Coût DeepSeek** | Suivi dashboard (budget fr) |
 
