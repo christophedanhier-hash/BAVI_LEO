@@ -1,4 +1,4 @@
-# 🧭 Bureau Sylvie — Voyages
+# 🧭 Bureau Sylvia — Voyages
 
 Ce bureau n'a pas de workflow agent automatisé. Il pointe vers le wiki voyages existant.
 

@@ -7,7 +7,7 @@ L'interface de visualisation des documents produits par les bureaux BAVI se trou
 ### Lire un document
 
 1. Naviguer vers le bureau concerné dans le menu **🧠 Bureaux**
-2. Choisir un bureau (Gérard, Robert, Sophie, Michel, Sylvie)
+2. Choisir un bureau (Gérard, Robert, Sophie, Michel, Sylvia)
 3. Cliquer sur le titre de l'analyse
 
 Chaque analyse affiche :

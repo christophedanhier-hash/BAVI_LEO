@@ -27,7 +27,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 💰 **Sophie** | Pilotage financier IT (TCO/ROI, business case) | PRO | 🏗️ Reconstruction |
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
-| 🧭 **Sylvie** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
+| 🧭 **Sylvia** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
 | 🔧 **Michel — Infra_Hermes** | Infrastructure Hermes, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
 | 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
 | 🎓 **Emile** | Assistant pédagogique — mémoire sciences de l'éducation | PRIVÉ | 🆕 Nouveau |
@@ -43,7 +43,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 flowchart LR
     Telegram["📱 Telegram"]
     LEO["🤖 LEO (Hermes Agent)"]
-    Bureaux["🧠 Bureaux<br/>Gérard · Michel — Infra_Hermes<br/>Robert · Sophie · Sylvie<br/>LEO · Virginie · Emile"]
+    Bureaux["🧠 Bureaux<br/>Gérard · Michel — Infra_Hermes<br/>Robert · Sophie · Sylvia<br/>LEO · Virginie · Emile"]
     DeepSeek["☁️ DeepSeek API<br/>Flash + Pro"]
     Ollama["🏠 Ollama<br/>qwen2.5:7b"]
     Gemini["⚡ Gemini API<br/>Fallback"]
@@ -115,7 +115,7 @@ Le workflow 7 phases s'adapte au format du livrable. Le type est déterminé en 
 | 💰 Sophie | Production parallélisable Marché + Risques |
 | 🛡️ AO | Workflow raccourci ①→③→⑥ (expert unique transverse) |
 | 📝 Gérard | Croisement obligatoire Hardware ↔ Firmware |
-| 🧭 Sylvie | Cartographie OSM en parallèle de l'itinéraire |
+| 🧭 Sylvia | Cartographie OSM en parallèle de l'itinéraire |
 | 🔧 **Michel — Infra_Hermes** | Léo Copilot — Infrastructure Hermes, code, DeepSeek Pro |
 | 🩺 **Virginie** | Orchestration médicale — dispatch spécialistes + croisement des diagnostics |
 | 🎓 **Emile** | Assistant pédagogique — mémoire sciences éducation |
@@ -138,7 +138,7 @@ Toutes les analyses produites par les bureaux sont indexées dans le **[Portail 
 | 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/bureau-robert/index.md) |
 | 💰 Sophie | Pilotage Économique & Financier | [Voir les analyses](wiki/agent-pro/bureau-sophie/index.md) |
 | 🔧 Michel — Infra_Hermes | Infrastructure Hermes | [Voir les analyses](wiki/agent-pro/bureau-michel/index.md) |
-| 🧭 Sylvie | Voyages | [Voir les analyses](wiki/agent-pro/bureau-sylvie/index.md) |
+| 🧭 Sylvia | Voyages | [Voir les analyses](wiki/agent-pro/bureau-sylvie/index.md) |
 
 ### Appels formels PRO
 
@@ -163,12 +163,12 @@ flowchart LR
 ```mermaid
 flowchart LR
     Gerard["📝 Gérard"] -->|"docs techniques T600"| WikiOCA["Wiki OCA"]
-    Sylvie["🧭 Sylvie"] -->|"journaux de bord"| WikiVoyages["Wiki Voyages"]
+    Sylvia["🧭 Sylvia"] -->|"journaux de bord"| WikiVoyages["Wiki Voyages"]
     Michel["🔧 Michel"] -->|"audits, analyses"| BAVI["BAVI LEO wiki"]
     LEO["🤖 LEO"] -->|"dossiers perso"| BAVI
 
     style Gerard fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    style Sylvie fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    style Sylvia fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style Michel fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style LEO fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
     style WikiOCA fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
@@ -185,7 +185,7 @@ flowchart LR
 | 📄 Partage direction | **Google Docs** | 🏛️ Robert, 🛡️ AO |
 | 📊 Modèle financier | **Google Sheets** | 💰 Sophie |
 | 📽️ Présentation comité | **Google Slides** | 🏛️ Robert |
-| 🏠 Projets personnels | `.md` — wiki | 📝 Gérard, 🧭 Sylvie, 🤖 LEO |
+| 🏠 Projets personnels | `.md` — wiki | 📝 Gérard, 🧭 Sylvia, 🤖 LEO |
 
 ---
 
@@ -205,7 +205,7 @@ flowchart LR
 | Skill | Bureau | Expertises | Vers. |
 |-------|--------|-----------|:-----:|
 | `bureau-gerard` | 📝 Gérard | Documentation T600, 6 agents + 2 supports | 2.0 |
-| `bureau-sylvie` | 🧭 Sylvie | Voyages camping-car, 3 experts, carto OSM | 2.0 |
+| `bureau-sylvie` | 🧭 Sylvia | Voyages camping-car, 3 experts, carto OSM | 2.0 |
 | `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | ✅ Actif |
 | `bureau-virginie` | 🩺 Virginie | Orchestration médicale, panel de médecins | 🆕 Nouveau |
 | `bureau-emile` | 🎓 Emile | Assistant pédagogique, mémoire sciences éducation | 🆕 Nouveau |
@@ -246,7 +246,7 @@ flowchart LR
 | Qualité bureaux spécialisés | ✅ Dispatch conditionnel (−60% tokens) |
 | Routage intelligent | ✅ Bon modèle pour chaque tâche |
 | Documentation vivante | ✅ Wikis auto-déployés GH Pages |
-| Distribution skills par profil | ✅ Chaque bot a ses compétences (Michel → infra, Sylvie → voyages) |
+| Distribution skills par profil | ✅ Chaque bot a ses compétences (Michel → infra, Sylvia → voyages) |
 | Gestion des coûts API | ✅ Budget dashboard suivi |
 | Fiabilité crons | ✅ 28 crons, tous verts, no_agent |
 | Miroir Drive ↔ GitHub | ✅ Sync bidirectionnelle 18h |

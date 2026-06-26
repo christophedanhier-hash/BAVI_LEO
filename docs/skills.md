@@ -46,7 +46,7 @@ Les **Bureaux Agentiques Virtuels** sont le cœur métier de LEO. Chaque bureau 
 | **Quand l'utiliser** | Documentation du télescope T600 (Observatoire Centre Ardenne) |
 | **Wiki** | [wiki-oca/t600](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 
-### 5. 🧭 bureau-sylvie
+### 5. 🧭 bureau-sylvie (Sylvia)
 | | |
 |---|---|
 | **Version** | v2.5 |
