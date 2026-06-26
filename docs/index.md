@@ -27,7 +27,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 💰 **Sophie** | Pilotage financier IT (TCO/ROI, business case) | PRO | 🏗️ Reconstruction |
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
-| 🧭 **Sylvia** | Roadbooks camping-car | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
+| 🧭 **Sylvia** | Agence de voyage complète — tous modes de transport | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
 | 🔧 **Michel — Infra_Hermes** | Infrastructure Hermes, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
 | 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
 | 🎓 **Emile** | Assistant pédagogique — mémoire sciences de l'éducation | PRIVÉ | 🆕 Nouveau |
