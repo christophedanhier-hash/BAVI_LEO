@@ -111,7 +111,7 @@ Basé sur le site existant www.tofdan.be (hébergé sur Google Sites) :
 |:-----|:--------|
 | 🏠 **Accueil** | Présentation du site, photo Lune/Soleil, message de bienvenue |
 | 🔭 **Astro** | Section principale astrophotographie |
-| 📱 **App Astro** | Application liée à l'astro |
+| 📱 **App Astro** | Application existante hébergée sur GitHub (via URL). Page d'info avec contenu expansible (Voie Lactée, Système Solaire, Lune, etc.) |
 | 📰 **News** | Actualités |
 | 🔧 **Mon matériel** | Équipement utilisé (télescopes, caméras) |
 | 🖼️ **Album** | Galerie photos |
@@ -120,6 +120,8 @@ Basé sur le site existant www.tofdan.be (hébergé sur Google Sites) :
 | 💬 **Chat & Message** | Contact, formulaire |
 
 **Design actuel :** Google Sites (limité) — objectif : le refaire en HTML/CSS libre et responsive.
+
+**App Astro :** Application déjà développée, hébergée sur GitHub. Objectif à terme : migrer son hébergement sur le serveur LEO également, aux côtés du site principal.
 
 ---
 
