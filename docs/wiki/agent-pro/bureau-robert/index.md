@@ -1,13 +1,12 @@
 # 🏛️ Bureau Robert — Conseil Stratégique IT
 
-*Généré automatiquement le 26/06/2026 à 15:59*
+*Généré automatiquement le 27/06/2026 à 09:09*
 
-**Total : 0 analyse(s)**
-
-*Aucune analyse enregistrée.*
+**Total : 1 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
+| 27/06/2026 | v1 | [🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)](analyse-bot-voyage-sylvia/) | `robert` `sylvia` `voyage` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](analyse-bot-voyage-sylvia/?print-pdf) 🗑️ |
 
 ---
 
