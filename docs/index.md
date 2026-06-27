@@ -138,7 +138,7 @@ Toutes les analyses produites par les bureaux sont indexées dans le **[Portail 
 | 🏛️ Robert | Conseil Stratégique IT | [Voir les analyses](wiki/agent-pro/bureau-robert/index.md) |
 | 💰 Sophie | Pilotage Économique & Financier | [Voir les analyses](wiki/agent-pro/bureau-sophie/index.md) |
 | 🔧 Michel — Infra_Hermes | Infrastructure Hermes | [Voir les analyses](wiki/agent-pro/bureau-michel/index.md) |
-| 🧭 Sylvia | Voyages | [Voir les analyses](wiki/agent-pro/bureau-sylvie/index.md) |
+| 🧭 Sylvia | Voyages | [Voir les analyses](wiki/agent-pro/bureau-sylvia/index.md) |
 
 ### Appels formels PRO
 
@@ -205,7 +205,7 @@ flowchart LR
 | Skill | Bureau | Expertises | Vers. |
 |-------|--------|-----------|:-----:|
 | `bureau-gerard` | 📝 Gérard | Documentation T600, 6 agents + 2 supports | 2.0 |
-| `bureau-sylvie` | 🧭 Sylvia | Voyages camping-car, 3 experts, carto OSM | 2.0 |
+| `bureau-sylvia` | 🧭 Sylvia | Voyages camping-car, 3 experts, carto OSM | 2.0 |
 | `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | ✅ Actif |
 | `bureau-virginie` | 🩺 Virginie | Orchestration médicale, panel de médecins | 🆕 Nouveau |
 | `bureau-emile` | 🎓 Emile | Assistant pédagogique, mémoire sciences éducation | 🆕 Nouveau |
