@@ -181,12 +181,17 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 **Fichiers à créer côté CodeWhale :**
 ```
-/etc/nginx/sites-available/tofdan.be   ← config virtual host
+/etc/nginx/sites-available/tofdan.be   ← config virtual host (site + app)
 /var/www/tofdan.be/                     ← dossier du site
 /var/www/tofdan.be/index.html          ← page de test "Hello tofdan.be"
+/var/www/astro/                         ← dossier de l'App Astro (migration GitHub → local)
 ```
 
-**Résultat attendu :** https://www.tofdan.be répond avec une page de test.
+**Note sur l'App Astro :** L'application est déjà développée (https://christophedanhier-hash.github.io/Projet-Astro/www/index.html). CodeWhale doit simplement préparer le dossier `/var/www/astro/` pour l'accueillir. Le déploiement du code de l'app sera fait par Christophe (simple copie des fichiers statiques). **Pas de modification de l'app.**
+
+**Résultat attendu :**
+- https://www.tofdan.be → page de test (puis site complet)
+- https://www.tofdan.be/astro/ → App Astro (quand les fichiers seront copiés)
 
 ---
 
