@@ -101,15 +101,25 @@ graph TB
 
 ---
 
-## 4. 💻 Contenu du site (proposition)
+## 💻 Contenu du site (structure actuelle)
 
-| Page | Contenu | Priorité |
-|:-----|:--------|:--------:|
-| 🏠 **Accueil** | Présentation, photo, slogan | 🔴 |
-| 👤 **À propos** | Parcours, expertise | 🟡 |
-| 📂 **Projets** | BAVI LEO, T600, voyages | 🟡 |
-| 📧 **Contact** | Formulaire ou email direct | 🟢 |
-| 📝 **Blog** (optionnel) | Articles, veille IA | 🟢 |
+Basé sur le site existant www.tofdan.be (hébergé sur Google Sites) :
+
+**Thème :** Astrophotographie — par Tof & Syl 🪐🔭
+
+| Page | Contenu |
+|:-----|:--------|
+| 🏠 **Accueil** | Présentation du site, photo Lune/Soleil, message de bienvenue |
+| 🔭 **Astro** | Section principale astrophotographie |
+| 📱 **App Astro** | Application liée à l'astro |
+| 📰 **News** | Actualités |
+| 🔧 **Mon matériel** | Équipement utilisé (télescopes, caméras) |
+| 🖼️ **Album** | Galerie photos |
+| 🌤️ **Météo - Astro** | Conditions météo pour l'observation |
+| 📚 **Biblio** | Bibliographie, ressources |
+| 💬 **Chat & Message** | Contact, formulaire |
+
+**Design actuel :** Google Sites (limité) — objectif : le refaire en HTML/CSS libre et responsive.
 
 ---
 
@@ -191,18 +201,23 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 | 6 | Copier les fichiers vers `/var/www/tofdan.be/` | Manuel ou script |
 | 7 | Versionner le code sur GitHub | `git init` + push vers repo Christophe |
 
-**Structure attendue du site :**
+**Structure attendue du site (reproduction du site actuel) :**
 ```
 /var/www/tofdan.be/
-├── index.html          ← Accueil
-├── about.html          ← À propos
-├── projets.html        ← Projets (BAVI, T600, voyages)
-├── contact.html        ← Contact
+├── index.html              ← Accueil (astro + présentation)
+├── astro.html              ← Section astrophotographie
+├── app-astro.html          ← Application Astro
+├── news.html               ← Actualités
+├── materiel.html           ← Mon matériel (télescopes, caméras)
+├── album.html              ← Galerie photos
+├── meteo-astro.html        ← Météo pour observation
+├── biblio.html             ← Bibliographie
+├── chat.html               ← Contact / Message
 ├── css/
-│   └── style.css       ← Design global
+│   └── style.css           ← Design responsive (refonte Google Sites → libre)
 ├── js/
-│   └── main.js         ← Interactivité
-└── images/             ← Photos, icônes
+│   └── main.js             ← Interactivité
+└── images/                 ← Photos astro (Lune, Soleil, ciel)
 ```
 
 **Résultat attendu :** Site complet, responsive, design propre.
