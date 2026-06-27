@@ -132,7 +132,100 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 ---
 
-## 7. ✅ Avantages vs Google Sites
+## 7. 🎯 Prompts par acteur
+
+### 🧠 LEO (moi) — Orchestrateur
+
+**Contexte :** Je suis LEO, l'assistant central de Christophe. Je coordonne le projet tofdan.be, je rédige la stratégie, je dispatch les tâches et je documente.
+
+**Étapes :**
+1. Analyser le besoin avec Christophe → rédiger la stratégie
+2. Valider le plan avec Christophe
+3. Dispatch les tâches vers CodeWhale, GitHub Copilot, Léo Copilot
+4. Documenter l'avancement dans le wiki BAVI
+5. Proposer les évolutions (blog, sections, design)
+
+---
+
+### 🐋 CodeWhale — Installation serveur hôte (hors conteneur)
+
+**Contexte :** Le site www.tofdan.be doit migrer de Google Sites vers un auto-hébergement sur le serveur LEO (Linux, Ubuntu, IP 100.92.102.28 via Tailscale). Le serveur fait déjà tourner Hermes Agent dans un conteneur Docker. L'installation doit se faire sur l'HÔTE, pas dans le conteneur.
+
+**Tâches :**
+
+| # | Tâche | Détail |
+|:-:|:------|:-------|
+| 1 | Installer Nginx | `sudo apt install nginx` — serveur web |
+| 2 | Créer le répertoire du site | `/var/www/tofdan.be/` — droits www-data |
+| 3 | Configurer le virtual host | Fichier `/etc/nginx/sites-available/tofdan.be` avec : racine, index.html, logs |
+| 4 | Activer le site | `ln -s` vers `sites-enabled/`, `nginx -t`, `systemctl reload nginx` |
+| 5 | Installer Certbot (Let's Encrypt) | `sudo apt install certbot python3-certbot-nginx` |
+| 6 | Générer certificat HTTPS | `sudo certbot --nginx -d www.tofdan.be -d tofdan.be` |
+| 7 | Configurer le pare-feu | Ouvrir ports 80 (HTTP) et 443 (HTTPS) |
+| 8 | Vérifier | `curl -I https://www.tofdan.be` → 200 OK |
+
+**Fichiers à créer côté CodeWhale :**
+```
+/etc/nginx/sites-available/tofdan.be   ← config virtual host
+/var/www/tofdan.be/                     ← dossier du site
+/var/www/tofdan.be/index.html          ← page de test "Hello tofdan.be"
+```
+
+**Résultat attendu :** https://www.tofdan.be répond avec une page de test.
+
+---
+
+### 💻 GitHub Copilot (VS Code) — Développement du site
+
+**Contexte :** Christophe a un abonnement GitHub Copilot avec accès aux modèles Sonnet 4.6 et Opus 4.x. Le développement se fait dans VS Code sur le serveur (Code-Server, port 8081) ou en local.
+
+**Tâches :**
+
+| # | Tâche | Modèle recommandé |
+|:-:|:------|:-----------------:|
+| 1 | Créer la structure du site | Opus 4.x — analyse du besoin |
+| 2 | Développer la page d'accueil (HTML+CSS) | Sonnet 4.6 — rapide et créatif |
+| 3 | Développer les pages secondaires | Sonnet 4.6 |
+| 4 | Ajouter le design responsive (mobile) | Sonnet 4.6 |
+| 5 | Tester le rendu local | Manuel — Christophe |
+| 6 | Copier les fichiers vers `/var/www/tofdan.be/` | Manuel ou script |
+| 7 | Versionner le code sur GitHub | `git init` + push vers repo Christophe |
+
+**Structure attendue du site :**
+```
+/var/www/tofdan.be/
+├── index.html          ← Accueil
+├── about.html          ← À propos
+├── projets.html        ← Projets (BAVI, T600, voyages)
+├── contact.html        ← Contact
+├── css/
+│   └── style.css       ← Design global
+├── js/
+│   └── main.js         ← Interactivité
+└── images/             ← Photos, icônes
+```
+
+**Résultat attendu :** Site complet, responsive, design propre.
+
+---
+
+### 🔧 Léo Copilot (Michel — Infra_Hermes) — Monitoring
+
+**Contexte :** Je suis Léo Copilot, le bot infrastructure. Je travaille DANS le conteneur Hermes. Je ne peux pas installer Nginx sur l'hôte.
+
+**Tâches :**
+
+| # | Tâche | Détail |
+|:-:|:------|:-------|
+| 1 | Créer un cron de check uptime | Toutes les 5 min : `curl -s -o /dev/null -w "%{http_code}" https://www.tofdan.be` → si ≠ 200, alerte |
+| 2 | Ajouter un dashboard | Dans le dashboard Hermes (port 9119) : widget tofdan.be status (vert/rouge) |
+| 3 | Configurer une alerte | Si site down 3 vérifications consécutives → notifier Christophe |
+
+**Contrainte :** Léo Copilot ne travaille que dans le conteneur Hermes. Toute action hors conteneur doit être redirigée vers CodeWhale.
+
+---
+
+## 8. ✅ Avantages vs Google Sites
 
 | Critère | Google Sites | LEO Server |
 |:--------|:------------:|:-----------:|
