@@ -121,7 +121,10 @@ Basé sur le site existant www.tofdan.be (hébergé sur Google Sites) :
 
 **Design actuel :** Google Sites (limité) — objectif : le refaire en HTML/CSS libre et responsive.
 
-**App Astro :** Application déjà développée, hébergée sur GitHub. Objectif à terme : migrer son hébergement sur le serveur LEO également, aux côtés du site principal.
+**App Astro :** Application déjà développée, hébergée sur GitHub Pages :  
+👉 https://christophedanhier-hash.github.io/Projet-Astro/www/index.html  
+Contient : exploration système solaire 2D/3D, Lune, Terre & saisons, guide utilisateur.  
+**Objectif à terme :** migrer son hébergement sur le serveur LEO également, aux côtés du site principal.
 
 ---
 
