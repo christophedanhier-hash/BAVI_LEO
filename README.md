@@ -17,7 +17,7 @@
 | Bureau | Rôle | Skill |
 |--------|------|-------|
 | 📝 **Gérard** | Documentation T600 | `bureau-gerard` |
-| 🧭 **Sylvia** | Voyages camping-car | `bureau-sylvie` |
+| 🧭 **Sylvia** | Voyages camping-car | `bureau-sylvia` |
 | ⚙️ **LEO Admin** | Infrastructure Hermes | Natif |
 
 ## 📖 Documentation complète

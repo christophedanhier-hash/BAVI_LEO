@@ -1,6 +1,6 @@
 ---
 date: 2026-06-24
-bureau: bureau-sylvie
+bureau: bureau-sylvia
 version: v1
 modele: deepseek-v4-flash
 tags: [skoda, enyaq, vehicule, leasing, borne-recharge, eneco]
