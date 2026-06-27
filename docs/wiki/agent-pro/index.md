@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 27/06/2026 à 11:53*
+*Généré automatiquement le 27/06/2026 à 17:11*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 3 | 12/06/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 5 | 27/06/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 7 | N/A |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 6 | 26/06/2026 |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 0 | — |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 0 | — |
 
-**Total : 16 analyse(s) sur l'ensemble des bureaux.**
+**Total : 18 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -26,6 +26,8 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
+| N/A | 🏛️ Bureau Robert — Conseil Stratégique IT | — | ~~💻 Prompt pour GitHub Copilot — Développement site tofdan.be~~ ⚠️ | — | ⚠️ Non conforme |
+| N/A | 🏛️ Bureau Robert — Conseil Stratégique IT | — | ~~🐋 CodeWhale — Installation tofdan.be sur Leo~~ ⚠️ | — | ⚠️ Non conforme |
 | 27/06/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)](bureau-robert/analyse-bot-voyage-sylvia/) | `robert` `sylvia` `voyage` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](bureau-robert/analyse-bot-voyage-sylvia/?print-pdf) 🗑️ |
 | 27/06/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🤖 Analyse Business & Fonctionnelle — LEO (Bureau Central)](bureau-robert/analyse-bot-leo-hub/) | `robert` `leo` `analyse` `business` `bpmn` `data-flow` `architecture` `gouvernance` | ✅ Finalisé | [📥](bureau-robert/analyse-bot-leo-hub/?print-pdf) 🗑️ |
 | 27/06/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](bureau-robert/analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](bureau-robert/analyse-bot-leo-copilot/?print-pdf) 🗑️ |
@@ -45,4 +47,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 27/06/2026 11:53*
+*Index consolidé généré par `agent-pro-index.py` — 27/06/2026 17:11*
