@@ -16,3 +16,9 @@
 ---
 
 *Index généré par `agent-pro-index.py` — Éditer les fichiers source (avec frontmatter valide) pour mettre à jour.*
+
+## 📋 Références techniques
+
+| Document | Contenu |
+|----------|---------|
+| [Référence infra LEO — Accès complets](reference-infra-leo-acces.md) | Docker, host FS, Cloudflare, Nginx, procédure de recréation |
