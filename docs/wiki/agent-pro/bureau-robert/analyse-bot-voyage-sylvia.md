@@ -54,12 +54,12 @@ graph TB
 
     subgraph "🧠 Hermes Agent"
         BP[Profil bavi-leo<br/>DeepSeek Flash]
-        SK[Skill bureau-sylvie<br/>555 lignes]
+        SK[Skill bureau-sylvia<br/>555 lignes]
         MB[Mémoire & Sessions]
     end
 
     subgraph "🗄️ Stockage"
-        DRV[Drive Google<br/>bavi/bureau-emile]
+        DRV[Drive Google<br/>bavi/bureau-sylvie]
         GH[GitHub<br/>voyages-wiki]
         WP[Wiki GH Pages<br/>voyages-wiki/]
     end
@@ -85,11 +85,11 @@ graph TB
 | **Agent** | Hermes Agent (profil `bavi-leo`) | Exécution du skill Sylvia |
 | **Modèle** | DeepSeek V4 Flash ($0,15/M IN, $0,60/M OUT) | Inférence chat + production documents |
 | **Transport** | Telegram API (bot `@bavi_leo_voyages_bot`) | Interface utilisateur |
-| **Stockage docs** | Google Drive (dossier `bavi/bureau-emile`) | Brouillons, sources |
+| **Stockage docs** | Google Drive (dossier `bavi/bureau-sylvie`) | Brouillons, sources |
 | **Versioning** | GitHub (`christophedanhier-hash/voyages-wiki`) | Wiki, historique des commits |
 | **Hébergement** | GitHub Pages | Site web public du wiki |
 | **Email** | Gmail API (compte `leodanhieria@gmail.com`) | Envoi confirmations |
-| **Sync cron** | Hermes cron (`emile-drive-sync`) | Conversion Drive → Wiki |
+| **Sync cron** | Hermes cron (`wiki-sync`) | Synchronisation Drive → Wiki |
 
 ---
 
