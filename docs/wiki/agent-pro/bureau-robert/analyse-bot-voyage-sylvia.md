@@ -193,35 +193,25 @@ flowchart LR
 ### 3.3 Cycle de vie d'un document
 
 ```mermaid
-stateDiagram-v2
-    [*] --> Chat: Question utilisateur
+flowchart TD
+    START([Question]) --> CHAT{Chat ou Document?}
     
-    state Chat {
-        [*] --> Simple: Question météo/info
-        [*] --> Note: "Fais-moi une note"
-        [*] --> Roadbook: "Prépare un itinéraire"
-    }
+    CHAT -->|Info rapide| SIMPLE[💬 Réponse chat<br/>✅ gratuit - abonnement]
+    SIMPLE --> ENDE([Fin])
     
-    Simple --> Reponse: ✅ gratuit (abonnement)
+    CHAT -->|Note/PDF| NOTE[📝 Production note<br/>💳 2,50 euro]
+    CHAT -->|Roadbook| RB[🗺️ Production roadbook<br/>💳 2,50 euro]
     
-    Note --> Production: 💳 2,50€
-    Roadbook --> Production: 💳 2,50€
+    NOTE --> VAL[Validation]
+    RB --> VAL
     
-    Production --> Validation: Brouillon généré
-    Validation --> Production: Modifications demandées
-    Validation --> Finalisation: ✅ Validé
+    VAL -->|Modifications| RETOUR[Retour en production]
+    RETOUR --> NOTE
+    RETOUR --> RB
     
-    Finalisation --> Wiki: Commit + Push
-    Wiki --> Publie: Déploiement GH Pages
-    
-    Publie --> [*]: Document en ligne
-    
-    note right of Production
-        Recherche web
-        Cartes OSM
-        Calcul distances
-        Budget estimation
-    end note
+    VAL -->|Valide| WIKI[📁 Wiki + Commit + Push]
+    WIKI --> PUB[🌐 Déploiement GH Pages]
+    PUB --> ENDE
 ```
 
 ---
@@ -231,10 +221,10 @@ stateDiagram-v2
 ### 4.1 Structure de revenus
 
 ```mermaid
-pie title Répartition du chiffre d'affaires (19,87 € à date)
+pie title Repartition du chiffre d affaires
     "Abonnements" : 12
-    "Forfaits document" : 7.50
-    "Tokens DeepSeek" : 0.37
+    "Forfaits document" : 8
+    "Tokens DeepSeek" : 0
 ```
 
 ### 4.2 Tarifs
