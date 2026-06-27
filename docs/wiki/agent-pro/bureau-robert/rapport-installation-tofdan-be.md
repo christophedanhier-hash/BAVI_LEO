@@ -1,3 +1,13 @@
+---
+date: 2026-06-27
+bureau: bureau-robert
+version: v1.0
+modele: deepseek-v4-pro
+tags: [codewhale, tofdan, installation, nginx, cloudflare, infrastructure]
+statut: finalise
+type: rapport
+---
+
 # 🐋 CodeWhale — Installation tofdan.be sur Leo
 
 > **Date** : 2026-06-27  

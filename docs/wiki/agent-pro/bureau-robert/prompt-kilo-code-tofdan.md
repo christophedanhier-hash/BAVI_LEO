@@ -1,3 +1,13 @@
+---
+date: 2026-06-27
+bureau: bureau-robert
+version: v1.0
+modele: deepseek-v4-pro
+tags: [kilo-code, tofdan, site, prompt, astrophotographie]
+statut: prompt
+type: note
+---
+
 # 💻 Prompt pour Kilo Code — Développement site tofdan.be
 
 > **Contexte :** Tu es Kilo Code, assistant code utilisant DeepSeek V4 Pro. Tu travailles dans VS Code sur le poste de Christophe. Tu dois créer le nouveau site www.tofdan.be pour remplacer l'actuel Google Sites.
