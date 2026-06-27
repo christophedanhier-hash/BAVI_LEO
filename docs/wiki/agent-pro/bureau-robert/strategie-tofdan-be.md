@@ -203,10 +203,10 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 | # | Tâche | Modèle recommandé |
 |:-:|:------|:-----------------:|
-| 1 | Créer la structure du site | Opus 4.x — analyse du besoin |
-| 2 | Développer la page d'accueil (HTML+CSS) | Sonnet 4.6 — rapide et créatif |
-| 3 | Développer les pages secondaires | Sonnet 4.6 |
-| 4 | Ajouter le design responsive (mobile) | Sonnet 4.6 |
+| 1 | Créer la structure du site | DeepSeek V4 Pro — analyse du besoin |
+| 2 | Développer la page d'accueil (HTML+CSS) | DeepSeek V4 Pro — via Kilo Code |
+| 3 | Développer les pages secondaires | DeepSeek V4 Pro — via Kilo Code |
+| 4 | Ajouter le design responsive (mobile) | DeepSeek V4 Pro — via Kilo Code |
 | 5 | Tester le rendu local | Manuel — Christophe |
 | 6 | Copier les fichiers vers `/var/www/tofdan.be/` | Manuel ou script |
 | 7 | Versionner le code sur GitHub | `git init` + push vers repo Christophe |

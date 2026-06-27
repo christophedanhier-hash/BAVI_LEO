@@ -1,6 +1,6 @@
 # 🏛️ Bureau Robert — Conseil Stratégique IT
 
-*Généré automatiquement le 27/06/2026 à 17:11*
+*Généré automatiquement le 27/06/2026 à 17:37*
 
 **Total : 7 analyse(s)**
 
@@ -8,14 +8,14 @@
 
 | Fichier | Problème |
 |:--------|:---------|
-| `prompt-github-copilot-tofdan/` | Frontmatter manquant ou invalide |
+| `prompt-kilo-code-tofdan/` | Frontmatter manquant ou invalide |
 | `rapport-installation-tofdan-be/` | Frontmatter manquant ou invalide |
 
 ---
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| N/A | ~~💻 Prompt pour GitHub Copilot — Développement site tofdan.be~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
+| N/A | ~~💻 Prompt pour Kilo Code — Développement site tofdan.be~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
 | N/A | ~~🐋 CodeWhale — Installation tofdan.be sur Leo~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
 | 27/06/2026 | v1 | [🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)](analyse-bot-voyage-sylvia/) | `robert` `sylvia` `voyage` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](analyse-bot-voyage-sylvia/?print-pdf) 🗑️ |
 | 27/06/2026 | v1 | [🤖 Analyse Business & Fonctionnelle — LEO (Bureau Central)](analyse-bot-leo-hub/) | `robert` `leo` `analyse` `business` `bpmn` `data-flow` `architecture` `gouvernance` | ✅ Finalisé | [📥](analyse-bot-leo-hub/?print-pdf) 🗑️ |
