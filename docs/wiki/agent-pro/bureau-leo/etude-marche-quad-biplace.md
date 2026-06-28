@@ -2,7 +2,7 @@
 date: 2026-06-28
 bureau: bureau-leo
 auteur: LEO
-version: v5
+version: v6
 modele: deepseek-v4-flash
 tags: [quad, atv, achat, etude-marche, remorque, camping-car, tofdan]
 statut: en-cours
@@ -205,42 +205,27 @@ Le quad doit :
 
 ### 4.4 Contraintes remorquage — Roller Team 287 TL (Ford Transit)
 
-| Contrainte | Valeur |
-|:-----------|:------:|
-| **Ton permis** | ✅ BE (pas de limite légale) |
-| **Base roulante** | 🚐 Ford Transit châssis nu → traction freinée **2 000-2 500 kg** |
-| **Carrossier** | Roller Team 287 TL → traction **peut être réduite** sur carte grise |
-| **750 kg que tu cites** | ⚠️ C'est très probablement la **limite non freinée** (toujours 750 kg pour tous les véhicules) |
-| **Valeur à vérifier** | 📄 **Carte grise, case F.3** = masse max remorque freinée |
+**Bonne nouvelle !** 🎉 D'après le COC (certificat de conformité) du véhicule :
 
-> ⚠️ **Distinction importante** : tout véhicule peut tracter **750 kg non freiné** (sans frein de remorque). Mais avec une remorque équipée de freins, la limite est quasi-toujours plus élevée. Le Ford Transit châssis nu autorise 2 000-2 500 kg freiné, mais Roller Team (carrossier) peut avoir réduit cette valeur sur la carte grise.
+| Case | Valeur | Signification |
+|:-----|:------:|:-------------|
+| **18.3 (F.3)** | **2 000 kg** 🏆 | **Remorque freinée — valeur réelle** |
+| **18.4 (F.4)** | 750 kg | Remorque non freinée |
+| **16.1 (O.1)** | 3 500 kg | PTAC du camping-car |
+| **16.4** | 4 250 kg | PTAC combiné max (CC + remorque) |
+
+> ✅ **Tu peux tracter 2 000 kg freiné** — les 750 kg que tu citais étaient la limite **non freinée** (sans frein de remorque). Avec une remorque freinée, la limite réelle est de **2 000 kg**, ce qui permet d'emporter n'importe quel quad sans restriction de poids.
 >
-> 🔍 **À vérifier sur ta carte grise** :
-> - **Case O.1** : PTAC du camping-car (poids total max)
-> - **Case F.3** : **Masse max remorque freinée** → c'est la valeur qui nous intéresse
-> - **Case F.4** : Masse max remorque non freinée (souvent 750 kg)
->
-> 📞 Si la carte grise indique 750 kg en F.3, vérifier sur **forum.campingcar.com** si d'autres proprios de 287 TL ont la même valeur — Roller Team a peut-être limité volontairement.
+> 💡 Ton permis BE est donc utile pour le combiné CC + remorque > 3 500 kg, mais même sans BE, la remorque freinée de 1 300 kg serait dans les clous (PTAC CC 3 500 + remorque 1 300 = 4 800 kg → nécessite BE).
 
-### 4.5 Scénarios selon la traction réelle
+### 4.5 Budget combiné Quad + Remorque
 
-| Si F.3 = | Tu peux tracter | Quad max conseillé | Remorque conseillée |
-|:---------|:---------------|:--------------------|:---------------------|
-| **750 kg** (non freinée seulement) | Quad ~400 kg + remorque légère | MXU 700 Explorer (380 kg) | CD260UBD750 (sans frein) ✅ |
-| **1 500 kg** | Tous les quads | Tous y compris C6 Pro (450 kg) | CD260WBD750 (freiné) ✅ |
-| **2 000 kg** | Tous les quads + marge | Tous | CD260WHBR1300 (1 300 kg) ✅ |
-| **2 500 kg** | Tout sans limite | Tous | CD260WHBR1300 (1 300 kg) ✅ |
-
-> 💡 **Mon conseil** : regarde d'abord ta carte grise (case F.3). Si c'est bien 750 kg en freiné, le MXU 700 Explorer + CD260UBD750 reste la meilleure combo. Si c'est plus élevé (ce qui est probable), tu as le choix libre.
-
-### 4.6 Budget combiné Quad + Remorque
-
-| Combinaison | Quad | Remorque | Total | Poids chargé |
-|:------------|:----:|:---------:|:-----:|:------------:|
-| **Kymco MXU 700 Explorer** + CD260WBD750 🏆 | 9 999 € | ~3 500 € | **~13 500 €** | ~730 kg ✅ |
-| **CFMOTO C5 Touring** + CD260UBD750 | ~7 000 € | ~3 200 € | **~10 200 €** | ~738 kg ✅ |
-| **CFMOTO C6 Pro Touring** + CD260WBD750 | ~8 500 € | ~3 500 € | **~12 000 €** | **~795 kg ❌** |
-| **Segway Snarler AT6 L** + CD260UBD750 | ~8 000 € | ~3 200 € | **~11 200 €** | ~730 kg ✅ |
+| Combinaison | Quad | Remorque | Total |
+|:------------|:----:|:---------:|:-----:|
+| **Kymco MXU 700 Explorer** + CD260WHBR1300 🏆 | 9 999 € | ~4 500 € | **~14 500 €** |
+| **CFMOTO C5 Touring** + CD260WHBR1300 | ~7 000 € | ~4 500 € | **~11 500 €** |
+| **CFMOTO C6 Pro Touring** + CD260WHBR1300 | ~8 500 € | ~4 500 € | **~13 000 €** |
+| **Segway Snarler AT6 L** + CD260WHBR1300 | ~8 000 € | ~4 500 € | **~12 500 €** |
 
 > 💡 **Rappel** : s'ajoutent ~800 € d'équipements (rampe aluminium, sangles à cliquet, antivol) + ~500 € immatriculation + ~400 €/an assurance.
 
@@ -255,7 +240,7 @@ Seule marque avec catalogue accessible : **Brenderup** (https://www.brenderup.co
 | **CD260WBR750** | 260 | 155 | 150 | 750 kg | 405 kg | Oui | ✅ Tous sauf C6 (juste haut.) |
 | **CD260WHBR1300** 💎 | 260 | 155 | **185** | **1 300 kg** | **905 kg** | Oui | ✅ Tous, large confort |
 
-> 🏆 **Avec Ford 750 kg max** : le **CD260WBD750** (260×155×150 cm, PTAC 750 kg, freiné) est le meilleur choix. Le **MXU 700 Explorer (134 cm)** ou le **C5 Touring (136 cm)** passent avec 14-16 cm de marge en hauteur. Le **C6 Pro Touring (141 cm)** est trop lourd et trop haut pour ce CC.
+> 🏆 **Avec 2 000 kg de traction freinée** : le **CD260WHBR1300** (260×155×185 cm, PTAC 1 300 kg, 905 kg charge utile) est le choix idéal — assez haut pour tous les quads avec 44 cm de marge, assez large pour un chargement confortable. MXU 700 Explorer, C5, C6 Pro ou Snarler, tout passe sans souci.
 
 ### 4.7 Chargement et déchargement du quad — Solutions pratiques
 
@@ -423,12 +408,10 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 - ✅ **Kayo** = option enfants/ados (50-110cc) si besoin futur
 - ⛔ **Suzuki, Arctic Cat** = plus de distributeur neuf en Belgique
 - ⚠️ **Vérifier la direction assistée (EPS)** — indispensable pour 2 personnes (>120 kg)
-- ⚠️ **Ford CC boîte auto = traction max 750 kg** — limite constructeur, le BE n'y change rien
-- ✅ **Quad idéal** : poids < 400 kg pour rester sous 750 kg avec remorque (~350 kg à vide)
-- ❌ **C6 Pro Touring (450 kg)** trop lourd pour ce CC (dépasserait 750 kg chargé)
+- ✅ **Traction 2 000 kg freinée** — tous les quads et toutes les remorques sont compatibles
+- ✅ **Remorque recommandée** : Brenderup **CD260WHBR1300** (260×155×185 cm, 1 300 kg)
+- ✅ **Avec le BE**, tu es large même avec le CC + remorque > 3 500 kg
 - ✅ **Selle Touring/2-up** obligatoire — vérifier repose-pieds passager + dossier
-- ✅ **Hauteur OK** avec CD260WBD750 (150 cm) pour MXU 700 Explorer (134 cm) ou C5 Touring (136 cm)
-- ✅ **PTAC 750 kg suffisant pour C5 Touring (388 kg)**, plus juste pour C6 Pro (450 kg)
 - 💡 **Distributeurs multi-marques** : KD Quad, Tamoto, Zone Rouge, Mazuin Sport
 
 ---
@@ -478,6 +461,7 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 | v3 | 28/06/2026 | LEO | Focus confort passager — tableau comparatif assise arrière |
 | v4 | 28/06/2026 | LEO | Ré-analyse remorque + section revendeurs Sombreffe |
 | v5 | 28/06/2026 | LEO | Correction revendeurs (Tamoto, Mazuin) + toit amovible remorque |
+| v6 | 28/06/2026 | LEO | 🔑 COC Roller Team : traction freinée 2 000 kg confirmée — plus aucune limite quad/remorque |
 
 ---
 
