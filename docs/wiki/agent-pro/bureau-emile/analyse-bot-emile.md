@@ -1,6 +1,6 @@
 ---
 date: 2026-06-27
-bureau: bureau-emile
+bureau: bureau-robert
 auteur: LEO + Robert
 version: v1
 modele: deepseek-v4-flash

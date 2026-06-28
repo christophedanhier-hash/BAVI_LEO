@@ -1,6 +1,6 @@
 ---
 date: 2026-06-27
-bureau: bureau-michel
+bureau: bureau-robert
 auteur: LEO
 version: v1
 tags: [robert, strategie, tofdan, hebergement, architecture]
