@@ -1,13 +1,12 @@
 # 🎓 Bureau Emile — Assistant Pédagogique
 
-*Généré automatiquement le 27/06/2026 à 17:37*
+*Généré automatiquement le 28/06/2026 à 06:40*
 
-**Total : 0 analyse(s)**
-
-*Aucune analyse enregistrée.*
+**Total : 1 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
+| 27/06/2026 | v1 | [🎓 Analyse Business & Fonctionnelle — Bot Emile (Assistant Pédagogique)](analyse-bot-emile/) | `robert` `emile` `analyse` `business` `bpmn` `data-flow` `architecture` `education` | ✅ Finalisé | [📥](analyse-bot-emile/?print-pdf) 🗑️ |
 
 ---
 
