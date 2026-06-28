@@ -43,12 +43,12 @@ Le quad doit :
 
 | Marque | Origine | Distributeur Belgique | Gamme touring/biplace |
 |:-------|:--------|:----------------------|:----------------------|
-| **Can-Am (BRP)** | 🇨🇦 Canada | Bert Adventure Tielt + réseau (KD Quad, Zone Rouge) | Outlander 650/850/1000 2-up, Renegade |
-| **Polaris** | 🇺🇸 USA | Polaris Benelux (concessionnaires) | Sportsman 570/850/1000 Touring |
-| **Yamaha** | 🇯🇵 Japon | Réseau concessionnaires (Motokaiser, Zone Rouge) | Kodiak 700, Grizzly 700 — disponibles neuf ✅ |
-| **CFMOTO** | 🇨🇳 Chine | MOOOF NV (Benelux) + KD Quad, Zone Rouge | C5 Touring, C6 Pro Touring, CFORCE 1000 |
-| **Kymco** | 🇹🇼 Taïwan | Très solide réseau BE | MXU 450/550 — utilitaire et rando |
-| **Segway Powersports** | 🇨🇳🇺🇸 Chine/US | KD Quad, Motokaiser, Zone Rouge | Snarler AT6/AT8 — modernes, connectés |
+| **Can-Am (BRP)** | 🇨🇦 Canada | KD Quad Manage (officiel) | Outlander 650/850/1000 2-up, Renegade |
+| **Polaris** | 🇺🇸 USA | ⛔ Aucun dans 50 km de Sombreffe | Sportsman 570/850/1000 Touring |
+| **Yamaha** | 🇯🇵 Japon | M. Mazuin Sport (Fosses, 15 km), Zone Rouge (Haine, 28 km) | Kodiak 700, Grizzly 700 — disponibles neuf ✅ |
+| **CFMOTO** | 🇨🇳 Chine | KD Quad Manage + Tamoto (Jodoigne, 29 km) | C5 Touring, C6 Pro Touring, CFORCE 1000 |
+| **Kymco** | 🇹🇼 Taïwan | KD Quad Manage (seul dans 50 km) | MXU 450/550/700 Explorer |
+| **Segway Powersports** | 🇨🇳🇺🇸 Chine/US | ⛔ Aucun dans 50 km de Sombreffe | Snarler AT6/AT8 — vérifier disponibilité |
 | **GOES** | 🇨🇳 Chine | KD Quad, distribué avec CFMOTO | Terrox — utilitaire accessible |
 | **TGB** | 🇹🇼 Taïwan | Réseau belge | Blade 600/1000 — robuste, agricole/forestier |
 | **Suzuki** | 🇯🇵 Japon | ⛔ Plus distribué neuf BE | KingQuad 750 (occasion seulement) |
@@ -246,13 +246,12 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 
 | Concessionnaire | Adresse | Tél. | Marques | Distance | 
 |:----------------|:--------|:----:|:--------|:--------:|
-| 🥇 **KD Quad Manage** | Rue de la Croyère 13, 7170 Manage | 064 700 970 | Kymco, CFMOTO, Can-Am, Segway, GOES | **~25 km – 25 min** 🚗 |
-| **Zone Rouge** | Rue de la Loi 18, 4821 Andrimont (Liège) | — | CFMOTO, Segway, Yamaha, Kayo | ~75 km |
-| **Motokaiser Belgium** | Beveren (Waas) / Zonhoven (Limburg) | — | CFMOTO, Segway, Yamaha, Kayo | ~90-100 km |
-| **Bert Adventure Tielt** | Tielt (West-Vlaanderen) | 051 40 03 13 | Can-Am (BRP) | ~120 km |
-| **Tamoto Belgium** | Hombeek (Antwerpen) | — | Kayo, quads enfants | ~85 km |
+| 🥇 **KD Quad Manage** | Rue de la Croyère 13, 7170 Manage | 064 700 970 | Can-Am, CFMOTO, Kymco | **~26 km – 25 min** 🚗 |
+| **Tamoto** | Rue de Piétrain 36b, 1370 Jodoigne | 010 73 02 15 | CFMOTO | **~29 km** |
+| **M. Mazuin Sport** | Chaussée de Namur 15, 5070 Fosses-la-Ville | 071 72 50 94 | Yamaha (moto) | **~15 km** 🚗 |
+| **Zone Rouge** | Chaussée de Jolimont 174, 7100 Haine-St-Paul | 064 22 11 40 | Yamaha (moto) | **~28 km** |
 
-> 💡 **KD Quad Manage** est clairement le plus pratique : 25 min de Sombreffe, et il distribue **Kymco, CFMOTO, Segway ET Can-Am** — tu peux essayer les 4 modèles au même endroit.
+> 💡 **KD Quad Manage** est le plus pratique : 25 min de Sombreffe, distribue **Can-Am, CFMOTO et Kymco** au même endroit. **Tamoto Jodoigne** (29 km) est une alternative pour CFMOTO. **M. Mazuin Sport** à Fosses-la-Ville (15 km) pour Yamaha.
 
 ### Horaires KD Quad Manage
 - **Lun-Ven** : 9h00 – 18h00
@@ -294,12 +293,12 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 
 ### Points d'attention
 
-- 🥇 **Kymco MXU 700 Explorer** = top confort passager (dossier + poignées), dispo KD Quad Manage (25 km de Sombreffe) — 9 999 €
-- 🥇 **CFMOTO** = meilleur rapport qualité/prix, réseau Benelux (MOOOF NV + KD Quad), garantie 2 ans
-- 🥈 **Segway Snarler AT6 L** = très bon rapport Q/P, biplace confort, moderne (vérifier dossier optionnel)
-- 🥉 **Kymco MXU** = excellent réseau belge, prix compétitif, fiable — vérifier selle biplace
-- ❌ **Can-Am** = cher, mais meilleure tenue de côte et confort — contacter Bert Adventure Tielt
-- 🇯🇵 **Yamaha** (Kodiak/Grizzly) = disponible neuf Belgique ✅ chez Motokaiser, Zone Rouge
+|- 🥇 **Kymco MXU 700 Explorer** = top confort passager (dossier + poignées), 9 999 € chez **KD Quad Manage** (26 km)
+|- 🥇 **CFMOTO** = meilleur rapport qualité/prix, dispo chez **KD Quad Manage** + **Tamoto Jodoigne**
+|- 🥈 **Segway Snarler AT6 L** = bon Q/P, mais **aucun revendeur dans 50 km** de Sombreffe
+|- 🥉 **Kymco MXU** = excellent réseau belge, prix compétitif, fiable
+|- ✅ **Can-Am** = dispo chez KD Quad Manage — cher mais qualité
+|- 🇯🇵 **Yamaha** (Kodiak/Grizzly) = dispo chez **M. Mazuin Sport** (Fosses, 15 km ✅)
 - ✅ **Kayo** = option enfants/ados (50-110cc) si besoin futur
 - ⛔ **Suzuki, Arctic Cat** = plus de distributeur neuf en Belgique
 - ⚠️ **Vérifier la direction assistée (EPS)** — indispensable pour 2 personnes (>120 kg)
