@@ -246,22 +246,22 @@ Seule marque avec catalogue accessible : **Brenderup** (https://www.brenderup.co
 C'est la solution la plus simple, la plus sûre, et utilisée par la quasi-totalité des propriétaires de quads :
 
 ```
-                     ┌── TREUIL ──┐
-                     │  12V / 4x4 │
-                     └─────┬──────┘
-                           │ câble
-                           ▼
-┌──────────────────────────────────────┐
-│         REMORQUE FERMÉE              │
-│  ┌──────────────────────────────┐    │
-│  │         ╔══ QUAD ══╗  ◄─────┤    │ ← Treuil tire le quad
-│  │         ║          ║  câble │    │
-│  │         ╚══════════╝        │    │
-│  └──────────────────────────────┘    │
-│       ████████████                   │ ← Porte ouverte
-│       ██ RAMPE ██                    │ ← Rampe posée au sol
-│       ████████████                   │
-└──────────────────────────────────────┘
+                   +--- TREUIL ---+
+                   |  12V / 4x4   |
+                   +------+-------+
+                          | cable
+                          v
++------------------------------------------+
+|           REMORQUE FERMEE                |
+|  +----------------------------------+    |
+|  |         +-- QUAD --+  <----------+    |  <- Treuil tire le quad
+|  |         |          |  cable      |    |
+|  |         +----------+             |    |
+|  +----------------------------------+    |
+|       =================                   |  <- Porte ouverte
+|       == RAMPE ====                      |  <- Rampe posee au sol
+|       =================                   |
++------------------------------------------+
 ```
 
 **Procédure :**
