@@ -203,24 +203,28 @@ Le quad doit :
 
 > ⚠️ **Attention C6 Pro Touring (450 kg)** : avec une remorque PTAC 750 kg, il reste seulement **300 kg** de capacité (passagers + équipement + rampe). C'est jouable mais serré. La remorque PTAC 1 300 kg offre plus de marge.
 
-### 4.4 Contraintes permis
+### 4.4 Contraintes remorquage — Ford CC boîte auto
 
-| Configuration | Permis requis | Limite |
-|:--------------|:-------------:|:-------|
-| Quad < 400 kg + remorque < 750 kg (PTAC total < 3 500 kg) | **B** | ✅ Possible |
-| Remorque > 750 kg, PTAC total > 3 500 kg | **BE** | ❌ Nécessaire |
-| **Ta situation** : CC + remorque lourde | ✅ **Permis BE** | ✅ **Aucune limite** 🎉 |
+| Contrainte | Valeur |
+|:-----------|:------:|
+| **Ton permis** | ✅ BE (pas de limite légale) |
+| **Ton camping-car Ford** (boîte auto) | ⚠️ **Traction max : 750 kg** |
+| **Limite réelle** | Poids total remorque (vide + quad + équipement) ≤ **750 kg** |
 
-> ✅ **Tu as le permis BE** → plus aucune contrainte de poids ou de dimensions ! Tu peux prendre la remorque qui te plaît, y compris le modèle **CD260WHBR1300** (hauteur 185 cm, PTAC 1 300 kg, charge utile 905 kg) ou même une remorque plus grande si besoin. Plus besoin de limiter le choix du quad au poids — le **C6 Pro Touring (450 kg)** n'est plus un problème.
+> ⚠️ **Le BE ne change rien ici** : c'est la fiche technique du Ford qui limite à 750 kg de traction max — c'est une limite constructeur, pas une limite de permis. La remorque elle-même peut avoir un PTAC de 750 kg, mais son **poids réel chargé** ne doit pas dépasser 750 kg.
+>
+> **Calcul pratique** : remorque vide (~350 kg) + quad (~380-390 kg) = **~730-740 kg** ✅ — ça passe, mais il reste seulement 10-20 kg de marge pour les accessoires.
+>
+> 💡 Pour avoir plus de marge, cherche une remorque **plus légère** (aluminium, ~300 kg à vide). Ou limite le poids du quad choisi.
 
 ### 4.5 Budget combiné Quad + Remorque
 
-| Combinaison | Quad | Remorque | Total | Permis |
-|:------------|:----:|:---------:|:-----:|:------:|
-| **Kymco MXU 700 Explorer** + Brenderup CD260WHBR1300 🏆 | 9 999 € | ~4 500 € | **~14 500 €** | ✅ BE |
-| **CFMOTO C5 Touring** + Brenderup CD260WBD750 | ~7 000 € | ~3 500 € | **~10 500 €** | ✅ BE |
-| **CFMOTO C6 Pro Touring** + Brenderup CD260WHBR1300 | ~8 500 € | ~4 500 € | **~13 000 €** | ✅ BE |
-| **Segway Snarler AT6 L** + Brenderup CD260WHBR1300 | ~8 000 € | ~4 500 € | **~12 500 €** | ✅ BE |
+| Combinaison | Quad | Remorque | Total | Poids chargé |
+|:------------|:----:|:---------:|:-----:|:------------:|
+| **Kymco MXU 700 Explorer** + CD260WBD750 🏆 | 9 999 € | ~3 500 € | **~13 500 €** | ~730 kg ✅ |
+| **CFMOTO C5 Touring** + CD260UBD750 | ~7 000 € | ~3 200 € | **~10 200 €** | ~738 kg ✅ |
+| **CFMOTO C6 Pro Touring** + CD260WBD750 | ~8 500 € | ~3 500 € | **~12 000 €** | **~795 kg ❌** |
+| **Segway Snarler AT6 L** + CD260UBD750 | ~8 000 € | ~3 200 € | **~11 200 €** | ~730 kg ✅ |
 
 > 💡 **Rappel** : s'ajoutent ~800 € d'équipements (rampe aluminium, sangles à cliquet, antivol) + ~500 € immatriculation + ~400 €/an assurance.
 
@@ -235,7 +239,7 @@ Seule marque avec catalogue accessible : **Brenderup** (https://www.brenderup.co
 | **CD260WBR750** | 260 | 155 | 150 | 750 kg | 405 kg | Oui | ✅ Tous sauf C6 (juste haut.) |
 | **CD260WHBR1300** 💎 | 260 | 155 | **185** | **1 300 kg** | **905 kg** | Oui | ✅ Tous, large confort |
 
-> 🏆 **Avec ton permis BE** : le **CD260WHBR1300** (260×155×**185 cm**, PTAC 1 300 kg, charge utile 905 kg) est le meilleur choix — assez haut pour charger tout quad sans se poser de question, assez large pour être confortable. Et le **C6 Pro Touring (141 cm)** y entre sans problème avec 44 cm de marge au-dessus du guidon.
+> 🏆 **Avec Ford 750 kg max** : le **CD260WBD750** (260×155×150 cm, PTAC 750 kg, freiné) est le meilleur choix. Le **MXU 700 Explorer (134 cm)** ou le **C5 Touring (136 cm)** passent avec 14-16 cm de marge en hauteur. Le **C6 Pro Touring (141 cm)** est trop lourd et trop haut pour ce CC.
 
 ### 4.7 Chargement et déchargement du quad — Solutions pratiques
 
@@ -380,11 +384,11 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 - ✅ **Kayo** = option enfants/ados (50-110cc) si besoin futur
 - ⛔ **Suzuki, Arctic Cat** = plus de distributeur neuf en Belgique
 - ⚠️ **Vérifier la direction assistée (EPS)** — indispensable pour 2 personnes (>120 kg)
-- ⚠️ **Poids du quad + remorque** — avec le permis BE, plus aucune limite de poids ou de dimensions 🎉
-- ✅ **Avec le BE**, tous les quads sont compatibles, y compris le **C6 Pro Touring (450 kg)** et la remorque **CD260WHBR1300 (1 300 kg)**
+- ⚠️ **Ford CC boîte auto = traction max 750 kg** — limite constructeur, le BE n'y change rien
+- ✅ **Quad idéal** : poids < 400 kg pour rester sous 750 kg avec remorque (~350 kg à vide)
+- ❌ **C6 Pro Touring (450 kg)** trop lourd pour ce CC (dépasserait 750 kg chargé)
 - ✅ **Selle Touring/2-up** obligatoire — vérifier repose-pieds passager + dossier
-- ✅ **Hauteur C6 Pro Touring : 141 cm** — OK avec CD260WHBR1300 (185 cm) = 44 cm de marge
-- 📏 **Remorque recommandée BE** : Brenderup **CD260WHBR1300** (260×155×185 cm, 1 300 kg)
+- ✅ **Hauteur OK** avec CD260WBD750 (150 cm) pour MXU 700 Explorer (134 cm) ou C5 Touring (136 cm)
 - ✅ **PTAC 750 kg suffisant pour C5 Touring (388 kg)**, plus juste pour C6 Pro (450 kg)
 - 💡 **Distributeurs multi-marques** : KD Quad, Tamoto, Zone Rouge, Mazuin Sport
 
