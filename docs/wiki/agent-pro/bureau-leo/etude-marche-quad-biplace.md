@@ -225,6 +225,19 @@ Le quad doit :
 
 > 💡 **Rappel** : s'ajoutent ~800 € d'équipements (rampe aluminium, sangles à cliquet, antivol) + ~500 € immatriculation + ~400 €/an assurance.
 
+### 4.6 Modèles de remorques disponibles — Brenderup CargoDynamic™
+
+Seule marque avec catalogue accessible : **Brenderup** (https://www.brenderup.com/fr/remorques/fourgons). BSA Remorques, Tenz et Bockmann ont leurs sites hors ligne.
+
+| Modèle | L int. (cm) | l int. (cm) | H int. (cm) | PTAC | Charge utile | Freins | Compatible |
+|:-------|:-----------:|:-----------:|:------------:|:----:|:------------:|:------:|:-----------|
+| **CD260UBD750** 💡 | 260 | 130 | 150 | 750 kg | 450 kg | Non | ✅ Tous sauf C6 (juste haut.) |
+| **CD260WBD750** 🏆 | **260** | **155** | **150** | **750 kg** | **405 kg** | **Oui** | ✅ Tous sauf C6 (juste haut.) |
+| **CD260WBR750** | 260 | 155 | 150 | 750 kg | 405 kg | Oui | ✅ Tous sauf C6 (juste haut.) |
+| **CD260WHBR1300** 💎 | 260 | 155 | **185** | **1 300 kg** | **905 kg** | Oui | ✅ Tous, large confort |
+
+> 🏆 **Recommandé** : **CD260WBD750** (260×155×150 cm, PTAC 750 kg, freiné) = largeur 155 cm idéale, permis B compatible. Seul bémol : **hauteur 150 cm** — le C6 Pro (141 cm+guidons) passe juste. Pour plus de marge, le **CD260WHBR1300** (185 cm haut) est le choix confort, mais nécessite permis BE si cumulé avec le CC.
+
 ---
 
 ## 5. 🗺️ Revendeurs près de Sombreffe
