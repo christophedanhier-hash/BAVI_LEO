@@ -18,15 +18,17 @@ type: analyse
 
 ## 1. 🎯 Cahier des charges
 
-| Critère | Exigence |
-|:--------|:---------|
-| **Places** | 2 (biplace — selle confortable pour passager) |
-| **Charge utile** | > 120 kg (2 personnes + bagages) |
-| **Marque** | Toute marque avec distributeur Belgique |
-| **Transport** | Tracté derrière le camping-car en remorque fermée |
-| **Permis** | B (voiture) — quad < 550 kg PTAC ou homologué |
-| **Usage** | Loisirs, balades, chemins, campagne |
-| **Budget** | À définir via étude comparative |
+| Critère | Exigence | Priorité |
+|:--------|:---------|:--------:|
+| **Confort assises avant + arrière** | Selle large, mousse haute densité, bonne ergonomie | 🔴 #1 |
+| **Place arrière** | **Dossier passager** obligatoire + **poignées de maintien** + repose-pieds | 🔴 #1 |
+| **Places** | 2 (biplace — selle confortable pour passager) | 🔴 |
+| **Charge utile** | > 120 kg (2 personnes + bagages) | 🟡 |
+| **Marque** | Toute marque avec distributeur Belgique | 🟢 |
+| **Transport** | Tracté derrière le camping-car en remorque fermée | 🟡 |
+| **Permis** | B (voiture) — quad < 550 kg PTAC ou compatible remorque 750 kg | 🟡 |
+| **Usage** | Loisirs, balades, chemins, campagne | 🟢 |
+| **Budget** | Optimiser rapport qualité/confort/prix | 🟡 |
 
 ### 1.1 Contraintes transport
 
@@ -257,18 +259,39 @@ Le quad doit :
 
 ---
 
-## 7. 📋 Prochaines étapes
+## 7. 🎯 Comparatif confort passager — À vérifier chez KD Quad Manage
+
+| Critère | Kymco MXU 700 Explorer | CFMOTO C6 Pro Touring | Segway Snarler AT6 L | CFMOTO C5 Touring |
+|:--------|:----------------------:|:---------------------:|:--------------------:|:-----------------:|
+| **💰 Prix** | **9 999 €** | ~8 500 € | ~8 000 € | ~7 000 € |
+| **Selle avant** | Large, mousse HD | Confortable | Confortable | Standard touring |
+| **Selle arrière** | ✅ Large + mousse HD | ✅ Longue | ✅ Longue | ✅ Longue |
+| **Dossier passager** | ✅ **Oui, intégré** | ✅ **Oui, intégré** | ✅ Oui | ⚠️ Optionnel |
+| **Poignées maintien** | ✅ **Moulées** | ✅ Intégrées | ✅ Intégrées | ⚠️ À vérifier |
+| **Repose-pieds arrière** | ✅ Élargis + rehaussés | ✅ Standards | ✅ Standards | ✅ Standards |
+| **EPS (direction assistée)** | ✅ Double mode | ✅ Standard | ✅ Standard | ✅ Standard |
+| **ABS** | ✅ Oui | ✅ Oui | ✅ Oui | ✅ Oui |
+| **Poids** | ~380 kg | **450 kg** ⚠️ | ~380 kg | **388 kg** |
+| **Moteur** | 695cc, 44cv | 650cc, 54cv | 600cc, 42cv | 500cc, 39ch |
+| **KD Quad Manage** | ✅ Oui | ✅ Oui | ✅ Oui | ✅ Oui |
+
+> 💡 Conseil : aller chez **KD Quad Manage** et **essayer l'assise arrière** des 4 modèles — c'est le critère déterminant. Le MXU 700 Explorer semble le mieux équipé de série pour le confort passager (dossier + poignées moulées + repose-pieds élargis), mais seul un essai concret permettra de juger du confort réel des selles.
+
+---
+
+## 8. 📋 Prochaines étapes
 
 | # | Action | Qui |
 |:-:|:-------|:---:|
-| 1 | Aller chez **KD Quad Manage** (Rue de la Croyère 13, 7170 Manage — ~25 km) pour essayer **Kymco MXU 700 Explorer** + voir CFMOTO C5/C6 Touring + Segway Snarler AT6 | Christophe |
-| 2 | Contacter **MOOOF NV** (CFMOTO Benelux) pour devis | Christophe |
-| 3 | Contacter **Bert Adventure Tielt** (051 40 03 13) pour devis Can-Am Outlander 650 2-UP | Christophe |
-| 4 | Vérifier disponibilité **Yamaha Kodiak 700** chez Motokaiser ou Zone Rouge | Christophe |
-| 5 | Vérifier PTAC camping-car + permis B — total < 3 500 kg ? | Christophe |
-| 6 | Demander prix remorque fermée chez BSA Remorques / Brenderup | Christophe |
-| 7 | Vérifier dimensions intérieures remorque : mini 260×130×150 cm | Christophe |
-| 8 | Comparer neuf vs occasion (< 1 an, faible km) | Christophe + LEO |
+| **1** | 🥇 Aller chez **KD Quad Manage** (Rue de la Croyère 13, 7170 Manage — ~25 km) — essayer l'**assise arrière** des 4 modèles : Kymco MXU 700 Explorer / CFMOTO C5/C6 Touring / Segway Snarler AT6 | Christophe |
+| 2 | Si MXU 700 Explorer confirmé : commander chez KD Quad | Christophe |
+| 3 | Contacter **MOOOF NV** (CFMOTO Benelux) pour devis | Christophe |
+| 4 | Contacter **Bert Adventure Tielt** (051 40 03 13) pour devis Can-Am Outlander 650 2-UP | Christophe |
+| 5 | Vérifier disponibilité **Yamaha Kodiak 700** chez Motokaiser ou Zone Rouge | Christophe |
+| 6 | Vérifier PTAC camping-car + permis B — total < 3 500 kg ? | Christophe |
+| 7 | Demander prix remorque fermée chez BSA Remorques / Brenderup | Christophe |
+| 8 | Vérifier dimensions intérieures remorque : mini 260×130×150 cm | Christophe |
+| 9 | Comparer neuf vs occasion (< 1 an, faible km) | Christophe + LEO |
 
 ---
 
