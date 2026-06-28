@@ -208,20 +208,19 @@ Le quad doit :
 | Configuration | Permis requis | Limite |
 |:--------------|:-------------:|:-------|
 | Quad < 400 kg + remorque < 750 kg (PTAC total < 3 500 kg) | **B** | ✅ Possible |
-| Remorque > 750 kg, PTAC total > 3 500 kg | **BE** | ❌ À éviter |
-| **Recommandé** : Quad ~400 kg + remorque 750 kg PTAC | **B** | ✅ Solution idéale |
+| Remorque > 750 kg, PTAC total > 3 500 kg | **BE** | ❌ Nécessaire |
+| **Ta situation** : CC + remorque lourde | ✅ **Permis BE** | ✅ **Aucune limite** 🎉 |
 
-> ⚠️ **Vérifier** : le PTAC du camping-car + PTAC de la remorque ne doit pas dépasser 3 500 kg pour le permis B standard (sauf permis BE ou ancien permis B obtenu avant 2013).
+> ✅ **Tu as le permis BE** → plus aucune contrainte de poids ou de dimensions ! Tu peux prendre la remorque qui te plaît, y compris le modèle **CD260WHBR1300** (hauteur 185 cm, PTAC 1 300 kg, charge utile 905 kg) ou même une remorque plus grande si besoin. Plus besoin de limiter le choix du quad au poids — le **C6 Pro Touring (450 kg)** n'est plus un problème.
 
 ### 4.5 Budget combiné Quad + Remorque
 
-| Combinaison | Quad | Remorque (neuve) | Total |
-|:------------|:----:|:-----------------:|:-----:|
-| **Kymco MXU 700 Explorer** + remorque standard 750 kg | 9 999 € | ~3 200 € | **~13 200 €** |
-| **CFMOTO C5 Touring** + remorque standard 750 kg | ~7 000 € | ~3 200 € | **~10 200 €** |
-| **CFMOTO C6 Pro Touring** + remorque large 750 kg | ~8 500 € | ~3 500 € | **~12 000 €** |
-| **Segway Snarler AT6 L** + remorque standard 750 kg | ~8 000 € | ~3 200 € | **~11 200 €** |
-| **Kymco MXU 700 Explorer** + remorque 1 300 kg (confort) | 9 999 € | ~4 500 € | **~14 500 €** |
+| Combinaison | Quad | Remorque | Total | Permis |
+|:------------|:----:|:---------:|:-----:|:------:|
+| **Kymco MXU 700 Explorer** + Brenderup CD260WHBR1300 🏆 | 9 999 € | ~4 500 € | **~14 500 €** | ✅ BE |
+| **CFMOTO C5 Touring** + Brenderup CD260WBD750 | ~7 000 € | ~3 500 € | **~10 500 €** | ✅ BE |
+| **CFMOTO C6 Pro Touring** + Brenderup CD260WHBR1300 | ~8 500 € | ~4 500 € | **~13 000 €** | ✅ BE |
+| **Segway Snarler AT6 L** + Brenderup CD260WHBR1300 | ~8 000 € | ~4 500 € | **~12 500 €** | ✅ BE |
 
 > 💡 **Rappel** : s'ajoutent ~800 € d'équipements (rampe aluminium, sangles à cliquet, antivol) + ~500 € immatriculation + ~400 €/an assurance.
 
@@ -236,7 +235,7 @@ Seule marque avec catalogue accessible : **Brenderup** (https://www.brenderup.co
 | **CD260WBR750** | 260 | 155 | 150 | 750 kg | 405 kg | Oui | ✅ Tous sauf C6 (juste haut.) |
 | **CD260WHBR1300** 💎 | 260 | 155 | **185** | **1 300 kg** | **905 kg** | Oui | ✅ Tous, large confort |
 
-> 🏆 **Recommandé** : **CD260WBD750** (260×155×150 cm, PTAC 750 kg, freiné) = largeur 155 cm idéale, permis B compatible. Seul bémol : **hauteur 150 cm** — le C6 Pro (141 cm+guidons) passe juste. Pour plus de marge, le **CD260WHBR1300** (185 cm haut) est le choix confort, mais nécessite permis BE si cumulé avec le CC.
+> 🏆 **Avec ton permis BE** : le **CD260WHBR1300** (260×155×**185 cm**, PTAC 1 300 kg, charge utile 905 kg) est le meilleur choix — assez haut pour charger tout quad sans se poser de question, assez large pour être confortable. Et le **C6 Pro Touring (141 cm)** y entre sans problème avec 44 cm de marge au-dessus du guidon.
 
 ### 4.7 Chargement et déchargement du quad — Solutions pratiques
 
@@ -381,10 +380,11 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 - ✅ **Kayo** = option enfants/ados (50-110cc) si besoin futur
 - ⛔ **Suzuki, Arctic Cat** = plus de distributeur neuf en Belgique
 - ⚠️ **Vérifier la direction assistée (EPS)** — indispensable pour 2 personnes (>120 kg)
-- ⚠️ **Poids du quad + remorque** — rester sous les limites permis B si pas de BE
+- ⚠️ **Poids du quad + remorque** — avec le permis BE, plus aucune limite de poids ou de dimensions 🎉
+- ✅ **Avec le BE**, tous les quads sont compatibles, y compris le **C6 Pro Touring (450 kg)** et la remorque **CD260WHBR1300 (1 300 kg)**
 - ✅ **Selle Touring/2-up** obligatoire — vérifier repose-pieds passager + dossier
-- ⚠️ **Hauteur C6 Pro Touring : 141 cm** — vérifier hauteur intérieure remorque
-- 📏 **Dimension remorque minimale : 260 × 130 × 150 cm** (Lxlxh)
+- ✅ **Hauteur C6 Pro Touring : 141 cm** — OK avec CD260WHBR1300 (185 cm) = 44 cm de marge
+- 📏 **Remorque recommandée BE** : Brenderup **CD260WHBR1300** (260×155×185 cm, 1 300 kg)
 - ✅ **PTAC 750 kg suffisant pour C5 Touring (388 kg)**, plus juste pour C6 Pro (450 kg)
 - 💡 **Distributeurs multi-marques** : KD Quad, Tamoto, Zone Rouge, Mazuin Sport
 
