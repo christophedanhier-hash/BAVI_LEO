@@ -227,7 +227,28 @@ Le quad doit :
 
 ---
 
-## 5. 💰 Budget estimé
+## 5. 🗺️ Revendeurs près de Sombreffe
+
+Sombreffe (province Namur). Les concessionnaires les plus proches :
+
+| Concessionnaire | Adresse | Tél. | Marques | Distance | 
+|:----------------|:--------|:----:|:--------|:--------:|
+| 🥇 **KD Quad Manage** | Rue de la Croyère 13, 7170 Manage | 064 700 970 | Kymco, CFMOTO, Can-Am, Segway, GOES | **~25 km – 25 min** 🚗 |
+| **Zone Rouge** | Rue de la Loi 18, 4821 Andrimont (Liège) | — | CFMOTO, Segway, Yamaha, Kayo | ~75 km |
+| **Motokaiser Belgium** | Beveren (Waas) / Zonhoven (Limburg) | — | CFMOTO, Segway, Yamaha, Kayo | ~90-100 km |
+| **Bert Adventure Tielt** | Tielt (West-Vlaanderen) | 051 40 03 13 | Can-Am (BRP) | ~120 km |
+| **Tamoto Belgium** | Hombeek (Antwerpen) | — | Kayo, quads enfants | ~85 km |
+
+> 💡 **KD Quad Manage** est clairement le plus pratique : 25 min de Sombreffe, et il distribue **Kymco, CFMOTO, Segway ET Can-Am** — tu peux essayer les 4 modèles au même endroit.
+
+### Horaires KD Quad Manage
+- **Lun-Ven** : 9h00 – 18h00
+- **Sam** : 9h00 – 13h30
+- **Réservation essai** : 064 700 970 ou kdquad@gmail.com
+
+---
+
+## 6. 💰 Budget estimé
 
 | Poste | Estimation | Notes |
 |:------|:----------:|:------|
@@ -242,7 +263,7 @@ Le quad doit :
 
 ---
 
-## 6. 🏆 Recommandations
+## 7. 🏆 Recommandations
 
 ### Meilleurs choix par profil
 
@@ -278,7 +299,7 @@ Le quad doit :
 
 ---
 
-## 7. 🎯 Comparatif confort passager — À vérifier chez KD Quad Manage
+## 8. 🎯 Comparatif confort passager — À vérifier chez KD Quad Manage
 
 | Critère | Kymco MXU 700 Explorer | CFMOTO C6 Pro Touring | Segway Snarler AT6 L | CFMOTO C5 Touring |
 |:--------|:----------------------:|:---------------------:|:--------------------:|:-----------------:|
@@ -298,7 +319,7 @@ Le quad doit :
 
 ---
 
-## 8. 📋 Prochaines étapes
+## 9. 📋 Prochaines étapes
 
 | # | Action | Qui |
 |:-:|:-------|:---:|
