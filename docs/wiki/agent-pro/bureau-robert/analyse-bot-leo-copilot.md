@@ -1,10 +1,10 @@
 ---
-date: 2026-06-27
+date: 2026-06-28
 bureau: bureau-robert
 auteur: LEO + Robert
-version: v1
+version: v2
 modele: deepseek-v4-flash
-tags: [robert, michel, infra-hermes, analyse, business, bpmn, data-flow, architecture]
+tags: [robert, michel, infra-hermes, analyse, business, bpmn, data-flow, architecture, systeme]
 statut: finalise
 type: analyse
 ---
@@ -22,12 +22,15 @@ type: analyse
 
 **Léo Copilot** (profil `leo-copilot`) est le bot **infrastructure** de l'écosystème BAVI. Il porte le bureau **Michel — Infra_Hermes** et gère tout ce qui touche au fonctionnement technique de la plateforme Hermes Agent : crons, dashboards, n8n, Google APIs, Git, skills, budget, machines, réseau.
 
-Contrairement à LEO (polyvalent/documentation) et Sylvia (voyage), Léo Copilot a un scope **purement technique** — il ne fait ni analyses business, ni roadbooks, ni consultations. Son modèle est DeepSeek V4 Pro (le plus puissant) car ses tâches sont complexes.
+|Contrairement à LEO (polyvalent/documentation) et Sylvia (voyage), Léo Copilot a un scope **purement technique** — il ne fait ni analyses business, ni roadbooks, ni consultations. Son modèle est DeepSeek V4 Pro (le plus puissant) car ses tâches sont complexes.
+
+> 🔑 **Changement majeur (v2)** : Léo Copilot dispose désormais de l'**accès root complet** sur la machine LEO (`sudo` sans restriction). Il est devenu le **padron de la machine** et peut tout faire : installation système, configuration Nginx, pare-feu (UFW), DNS, certificats SSL, tunnels Cloudflare, ports réseau — sans dépendre de CodeWhale. L'ère CodeWhale est révolue pour LEO.
 
 ### 1.2 Objectifs
 
 | Objectif | Description |
 |:---------|:------------|
+| 🏗️ **Installer & maintenir** les services système (Nginx, Cloudflare, DNS, SSL, UFW) | CodeWhale remplacé ✅ |
 | ⚙️ **Maintenir** l'infrastructure Hermes (30 crons, 8 dashboards) |
 | 🛠️ **Dépanner** les services (gateways, conteneurs, SSH, tunnels) |
 | 📊 **Surveiller** les machines (LEO, Yoga, Penguin — CPU, RAM, disque) |
@@ -54,6 +57,8 @@ Contrairement à LEO (polyvalent/documentation) et Sylvia (voyage), Léo Copilot
 | Crons gérés | 30 (tous verts) |
 | Dashboards | 8 temps réel |
 | Machines surveillées | 3 (LEO, Yoga, Penguin) |
+| Accès système | `sudo` root complet 🔑 |
+| Services système | Nginx, Cloudflare, UFW, SSL, DNS |
 | n8n workflows | 6 |
 | Skills BAVI | 4 (Michel, Emile, governance, versioning) |
 | Budget DeepSeek | $19,46 (dashboard) |
@@ -83,6 +88,14 @@ graph TB
         GW[Gateways<br/>3 profils Hermes]
     end
 
+    subgraph "🔌 Services système (root access)"
+        NG[Nginx<br/>Sites, configs]
+        CF[Cloudflare Tunnel<br/>DNS, ingress]
+        UF[UFW<br/>Pare-feu ports]
+        SS[SSL/Certbot<br/>Certificats TLS]
+        PORT[Ports<br/>80, 443, 8081]
+    end
+
     subgraph "🖥️ Machines"
         L[LEO server<br/>457 Go, 20% disque]
         Y[Yoga<br/>Monitoring CPU/RAM]
@@ -107,6 +120,11 @@ graph TB
     LC --> DB
     LC --> N8N
     LC --> GW
+    LC --> NG
+    LC --> CF
+    LC --> UF
+    LC --> SS
+    LC --> PORT
     LC --> L
     LC --> Y
     LC --> P
@@ -132,6 +150,7 @@ graph TB
 | **Code** | Code-Server (VS Code web, port 8081) | Développement distant |
 | **Réseau** | Tailscale (100.92.102.28) | Accès privé machines |
 | **Budget** | Dashboard Hermes (port 9119) | Suivi temps réel |
+| **Accès système** | `sudo` root complet | Padron machine — remplace CodeWhale ✅ |
 | **Skills source** | Sync depuis LEO (profil default) | 30 min |
 
 ---
@@ -291,6 +310,7 @@ pie title Repartition cout DeepSeek Pro
 
 | Fonction | Statut | Détail |
 |:---------|:------:|:-------|
+| **🚀 Services système** | ✅ Nouveau (v2) | Installation Nginx, Cloudflare Tunnel, DNS, UFW, SSL — remplace CodeWhale |
 | Maintenance crons (30) | ✅ Actif | Création, debug, staggering |
 | Dashboards temps réel | ✅ Actif | 8 dashboards Chart.js |
 | n8n workflows | ✅ Actif | 6 workflows, API REST |
@@ -355,7 +375,7 @@ flowchart LR
 | 🔔 Système d'alertes temps réel (webhook) | Fort | Moyenne |
 | 📊 Dashboard unique consolidé | Moyen | Faible |
 | 🤖 Auto-heal des crons (déjà partiel) | Fort | Élevée |
-| 🐳 Migration conteneur Docker optimisé | Moyen | Élevée |
+| 🐳 Gestion complète des services système (Nginx, Cloudflare, UFW) | ✅ **Fait (v2)** | Remplace CodeWhale |
 | 🌐 API status publique | Moyen | Faible |
 | 📱 App mobile monitoring | Faible | Élevée |
 
@@ -366,6 +386,7 @@ flowchart LR
 | Version | Date | Auteur | Description |
 |:--------|:-----|:-------|:------------|
 | v1 | 27/06/2026 | LEO + Robert | Version initiale — analyse business Léo Copilot |
+| v2 | 28/06/2026 | LEO + Robert | 🚀 Léo Copilot devient padron machine — accès root complet, plus de dépendance CodeWhale |
 
 ---
 
