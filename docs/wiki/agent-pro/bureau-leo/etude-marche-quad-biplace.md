@@ -203,21 +203,37 @@ Le quad doit :
 
 > ⚠️ **Attention C6 Pro Touring (450 kg)** : avec une remorque PTAC 750 kg, il reste seulement **300 kg** de capacité (passagers + équipement + rampe). C'est jouable mais serré. La remorque PTAC 1 300 kg offre plus de marge.
 
-### 4.4 Contraintes remorquage — Ford CC boîte auto
+### 4.4 Contraintes remorquage — Roller Team 287 TL (Ford Transit)
 
 | Contrainte | Valeur |
 |:-----------|:------:|
 | **Ton permis** | ✅ BE (pas de limite légale) |
-| **Ton camping-car Ford** (boîte auto) | ⚠️ **Traction max : 750 kg** |
-| **Limite réelle** | Poids total remorque (vide + quad + équipement) ≤ **750 kg** |
+| **Base roulante** | 🚐 Ford Transit châssis nu → traction freinée **2 000-2 500 kg** |
+| **Carrossier** | Roller Team 287 TL → traction **peut être réduite** sur carte grise |
+| **750 kg que tu cites** | ⚠️ C'est très probablement la **limite non freinée** (toujours 750 kg pour tous les véhicules) |
+| **Valeur à vérifier** | 📄 **Carte grise, case F.3** = masse max remorque freinée |
 
-> ⚠️ **Le BE ne change rien ici** : c'est la fiche technique du Ford qui limite à 750 kg de traction max — c'est une limite constructeur, pas une limite de permis. La remorque elle-même peut avoir un PTAC de 750 kg, mais son **poids réel chargé** ne doit pas dépasser 750 kg.
+> ⚠️ **Distinction importante** : tout véhicule peut tracter **750 kg non freiné** (sans frein de remorque). Mais avec une remorque équipée de freins, la limite est quasi-toujours plus élevée. Le Ford Transit châssis nu autorise 2 000-2 500 kg freiné, mais Roller Team (carrossier) peut avoir réduit cette valeur sur la carte grise.
 >
-> **Calcul pratique** : remorque vide (~350 kg) + quad (~380-390 kg) = **~730-740 kg** ✅ — ça passe, mais il reste seulement 10-20 kg de marge pour les accessoires.
+> 🔍 **À vérifier sur ta carte grise** :
+> - **Case O.1** : PTAC du camping-car (poids total max)
+> - **Case F.3** : **Masse max remorque freinée** → c'est la valeur qui nous intéresse
+> - **Case F.4** : Masse max remorque non freinée (souvent 750 kg)
 >
-> 💡 Pour avoir plus de marge, cherche une remorque **plus légère** (aluminium, ~300 kg à vide). Ou limite le poids du quad choisi.
+> 📞 Si la carte grise indique 750 kg en F.3, vérifier sur **forum.campingcar.com** si d'autres proprios de 287 TL ont la même valeur — Roller Team a peut-être limité volontairement.
 
-### 4.5 Budget combiné Quad + Remorque
+### 4.5 Scénarios selon la traction réelle
+
+| Si F.3 = | Tu peux tracter | Quad max conseillé | Remorque conseillée |
+|:---------|:---------------|:--------------------|:---------------------|
+| **750 kg** (non freinée seulement) | Quad ~400 kg + remorque légère | MXU 700 Explorer (380 kg) | CD260UBD750 (sans frein) ✅ |
+| **1 500 kg** | Tous les quads | Tous y compris C6 Pro (450 kg) | CD260WBD750 (freiné) ✅ |
+| **2 000 kg** | Tous les quads + marge | Tous | CD260WHBR1300 (1 300 kg) ✅ |
+| **2 500 kg** | Tout sans limite | Tous | CD260WHBR1300 (1 300 kg) ✅ |
+
+> 💡 **Mon conseil** : regarde d'abord ta carte grise (case F.3). Si c'est bien 750 kg en freiné, le MXU 700 Explorer + CD260UBD750 reste la meilleure combo. Si c'est plus élevé (ce qui est probable), tu as le choix libre.
+
+### 4.6 Budget combiné Quad + Remorque
 
 | Combinaison | Quad | Remorque | Total | Poids chargé |
 |:------------|:----:|:---------:|:-----:|:------------:|
