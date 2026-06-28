@@ -167,36 +167,43 @@ Le quad doit :
 
 ---
 
-## 4. 📏 Compatibilité remorque fermée
+## 4. 📏 Compatibilité remorque fermée — Analyse détaillée par modèle
 
-### 4.1 Dimensions des quads (modèles CFMOTO C5/C6 Touring — recommandés)
+### 4.1 Dimensions des 4 modèles à comparer
 
-| Mesure | C5 Touring | C6 Pro Touring |
-|:-------|:----------:|:--------------:|
-| **Longueur** | **236 cm** | **246 cm** |
-| **Largeur** | **118 cm** | **124 cm** |
-| **Hauteur (guidons)** | **136 cm** | **141 cm** |
-| **Poids à vide** | **388 kg** | **450 kg** |
-| **Rayon braquage** | 325 cm | — |
+| Modèle | Longueur | Largeur | Hauteur | Poids à vide | Empattement |
+|:-------|:--------:|:-------:|:-------:|:------------:|:-----------:|
+| **Kymco MXU 700 Explorer** 🏆 | **229 cm** | **125 cm** | **134 cm** | **~380 kg** | 145 cm |
+| **CFMOTO C5 Touring** | **236 cm** | **118 cm** | **136 cm** | **388 kg** | 148 cm |
+| **CFMOTO C6 Pro Touring** | **246 cm** | **124 cm** | **141 cm** | **450 kg** ⚠️ | 151 cm |
+| **Segway Snarler AT6 L** | **~235 cm** | **~120 cm** | **~130 cm** | **~380 kg** | ~145 cm |
 
-> ⚠️ **Hauteur 141 cm** pour le C6 Pro : vérifier hauteur intérieure de la remorque (mini 150 cm recommandé).
+> ⚠️ Le **C6 Pro Touring (246 cm × 141 cm × 450 kg)** est le plus long, le plus haut et le plus lourd — c'est lui qui imposera les contraintes max à la remorque.
 
-### 4.2 Remorques fermées pour quad (disponibles Belgique)
+### 4.2 Dimension intérieure minimale requise
 
-**Dimension intérieure minimale requise : 260 × 130 × 150 cm** (Lxlxh)
+| Mesure | Calcul | Recommandation |
+|:-------|:-------|:---------------|
+| **Longueur** | Quad max 246 cm + 30 cm de marge → **276 cm** | **≥ 280 cm** |
+| **Largeur** | Quad max 125 cm + 20 cm de marge → **145 cm** | **≥ 150 cm** |
+| **Hauteur** | Quad max 141 cm + 15 cm de marge → **156 cm** | **≥ 160 cm** |
+| **Charge utile** | Quad max 450 kg + équipement 50 kg → **500 kg** | **PTAC ≥ 750 kg** |
 
-| Modèle remorque | L int. (cm) | l int. (cm) | H int. (cm) | PTAC (kg) | Charge utile | Compatible C5 | Compatible C6 | Prix (€) |
-|:----------------|:-----------:|:-----------:|:------------:|:---------:|:------------:|:-------------:|:-------------:|:--------:|
-| **BSA Quad Fermé** | 300 | 150 | 160 | 750 | ~360 kg | ✅ | ✅ (juste) | ~3 200 € |
-| **Brenderup Quad** | 310 | 155 | 170 | 750 | ~370 kg | ✅ | ✅ | ~3 500 € |
-| **BSA Remorque lourde** | 350 | 155 | 180 | 1 300 | ~850 kg | ✅ | ✅ | ~4 500 € |
-| **Tenz Q-7** | 305 | 150 | 175 | 750 | ~370 kg | ✅ | ✅ | ~3 200 € |
+> 💡 Une remorque **300 × 150 × 160 cm (L×l×h)** PTAC 750 kg est le **minimum viable**. Une remorque **310 × 155 × 175 cm** est **l'idéal confort**.
 
-> ⚠️ **PTAC remorque 750 kg + C5 Touring (388 kg) = reste 362 kg pour passagers/équipement** = OK.
-> ⚠️ **C6 Pro Touring (450 kg) + remorque 750 kg PTAC = reste 300 kg** — plus serré mais jouable.
-> 💡 Pour être large, une remorque 1 300 kg PTAC supprime toute contrainte de poids.
+### 4.3 Compatibilité par modèle × remorque
 
-### 4.3 Contraintes permis
+| Modèle | Remorque compacte<br/>250×130×150 | Remorque standard<br/>300×150×160 | Remorque large<br/>310×155×175 | Remorque lourde<br/>350×155×180 |
+|:-------|:--------------------------------:|:--------------------------------:|:------------------------------:|:------------------------------:|
+| **PTAC** | 500-750 kg | 750 kg | 750 kg | 1 300 kg |
+| **Kymco MXU 700 Explorer** (229×125×134, ~380 kg) | ⚠️ Juste en longueur | ✅ Confortable | ✅ Large | ✅ Très large |
+| **CFMOTO C5 Touring** (236×118×136, 388 kg) | ⚠️ Limite longueur | ✅ Bon | ✅ Large | ✅ Très large |
+| **CFMOTO C6 Pro Touring** (246×124×141, 450 kg) | ❌ Trop long/haut | ✅ OK (juste hauteur) | ✅ Confortable | ✅ Très large |
+| **Segway Snarler AT6 L** (~235×120×130, ~380 kg) | ⚠️ Limite longueur | ✅ Bon | ✅ Large | ✅ Très large |
+
+> ⚠️ **Attention C6 Pro Touring (450 kg)** : avec une remorque PTAC 750 kg, il reste seulement **300 kg** de capacité (passagers + équipement + rampe). C'est jouable mais serré. La remorque PTAC 1 300 kg offre plus de marge.
+
+### 4.4 Contraintes permis
 
 | Configuration | Permis requis | Limite |
 |:--------------|:-------------:|:-------|
@@ -205,6 +212,18 @@ Le quad doit :
 | **Recommandé** : Quad ~400 kg + remorque 750 kg PTAC | **B** | ✅ Solution idéale |
 
 > ⚠️ **Vérifier** : le PTAC du camping-car + PTAC de la remorque ne doit pas dépasser 3 500 kg pour le permis B standard (sauf permis BE ou ancien permis B obtenu avant 2013).
+
+### 4.5 Budget combiné Quad + Remorque
+
+| Combinaison | Quad | Remorque (neuve) | Total |
+|:------------|:----:|:-----------------:|:-----:|
+| **Kymco MXU 700 Explorer** + remorque standard 750 kg | 9 999 € | ~3 200 € | **~13 200 €** |
+| **CFMOTO C5 Touring** + remorque standard 750 kg | ~7 000 € | ~3 200 € | **~10 200 €** |
+| **CFMOTO C6 Pro Touring** + remorque large 750 kg | ~8 500 € | ~3 500 € | **~12 000 €** |
+| **Segway Snarler AT6 L** + remorque standard 750 kg | ~8 000 € | ~3 200 € | **~11 200 €** |
+| **Kymco MXU 700 Explorer** + remorque 1 300 kg (confort) | 9 999 € | ~4 500 € | **~14 500 €** |
+
+> 💡 **Rappel** : s'ajoutent ~800 € d'équipements (rampe aluminium, sangles à cliquet, antivol) + ~500 € immatriculation + ~400 €/an assurance.
 
 ---
 
