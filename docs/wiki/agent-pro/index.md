@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 28/06/2026 à 11:40*
+*Généré automatiquement le 28/06/2026 à 11:47*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -27,7 +27,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
 | 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](bureau-michel/analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` `systeme` | ✅ Finalisé | [📥](bureau-michel/analyse-bot-leo-copilot/?print-pdf) 🗑️ |
-| 28/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC](bureau-leo/etude-marche-quad-biplace/) | `quad` `atv` `achat` `etude-marche` `remorque` `camping-car` `tofdan` | 🔄 En cours | [📥](bureau-leo/etude-marche-quad-biplace/?print-pdf) 🗑️ |
+| 28/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v5 | [🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC](bureau-leo/etude-marche-quad-biplace/) | `quad` `atv` `achat` `etude-marche` `remorque` `camping-car` `tofdan` | 🔄 En cours | [📥](bureau-leo/etude-marche-quad-biplace/?print-pdf) 🗑️ |
 | 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [Audit Penguin — Debian 13, 6.3GB RAM](bureau-michel/audit-penguin-2026-06-28/) | `penguin` `crostini` `audit` `infra` `systeme` | 📝 Brouillon | [📥](bureau-michel/audit-penguin-2026-06-28/?print-pdf) 🗑️ |
 | 27/06/2026 | 🧭 Bureau Sylvie — Voyages | v1 | [🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)](bureau-sylvia/analyse-bot-voyage-sylvia/) | `robert` `sylvia` `voyage` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](bureau-sylvia/analyse-bot-voyage-sylvia/?print-pdf) 🗑️ |
 | 27/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Analyse Business & Fonctionnelle — LEO (Bureau Central)](bureau-leo/analyse-bot-leo-hub/) | `robert` `leo` `analyse` `business` `bpmn` `data-flow` `architecture` `gouvernance` | ✅ Finalisé | [📥](bureau-leo/analyse-bot-leo-hub/?print-pdf) 🗑️ |
@@ -50,4 +50,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 28/06/2026 11:40*
+*Index consolidé généré par `agent-pro-index.py` — 28/06/2026 11:47*

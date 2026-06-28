@@ -2,7 +2,7 @@
 date: 2026-06-28
 bureau: bureau-leo
 auteur: LEO
-version: v1
+version: v5
 modele: deepseek-v4-flash
 tags: [quad, atv, achat, etude-marche, remorque, camping-car, tofdan]
 statut: en-cours
@@ -238,6 +238,22 @@ Seule marque avec catalogue accessible : **Brenderup** (https://www.brenderup.co
 
 > 🏆 **Recommandé** : **CD260WBD750** (260×155×150 cm, PTAC 750 kg, freiné) = largeur 155 cm idéale, permis B compatible. Seul bémol : **hauteur 150 cm** — le C6 Pro (141 cm+guidons) passe juste. Pour plus de marge, le **CD260WHBR1300** (185 cm haut) est le choix confort, mais nécessite permis BE si cumulé avec le CC.
 
+### 4.7 Toit amovible / relevable — une alternative intéressante
+
+Certaines remorques fermées pour quad proposent un **toit amovible, relevable ou escamotable** (lift-up roof), ce qui permet de :
+- **Charger/décharger le quad sans rampe** (levage par hayon ou par le haut)
+- **Dégager de la hauteur** supplémentaire pendant le chargement
+- **Ranger le quad avec les guidons relevés** si l'espace libre est juste en hauteur
+
+**Ce qu'il faut vérifier chez Brenderup et autres :**
+- Le CD260WHBR1300 a une hauteur fixe de 185 cm — pas de toit amovible de série
+- Certains modèles **Brenderup CargoDynamic** peuvent être équipés d'une **porte arrière complète** (hayon) qui facilite le chargement
+- Les remorques **BSA, Tenz et Anssems** (sites hors ligne) pourraient proposer du sur-mesure — à demander chez un revendeur local
+
+**Alternative pratique** : une **remorque ouverte avec bâche amovible** (plateau + arceaux + bâche) est plus légère, moins chère, et le toit (bâche) se retire complètement. Mais elle n'offre pas la sécurité d'une remorque fermée (vol, intempéries).
+
+> 💡 **Conseil pratique** : si tu choisis le **MXU 700 Explorer (134 cm haut)** ou le **C5 Touring (136 cm)**, le Brenderup CD260WBD750 (150 cm) laisse **~14 cm de marge** — suffisant pour charger sans toit amovible. Le toit amovible ne devient utile que si tu prends le **C6 Pro Touring (141 cm)** où la marge tombe à 9 cm.
+
 ---
 
 ## 5. 🗺️ Revendeurs près de Sombreffe
@@ -293,12 +309,12 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 
 ### Points d'attention
 
-|- 🥇 **Kymco MXU 700 Explorer** = top confort passager (dossier + poignées), 9 999 € chez **KD Quad Manage** (26 km)
-|- 🥇 **CFMOTO** = meilleur rapport qualité/prix, dispo chez **KD Quad Manage** + **Tamoto Jodoigne**
-|- 🥈 **Segway Snarler AT6 L** = bon Q/P, mais **aucun revendeur dans 50 km** de Sombreffe
-|- 🥉 **Kymco MXU** = excellent réseau belge, prix compétitif, fiable
-|- ✅ **Can-Am** = dispo chez KD Quad Manage — cher mais qualité
-|- 🇯🇵 **Yamaha** (Kodiak/Grizzly) = dispo chez **M. Mazuin Sport** (Fosses, 15 km ✅)
+- 🥇 **Kymco MXU 700 Explorer** = top confort passager (dossier + poignées), 9 999 € chez **KD Quad Manage** (26 km)
+- 🥇 **CFMOTO** = meilleur rapport qualité/prix, dispo chez **KD Quad Manage** + **Tamoto Jodoigne**
+- 🥈 **Segway Snarler AT6 L** = bon Q/P, mais **aucun revendeur dans 50 km** de Sombreffe
+- 🥉 **Kymco MXU** = excellent réseau belge, prix compétitif, fiable
+- ✅ **Can-Am** = dispo chez KD Quad Manage — cher mais qualité
+- 🇯🇵 **Yamaha** (Kodiak/Grizzly) = dispo chez **M. Mazuin Sport** (Fosses, 15 km ✅)
 - ✅ **Kayo** = option enfants/ados (50-110cc) si besoin futur
 - ⛔ **Suzuki, Arctic Cat** = plus de distributeur neuf en Belgique
 - ⚠️ **Vérifier la direction assistée (EPS)** — indispensable pour 2 personnes (>120 kg)
@@ -307,7 +323,7 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 - ⚠️ **Hauteur C6 Pro Touring : 141 cm** — vérifier hauteur intérieure remorque
 - 📏 **Dimension remorque minimale : 260 × 130 × 150 cm** (Lxlxh)
 - ✅ **PTAC 750 kg suffisant pour C5 Touring (388 kg)**, plus juste pour C6 Pro (450 kg)
-- 💡 **Distributeurs multi-marques** : KD Quad, Motokaiser, Zone Rouge, Tamoto
+- 💡 **Distributeurs multi-marques** : KD Quad, Tamoto, Zone Rouge, Mazuin Sport
 
 ---
 
@@ -352,6 +368,10 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 | Version | Date | Auteur | Description |
 |:--------|:-----|:-------|:------------|
 | v1 | 28/06/2026 | LEO | Version initiale — étude de marché quad biplace |
+| v2 | 28/06/2026 | LEO | Ajout Kymco MXU 700 Explorer + KD Quad Manage |
+| v3 | 28/06/2026 | LEO | Focus confort passager — tableau comparatif assise arrière |
+| v4 | 28/06/2026 | LEO | Ré-analyse remorque + section revendeurs Sombreffe |
+| v5 | 28/06/2026 | LEO | Correction revendeurs (Tamoto, Mazuin) + toit amovible remorque |
 
 ---
 
