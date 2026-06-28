@@ -41,12 +41,16 @@ Le quad doit :
 
 | Marque | Origine | Distributeur Belgique | Gamme touring/biplace |
 |:-------|:--------|:----------------------|:----------------------|
-| **CFMOTO** | 🇨🇳 Chine | MOOOF NV (Benelux) | C5 Touring, C6 Pro Touring, CFORCE 1000 Touring Overland |
-| **Can-Am (BRP)** | 🇨🇦 Canada | Bert Adventure Tielt | Outlander 650/850/1000 2-up |
+| **Can-Am (BRP)** | 🇨🇦 Canada | Bert Adventure Tielt + réseau (KD Quad, Zone Rouge) | Outlander 650/850/1000 2-up, Renegade |
 | **Polaris** | 🇺🇸 USA | Polaris Benelux (concessionnaires) | Sportsman 570/850/1000 Touring |
-| **Suzuki** | 🇯🇵 Japon | ⛔ Arrêté en Belgique | KingQuad 750 AXi (plus distribué) |
-| **Yamaha** | 🇯🇵 Japon | ⛔ Arrêté en Belgique | Grizzly/Kodiak 700 (plus distribué BE) |
-| **Arctic Cat** | 🇺🇸 USA | ⛔ Plus de distributeur BE | Alterra TRV 600 (import US uniquement) |
+| **Yamaha** | 🇯🇵 Japon | Réseau concessionnaires (Motokaiser, Zone Rouge) | Kodiak 700, Grizzly 700 — disponibles neuf ✅ |
+| **CFMOTO** | 🇨🇳 Chine | MOOOF NV (Benelux) + KD Quad, Zone Rouge | C5 Touring, C6 Pro Touring, CFORCE 1000 |
+| **Kymco** | 🇹🇼 Taïwan | Très solide réseau BE | MXU 450/550 — utilitaire et rando |
+| **Segway Powersports** | 🇨🇳🇺🇸 Chine/US | KD Quad, Motokaiser, Zone Rouge | Snarler AT6/AT8 — modernes, connectés |
+| **GOES** | 🇨🇳 Chine | KD Quad, distribué avec CFMOTO | Terrox — utilitaire accessible |
+| **TGB** | 🇹🇼 Taïwan | Réseau belge | Blade 600/1000 — robuste, agricole/forestier |
+| **Suzuki** | 🇯🇵 Japon | ⛔ Plus distribué neuf BE | KingQuad 750 (occasion seulement) |
+| **Arctic Cat** | 🇺🇸 USA | ⛔ Plus de distributeur BE | Import US uniquement |
 
 ---
 
@@ -106,6 +110,44 @@ Le quad doit :
 | **Grizzly 700 EPS** | 700cc, 50cv | ~315 | 210×120×118 | ~240 | ✅ Siège long | ~10 000 € |
 
 > ⛔ Yamaha ne distribue plus de quads neufs en Belgique. Occasion possible.
+
+### 3.6 Autres marques disponibles Belgique — Kymco, Segway, GOES, TGB
+
+#### 🇹🇼 Kymco — MXU (utilitaire/rando)
+
+| Modèle | Moteur | Poids (kg) | Lxlxh (cm) | Charge utile | Selle biplace | Prix estimé |
+|:-------|:------:|:----------:|:-----------:|:------------:|:-------------:|:-----------:|
+| **MXU 450** | 450cc, 30ch | ~330 | ~215×118×120 | ~230 kg | Standard | ~5 500 € |
+| **MXU 550** | 550cc, 40ch | ~350 | ~220×120×120 | ~250 kg | ✅ Option siège long | ~6 500 € |
+
+> Kymco = très bon réseau belge, fiable, prix attractif. Vérifier disponibilité selle biplace sur MXU 550.
+
+#### 🇨🇳 Segway Powersports — Snarler (moderne, connecté)
+
+| Modèle | Moteur | Poids | Lxlxh | Charge utile | Selle biplace | Prix estimé |
+|:-------|:------:|:-----:|:-----:|:------------:|:-------------:|:-----------:|
+| **Snarler AT6 L** | 600cc, 42ch | ~380 kg | ~235×120×130 | ~260 kg | ✅ Biplace confort | ~8 000 € |
+| **Snarler AT8 L** | 800cc, 58ch | ~400 kg | ~240×122×132 | ~280 kg | ✅ Biplace confort | ~9 500 € |
+
+> Segway = quads modernes avec écran tactile, connectivité, éclairage LED. Disponible chez KD Quad, Motokaiser, Zone Rouge. Bon rapport qualité/prix, gamme touring biplace.
+
+#### 🇨🇳 GOES — Terrox (utilitaire accessible)
+
+| Modèle | Moteur | Poids | Lxlxh | Charge utile | Selle biplace | Prix estimé |
+|:-------|:------:|:-----:|:-----:|:------------:|:-------------:|:-----------:|
+| **Terrox 520** | 500cc, 35ch | ~350 kg | ~220×118×120 | ~240 kg | Standard | ~5 000 € |
+| **Terrox 700** | 700cc, 50ch | ~380 kg | ~230×120×122 | ~270 kg | ✅ Option biplace | ~6 500 € |
+
+> GOES = distribué avec CFMOTO (KD Quad). Marque économique, utilitaire. Vérifier disponibilité selle biplace.
+
+#### 🇹🇼 TGB — Blade (robuste, agricole/forestier)
+
+| Modèle | Moteur | Poids | Lxlxh | Charge utile | Selle biplace | Prix estimé |
+|:-------|:------:|:-----:|:-----:|:------------:|:-------------:|:-----------:|
+| **Blade 600 EFI** | 600cc, 42ch | ~360 kg | ~220×120×125 | ~250 kg | Standard | ~6 000 € |
+| **Blade 1000 EFI** | 1000cc, 75ch | ~400 kg | ~230×125×130 | ~300 kg | ✅ Option siège long | ~8 500 € |
+
+> TGB = marque taïwanaise réputée pour la robustesse en conditions difficiles. Bon pour agricole/forestier en Wallonie/Flandre.
 
 ---
 
@@ -173,22 +215,29 @@ Le quad doit :
 |:-------|:-----------------|:-----------:|:-------|
 | **💰 Meilleur rapport Q/P** | CFMOTO **C5 Touring** (500cc) | ~7 000 € | 388 kg, 270 kg charge utile, selle biplace confortable, disponible Belgique |
 | **⚖️ Polyvalence/puissance** | CFMOTO **C6 Pro Touring** (650cc) | ~8 500 € | 54ch, 330 kg charge utile, plus costaud pour 2 personnes |
+| **📱 Moderne & connecté** | Segway **Snarler AT6 L** | ~8 000 € | Biplace confort, écran tactile, connecté, bon rapport Q/P |
+| **🇹🇼 Fiable utilitaire** | Kymco **MXU 550** | ~6 500 € | Excellent réseau BE, prix bas, fiable |
 | **🏆 Premium** | Can-Am **Outlander 650 2-UP** | ~10 500 € | Qualité BRP, concessionnaire Bert Adventure Tielt |
+| **🇯🇵 Japonais** | Yamaha **Kodiak 700 EPS** | ~9 000 € | Valeur sûre, disponible neuf chez Motokaiser/Zone Rouge |
 | **💡 Occasion malin** | CFMOTO C5 Touring (2025) | ~5 000 – 5 500 € | Modèle 2025, peu de km, garantie transferable |
 | **🚀 Max puissance** | CFMOTO CFORCE 1000 Touring Overland | ~12 500 € | Bicylindre 963cc, conçu long voyage |
 
 ### Points d'attention
 
-- 🥇 **CFMOTO** = meilleur rapport qualité/prix du marché, réseau Benelux (MOOOF NV), garantie 2 ans, pièces dispo
-- ❌ **Can-Am** = cher, mais meilleure tenue de côte et confort — contacter Bert Adventure Tielt (Tielt, 051 40 03 13)
-- ⛔ **Suzuki, Yamaha, Arctic Cat** = plus de distributeur neuf en Belgique
+- 🥇 **CFMOTO** = meilleur rapport qualité/prix du marché, réseau Benelux (MOOOF NV + KD Quad), garantie 2 ans
+- 🥈 **Segway Snarler** = très bon rapport Q/P, biplace confort, moderne, disponible chez KD Quad/Motokaiser/Zone Rouge
+- 🥉 **Kymco MXU** = excellent réseau belge, prix compétitif, fiable — vérifier selle biplace
+- ❌ **Can-Am** = cher, mais meilleure tenue de côte et confort — contacter Bert Adventure Tielt
+- 🇯🇵 **Yamaha** (Kodiak/Grizzly) = disponible neuf Belgique ✅ chez Motokaiser, Zone Rouge
+- ✅ **Kayo** = option enfants/ados (50-110cc) si besoin futur
+- ⛔ **Suzuki, Arctic Cat** = plus de distributeur neuf en Belgique
 - ⚠️ **Vérifier la direction assistée (EPS)** — indispensable pour 2 personnes (>120 kg)
 - ⚠️ **Poids du quad + remorque** — rester sous les limites permis B si pas de BE
 - ✅ **Selle Touring/2-up** obligatoire — vérifier repose-pieds passager + dossier
 - ⚠️ **Hauteur C6 Pro Touring : 141 cm** — vérifier hauteur intérieure remorque
 - 📏 **Dimension remorque minimale : 260 × 130 × 150 cm** (Lxlxh)
 - ✅ **PTAC 750 kg suffisant pour C5 Touring (388 kg)**, plus juste pour C6 Pro (450 kg)
-- 💡 **BSA Remorques**  et **Brenderup** disponibles en Belgique
+- 💡 **Distributeurs multi-marques** : KD Quad, Motokaiser, Zone Rouge, Tamoto
 
 ---
 
@@ -196,13 +245,14 @@ Le quad doit :
 
 | # | Action | Qui |
 |:-:|:-------|:---:|
-| 1 | Contacter **MOOOF NV** (CFMOTO Benelux) pour devis C5 Touring + C6 Pro Touring | Christophe |
+| 1 | Contacter **MOOOF NV** (CFMOTO Benelux) + **KD Quad** pour devis C5 Touring / C6 Pro Touring / Segway Snarler AT6 | Christophe |
 | 2 | Contacter **Bert Adventure Tielt** (051 40 03 13) pour devis Can-Am Outlander 650 2-UP | Christophe |
-| 3 | Vérifier PTAC camping-car + permis B (BE ou pas) — total < 3 500 kg ? | Christophe |
-| 4 | Essayer : C5 Touring vs C6 Pro Touring (selle 2 places, confort, hauteur) | Christophe |
-| 5 | Demander prix remorque fermée chez BSA Remorques / Brenderup Belgique | Christophe |
-| 6 | Vérifier dimensions intérieures remorque : mini 260×130×150 cm — rampe chargement | Christophe |
-| 7 | Comparer neuf vs occasion (< 1 an, faible km) | Christophe + LEO |
+| 3 | Vérifier disponibilité **Yamaha Kodiak 700** / **Kymco MXU 550** chez Motokaiser ou Zone Rouge | Christophe |
+| 4 | Vérifier PTAC camping-car + permis B (BE ou pas) — total < 3 500 kg ? | Christophe |
+| 5 | Essayer en concession : C5 Touring vs Snarler AT6 L vs MXU 550 (selle 2 places, confort) | Christophe |
+| 6 | Demander prix remorque fermée chez BSA Remorques / Brenderup Belgique | Christophe |
+| 7 | Vérifier dimensions intérieures remorque : mini 260×130×150 cm — rampe chargement | Christophe |
+| 8 | Comparer neuf vs occasion (< 1 an, faible km) | Christophe + LEO |
 
 ---
 
