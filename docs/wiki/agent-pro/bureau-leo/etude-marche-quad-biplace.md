@@ -115,21 +115,35 @@ Le quad doit :
 
 #### 🇹🇼 Kymco — MXU (utilitaire/rando)
 
-| Modèle | Moteur | Poids (kg) | Lxlxh (cm) | Charge utile | Selle biplace | Prix estimé |
-|:-------|:------:|:----------:|:-----------:|:------------:|:-------------:|:-----------:|
+| Modèle | Moteur | Poids (kg) | Lxlxh (cm) | Charge utile | Selle biplace | Prix |
+|:-------|:------:|:----------:|:-----------:|:------------:|:-------------:|:----:|
 | **MXU 450** | 450cc, 30ch | ~330 | ~215×118×120 | ~230 kg | Standard | ~5 500 € |
 | **MXU 550** | 550cc, 40ch | ~350 | ~220×120×120 | ~250 kg | ✅ Option siège long | ~6 500 € |
+| **MXU 700 Explorer** 🏆 | **695cc, 44cv** | **~380** | **229×125×134** | **~280 kg** | **✅ Dossier + poignées** | **9 999 €** |
 
-> Kymco = très bon réseau belge, fiable, prix attractif. Vérifier disponibilité selle biplace sur MXU 550.
+> 🏆 **Kymco MXU 700 Explorer** : châssis allongé (+15 cm), double selle haute densité, **dossier passager + poignées moulées + repose-pieds élargis** ✅, EPS double mode, ABS, écran LCD 7", keyless, clignotants séquentiels LED, attelage. Disponible chez **KD Quad Manage** — **9 999 €** (prix public).
+> Kymco = très bon réseau belge, fiable, garantie 2 ans.
 
 #### 🇨🇳 Segway Powersports — Snarler (moderne, connecté)
 
-| Modèle | Moteur | Poids | Lxlxh | Charge utile | Selle biplace | Prix estimé |
-|:-------|:------:|:-----:|:-----:|:------------:|:-------------:|:-----------:|
-| **Snarler AT6 L** | 600cc, 42ch | ~380 kg | ~235×120×130 | ~260 kg | ✅ Biplace confort | ~8 000 € |
-| **Snarler AT8 L** | 800cc, 58ch | ~400 kg | ~240×122×132 | ~280 kg | ✅ Biplace confort | ~9 500 € |
+| Modèle | Moteur | Poids | Lxlxh | Charge utile | Selle biplace | Prix |
+|:-------|:------:|:-----:|:-----:|:------------:|:-------------:|:----:|
+| **Snarler AT6 L** 🏆 | 600cc, 42ch | ~380 kg | ~235×120×130 | ~260 kg | ✅ Biplace confort (siège + dossier) | ~8 000 € |
+| **Snarler AT8 L** | 800cc, 58ch | ~400 kg | ~240×122×132 | ~280 kg | ✅ Biplace confort (siège + dossier) | ~9 500 € |
 
-> Segway = quads modernes avec écran tactile, connectivité, éclairage LED. Disponible chez KD Quad, Motokaiser, Zone Rouge. Bon rapport qualité/prix, gamme touring biplace.
+> Segway = quads modernes avec écran tactile, connectivité, éclairage LED. Disponible chez KD Quad, Motokaiser, Zone Rouge. **Vérifier dossier + poignées passager** sur Snarler AT6 L — la selle biplace est longue mais peut nécessiter un dossier optionnel.
+
+#### 🇨🇳 CFMOTO — Touring (dossier passager)
+
+| Modèle | Moteur | Poids | Lxlxh | Charge utile | Selle biplace | Prix |
+|:-------|:------:|:-----:|:-----:|:------------:|:-------------:|:----:|
+| **C5 Touring** (500) | 500cc, 39ch | 388 kg | 236×118×136 | 270 kg | ✅ Selle longue confort (dossier optionnel) | ~7 000 € |
+| **C6 Pro Touring** (650) 🏆 | 650cc, 54ch | 450 kg | 246×124×141 | 330 kg | ✅ Selle longue + dossier ✅ | ~8 500 € |
+| **CFORCE 1000 Touring Overland** | 963cc, ~80ch | ~420 kg | ~230×124×122 | ~320 kg | ✅ Confort + dossier ✅ | ~12 500 € |
+
+> ⚠️ **C5 Touring** : selle biplace confortable mais **dossier passager optionnel** — vérifier si inclus de série.
+> ✅ **C6 Pro Touring** : dossier + repose-pieds passager de série. Plus lourd (450 kg) — vérifier remorque PTAC.
+> CFMOTO distribué par MOOOF NV + KD Quad Manage.
 
 #### 🇨🇳 GOES — Terrox (utilitaire accessible)
 
@@ -213,10 +227,11 @@ Le quad doit :
 
 | Profil | Modèle recommandé | Prix estimé | Raison |
 |:-------|:-----------------|:-----------:|:-------|
-| **💰 Meilleur rapport Q/P** | CFMOTO **C5 Touring** (500cc) | ~7 000 € | 388 kg, 270 kg charge utile, selle biplace confortable, disponible Belgique |
-| **⚖️ Polyvalence/puissance** | CFMOTO **C6 Pro Touring** (650cc) | ~8 500 € | 54ch, 330 kg charge utile, plus costaud pour 2 personnes |
-| **📱 Moderne & connecté** | Segway **Snarler AT6 L** | ~8 000 € | Biplace confort, écran tactile, connecté, bon rapport Q/P |
-| **🇹🇼 Fiable utilitaire** | Kymco **MXU 550** | ~6 500 € | Excellent réseau BE, prix bas, fiable |
+| **🏆 Confort passager max** | Kymco **MXU 700 Explorer** | **9 999 €** | Dossier + poignées ✅, châssis long, EPS, ABS, écran 7", keyless — dispo KD Quad Manage (~25 km) |
+| **💰 Meilleur rapport Q/P** | CFMOTO **C5 Touring** (500cc) | ~7 000 € | 388 kg, 270 kg charge utile, selle biplace confortable |
+| **📱 Moderne & connecté** | Segway **Snarler AT6 L** | ~8 000 € | Biplace confort, écran tactile, connecté |
+| **🛞 Puissance + confort** | CFMOTO **C6 Pro Touring** (650cc) | ~8 500 € | 54ch, dossier série, mais 450 kg (remorque) |
+| **🇹🇼 Fiable utilitaire** | Kymco **MXU 550** | ~6 500 € | Bon réseau BE, prix bas, fiable |
 | **🏆 Premium** | Can-Am **Outlander 650 2-UP** | ~10 500 € | Qualité BRP, concessionnaire Bert Adventure Tielt |
 | **🇯🇵 Japonais** | Yamaha **Kodiak 700 EPS** | ~9 000 € | Valeur sûre, disponible neuf chez Motokaiser/Zone Rouge |
 | **💡 Occasion malin** | CFMOTO C5 Touring (2025) | ~5 000 – 5 500 € | Modèle 2025, peu de km, garantie transferable |
@@ -224,8 +239,9 @@ Le quad doit :
 
 ### Points d'attention
 
-- 🥇 **CFMOTO** = meilleur rapport qualité/prix du marché, réseau Benelux (MOOOF NV + KD Quad), garantie 2 ans
-- 🥈 **Segway Snarler** = très bon rapport Q/P, biplace confort, moderne, disponible chez KD Quad/Motokaiser/Zone Rouge
+- 🥇 **Kymco MXU 700 Explorer** = top confort passager (dossier + poignées), dispo KD Quad Manage (25 km de Sombreffe) — 9 999 €
+- 🥇 **CFMOTO** = meilleur rapport qualité/prix, réseau Benelux (MOOOF NV + KD Quad), garantie 2 ans
+- 🥈 **Segway Snarler AT6 L** = très bon rapport Q/P, biplace confort, moderne (vérifier dossier optionnel)
 - 🥉 **Kymco MXU** = excellent réseau belge, prix compétitif, fiable — vérifier selle biplace
 - ❌ **Can-Am** = cher, mais meilleure tenue de côte et confort — contacter Bert Adventure Tielt
 - 🇯🇵 **Yamaha** (Kodiak/Grizzly) = disponible neuf Belgique ✅ chez Motokaiser, Zone Rouge
@@ -245,13 +261,13 @@ Le quad doit :
 
 | # | Action | Qui |
 |:-:|:-------|:---:|
-| 1 | Contacter **MOOOF NV** (CFMOTO Benelux) + **KD Quad** pour devis C5 Touring / C6 Pro Touring / Segway Snarler AT6 | Christophe |
-| 2 | Contacter **Bert Adventure Tielt** (051 40 03 13) pour devis Can-Am Outlander 650 2-UP | Christophe |
-| 3 | Vérifier disponibilité **Yamaha Kodiak 700** / **Kymco MXU 550** chez Motokaiser ou Zone Rouge | Christophe |
-| 4 | Vérifier PTAC camping-car + permis B (BE ou pas) — total < 3 500 kg ? | Christophe |
-| 5 | Essayer en concession : C5 Touring vs Snarler AT6 L vs MXU 550 (selle 2 places, confort) | Christophe |
-| 6 | Demander prix remorque fermée chez BSA Remorques / Brenderup Belgique | Christophe |
-| 7 | Vérifier dimensions intérieures remorque : mini 260×130×150 cm — rampe chargement | Christophe |
+| 1 | Aller chez **KD Quad Manage** (Rue de la Croyère 13, 7170 Manage — ~25 km) pour essayer **Kymco MXU 700 Explorer** + voir CFMOTO C5/C6 Touring + Segway Snarler AT6 | Christophe |
+| 2 | Contacter **MOOOF NV** (CFMOTO Benelux) pour devis | Christophe |
+| 3 | Contacter **Bert Adventure Tielt** (051 40 03 13) pour devis Can-Am Outlander 650 2-UP | Christophe |
+| 4 | Vérifier disponibilité **Yamaha Kodiak 700** chez Motokaiser ou Zone Rouge | Christophe |
+| 5 | Vérifier PTAC camping-car + permis B — total < 3 500 kg ? | Christophe |
+| 6 | Demander prix remorque fermée chez BSA Remorques / Brenderup | Christophe |
+| 7 | Vérifier dimensions intérieures remorque : mini 260×130×150 cm | Christophe |
 | 8 | Comparer neuf vs occasion (< 1 an, faible km) | Christophe + LEO |
 
 ---
