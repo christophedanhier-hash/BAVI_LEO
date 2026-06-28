@@ -1,3 +1,12 @@
+---
+bureau: michel
+date: 2026-06-28
+version: v1
+tags: [penguin, crostini, audit, infra, systeme]
+status: finalisé
+title: "Audit Penguin — Debian 13, 6.3GB RAM"
+---
+
 # Audit Penguin — 28/06/2026
 
 ## Système
