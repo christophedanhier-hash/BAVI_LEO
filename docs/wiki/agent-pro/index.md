@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 28/06/2026 à 06:40*
+*Généré automatiquement le 28/06/2026 à 06:21*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -12,13 +12,13 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 3 | 12/06/2026 |
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
-| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 28/06/2026 |
+| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 12 | 28/06/2026 |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 1 | 27/06/2026 |
 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 2 | 27/06/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 1 | 27/06/2026 |
 
-**Total : 19 analyse(s) sur l'ensemble des bureaux.**
+**Total : 20 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -27,6 +27,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
 | 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](bureau-michel/analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` `systeme` | ✅ Finalisé | [📥](bureau-michel/analyse-bot-leo-copilot/?print-pdf) 🗑️ |
+| 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [Audit Penguin — Debian 13, 6.3GB RAM](bureau-michel/audit-penguin-2026-06-28/) | `penguin` `crostini` `audit` `infra` `systeme` | 📝 Brouillon | [📥](bureau-michel/audit-penguin-2026-06-28/?print-pdf) 🗑️ |
 | 27/06/2026 | 🧭 Bureau Sylvie — Voyages | v1 | [🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)](bureau-sylvia/analyse-bot-voyage-sylvia/) | `robert` `sylvia` `voyage` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](bureau-sylvia/analyse-bot-voyage-sylvia/?print-pdf) 🗑️ |
 | 27/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Analyse Business & Fonctionnelle — LEO (Bureau Central)](bureau-leo/analyse-bot-leo-hub/) | `robert` `leo` `analyse` `business` `bpmn` `data-flow` `architecture` `gouvernance` | ✅ Finalisé | [📥](bureau-leo/analyse-bot-leo-hub/?print-pdf) 🗑️ |
 | 27/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1.0 | [💻 Prompt pour Kilo Code — Développement site tofdan.be](bureau-michel/prompt-kilo-code-tofdan/) | `kilo-code` `tofdan` `site` `prompt` `astrophotographie` | prompt | [📥](bureau-michel/prompt-kilo-code-tofdan/?print-pdf) 🗑️ |
@@ -48,4 +49,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 28/06/2026 06:40*
+*Index consolidé généré par `agent-pro-index.py` — 28/06/2026 06:21*

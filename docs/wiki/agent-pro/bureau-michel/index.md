@@ -1,13 +1,13 @@
 # 🔧 Bureau Michel — Automatisation & Infrastructure n8n
 
-*Généré automatiquement le 28/06/2026 à 07:20*
+*Généré automatiquement le 28/06/2026 à 06:21*
 
 **Total : 12 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 28/06/2026 | v1 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` `systeme` | ✅ Finalisé | [📥](analyse-bot-leo-copilot/?print-pdf) 🗑️ |
-| 28/06/2026 | v1 | [🐧 Audit Penguin — Debian 13, 6.3GB RAM, VS Code + Kilo](audit-penguin-2026-06-28/) | `penguin` `crostini` `audit` `infra` `systeme` | ✅ Finalisé | [📥](audit-penguin-2026-06-28/?print-pdf) 🗑️ |
+| 28/06/2026 | v2 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` `systeme` | ✅ Finalisé | [📥](analyse-bot-leo-copilot/?print-pdf) 🗑️ |
+| 28/06/2026 | v1 | [Audit Penguin — Debian 13, 6.3GB RAM](audit-penguin-2026-06-28/) | `penguin` `crostini` `audit` `infra` `systeme` | 📝 Brouillon | [📥](audit-penguin-2026-06-28/?print-pdf) 🗑️ |
 | 27/06/2026 | v1.0 | [💻 Prompt pour Kilo Code — Développement site tofdan.be](prompt-kilo-code-tofdan/) | `kilo-code` `tofdan` `site` `prompt` `astrophotographie` | prompt | [📥](prompt-kilo-code-tofdan/?print-pdf) 🗑️ |
 | 27/06/2026 | v1.0 | [🐋 CodeWhale — Installation tofdan.be sur Leo](rapport-installation-tofdan-be/) | `codewhale` `tofdan` `installation` `nginx` `cloudflare` `infrastructure` | ✅ Finalisé | [📥](rapport-installation-tofdan-be/?print-pdf) 🗑️ |
 | 27/06/2026 | v1 | [🌐 Stratégie d'hébergement — tofdan.be](strategie-tofdan-be/) | `robert` `strategie` `tofdan` `hebergement` `architecture` | proposition | [📥](strategie-tofdan-be/?print-pdf) 🗑️ |
