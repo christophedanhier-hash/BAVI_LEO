@@ -336,6 +336,29 @@ Certaines remorques ont une **porte arrière complète qui s'abat au sol** pour 
 
 > 💡 **Recommandation finale** : **la solution treuil** est la plus répandue, la plus fiable et la moins chère. Un treuil 12V + rampe aluminium te coûtera ~350 € et résout tous les problèmes de chargement et déchargement.
 
+### 4.8 Roue jockey motorisée — manœuvrer la remorque chargée
+
+Avec un quad chargé (remorque ~730 kg), la déplacer à la main sur un terrain de camping est quasi impossible sans aide motorisée.
+
+| Type | Fonctionnement | Effort | Prix | Adapté ~730 kg ? |
+|:-----|:---------------|:------:|:----:|:-----------------:|
+| **Manuelle standard** (incluse) | Manivelle rotative | 💪 Très dur | ~0 € | ❌ Trop lourd |
+| **À levier** (poupée) | Pompe à levier | 💪 Dur | ~100 € | ⚠️ Limite |
+| **Électrique 12V** 🏆 | Moteur + batterie | ✅ Aucun | **~250-500 €** | ✅ **Indispensable** |
+
+**Al-Ko** (référence européenne) propose la gamme **Premium Electric** et **Electrikit** :
+
+| Modèle | Capacité | Prix | Batterie | Montage |
+|:-------|:--------:|:----:|:---------|:--------|
+| **Al-Ko Premium Electric** 🏆 | 1 000 kg | ~350 € | Intégrée 12V Li-Ion | Tube 48mm standard |
+| **Al-Ko Electrikit** | 2 300 kg | ~500 € | Externe 12V | Tube 48mm |
+| **BPW E-Motion** | 1 500 kg | ~400 € | Lithium intégrée | Tube 48mm |
+| **Générique Amazon** | 500-1 000 kg | ~150-250 € | Variable | À vérifier |
+
+> 💡 **Al-Ko Premium Electric** (1 000 kg, ~350 €) = meilleur rapport Q/P. Recharge sur secteur 230V ou allume-cigare. Disponible chez Magasin de remorques, Norauto, Amazon.
+>
+> ⚠️ **Vérifier compatibilité** : le tube de la roue jockey Brenderup CD260 est normalement en 48 mm (standard Al-Ko). Confirmer avec le revendeur avant achat.
+
 ---
 
 ## 5. 🗺️ Revendeurs près de Sombreffe
