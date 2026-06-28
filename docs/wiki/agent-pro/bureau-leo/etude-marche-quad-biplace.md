@@ -238,21 +238,84 @@ Seule marque avec catalogue accessible : **Brenderup** (https://www.brenderup.co
 
 > 🏆 **Recommandé** : **CD260WBD750** (260×155×150 cm, PTAC 750 kg, freiné) = largeur 155 cm idéale, permis B compatible. Seul bémol : **hauteur 150 cm** — le C6 Pro (141 cm+guidons) passe juste. Pour plus de marge, le **CD260WHBR1300** (185 cm haut) est le choix confort, mais nécessite permis BE si cumulé avec le CC.
 
-### 4.7 Toit amovible / relevable — une alternative intéressante
+### 4.7 Chargement et déchargement du quad — Solutions pratiques
 
-Certaines remorques fermées pour quad proposent un **toit amovible, relevable ou escamotable** (lift-up roof), ce qui permet de :
-- **Charger/décharger le quad sans rampe** (levage par hayon ou par le haut)
-- **Dégager de la hauteur** supplémentaire pendant le chargement
-- **Ranger le quad avec les guidons relevés** si l'espace libre est juste en hauteur
+> 🎯 **Problème** : si tu conduis le quad dans la remorque, comment en ressortir ? L'espace entre le quad et les parois est trop étroit — impossible de descendre une fois à l'intérieur. Et si tu montes sur le quad déjà dans la remorque, comment fermer les portes ?
 
-**Ce qu'il faut vérifier chez Brenderup et autres :**
-- Le CD260WHBR1300 a une hauteur fixe de 185 cm — pas de toit amovible de série
-- Certains modèles **Brenderup CargoDynamic** peuvent être équipés d'une **porte arrière complète** (hayon) qui facilite le chargement
-- Les remorques **BSA, Tenz et Anssems** (sites hors ligne) pourraient proposer du sur-mesure — à demander chez un revendeur local
+#### 🅰️ Solution recommandée : Treuil électrique (winch)
 
-**Alternative pratique** : une **remorque ouverte avec bâche amovible** (plateau + arceaux + bâche) est plus légère, moins chère, et le toit (bâche) se retire complètement. Mais elle n'offre pas la sécurité d'une remorque fermée (vol, intempéries).
+C'est la solution la plus simple, la plus sûre, et utilisée par la quasi-totalité des propriétaires de quads :
 
-> 💡 **Conseil pratique** : si tu choisis le **MXU 700 Explorer (134 cm haut)** ou le **C5 Touring (136 cm)**, le Brenderup CD260WBD750 (150 cm) laisse **~14 cm de marge** — suffisant pour charger sans toit amovible. Le toit amovible ne devient utile que si tu prends le **C6 Pro Touring (141 cm)** où la marge tombe à 9 cm.
+```
+                     ┌── TREUIL ──┐
+                     │  12V / 4x4 │
+                     └─────┬──────┘
+                           │ câble
+                           ▼
+┌──────────────────────────────────────┐
+│         REMORQUE FERMÉE              │
+│  ┌──────────────────────────────┐    │
+│  │         ╔══ QUAD ══╗  ◄─────┤    │ ← Treuil tire le quad
+│  │         ║          ║  câble │    │
+│  │         ╚══════════╝        │    │
+│  └──────────────────────────────┘    │
+│       ████████████                   │ ← Porte ouverte
+│       ██ RAMPE ██                    │ ← Rampe posée au sol
+│       ████████████                   │
+└──────────────────────────────────────┘
+```
+
+**Procédure :**
+1. Ouvrir la porte arrière de la remorque
+2. Poser la rampe aluminium au sol
+3. Dérouler le câble du treuil, l'accrocher au crochet avant du quad
+4. **Tu restes DEHORS** — actionner le treuil (télécommande ou manivelle)
+5. Le quad monte tout seul dans la remorque
+6. Une fois à l'intérieur : arrêter le treuil, décrocher le câble, ranger la rampe
+7. Fermer la porte — **sans jamais être monté sur le quad dans la remorque**
+
+**Pour décharger :** inverser — laisser le treuil freiner le quad qui descend.
+
+| Équipement | Prix | Où |
+|:-----------|:----:|:---|
+| **Treuil électrique 12V** 2000-3500 lbs | ~150-300 € | Brenderup (accessoires), Norauto, Amazon |
+| **Télécommande sans fil** (optionnel) | ~30-50 € | Évite de retourner au CC pour actionner |
+| **Rampe aluminium** 2,5 m, 400 kg | ~150-250 € | Maréchal, Motardo, Brenderup |
+| **Sangles à cliquet x4** 5000 lbs | ~35 € | Pour arrimer le quad une fois dedans |
+| **Cales de roue** | ~15 € | Sécurité |
+| **Total équipement chargement** | **~350-600 €** | |
+
+> 💡 Le treuil se monte sur le **point d'ancrage avant** de la remorque (anneau de traction). Brenderup vend des treuils dans sa gamme d'accessoires (`Accessoires → Treuils`).
+
+#### 🅱️ Alternative : Rampe large + conduite (si vraiment pas de treuil)
+
+Si tu veux vraiment conduire le quad dans la rampe :
+1. Monter sur le quad **avant** d'ouvrir la porte de la remorque
+2. Faire avancer le quad lentement sur la rampe
+3. Une fois l'avant dans la remorque, **s'accroupir sur le quad** pour passer sous le plafond
+4. Descendre du quad une fois dedans en passant **sur le côté** (si assez de place)
+5. ⚠️ **Risque** : se cogner la tête, les guidons peuvent toucher le haut de la porte
+
+> ❌ **Déconseillé** — inconfortable, risqué et impossible avec certains quads.
+
+#### 🅲 Porte hayon / Lift gate (porte abattante formant rampe)
+
+Certaines remorques ont une **porte arrière complète qui s'abat au sol** pour former une rampe intégrée (lift gate / hayon) :
+
+**Avantages :**
+- Rampe plus large que des rails séparés
+- Pas besoin de ranger une rampe séparée dans le CC
+- Plus stable et plus sûr
+- Le treuil est facile à utiliser (le câble passe droit)
+
+**Inconvénients :**
+- Plus rare sur les modèles fermés standard
+- Souvent en option ou sur du sur-mesure
+- Plus lourd (charnières renforcées)
+
+**Chez Brenderup :** les CargoDynamic CD260 ont des **portes battantes à double vantail** (porte de grange) — pas de hayon abattant de série. Il faut se renseigner chez un revendeur Brenderup pour une éventuelle modification ou un modèle avec hayon. En alternative, regarder **Anssems Fahrzeugtransporter** ou des remorques spécialisées quad chez un carrossier local.
+
+> 💡 **Recommandation finale** : **la solution treuil** est la plus répandue, la plus fiable et la moins chère. Un treuil 12V + rampe aluminium te coûtera ~350 € et résout tous les problèmes de chargement et déchargement.
 
 ---
 
