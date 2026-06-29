@@ -1,12 +1,12 @@
 # 🩺 Bureau Virginie — Orchestration Médicale
 
-*Généré automatiquement le 29/06/2026 à 21:28*
+*Généré automatiquement le 29/06/2026 à 21:31*
 
 **Total : 1 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 25/06/2026 | v2 | [🩺 Consultation Virginie — Sylvie Michaux](consultation-sylvie-michaux/) | `virginie` `consultation` `sylvie` `medical` `diagnostique` `pluridisciplinaire` | ✅ Finalisé | [📥](consultation-sylvie-michaux/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/hermes-christophe/main/BAVI/AGENT-PRO/bureau-virginie/consultation-sylvie-michaux.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/hermes-christophe/main/BAVI/AGENT-PRO/bureau-virginie/consultation-sylvie-michaux.md) |
+| 25/06/2026 | v2 | [🩺 Consultation Virginie — Sylvie Michaux](consultation-sylvie-michaux/) | `virginie` `consultation` `sylvie` `medical` `diagnostique` `pluridisciplinaire` | ✅ Finalisé | [📥](consultation-sylvie-michaux/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/blob/main/docs/wiki/agent-pro/bureau-virginie/consultation-sylvie-michaux.md) [🔗](https://github.com/christophedanhier-hash/BAVI_LEO/blob/main/docs/wiki/agent-pro/bureau-virginie/consultation-sylvie-michaux.md) |
 
 ---
 
