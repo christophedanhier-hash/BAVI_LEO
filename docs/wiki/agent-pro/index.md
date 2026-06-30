@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 29/06/2026 à 21:54*
+*Généré automatiquement le 30/06/2026 à 04:55*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -12,13 +12,13 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 3 | 12/06/2026 |
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
-| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 13 | 29/06/2026 |
+| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 12 | 29/06/2026 |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 1 | 27/06/2026 |
 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 3 | 28/06/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 1 | 27/06/2026 |
 
-**Total : 22 analyse(s) sur l'ensemble des bureaux.**
+**Total : 21 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -29,7 +29,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | 29/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🛡️ Plan de Reprise d'Activité (PRA) — LEO Infrastructure](bureau-michel/pra-leo-recovery-20260629/) | `hermes` `infra` `recovery` `backup` `disaster-recovery` `disque` `gdrive` | proposition | [📥](bureau-michel/pra-leo-recovery-20260629/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) |
 | 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](bureau-michel/analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` `systeme` | ✅ Finalisé | [📥](bureau-michel/analyse-bot-leo-copilot/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bot-leo-copilot.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bot-leo-copilot.md) |
 | 28/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v6 | [🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC](bureau-leo/etude-marche-quad-biplace/) | `quad` `atv` `achat` `etude-marche` `remorque` `camping-car` `tofdan` | 🔄 En cours | [📥](bureau-leo/etude-marche-quad-biplace/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) |
-| 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [Audit Penguin — Debian 13, 6.3GB RAM](bureau-michel/audit-penguin-2026-06-28/) | `penguin` `crostini` `audit` `infra` `systeme` | 📝 Brouillon | [📥](bureau-michel/audit-penguin-2026-06-28/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/audit-penguin-2026-06-28.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/audit-penguin-2026-06-28.md) |
 | 27/06/2026 | 🧭 Bureau Sylvie — Voyages | v1 | [🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)](bureau-sylvia/analyse-bot-voyage-sylvia/) | `robert` `sylvia` `voyage` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](bureau-sylvia/analyse-bot-voyage-sylvia/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/analyse-bot-voyage-sylvia.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/analyse-bot-voyage-sylvia.md) |
 | 27/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Analyse Business & Fonctionnelle — LEO (Bureau Central)](bureau-leo/analyse-bot-leo-hub/) | `robert` `leo` `analyse` `business` `bpmn` `data-flow` `architecture` `gouvernance` | ✅ Finalisé | [📥](bureau-leo/analyse-bot-leo-hub/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-bot-leo-hub.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-bot-leo-hub.md) |
 | 27/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1.0 | [💻 Prompt pour Kilo Code — Développement site tofdan.be](bureau-michel/prompt-kilo-code-tofdan/) | `kilo-code` `tofdan` `site` `prompt` `astrophotographie` | prompt | [📥](bureau-michel/prompt-kilo-code-tofdan/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/prompt-kilo-code-tofdan.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/prompt-kilo-code-tofdan.md) |
@@ -51,4 +50,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 29/06/2026 21:54*
+*Index consolidé généré par `agent-pro-index.py` — 30/06/2026 04:55*
