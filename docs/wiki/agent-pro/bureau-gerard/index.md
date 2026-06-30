@@ -1,14 +1,29 @@
 # 🏗️ Bureau Gérard — Documentation T600
 
-*Généré automatiquement le 30/06/2026 à 05:03*
+*Généré automatiquement le 30/06/2026 à 05:12*
 
 **Total : 3 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 12/06/2026 | v1 | [Rapport d'Analyse des Risques — T600](t600/analyse-risques-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | <a href=\"t600/analyse-risques-t600/?print-pdf\" target=\"_blank\">📥</a> <a href=\"https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive%3A+bureau-gerard/analyse-risques-t600.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-gerard%0A-+**Fichier**+%3A+analyse-risques-t600.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive\" target=\"_blank\">📦</a> <a href=\"https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/t600/analyse-risques-t600.md\" target=\"_blank\">🔗</a> |
-| 12/06/2026 | v1 | [Formation Opérateur — Télescope T600](t600/formation-operateur-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | <a href=\"t600/formation-operateur-t600/?print-pdf\" target=\"_blank\">📥</a> <a href=\"https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive%3A+bureau-gerard/formation-operateur-t600.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-gerard%0A-+**Fichier**+%3A+formation-operateur-t600.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive\" target=\"_blank\">📦</a> <a href=\"https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/t600/formation-operateur-t600.md\" target=\"_blank\">🔗</a> |
-| 12/06/2026 | v1 | [Document de Référence T600 — Observatoire Centre Ardennes](t600/document-reference-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | <a href=\"t600/document-reference-t600/?print-pdf\" target=\"_blank\">📥</a> <a href=\"https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive%3A+bureau-gerard/document-reference-t600.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-gerard%0A-+**Fichier**+%3A+document-reference-t600.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive\" target=\"_blank\">📦</a> <a href=\"https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/t600/document-reference-t600.md\" target=\"_blank\">🔗</a> |
+| 12/06/2026 | v1 | [Rapport d'Analyse des Risques — T600](t600/analyse-risques-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | <a href="t600/analyse-risques-t600/?print-pdf" target="_blank">📥</a> <a href="https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive: bureau-gerard/analyse-risques-t600.md&body=## Archive demandée
+
+- **Bureau** : bureau-gerard
+- **Fichier** : analyse-risques-t600.md
+
+Action : déplacer ce fichier vers `archive/` et regénérer l'index.&labels=archive" target="_blank">📦</a> <a href="https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/t600/analyse-risques-t600.md" target="_blank">🔗</a> |
+| 12/06/2026 | v1 | [Formation Opérateur — Télescope T600](t600/formation-operateur-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | <a href="t600/formation-operateur-t600/?print-pdf" target="_blank">📥</a> <a href="https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive: bureau-gerard/formation-operateur-t600.md&body=## Archive demandée
+
+- **Bureau** : bureau-gerard
+- **Fichier** : formation-operateur-t600.md
+
+Action : déplacer ce fichier vers `archive/` et regénérer l'index.&labels=archive" target="_blank">📦</a> <a href="https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/t600/formation-operateur-t600.md" target="_blank">🔗</a> |
+| 12/06/2026 | v1 | [Document de Référence T600 — Observatoire Centre Ardennes](t600/document-reference-t600/) | `t600` `oca` `telescope` `procedure` | ✅ Finalisé | <a href="t600/document-reference-t600/?print-pdf" target="_blank">📥</a> <a href="https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive: bureau-gerard/document-reference-t600.md&body=## Archive demandée
+
+- **Bureau** : bureau-gerard
+- **Fichier** : document-reference-t600.md
+
+Action : déplacer ce fichier vers `archive/` et regénérer l'index.&labels=archive" target="_blank">📦</a> <a href="https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/t600/document-reference-t600.md" target="_blank">🔗</a> |
 
 ---
 
