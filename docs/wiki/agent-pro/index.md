@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 30/06/2026 à 05:48*
+*Généré automatiquement le 30/06/2026 à 05:50*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -26,15 +26,15 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~📝 Notes de recherche~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~📚 Bibliographie~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~📋 Plan du mémoire~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~👨‍🏫 Retours du directeur de mémoire~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~Chapitre 5 — Discussion~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~Chapitre 4 — Résultats~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~Chapitre 3 — Méthodologie~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~Chapitre 2 — Cadre théorique~~ ⚠️ | — | 📝 Brouillon |
-| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | ~~Chapitre 1 — Introduction~~ ⚠️ | — | 📝 Brouillon |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [📝 Notes de recherche](https://christophedanhier-hash.github.io/emile-wiki/notes/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/notes/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/notes.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [📚 Bibliographie](https://christophedanhier-hash.github.io/emile-wiki/bibliographie/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/bibliographie/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/bibliographie.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [📋 Plan du mémoire](https://christophedanhier-hash.github.io/emile-wiki/plan/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/plan/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/plan.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [👨‍🏫 Retours du directeur de mémoire](https://christophedanhier-hash.github.io/emile-wiki/retours-directeur/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/retours-directeur/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/retours-directeur.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 5 — Discussion](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre5/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre5/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre5.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 4 — Résultats](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre4/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre4/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre4.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 3 — Méthodologie](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre3/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre3/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre3.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 2 — Cadre théorique](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre2/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre2/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre2.md) |
+| N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 1 — Introduction](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre1/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre1/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre1.md) |
 | 29/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🛡️ Plan de Reprise d'Activité (PRA) — LEO Infrastructure](bureau-michel/pra-leo-recovery-20260629/) | `hermes` `infra` `recovery` `backup` `disaster-recovery` `disque` `gdrive` | proposition | [📥](bureau-michel/pra-leo-recovery-20260629/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) |
 | 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](bureau-michel/analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` `systeme` | ✅ Finalisé | [📥](bureau-michel/analyse-bot-leo-copilot/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bot-leo-copilot.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bot-leo-copilot.md) |
 | 28/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v6 | [🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC](bureau-leo/etude-marche-quad-biplace/) | `quad` `atv` `achat` `etude-marche` `remorque` `camping-car` `tofdan` | 🔄 En cours | [📥](bureau-leo/etude-marche-quad-biplace/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) |
@@ -59,4 +59,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 30/06/2026 05:48*
+*Index consolidé généré par `agent-pro-index.py` — 30/06/2026 05:50*
