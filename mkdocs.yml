@@ -58,7 +58,17 @@ nav:
     - 📋 Tracker: https://github.com/christophedanhier-hash/leo-tracker/issues
   - 🏠 Accueil: index.md
   - 🧠 Agent Pro:
-    - 🤖 Bureau Léo — Hermes: wiki/agent-pro/bureau-leo/index.md
+    - 🤖 Bureau Léo — Hermes:
+    - Index: wiki/agent-pro/bureau-leo/index.md
+    - 📖 Guide Hermès: wiki/agent-pro/bureau-leo/guide-hermes-pour-les-nuls.md
+    - Partie I — Découvrir: wiki/agent-pro/bureau-leo/guide-hermes/01-decouvrir-hermes/
+    - Partie II — Configurer: wiki/agent-pro/bureau-leo/guide-hermes/02-configurer/
+    - Partie III — Bureaux BAVI: wiki/agent-pro/bureau-leo/guide-hermes/03-bureaux-bavi/
+    - Partie IV — Skills: wiki/agent-pro/bureau-leo/guide-hermes/04-skills/
+    - Partie V — Dashboards: wiki/agent-pro/bureau-leo/guide-hermes/05-dashboards/
+    - Partie VI — Crons: wiki/agent-pro/bureau-leo/guide-hermes/06-automatisation/
+    - Partie VII — Les Dix: wiki/agent-pro/bureau-leo/guide-hermes/07-partie-des-dix/
+    - Annexes: wiki/agent-pro/bureau-leo/guide-hermes/annexes/
     - 🩺 Bureau Virginie — Médical: wiki/agent-pro/bureau-virginie/index.md
     - 📝 Bureau Gérard — OCA_Astronomie: wiki/agent-pro/bureau-gerard/index.md
     - 🔧 Bureau Michel — Infra_Hermes: wiki/agent-pro/bureau-michel/index.md
