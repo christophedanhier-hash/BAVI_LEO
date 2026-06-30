@@ -12,66 +12,69 @@ type: livre
 # 📖 Hermès pour les Nuls — Le Guide LEO
 
 > **Bureau :** 🤖 Bureau LEO — Dossiers & Analyses | **Date :** 30/06/2026
-> **Statut :** 🟢 **3 parties rédigées** (Partie I + II + III — 26 fichiers, 4 176 lignes)
+> **Statut :** 🔄 Phase 1 rédigée (Partie I + Glossaire)
 
 ---
 
 ## Présentation
 
-**Hermès pour les Nuls** est un ouvrage complet qui raconte la construction de LEO, l'assistant IA personnel de Christophe, avec **Hermes Agent**. Plus qu'un manuel technique, c'est l'histoire d'une aventure — des premiers pas jusqu'à l'écosystème de 30 crons, 7 dashboards, 117 skills et 4 bots Telegram.
+**Hermès pour les Nuls** est un ouvrage complet qui raconte la construction de LEO, l'assistant IA personnel de Christophe, avec **Hermes Agent**. Plus qu'un manuel technique, c'est l'histoire d'une aventure — des premiers pas jusqu'à l'écosystème de 25 crons, 7 dashboards, 117 skills et 3 bots Telegram.
 
 Le livre suit le format canonique **« Pour les Nuls »** (Wiley) : 7 parties, 34 chapitres, 7 annexes, avec des icônes, des astuces et des exemples concrets.
-
-## Lire le guide
-
-🌐 **GitHub Pages :** [christophedanhier-hash.github.io/hermes-guide/](https://christophedanhier-hash.github.io/hermes-guide/)
-
-📦 **Dépôt GitHub :** [github.com/christophedanhier-hash/hermes-guide](https://github.com/christophedanhier-hash/hermes-guide) (public)
-
-Le guide est publié en Markdown et déployé automatiquement sur GitHub Pages.
 
 ## Plan du livre
 
 ```
-Partie I   — Découvrir Hermès          🏁 ✅ Écrite (4 chapitres)
-Partie II  — Configurer son Assistant  ⚙️ ✅ Écrite (5 chapitres)
-Partie III — Les Bureaux BAVI          🏛️ ✅ Écrite (6 chapitres)
+Partie I   — Découvrir Hermès          🏁 ✅ Écrite
+Partie II  — Configurer son Assistant  ⚙️ ⬜
+Partie III — Les Bureaux BAVI          🏛️ ⬜
 Partie IV  — La Puissance des Skills   🧠 ⬜
-Partie V   — Dashboards et Monitoring  📊 🟡 Entamée (1 ch.)
-Partie VI  — Automatisation et Crons   ⏱️ 🟡 Entamée (1 ch.)
+Partie V   — Dashboards et Monitoring  📊 ⬜
+Partie VI  — Automatisation et Crons   ⏱️ ⬜
 Partie VII — La Partie des Dix         💡 ⬜
-Annexes    — Glossaire, Quick Start    📚 ✅ Écrites
+Annexes    — Glossaire, Quick Start    📚 ✅ Glossaire écrit
 ```
 
-## Contenu rédigé
+## Contenu rédigé (Phase 1)
 
 ### Partie I — Découvrir Hermès
-| Chapitre | Sujet | 
-|:---------|:------|
-| Ch.1 | Un agent IA, c'est quoi ? |
-| Ch.2 | Pourquoi Hermès ? |
-| Ch.3 | L'architecture LEO |
-| Ch.4 | Installation rapide |
 
-### Partie II — Configurer son Assistant
-| Chapitre | Sujet |
-|:---------|:------|
-| Ch.5 | Gateway : connecter Telegram |
-| Ch.6 | Profils et providers |
-| Ch.7 | Multi-bots : pourquoi 3 bots |
-| Ch.8 | Skills : le super-pouvoir |
-| Ch.9 | Mémoire persistante |
+| Chapitre | Sujet | Pages |
+|:---------|:------|:-----:|
+| Ch.1 | Un agent IA, c'est quoi ? (chatbot vs agent, les 5 piliers) | ~6 |
+| Ch.2 | Pourquoi Hermès ? (comparatif Claude Code, Codex, OpenCode) | ~7 |
+| Ch.3 | L'architecture LEO (3 bots, providers, infra, chiffres clés) | ~10 |
+| Ch.4 | Installation rapide (5 min chrono, DeepSeek/Ollama/Gemini) | ~8 |
 
-### Partie III — Les Bureaux BAVI
-| Chapitre | Sujet |
-|:---------|:------|
-| Ch.10 | Architecture bureaux |
-| Ch.11 | Bureau Michel : infrastructure |
-| Ch.12 | Bureau Sylvia : voyages |
-| Ch.13 | Bureau Émile : pédagogie |
-| Ch.14 | Bureau Robert : conseil |
-| Ch.15 | Bureau LEO et les autres |
+### Annexes
+
+| Annexe | Sujet |
+|:-------|:------|
+| A | Glossaire (40+ termes techniques décryptés) |
+| B | Guide de démarrage rapide (60 secondes) |
+
+## Accès au guide
+
+📦 **Dépôt GitHub :** [christophedanhier-hash/hermes-guide](https://github.com/christophedanhier-hash/hermes-guide) (public)
+
+```
+hermes-guide/
+├── README.md                   → Introduction du livre
+├── TABLE.md                    → Table des matières complète
+├── 01-decouvrir-hermes/        → Partie I (4 chapitres)
+├── 02-configurer/              → Partie II (fichiers repositionnés)
+├── 03-bureaux-bavi/            → Partie III (à venir)
+├── 04-skills/                  → Partie IV (à venir)
+├── 05-dashboards/              → Partie V (fichiers repositionnés)
+├── 06-automatisation/          → Partie VI (fichiers repositionnés)
+├── 07-partie-des-dix/          → Partie VII (à venir)
+└── annexes/                    → Glossaire, Quick Start, etc.
+```
 
 ## Évolution
 
-Le guide est un **projet vivant**. Mis à jour par LEO à chaque nouvelle partie. SSH configuré pour push automatique. Prochaine étape : Parties IV (Skills) et VII (Les Dix).
+Ce guide est un **projet vivant** — il sera enrichi au fil des parties et maintenu à jour par LEO dans le cadre de son cycle d'auto-documentation. Chaque phase est versionnée et une cron de mise à jour mensuelle est prévue.
+
+---
+
+*Document créé le 30/06/2026 — Phase 1 du projet « Hermès pour les Nuls »*
