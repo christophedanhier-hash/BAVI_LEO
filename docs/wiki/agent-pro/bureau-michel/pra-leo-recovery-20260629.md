@@ -46,6 +46,11 @@ graph TB
             WEBUI[open-webui]
         end
 
+        subgraph "Nginx — Sites web"
+            TOFDAN[tofdan.be<br/>/var/www/tofdan.be/]
+            ASTRO[/astro/<br/>/var/www/astro/]
+        end
+
         subgraph "Données critiques"
             PROFILES[Profiles<br/>/opt/data/profiles/ ~4.5G]
             STATE[state.db<br/>/opt/data/ ~208M]
@@ -79,9 +84,11 @@ graph TB
 | Scénario | Probabilité | Impact | Solution |
 |----------|-------------|--------|----------|
 | Container arrêté | Faible | Moyen — session perdue | `docker start hermes-agent` ou `rebuild.sh` |
+| Nginx arrêté | Faible | Moyen — tofdan.be down | `nsenter -t 1 -m -u -i -n -p -- nginx -s reload` |
 | Données corrompues | Moyenne | Élevé — profils, db, secrets | **Couche 1** — restauration depuis tar.gz |
 | SSD 465G HS | Faible | Critique — tout perdu | **Couche 3** — image système sur /mnt/data |
 | Panne complète machine | Faible | Critique | **Couche 1** (GDrive) → nouvelle install → rebuild |
+| Site web tofdan.be corrompu | Faible | Bas — site public | `git pull` depuis `tofdan-site` repo |
 | Erreur humaine | Moyenne | Variable | **Couche 1** — retour arrière possible |
 
 ---
@@ -130,6 +137,10 @@ flowchart TD
 └── logs/                  ← auto-heal, cron
 
 /home/tofdan/.hermes-sandbox/  ← config hôte
+
+Nginx — sites web :
+├── /etc/nginx/sites-available/tofdan.be  ← config site
+└── /var/www/tofdan.be/                   ← fichiers statiques (repo git)
 
 Docker inspect de :
 ├── hermes-agent
@@ -248,6 +259,63 @@ docker run -d \
 ```
 ```
 
+#### Sites web — Nginx
+
+**Service** : `nginx` (sur l'hôte, pas dans Docker)
+
+**Site** : `tofdan.be` — astrophotographie statique
+
+| Élément | Valeur |
+|---------|--------|
+| Serveur | nginx sur l'hôte LEO |
+| Domaine | tofdan.be + www.tofdan.be |
+| Port | 80 (HTTP) — pas de SSL |
+| Racine | `/var/www/tofdan.be/` |
+| Sous-dossier | `/astro/ → /var/www/astro/` |
+| Config | `/etc/nginx/sites-available/tofdan.be` |
+| Source | GitHub `christophedanhier-hash/tofdan-site` |
+| Logs | `/var/log/nginx/tofdan.be_*.log` |
+
+**Déploiement** :
+
+```bash
+# Depuis le conteneur Hermes
+bash /opt/data/scripts/deploy-tofdan.sh
+
+# = git pull + scp vers hôte + chown + nginx reload
+```
+
+**Redémarrage** :
+
+```bash
+# Depuis le conteneur Hermes (via nsenter)
+nsenter -t 1 -m -u -i -n -p -- systemctl reload nginx
+# ou directement sur l'hôte
+sudo systemctl reload nginx
+```
+
+**Restauration complète** :
+
+```bash
+# 1. Installer nginx
+apt-get install -y nginx
+
+# 2. Copier la config
+cp /mnt/data/recovery/couche1/nginx-tofdan.be.conf /etc/nginx/sites-available/tofdan.be
+ln -s /etc/nginx/sites-available/tofdan.be /etc/nginx/sites-enabled/
+
+# 3. Restaurer les fichiers du site
+git clone https://github.com/christophedanhier-hash/tofdan-site.git /var/www/tofdan.be/
+# ou depuis le backup
+cp -r /mnt/data/recovery/couche1/tofdan-site/ /var/www/tofdan.be/
+
+# 4. Permissions + reload
+chown -R www-data:www-data /var/www/tofdan.be/
+systemctl reload nginx
+```
+
+**Note sécurité** : tofdan.be n'est **pas en HTTPS**. La config SSL n'est pas activée (pas de certificat Let's Encrypt). Si la conformité HTTPS est nécessaire, ajouter un certificat via Certbot. Pour l'instant Cloudflare peut faire office de terminaison SSL si le domaine passe par leur proxy DNS.
+
 #### Fichier `rebuild.sh`
 
 ```bash
@@ -268,7 +336,18 @@ docker start hermes-agent n8n ollama 2>/dev/null || {
     # Voir docker-commands.md pour les commandes exactes
 }
 
-# 3. Restaurer les secrets
+# 3. Restaurer nginx
+echo "[3/6] Restauration nginx..."
+if [ -f /mnt/data/recovery/couche1/nginx-tofdan.be.conf ]; then
+    cp /mnt/data/recovery/couche1/nginx-tofdan.be.conf /etc/nginx/sites-available/tofdan.be
+    ln -sf /etc/nginx/sites-available/tofdan.be /etc/nginx/sites-enabled/
+    git clone https://github.com/christophedanhier-hash/tofdan-site.git /var/www/tofdan.be/ 2>/dev/null || true
+    chown -R www-data:www-data /var/www/tofdan.be/ 2>/dev/null || true
+    systemctl reload nginx 2>/dev/null || nginx -s reload 2>/dev/null || true
+    echo "  ✅ tofdan.be restauré"
+fi
+
+# 4. Restaurer les secrets
 echo "[3/5] Restauration des secrets..."
 if [ -f /mnt/data/recovery/kit/secrets.env.b64 ]; then
     base64 -d /mnt/data/recovery/kit/secrets.env.b64 > /opt/data/.env
@@ -387,7 +466,8 @@ flowchart TD
 │   ├── leo-recovery-2026-06-29.tar.gz
 │   ├── leo-recovery-2026-06-28.tar.gz
 │   ├── leo-recovery-latest.tar.gz   ← lien symbolique
-│   └── docker-inspect-2026-06-29.json
+│   ├── docker-inspect-2026-06-29.json
+│   └── nginx-tofdan.be.conf         ← config nginx exportée
 │
 ├── couche2/                         ← Recovery Kit
 │   ├── rebuild.sh
