@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 30/06/2026 à 20:54*
+*Généré automatiquement le 30/06/2026 à 21:02*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -14,11 +14,11 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 9 | 29/06/2026 |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 1 | 27/06/2026 |
-| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 5 | 30/06/2026 |
+| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 4 | 30/06/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 1 | 27/06/2026 |
 
-**Total : 20 analyse(s) sur l'ensemble des bureaux.**
+**Total : 19 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -26,7 +26,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
-| 30/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [📖 Hermès pour les Nuls — Le Guide LEO](bureau-leo/guide-hermes-pour-les-nuls/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | ✅ Finalisé | [📥](bureau-leo/guide-hermes-pour-les-nuls/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-pour-les-nuls.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-pour-les-nuls.md) |
 | 30/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v2 | [Hermès pour les Nuls 🦁](bureau-leo/guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | ✅ Finalisé | [📥](bureau-leo/guide-hermes-complet/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |
 | 29/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🛡️ Plan de Reprise d'Activité (PRA) — LEO Infrastructure](bureau-michel/pra-leo-recovery-20260629/) | `hermes` `infra` `recovery` `backup` `disaster-recovery` `disque` `gdrive` | proposition | [📥](bureau-michel/pra-leo-recovery-20260629/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) |
 | 28/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)](bureau-michel/analyse-bot-leo-copilot/) | `robert` `michel` `infra-hermes` `analyse` `business` `bpmn` `data-flow` `architecture` `systeme` | ✅ Finalisé | [📥](bureau-michel/analyse-bot-leo-copilot/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bot-leo-copilot.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bot-leo-copilot.md) |
@@ -49,4 +48,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 30/06/2026 20:54*
+*Index consolidé généré par `agent-pro-index.py` — 30/06/2026 21:02*
