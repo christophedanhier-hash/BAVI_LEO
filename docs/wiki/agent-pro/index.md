@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 30/06/2026 à 06:10*
+*Généré automatiquement le 30/06/2026 à 06:43*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -13,12 +13,12 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 9 | 29/06/2026 |
-| [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 2 | 27/06/2026 |
+| [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 7 | N/A |
 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 3 | 28/06/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 10 | N/A |
 
-**Total : 28 analyse(s) sur l'ensemble des bureaux.**
+**Total : 33 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -30,6 +30,11 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [📚 Bibliographie](https://christophedanhier-hash.github.io/emile-wiki/bibliographie/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/bibliographie/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/bibliographie.md) |
 | N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [📋 Plan du mémoire](https://christophedanhier-hash.github.io/emile-wiki/plan/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/plan/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/plan.md) |
 | N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [👨‍🏫 Retours du directeur de mémoire](https://christophedanhier-hash.github.io/emile-wiki/retours-directeur/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/retours-directeur/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/retours-directeur.md) |
+| N/A | 🧭 Bureau Sylvie — Voyages | — | [🇻🇳🇱🇦🇰🇭 Vietnam – Laos – Cambodge — Janvier/Février 2027](https://christophedanhier-hash.github.io/voyages-wiki/vietnam-laos-cambodge-2027/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/voyages-wiki/vietnam-laos-cambodge-2027/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/voyages-wiki/main/docs/vietnam-laos-cambodge-2027/index.md) |
+| N/A | 🧭 Bureau Sylvie — Voyages | — | [🇮🇹 Voyage Italie — Septembre/Octobre 2026](https://christophedanhier-hash.github.io/voyages-wiki/italie/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/voyages-wiki/italie/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/voyages-wiki/main/docs/italie/index.md) |
+| N/A | 🧭 Bureau Sylvie — Voyages | — | [🇫🇷 Canet → La Jonquera → Castellfollit → Castelnou → Orgues → Peyriac → **Lyon** 🏛️ → Gerpinnes](https://christophedanhier-hash.github.io/voyages-wiki/weekend-canet/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/voyages-wiki/weekend-canet/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/voyages-wiki/main/docs/weekend-canet/index.md) |
+| N/A | 🧭 Bureau Sylvie — Voyages | — | [🇪🇸 Road trip Andalousie — Pauline](https://christophedanhier-hash.github.io/voyages-wiki/andalousie-pauline/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/voyages-wiki/andalousie-pauline/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/voyages-wiki/main/docs/andalousie-pauline/index.md) |
+| N/A | 🧭 Bureau Sylvie — Voyages | — | [Scandinavie 2026 🚐🇪🇺🇩🇪🇸🇪🇳🇴](https://christophedanhier-hash.github.io/voyages-wiki/scandinavie-2026/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/voyages-wiki/scandinavie-2026/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/voyages-wiki/main/docs/scandinavie-2026/index.md) |
 | N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 5 — Discussion](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre5/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre5/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre5.md) |
 | N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 4 — Résultats](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre4/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre4/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre4.md) |
 | N/A | 🎓 Bureau Emile — Assistant Pédagogique | — | [Chapitre 3 — Méthodologie](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre3/) | — | 📝 Brouillon | [📥](https://christophedanhier-hash.github.io/emile-wiki/chapitres/chapitre3/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/emile-wiki/main/docs/chapitres/chapitre3.md) |
@@ -57,4 +62,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 30/06/2026 06:10*
+*Index consolidé généré par `agent-pro-index.py` — 30/06/2026 06:43*
