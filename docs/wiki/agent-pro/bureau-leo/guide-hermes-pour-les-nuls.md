@@ -28,10 +28,10 @@ Le livre suit le format canonique **« Pour les Nuls »** (Wiley) : 7 parties, 3
 Partie I   — Découvrir Hermès          🏁 ✅ Écrite
 Partie II  — Configurer son Assistant  ⚙️ ⬜
 Partie III — Les Bureaux BAVI          🏛️ ⬜
-Partie IV  — La Puissance des Skills   🧠 ⬜
+Partie IV  — La Puissance des Skills   🧠 ✅ Écrite (6 chapitres)
 Partie V   — Dashboards et Monitoring  📊 ⬜
 Partie VI  — Automatisation et Crons   ⏱️ ⬜
-Partie VII — La Partie des Dix         💡 ⬜
+Partie VII — La Partie des Dix         💡 ✅ Écrite (4 chapitres)
 Annexes    — Glossaire, Quick Start    📚 ✅ Glossaire écrit
 ```
 
