@@ -2,7 +2,7 @@
 date: 2026-06-30
 bureau: bureau-leo
 auteur: LEO
-version: v1
+version: v2
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
 statut: finalise
@@ -11,70 +11,29 @@ type: livre
 
 # 📖 Hermès pour les Nuls — Le Guide LEO
 
-> **Bureau :** 🤖 Bureau LEO — Dossiers & Analyses | **Date :** 30/06/2026
-> **Statut :** 🔄 Phase 1 rédigée (Partie I + Glossaire)
+> **Bureau :** 🤖 Bureau LEO — Dossiers & Analyses
+> **Statut :** 🟢 **Guide complet — 7 parties, 34 chapitres, 6 429 lignes**
 
 ---
 
-## Présentation
+Le guide complet est disponible ici, dans le Bureau LEO :
 
-**Hermès pour les Nuls** est un ouvrage complet qui raconte la construction de LEO, l'assistant IA personnel de Christophe, avec **Hermes Agent**. Plus qu'un manuel technique, c'est l'histoire d'une aventure — des premiers pas jusqu'à l'écosystème de 25 crons, 7 dashboards, 117 skills et 3 bots Telegram.
+📁 **[guide-hermes/](guide-hermes/)** — 7 parties, 34 chapitres, annexes
 
-Le livre suit le format canonique **« Pour les Nuls »** (Wiley) : 7 parties, 34 chapitres, 7 annexes, avec des icônes, des astuces et des exemples concrets.
+## Plan
 
-## Plan du livre
+| Partie | Dossier | Chapitres |
+|:-------|:--------|:---------:|
+| **P.I — Découvrir Hermès** 🏁 | [guide-hermes/01-decouvrir-hermes/](guide-hermes/01-decouvrir-hermes/) | 4 |
+| **P.II — Configurer** ⚙️ | [guide-hermes/02-configurer/](guide-hermes/02-configurer/) | 5 |
+| **P.III — Bureaux BAVI** 🏛️ | [guide-hermes/03-bureaux-bavi/](guide-hermes/03-bureaux-bavi/) | 6 |
+| **P.IV — Skills** 🧠 | [guide-hermes/04-skills/](guide-hermes/04-skills/) | 6 |
+| **P.V — Dashboards** 📊 | [guide-hermes/05-dashboards/](guide-hermes/05-dashboards/) | 4 |
+| **P.VI — Crons** ⏱️ | [guide-hermes/06-automatisation/](guide-hermes/06-automatisation/) | 5 |
+| **P.VII — Les Dix** 💡 | [guide-hermes/07-partie-des-dix/](guide-hermes/07-partie-des-dix/) | 4 |
+| **Annexes** 📚 | [guide-hermes/annexes/](guide-hermes/annexes/) | 5 |
 
-```
-Partie I   — Découvrir Hermès          🏁 ✅ Écrite
-Partie II  — Configurer son Assistant  ⚙️ ⬜
-Partie III — Les Bureaux BAVI          🏛️ ⬜
-Partie IV  — La Puissance des Skills   🧠 ⬜
-Partie V   — Dashboards et Monitoring  📊 ⬜
-Partie VI  — Automatisation et Crons   ⏱️ ⬜
-Partie VII — La Partie des Dix         💡 ⬜
-Annexes    — Glossaire, Quick Start    📚 ✅ Glossaire écrit
-```
+## Voir aussi
 
-## Contenu rédigé (Phase 1)
-
-### Partie I — Découvrir Hermès
-
-| Chapitre | Sujet | Pages |
-|:---------|:------|:-----:|
-| Ch.1 | Un agent IA, c'est quoi ? (chatbot vs agent, les 5 piliers) | ~6 |
-| Ch.2 | Pourquoi Hermès ? (comparatif Claude Code, Codex, OpenCode) | ~7 |
-| Ch.3 | L'architecture LEO (3 bots, providers, infra, chiffres clés) | ~10 |
-| Ch.4 | Installation rapide (5 min chrono, DeepSeek/Ollama/Gemini) | ~8 |
-
-### Annexes
-
-| Annexe | Sujet |
-|:-------|:------|
-| A | Glossaire (40+ termes techniques décryptés) |
-| B | Guide de démarrage rapide (60 secondes) |
-
-## Accès au guide
-
-📦 **Dépôt GitHub :** [christophedanhier-hash/hermes-guide](https://github.com/christophedanhier-hash/hermes-guide) (public)
-
-```
-hermes-guide/
-├── README.md                   → Introduction du livre
-├── TABLE.md                    → Table des matières complète
-├── 01-decouvrir-hermes/        → Partie I (4 chapitres)
-├── 02-configurer/              → Partie II (fichiers repositionnés)
-├── 03-bureaux-bavi/            → Partie III (à venir)
-├── 04-skills/                  → Partie IV (à venir)
-├── 05-dashboards/              → Partie V (fichiers repositionnés)
-├── 06-automatisation/          → Partie VI (fichiers repositionnés)
-├── 07-partie-des-dix/          → Partie VII (à venir)
-└── annexes/                    → Glossaire, Quick Start, etc.
-```
-
-## Évolution
-
-Ce guide est un **projet vivant** — il sera enrichi au fil des parties et maintenu à jour par LEO dans le cadre de son cycle d'auto-documentation. Chaque phase est versionnée et une cron de mise à jour mensuelle est prévue.
-
----
-
-*Document créé le 30/06/2026 — Phase 1 du projet « Hermès pour les Nuls »*
+🌐 **GitHub Pages :** [christophedanhier-hash.github.io/hermes-guide/](https://christophedanhier-hash.github.io/hermes-guide/)
+📦 **Dépôt :** [github.com/christophedanhier-hash/hermes-guide](https://github.com/christophedanhier-hash/hermes-guide)
