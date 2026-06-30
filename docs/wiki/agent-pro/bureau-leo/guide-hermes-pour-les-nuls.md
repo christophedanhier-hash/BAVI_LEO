@@ -5,7 +5,7 @@ auteur: LEO
 version: v1
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
-statut: en-cours
+statut: finalise
 type: livre
 ---
 
