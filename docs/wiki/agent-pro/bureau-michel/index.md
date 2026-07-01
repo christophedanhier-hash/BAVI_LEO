@@ -1,11 +1,20 @@
 # 🔧 Bureau Michel — Automatisation & Infrastructure n8n
 
-*Généré automatiquement le 01/07/2026 à 18:46*
+*Généré automatiquement le 01/07/2026 à 19:04*
 
-**Total : 11 analyse(s)**
+**Total : 12 analyse(s)**
+
+### ⚠️ Problèmes détectés
+
+| Fichier | Problème |
+|:--------|:---------|
+| `analyse-processus-bpmn-20260701/` | Frontmatter manquant ou invalide |
+
+---
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
+| N/A | ~~🏗️ Architecture des Processus — Bureau Michel~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
 | 30/06/2026 | v1 | [🔐 Audit Accès & Credentials — Léo Copilot](analyse-acces-credentials-20260630/) | `hermes` `infra` `acces` `credentials` `api-keys` `audit` `securite` `leo-copilot` | proposition | [📥](analyse-acces-credentials-20260630/?print-pdf) [📦](https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive%3A+bureau-michel/analyse-acces-credentials-20260630.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-michel%0A-+**Fichier**+%3A+analyse-acces-credentials-20260630.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-acces-credentials-20260630.md) |
 | 30/06/2026 | v1 | [Analyse des écarts — Guide Hermès vs Plateforme réelle](analyse-ecarts-guide-vs-plateforme/) | `analyse` `guide` `hermes` `leo` `ecart` | proposition | [📥](analyse-ecarts-guide-vs-plateforme/?print-pdf) [📦](https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive%3A+bureau-michel/analyse-ecarts-guide-vs-plateforme.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-michel%0A-+**Fichier**+%3A+analyse-ecarts-guide-vs-plateforme.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-ecarts-guide-vs-plateforme.md) |
 | 29/06/2026 | v1 | [🛡️ Plan de Reprise d'Activité (PRA) — LEO Infrastructure](pra-leo-recovery-20260629/) | `hermes` `infra` `recovery` `backup` `disaster-recovery` `disque` `gdrive` | proposition | [📥](pra-leo-recovery-20260629/?print-pdf) [📦](https://github.com/christophedanhier-hash/leo-tracker/issues/new?title=archive%3A+bureau-michel/pra-leo-recovery-20260629.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-michel%0A-+**Fichier**+%3A+pra-leo-recovery-20260629.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) |
