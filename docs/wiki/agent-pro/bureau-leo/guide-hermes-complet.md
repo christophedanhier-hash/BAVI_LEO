@@ -1,8 +1,8 @@
 ---
-date: 2026-06-30
+date: 2026-07-01
 bureau: bureau-leo
 auteur: LEO
-version: v2
+version: v3
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
 statut: finalise
@@ -27,8 +27,8 @@ Ce livre vous guide pas à pas, de l'installation d'Hermes sur votre machine jus
 - **Partie II — Configurer votre assistant** : installer le gateway, choisir vos providers, créer vos premiers bots
 - **Partie III — Les Bureaux BAVI** : organiser vos connaissances avec le système de bureaux
 - **Partie IV — La Puissance des Skills** : exploiter 117 skills prêts à l'emploi et créer les vôtres
-- **Partie V — Dashboards et Monitoring** : visualiser tout ce qui se passe avec 8 dashboards interconnectés
-- **Partie VI — Automatisation et Crons** : faire tourner 25 tâches planifiées sans lever le petit doigt
+- **Partie V — Dashboards et Monitoring** : visualiser tout ce qui se passe avec 7 dashboards interconnectés
+- **Partie VI — Automatisation et Crons** : faire tourner 13 tâches planifiées + daemon sans lever le petit doigt
 - **Partie VII — La Partie des Dix** : les astuces, commandes et ressources qui sauvent
 
 ### Public visé
@@ -85,7 +85,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 
 ---
 
-**Projet vivant** — dernière mise à jour : juin 2026. Hermes Agent évolue vite, ce guide aussi.
+**Projet vivant** — dernière mise à jour : juillet 2026. Hermes Agent évolue vite, ce guide aussi.
 
 👉 [Table des matières complète](TABLE.md)
 # Table des matières
@@ -169,7 +169,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
   - Pourquoi un agent a besoin de mémoire
   - Memory vs User Profile
   - Configurer et utiliser la mémoire
-  - Le cron sync-memory entre profils
+  - Mémoire partagée : symlinks entre profils
 
 ---
 
@@ -249,7 +249,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 *Voir l'invisible*
 
 - **[Ch.22 — L'écosystème de dashboards](05-dashboards/ch22-ecosysteme-dashboards.md)**
-  - Architecture : 8 dashboards, HTML statique, GitHub Pages
+  - Architecture : 7 dashboards, HTML statique, GitHub Pages
   - Navigation interconnectée
   - Cycle de vie d'une donnée : du chat Telegram au graphique
 
@@ -259,7 +259,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
   - Alertes et seuils
 
 - **[Ch.24 — Monitoring des crons](05-dashboards/ch24-monitoring-crons.md)**
-  - Le tableau de bord des 25 tâches planifiées
+  - Le tableau de bord des 13 tâches planifiées
   - Historique 7 jours, durée d'exécution, taux de succès
   - Détection des crons bloqués ou en échec
 
@@ -557,7 +557,7 @@ Les crons Hermes ne sont pas de simples tâches shell. Chaque cron peut être :
 - **Un prompt LLM** — l'agent réfléchit et agit
 - **Un script + un prompt** — collecte des données puis analyse
 
-LEO a **30 crons actifs** dont 23 en no_agent (0$ de consommation LLM pour les tâches répétitives).
+LEO a **13 crons actifs** dont 9 en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 5 minutes.
 
 #### 5. 🗂️ Profils et gateways parallèles
 
@@ -569,7 +569,7 @@ Avec Hermès, vous pouvez avoir **plusieurs agents indépendants** sur la même 
 | `leo-copilot` | @hermes_leo_copilot_bot | DeepSeek V4 Pro | Code, infra, n8n |
 | `bavi-leo` | @bavi_leo_voyages_bot | DeepSeek Flash | Voyages camping-car |
 
-Chaque profil a son propre gateway, ses propres skills, sa propre mémoire. Et pourtant, ils peuvent partager des informations via un cron `sync-memory`.
+Chaque profil a son propre gateway, ses propres skills, sa propre mémoire. Et pourtant, ils peuvent partager des informations via des **symlinks** vers un fichier mémoire commun (`/opt/data/memories/`).
 
 ## 🦁 Pourquoi Christophe a choisi Hermès
 
@@ -678,7 +678,7 @@ Docker Container
 
 Avantage de s6 : si un gateway crashe, il redémarre automatiquement en moins d'une seconde.
 
-### Les 8 dashboards
+### Les 7 dashboards
 
 Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zéro base de données :
 
@@ -688,13 +688,13 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 | 📊 **LEO KPI** | [lien](https://christophedanhier-hash.github.io/dashboard-leo/) | Sessions, budget, tokens | H:10 |
 | 🏛️ **BAVI LEO** | [lien](https://christophedanhier-hash.github.io/bavi-leo-dashboard/) | KPIs BAVI | H:05 |
 | 💻 **Machines** | [lien](https://christophedanhier-hash.github.io/leo-metrics/) | CPU/RAM/disque 3 machines | H:15 |
-| ⏱️ **Crons** | [lien](https://christophedanhier-hash.github.io/crons-dashboard/) | 30 crons, historique 7j | H:20 |
+| ⏱️ **Crons** | [lien](https://christophedanhier-hash.github.io/crons-dashboard/) | 13 crons, historique 7j | H:20 |
 | 🐙 **GitHub** | [lien](https://christophedanhier-hash.github.io/github-dashboard/) | Activité 22 repos | H:25 |
 | 🔧 **n8n** | [lien](https://christophedanhier-hash.github.io/dashboard-n8n/) | Workflows n8n | */15 |
 
-### Les 30 crons (tâches planifiées)
+### Les 13 crons (tâches planifiées)
 
-> 23 sur 25 sont en `no_agent` = **0$ par mois** de consommation LLM pour les tâches répétitives.
+> 9 sur 13 sont en `no_agent` = **0$ par mois** de consommation LLM pour les tâches répétitives. Un **auto-fix-daemon** (`*/5 min`) remplace 3 crons de monitoring pour une détection plus rapide.
 
 | Vague | Horaires | Crons |
 |:------|:---------|:------|
@@ -773,7 +773,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 ## 📝 À retenir
 
-- LEO = 1 serveur principal + 4 bots Telegram + 8 dashboards + 30 crons + 117 skills
+- LEO = 1 serveur principal + 4 bots Telegram + 7 dashboards + 13 crons + 117 skills
 - Tout tourne sur Hermes Agent dans un conteneur Docker supervisé par s6
 - Le secret : une organisation stricte (profils, bureaux, skills) qui permet à l'agent de gérer la complexité
 - Les erreurs du passé ont forgé les règles du présent
@@ -1644,9 +1644,9 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Léo Copilote, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 30 crons automatisés
-- 8 dashboards temps réel
-- 6 workflows n8n
+- 13 crons automatisés
+- 7 dashboards temps réel
+- 3 workflows n8n (2 actifs)
 - Les gateways Hermes
 - Le budget DeepSeek
 
@@ -2233,9 +2233,9 @@ C'est le padron de la machine — il a accès root complet (`sudo` sans restrict
 
 ```
 Bureau Michel = l'ingénieur système de LEO
-├── 🔧 30 crons automatisés
-├── 📊 8 dashboards temps réel
-├── 🔄 6 workflows n8n
+├── 🔧 13 crons automatisés
+├── 📊 7 dashboards temps réel
+├── 🔄 3 workflows n8n (2 actifs)
 ├── 🌐 Nginx + Cloudflare Tunnel
 ├── 🔒 UFW + SSL + DNS
 ├── 💰 Suivi du budget DeepSeek
@@ -2307,9 +2307,9 @@ Utilisateur ──→ tofdan.be ──→ Cloudflare ──→ Tunnel ──→ 
 | **Yoga** | Windows 11 | — | CPU, RAM (via SSH) |
 | **Penguin** | Debian 13 | 6.3 Go | CPU, RAM, VS Code + Kilo Code |
 
-## Les 30 crons
+## Les 13 crons
 
-Les crons sont le cœur de l'automatisation. Environ 30 tâches planifiées tournent 24/7 :
+Les crons sont le cœur de l'automatisation. 13 tâches planifiées tournent 24/7, complétées par un **auto-fix-daemon** `*/5` qui remplace 3 crons de monitoring disparates :
 
 ### Crons horaires (métriques + dashboard)
 
@@ -2331,7 +2331,7 @@ Les crons sont le cœur de l'automatisation. Environ 30 tâches planifiées tour
 
 - Nom: Dashboard Crons
   Horaire: Toutes les heures
-  Action: Statut des 30 crons
+  Action: Statut des 13 crons
   Coût: 0€ (no_agent)
 ```
 
@@ -2375,20 +2375,19 @@ cron-metrics:
   script: collect-metrics.sh
 ```
 
-Sur 30 crons, **22 sont en no_agent** — le coût total des crons est d'environ **0,10 €/jour**.
+Sur 13 crons, **9 sont en no_agent** — le coût total des crons est d'environ **0,03 €/jour**.
 
-## Les 8 dashboards
+## Les 7 dashboards
 
 | Dashboard | URL | Contenu |
 |:----------|:----|:--------|
 | **LEO KPI** | `christophedanhier-hash.github.io/dashboard-leo/` | Sessions, tokens, budget |
 | **BAVI LEO** | `christophedanhier-hash.github.io/bavi-leo-dashboard/` | KPIs voyages |
 | **Machines** | `christophedanhier-hash.github.io/leo-metrics/` | CPU, RAM, disque (3 machines) |
-| **Crons** | `christophedanhier-hash.github.io/crons-dashboard/` | Statut 30 crons |
+| **Crons** | `christophedanhier-hash.github.io/crons-dashboard/` | Statut 13 crons |
 | **GitHub** | `christophedanhier-hash.github.io/github-dashboard/` | Activité repos |
 | **n8n** | `christophedanhier-hash.github.io/dashboard-n8n/` | Workflows, exécutions |
 | **Global** | `christophedanhier-hash.github.io/leo-global-dashboard/` | Portail agrégé |
-| **Nest** | Dashboard domotique | Capteurs maison |
 
 Tous ces dashboards sont des fichiers **HTML statiques** (zéro backend) :
 1. Un script collecte les données → JSON
@@ -2408,44 +2407,63 @@ Le Bureau Michel suit le budget en temps réel :
 
 Le secret de ce coût ridicule : **Ollama local pour la classification**, **DeepSeek Flash pour le quotidien**, **DeepSeek Pro seulement pour les analyses complexes**.
 
+### DeepSeek V4 — Tarifs (juillet 2026)
+
+| Modèle | Prix standard (M tokens) | Heures pleines ×2 |
+|:-------|:------------------------:|:------------------:|
+| **Flash** | $0.14 in / $0.28 out | UTC 01-04 et 06-10 |
+| **Pro** | $0.435 in / $0.87 out | UTC 01-04 et 06-10 |
+
+> 💡 **Astuce** : Éviter Pro entre 08h et 12h (Bruxelles) = heures pleines ×2. Flash pour le routinier, Pro pour le complexe.
+
+### Résilience post-crash (30 juin 2026)
+
+Le 30 juin, un crash système a vidé les sessions des 4 bots et cassé les gateways. Leçons :
+- **Backup automatisé** → GDrive toutes les 24h
+- **auto-fix-daemon** `*/5` → remplace 3 crons monitoring
+- **Mémoire partagée** par symlinks → plus de perte de contexte entre profils
+- **collect-v2** → collecteur unifié (8 sources, JSON, 0 alerte) remplace des scripts disparates
+
 ## n8n — Workflows d'automatisation
 
 n8n est utilisé pour les workflows qui nécessitent des webhooks ou des intégrations API :
 
-- **6 workflows actifs**, ~493 exécutions
-- **4 credentials** (Google, GitHub, etc.)
+- **n8n v2.26.8 Docker** — 3 workflows, **2 actifs**
+- **3 credentials** (Google, GitHub, n8n)
 - Accès via Tailscale uniquement (`100.92.102.28:5678`)
 - **Base SQLite** dans un volume Docker dédié
+- **Workflow emblématique : LEO Ping** — endpoint `GET /webhook/ping` → `{"response":"pong"}`
 
-Workflow emblématique : **LEO Ping** — un endpoint `GET /webhook/ping` qui renvoie `{"response":"pong"}`. Simple, mais essentiel pour vérifier que le service tourne.
+> **Consolidation post-crash** : passé de 6 à 3 workflows (2 actifs). Les workflows redondants ont été supprimés pour plus de stabilité.
 
 ## Auto-heal et watchdogs
 
 Le système ne se contente pas de tourner — il se surveille :
 
 ```yaml
-Auto-heal (toutes les 30-60 min):
-  ✅ Crons: 19/19 OK
+Auto-heal (toutes les 30-60 min, + auto-fix-daemon */5 min):
+  ✅ Crons: 13/13 OK
   ✅ Ollama: UP (qwen2.5:7b responsive)
-  ✅ n8n: UP (healthz 200)
+  ✅ n8n: UP (healthz 200) — v2.26.8
   ✅ Docker: 3/3 conteneurs up
   ✅ Disque: 21% utilisé (345 Go libre)
   ✅ Token LEO Google: OK
-  ❌ Token Christophe: à ré-autoriser
+  ✅ collect-v2 → leo-unified.json: 8 sources, 0 alertes
+  ✅ Mémoire partagée: symlinks default ↔ leo-copilot
 ```
 
-Les watchdogs surveillent en continu : code-server, n8n, dashboards, tunnels.
+Les watchdogs surveillent en continu : code-server, n8n, dashboards, tunnels. Depuis le crash du 30 juin, un **auto-fix-daemon** (`*/5`) remplace 3 crons monitoring pour une détection infra-minute.
 
 ## En résumé
 
 | Composant | Quantité | Coût mensuel |
 |:----------|:--------:|:------------:|
-| Crons | ~30 | ~0,10 €/j |
-| Dashboards | 8 | 0 € (GitHub Pages) |
-| n8n workflows | 6 | 0 € (self-hosted) |
+| Crons | 13 | ~0,03 €/j |
+| Dashboards | 7 | 0 € (GitHub Pages) |
+| n8n workflows | 3 (2 actifs) | 0 € (self-hosted) |
 | Machines surveillées | 3 | 0 € |
 | DeepSeek API | Flash + Pro | ~1,50 €/mois |
-| **Total** | | **~1,50-5 €/mois** |
+| **Total** | | **~1,50-3 €/mois** |
 
 ## Voir aussi
 
@@ -3214,7 +3232,7 @@ with open("/tmp/dashboard.html", "w") as f:
 | **LEO KPI** | Sessions, tokens, budget, crons | `dashboard-leo/` |
 | **BAVI LEO** | KPIs voyages, analyses produites | `bavi-leo-dashboard/` |
 | **Machines** | CPU, RAM, disque 3 machines | `leo-metrics/` |
-| **Crons** | Statut 30 crons, temps d'exécution | `crons-dashboard/` |
+| **Crons** | Statut 13 crons, temps d'exécution | `crons-dashboard/` |
 | **GitHub** | Activité repos, commits, issues | `github-dashboard/` |
 | **n8n** | Workflows, exécutions, erreurs | `dashboard-n8n/` |
 | **Global** | Portail agrégé tous dashboards | `leo-global-dashboard/` |
@@ -3546,13 +3564,13 @@ tail -f /opt/data/profiles/leo-copilot/logs/agent.log
 # → https://user.github.io/leo-global-dashboard/
 ```
 
-### Les 8 dashboards de monitoring
+### Les 7 dashboards de monitoring
 
 | Dashboard | Fréquence | Vérifie |
 |:----------|:---------:|:--------|
 | **LEO KPI** | Horaire | Sessions, budget, crons |
 | **Machines** | Horaire | CPU, RAM, disque 3 machines |
-| **Crons** | Horaire | Statut 30 crons |
+|| **Crons** | Horaire | Statut 13 crons |
 | **GitHub** | Horaire | Commits, issues |
 | **n8n** | 15 min | Workflows, exécutions |
 | **BAVI LEO** | Horaire | KPIs voyages |
@@ -4170,7 +4188,7 @@ Script de collecte → JSON + HTML → Push GitHub Pages
 
 ## Les dashboards de LEO
 
-LEO a **8 dashboards** en production, tous rafraîchis par des crons no_agent :
+LEO a **7 dashboards** en production, tous rafraîchis par des crons no_agent :
 
 | Dashboard | Contenu | URL | Cron |
 |-----------|---------|-----|------|
@@ -4332,7 +4350,7 @@ Depuis le 22/06/2026, LEO a un **portail unique** qui consolide tout en une seul
 - 🏛️ **BAVI LEO** — sessions, messages, tokens
 - 🖥️ **Machines (3)** — statut en ligne/hors ligne
 - 🚨 **Alertes** — dernières anomalies détectées
-- 🔗 **Liens rapides** — accès aux 8 dashboards détaillés
+- 🔗 **Liens rapides** — accès aux 7 dashboards détaillés
 
 **Avantages :**
 - ✅ **Plus aucun rapport Telegram** — dashboard-watch et Auto-Heal livrent en local
@@ -4461,7 +4479,7 @@ nvidia-smi
 ```
 # Monitoring crons : le tableau de bord des tâches
 
-Avec 30 crons qui tournent 24h/24, il faut un dashboard pour savoir si tout va bien. C'est le rôle du **crons-dashboard**.
+Avec 13 crons qui tournent 24h/24 et un auto-fix-daemon `*/5`, il faut un dashboard pour savoir si tout va bien. C'est le rôle du **crons-dashboard**.
 
 ## Le tableau de bord des crons
 
@@ -4501,7 +4519,7 @@ cd /opt/data/crons-dashboard && git push
 | Dérive horaire | <5min | 5-15min | >15min |
 | Erreurs consécutives | 0 | 1-2 | >3 |
 
-## Les 30 crons de LEO
+## Les 13 crons de LEO
 
 ### Horaires (toutes les heures)
 
@@ -4894,7 +4912,7 @@ Le flag `--no-agent` est essentiel : sans LLM, l'exécution est gratuite.
 Toutes les heures (minute 0):
   - Dashboard LEO KPI      → collecte sessions, tokens, budget
   - Dashboard Machines     → CPU, RAM, disque 3 machines
-  - Dashboard Crons        → statut 30 crons
+  - Dashboard Crons        → statut 13 crons
   - Dashboard GitHub       → activité repos
   - Dashboard BAVI LEO     → KPIs voyages
 
@@ -5083,7 +5101,7 @@ Toutes les 30 minutes:
   - 📧 Classifieur Gmail       → nouveaux emails à classer
 
 Toutes les 2 heures:
-  - 📊 Dashboard Watch         → vérifie que les 8 dashboards répondent
+  - 📊 Dashboard Watch         → vérifie que les 7 dashboards répondent
   - 🔄 Dashboard redeploy      → redéploie si un dashboard est obsolète
 
 Toutes les 6 heures:
@@ -5114,7 +5132,7 @@ En cas d'échec:
 
 ## Dashboard Watch
 
-Le Dashboard Watch vérifie que les 8 dashboards sont en ligne et à jour :
+Le Dashboard Watch vérifie que les 7 dashboards sont en ligne et à jour :
 
 ```bash
 for dashboard in leo-kpi machines crons github n8n bavi-leo global; do
@@ -5577,7 +5595,7 @@ Le code source, les issues, les discussions. Idéal pour suivre les évolutions,
 
 🌐 **christophedanhier-hash.github.io/BAVI_LEO**
 
-La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 30 crons, 8 dashboards. La preuve que Hermes peut gérer un assistant IA complet.
+La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 13 crons, 7 dashboards. La preuve que Hermes peut gérer un assistant IA complet.
 
 ## 4. Le guide Hermès pour les Nuls
 
@@ -5589,7 +5607,7 @@ Le livre que vous êtes en train de lire. Mis à jour régulièrement avec les n
 
 🌐 **pages.github.com**
 
-Hébergement gratuit pour wikis, dashboards, sites statiques. Utilisé par LEO pour ses 5 wikis et 8 dashboards. Zéro backend, zéro coût.
+Hébergement gratuit pour wikis, dashboards, sites statiques. Utilisé par LEO pour ses 5 wikis et 7 dashboards. Zéro backend, zéro coût.
 
 ## 6. DeepSeek API
 
