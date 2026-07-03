@@ -1,8 +1,8 @@
 ---
-date: 2026-07-01
+date: 2026-07-03
 bureau: bureau-leo
 auteur: LEO
-version: v3
+version: v3.2
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
 statut: finalise
@@ -85,7 +85,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 
 ---
 
-**Projet vivant** — dernière mise à jour : juillet 2026. Hermes Agent évolue vite, ce guide aussi.
+**Projet vivant** — dernière mise à jour : 3 juillet 2026. Hermes Agent évolue vite, ce guide aussi.
 
 👉 [Table des matières complète](TABLE.md)
 # Table des matières
@@ -545,7 +545,7 @@ Un skill, c'est un document qui dit à Hermès : « Voici comment faire X. » Vo
 4. Vérifier que le dashboard répond HTTP 200
 ```
 
-LEO a **117 skills** répartis en 22 catégories. Chaque skill encapsule une procédure — déployer un dashboard, envoyer un email, analyser un RSS, etc. Résultat : LEO sait faire des choses qu'on ne lui a jamais montrées, parce qu'il a le mode d'emploi.
+LEO a **126 skills** répartis en 22 catégories. Chaque skill encapsule une procédure — déployer un dashboard, envoyer un email, analyser un RSS, etc. Résultat : LEO sait faire des choses qu'on ne lui a jamais montrées, parce qu'il a le mode d'emploi.
 
 > 🦁 **Exemple LEO :** Le skill `dashboard-deployment` contient toute la procédure de déploiement d'un dashboard HTML sur GitHub Pages. LEO peut déployer un nouveau dashboard en 30 secondes, sans erreur, parce que le skill lui dit exactement quoi faire.
 
@@ -557,7 +557,7 @@ Les crons Hermes ne sont pas de simples tâches shell. Chaque cron peut être :
 - **Un prompt LLM** — l'agent réfléchit et agit
 - **Un script + un prompt** — collecte des données puis analyse
 
-LEO a **13 crons actifs** dont 9 en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 5 minutes.
+LEO a **14 crons actifs** dont 13 en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
 
 #### 5. 🗂️ Profils et gateways parallèles
 
@@ -573,9 +573,9 @@ Chaque profil a son propre gateway, ses propres skills, sa propre mémoire. Et p
 
 ## 🦁 Pourquoi Christophe a choisi Hermès
 
-> « J'ai essayé Claude Code — excellent pour le code, mais incapable de m'envoyer un message Telegram ou de classer mes emails. J'ai essayé ChatGPT — il parle bien, mais il ne fait rien. Hermès est le seul qui combine la puissance d'un LLM avec la liberté d'un vrai assistant. »
+> *Ce qui distingue Hermès des autres, c'est qu'il ne se contente pas de répondre — il agit. Là où un chatbot vous donne une réponse, Hermès peut envoyer l'email, mettre à jour le dashboard, lancer le backup, et classer vos messages. C'est la différence entre un conseiller qui parle et un assistant qui fait.*
 
-— Christophe (Tofdan), créateur de LEO
+— Inspiré de l'expérience de Christophe, créateur de LEO
 
 **Le critère décisif :** Hermès a le meilleur rapport **puissance/flexibilité/prix**. Gratuit, open source, multi-provider, multi-plateforme, avec un système de skills qui le rend évolutif à l'infini.
 
@@ -585,7 +585,7 @@ Chaque profil a son propre gateway, ses propres skills, sa propre mémoire. Et p
 |:--------|:------:|:----------:|
 | Multi-provider | ✅ | ❌ (enfermé) |
 | Multi-plateforme | ✅ (15+) | ❌ (CLI seul) |
-| Skills | ✅ (117 dispo) | ❌ |
+| Skills | ✅ (126) | ❌ |
 | Crons | ✅ (avancés) | ❌ |
 | Gratuit | ✅ | Souvent payant |
 | Open source | ✅ | Variable |
@@ -631,30 +631,23 @@ L'un des atouts d'Hermès est de pouvoir utiliser **plusieurs LLMs** et de chois
 |:-----:|:---------|:----:|:------|
 | 🥇 | **DeepSeek Flash** | Payant | Réponse Telegram, conversation, raisonnement |
 | 🥈 | **DeepSeek V4 Pro** (leo-copilot) | Payant | Code, infra, debug système |
-| 🥉 | **Ollama** (qwen2.5:7b, local) | **Gratuit** 🏠 | Traitement batch, tâches privées |
+| 🥉 | **Ollama** (qwen2.5:7b, local) | **Gratuit** 🏠 | Traitement batch, classification (CPU), tâches privées |
 | 4e | **Gemini** (fallback) | **Gratuit** ☁️ | Secours si DeepSeek indisponible |
 
 **Le principe économique :** 95% des tâches planifiées (crons) tournent en `no_agent` = 0 token LLM consommé. Les 5% restants utilisent d'abord Ollama (gratuit), puis DeepSeek seulement si nécessaire.
 
 ## L'infrastructure physique
 
-LEO tourne sur **3 machines** connectées via Tailscale :
+LEO tourne sur **1 machine serveur**. Les autres postes (Yoga, Penguin) sont des stations de travail clientes — elles n'hébergent aucun service de la plateforme.
 
 ```
-🌐 LEO (serveur principal)
-   ├── Processeur : Intel Xeon
-   ├── RAM : 32 Go
-   ├── Disque : 1 To SSD
-   ├── GPU : NVIDIA RTX 3050 (pour Ollama)
-   └── OS : Linux (Debian-like) en Docker
-
-💻 Yoga (machine Christophe)
-   ├── Usage : développement, VS Code
-   └── Connecté à LEO via Tailscale
-
-🐧 Penguin (serveur secondaire)
-   ├── Usage : backups, services annexes
-   └── Monitoring via SSH
+🌐 LEO (serveur unique)
+   ├── Processeur : Intel Core i7-7700K
+   ├── RAM : 22 Go
+   ├── SSD : 457 Go (système + données Hermes)
+   ├── HDD : 1 To (backups, archives)
+   ├── GPU : Aucun (Ollama sur CPU)
+   └── OS : Ubuntu 26.04 en conteneur Docker
 ```
 
 ## L'écosystème logiciel
@@ -686,9 +679,9 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 |:----------|:----|:--------|:---:|
 | 🦁 **LEO Dashboard** | [lien](https://christophedanhier-hash.github.io/leo-dashboard/) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
 
-### Les 13 crons (tâches planifiées)
+### Les 14 crons (tâches planifiées)
 
-> 9 sur 13 sont en `no_agent` = **0$ par mois** de consommation LLM pour les tâches répétitives. Un **auto-fix-daemon** (`*/5 min`) remplace 3 crons de monitoring pour une détection plus rapide.
+> 13 sur 14 sont en `no_agent` = **0$ par mois** de consommation LLM pour les tâches répétitives. Un **auto-fix-daemon** (`*/15 min`) assure une détection rapide.
 
 | Vague | Horaires | Crons |
 |:------|:---------|:------|
@@ -757,13 +750,13 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 | Métrique | Valeur |
 |:---------|:-------|
-| Crons actifs | **25** (23 no_agent) |
-| Skills installés | **117** |
+| Crons actifs | **14** (13 no_agent) |
+| Skills installés | **126** |
 | Dashboards | **1** (central 4 onglets ✅) |
 | Wikis | **5** (98 pages total) |
-| Repos GitHub | **17** |
-| Consommation DeepSeek/jour | **~1.88$** |
-| Machines supervisées | **3** (LEO, Yoga, Penguin) |
+| Repos GitHub | **20** |
+| Consommation DeepSeek/jour | **~quelques centimes** |
+| Machine hôte | **1** (serveur LEO uniquement) |
 
 ## 📝 À retenir
 
@@ -783,7 +776,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 - **Python 3.11+**
 - **Curl**
 - Un compte GitHub
-- (Optionnel) Un GPU NVIDIA pour exécuter des LLM locaux
+- (Optionnel) Un GPU NVIDIA pour accélérer les LLM locaux
 
 ## 2. Installer Hermes Agent (méthode officielle)
 
@@ -1748,7 +1741,7 @@ category: infrastructure
 
 ## L'écosystème de skills LEO
 
-Environ **117 skills** répartis en **22 catégories** :
+Environ **126 skills** répartis en **22 catégories** :
 
 ```
 skills/
@@ -2259,7 +2252,7 @@ OS: Ubuntu 26.04 (resolute)
 Kernel: 7.0.0
 CPU: i7-7700K
 RAM: 22.94 Go
-GPU: NVIDIA RTX 3050 (CUDA 13.2)
+GPU: Aucun (Ollama sur CPU)
 SSD: 465 Go (/dev/sda2)
 HDD: 1 To (/dev/sdb2 → /mnt/data)
 ```
@@ -2293,17 +2286,15 @@ Utilisateur ──→ tofdan.be ──→ Cloudflare ──→ Tunnel ──→ 
 - **Cloudflare** : gère le HTTPS (mode Flexible), le tunnel et le DNS
 - **UFW** : ports ouverts 80, 443, 11434, 3389, 7844
 
-### Machines surveillées
+### Machine hôte
 
-| Machine | OS | RAM | Surveillance |
-|:--------|:---|:---:|:------------|
-| **LEO** | Ubuntu 26.04 | 23 Go | CPU, RAM, disque (21% utilisé) |
-| **Yoga** | Windows 11 | — | CPU, RAM (via SSH) |
-| **Penguin** | Debian 13 | 6.3 Go | CPU, RAM, VS Code + Kilo Code |
+| Machine | OS | RAM | Stockage | Rôle |
+|:--------|:---|:---:|:--------:|:-----|
+| **LEO** 🖥️ | Ubuntu 26.04 | 22 Go | 457 Go SSD + 1 To HDD | Serveur unique (toute la plateforme) |
 
-## Les 13 crons
+## Les 14 crons
 
-Les crons sont le cœur de l'automatisation. 13 tâches planifiées tournent 24/7, complétées par un **auto-fix-daemon** `*/5` qui remplace 3 crons de monitoring disparates :
+Les crons sont le cœur de l'automatisation. 14 tâches planifiées tournent 24/7, complétées par un **auto-fix-daemon** `*/15` qui assure la détection rapide :
 
 ### Crons horaires (métriques + dashboard)
 
@@ -2369,7 +2360,7 @@ cron-metrics:
   script: collect-metrics.sh
 ```
 
-Sur 13 crons, **9 sont en no_agent** — le coût total des crons est d'environ **0,03 €/jour**.
+Sur 14 crons, **13 sont en no_agent** — le coût total des crons est d'environ **quelques centimes par jour**, limité à la veille IA (DeepSeek Flash).
 
 ## Les 1 dashboard (4 onglets)
 
@@ -2384,25 +2375,28 @@ Tous les indicateurs sont dans **un seul dashboard HTML statique** avec 4 onglet
 
 ## Budget DeepSeek
 
-Le Bureau Michel suit le budget en temps réel :
+Le Bureau Michel suit le budget en continu via le dashboard LEO. Plutôt que de donner des chiffres précis (qui changent chaque jour), voici les **principes généraux** :
 
-| Métrique | Valeur |
-|:---------|:------:|
-| Solde | **$60.31** |
-| Dépense totale | $0.41 |
-| Moyenne quotidienne | $0.03 |
-| Jours restants | **2 315** (>6 ans) |
+| Principe | Détail |
+|:---------|:-------|
+| **Provider principal** | DeepSeek Flash pour le quotidien |
+| **Provider complexe** | DeepSeek Pro pour analyses ponctuelles |
+| **Provider gratuit** | Ollama (local, CPU) pour classification et batch |
+| **Fallback** | Gemini (gratuit, cloud) si DeepSeek indisponible |
+| **Veille IA** | ~5-10 centimes/jour (DeepSeek Flash) |
+| **Crons no_agent** | 0 € — 13 sur 14 |
+| **Total mensuel estimé** | **~1-3 €/mois** |
 
-Le secret de ce coût ridicule : **Ollama local pour la classification**, **DeepSeek Flash pour le quotidien**, **DeepSeek Pro seulement pour les analyses complexes**.
+> 💡 **Astuce** : Éviter Pro entre 08h et 12h (Bruxelles) = heures pleines ×2. Flash pour le routinier, Pro pour le complexe.
 
-### DeepSeek V4 — Tarifs (juillet 2026)
+### DeepSeek V4 — Tarifs de référence (juillet 2026)
 
 | Modèle | Prix standard (M tokens) | Heures pleines ×2 |
 |:-------|:------------------------:|:------------------:|
 | **Flash** | $0.14 in / $0.28 out | UTC 01-04 et 06-10 |
 | **Pro** | $0.435 in / $0.87 out | UTC 01-04 et 06-10 |
 
-> 💡 **Astuce** : Éviter Pro entre 08h et 12h (Bruxelles) = heures pleines ×2. Flash pour le routinier, Pro pour le complexe.
+> ⚠️ Les tarifs DeepSeek peuvent évoluer. Consultez [platform.deepseek.com](https://platform.deepseek.com) pour les prix à jour.
 
 ### Résilience post-crash (30 juin 2026)
 
@@ -2430,7 +2424,7 @@ Le système ne se contente pas de tourner — il se surveille :
 
 ```yaml
 Auto-heal (toutes les 30-60 min, + auto-fix-daemon */5 min):
-  ✅ Crons: 13/13 OK
+  ✅ Crons: 14/14 OK
   ✅ Ollama: UP (qwen2.5:7b responsive)
   ✅ n8n: UP (healthz 200) — v2.26.8
   ✅ Docker: 3/3 conteneurs up
@@ -2447,12 +2441,12 @@ Les watchdogs surveillent en continu : code-server, n8n, dashboards, tunnels. De
 
 | Composant | Quantité | Coût mensuel |
 |:----------|:--------:|:------------:|
-| Crons | 13 | ~0,03 €/j |
+| Crons | 14 | ~0 €/j (13 no_agent) |
 | Dashboards | 1 central (4 onglets) | 0 € (GitHub Pages) |
 | n8n workflows | 3 (2 actifs) | 0 € (self-hosted) |
-| Machines surveillées | 3 | 0 € |
-| DeepSeek API | Flash + Pro | ~1,50 €/mois |
-| **Total** | | **~1,50-3 €/mois** |
+| Machine hôte | 1 | 0 € (serveur local) |
+| DeepSeek API | Flash + Pro | ~1-3 €/mois |
+| **Total** | | **~1-3 €/mois** |
 
 ## Voir aussi
 
@@ -2781,7 +2775,7 @@ Le Bureau Robert a produit une **analyse comparative de 5 modèles open-source**
 | Llama 4 Scout | 22 GB | ~75% | ~50 tok/s |
 | Qwen 3 32B | 34 GB ❌ | ~80% | ~40 tok/s |
 
-**Recommandation** : Gemma 4 26B MoE en Q8 sur RTX 3050 + RTX 3090 (32 GB total).
+**Recommandation** : Gemma 4 26B MoE en Q8 sur RTX 3090 (32 GB total).
 
 ## Collaboration avec Sophie
 
@@ -2830,7 +2824,7 @@ Bureau LEO = votre assistant personnel
 | Sessions totales | 431 |
 | Messages échangés | 13 089 |
 | Emails classifiés | 3 240 |
-| Skills installés | 112 |
+| Skills installés | 126 |
 | Wikis gérés | 5 |
 
 ### La classification Gmail
@@ -3346,12 +3340,12 @@ python3 /opt/data/scripts/diag_budget.py
 
 | Métrique | Valeur |
 |:---------|:------:|
-| Solde | $60.31 |
-| Dépense/jour | $0.03 |
-| Coût mensuel | ~$1.50 |
-| Jours restants | >6 ans |
+| Provider principal | DeepSeek Flash (économique) |
+| Coût mensuel estimé | ~1-3 € |
+| Crons | 14 (13 no_agent = 0 €) |
+| Veille IA | ~5-10 cts/jour |
 
-Le secret de ce coût ridicule : classification avec Ollama (0€), crons en no_agent (0€), et DeepSeek Flash pour l'essentiel (~0,05€/jour).
+Le secret de ce coût ridicule : classification avec Ollama (0€), crons en no_agent (0€), et DeepSeek Flash pour l'essentiel (quelques centimes/jour).
 
 ### Alertes automatiques
 
@@ -4319,7 +4313,7 @@ Depuis le 22/06/2026, LEO a un **portail unique** qui consolide tout en une seul
 - 💰 **Budget DeepSeek** — solde, jours restants
 - 🩺 **n8n** — online/offline
 - 🏛️ **BAVI LEO** — sessions, messages, tokens
-- 🖥️ **Machines (3)** — statut en ligne/hors ligne
+- 🖥️ **Machine** — statut en ligne/hors ligne
 - 🚨 **Alertes** — dernières anomalies détectées
 - 🔗 **Liens rapides** — accès au dashboard détaillé
 
@@ -4385,9 +4379,7 @@ Si la RAM utilisée dépasse 85%, les conteneurs Docker risquent l'OOM kill.
 ### GPU
 
 ```bash
-nvidia-smi --query-gpu=memory.used,utilization.gpu --format=csv
-# → RTX 3050, 8 Go VRAM
-# → Utilisé par Ollama pour la classification
+nvidia-smi  # Si GPU disponible
 ```
 
 ### Processus
@@ -4400,14 +4392,16 @@ docker ps
 
 ## Dashboard machines sur LEO
 
-Le dashboard **leo-metrics** affiche en temps réel :
+Le dashboard **leo-metrics** affiche en temps réel les métriques du serveur unique :
 
 ```markdown
-| Machine  | CPU | RAM  | Disque | Statut |
-|:---------|:---:|:----:|:------:|:------:|
-| LEO      | 12% | 4/23 | 89/457 | 🟢     |
-| Yoga     | 8%  | 6/16 | 120/512 | 🟢    |
-| Penguin  | 15% | 3/6  | 45/128 | 🟢     |
+| Métrique  | Valeur |
+|:----------|:------:|
+| CPU       | 12%    |
+| RAM       | 4/22   |
+| SSD       | 72/457 |
+| HDD       | 42/900 |
+| Statut    | 🟢     |
 ```
 
 Collecte : toutes les heures (cron no_agent, 0€).
@@ -4425,13 +4419,13 @@ Seuils d'alerte:
 
 L'auto-heal détecte ces seuils toutes les 30 minutes.
 
-## 3 machines surveillées
+## 1 machine — le serveur LEO
 
 | Machine | OS | RAM | Stockage | Rôle |
 |:--------|:---|:---:|:--------:|:-----|
-| **LEO** 🖥️ | Ubuntu 26.04 | 23 Go | 457 Go | Serveur principal |
-| **Yoga** 💻 | Windows 11 | 16 Go | 512 Go | Machine perso |
-| **Penguin** 🐧 | Debian 13 | 6 Go | 128 Go | VS Code + Kilo Code |
+| **LEO** 🖥️ | Ubuntu 26.04 | 22 Go | 457 Go SSD + 1 To HDD | Serveur unique (toute la plateforme) |
+
+> 💡 Les autres machines (Yoga, Penguin) sont des postes de travail — elles n'hébergent aucun service de la plateforme Hermes.
 
 ## Commandes utiles
 
@@ -4562,22 +4556,24 @@ Quand un cron échoue, l'auto-heal tente de le corriger :
 En production, l'auto-heal résout ~80% des problèmes sans intervention humaine.
 # Budget et tracking DeepSeek
 
-LEO coûte environ 1,50 € par mois à faire fonctionner. Voici comment suivre et maîtriser ce budget.
+LEO coûte environ **1 à 3 euros par mois** à faire fonctionner. Voici les principes pour maîtriser ce budget.
 
-## Le coût réel de LEO
+## Le coût réel de LEO (estimation)
 
 ```yaml
-Budget mensuel LEO:
-  DeepSeek V4 Flash (quotidien):  ~1,00 €
-  DeepSeek V4 Pro (analyses):     ~0,50 €
+Budget mensuel LEO (estimé):
+  DeepSeek V4 Flash (quotidien):  ~1-2 €
+  DeepSeek V4 Pro (analyses):     ~0,50 € (ponctuel)
   Gemini (fallback):                0 € (gratuit)
-  Ollama (classification):          0 € (local)
+  Ollama (classification):          0 € (local, CPU)
   GitHub Pages (hébergement):       0 € (gratuit)
   n8n (workflows):                  0 € (self-hosted)
-  Total:                           ~1,50 €
+  Total:                           ~1-3 €
 ```
 
-Le secret de ce coût ridicule : **Ollama pour le gratuit** (classification emails), **Flash pour le quotidien** (0,05 €/jour), **Pro seulement pour le complexe** (0,10 €/tâche).
+> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](https://christophedanhier-hash.github.io/leo-dashboard/).
+
+Le secret de ce coût ridicule : **Ollama pour le gratuit** (classification emails sur CPU), **Flash pour le quotidien** (quelques centimes/jour), **Pro seulement pour le complexe** (ponctuel).
 
 ## Triple ventilation
 
@@ -4598,15 +4594,18 @@ coûts = {
 ## Dashboard budget
 
 ```markdown
-| Métrique              | Valeur          |
-|:---------------------|:----------------|
-| Solde actuel         | $60.31          |
-| Dépense totale       | $0.41           |
-| Moyenne quotidienne  | $0.03           |
-| Jours restants       | 2 315 (>6 ans) |
-| Coût 14 jours        | $11.47          |
-| Tendance             | Stable 📊       |
+| Métrique              | Valeur                      |
+|:---------------------|:----------------------------|
+| Provider principal   | DeepSeek Flash (économique)  |
+| Provider complexe    | DeepSeek Pro (ponctuel)      |
+| Provider gratuit     | Ollama (CPU local)           |
+| Fallback             | Gemini (gratuit, quotas)     |
+| Coût mensuel estimé  | ~1-3 €                       |
+| Veille IA            | ~5-10 cts/jour               |
+| Crons                | 0 € (13/14 en no_agent)      |
 ```
+
+> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](https://christophedanhier-hash.github.io/leo-dashboard/).
 
 ## Alertes
 
@@ -5087,7 +5086,7 @@ Tous les jours:
 
 ```yaml
 Vérifications:
-  ✅ Crons:        19/19 OK ?
+  ✅ Crons:        14/14 OK ?
   ✅ Ollama:       qwen2.5:7b responsive ?
   ✅ n8n:          healthz 200 ?
   ✅ Docker:       3/3 conteneurs UP ?
@@ -5945,8 +5944,8 @@ Profils : 1 seul (default)
 
 | Provider | Rôle | Coût |
 |----------|------|------|
-| DeepSeek 🤖 | Principal (Telegram, conversations, tâches complexes) | Payant ($42 de solde) |
-| Ollama 🏠 | Local, gratuit (batch, traitement bulk, qwen2.5:7b) | Gratuit (RTX 3050) |
+| DeepSeek 🤖 | Principal (Telegram, conversations, tâches complexes) | Payant (solde sur dashboard) |
+| Ollama 🏠 | Local, gratuit (batch, traitement bulk, qwen2.5:7b) | Gratuit (CPU) |
 | Gemini ⚡ | Fallback automatique | Gratuit (quota API) |
 
 ## Communications
@@ -5955,7 +5954,7 @@ LEO communique uniquement par **Telegram** (pas d'autre canal). L'email est util
 
 ## Tâches quotidiennes
 
-### Crons (26 actifs, 0$ LLM)
+### Crons (14 actifs, 0$ LLM)
 
 | Cron | Horaire | Type | Coût | Description |
 |------|---------|------|------|-------------|
@@ -5983,7 +5982,7 @@ LEO communique uniquement par **Telegram** (pas d'autre canal). L'email est util
 | `watchdog-code-server` | **\*/5** | 🔧 Script | **0$** | Relance code-server si arrêté |
 | `watchdog-code-server-tunnel` | **\*/5** | 🔧 Script | **0$** | Maintient le tunnel SSH code-server |
 
-**>95% des crons sont en no_agent ou Ollama local** (zéro DeepSeek consommé par les tâches planifiées).
+**>95% des crons sont en no_agent** (zéro DeepSeek consommé par les tâches planifiées).
 
 ### Workflows n8n (redondance)
 
