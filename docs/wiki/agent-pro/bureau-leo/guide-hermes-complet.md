@@ -760,7 +760,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 ## 📝 À retenir
 
-- LEO = 1 serveur principal + 4 bots Telegram + 1 dashboard central (4 onglets) + 13 crons + 117 skills
+- LEO = 1 serveur principal + 4 bots Telegram + 1 dashboard central (4 onglets) + 14 crons + 126 skills
 - Tout tourne sur Hermes Agent dans un conteneur Docker supervisé par s6
 - Le secret : une organisation stricte (profils, bureaux, skills) qui permet à l'agent de gérer la complexité
 - Les erreurs du passé ont forgé les règles du présent
@@ -1631,7 +1631,7 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Léo Copilote, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 13 crons automatisés
+- 14 crons automatisés
 - 1 dashboard central (4 onglets)
 - 3 workflows n8n (2 actifs)
 - Les gateways Hermes
