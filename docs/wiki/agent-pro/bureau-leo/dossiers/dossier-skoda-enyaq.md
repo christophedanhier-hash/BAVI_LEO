@@ -209,3 +209,4 @@ Acquisition d'une **Skoda Enyaq 60 Corporate** (2026) en leasing via **Ayvens** 
 | Version | Date | Description |
 |:--------|:-----|:------------|
 | v1 | 2026-06-24 | Version initiale — dossier complet Skoda Enyaq |
+*Document mis à jour le 04/07/2026 — 00:00:00 — Modèles DeepSeek unifiés 🦁*

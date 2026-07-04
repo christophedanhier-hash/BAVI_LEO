@@ -271,4 +271,4 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 ---
 
-*Analyse produite par 🤖 LEO — BAVI LEO*
+*Document mis à jour le 04/07/2026 — 00:00:00 — Modèles DeepSeek unifiés 🦁*

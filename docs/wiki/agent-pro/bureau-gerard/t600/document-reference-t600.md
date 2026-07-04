@@ -1132,4 +1132,4 @@ catch {
 | Version | Date | Description |
 |:--------|:-----|:------------|
 | v1 | 2026-06-12 | Version initiale — Document de référence complet du système T600 : architecture matérielle, réseau, procédures de démarrage/arrêt, maintenance, dépannage, annexes techniques |
-
+*Document mis à jour le 04/07/2026 — 00:00:00 — Modèles DeepSeek unifiés 🦁*

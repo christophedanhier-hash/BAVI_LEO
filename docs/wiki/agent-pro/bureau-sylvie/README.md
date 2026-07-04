@@ -10,3 +10,4 @@ Ce bureau n'a pas de workflow agent automatisé. Il pointe vers le wiki voyages 
 ## Carnet de voyage
 
 Opérationnel — maintenu par Christophe (rédaction) + Pascal (validation).
+*Document mis à jour le 04/07/2026 — 00:00:00 — Modèles DeepSeek unifiés 🦁*

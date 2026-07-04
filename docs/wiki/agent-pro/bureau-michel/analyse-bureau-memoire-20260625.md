@@ -308,4 +308,4 @@ L'architecture couvre tout le cycle :
 - Token : stocké dans `/opt/data/profiles/emile/.env`
 - Logs : `/opt/data/logs/gateways/emile/`
 
-*Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 25/06/2026, implémenté et documenté 26/06/2026*
+*Document mis à jour le 04/07/2026 — 00:00:00 — Modèles DeepSeek unifiés 🦁*

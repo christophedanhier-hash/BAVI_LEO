@@ -11,4 +11,4 @@
 
 ---
 
-*Index généré par `agent-pro-index.py` — Éditer les fichiers source (avec frontmatter valide) pour mettre à jour.*
+*Document mis à jour le 04/07/2026 — 00:00:00 — Modèles DeepSeek unifiés 🦁*

@@ -170,4 +170,4 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 
 ---
 
-*Analyse générée le 30/06/2026 à 23:30 (CEST) — À valider et mettre à jour dans Bureau Michel.*
+*Document mis à jour le 04/07/2026 — 00:00:00 — Modèles DeepSeek unifiés 🦁*
