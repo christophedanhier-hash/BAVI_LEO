@@ -271,4 +271,4 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 ---
 
-*Document mis à jour le 04/07/2026 — 22:48:00 — Léo 🦁*
+*Document mis à jour le 04/07/2026 — 00:00:00 — Léo 🦁*

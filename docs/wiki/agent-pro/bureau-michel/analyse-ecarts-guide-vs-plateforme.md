@@ -127,4 +127,4 @@ Le guide a été écrit AVANT le crash du 30/06. Les leçons du crash (sessions 
 | 7 | Token Google | 🟢 | Vérifier avant d'écrire |
 | 8 | Installation | 🟢 | Vérifier doc officielle |
 | 9 | Routes Tailscale | 🟢 | n8n corrigé (localhost) |
-*Document mis à jour le 04/07/2026 — 22:48:00 — Léo 🦁*
+*Document mis à jour le 04/07/2026 — 00:00:00 — Léo 🦁*
