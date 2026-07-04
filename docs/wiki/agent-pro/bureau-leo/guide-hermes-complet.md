@@ -1,8 +1,8 @@
 ---
-date: 2026-07-03
+date: 2026-07-04
 bureau: bureau-leo
 auteur: LEO
-version: v3.2
+version: v3.3
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
 statut: finalise
@@ -28,7 +28,7 @@ Ce livre vous guide pas à pas, de l'installation d'Hermes sur votre machine jus
 - **Partie III — Les Bureaux BAVI** : organiser vos connaissances avec le système de bureaux
 - **Partie IV — La Puissance des Skills** : exploiter 117 skills prêts à l'emploi et créer les vôtres
 - **Partie V — Dashboards et Monitoring** : visualiser tout avec 1 dashboard central (4 onglets)
-- **Partie VI — Automatisation et Crons** : faire tourner 13 tâches planifiées + daemon sans lever le petit doigt
+- **Partie VI — Automatisation et Crons** : faire tourner 14 tâches planifiées sans lever le petit doigt
 - **Partie VII — La Partie des Dix** : les astuces, commandes et ressources qui sauvent
 
 ### Public visé
@@ -249,9 +249,10 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 *Voir l'invisible*
 
 - **[Ch.22 — L'écosystème de dashboards](05-dashboards/ch22-ecosysteme-dashboards.md)**
-  - Architecture : 1 dashboard central (4 onglets), HTML statique, GitHub Pages
+  - Architecture : 1 dashboard unique (leo-dashboard), HTML statique, GitHub Pages
+  - Les 7 dashboards pré-crash sont OBSOLÈTES (figés au 30/06/2026)
   - Navigation entre onglets : Synthèse, Analyses, Infra, BAVI
-  - Cycle de vie d'une donnée : du collecteur au graphique Chart.js
+  - Cycle de vie d'une donnée : collect-v2.py → JSON → HTML → push GitHub Pages
 
 - **[Ch.23 — Métriques machines](05-dashboards/ch23-metriques-machines.md)**
   - CPU, RAM, disque, GPU : collecte et visualisation
@@ -260,13 +261,13 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 
 - **[Ch.24 — Monitoring du dashboard](05-dashboards/ch24-monitoring-dashboard.md)**
   - Le tableau de bord unique : 4 onglets (Synthèse, Analyses, Infra, BAVI)
-  - 20 indicateurs KPI en direct
-  - 4 graphiques Chart.js interactifs
+  - 20 indicateurs KPI en direct, 4 graphiques Chart.js, métriques vaults
+  - collect-v2.py : 9 sources unifiées (sessions, budget, crons, infra, n8n, github, bavi, services, vaults)
 
 - **[Ch.25 — Budget et tracking](05-dashboards/ch25-budget-tracking.md)**
-  - Suivi du solde DeepSeek en temps réel
+  - Suivi du solde DeepSeek en temps réel ($19.97 réel estimé au 04/07/2026)
   - Projection de consommation
-  - Dashboards LEO KPI et BAVI LEO KPI
+  - Le collecteur collect-v2.py : données fiables issues des 4 state.db
 
 ---
 
@@ -557,7 +558,7 @@ Les crons Hermes ne sont pas de simples tâches shell. Chaque cron peut être :
 - **Un prompt LLM** — l'agent réfléchit et agit
 - **Un script + un prompt** — collecte des données puis analyse
 
-LEO a **14 crons actifs** dont 13 en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
+LEO a **14 crons actifs** dont 13 en no_agent (0$ de consommation LLM pour les tâches répétitives). L'auto-fix-daemon a été supprimé le 04/07/2026 (orphelin non maintenu).
 
 #### 5. 🗂️ Profils et gateways parallèles
 
@@ -677,11 +678,11 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 
 | Dashboard | URL | Onglets | Màj |
 |:----------|:----|:--------|:---:|
-| 🦁 **LEO Dashboard** | [lien](https://christophedanhier-hash.github.io/leo-dashboard/) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
+| 🦁 **LEO Dashboard** | [lien](https://christophedanhier-hash.github.io/leo-dashboard/) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts, 4 vaults | H:10 via collect-v2 |
 
 ### Les 14 crons (tâches planifiées)
 
-> 13 sur 14 sont en `no_agent` = **0$ par mois** de consommation LLM pour les tâches répétitives. Un **auto-fix-daemon** (`*/15 min`) assure une détection rapide.
+> 13 sur 14 sont en `no_agent` = **0$ par mois** de consommation LLM pour les tâches répétitives. L'auto-fix-daemon a été supprimé le 04/07/2026 (orphelin). Plus aucun cron en pause.
 
 | Vague | Horaires | Crons |
 |:------|:---------|:------|
@@ -1631,8 +1632,8 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Léo Copilote, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 14 crons automatisés
-- 1 dashboard central (4 onglets)
+- 14 crons automatisés (auto-fix-daemon supprimé le 04/07/2026)
+- 1 dashboard central (4 onglets, 9 sources unifiées)
 - 3 workflows n8n (2 actifs)
 - Les gateways Hermes
 - Le budget DeepSeek
@@ -2220,13 +2221,14 @@ C'est le padron de la machine — il a accès root complet (`sudo` sans restrict
 
 ```
 Bureau Michel = l'ingénieur système de LEO
-├── 🔧 13 crons automatisés
-├── 📊 1 dashboard central (4 onglets)
+├── 🔧 14 crons automatisés
+├── 📊 1 dashboard unifié (9 sources, 4 onglets)
 ├── 🔄 3 workflows n8n (2 actifs)
 ├── 🌐 Nginx + Cloudflare Tunnel
 ├── 🔒 UFW + SSL + DNS
-├── 💰 Suivi du budget DeepSeek
-├── 🖥️ Monitoring 3 machines
+├── 💰 Suivi du budget DeepSeek (réel: ~$19.97)
+├── 🖥️ Monitoring machine (CPU/RAM/Disque)
+├── 📓 4 vaults Obsidian
 └── 🔑 Accès root complet (sudo)
 ```
 
@@ -2294,7 +2296,7 @@ Utilisateur ──→ tofdan.be ──→ Cloudflare ──→ Tunnel ──→ 
 
 ## Les 14 crons
 
-Les crons sont le cœur de l'automatisation. 14 tâches planifiées tournent 24/7, complétées par un **auto-fix-daemon** `*/15` qui assure la détection rapide :
+Les crons sont le cœur de l'automatisation. 14 tâches planifiées tournent 24/7. L'auto-fix-daemon (`*/15`, orphelin) a été supprimé le 04/07/2026.
 
 ### Crons horaires (métriques + dashboard)
 
@@ -2373,6 +2375,21 @@ Tous les indicateurs sont dans **un seul dashboard HTML statique** avec 4 onglet
 2. Un template Chart.js génère le HTML
 3. Push sur GitHub Pages → site en ligne
 
+## Vaults Obsidian (ajouté 04/07/2026)
+
+4 vaults Obsidian ont été créés, un par profil Hermes, pour la prise de notes structurée :
+
+| Vault | Profil | Chemin |
+|:------|:-------|:-------|
+| 🦁 **vault-leo** | leo-copilot | `/opt/data/vault-leo/` |
+| 📁 **vault-default** | default | `/opt/data/vault-default/` |
+| 🎓 **vault-emile** | emile | `/opt/data/vault-emile/` |
+| 🚐 **vault-bavi** | bavi-leo | `/opt/data/vault-bavi/` |
+
+**Structure commune** à chaque vault : `Daily/`, `Projets/`, `References/`, `Hermes/{Config,Crons,Dashboard}`.
+
+Le monitoring est intégré au collecteur `collect-v2.py` (fonction `collect_vaults()` section #9). Les métriques (9 notes, 4 journaux) apparaissent dans la carte `📓 Vaults Obsidian` de l'onglet Synthèse du dashboard.
+
 ## Budget DeepSeek
 
 Le Bureau Michel suit le budget en continu via le dashboard LEO. Plutôt que de donner des chiffres précis (qui changent chaque jour), voici les **principes généraux** :
@@ -2402,9 +2419,9 @@ Le Bureau Michel suit le budget en continu via le dashboard LEO. Plutôt que de 
 
 Le 30 juin, un crash système a vidé les sessions des 4 bots et cassé les gateways. Leçons :
 - **Backup automatisé** → GDrive toutes les 24h
-- **auto-fix-daemon** `*/5` → remplace 3 crons monitoring
 - **Mémoire partagée** par symlinks → plus de perte de contexte entre profils
-- **collect-v2** → collecteur unifié (8 sources, JSON, 0 alerte) remplace des scripts disparates
+- **collect-v2** → collecteur unifié (9 sources, JSON, 0 alerte) remplace les scripts disparates pré-crash
+- **Auto-fix-daemon supprimé** le 04/07/2026 (orphelin non maintenu, remplacé par le monitoring dashboard horaire)
 
 ## n8n — Workflows d'automatisation
 
@@ -2412,7 +2429,7 @@ n8n est utilisé pour les workflows qui nécessitent des webhooks ou des intégr
 
 - **n8n v2.26.8 Docker** — 3 workflows, **2 actifs**
 - **3 credentials** (Google, GitHub, n8n)
-- Accès via Tailscale uniquement (`100.92.102.28:5678`)
+- Accès via `localhost:5678` (corrigé le 04/07/2026 : utilisait `100.92.102.28:5678` qui timeoutait aléatoirement)
 - **Base SQLite** dans un volume Docker dédié
 - **Workflow emblématique : LEO Ping** — endpoint `GET /webhook/ping` → `{"response":"pong"}`
 
@@ -2423,19 +2440,19 @@ n8n est utilisé pour les workflows qui nécessitent des webhooks ou des intégr
 Le système ne se contente pas de tourner — il se surveille :
 
 ```yaml
-Auto-heal (toutes les 30-60 min, + auto-fix-daemon */5 min):
+Auto-heal (toutes les 30-60 min):
   ✅ Crons: 14/14 OK
   ✅ Ollama: UP (qwen2.5:7b responsive)
   ✅ n8n: UP (healthz 200) — v2.26.8
   ✅ Docker: 3/3 conteneurs up
   ✅ Disque: 21% utilisé (345 Go libre)
   ✅ Token LEO Google: OK
-  ✅ collect-v2 → leo-unified.json: 8 sources, 0 alertes
+  ✅ collect-v2 → leo-unified.json: 9 sources, 0 alertes
   ✅ Mémoire partagée: symlinks default ↔ leo-copilot (temps réel)
   ✅ 4 gateways UP: default, leo-copilot, bavi-leo (Sylvia), emile
 ```
 
-Les watchdogs surveillent en continu : code-server, n8n, dashboards, tunnels. Depuis le crash du 30 juin, un **auto-fix-daemon** (`*/5`) remplace 3 crons monitoring pour une détection infra-minute.
+Les watchdogs surveillent en continu : code-server, n8n, dashboards, tunnels. L'auto-fix-daemon a été supprimé le 04/07/2026 (orphelin, remplacé par le monitoring dashboard horaire).
 
 ## En résumé
 
@@ -2445,8 +2462,10 @@ Les watchdogs surveillent en continu : code-server, n8n, dashboards, tunnels. De
 | Dashboards | 1 central (4 onglets) | 0 € (GitHub Pages) |
 | n8n workflows | 3 (2 actifs) | 0 € (self-hosted) |
 | Machine hôte | 1 | 0 € (serveur local) |
-| DeepSeek API | Flash + Pro | ~1-3 €/mois |
+| DeepSeek API | Flash + Pro | ~1-3 €/mois ($19.97 réel estimé depuis le début) |
 | **Total** | | **~1-3 €/mois** |
+
+> ⚠️ **Budget réel vs affiché** : Au 04/07/2026, le coût réel estimé est d'environ **$19.97** (tous profils confondus depuis le début), contre $0.41 affiché par les anciens dashboards pré-crash. Le nouveau collecteur `collect-v2.py` utilise les données de `estimated_cost_usd` des 4 state.db pour un suivi fiable.
 
 ## Voir aussi
 
@@ -3545,7 +3564,7 @@ tail -f /opt/data/profiles/leo-copilot/logs/agent.log
 
 | Dashboard | Fréquence | Vérifie |
 |:----------|:---------:|:--------|
-| **LEO Dashboard** | */15 | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts |
+| **LEO Dashboard** | H:10 (déploiement), collecte */15 | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts, 4 vaults |
 
 ## La règle d'or
 
@@ -4159,11 +4178,13 @@ Script de collecte → JSON + HTML → Push GitHub Pages
 
 ## Les dashboards de LEO
 
-LEO a **1 dashboard central** (4 onglets, 20 KPI, 4 charts) rafraîchi par un cron no_agent :
+> ⚠️ **Mise à jour 04/07/2026** : 1 seul dashboard valable. Les 7 dashboards pré-crash sont OBSOLÈTES.
 
-| Dashboard | Contenu | URL | Cron |
-|-----------|---------|-----|------|
-| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](https://christophedanhier-hash.github.io/leo-dashboard/) | */15 |
+LEO a **1 dashboard central** (4 onglets, 20 KPI, 4 charts, 9 sources) rafraîchi par un cron no_agent :
+
+| Dashboard | Contenu | URL | Collecte | Déploiement |
+|-----------|---------|-----|----------|-------------|
+| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI (+ vaults) | [leo-dashboard](https://christophedanhier-hash.github.io/leo-dashboard/) | collect-v2.py */15 | H:10 |
 
 Tous sont générés par des scripts `no_agent` — **0$ de coût LLM** par mise à jour.
 
@@ -4305,32 +4326,34 @@ Un cron **dashboard-watch** (`scripts/dashboard-watch.py`) tourne toutes les 2h 
 subprocess.run(["gh", "api", f"repos/user/{repo}/pages/builds", "-X", "POST"])
 ```
 
-## 🦁 Global Dashboard LEO (portail unique)
+## 🦁 Le dashboard LEO (portail unique)
 
-Depuis le 22/06/2026, LEO a un **portail unique** qui consolide tout en une seule page :
-- 🔵 **Crons (13)** — statut, historique, erreurs
-- 📊 **Dashboard (1)** — HTTP, âge, budget
-- 💰 **Budget DeepSeek** — solde, jours restants
-- 🩺 **n8n** — online/offline
+Depuis le 04/07/2026, le **leo-dashboard** est le SEUL dashboard valable (les 7 pré-crash sont obsolètes). Il consolide 9 sources unifiées en une seule page :
+- 🔵 **Crons (14)** — statut, historique, erreurs (plus aucun en pause)
+- 📊 **Dashboard** — HTTP, âge, budget
+- 💰 **Budget DeepSeek** — solde réel (~$19.97 estimé au 04/07)
+- 🩺 **n8n** — online/offline (via `localhost:5678`)
 - 🏛️ **BAVI LEO** — sessions, messages, tokens
 - 🖥️ **Machine** — statut en ligne/hors ligne
+- 📓 **Vaults Obsidian** — 4 vaults (9 notes, 4 journaux)
 - 🚨 **Alertes** — dernières anomalies détectées
 - 🔗 **Liens rapides** — accès au dashboard détaillé
 
 **Avantages :**
-- ✅ **Plus aucun rapport Telegram** — dashboard-watch et Auto-Heal livrent en local
+- ✅ **Plus aucun rapport Telegram** — dashboard-watch livre en local
 - ✅ **Un seul bookmark** au lieu de 7
-- ✅ **Cron no_agent toutes les 10min** (H:05) — 0$ de coût
-- ✅ **Auto-déploiement GH Pages**
+- ✅ **Cron no_agent toutes les heures** (`10 * * * *`) — 0$ de coût
+- ✅ **Auto-déploiement GH Pages** via `deploy-dashboard.py`
 
 ```bash
-# Le cron
-🌍 Global Dashboard — H:05 → /opt/data/scripts/deploy_leo_global.py (no_agent)
+# Les 2 crons (leo-copilot)
+📊 Unified Collector v2 — */15 → /opt/data/scripts/collect-v2.py
+🚀 Deploy Unified Dashboard — H:10 → deploy-dashboard.sh → deploy-dashboard.py
 ```
 
 - **Usage LLM** — requêtes/jour, tokens consommés, coût estimé
 - **Système** — CPU, RAM, disque, uptime de votre serveur
-- **Projets** — Suivi d'avancement, tâches complétées
+- **Vaults** — 4 vaults Obsidian (leo, default, emile, bavi) monitorés
 - **Réseau** — Latence, bande passante, statut des services
 
 ## Pour aller plus loin
