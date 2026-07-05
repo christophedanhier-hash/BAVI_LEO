@@ -50,14 +50,6 @@ extra_javascript:
   - assets/js/pdf-download.js
   - assets/js/external-links.js
 
-plugins:
-  - search
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: date
-      timezone: Europe/Brussels
-      locale: fr
-      fallback_to_build_date: true
 
 nav:
   - 🌐 Portail LEO:
