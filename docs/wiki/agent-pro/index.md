@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 05/07/2026 à 17:45*
+*Généré automatiquement le 05/07/2026 à 20:53*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -12,13 +12,13 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 3 | 12/06/2026 |
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
-| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 4 | 01/07/2026 |
+| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 5 | 05/07/2026 |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 1 | 27/06/2026 |
 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 3 | 03/07/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 1 | 27/06/2026 |
 
-**Total : 13 analyse(s) sur l'ensemble des bureaux.**
+**Total : 14 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -26,6 +26,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
+| 05/07/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🦁 Rapport d'Audit Complet — LEO Ecosystem](bureau-michel/rapport-audit-leo-2026-07-05/) | `infrastructure` `crons` `securite` `skills` `performance` | 📝 Brouillon | [📥](bureau-michel/rapport-audit-leo-2026-07-05/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/rapport-audit-leo-2026-07-05.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/rapport-audit-leo-2026-07-05.md) |
 | 03/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v3.2 | [Hermès pour les Nuls 🦁](bureau-leo/guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | ✅ Finalisé | [📥](bureau-leo/guide-hermes-complet/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |
 | 01/07/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [🏗️ Architecture des Processus — Bureau Michel](bureau-michel/analyse-processus-bpmn-20260701/) | `bpmn` `processus` `crons` `n8n` `daemon` `architecture` `dashboard` | ✅ Finalisé | [📥](bureau-michel/analyse-processus-bpmn-20260701/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-processus-bpmn-20260701.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-processus-bpmn-20260701.md) |
 | 30/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🔐 Audit Accès & Credentials — Léo Copilot](bureau-michel/analyse-acces-credentials-20260630/) | `hermes` `infra` `acces` `credentials` `api-keys` `audit` `securite` `leo-copilot` | proposition | [📥](bureau-michel/analyse-acces-credentials-20260630/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-acces-credentials-20260630.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-acces-credentials-20260630.md) |
@@ -42,4 +43,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 05/07/2026 17:45*
+*Index consolidé généré par `agent-pro-index.py` — 05/07/2026 20:53*
