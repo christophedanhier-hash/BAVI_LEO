@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 05/07/2026 à 16:02*
+*Généré automatiquement le 05/07/2026 à 16:09*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -12,13 +12,13 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 3 | 12/06/2026 |
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 0 | — |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
-| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 8 | 01/07/2026 |
+| [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 6 | 01/07/2026 |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 1 | 27/06/2026 |
 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 4 | 03/07/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 1 | 27/06/2026 |
 
-**Total : 18 analyse(s) sur l'ensemble des bureaux.**
+**Total : 16 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -36,8 +36,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | 27/06/2026 | 🧭 Bureau Sylvie — Voyages | v1 | [🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)](bureau-sylvia/analyse-bot-voyage-sylvia/) | `robert` `sylvia` `voyage` `analyse` `business` `bpmn` `data-flow` `architecture` | ✅ Finalisé | [📥](bureau-sylvia/analyse-bot-voyage-sylvia/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/analyse-bot-voyage-sylvia.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/analyse-bot-voyage-sylvia.md) |
 | 27/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Analyse Business & Fonctionnelle — LEO (Bureau Central)](bureau-leo/analyse-bot-leo-hub/) | `robert` `leo` `analyse` `business` `bpmn` `data-flow` `architecture` `gouvernance` | ✅ Finalisé | [📥](bureau-leo/analyse-bot-leo-hub/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-bot-leo-hub.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-bot-leo-hub.md) |
 | 27/06/2026 | 🎓 Bureau Emile — Assistant Pédagogique | v1 | [🎓 Analyse Business & Fonctionnelle — Bot Emile (Assistant Pédagogique)](bureau-emile/analyse-bot-emile/) | `robert` `emile` `analyse` `business` `bpmn` `data-flow` `architecture` `education` | ✅ Finalisé | [📥](bureau-emile/analyse-bot-emile/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-emile/analyse-bot-emile.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-emile/analyse-bot-emile.md) |
-| 27/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [Droits et accès — Leo & Hermes Agent](bureau-michel/reference-infra-leo-acces/) | `hermes` `infra` `acces` `docker` `nginx` `cloudflare` `systeme` | ✅ Finalisé | [📥](bureau-michel/reference-infra-leo-acces/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/reference-infra-leo-acces.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/reference-infra-leo-acces.md) |
-| 26/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v3.0 | [Analyse — Remplacer DeepSeek Flash par un LLM local (v3.0 — Tous modèles open-source)](bureau-michel/analyse-gpu-local-ia-20260626/) | `gpu` `llm` `local` `deepseek` `gemma4` `qwen3` `llama4` `open-models` `hardware` `infrastructure` `analyse` | analyse | [📥](bureau-michel/analyse-gpu-local-ia-20260626/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-gpu-local-ia-20260626.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-gpu-local-ia-20260626.md) |
 | 25/06/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v2 | [🩺 Consultation Virginie — Sylvie Michaux](bureau-virginie/consultation-sylvie-michaux/) | `virginie` `consultation` `sylvie` `medical` `diagnostique` `pluridisciplinaire` | ✅ Finalisé | [📥](bureau-virginie/consultation-sylvie-michaux/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/consultation-sylvie-michaux.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/consultation-sylvie-michaux.md) |
 | 25/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2.0 | [Analyse — Bureau Émile : Assistant Pédagogique + Wiki + Sources](bureau-michel/analyse-bureau-memoire-20260625/) | `memoire` `emile` `pedagogique` `bureau` `bot` `assistant` `wiki` `mermaid` `analyse` | analyse | [📥](bureau-michel/analyse-bureau-memoire-20260625/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bureau-memoire-20260625.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-bureau-memoire-20260625.md) |
 | 24/06/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🚗 Dossier Skoda Enyaq — Achat & Installation](bureau-leo/dossiers/dossier-skoda-enyaq/) | `skoda` `enyaq` `vehicule` `leasing` `borne-recharge` `eneco` | 🔄 En cours | [📥](bureau-leo/dossiers/dossier-skoda-enyaq/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-skoda-enyaq.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-skoda-enyaq.md) |
@@ -47,4 +45,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 05/07/2026 16:02*
+*Index consolidé généré par `agent-pro-index.py` — 05/07/2026 16:09*
