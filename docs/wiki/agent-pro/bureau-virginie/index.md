@@ -1,6 +1,6 @@
 # 🩺 Bureau Virginie — Orchestration Médicale
 
-*Généré automatiquement le 01/07/2026 à 08:15*
+*Généré automatiquement le 05/07/2026 à 15:55*
 
 **Total : 1 analyse(s)**
 
@@ -10,4 +10,4 @@
 
 ---
 
-*Document mis à jour le 04/07/2026 — 00:00:00 — Léo 🦁*
+*Index généré par `agent-pro-index.py` — Éditer les fichiers source (avec frontmatter valide) pour mettre à jour.*

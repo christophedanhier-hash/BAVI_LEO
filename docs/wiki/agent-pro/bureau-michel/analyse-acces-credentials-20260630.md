@@ -75,7 +75,7 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 ### 3.4 GitHub
 | Token | Type | Statut |
 |-------|------|--------|
-| `ghp_REDACTED` | Classic (repo scope) | ✅ Actif |
+| `[REDACTED]` | Classic (repo scope) | ✅ Actif |
 | Clé SSH `id_ed25519` | Auth + push | ✅ Installée sur host + GitHub |
 
 ### 3.5 Telegram
@@ -170,4 +170,4 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 
 ---
 
-*Document mis à jour le 04/07/2026 — 00:00:00 — Léo 🦁*
+*Analyse générée le 30/06/2026 à 23:30 (CEST) — À valider et mettre à jour dans Bureau Michel.*

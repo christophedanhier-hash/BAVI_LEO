@@ -113,4 +113,4 @@ Le gap n'est plus de 50% comme avec les petits modèles. À 85%, la différence 
 - **Version :** v3.0 — Tous modèles open-source juin 2026
 - **Recommandation :** RTX 3090 24GB (~700€) + Gemma 4 26B MoE Q8 = remplacement DeepSeek Flash pour chat quotidien
 
-*Document mis à jour le 04/07/2026 — 00:00:00 — Léo 🦁*
+*Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 26/06/2026*
