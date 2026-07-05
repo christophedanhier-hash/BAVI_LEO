@@ -266,4 +266,5 @@ flowchart LR
 
 ---
 
-*Document généré par LEO · 🦁*
+> 🕐 **Dernière mise en ligne : 05/07/2026 20:27**  
+> *Document généré par LEO · 🦁*
