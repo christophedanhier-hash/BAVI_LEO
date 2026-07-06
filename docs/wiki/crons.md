@@ -1,116 +1,85 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
-> **Audité le 5 juillet 2026** par Léo Copilot (DeepSeek Pro)
+<!-- AUTO:START header -->
+> **Généré automatiquement le 06/07/2026 à 21:41** par le script `doc-crons-sync.py`
+> Source : `profiles/leo-copilot/cron/jobs.json` (22 jobs actifs)
+<!-- AUTO:END header -->
 
 ## Résumé
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (dashboard) | **21** |
-| Profil `default` | 6 |
-| Profil `leo-copilot` | 13 |
-| Profil `bavi-leo` | 1 |
-| Profil `emile` | 1 |
+| **Crons Hermes** (tous profils, consolidé) | **22** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **5** |
-| **Total général (Hermes + hôte)** | **26** |
+| **Total général (Hermes + hôte)** | **27** |
 
 ---
 
-## Liste exhaustive des 21 crons Hermes
+## Liste exhaustive des crons Hermes
 
-### Profil `default` (6 crons)
+> ⚠️ Tous les crons sont **consolidés** dans le profil `leo-copilot` par le scheduler Hermes.
+> Les autres profils (default, bavi-leo, emile) ont 0 cron — tout est centralisé.
 
-| # | Nom | Horaire | Type | Statut |
-|:-:|-----|:-------:|:----:|:------:|
-| 1 | LEO Health Check bots | `*/15 * * * *` | no_agent (script) | ✅ ok |
-| 2 | vault-daily-journal | `0 23 * * *` | agent + obsidian | ✅ ok |
-| 3 | vault-default-daily-journal | `0 23 * * *` | agent + obsidian | ✅ ok |
-| 4 | LEO Maintenance quotidienne | `0 3 * * *` | no_agent (script) | ✅ ok |
-| 5 | LEO Backup quotidien → GDrive | `0 6 * * *` | no_agent (script) | ✅ ok |
-| 6 | Auto-Archive BAVI LEO | every 5 min | no_agent (script) | ✅ ok |
+<!-- AUTO:START hermes-crons -->
 
-### Profil `leo-copilot` (13 crons)
+| # | Nom | Horaire | Mode | Statut | Skills |
+|:-:|-----|:-------:|:----:|:------:|:------:|
+| 1 | 💰 Budget Alert | `0 8,20 * * *` | script (no_agent) | ✅ | — |
+| 2 | 💾 LEO Backup quotidien → GDrive (script) | `0 6 * * *` | script (no_agent) | ✅ | — |
+| 3 | 📊 Unified Collector v2 | `*/15 * * * *` | agent LLM | ✅ | — |
+| 4 | 📓 vault-bavi-daily-journal | `0 23 * * *` | agent LLM | ✅ | obsidian |
+| 5 | 📓 vault-daily-journal (vault-leo) | `0 23 * * *` | agent LLM | ✅ | obsidian |
+| 6 | 📓 vault-default-daily-journal | `0 23 * * *` | agent LLM | ✅ | obsidian |
+| 7 | 📓 vault-emile-daily-journal | `0 23 * * *` | agent LLM | ✅ | obsidian |
+| 8 | 📖 doc-watch-auto | `0 */6 * * *` | script (no_agent) | ✅ | — |
+| 9 | 📝 docs-update | `0 */4 * * *` | script (no_agent) | ✅ | — |
+| 10 | 📦 Auto-Archive BAVI LEO (5min) | `every 5m` | script (no_agent) | ✅ | — |
+| 11 | 📧 Email Classifier — rule-based (inbox zero) | `*/30 * * * *` | script (no_agent) | ✅ | — |
+| 12 | 🔄 Auto-commit wikis (toutes les heures) | `0 * * * *` | script (no_agent) | ✅ | — |
+| 13 | 🔄 Déploiement auto tofdan.be | `0 * * * *` | script (no_agent) | ✅ | — |
+| 14 | 🔄 Refresh Google Tokens (50min) | `*/50 * * * *` | script (no_agent) | ✅ | — |
+| 15 | 🔄 drive-sync | `0 * * * *` | script (no_agent) | ✅ | — |
+| 16 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script (no_agent) | ✅ | — |
+| 17 | 🔍 Veille IA quotidienne | `0 7 * * *` | script (no_agent) | ✅ | — |
+| 18 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script (no_agent) | ✅ | — |
+| 19 | 🚀 Deploy Unified Dashboard | `10 * * * *` | script (no_agent) | ✅ | — |
+| 20 | 🛡️ LEO Health Check (script) | `*/15 * * * *` | script (no_agent) | ✅ | — |
+| 21 | 🩺 Cron Health Watchdog (log scanner) | `*/15 * * * *` | script (no_agent) | ✅ | — |
+| 22 | 🩺 GitHub Actions Watchdog | `*/15 * * * *` | script (no_agent) | ✅ | — |
 
-| # | Nom | Horaire | Type | Statut |
-|:-:|-----|:-------:|:----:|:------:|
-| 7 | LEO Full Backup quotidien (complet) | `0 2 * * *` | agent | ✅ ok |
-| 8 | 🔍 Veille IA quotidienne | `0 7 * * *` | agent | ✅ ok |
-| 9 | 🔄 Déploiement auto tofdan.be | `0 * * * *` | agent | ✅ ok |
-| 10 | 📧 Email Classifier — rule-based (inbox zero) | `*/30 * * * *` | no_agent (script) | ✅ ok |
-| 11 | 📝 docs-update | `0 */4 * * *` | no_agent (script) | ✅ ok |
-| 12 | 🔄 drive-sync | `0 * * * *` | no_agent (script) | ✅ ok |
-| 13 | 📖 doc-watch-auto | `0 */6 * * *` | no_agent (script) | ✅ ok |
-| 14 | 🩺 Auto-Heal Agent | `*/15 * * * *` | agent | ✅ ok |
-| 15 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | no_agent (script) | ✅ ok |
-| 16 | 📦 Archive Watch — leo-tracker | `0 */6 * * *` | no_agent (script) | ✅ ok |
-| 17 | 📊 Unified Collector v2 | `*/15 * * * *` | agent | ✅ ok |
-| 18 | 🚀 Deploy Unified Dashboard | `10 * * * *` | no_agent (script) | ✅ ok |
-| 19 | 💰 Budget Alert | `0 8,20 * * *` | no_agent (script) | ✅ ok |
-
-### Profil `bavi-leo` (1 cron)
-
-| # | Nom | Horaire | Type | Statut |
-|:-:|-----|:-------:|:----:|:------:|
-| 20 | vault-bavi-daily-journal | `0 23 * * *` | agent + obsidian | ❌ error (Broken pipe) |
-
-### Profil `emile` (1 cron)
-
-| # | Nom | Horaire | Type | Statut |
-|:-:|-----|:-------:|:----:|:------:|
-| 21 | vault-emile-daily-journal | `0 23 * * *` | agent + obsidian | ❌ error (Broken pipe) |
+<!-- AUTO:END hermes-crons -->
 
 ---
 
 ## Crons hôte (crontab — 5)
 
-Ces crons tournent sur la machine hôte (tofdan@172.17.0.1), **indépendants** d'Hermes.
+Ces crons tournent sur la **machine hôte** (tofdan@172.17.0.1), indépendants d'Hermes.
 
-| # | Horaire | Commande | Rôle |
-|:-:|:-------:|----------|------|
-| H1 | `0 */3 * * *` | `leo-snapshot.py` | Snapshot mémoire tous les 3h |
-| H2 | `0 23 * * *` | `backup-daily.py` | Backup quotidien |
-| H3 | `30 22 * * *` | `budget-check.py && sheet-sync.py` | Vérif budget + sync sheets |
-| H4 | `0 * * * *` | `log_session.py && sheet-sync.py` | Cost tracker horaire |
-| H5 | `0 2 * * *` | `/opt/n8n-data/backup.sh` | Backup n8n |
+<!-- AUTO:START host-crons -->
 
----
+| # | Horaire | Commande |
+|:-:|:-------:|----------|
+| H1 | `0 */3 * * *` | cd /home/tofdan/scripts-hermes && python3 leo-snapshot.py >> /home/tof |
+| H2 | `0 23 * * *` | cd /home/tofdan/scripts-hermes && python3 backup-daily.py >> /home/tof |
+| H3 | `30 22 * * *` | cd /home/tofdan/scripts-hermes && python3 dashboard/budget-check.py && |
+| H4 | `0 * * * *` | cd /home/tofdan/scripts-hermes && python3 dashboard/log_session.py &&  |
+| H5 | `0 2 * * *` | /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log 2>&1 |
 
-## Explication de l'écart
-
-Le **dashboard** affiche **"Scheduled Jobs (21)"** — c'est le total exact des jobs Hermes (tous profils, filtre "All profiles").
-
-**Christophe voyait 18** probablement pour l'une des raisons suivantes :
-
-1. **Filtre de profil** : Si Christophe regardait avec un filtre autre que "All profiles" (ex: seulement leo-copilot = 13), il ne voyait pas tous les jobs.
-2. **Jobs récents** : 3 jobs ont été créés après le dernier comptage de Christophe :
-   - `Auto-Archive BAVI LEO` (créé le 5 juillet 2026)
-   - `vault-default-daily-journal` (créé le 4 juillet 2026)
-   - `LEO Backup quotidien → GDrive` (créé le 4 juillet 2026)
-3. **Avant le 4 juillet**, il y avait effectivement **18 jobs** : 13 (leo-copilot) + 1 (bavi-leo) + 1 (emile) + 3 anciens default = 18. L'ajout de 3 nouveaux jobs porte le total à 21.
-
-**Conclusion : 21 est le chiffre correct** pour les crons Hermes dashboard. Le 18 de Christophe correspondait à l'état avant les ajouts des 4-5 juillet.
+<!-- AUTO:END host-crons -->
 
 ---
 
-## Détail technique : où sont stockés les jobs
+## Répartition par profil (archivé)
 
-| Profil | Emplacement du fichier | Nombre |
-|--------|----------------------|:------:|
-| `default` | `/opt/data/cron/jobs.json` | 6 |
-| `leo-copilot` | `/opt/data/profiles/leo-copilot/cron/jobs.json` | 13 |
-| `bavi-leo` | `/opt/data/profiles/bavi-leo/cron/jobs.json` | 1 |
-| `emile` | `/opt/data/profiles/emile/cron/jobs.json` | 1 |
+> ℹ️ Depuis la consolidation des crons, tous les jobs Hermes sont gérés par le profil `leo-copilot`.
+> Les autres profils n'ont plus de crons — ils délèguent via le scheduler central.
+> Cette section est conservée pour référence historique.
 
-> Note : les jobs du profil `default` sont stockés dans `/opt/data/cron/jobs.json` (racine), pas dans `/opt/data/profiles/default/cron/` (qui n'existe pas).
+| Profil | Crons | Note |
+|--------|:----:|------|
+| `leo-copilot` | 22 | Consolidateur — scheduler central |
+| `default` | 0 | Consolidé vers leo-copilot |
+| `bavi-leo` | 0 | Consolidé vers leo-copilot |
+| `emile` | 0 | Consolidé vers leo-copilot |
 
----
-
-## Jobs avec erreur
-
-- **vault-bavi-daily-journal** et **vault-emile-daily-journal** : erreur `RuntimeError: [Errno 32] Broken pipe`
-  - Cause probable : le skill Obsidian n'est pas disponible ou configuré correctement dans les profils bavi-leo et emile.
-  - Action recommandée : vérifier la configuration Obsidian dans ces profils.
-
----
-
-*Rapport d'audit généré par Léo Copilot · 5 juillet 2026*
+_Documentation générée automatiquement par `doc-crons-sync.py` le 06/07/2026 à 21:41_
