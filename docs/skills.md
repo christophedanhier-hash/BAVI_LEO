@@ -4,6 +4,40 @@
 > **Source** : Audit complet des 103 skills installés
 > **Usage** : Ce document liste et décrit tous les skills disponibles dans l'écosystème LEO.
 
+<!-- AUTO:START skills -->
+<!-- AUTO:START skills -->
+> **Dernière synchro : 06/07/2026 à 21:46**
+> **125 skills** installés dans 22 catégories
+
+| Catégorie | Skills |
+|-----------|:------:|
+| .curator_backups | 1 |
+| .hub | 2 |
+| apple | 4 |
+| autonomous-ai-agents | 8 |
+| bavi-leo | 11 |
+| creative | 16 |
+| data-science | 1 |
+| development | 1 |
+| devops | 2 |
+| dogfood | 2 |
+| email | 3 |
+| github | 6 |
+| hermes | 1 |
+| infrastructure | 24 |
+| media | 4 |
+| mlops | 5 |
+| note-taking | 1 |
+| productivity | 16 |
+| research | 6 |
+| smart-home | 1 |
+| social-media | 1 |
+| software-development | 9 |
+
+Total : **125 skills**
+<!-- AUTO:END skills -->
+<!-- AUTO:END skills -->
+
 ---
 
 ## 🏛️ BAVI LEO — 6 skills
