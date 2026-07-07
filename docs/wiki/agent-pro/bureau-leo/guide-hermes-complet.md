@@ -642,7 +642,7 @@ LEO tourne sur **1 machine serveur**. Les autres postes (Yoga, Penguin) sont des
 
 ```
 🌐 LEO (serveur unique)
-   ├── Processeur : Intel Core i7-7700K
+   ├── Processeur : Processeur Intel moderne
    ├── RAM : 22 Go
    ├── SSD : 457 Go (système + données Hermes)
    ├── HDD : 1 To (backups, archives)
@@ -2248,11 +2248,11 @@ Bureau Michel = l'ingénieur système de LEO
 ### Serveur LEO
 
 ```yaml
-OS: Ubuntu 26.04 (resolute)
-Kernel: 7.0.0
-CPU: i7-7700K
-RAM: 22.94 Go
-GPU: Aucun (Ollama sur CPU)
+|OS: Ubuntu 26.04 (resolute)
+|Kernel: 7.0.0
+|CPU: Processeur Intel moderne
+|RAM: 22.94 Go
+|GPU: Aucun (Ollama sur CPU)
 SSD: 465 Go (/dev/sda2)
 HDD: 1 To (/dev/sdb2 → /mnt/data)
 ```
