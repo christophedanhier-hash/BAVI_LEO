@@ -1,8 +1,8 @@
 ---
-date: 2026-07-03
+date: 2026-07-07
 bureau: bureau-leo
 auteur: LEO
-version: v3.2
+version: v4.0
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
 statut: finalise
@@ -26,9 +26,9 @@ Ce livre vous guide pas à pas, de l'installation d'Hermes sur votre machine jus
 - **Partie I — Découvrir Hermès** : comprendre ce qu'est un agent IA, pourquoi Hermes, et l'architecture de LEO
 - **Partie II — Configurer votre assistant** : installer le gateway, choisir vos providers, créer vos premiers bots
 - **Partie III — Les Bureaux BAVI** : organiser vos connaissances avec le système de bureaux
-- **Partie IV — La Puissance des Skills** : exploiter 117 skills prêts à l'emploi et créer les vôtres
+- **Partie IV — La Puissance des Skills** : exploiter 126 skills prêts à l'emploi et créer les vôtres
 - **Partie V — Dashboards et Monitoring** : visualiser tout avec 1 dashboard central (4 onglets)
-- **Partie VI — Automatisation et Crons** : faire tourner 13 tâches planifiées + daemon sans lever le petit doigt
+- **Partie VI — Automatisation et Crons** : faire tourner 22 crons planifiés + daemon sans lever le petit doigt
 - **Partie VII — La Partie des Dix** : les astuces, commandes et ressources qui sauvent
 
 ### Public visé
@@ -85,7 +85,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 
 ---
 
-**Projet vivant** — dernière mise à jour : 3 juillet 2026. Hermes Agent évolue vite, ce guide aussi.
+**Projet vivant** — dernière mise à jour : 7 juillet 2026. Hermes Agent évolue vite, ce guide aussi.
 
 👉 [Table des matières complète](TABLE.md)
 # Table des matières
@@ -144,7 +144,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 - **[Ch.5 — Le Gateway : connecter Telegram](02-configurer/ch05-gateway.md)**
   - Créer un bot Telegram avec @BotFather
   - Configurer le gateway Hermes
-  - Gérer les profils : default, leo-copilot, bavi-leo
+  - Gérer les profils : default, leo-copilot, bavi-leo, emile
   - La gestion s6 en environnement Docker
 
 - **[Ch.6 — Providers : le moteur de votre agent](02-configurer/ch06-providers.md)**
@@ -161,7 +161,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 
 - **[Ch.8 — Skills : le super-pouvoir d'Hermès](02-configurer/ch08-skills.md)**
   - Qu'est-ce qu'un skill ?
-  - Les 117 skills de LEO : classification et navigation
+  - Les 126 skills de LEO : classification et navigation
   - Installer, charger, et utiliser des skills
   - Skills système vs skills utilisateur
 
@@ -760,7 +760,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 ## 📝 À retenir
 
-- LEO = 1 serveur principal + 4 bots Telegram + 1 dashboard central (4 onglets) + 13 crons + 117 skills
+- LEO = 1 serveur principal + 4 bots Telegram + 1 dashboard central (4 onglets) + 22 crons + 126 skills
 - Tout tourne sur Hermes Agent dans un conteneur Docker supervisé par s6
 - Le secret : une organisation stricte (profils, bureaux, skills) qui permet à l'agent de gérer la complexité
 - Les erreurs du passé ont forgé les règles du présent
@@ -1543,9 +1543,9 @@ Ce n'est pas grave si votre fichier `config.yaml` est plus ou moins complexe. L'
 
 - Voir la [documentation des providers Hermes](https://hermes-agent.nousresearch.com/docs)
 - Voir `02-configuration/profiles.md` pour les profils et gateways
-# Multi-bots : pourquoi 3 bots valent mieux qu'un
+# Multi-bots : pourquoi 4 bots valent mieux qu'un
 
-LEO ne tourne pas avec un seul bot Telegram, mais avec **trois bots spécialisés** (et bientôt quatre). Chaque bot a son propre profil Hermes, son propre modèle, son propre rôle — et ils communiquent entre eux.
+LEO ne tourne pas avec un seul bot Telegram, mais avec **quatre bots spécialisés**. Chaque bot a son propre profil Hermes, son propre modèle, son propre rôle — et ils communiquent entre eux.
 
 ## Pourquoi plusieurs bots ?
 
@@ -1554,7 +1554,7 @@ Un seul bot peut tout faire. Alors pourquoi en créer plusieurs ?
 ### 1. Séparation des responsabilités
 
 ``` 
-Un seul bot                                                 3 bots spécialisés
+|Un seul bot                                                 4 bots spécialisés
 ┌─────────────────────┐           ┌──────────┐ ┌──────────┐ ┌──────────┐
 │ 🦁 LEO              │           │ 🦁 LEO   │ │ 🔧       │ │ 🧭       │
 │                     │           │ Central  │ │ Copilote │ │ Sylvia   │
@@ -1578,7 +1578,7 @@ Avec un seul bot, tout est mélangé. Avec plusieurs bots :
 | LEO | DeepSeek V4 Flash | ~0,05 €/j | Quotidien, polyvalent |
 | Léo Copilote | DeepSeek V4 Pro | ~0,10 €/tâche | Analyses complexes, infra |
 | Sylvia | DeepSeek V4 Flash | ~0,03 €/j | Roadbooks, voyages |
-| Fallback | Gemini 2.5 Flash | Gratuit (1M tokens) | Si DeepSeek indisponible |
+|| Fallback | Gemini 3.5 Flash | Gratuit (1M tokens) | Si DeepSeek indisponible |
 
 ### 3. Isolation des tokens et permissions
 
@@ -1631,7 +1631,7 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Léo Copilote, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 13 crons automatisés
+- 22 crons automatisés
 - 1 dashboard central (4 onglets)
 - 3 workflows n8n (2 actifs)
 - Les gateways Hermes
@@ -2220,7 +2220,7 @@ C'est le padron de la machine — il a accès root complet (`sudo` sans restrict
 
 ```
 Bureau Michel = l'ingénieur système de LEO
-├── 🔧 13 crons automatisés
+├── 🔧 22 crons automatisés
 ├── 📊 1 dashboard central (4 onglets)
 ├── 🔄 3 workflows n8n (2 actifs)
 ├── 🌐 Nginx + Cloudflare Tunnel
@@ -2316,7 +2316,7 @@ Les crons sont le cœur de l'automatisation. 14 tâches planifiées tournent 24/
 
 - Nom: Dashboard Crons
   Horaire: Toutes les heures
-  Action: Statut des 13 crons
+  Action: Statut des 22 crons
   Coût: 0€ (no_agent)
 ```
 
@@ -4444,7 +4444,7 @@ nvidia-smi
 ```
 # Monitoring crons : le tableau de bord des tâches
 
-Avec 13 crons qui tournent 24h/24 et un auto-fix-daemon `*/5`, le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
+Avec 22 crons qui tournent 24h/24 et un auto-fix-daemon `*/5`, le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
 
 ## Le tableau de bord des crons
 
@@ -4484,7 +4484,7 @@ cd /opt/data/crons-dashboard && git push
 | Dérive horaire | <5min | 5-15min | >15min |
 | Erreurs consécutives | 0 | 1-2 | >3 |
 
-## Les 13 crons de LEO
+## Les 22 crons de LEO
 
 ### Horaires (toutes les heures)
 
@@ -4882,7 +4882,7 @@ Le flag `--no-agent` est essentiel : sans LLM, l'exécution est gratuite.
 Toutes les heures (minute 0):
   - Dashboard LEO KPI      → collecte sessions, tokens, budget
   - Dashboard Machines     → CPU, RAM, disque 3 machines
-  - Dashboard Crons        → statut 13 crons
+  - Dashboard Crons        → statut 22 crons
   - Dashboard GitHub       → activité repos
   - Dashboard BAVI LEO     → KPIs voyages
 
@@ -5557,7 +5557,7 @@ Le code source, les issues, les discussions. Idéal pour suivre les évolutions,
 
 🌐 **christophedanhier-hash.github.io/BAVI_LEO**
 
-La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 13 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
+La documentation complète de l'écosystème LEO : 10 bureaux, 126 skills, 22 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
 
 ## 4. Le guide Hermès pour les Nuls
 
