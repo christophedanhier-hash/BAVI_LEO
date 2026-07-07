@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 6 bureaux spécialisés · 21 crons Hermes automatisés · 5 crons hôte · 1 dashboard central (4 onglets) · 4 bots Telegram · 🤖 Bureau LEO créé
+> 23 crons Hermes automatisés · 5 crons hôte · 8 bureaux spécialisés · 1 dashboard central (4 onglets) · 4 bots Telegram · 🤖 Bureau LEO créé
 
 ---
 
@@ -227,14 +227,14 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 8 (3 PRO + 5 PRIVÉ) |
+| **Bureaux** | 9 (3 PRO + 6 PRIVÉ) |
 | **Dashboards temps réel** | 7 |
-| **Crons Hermes** | 21 ✅ tous verts |
+| **Crons Hermes** | 23 ✅ tous verts |
 | **Crons hôte (crontab)** | 5 |
 | **Sessions Hermes** | 90+ |
 | **Messages échangés** | 4 651+ |
-| **Skills installés** | 112 |
-| **Modèles LLM** | 4 (DeepSeek Flash + Pro + Ollama + Gemini) |
+| **Skills installés** | 126 |
+| **Modèles LLM** | 4 (DeepSeek V4 Flash, DeepSeek V4 Pro, Ollama qwen2.5:7b, Gemini 3.5 Flash) |
 | **Coût DeepSeek** | Suivi dashboard (budget fr) |
 
 ---

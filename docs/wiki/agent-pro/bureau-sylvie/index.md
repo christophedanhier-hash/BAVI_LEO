@@ -1,5 +1,7 @@
 # 🧭 Bureau Sylvie — Voyages
 
+> ⚠️ **DOUBLON** — Ce bureau est un doublon de [Bureau Sylvia](../bureau-sylvia/index.md). À supprimer après validation.
+
 *Généré automatiquement le 27/06/2026 à 09:14*
 
 **Total : 0 analyse(s)**

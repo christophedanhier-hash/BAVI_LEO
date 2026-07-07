@@ -59,7 +59,7 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 | Propriété | Valeur |
 |-----------|--------|
 | **Clé API** | ✅ stockée dans `.env` |
-| **Modèle** | `gemini-2.5-flash` |
+| **Modèle** | `gemini-3.5-flash` |
 
 ### 3.3 Google (OAuth)
 | Token | Scopes | Statut |

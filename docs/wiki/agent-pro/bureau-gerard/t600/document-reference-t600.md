@@ -13,7 +13,7 @@ workflows: [gerard-t600]
 # DOCUMENT DE RÉFÉRENCE T600 — Observatoire Centre Ardennes
 
 **Version :** 1.0  
-**Date :** 2024-08-23  
+**Date :** 2026-06-12  
 **Auteurs :** Jean-Paul Dumoulin & Christian Wanlin (procédures originales)  
 **Rédaction et consolidation :** Bureau ACO — Équipe Astronomie Technique, OCA  
 **Statut :** Document de référence validé
@@ -890,8 +890,8 @@ Si extinction nécessaire :
 | **Caméra Foscam (compte local)** | `foscamt600` | `T6002021` | 🔴 Changer — mot de passe faible |
 | **Caméra Foscam (cloud myfoscam.com)** | `jean-paul.dumoulin@skynet.be` | `T6002021$` | 🔴 Changer — mot de passe faible |
 | **WiFi dôme (SSID: wireless2.4G_A84620)** | — | `Admin2021$` | 🔴 Changer URGENT — mot de passe trivial |
-| **Anydesk PC T600-NUC** | ID : à documenter | Mot de passe : à documenter | 🔴 Information manquante |
-| **Anydesk PC T600-NUC-TELE** | ID : à documenter | Mot de passe : à documenter | 🔴 Information manquante |
+| **Anydesk PC T600-NUC** | ID : 513 471 809 | Mot de passe : T6002024$#@ | 🔴 Information manquante — à faire évoluer |
+| **Anydesk PC T600-NUC-TELE** | ID : 1 041 426 244 | Mot de passe : T600NUC2024$#@ | 🔴 Information manquante — à faire évoluer |
 | **Coffret cimier (192.168.1.236)** | À documenter | À documenter | 🔴 Information manquante |
 
 #### Historique des changements de mots de passe
@@ -1104,7 +1104,7 @@ catch {
 
 | Version | Date | Auteur | Modifications |
 |---------|------|--------|---------------|
-| v1.0 | 2024-08-23 | Bureau ACO — Équipe Astronomie Technique, OCA | Création du document de référence T600. Consolidation des procédures originales (Dumoulin & Wanlin) et des analyses des 5 agents spécialisés du bureau ACO. |
+| v1.0 | 2026-06-12 | Bureau ACO — Équipe Astronomie Technique, OCA | Création du document de référence T600. Consolidation des procédures originales (Dumoulin & Wanlin) et des analyses des 5 agents spécialisés du bureau ACO. |
 | | | | |
 
 ---

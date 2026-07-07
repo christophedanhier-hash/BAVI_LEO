@@ -1,7 +1,7 @@
 # 📚 Catalogue des Skills — BAVI LEO & Hermes
 
-> **Document généré le** : 19/06/2026
-> **Source** : Audit complet des 103 skills installés
+> **Document généré le** : 07/07/2026
+> **Source** : Audit complet des 126 skills installés
 > **Usage** : Ce document liste et décrit tous les skills disponibles dans l'écosystème LEO.
 
 <!-- AUTO:START skills -->
@@ -277,8 +277,8 @@ Gestion des serveurs, déploiements, sync Drive, routage LLM et sauvegardes.
 
 | Métrique | Valeur |
 |----------|:------:|
-| **Total skills** | **103** |
-| **Catégories** | 16 |
+| **Total skills** | **126** |
+| **Catégories** | 22 |
 | **Lignes totales estimées** | ~21 000+ |
 | **Lignes moyennes par skill** | ~200 |
 | **Plus gros skill** | research-paper-writing (2 377 l.) |
@@ -295,6 +295,7 @@ xychart-beta
     y-axis "Nb Skills" 0 --> 16
     bar [6, 16, 16, 13, 8, 8, 6, 6, 6, 4, 3, 4]
 ```
+> **Note** : Les valeurs du graphique ci-dessus reflètent les données au 07/07/2026. Le total est passé de 103 à 126 skills, et le nombre de catégories de 16 à 22.
 
 ---
 
@@ -318,4 +319,4 @@ hermes skills list
 
 ---
 
-*Document généré par LEO — 19/06/2026 | Source : skills Hermes Agent*
+*Document généré par LEO — 07/07/2026 | Source : skills Hermes Agent*
