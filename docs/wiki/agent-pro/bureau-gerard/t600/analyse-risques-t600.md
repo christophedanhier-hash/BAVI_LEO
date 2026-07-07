@@ -64,7 +64,7 @@ flowchart TD
     classDef sub fill:#e8f5f9,stroke:#0288d1,stroke-width:3px
 
     NUC["[PC NUC-T600] — 1er étage"]:::main
-    IPX800_3["[IPX800] — 192.168.1.237 / 238<br/>Contrôleur relais"]:::main
+    IPX800_3["[IPX800] — 192.168.0.237 / 238<br/>Contrôleur relais"]:::main
     NUCTele["[PC NUC-T600-TELE] — Pilote le télescope"]:::main
     Alcyone3["[Cartes Alcyone-5] — Moteur AD"]:::main
     MAIA3["[Cartes MAIA-4] — Moteur DEC"]:::main

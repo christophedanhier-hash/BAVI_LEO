@@ -123,7 +123,7 @@ Ce guide s'adresse à :
 |---------|-------|---------|
 | Commande / instruction | `code` | `ping 192.168.1.1` |
 | Interface utilisateur | **Gras** | Cliquer sur **ON** |
-| Adresse IP / URL | `monospace` | `192.168.1.238` |
+| Adresse IP / URL | `monospace` | `192.168.0.238` |
 | Mot de passe | `<mot de passe>` | `Oc@2018` |
 | Fichier / dossier | `chemin/fichier.md` | `T600-RefGuide-v1.0.md` |
 | Avertissement critique | ⚠️ **ATTENTION** | ⚠️ Ne pas faire fonctionner... |
@@ -180,7 +180,7 @@ Ce guide s'adresse à :
 |----------------|--------|
 | **Fabricant** | GCE Electronics |
 | **Rôle** | Contrôleur d'automatisme : gestion de l'alimentation des équipements du dôme |
-| **Adresses IP** | `192.168.1.237` (commande rapide D0) et `192.168.1.238` (interface complète) |
+| **Adresses IP** | `192.168.0.237` (commande rapide D0) et `192.168.0.238` (interface complète) |
 | **Identifiants** | Login : `Admin` / Mot de passe : `Oc@2018` |
 | **Sorties** | 4 sorties relais (Outputs) pilotées via interface web |
 | **Entrées** | 4 entrées digitales (Inputs) pour retour de tension |
@@ -222,7 +222,7 @@ Ce guide s'adresse à :
 |---------|-----------------|
 | **Cimiers** | Moteurs de rotation du dôme, alimentés par batterie 12V |
 | **Batterie** | Batterie 12V (type plomb-acide AGM, capacité 7-12Ah) avec chargeur permanent |
-| **Commande des cimiers** | Via IPX800 (sortie dédiée) ou via connexion WiFi `192.168.1.236` (coffret cimier) |
+| **Commande des cimiers** | Via IPX800 (sortie dédiée) ou via connexion WiFi `192.168.0.236` (coffret cimier) |
 | **Coupole** | Structure rotative motorisée |
 | **Bâche** | Protection du télescope, à enlever avant observation |
 
@@ -244,7 +244,7 @@ flowchart TD
     SwitchWiFi["Switch WiFi Dôme<br/>SSID: wireless2.4G_A84620"]:::main
     Foscam["Caméra Foscam<br/>(Ethernet)"]:::main
     IPX800_1["IPX800<br/>.237/.238<br/>(WiFi)"]:::main
-    Coffret["Coffret Cimier<br/>192.168.1.236<br/>(WiFi)"]:::main
+    Coffret["Coffret Cimier<br/>192.168.0.236<br/>(WiFi)"]:::main
     IPXAlim["IPX800 Alim.<br/>(via D0/latch)"]:::main
 
     Internet --> AnyDesk
@@ -553,7 +553,7 @@ Avant de commencer la procédure de démarrage, vérifier les points suivants :
 
 **Étape 2 : Maintien du latch (via interface web)**
 1. Sur le PC T600-NUC, ouvrir le navigateur **Edge**
-2. Accéder au favori/raccourci **CMD-Ipx800-237** (ou saisir `http://192.168.1.237`)
+2. Accéder au favori/raccourci **CMD-Ipx800-237** (ou saisir `http://192.168.0.237`)
 3. Sur la ligne **D0 : IPX800 éteint**, cliquer sur **ON**
 4. Cliquer sur **Actualiser** pour rafraîchir l'état
 5. Vérifier que la confirmation s'affiche (le latch est actif, l'IPX800 reste allumé)
@@ -561,13 +561,13 @@ Avant de commencer la procédure de démarrage, vérifier les points suivants :
 ### 5.4 Connexion à l'interface IPX800
 
 1. Ouvrir une **nouvelle fenêtre** Edge
-2. Accéder à **Ipx800-238** (ou saisir `http://192.168.1.238`)
+2. Accéder à **Ipx800-238** (ou saisir `http://192.168.0.238`)
 3. Saisir les identifiants :
    - Login : `Admin`
    - Mot de passe : `Oc@2018`
 4. L'interface principale de l'IPX800 s'affiche
 
-> 💡 **INFO** : Les adresses `192.168.1.237` et `192.168.1.238` correspondent à deux interfaces différentes du même IPX800 :
+> 💡 **INFO** : Les adresses `192.168.0.237` et `192.168.0.238` correspondent à deux interfaces différentes du même IPX800 :
 > - `.237` : Interface simplifiée pour la commande ON/OFF de la sortie D0 (latch)
 > - `.238` : Interface complète d'administration (login, gestion des 4 sorties)
 
@@ -670,7 +670,7 @@ Avant de commencer l'observation sérieuse :
 ### 7.3 Désactivation des sorties IPX800
 
 1. Sur le PC T600-NUC, ouvrir Edge
-2. Accéder à `http://192.168.1.238`
+2. Accéder à `http://192.168.0.238`
 3. **Décocher** (désactiver) les boutons qui sont allumés (les 4 sorties)
 4. Vérifier que les Inputs correspondants passent à OFF
 
@@ -679,7 +679,7 @@ Avant de commencer l'observation sérieuse :
 ### 7.4 Extinction de l'IPX800
 
 1. Ouvrir une nouvelle fenêtre Edge
-2. Accéder à `http://192.168.1.237`
+2. Accéder à `http://192.168.0.237`
 3. Cliquer sur **OFF** sur la ligne D0
 4. Cliquer sur **Actualiser**
 5. Vérifier que l'IPX800 est bien éteint (plus de voyants, interface inaccessible)
@@ -819,7 +819,7 @@ Si extinction nécessaire :
 2. Vérifier que le bouton d'amorçage physique a été actionné (section [5.3](#53-alimentation-de-lipx800))
 3. Vérifier que la sortie D0 est active (latch maintenu)
 4. Vérifier les connexions réseau de l'IPX800 (WiFi ou Ethernet)
-5. Tester `ping 192.168.1.237` ou `ping 192.168.1.238`
+5. Tester `ping 192.168.0.237` ou `ping 192.168.0.238`
 6. En dernier recours : couper l'alimentation secteur de l'IPX800, attendre 30 secondes, réamorcer
 
 ### 9.3 Caméra Foscam inaccessible
@@ -853,7 +853,7 @@ Si extinction nécessaire :
 **Actions** :
 1. ✅ Vérifier que le câble de charge de la batterie est débranché
 2. ✅ Vérifier que la batterie est suffisamment chargée (tension ≥ 12V)
-3. ✅ Vérifier que le coffret cimier est sous tension (adresse `192.168.1.236`)
+3. ✅ Vérifier que le coffret cimier est sous tension (adresse `192.168.0.236`)
 4. ✅ Vérifier que la sortie IPX800 correspondant aux cimiers est activée
 5. ✅ Vérifier qu'aucun obstacle mécanique ne bloque la rotation (bâche, outil, débris)
 6. ✅ Vérifier les butées de fin de course (sécurité)
@@ -892,7 +892,7 @@ Si extinction nécessaire :
 | **WiFi dôme (SSID: wireless2.4G_A84620)** | — | `Admin2021$` | 🔴 Changer URGENT — mot de passe trivial |
 | **Anydesk PC T600-NUC** | ID : à documenter | Mot de passe : à documenter | 🔴 Information manquante |
 | **Anydesk PC T600-NUC-TELE** | ID : à documenter | Mot de passe : à documenter | 🔴 Information manquante |
-| **Coffret cimier (192.168.1.236)** | À documenter | À documenter | 🔴 Information manquante |
+| **Coffret cimier (192.168.0.236)** | À documenter | À documenter | 🔴 Information manquante |
 
 #### Historique des changements de mots de passe
 
@@ -931,24 +931,24 @@ FONCTION DemarrerT600()
 
     // ÉTAPE 1 : Alimentation IPX800 (latch)
     AFFICHER "Amorçage physique IPX800 nécessaire (bouton poussoir)"
-    AFFICHER "Connexion à 192.168.1.237..."
-    HTTP_GET("http://192.168.1.237/SetOutput?output=0&state=1")
+    AFFICHER "Connexion à 192.168.0.237..."
+    HTTP_GET("http://192.168.0.237/SetOutput?output=0&state=1")
     ATTENDRE(5 secondes)
-    InputD0 = HTTP_GET("http://192.168.1.237/GetInput?input=0")
+    InputD0 = HTTP_GET("http://192.168.0.237/GetInput?input=0")
     SI InputD0 == "OFF" ALORS
         AFFICHER "ERREUR : Latch IPX800 échoué"
         RETOUR ERREUR
     FIN SI
 
     // ÉTAPE 2 : Connexion interface principale
-    AFFICHER "Connexion à 192.168.1.238..."
-    HTTP_POST("http://192.168.1.238/login", "Admin", "Oc@2018")
+    AFFICHER "Connexion à 192.168.0.238..."
+    HTTP_POST("http://192.168.0.238/login", "Admin", "Oc@2018")
 
     // ÉTAPE 3 : Activation des 4 sorties
     POUR sortie DANS {1, 2, 3, 4}:
-        HTTP_GET("http://192.168.1.238/SetOutput?output=" + sortie + "&state=1")
+        HTTP_GET("http://192.168.0.238/SetOutput?output=" + sortie + "&state=1")
         ATTENDRE(2 secondes)
-        InputX = HTTP_GET("http://192.168.1.238/GetInput?input=" + sortie)
+        InputX = HTTP_GET("http://192.168.0.238/GetInput?input=" + sortie)
         SI InputX == "OFF" ALORS
             AFFICHER "ATTENTION : Sortie " + sortie + " non activée"
         FIN SI
@@ -975,12 +975,12 @@ FONCTION ArreterT600()
 
     // ÉTAPE 2 : Désactivation des sorties
     AFFICHER "Connexion à l'IPX800..."
-    HTTP_POST("http://192.168.1.238/login", "Admin", "Oc@2018")
+    HTTP_POST("http://192.168.0.238/login", "Admin", "Oc@2018")
 
     POUR sortie DANS {4, 3, 2, 1}:  // Ordre inverse recommandé
-        HTTP_GET("http://192.168.1.238/SetOutput?output=" + sortie + "&state=0")
+        HTTP_GET("http://192.168.0.238/SetOutput?output=" + sortie + "&state=0")
         ATTENDRE(1 seconde)
-        InputX = HTTP_GET("http://192.168.1.238/GetInput?input=" + sortie)
+        InputX = HTTP_GET("http://192.168.0.238/GetInput?input=" + sortie)
         SI InputX == "ON" ALORS
             AFFICHER "ATTENTION : Sortie " + sortie + " non désactivée"
         FIN SI
@@ -988,9 +988,9 @@ FONCTION ArreterT600()
 
     // ÉTAPE 3 : Extinction IPX800
     AFFICHER "Extinction IPX800..."
-    HTTP_GET("http://192.168.1.237/SetOutput?output=0&state=0")
+    HTTP_GET("http://192.168.0.237/SetOutput?output=0&state=0")
     ATTENDRE(3 secondes)
-    InputD0 = HTTP_GET("http://192.168.1.237/GetInput?input=0")
+    InputD0 = HTTP_GET("http://192.168.0.237/GetInput?input=0")
     SI InputD0 == "ON" ALORS
         AFFICHER "ERREUR : Impossible d'éteindre l'IPX800"
         RETOUR ERREUR
@@ -1019,14 +1019,14 @@ try {
     
     # Activation du latch IPX800
     Write-Host "1. Activation du latch IPX800..."
-    Invoke-WebRequest -Uri "http://192.168.1.237/SetOutput?output=0&state=1" -TimeoutSec 5
+    Invoke-WebRequest -Uri "http://192.168.0.237/SetOutput?output=0&state=1" -TimeoutSec 5
     Start-Sleep -Seconds 3
     Write-Host "   Latch activé" -ForegroundColor Green
     
     # Connexion et activation des sorties
     Write-Host "2. Activation des sorties..."
     for ($i = 1; $i -le 4; $i++) {
-        Invoke-WebRequest -Uri "http://192.168.1.238/SetOutput?output=$i&state=1" -TimeoutSec 5
+        Invoke-WebRequest -Uri "http://192.168.0.238/SetOutput?output=$i&state=1" -TimeoutSec 5
         Start-Sleep -Seconds 2
         Write-Host "   Sortie $i activée" -ForegroundColor Green
     }
