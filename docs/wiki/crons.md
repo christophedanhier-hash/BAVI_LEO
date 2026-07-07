@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 07/07/2026 à 12:00**
+> **Généré automatiquement le 07/07/2026 à 18:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (23 jobs)
 <!-- AUTO:END header -->
 
@@ -22,7 +22,7 @@
 | 1 | 💰 Budget Alert | `0 8,20 * * *` | script | ✅ |
 | 2 | 💾 LEO Backup quotidien → GDrive (script) | `0 6 * * *` | script | ✅ |
 | 3 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
-| 4 | 📋 doc-crons-sync | `0 */6 * * *` | script | ⚠️ |
+| 4 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
 | 5 | 📓 vault-bavi-daily-journal | `0 23 * * *` | LLM | ✅ |
 | 6 | 📓 vault-daily-journal (vault-leo) | `0 23 * * *` | LLM | ✅ |
 | 7 | 📓 vault-default-daily-journal | `0 23 * * *` | LLM | ✅ |
@@ -55,4 +55,4 @@
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 
-_Généré automatiquement le 07/07/2026 à 12:00_
+_Généré automatiquement le 07/07/2026 à 18:00_
