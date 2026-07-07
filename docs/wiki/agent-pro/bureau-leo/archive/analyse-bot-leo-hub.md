@@ -116,7 +116,7 @@ graph TB
 |:----------|:------------|:-----|
 | **Agent** | Hermes Agent (profil `default`) | Exécution centrale |
 | **Modèle** | DeepSeek V4 Flash | Inférence quotidienne |
-| **Fallback** | Gemini 3.5 Flash | Si DeepSeek indisponible |
+| **Fallback** | Gemini 2.5 Flash | Si DeepSeek indisponible |
 | **Modèle local** | Ollama qwen2.5:7b | Classification emails (gratuit) |
 | **Transport** | Telegram API | Interface Christophe |
 | **Documentation** | GitHub Pages (BAVI_LEO, voyages-wiki, wiki-oca) | Wikis déployés |

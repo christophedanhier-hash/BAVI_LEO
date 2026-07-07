@@ -114,7 +114,7 @@ flowchart TD
 
 | Composant | À quoi ça sert ? | Où ça se trouve ? |
 |-----------|-----------------|-------------------|
-| **IPX800** | Automate qui commande tous les relais (alimentation, cimiers, rotation) | Armoire électrique (adresses 192.168.1.237 et .238) |
+| **IPX800** | Automate qui commande tous les relais (alimentation, cimiers, rotation) | Armoire électrique (adresses 192.168.0.237 et .238) |
 | **PC T600-NUC** | PC du 1er étage — alimente l'IPX800 | 1er étage de l'observatoire |
 | **PC T600-NUC-TELE** | PC qui pilote le télescope (NINA, LesveDomeNet) | Près de la monture ou accessible via AnyDesk |
 | **Caméra Foscam** | Supervision visuelle du dôme | Fixée dans le dôme, vue sur l'ensemble |
@@ -129,13 +129,13 @@ flowchart TD
 |----------|------|:------------:|
 | **NINA** | Acquisition d'images, pointage du télescope | T600-NUC-TELE |
 | **LesveDomeNet** | Pilotage de la rotation du dôme | T600-NUC-TELE |
-| **IPX800 (interface web)** | Commande des relais (alimentation, cimiers) | Navigateur vers 192.168.1.237/.238 |
+| **IPX800 (interface web)** | Commande des relais (alimentation, cimiers) | Navigateur vers 192.168.0.237/.238 |
 | **Foscam** | Visualisation caméra de supervision | T600-NUC-TELE ou T600-NUC |
 | **AnyDesk** | Connexion à distance aux PCs | Votre PC distant |
 
 ### 2.4 Comprendre la sémantique Output / Input de l'IPX800
 
-L'interface web de l'IPX800 (192.168.1.238) distingue deux types de lignes essentielles à comprendre :
+L'interface web de l'IPX800 (192.168.0.238) distingue deux types de lignes essentielles à comprendre :
 
 | Ligne | Signification | Exemple concret |
 |-------|---------------|-----------------|
@@ -181,7 +181,7 @@ S4 (Fermeture)      : Output=ON  →  Input doit passer ON
 2. Enlever la bâche du télescope
 
 3. (Optionnel) Mettre tension sur coffret cimier via wifi si pilotage IPX800
-   → Adresse : 192.168.1.236
+   → Adresse : 192.168.0.236
 ```
 
 #### Étape 2 — Connexion au PC T600-NUC (1er étage)
@@ -196,7 +196,7 @@ Option B — À distance :
 #### Étape 3 — Alimentation IPX800
 ```
 1. Ouvrir un navigateur Edge (ou autre)
-2. Aller sur http://192.168.1.237 (CMD-Ipx800-237)
+2. Aller sur http://192.168.0.237 (CMD-Ipx800-237)
 3. Cliquer sur le bouton ON de la ligne D0
    → Le statut passe de "IPX800 éteint" à ...
 4. Actualiser la page
@@ -205,7 +205,7 @@ Option B — À distance :
 
 #### Étape 4 — Activation des sorties IPX800
 ```
-1. Nouvel onglet → http://192.168.1.238
+1. Nouvel onglet → http://192.168.0.238
 2. Login : Admin  |  Mot de passe : Oc@2018
 3. Cliquer sur "Out" → activer les 4 boutons (sorties S1 à S6)
    [A CONFIRMER : quels boutons exactement — à vérifier sur l'interface réelle]
@@ -339,14 +339,14 @@ Le T600 utilise les cartes **Pléiades** (Alcyone-5 + Electra-5 + Maia-4) pour l
 
 #### Niveau 3 — Relais (IPX800 .238)
 ```
-1. Interface 192.168.1.238
+1. Interface 192.168.0.238
 2. Désactiver TOUTES les sorties
 3. Vérifier que toutes les lignes Output sont OFF
 ```
 
 #### Niveau 4 — Énergie (IPX800 .237)
 ```
-1. Interface 192.168.1.237
+1. Interface 192.168.0.237
 2. Commande OFF sur la ligne D0
 3. Actualiser → vérifier "IPX800 éteint"
 ```
@@ -519,9 +519,9 @@ Si quelque chose ne fonctionne pas :
 
 | Adresse | Qu'est-ce que c'est ? |
 |---------|----------------------|
-| 192.168.1.236 | Commande cimiers (wifi) |
-| 192.168.1.237 | IPX800 Alimentation (ON/OFF) |
-| 192.168.1.238 | IPX800 Relais E/S (Admin / Oc@2018) |
+| 192.168.0.236 | Commande cimiers (wifi) |
+| 192.168.0.237 | IPX800 Alimentation (ON/OFF) |
+| 192.168.0.238 | IPX800 Relais E/S (Admin / Oc@2018) |
 | 192.168.4.201 | Température DS18B20 |
 
 ### A.4 Aide-mémoire : ordre des opérations
@@ -530,8 +530,8 @@ Si quelque chose ne fonctionne pas :
 DÉMARRAGE :
 1. Préparation physique (débrancher câble cimiers, enlever bâche)
 2. Allumer T600-NUC (local ou AnyDesk)
-3. Alimenter IPX800 (192.168.1.237 → ON)
-4. Activer sorties IPX800 (192.168.1.238)
+3. Alimenter IPX800 (192.168.0.237 → ON)
+4. Activer sorties IPX800 (192.168.0.238)
 5. Allumer T600-NUC-TELE
 6. Lancer Foscam
 7. Diagnostic télémétrique
@@ -542,8 +542,8 @@ DÉMARRAGE :
 EXTINCTION :
 1. Fermer cimiers (S4) + rebrancher câble batterie
 2. Éteindre T600-NUC-TELE
-3. T600-NUC → désactiver sorties IPX800 (192.168.1.238)
-4. Couper IPX800 (192.168.1.237 → OFF)
+3. T600-NUC → désactiver sorties IPX800 (192.168.0.238)
+4. Couper IPX800 (192.168.0.237 → OFF)
 5. Éteindre T600-NUC
 6. Remettre bâche si nécessaire
 ```
@@ -578,8 +578,8 @@ EXTINCTION :
 ### A.7 Fiche réflexe — Démarrage rapide (1 minute)
 
 ```
-1. 192.168.1.237 → ON
-2. 192.168.1.238 → Admin/Oc@2018 → Out → 4 boutons
+1. 192.168.0.237 → ON
+2. 192.168.0.238 → Admin/Oc@2018 → Out → 4 boutons
 3. AnyDesk → T600-NUC-TELE → 1 041 426 244 / T600NUC2024$#@
 4. Foscam → foscamt600 / T6002021
 5. Vérifier télémétrie → ouvrir cimiers (S6)
@@ -592,8 +592,8 @@ EXTINCTION :
 ```
 1. Fermer cimiers (S4) + rebrancher câble batterie
 2. T600-NUC-TELE → Arrêter
-3. T600-NUC → IPX800 (192.168.1.238) → tout éteindre
-4. IPX800 (192.168.1.237) → OFF
+3. T600-NUC → IPX800 (192.168.0.238) → tout éteindre
+4. IPX800 (192.168.0.237) → OFF
 ```
 
 ---
@@ -718,9 +718,9 @@ Après la mise en situation, prendre 5 minutes pour :
 - D) Parce que le câble gêne l'ouverture des cimiers
 
 **Q5 — Quelle adresse IP permet de consulter la température du dôme (DS18B20) ?**
-- A) 192.168.1.236
-- B) 192.168.1.237
-- C) 192.168.1.238
+- A) 192.168.0.236
+- B) 192.168.0.237
+- C) 192.168.0.238
 - D) 192.168.4.201
 
 **Q6 — Quel logiciel pilote la rotation du dôme ?**

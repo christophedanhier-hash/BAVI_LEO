@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 07/07/2026 à 03:00*
+*Généré automatiquement le 07/07/2026 à 04:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -14,7 +14,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 0 | — |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 5 | 05/07/2026 |
 | [🧭 Bureau Sylvie — Voyages](bureau-sylvia/) | Voir le skill | 1 | 27/06/2026 |
-| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 3 | 03/07/2026 |
+| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 3 | 07/07/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 1 | 25/06/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 1 | 27/06/2026 |
 
@@ -26,8 +26,8 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
+| 07/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v4.0 | [Hermès pour les Nuls 🦁](bureau-leo/guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | ✅ Finalisé | [📥](bureau-leo/guide-hermes-complet/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |
 | 05/07/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🦁 Rapport d'Audit Complet — LEO Ecosystem](bureau-michel/rapport-audit-leo-2026-07-05/) | `infrastructure` `crons` `securite` `skills` `performance` | 📝 Brouillon | [📥](bureau-michel/rapport-audit-leo-2026-07-05/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/rapport-audit-leo-2026-07-05.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/rapport-audit-leo-2026-07-05.md) |
-| 03/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v3.2 | [Hermès pour les Nuls 🦁](bureau-leo/guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | ✅ Finalisé | [📥](bureau-leo/guide-hermes-complet/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |
 | 01/07/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v2 | [🏗️ Architecture des Processus — Bureau Michel](bureau-michel/analyse-processus-bpmn-20260701/) | `bpmn` `processus` `crons` `n8n` `daemon` `architecture` `dashboard` | ✅ Finalisé | [📥](bureau-michel/analyse-processus-bpmn-20260701/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-processus-bpmn-20260701.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-processus-bpmn-20260701.md) |
 | 30/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🔐 Audit Accès & Credentials — Léo Copilot](bureau-michel/analyse-acces-credentials-20260630/) | `hermes` `infra` `acces` `credentials` `api-keys` `audit` `securite` `leo-copilot` | proposition | [📥](bureau-michel/analyse-acces-credentials-20260630/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-acces-credentials-20260630.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-acces-credentials-20260630.md) |
 | 29/06/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🛡️ Plan de Reprise d'Activité (PRA) — LEO Infrastructure](bureau-michel/pra-leo-recovery-20260629/) | `hermes` `infra` `recovery` `backup` `disaster-recovery` `disque` `gdrive` | proposition | [📥](bureau-michel/pra-leo-recovery-20260629/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/pra-leo-recovery-20260629.md) |
@@ -43,4 +43,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 07/07/2026 03:00*
+*Index consolidé généré par `agent-pro-index.py` — 07/07/2026 04:00*
