@@ -57,7 +57,12 @@ nav:
     - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
     - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
     - 📋 Tracker: https://github.com/christophedanhier-hash/leo-tracker/issues
-  - 🏠 Accueil: index.md
+  - 🏠 Accueil:
+    - Portail: index.md
+    - 📚 Skills: skills.md
+    - 📖 Guide: guide-utilisation.md
+    - ⏰ Crons: wiki/crons.md
+    - 🗺️ Doc-Map: wiki/documentation-map.md
   - 🔧 Michel: wiki/agent-pro/bureau-michel/index.md
   - 🧭 Sylvia: wiki/agent-pro/bureau-sylvia/index.md
   - 🤖 Léo: wiki/agent-pro/bureau-leo/index.md
