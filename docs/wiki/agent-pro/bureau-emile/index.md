@@ -1,12 +1,24 @@
 # 🎓 Bureau Emile — Assistant Pédagogique
 
-*Généré automatiquement le 08/07/2026 à 20:00*
+*Généré automatiquement le 08/07/2026 à 20:50*
 
-**Total : 1 analyse(s)**
+**Total : 0 analyse(s)**
+
+*Aucune analyse enregistrée.*
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 27/06/2026 | v1 | [🎓 Analyse Business & Fonctionnelle — Bot Emile (Assistant Pédagogique)](analyse-bot-emile/) | `robert` `emile` `analyse` `business` `bpmn` `data-flow` `architecture` `education` | ✅ Finalisé | [📥](analyse-bot-emile/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-emile/analyse-bot-emile.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-emile%0A-+**Fichier**+%3A+analyse-bot-emile.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-emile/analyse-bot-emile.md) |
+
+---
+
+### 📦 Archivé (1)
+
+| Date | Titre | Restaurer |
+|:-----|:------|:----------|
+| 2026-06-27 | 🎓 Analyse Business & Fonctionnelle — Bot Emile (Assistant Pédagogique) | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-emile/analyse-bot-emile.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-emile%0A-+**Fichier**+%3A+analyse-bot-emile.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-emile/archive/analyse-bot-emile.md) |
+
+*Pour archiver un fichier : `python3 agent-pro-archive.py <bureau> <fichier>`*
+*Pour restaurer : `python3 agent-pro-restore.py <bureau> <fichier>`*
 
 ---
 

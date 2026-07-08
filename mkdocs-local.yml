@@ -54,23 +54,12 @@ extra_javascript:
 
 
 nav:
-  - 📊 Dashboard LEO: /dashboard?token=leo-panel-2026
-  - 🌐 Liens externes:
-    - 🤖 Wiki Hermes: https://christophedanhier-hash.github.io/hermes-wiki/
-    - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
-    - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
-    - 📋 Tracker: https://github.com/christophedanhier-hash/leo-tracker/issues
-  - 🏠 Accueil: index.md
-  - 🧠 Agent Pro:
-    - 🤖 Bureau Léo — Hermes: wiki/agent-pro/bureau-leo/index.md
-    - 📝 Bureau Gérard — OCA_Astronomie: wiki/agent-pro/bureau-gerard/index.md
-    - 🔧 Bureau Michel — Infra_Hermes: wiki/agent-pro/bureau-michel/index.md
-    - 🏛️ Bureau Robert — Stratégie: wiki/agent-pro/bureau-robert/index.md
-    - 💰 Bureau Sophie — Finance: wiki/agent-pro/bureau-sophie/index.md
-    - 🧭 Bureau Sylvia — Voyages: wiki/agent-pro/bureau-sylvia/index.md
-    - 🎓 Bureau Émile — Mémoire: wiki/agent-pro/bureau-emile/index.md
-    - 🩺 Bureau Virginie — Médical: wiki/agent-pro/bureau-virginie/index.md
-  - 📚 Skills LEO: skills.md
-  - 📖 Guide d'utilisation: guide-utilisation.md
-  - ⏰ Crons automatisés: wiki/crons.md
-  - 🗺️ Carte Documentaire: wiki/documentation-map.md
+  - 🏠 Bureaux: bureaux.md
+  - 🔧 Michel: wiki/agent-pro/bureau-michel/index.md
+  - 🧭 Sylvia:
+    - Bureau: wiki/agent-pro/bureau-sylvia/index.md
+    - 🗺️ Roadbooks: wiki/agent-pro/bureau-sylvia/roadbooks.md
+  - 🤖 Léo: wiki/agent-pro/bureau-leo/index.md
+  - 📝 Gérard: wiki/agent-pro/bureau-gerard/index.md
+  - 🩺 Virginie: wiki/agent-pro/bureau-virginie/index.md
+  - 🎓 Émile: wiki/agent-pro/bureau-emile/index.md
