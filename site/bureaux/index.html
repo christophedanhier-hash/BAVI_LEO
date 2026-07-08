@@ -791,13 +791,14 @@
 
 <script>
 // Widget stats bureaux — données du dashboard LEO
-(async function(){
+const colors = {michel:'#a78bfa', sylvia:'#06b6d4', leo:'#818cf8', gerard:'#f97316', virginie:'#ec4899', emile:'#f59e0b', robert:'#3b82f6', sophie:'#22c55e'};
+
+async function refreshBureaux() {
   try {
     const r = await fetch('/api/metrics?token=leo-panel-2026');
     const m = await r.json();
     const bu = m.bavi.bureaux || [];
     const container = document.getElementById('bureaux-stats');
-    const colors = {michel:'#a78bfa', sylvia:'#06b6d4', leo:'#818cf8', gerard:'#f97316', virginie:'#ec4899', emile:'#f59e0b', robert:'#3b82f6', sophie:'#22c55e'};
     container.innerHTML = bu.map(d => {
       const count = d.analyses || 0;
       const color = colors[d.id] || '#94a3b8';
@@ -817,7 +818,10 @@
   } catch(e) {
     document.getElementById('bureaux-stats').innerHTML = '<em>Stats non disponibles</em>';
   }
-})();
+}
+
+refreshBureaux();
+setInterval(refreshBureaux, 30000);
 </script>
 
 
