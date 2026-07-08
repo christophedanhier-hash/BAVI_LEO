@@ -1,0 +1,76 @@
+site_name: BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]
+site_description: Portail des bureaux IA — PRO (Solidaris), OCA (Astronomie), Voyages, Infra Hermes
+site_author: Christophe (Tofdan) & LEO
+repo_url: http://100.92.102.28:8765
+edit_uri: ""
+copyright: "&copy; 2026 Christophe Danhier — Propulsé par Hermes Agent"
+
+theme:
+  name: material
+  language: fr
+  palette:
+    primary: teal
+    accent: green
+  features:
+    - announce.dismiss
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+    - content.action.edit
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/christophedanhier-hash
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/tofdan
+
+markdown_extensions:
+  - admonition
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+  - assets/js/pdf-download.js
+  - assets/js/external-links.js
+
+
+nav:
+  - 📊 Dashboard LEO: /dashboard?token=leo-panel-2026
+  - 🌐 Liens externes:
+    - 🤖 Wiki Hermes: https://christophedanhier-hash.github.io/hermes-wiki/
+    - 🔭 Wiki OCA: https://christophedanhier-hash.github.io/wiki-oca/
+    - 🧭 Voyages: https://christophedanhier-hash.github.io/voyages-wiki/
+    - 📋 Tracker: https://github.com/christophedanhier-hash/leo-tracker/issues
+  - 🏠 Accueil: index.md
+  - 🧠 Agent Pro:
+    - 🤖 Bureau Léo — Hermes: wiki/agent-pro/bureau-leo/index.md
+    - 📝 Bureau Gérard — OCA_Astronomie: wiki/agent-pro/bureau-gerard/index.md
+    - 🔧 Bureau Michel — Infra_Hermes: wiki/agent-pro/bureau-michel/index.md
+    - 🏛️ Bureau Robert — Stratégie: wiki/agent-pro/bureau-robert/index.md
+    - 💰 Bureau Sophie — Finance: wiki/agent-pro/bureau-sophie/index.md
+    - 🧭 Bureau Sylvia — Voyages: wiki/agent-pro/bureau-sylvia/index.md
+    - 🎓 Bureau Émile — Mémoire: wiki/agent-pro/bureau-emile/index.md
+    - 🩺 Bureau Virginie — Médical: wiki/agent-pro/bureau-virginie/index.md
+  - 📚 Skills LEO: skills.md
+  - 📖 Guide d'utilisation: guide-utilisation.md
+  - ⏰ Crons automatisés: wiki/crons.md
+  - 🗺️ Carte Documentaire: wiki/documentation-map.md
