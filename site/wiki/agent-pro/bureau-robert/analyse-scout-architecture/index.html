@@ -1816,14 +1816,14 @@
     RESEAU --&gt; POSTE</code></pre>
 <h3 id="41-flux-de-donnees-scout">4.1 Flux de données SCOUT<a class="headerlink" href="#41-flux-de-donnees-scout" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    U[Utilisateur] --&gt; SCOUT[SCOUT (VSCode)]
+    U[Utilisateur] --&gt; SCOUT["SCOUT (VSCode)"]
 
     SCOUT --&gt;|API GitHub Copilot| IA["Modèle IA&lt;br/&gt;Azure OpenAI / tiers"]
     SCOUT --&gt;|Graph API| M365["Word, Excel,&lt;br/&gt;PPT, Loop,&lt;br/&gt;SharePoint"]
     SCOUT --&gt;|Local| LOCAL["File System,&lt;br/&gt;PowerShell,&lt;br/&gt;Python, npm"]
-    SCOUT --&gt;|MCP| MCP_SERV[MCP Servers]
+    SCOUT --&gt;|MCP| MCP_SERV["MCP Servers"]
     MCP_SERV --&gt; EXT["Services externes&lt;br/&gt;(SI métier si connectés)"]
-    SCOUT --&gt;|Playwright| BROWSER[Navigateur]
+    SCOUT --&gt;|Playwright| BROWSER["Navigateur"]
     BROWSER --&gt; WEB["Web apps&lt;br/&gt;AO, INAMI,&lt;br/&gt;BCSS, eHealth"]</code></pre>
 <hr />
 <h2 id="5-integration-avec-lexistant-m365-azure-intune">5. Intégration avec l'existant M365 / Azure / Intune<a class="headerlink" href="#5-integration-avec-lexistant-m365-azure-intune" title="Permanent link">&para;</a></h2>

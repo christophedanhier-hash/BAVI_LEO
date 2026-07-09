@@ -154,14 +154,14 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    U[Utilisateur] --> SCOUT[SCOUT (VSCode)]
+    U[Utilisateur] --> SCOUT["SCOUT (VSCode)"]
 
     SCOUT -->|API GitHub Copilot| IA["Modèle IA<br/>Azure OpenAI / tiers"]
     SCOUT -->|Graph API| M365["Word, Excel,<br/>PPT, Loop,<br/>SharePoint"]
     SCOUT -->|Local| LOCAL["File System,<br/>PowerShell,<br/>Python, npm"]
-    SCOUT -->|MCP| MCP_SERV[MCP Servers]
+    SCOUT -->|MCP| MCP_SERV["MCP Servers"]
     MCP_SERV --> EXT["Services externes<br/>(SI métier si connectés)"]
-    SCOUT -->|Playwright| BROWSER[Navigateur]
+    SCOUT -->|Playwright| BROWSER["Navigateur"]
     BROWSER --> WEB["Web apps<br/>AO, INAMI,<br/>BCSS, eHealth"]
 ```
 
