@@ -1818,13 +1818,13 @@
 <pre class="mermaid"><code>flowchart LR
     U[Utilisateur] --&gt; SCOUT[SCOUT (VSCode)]
 
-    SCOUT --&gt;|API GitHub Copilot| IA[Modèle IA&lt;br/&gt;Azure OpenAI / tiers]
-    SCOUT --&gt;|Graph API| M365[Word, Excel,&lt;br/&gt;PPT, Loop,&lt;br/&gt;SharePoint]
-    SCOUT --&gt;|Local| LOCAL[File System,&lt;br/&gt;PowerShell,&lt;br/&gt;Python, npm]
+    SCOUT --&gt;|API GitHub Copilot| IA["Modèle IA&lt;br/&gt;Azure OpenAI / tiers"]
+    SCOUT --&gt;|Graph API| M365["Word, Excel,&lt;br/&gt;PPT, Loop,&lt;br/&gt;SharePoint"]
+    SCOUT --&gt;|Local| LOCAL["File System,&lt;br/&gt;PowerShell,&lt;br/&gt;Python, npm"]
     SCOUT --&gt;|MCP| MCP_SERV[MCP Servers]
-    MCP_SERV --&gt; EXT[Services externes&lt;br/&gt;(SI métier si connectés)]
+    MCP_SERV --&gt; EXT["Services externes&lt;br/&gt;(SI métier si connectés)"]
     SCOUT --&gt;|Playwright| BROWSER[Navigateur]
-    BROWSER --&gt; WEB[Web apps&lt;br/&gt;AO, INAMI,&lt;br/&gt;BCSS, eHealth]</code></pre>
+    BROWSER --&gt; WEB["Web apps&lt;br/&gt;AO, INAMI,&lt;br/&gt;BCSS, eHealth"]</code></pre>
 <hr />
 <h2 id="5-integration-avec-lexistant-m365-azure-intune">5. Intégration avec l'existant M365 / Azure / Intune<a class="headerlink" href="#5-integration-avec-lexistant-m365-azure-intune" title="Permanent link">&para;</a></h2>
 <h3 id="51-azure-ad-entra-id">5.1 Azure AD / Entra ID<a class="headerlink" href="#51-azure-ad-entra-id" title="Permanent link">&para;</a></h3>
@@ -1898,7 +1898,7 @@
 <h2 id="6-patterns-dintegration-avec-les-applicatifs-metier">6. Patterns d'intégration avec les applicatifs métier<a class="headerlink" href="#6-patterns-dintegration-avec-les-applicatifs-metier" title="Permanent link">&para;</a></h2>
 <h3 id="61-ao-application-de-gestion-des-dossiers-solidaris">6.1 AO (Application de Gestion des Dossiers — Solidaris)<a class="headerlink" href="#61-ao-application-de-gestion-des-dossiers-solidaris" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    AO[AO&lt;br/&gt;(Web)] &lt;--&gt;|scraping / actions| SCOUT[VSCode + SCOUT&lt;br/&gt;Playwright]</code></pre>
+    AO["AO&lt;br/&gt;(Web)"] &lt;--&gt;|scraping / actions| SCOUT["VSCode + SCOUT&lt;br/&gt;Playwright"]</code></pre>
 <ul>
 <li><strong>Pattern recommandé :</strong> RPA léger via Playwright (connexion, extraction, mise à jour)</li>
 <li><strong>Risque :</strong> Le scraping d'AO est fragile — toute évolution de l'UI casse le script</li>
@@ -1906,7 +1906,7 @@
 </ul>
 <h3 id="62-inami-tarification-attestations">6.2 INAMI (tarification, attestations)<a class="headerlink" href="#62-inami-tarification-attestations" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    INAMI[INAMI&lt;br/&gt;Web] &lt;--&gt;|consultation| SCOUT[VSCode + SCOUT&lt;br/&gt;Playwright]</code></pre>
+    INAMI["INAMI&lt;br/&gt;Web"] &lt;--&gt;|consultation| SCOUT["VSCode + SCOUT&lt;br/&gt;Playwright"]</code></pre>
 <ul>
 <li><strong>Usage :</strong> Consultation d'attestations, vérification de tarifs</li>
 <li><strong>Contrainte :</strong> INAMI Web nécessite eHealth / ItsMe — compatible via navigateur contrôlé</li>
@@ -1914,7 +1914,7 @@
 </ul>
 <h3 id="63-bcss-banque-carrefour-securite-sociale">6.3 BCSS (Banque Carrefour Sécurité Sociale)<a class="headerlink" href="#63-bcss-banque-carrefour-securite-sociale" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    BCSS[BCSS&lt;br/&gt;(Web)] &lt;--&gt;|DMF, DMI, ...| SCOUT[VSCode + SCOUT&lt;br/&gt;Playwright]</code></pre>
+    BCSS["BCSS&lt;br/&gt;(Web)"] &lt;--&gt;|DMF, DMI, ...| SCOUT["VSCode + SCOUT&lt;br/&gt;Playwright"]</code></pre>
 <ul>
 <li><strong>Usage :</strong> Déclarations DMFA, consultation de données sociales</li>
 <li><strong>⚠️ Critique :</strong> Les données BCSS sont <strong>hautement sensibles</strong> (RGPD, loi du 15/01/1990). Toute interaction SCOUT doit être <strong>journalisée et tracée.</strong></li>
@@ -2357,12 +2357,12 @@
 </ol>
 <h3 id="104-deconseille-a-ce-stade">10.4 Déconseillé à ce stade<a class="headerlink" href="#104-deconseille-a-ce-stade" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    START[Phase pilote réussie ?] --&gt;|Oui| B[Scénario B :&lt;br/&gt;Usages métier ciblés]
-    START --&gt;|Non / Incertain| C[Scénario A :&lt;br/&gt;Sandbox contrôlé]
-    B --&gt; D{Conforme ?&lt;br/&gt;Traçable ?&lt;br/&gt;Sécurisé ?}
-    D --&gt;|Oui| E[Étendre progressivement&lt;br/&gt;par service]
+    START[Phase pilote réussie ?] --&gt;|Oui| B["Scénario B :&lt;br/&gt;Usages métier ciblés"]
+    START --&gt;|Non / Incertain| C["Scénario A :&lt;br/&gt;Sandbox contrôlé"]
+    B --&gt; D{"Conforme ?&lt;br/&gt;Traçable ?&lt;br/&gt;Sécurisé ?"}
+    D --&gt;|Oui| E["Étendre progressivement&lt;br/&gt;par service"]
     D --&gt;|Non| C
-    C --&gt; F[Ajuster politique&lt;br/&gt;Intune + gouvernance]</code></pre>
+    C --&gt; F["Ajuster politique&lt;br/&gt;Intune + gouvernance"]</code></pre>
 <p>❌ <strong>Déploiement généralisé</strong> sur l'ensemble du parc Solidaris
 ❌ <strong>Playwright ouvert</strong> vers tous les sites web
 ❌ <strong>Exécution de code non signé</strong> via PowerShell/Python/npm

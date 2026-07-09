@@ -253,19 +253,19 @@ quadrantChart
 
 ```mermaid
 flowchart TD
-    A[Solidaris face à SCOUT] --> B{Appétit au risque<br/>et maturité IT ?}
-    B -->|"Faible / Prudent"| C[Veille active H2 2026<br/>POC 5 postes IT isolés]
-    B -->|"Modéré / Préparé"| D[Pilote métier H1 2027<br/>Service non critique<br/>+ Cadre gouvernance IA]
-    B -->|"Élevé / Avancé"| E[Déploiement contrôlé H2 2027<br/>Départements pilotes<br/>+ ROI tracking]
+    A[Solidaris face à SCOUT] --> B{"Appétit au risque<br/>et maturité IT ?"}
+    B -->|"Faible / Prudent"| C["Veille active H2 2026<br/>POC 5 postes IT isolés"]
+    B -->|"Modéré / Préparé"| D["Pilote métier H1 2027<br/>Service non critique<br/>+ Cadre gouvernance IA"]
+    B -->|"Élevé / Avancé"| E["Déploiement contrôlé H2 2027<br/>Départements pilotes<br/>+ ROI tracking"]
     
-    C --> F{SCOUT v2 simplifie setup ?<br/>Skills sectoriels dispo ?}
+    C --> F{"SCOUT v2 simplifie setup ?<br/>Skills sectoriels dispo ?"}
     D --> F
     E --> F
     
-    F -->|Oui| G[Préparer déploiement<br/>2028+ à large échelle]
-    F -->|Non / Incident majeur| H[Réévaluer —<br/>attendre SCOUT v3 ou alternatives]
+    F -->|Oui| G["Préparer déploiement<br/>2028+ à large échelle"]
+    F -->|Non / Incident majeur| H["Réévaluer —<br/>attendre SCOUT v3 ou alternatives"]
     
-    G --> I[Certifications RGPD/SOC2<br/>+ ROI 12 mois démontré ?]
+    G --> I["Certifications RGPD/SOC2<br/>+ ROI 12 mois démontré ?"]
     I -->|Oui| J[Déploiement général 2028+]
     I -->|Non| K[Ne pas précipiter]
     

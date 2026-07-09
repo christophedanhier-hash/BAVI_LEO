@@ -1573,21 +1573,21 @@
 <h3 id="31-liceite-du-traitement-art-6-art-9">3.1 Licéité du traitement (Art. 6 + Art. 9)<a class="headerlink" href="#31-liceite-du-traitement-art-6-art-9" title="Permanent link">&para;</a></h3>
 <p><strong>Arbre de décision des bases légales :</strong></p>
 <pre class="mermaid"><code>flowchart TD
-    A[Données de santé&lt;br/&gt;transférées via SCOUT] --&gt; B{Base légale&lt;br/&gt;identifiée ?}
+    A["Données de santé&lt;br/&gt;transférées via SCOUT"] --&gt; B{"Base légale&lt;br/&gt;identifiée ?"}
 
-    B --&gt;|Non| C[❌ Aucune base légale&lt;br/&gt;= Traitement illicite]
+    B --&gt;|Non| C["❌ Aucune base légale&lt;br/&gt;= Traitement illicite"]
     B --&gt;|Oui| D{Quelle base ?}
 
-    D --&gt;|Consentement&lt;br/&gt;explicite art.9.2.a| E[Rapport asymétrique&lt;br/&gt;employeur/mutualité]
-    E --&gt; F[❌ Consentement non valable&lt;br/&gt;pour responsable de traitement]
+    D --&gt;|Consentement&lt;br/&gt;explicite art.9.2.a| E["Rapport asymétrique&lt;br/&gt;employeur/mutualité"]
+    E --&gt; F["❌ Consentement non valable&lt;br/&gt;pour responsable de traitement"]
 
-    D --&gt;|Intérêt public / santé&lt;br/&gt;art.9.2.h,i| G[SCOUT est un agent&lt;br/&gt;généraliste, pas médical]
+    D --&gt;|Intérêt public / santé&lt;br/&gt;art.9.2.h,i| G["SCOUT est un agent&lt;br/&gt;généraliste, pas médical"]
     G --&gt; H[❌ Pas applicable]
 
-    D --&gt;|Obligation légale&lt;br/&gt;art.9.2.b| I[Aucune loi n'impose&lt;br/&gt;l'usage d'un agent IA]
+    D --&gt;|Obligation légale&lt;br/&gt;art.9.2.b| I["Aucune loi n'impose&lt;br/&gt;l'usage d'un agent IA"]
     I --&gt; J[❌ Pas applicable]
 
-    D --&gt;|Exécution contrat&lt;br/&gt;art.6.1.b| K[L'agent n'est pas&lt;br/&gt;nécessaire aux soins]
+    D --&gt;|Exécution contrat&lt;br/&gt;art.6.1.b| K["L'agent n'est pas&lt;br/&gt;nécessaire aux soins"]
     K --&gt; L[❌ Pas applicable]
 
     C --&gt; M[🛑 TRAITEMENT NON CONFORME]
@@ -1633,8 +1633,8 @@
 
     subgraph Cloud["☁️ Cloud Microsoft"]
         GH[GitHub Copilot] --&gt;|Prompt enrichi| LLM{Modèle LLM}
-        LLM --&gt; GPT[GPT-4o&lt;br/&gt;Microsoft Azure]
-        LLM --&gt; EXT[Modèles externes&lt;br/&gt;Gemini, Opus, Claude&lt;br/&gt;⚠️ SELON CONFIG]
+        LLM --&gt; GPT["GPT-4o&lt;br/&gt;Microsoft Azure"]
+        LLM --&gt; EXT["Modèles externes&lt;br/&gt;Gemini, Opus, Claude&lt;br/&gt;⚠️ SELON CONFIG"]
     end
 
     subgraph Tiers["🌐 Services tiers non maîtrisés"]
@@ -1644,7 +1644,7 @@
     end
 
     subgraph Données["🔴 Données à risque"]
-        SANTE[Données de santé&lt;br/&gt;Art.9 RGPD]
+        SANTE["Données de santé&lt;br/&gt;Art.9 RGPD"]
         INAMI[INAMI / BCSS / eHealth]
         NISS[NISS affiliés]
     end
@@ -1874,16 +1874,16 @@
 <h2 id="8-scenarios-de-deploiement">8. Scénarios de Déploiement<a class="headerlink" href="#8-scenarios-de-deploiement" title="Permanent link">&para;</a></h2>
 <p><strong>Arbre de décision :</strong></p>
 <pre class="mermaid"><code>flowchart TD
-    START[Déploiement SCOUT&lt;br/&gt;en mutualité ?] --&gt; COND1{Toutes les barrières&lt;br/&gt;levées ?}
+    START["Déploiement SCOUT&lt;br/&gt;en mutualité ?"] --&gt; COND1{"Toutes les barrières&lt;br/&gt;levées ?"}
 
-    COND1 --&gt;|Non| COND2{Aucune donnée réelle&lt;br/&gt;+ réseau isolé&lt;br/&gt;+ durée limitée ?}
-    COND1 --&gt;|Oui| C[Déploiement Contrôlé&lt;br/&gt;Progressif]
+    COND1 --&gt;|Non| COND2{"Aucune donnée réelle&lt;br/&gt;+ réseau isolé&lt;br/&gt;+ durée limitée ?"}
+    COND1 --&gt;|Oui| C["Déploiement Contrôlé&lt;br/&gt;Progressif"]
 
-    COND2 --&gt;|Non| A[Refus Pur et Simple&lt;br/&gt;⚠️ RECOMMANDÉ]
-    COND2 --&gt;|Oui| B[Sandbox Technique Isolée&lt;br/&gt;Pilote restreint]
+    COND2 --&gt;|Non| A["Refus Pur et Simple&lt;br/&gt;⚠️ RECOMMANDÉ"]
+    COND2 --&gt;|Oui| B["Sandbox Technique Isolée&lt;br/&gt;Pilote restreint"]
 
-    A --&gt; A1[Surveiller évolution&lt;br/&gt;du produit SCOUT]
-    A --&gt; A2[Préparer stratégie&lt;br/&gt;Agent IA souveraine]
+    A --&gt; A1["Surveiller évolution&lt;br/&gt;du produit SCOUT"]
+    A --&gt; A2["Préparer stratégie&lt;br/&gt;Agent IA souveraine"]
 
     B --&gt; B1[Données synthétiques]
     B --&gt; B2[VLAN dédié]
@@ -1891,8 +1891,8 @@
     B --&gt; B4[3 mois max]
     B --&gt; B5[Logs intensifs]
 
-    C --&gt; C1{Barrières requises&lt;br/&gt;avant déploiement}
-    C1 --&gt; C2[☐ Contrat Microsoft&lt;br/&gt;safe bubble exclusif]
+    C --&gt; C1{"Barrières requises&lt;br/&gt;avant déploiement"}
+    C1 --&gt; C2["☐ Contrat Microsoft&lt;br/&gt;safe bubble exclusif"]
     C1 --&gt; C3[☐ AIPD validée APD]
     C1 --&gt; C4[☐ Certification HDS]
     C1 --&gt; C5[☐ DLP inspection API]

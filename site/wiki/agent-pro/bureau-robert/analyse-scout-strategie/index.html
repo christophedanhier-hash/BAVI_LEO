@@ -1748,19 +1748,19 @@
 <li>❌ <strong>Attendre une solution "clé en main"</strong> : aucune ne viendra sans préparation infrastructure</li>
 </ul>
 <pre class="mermaid"><code>flowchart TD
-    A[Solidaris face à SCOUT] --&gt; B{Appétit au risque&lt;br/&gt;et maturité IT ?}
-    B --&gt;|"Faible / Prudent"| C[Veille active H2 2026&lt;br/&gt;POC 5 postes IT isolés]
-    B --&gt;|"Modéré / Préparé"| D[Pilote métier H1 2027&lt;br/&gt;Service non critique&lt;br/&gt;+ Cadre gouvernance IA]
-    B --&gt;|"Élevé / Avancé"| E[Déploiement contrôlé H2 2027&lt;br/&gt;Départements pilotes&lt;br/&gt;+ ROI tracking]
+    A[Solidaris face à SCOUT] --&gt; B{"Appétit au risque&lt;br/&gt;et maturité IT ?"}
+    B --&gt;|"Faible / Prudent"| C["Veille active H2 2026&lt;br/&gt;POC 5 postes IT isolés"]
+    B --&gt;|"Modéré / Préparé"| D["Pilote métier H1 2027&lt;br/&gt;Service non critique&lt;br/&gt;+ Cadre gouvernance IA"]
+    B --&gt;|"Élevé / Avancé"| E["Déploiement contrôlé H2 2027&lt;br/&gt;Départements pilotes&lt;br/&gt;+ ROI tracking"]
 
-    C --&gt; F{SCOUT v2 simplifie setup ?&lt;br/&gt;Skills sectoriels dispo ?}
+    C --&gt; F{"SCOUT v2 simplifie setup ?&lt;br/&gt;Skills sectoriels dispo ?"}
     D --&gt; F
     E --&gt; F
 
-    F --&gt;|Oui| G[Préparer déploiement&lt;br/&gt;2028+ à large échelle]
-    F --&gt;|Non / Incident majeur| H[Réévaluer —&lt;br/&gt;attendre SCOUT v3 ou alternatives]
+    F --&gt;|Oui| G["Préparer déploiement&lt;br/&gt;2028+ à large échelle"]
+    F --&gt;|Non / Incident majeur| H["Réévaluer —&lt;br/&gt;attendre SCOUT v3 ou alternatives"]
 
-    G --&gt; I[Certifications RGPD/SOC2&lt;br/&gt;+ ROI 12 mois démontré ?]
+    G --&gt; I["Certifications RGPD/SOC2&lt;br/&gt;+ ROI 12 mois démontré ?"]
     I --&gt;|Oui| J[Déploiement général 2028+]
     I --&gt;|Non| K[Ne pas précipiter]
 

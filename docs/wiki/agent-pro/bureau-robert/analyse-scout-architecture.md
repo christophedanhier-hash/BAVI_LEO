@@ -156,13 +156,13 @@ flowchart TB
 flowchart LR
     U[Utilisateur] --> SCOUT[SCOUT (VSCode)]
 
-    SCOUT -->|API GitHub Copilot| IA[Modèle IA<br/>Azure OpenAI / tiers]
-    SCOUT -->|Graph API| M365[Word, Excel,<br/>PPT, Loop,<br/>SharePoint]
-    SCOUT -->|Local| LOCAL[File System,<br/>PowerShell,<br/>Python, npm]
+    SCOUT -->|API GitHub Copilot| IA["Modèle IA<br/>Azure OpenAI / tiers"]
+    SCOUT -->|Graph API| M365["Word, Excel,<br/>PPT, Loop,<br/>SharePoint"]
+    SCOUT -->|Local| LOCAL["File System,<br/>PowerShell,<br/>Python, npm"]
     SCOUT -->|MCP| MCP_SERV[MCP Servers]
-    MCP_SERV --> EXT[Services externes<br/>(SI métier si connectés)]
+    MCP_SERV --> EXT["Services externes<br/>(SI métier si connectés)"]
     SCOUT -->|Playwright| BROWSER[Navigateur]
-    BROWSER --> WEB[Web apps<br/>AO, INAMI,<br/>BCSS, eHealth]
+    BROWSER --> WEB["Web apps<br/>AO, INAMI,<br/>BCSS, eHealth"]
 ```
 
 ---
@@ -210,7 +210,7 @@ C'est le **cas d'usage le plus prometteur** : SCOUT peut :
 
 ```mermaid
 flowchart LR
-    AO[AO<br/>(Web)] <-->|scraping / actions| SCOUT[VSCode + SCOUT<br/>Playwright]
+    AO["AO<br/>(Web)"] <-->|scraping / actions| SCOUT["VSCode + SCOUT<br/>Playwright"]
 ```
 
 - **Pattern recommandé :** RPA léger via Playwright (connexion, extraction, mise à jour)
@@ -221,7 +221,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    INAMI[INAMI<br/>Web] <-->|consultation| SCOUT[VSCode + SCOUT<br/>Playwright]
+    INAMI["INAMI<br/>Web"] <-->|consultation| SCOUT["VSCode + SCOUT<br/>Playwright"]
 ```
 
 - **Usage :** Consultation d'attestations, vérification de tarifs
@@ -232,7 +232,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    BCSS[BCSS<br/>(Web)] <-->|DMF, DMI, ...| SCOUT[VSCode + SCOUT<br/>Playwright]
+    BCSS["BCSS<br/>(Web)"] <-->|DMF, DMI, ...| SCOUT["VSCode + SCOUT<br/>Playwright"]
 ```
 
 - **Usage :** Déclarations DMFA, consultation de données sociales
@@ -472,12 +472,12 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    START[Phase pilote réussie ?] -->|Oui| B[Scénario B :<br/>Usages métier ciblés]
-    START -->|Non / Incertain| C[Scénario A :<br/>Sandbox contrôlé]
-    B --> D{Conforme ?<br/>Traçable ?<br/>Sécurisé ?}
-    D -->|Oui| E[Étendre progressivement<br/>par service]
+    START[Phase pilote réussie ?] -->|Oui| B["Scénario B :<br/>Usages métier ciblés"]
+    START -->|Non / Incertain| C["Scénario A :<br/>Sandbox contrôlé"]
+    B --> D{"Conforme ?<br/>Traçable ?<br/>Sécurisé ?"}
+    D -->|Oui| E["Étendre progressivement<br/>par service"]
     D -->|Non| C
-    C --> F[Ajuster politique<br/>Intune + gouvernance]
+    C --> F["Ajuster politique<br/>Intune + gouvernance"]
 ```
 
 ❌ **Déploiement généralisé** sur l'ensemble du parc Solidaris
