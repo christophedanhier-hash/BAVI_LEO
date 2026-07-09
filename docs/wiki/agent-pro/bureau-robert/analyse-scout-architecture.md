@@ -103,75 +103,66 @@ SCOUT est un **agent IA** développé par Microsoft, intégré à GitHub Copilot
 
 ---
 
-## 4. Schéma d'architecture conceptuel
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        SI SOLIDARIS (Vue urbanisation)                  │
-│                                                                         │
-│  ┌─────────────────────┐      ┌──────────────────────────────────────┐  │
-│  │   DOMAINE M365       │      │      DOMAINE MÉTIER                  │  │
-│  │   (Cloud Microsoft)  │      │      (Datacenter Solidaris / Cloud)  │  │
-│  │                      │      │                                      │  │
-│  │  ┌─────────────────┐ │      │  ┌────────┐ ┌────────┐ ┌────────┐  │  │
-│  │  │ Azure AD /       │ │      │  │   AO   │ │ INAMI  │ │ BCSS   │  │  │
-│  │  │ Entra ID         │ │      │  │(gestion)│ │(tarif) │ │(ref.)  │  │  │
-│  │  └────────┬────────┘ │      │  └────┬───┘ └───┬────┘ └───┬────┘  │  │
-│  │           │          │      │       │         │          │        │  │
-│  │  ┌────────▼────────┐ │      │       │         │          │        │  │
-│  │  │ Exchange Online  │ │      │  ┌────▼─────────▼──────────▼────┐  │  │
-│  │  │ SharePoint / OD  │ │      │  │   Plateforme eHealth        │  │  │
-│  │  │ Teams / Loop     │ │      │  │   (SSO, Metahub, ...)       │  │  │
-│  │  └─────────────────┘ │      │  └──────────────┬───────────────┘  │  │
-│  └──────────┬───────────┘      └─────────────────┼──────────────────┘  │
-│             │                                    │                     │
-└─────────────┼────────────────────────────────────┼─────────────────────┘
-              │                                    │
-              │         RÉSEAU D'ENTREPRISE        │
-              │         (Proxy, Firewall, ZTA)     │
-              │                                    │
-    ┌─────────▼────────────────────────────────────▼──────────────────┐
-    │                    POSTE DE TRAVAIL WINDOWS 11                   │
-    │                                                                  │
-    │  ┌─────────────────────────────────────────────────────────────┐ │
-    │  │                    VSCode + SCOUT                            │ │
-    │  │                                                              │ │
-    │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────────┐ │ │
-    │  │  │ Modèle   │  │  MCP     │  │ Playwright│  │ PowerShell  │ │ │
-    │  │  │ IA (local│  │  Servers │  │ (Browser) │  │ / npm / Py  │ │ │
-    │  │  │ ou cloud)│  │          │  │           │  │             │ │ │
-    │  │  └──────────┘  └──────────┘  └──────────┘  └─────────────┘ │ │
-    │  └─────────────────────────────────────────────────────────────┘ │
-    │                                                                  │
-    │  ┌─────────────────────────────────────────────────────────────┐ │
-    │  │              Apps M365 (Word, Excel, PPT, Loop)             │ │
-    │  └─────────────────────────────────────────────────────────────┘ │
-    │                                                                  │
-    │  ┌─────────────────────────────────────────────────────────────┐ │
-    │  │              Accès navigateur (Edge/Chrome)                  │ │
-    │  │              → AO, INAMI Web, BCSS, eHealth                 │ │
-    │  └─────────────────────────────────────────────────────────────┘ │
-    │                                                                  │
-    └─────────────────────────────────────────────────────────────────┘
-```
+|## 4. Schéma d'architecture conceptuel
+|
+|```mermaid
+|flowchart TB
+|    subgraph SI_SOLIDARIS["SI SOLIDARIS (Vue urbanisation)"]
+|        subgraph DOMAINE_M365["DOMAINE M365 (Cloud Microsoft)"]
+|            Azure_AD["Azure AD /<br/>Entra ID"]
+|            M365_Apps["Exchange Online<br/>SharePoint / OD<br/>Teams / Loop"]
+|            Azure_AD --> M365_Apps
+|        end
+|
+|        subgraph DOMAINE_METIER["DOMAINE MÉTIER (Datacenter Solidaris / Cloud)"]
+|            AO["AO<br/>(gestion)"]
+|            INAMI["INAMI<br/>(tarif)"]
+|            BCSS["BCSS<br/>(ref.)"]
+|            eHealth["Plateforme eHealth<br/>(SSO, Metahub, ...)"]
+|            AO --> eHealth
+|            INAMI --> eHealth
+|            BCSS --> eHealth
+|        end
+|    end
+|
+|    subgraph RESEAU["RÉSEAU D'ENTREPRISE (Proxy, Firewall, ZTA)"]
+|        direction TB
+|    end
+|
+|    subgraph POSTE["POSTE DE TRAVAIL WINDOWS 11"]
+|        subgraph VSCODE["VSCode + SCOUT"]
+|            direction TB
+|            IA["Modèle IA<br/>(local ou cloud)"]
+|            MCP["MCP Servers"]
+|            Playwright["Playwright<br/>(Browser)"]
+|            PS["PowerShell<br/>/ npm / Py"]
+|        end
+|
+|        subgraph M365_LOCAL["Apps M365 (Word, Excel, PPT, Loop)"]
+|        end
+|
+|        subgraph NAV["Accès navigateur (Edge/Chrome)<br/>→ AO, INAMI Web, BCSS, eHealth"]
+|        end
+|    end
+|
+|    DOMAINE_M365 --> RESEAU
+|    DOMAINE_METIER --> RESEAU
+|    RESEAU --> POSTE
+|```
 
 ### 4.1 Flux de données SCOUT
 
-```
-[Utilisateur]
-     │
-     ▼
-[SCOUT (VSCode)]
-     │
-     ├──► API GitHub Copilot ───► Modèle IA (Azure OpenAI / tiers)
-     │
-     ├──► M365 (via Graph API) ─► Word, Excel, PPT, Loop, SharePoint
-     │
-     ├──► Local : File System, PowerShell, Python, npm
-     │
-     ├──► MCP Servers ───► Services externes (SI métier si connectés)
-     │
-     └──► Playwright ───► Navigateur ───► Web apps (AO, INAMI, BCSS, eHealth)
+```mermaid
+flowchart LR
+    U[Utilisateur] --> SCOUT[SCOUT (VSCode)]
+
+    SCOUT -->|API GitHub Copilot| IA[Modèle IA<br/>Azure OpenAI / tiers]
+    SCOUT -->|Graph API| M365[Word, Excel,<br/>PPT, Loop,<br/>SharePoint]
+    SCOUT -->|Local| LOCAL[File System,<br/>PowerShell,<br/>Python, npm]
+    SCOUT -->|MCP| MCP_SERV[MCP Servers]
+    MCP_SERV --> EXT[Services externes<br/>(SI métier si connectés)]
+    SCOUT -->|Playwright| BROWSER[Navigateur]
+    BROWSER --> WEB[Web apps<br/>AO, INAMI,<br/>BCSS, eHealth]
 ```
 
 ---
@@ -215,40 +206,34 @@ C'est le **cas d'usage le plus prometteur** : SCOUT peut :
 
 ## 6. Patterns d'intégration avec les applicatifs métier
 
-### 6.1 AO (Application de Gestion des Dossiers — Solidaris)
-
-```
-┌──────────┐     SCOUT (Playwright)     ┌──────────┐
-│   AO     │◄──────────────────────────►│  VSCode  │
-│ (Web)    │     (scraping / actions)    │          │
-└──────────┘                            └──────────┘
-```
-
-- **Pattern recommandé :** RPA léger via Playwright (connexion, extraction, mise à jour)
-- **Risque :** Le scraping d'AO est fragile — toute évolution de l'UI casse le script
-- **Alternative plus robuste :** API AO si disponible (via MCP Server dédié)
-
-### 6.2 INAMI (tarification, attestations)
-
-```
-┌──────────┐     SCOUT (Playwright)     ┌──────────┐
-│  INAMI   │◄──────────────────────────►│  VSCode  │
-│  Web     │     (consultation)          │          │
-└──────────┘                            └──────────┘
-```
+|### 6.1 AO (Application de Gestion des Dossiers — Solidaris)
+|
+|```mermaid
+|flowchart LR
+|    AO[AO<br/>(Web)] <-->|scraping / actions| SCOUT[VSCode + SCOUT<br/>Playwright]
+|```
+|
+|- **Pattern recommandé :** RPA léger via Playwright (connexion, extraction, mise à jour)
+|- **Risque :** Le scraping d'AO est fragile — toute évolution de l'UI casse le script
+|- **Alternative plus robuste :** API AO si disponible (via MCP Server dédié)
+|
+|### 6.2 INAMI (tarification, attestations)
+|
+|```mermaid
+|flowchart LR
+|    INAMI[INAMI<br/>Web] <-->|consultation| SCOUT[VSCode + SCOUT<br/>Playwright]
+|```
 
 - **Usage :** Consultation d'attestations, vérification de tarifs
 - **Contrainte :** INAMI Web nécessite eHealth / ItsMe — compatible via navigateur contrôlé
 - **Limitation :** SCOUT ne gère **pas les identifiants** — le gestionnaire de mots de passe d'entreprise reste nécessaire
 
-### 6.3 BCSS (Banque Carrefour Sécurité Sociale)
-
-```
-┌──────────┐     SCOUT (Playwright)     ┌──────────┐
-│   BCSS   │◄──────────────────────────►│  VSCode  │
-│  (Web)   │     (DMF, DMI, ...)        │          │
-└──────────┘                            └──────────┘
-```
+|### 6.3 BCSS (Banque Carrefour Sécurité Sociale)
+|
+|```mermaid
+|flowchart LR
+|    BCSS[BCSS<br/>(Web)] <-->|DMF, DMI, ...| SCOUT[VSCode + SCOUT<br/>Playwright]
+|```
 
 - **Usage :** Déclarations DMFA, consultation de données sociales
 - **⚠️ Critique :** Les données BCSS sont **hautement sensibles** (RGPD, loi du 15/01/1990). Toute interaction SCOUT doit être **journalisée et tracée.**
@@ -261,31 +246,24 @@ C'est le **cas d'usage le plus prometteur** : SCOUT peut :
 | **Recip-e** | Consultation d'historique médicamenteux (⚠️ sensible) |
 | **Vitalink** | Partage de données de santé (⚠️ très sensible) |
 
-### 6.5 Schéma récapitulatif des patterns
-
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                    PATTERNS D'INTÉGRATION                        │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│ PATTERN 1 : API Directe (M365)                                  │
-│   SCOUT ──► Graph API ──► SharePoint / Exchange / Teams         │
-│   ✅ Recommandé — natif, sécurisé, traçable                     │
-│                                                                  │
-│ PATTERN 2 : Playwright (Web App métier)                         │
-│   SCOUT ──► Playwright ──► Browser ──► AO / INAMI / BCSS       │
-│   ⚠️ Usage maîtrisé — fragile, à superviser                    │
-│                                                                  │
-│ PATTERN 3 : MCP Server (API métier)                             │
-│   SCOUT ──► MCP ──► API Gateway ──► AO / BCSS / eHealth        │
-│   🔧 À construire — nécessite développement Solidaris           │
-│                                                                  │
-│ PATTERN 4 : PowerShell / Script                                 │
-│   SCOUT ──► PowerShell ──► Active Directory / Fichier réseau    │
-│   ⚠️ Risqué — nécessite signature de script + supervision       │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
-```
+|### 6.5 Schéma récapitulatif des patterns
+|
+|```mermaid
+|flowchart TB
+|    subgraph PATTERNS["PATTERNS D'INTÉGRATION"]
+|        P1["PATTERN 1 : API Directe (M365)"]
+|        P1_DESC["SCOUT ──► Graph API ──► SharePoint / Exchange / Teams<br/>✅ Recommandé — natif, sécurisé, traçable"]
+|
+|        P2["PATTERN 2 : Playwright (Web App métier)"]
+|        P2_DESC["SCOUT ──► Playwright ──► Browser ──► AO / INAMI / BCSS<br/>⚠️ Usage maîtrisé — fragile, à superviser"]
+|
+|        P3["PATTERN 3 : MCP Server (API métier)"]
+|        P3_DESC["SCOUT ──► MCP ──► API Gateway ──► AO / BCSS / eHealth<br/>🔧 À construire — nécessite développement Solidaris"]
+|
+|        P4["PATTERN 4 : PowerShell / Script"]
+|        P4_DESC["SCOUT ──► PowerShell ──► Active Directory / Fichier réseau<br/>⚠️ Risqué — nécessite signature de script + supervision"]
+|    end
+|```
 
 ---
 
@@ -367,40 +345,37 @@ C'est le **cas d'usage le plus prometteur** : SCOUT peut :
 
 ### 8.3 Scénarios de déploiement possibles
 
-```
-Scénario A : « Sandbox contrôlé »  (Recommandé pour phase pilote)
-┌─────────────────────────────────────────────────────────────┐
-│ Périmètre : 10-20 utilisateurs pilotes (DSI, IT, experts)  │
-│ Postes : Windows 11, VM ou postes dédiés (pas de production)│
-│ SCOUT activé : Oui                                          │
-│ Playwright : Désactivé (sauf URLs approuvées)              │
-│ MCP : Désactivé                                             │
-│ Modèle : Azure OpenAI UE uniquement                         │
-│ npm/Python : Désactivé                                      │
-│ PowerShell : Limitée aux scripts signés                     │
-│ DLP : Active                                                 │
-│ Journalisation : Complète (Event Viewer + Sentinel)         │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph SCENARIO_A["Scénario A : « Sandbox contrôlé » (Recommandé pour phase pilote)"]
+        A1["Périmètre : 10-20 utilisateurs pilotes (DSI, IT, experts)"]
+        A2["Postes : Windows 11, VM ou postes dédiés (pas de production)"]
+        A3["SCOUT activé : Oui"]
+        A4["Playwright : Désactivé (sauf URLs approuvées)"]
+        A5["MCP : Désactivé"]
+        A6["Modèle : Azure OpenAI UE uniquement"]
+        A7["npm/Python : Désactivé"]
+        A8["PowerShell : Limitée aux scripts signés"]
+        A9["DLP : Active"]
+        A10["Journalisation : Complète (Event Viewer + Sentinel)"]
+    end
 
-Scénario B : « Usages métier ciblés »  (Mise en production prudente)
-┌─────────────────────────────────────────────────────────────┐
-│ Périmètre : Par service (déploiement progressif)           │
-│ Postes : Windows 11 standard, politique Intune dédiée     │
-│ Usages : Production de documents M365 uniquement          │
-│ Playwright : Activé pour AO uniquement (URL whitelist)    │
-│ MCP : MCP serveur interne Solidaris uniquement            │
-│ Modèle : Azure OpenAI UE                                   │
-│ npm/Python : Désactivé                                      │
-│ PowerShell : Scripts signés + approuvés                    │
-└─────────────────────────────────────────────────────────────┘
+    subgraph SCENARIO_B["Scénario B : « Usages métier ciblés » (Mise en production prudente)"]
+        B1["Périmètre : Par service (déploiement progressif)"]
+        B2["Postes : Windows 11 standard, politique Intune dédiée"]
+        B3["Usages : Production de documents M365 uniquement"]
+        B4["Playwright : Activé pour AO uniquement (URL whitelist)"]
+        B5["MCP : MCP serveur interne Solidaris uniquement"]
+        B6["Modèle : Azure OpenAI UE"]
+        B7["npm/Python : Désactivé"]
+        B8["PowerShell : Scripts signés + approuvés"]
+    end
 
-Scénario C : « Full open »  (Déconseillé à ce stade)
-┌─────────────────────────────────────────────────────────────┐
-│ Périmètre : Tout le parc                                     │
-│ Toutes capacités activées                                    │
-│ ❌ Risques : fuite de données, exécution non maîtrisée,     │
-│   non-conformité RGPD, impossibilité de tracer              │
-└─────────────────────────────────────────────────────────────┘
+    subgraph SCENARIO_C["Scénario C : « Full open » (Déconseillé à ce stade)"]
+        C1["Périmètre : Tout le parc"]
+        C2["Toutes capacités activées"]
+        C3["❌ Risques : fuite de données, exécution non maîtrisée,<br/>non-conformité RGPD, impossibilité de tracer"]
+    end
 ```
 
 ---
@@ -495,6 +470,16 @@ Scénario C : « Full open »  (Déconseillé à ce stade)
 
 ### 10.4 Déconseillé à ce stade
 
+```mermaid
+flowchart LR
+    START[Phase pilote réussie ?] -->|Oui| B[Scénario B :<br/>Usages métier ciblés]
+    START -->|Non / Incertain| C[Scénario A :<br/>Sandbox contrôlé]
+    B --> D{Conforme ?<br/>Traçable ?<br/>Sécurisé ?}
+    D -->|Oui| E[Étendre progressivement<br/>par service]
+    D -->|Non| C
+    C --> F[Ajuster politique<br/>Intune + gouvernance]
+```
+
 ❌ **Déploiement généralisé** sur l'ensemble du parc Solidaris
 ❌ **Playwright ouvert** vers tous les sites web
 ❌ **Exécution de code non signé** via PowerShell/Python/npm
@@ -521,6 +506,65 @@ Scénario C : « Full open »  (Déconseillé à ce stade)
 | **eHealth** | Plateforme électronique des soins de santé belge |
 | **ZTA** | Zero Trust Architecture — modèle de sécurité « ne jamais faire confiance, toujours vérifier » |
 | **RGPD** | Règlement Général sur la Protection des Données (UE 2016/679) |
+
+### 11.1 Diagramme de classes — Écosystème SCOUT / SI Solidaris
+
+```mermaid
+classDiagram
+    class PosteWindows11 {
+        +VSCode
+        +IntunePolicy
+        +BitLocker
+        +DefenderATP
+    }
+    class SCOUT {
+        +GitHubCopilot
+        +Playwright
+        +MCPClient
+        +PowerShell
+        +npmPython
+    }
+    class AzureOpenAI {
+        +ModeleIA
+        +RegionUE
+    }
+    class M365 {
+        +Word
+        +Excel
+        +PowerPoint
+        +Loop
+        +SharePoint
+    }
+    class AppMetier {
+        +AO
+        +INAMI
+        +BCSS
+        +eHealth
+    }
+    class Intune {
+        +AppConfigPolicy
+        +CompliancePolicy
+        +DataProtection
+    }
+    class EntraID {
+        +ConditionalAccess
+        +MFA
+        +PIM
+    }
+    class DLP {
+        +DataLossPrevention
+        +Journalisation
+    }
+
+    PosteWindows11 --> SCOUT : héberge
+    PosteWindows11 --> Intune : géré par
+    SCOUT --> AzureOpenAI : utilise (forcé UE)
+    SCOUT --> M365 : pilote via Graph API
+    SCOUT --> AppMetier : interagit via Playwright/MCP
+    Intune --> SCOUT : encadre
+    EntraID --> SCOUT : authentifie
+    DLP --> SCOUT : surveille
+```
 
 ---
 

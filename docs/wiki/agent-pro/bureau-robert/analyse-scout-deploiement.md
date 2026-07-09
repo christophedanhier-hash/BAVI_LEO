@@ -45,12 +45,18 @@ Microsoft **SCOUT** (System Configuration and Orchestration Unified Toolkit) est
 
 ### 3.1 Chaîne de dépendances
 
-```
-Windows 11 ✓
-    → Microsoft Intune (GPO/politiques de déploiement d'application)
-        → Microsoft Frontier (organisation de l'agent)
-            → GitHub Copilot Business/Enterprise
-                → SCOUT (agent autonome sur le poste)
+```mermaid
+graph TD
+    A[Windows 11] --> B[Microsoft Intune]
+    B -->|GPO & déploiement| C[Microsoft Frontier]
+    C --> D[GitHub Copilot B/E]
+    D -->|Licence + crédits| E[SCOUT - Agent autonome]
+    
+    style A fill:#27ae60,stroke:#fff,color:#fff
+    style B fill:#f39c12,stroke:#fff,color:#fff
+    style C fill:#f39c12,stroke:#fff,color:#fff
+    style D fill:#e74c3c,stroke:#fff,color:#fff
+    style E fill:#4a90d9,stroke:#fff,color:#fff
 ```
 
 ### 3.2 Prérequis détaillés
@@ -234,18 +240,31 @@ SCOUT fonctionne sur un système de **crédits** :
 
 ### 9.1 Macro-Planning (18 mois)
 
-```
-Mois 1-2     Mois 3-4      Mois 5-8       Mois 9-14      Mois 15-18
-┌─────────┐  ┌──────────┐  ┌────────────┐  ┌────────────┐  ┌───────────┐
-│ PRÉPA   │  │ SETUP     │  │ POC         │  │ PILOTE      │  │ GÉNÉRAL.  │
-│ Audit   │  │ Intune ++ │  │ 10 users    │  │ 200 users   │  │ 1 000 u.  │
-│ DPO     │  │ Frontier  │  │ Tests cas   │  │ Validation  │  │ Vagues    │
-│ Budget  │  │ GitHub    │  │ d'usage     │  │ ROI + RGPD  │  │ 200/300/500│
-└─────────┘  └──────────┘  └────────────┘  └────────────┘  └───────────┘
-     │             │              │               │               │
-     ▼             ▼              ▼               ▼               ▼
-  Validation   Infrastructure  Go/No Go        Go/No Go        Adoption
-  Prérequis    Prête           POC → Pilote    Pilote → Prod   Complète
+```mermaid
+gantt
+    title Planning déploiement SCOUT - Solidaris
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b
+    
+    section Préparation
+    Audit Intune & DPO       :a1, 2026-08-01, 30d
+    Validation prérequis     :a2, after a1, 15d
+    
+    section Setup
+    Config Intune            :b1, after a2, 45d
+    Déclaration Frontier     :b2, after a2, 15d
+    
+    section POC (10 users)
+    Tests cas d'usage        :c1, after b1, 60d
+    Synthèse & Go/No Go      :c2, after c1, 15d
+    
+    section Pilote (200 users)
+    Déploiement ciblé        :d1, after c2, 90d
+    Validation métier        :d2, after d1, 45d
+    
+    section Généralisation
+    Vagues 1-1000 users      :e1, after d2, 120d
+    Adoption complète        :e2, after e1, 30d
 ```
 
 ### 9.2 Détail par phase

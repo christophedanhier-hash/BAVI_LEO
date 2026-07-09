@@ -68,20 +68,22 @@ experts:
 
 ### Positionnement de SCOUT
 
-```
-                    AUTONOMIE CROISSANTE
-                          ▲
-                          │
-              SCOUT ──────┤  Agent autonome LOCAL
-              (Autopilot) │  Poste Windows, 24/7
-                          │
-   Copilot Studio ────────┤  Agents enterprise cloud
-                          │
-         Co-work ─────────┤  SOPs à la demande
-                          │
-    Copilot Chat ─────────┤  Q&A conversationnel
-                          └──────────────────────►
-                           CAPACITÉ D'ACTION
+```mermaid
+graph LR
+    subgraph Écosystème Microsoft Agents
+        A[Copilot Chat] -->|Q&A conversationnel| B[Faible autonomie]
+        C[Co-work] -->|SOPs à la demande| D[Autonomie partielle]
+        E[Copilot Studio] -->|Agents enterprise| F[Autonomie cloud]
+    end
+    
+    G[Microsoft SCOUT] -->|Agent autonome LOCAL| H[🟢 Autonomie totale]
+    G -->|Windows 11 - 24/7 - Arrière-plan| I[Poste de travail]
+    
+    style G fill:#4a90d9,stroke:#fff,stroke-width:2px,color:#fff
+    style H fill:#27ae60,stroke:#fff,stroke-width:2px,color:#fff
+    style A fill:#f39c12,stroke:#fff,color:#fff
+    style C fill:#e67e22,stroke:#fff,color:#fff
+    style E fill:#8e44ad,stroke:#fff,color:#fff
 ```
 
 > **SCOUT n'est ni un remplacement de Copilot Chat ni de Copilot Studio.** C'est une **nouvelle catégorie** : l'assistant personnel qui vit sur votre poste et agit pour vous sans intervention.
@@ -159,13 +161,20 @@ SCOUT est le **premier agent OS autonome en production** — un avantage concurr
 
 ### 4.1 Chaîne de dépendances
 
-```
-Windows 11 ✅ (parc partiellement migré)
-    → Microsoft Intune ⚠️ (politique SCOUT à créer — effort non trivial)
-        → Microsoft Frontier ❓ (à vérifier)
-            → GitHub Copilot Business/Enterprise ❌ (licence additionnelle)
-                → SCOUT (extension VSCode)
-                    → LLM (Opus/Sonic/GPT/Gemini)
+```mermaid
+graph TD
+    A[Windows 11 ✅] -->|Parc partiellement migré| B(Microsoft Intune ⚠️)
+    B -->|Politique SCOUT à créer| C(Microsoft Frontier ❓)
+    C -->|À vérifier| D(GitHub Copilot B/E ❌)
+    D -->|Licence additionnelle| E[SCOUT - Extension VSCode]
+    E -->|Consomme des crédits| F[(LLM Cloud)]
+    
+    style A fill:#27ae60,stroke:#fff,color:#fff
+    style B fill:#f39c12,stroke:#fff,color:#fff
+    style C fill:#e74c3c,stroke:#fff,color:#fff
+    style D fill:#e74c3c,stroke:#fff,color:#fff
+    style E fill:#4a90d9,stroke:#fff,color:#fff
+    style F fill:#8e44ad,stroke:#fff,color:#fff
 ```
 
 ### 4.2 Prérequis techniques
@@ -286,11 +295,22 @@ Windows 11 ✅ (parc partiellement migré)
 
 ### Verdict final
 
-```
-🔴 Sécurité/RGPD bloque le déploiement réel
-    → 🧪 POC technique uniquement, données synthétiques
-        → ⏳ Surveiller l'évolution du produit (H1 2027)
-            → 🟢 Réévaluer pour généralisation H2 2027 au plus tôt
+```mermaid
+flowchart TD
+    A[🔴 Sécurité / RGPD bloque] -->|Données de santé| B{Déploiement réel ?}
+    B -->|Non| C[⏳ POC technique uniquement]
+    B -->|Oui| D[❌ Impossible - pas de base légale]
+    
+    C --> E[Données synthétiques uniquement]
+    E --> F[⏳ Surveiller évolution H1 2027]
+    F --> G{Produit stabilisé ?}
+    G -->|Oui| H[🟢 Réévaluer généralisation H2 2027]
+    G -->|Non| I[🔄 Explorer alternatives]
+    
+    style A fill:#e74c3c,stroke:#fff,color:#fff,stroke-width:2px
+    style C fill:#f39c12,stroke:#fff,color:#fff
+    style D fill:#e74c3c,stroke:#fff,color:#fff
+    style H fill:#27ae60,stroke:#fff,color:#fff
 ```
 
 ---

@@ -42,11 +42,25 @@ Microsoft SCOUT est un agent IA desktop profondément intégré à Windows (Powe
 
 ### Carte thermique
 
-```
-CRITIQUE (20-25) :  R1, R2, R9
-ÉLEVÉ (12-16) :     R3, R4, R5, R6, R7, R8
-MOYEN (6-11) :      R10
-FAIBLE (1-5) :      (aucun)
+```mermaid
+quadrantChart
+    title Carte thermique des risques SCOUT
+    x-axis "Faible" --> "Critique"
+    y-axis "Faible" --> "Critique"
+    quadrant-1 "Risques critiques (action immédiate)"
+    quadrant-2 "Risques élevés (surveillance renforcée)"
+    quadrant-3 "Risques moyens (à surveiller)"
+    quadrant-4 "Risques faibles (acceptables)"
+    R1: [0.85, 0.90]
+    R2: [0.90, 0.85]
+    R9: [0.95, 0.95]
+    R3: [0.80, 0.70]
+    R4: [0.65, 0.80]
+    R5: [0.75, 0.75]
+    R6: [0.60, 0.70]
+    R7: [0.55, 0.75]
+    R8: [0.60, 0.65]
+    R10: [0.30, 0.40]
 ```
 
 ---
@@ -54,6 +68,38 @@ FAIBLE (1-5) :      (aucun)
 ## 3. Analyse RGPD Approfondie
 
 ### 3.1 Licéité du traitement (Art. 6 + Art. 9)
+
+**Arbre de décision des bases légales :**
+
+```mermaid
+flowchart TD
+    A[Données de santé<br>transférées via SCOUT] --> B{Base légale<br>identifiée ?}
+    
+    B -->|Non| C[❌ Aucune base légale<br>= Traitement illicite]
+    B -->|Oui| D{Quelle base ?}
+    
+    D -->|Consentement<br>explicite art.9.2.a| E[Rapport asymétrique<br>employeur/mutualité]
+    E --> F[❌ Consentement non valable<br>pour responsable de traitement]
+    
+    D -->|Intérêt public / santé<br>art.9.2.h,i| G[SCOUT est un agent<br>généraliste, pas médical]
+    G --> H[❌ Pas applicable]
+    
+    D -->|Obligation légale<br>art.9.2.b| I[Aucune loi n'impose<br>l'usage d'un agent IA]
+    I --> J[❌ Pas applicable]
+    
+    D -->|Exécution contrat<br>art.6.1.b| K[L'agent n'est pas<br>nécessaire aux soins]
+    K --> L[❌ Pas applicable]
+    
+    C --> M[🛑 TRAITEMENT NON CONFORME]
+    F --> M
+    H --> M
+    J --> M
+    L --> M
+    
+    style M fill:#ff4444,color:#fff,stroke:#cc0000
+    style C fill:#ff8888,color:#000
+    style A fill:#ffdddd,color:#000,stroke:#cc0000
+```
 
 Solidaris traite des **catégories particulières de données** (art. 9 RGPD) :
 - Données de santé des affiliés
@@ -84,6 +130,52 @@ Si GitHub Copilot ou les modèles externes sont hébergés hors EEE :
 - **Data Privacy Framework** (US) : Insuffisant pour des données de santé
 - **Clauses Contractuelles Types** : À vérifier avec Microsoft — ne couvrent pas les modèles tiers
 - **Décision d'adéquation** : Aucune pour les données de santé vers les US
+
+**Diagramme de flux de données SCOUT :**
+
+```mermaid
+flowchart LR
+    subgraph Poste["🖥️ Poste Solidaris"]
+        U[Utilisateur] -->|Prompt + contexte| S[SCOUT Agent]
+        S -->|Exécute| PS[PowerShell / Python]
+        S -->|Lit| FS[Fichiers locaux]
+        S -->|Interagit| NAV[Navigateur]
+    end
+    
+    subgraph Cloud["☁️ Cloud Microsoft"]
+        GH[GitHub Copilot] -->|Prompt enrichi| LLM{Modèle LLM}
+        LLM --> GPT[GPT-4o<br>Microsoft Azure]
+        LLM --> EXT[Modèles externes<br>Gemini, Opus, Claude<br>⚠️ SELON CONFIG]
+    end
+    
+    subgraph Tiers["🌐 Services tiers non maîtrisés"]
+        NPM[npm Registry]
+        PYPI[PyPI]
+        PSG[PowerShell Gallery]
+    end
+    
+    subgraph Données["🔴 Données à risque"]
+        SANTE[Données de santé<br>Art.9 RGPD]
+        INAMI[INAMI / BCSS / eHealth]
+        NISS[NISS affiliés]
+    end
+    
+    S -->|Commande packages| NPM
+    S -->|Commande packages| PYPI
+    S -->|Commande packages| PSG
+    
+    S -->|Contexte complet<br>via API HTTPS| GH
+    
+    Données -.-> FS
+    Données -.->|Transférées sans<br>minimisation| S
+    
+    EXT -.->|❌ Pas de DLP<br>sur ces canaux| S
+    
+    style Données fill:#ff4444,color:#fff,stroke:#cc0000
+    style EXT fill:#ffaa00,color:#000
+    style S fill:#d0e0ff,color:#000,stroke:#0066cc
+    style GH fill:#e0e0e0,color:#000
+```
 
 ### 3.5 Droit des personnes (Art. 12-23)
 
@@ -195,6 +287,42 @@ Solidaris, comme mutualité d'assurance obligatoire, est probablement une **enti
 
 ## 8. Scénarios de Déploiement
 
+**Arbre de décision :**
+
+```mermaid
+flowchart TD
+    START[Déploiement SCOUT<br>en mutualité ?] --> COND1{Toutes les barrières<br>levées ?}
+    
+    COND1 -->|Non| COND2{Aucune donnée réelle<br>+ réseau isolé<br>+ durée limitée ?}
+    COND1 -->|Oui| C[Déploiement Contrôlé<br>Progressif]
+    
+    COND2 -->|Non| A[Refus Pur et Simple<br>⚠️ RECOMMANDÉ]
+    COND2 -->|Oui| B[Sandbox Technique Isolée<br>Pilote restreint]
+    
+    A --> A1[Surveiller évolution<br>du produit SCOUT]
+    A --> A2[Préparer stratégie<br>Agent IA souveraine]
+    
+    B --> B1[Données synthétiques]
+    B --> B2[VLAN dédié]
+    B --> B3[5-10 postes IT]
+    B --> B4[3 mois max]
+    B --> B5[Logs intensifs]
+    
+    C --> C1{Barrières requises<br>avant déploiement}
+    C1 --> C2[☐ Contrat Microsoft<br>safe bubble exclusif]
+    C1 --> C3[☐ AIPD validée APD]
+    C1 --> C4[☐ Certification HDS]
+    C1 --> C5[☐ DLP inspection API]
+    C1 --> C6[☐ Logs SIEM temps réel]
+    C1 --> C7[☐ Formation utilisateurs]
+    C1 --> C8[☐ Politique sécurité RSSI/DPO]
+    
+    style A fill:#ff4444,color:#fff,stroke:#cc0000
+    style B fill:#ffaa00,color:#000
+    style C fill:#88cc88,color:#000
+    style START fill:#d0e0ff,color:#000,stroke:#0066cc
+```
+
 ### Scénario A : Refus Pur et Simple ⚠️ RECOMMANDÉ
 
 | Critère | Évaluation |
@@ -262,6 +390,31 @@ Tant que ces barrières ne sont pas toutes levées → **Scénario A ou B unique
 ---
 
 ## 9. Recommandations au RSSI
+
+**Calendrier de mise en œuvre :**
+
+```mermaid
+gantt
+    title Planning recommandations SCOUT
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %Y
+    
+    section Court terme (0-3 mois)
+    Refuser déploiement SCOUT           :done, a1, 2026-07-09, 7d
+    Notifier le DPO                     :a2, after a1, 5d
+    Contacter Microsoft (contrat, certif) :a3, after a2, 30d
+    Préparer position de négociation    :a4, after a3, 20d
+    
+    section Moyen terme (3-12 mois)
+    Monter pilote sandbox (Scénario B)  :b1, 2026-10-01, 90d
+    Réaliser AIPD complète              :b2, 2026-09-01, 120d
+    Analyser alternatives souveraines   :b3, 2026-10-01, 90d
+    
+    section Long terme (12+ mois)
+    Définir politique Agent IA mutualiste :c1, 2027-07-01, 120d
+    Participer travaux sectoriels       :c2, 2027-07-01, 180d
+    Porter sujet eHealth / SPF Santé    :c3, 2027-09-01, 90d
+```
 
 ### Court terme (0-3 mois)
 
