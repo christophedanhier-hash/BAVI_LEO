@@ -166,8 +166,8 @@ graph TD
     A[Windows 11 ✅] -->|Parc partiellement migré| B(Microsoft Intune ⚠️)
     B -->|Politique SCOUT à créer| C(Microsoft Frontier ❓)
     C -->|À vérifier| D(GitHub Copilot B/E ❌)
-    D -->|Licence additionnelle| E[SCOUT - Extension VSCode]
-    E -->|Consomme des crédits| F[(LLM Cloud)]
+    D -->|Licence additionnelle| E["SCOUT - Extension VSCode"]
+    E -->|Consomme des crédits| F["(LLM Cloud)"]
     
     style A fill:#27ae60,stroke:#fff,color:#fff
     style B fill:#f39c12,stroke:#fff,color:#fff
