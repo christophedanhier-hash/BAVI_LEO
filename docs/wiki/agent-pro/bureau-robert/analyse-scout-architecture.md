@@ -1,3 +1,13 @@
+---
+date: 2026-07-09
+bureau: bureau-robert
+version: v1
+modele: deepseek-chat
+tags: [analyse, scout, microsoft, architecture, si, integration, mutualite, solidaris, pro]
+statut: finalise
+type: analyse-architecture
+---
+
 # Analyse d'Architecture SI — Microsoft SCOUT
 ## Intégration potentielle dans le SI mutualiste Solidaris
 

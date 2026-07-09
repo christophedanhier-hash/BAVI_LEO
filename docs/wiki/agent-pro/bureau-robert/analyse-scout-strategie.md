@@ -1,3 +1,13 @@
+---
+date: 2026-07-09
+bureau: bureau-robert
+version: v1
+modele: deepseek-chat
+tags: [analyse, scout, microsoft, strategie, vision, marche, mutualite, solidaris, pro]
+statut: finalise
+type: analyse-strategique
+---
+
 # Analyse Stratégique — Microsoft SCOUT (Autopilot)
 ## Premier Agent IA Autonome sur Poste Windows
 

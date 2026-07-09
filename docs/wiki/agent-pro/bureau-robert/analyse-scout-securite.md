@@ -1,3 +1,13 @@
+---
+date: 2026-07-09
+bureau: bureau-robert
+version: v1
+modele: deepseek-chat
+tags: [analyse, scout, microsoft, securite, rgpd, nis2, donnees-sante, mutualite, solidaris, pro]
+statut: finalise
+type: analyse-securite
+---
+
 # Analyse Sécurité — Microsoft SCOUT en contexte Solidaris (Mutualité, Assurance Obligatoire)
 
 **Destinataires :** RSSI, DPO, Direction Sécurité  
