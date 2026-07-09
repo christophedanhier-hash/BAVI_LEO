@@ -268,6 +268,11 @@ async def editor_save(request: Request):
     except: pass
     return {"ok": True}
 
+# ── Wiki Voyages (static files, monté avant BAVI pour priorité) ──
+VOYAGES_SITE = BASE / "voyages-wiki/site"
+if VOYAGES_SITE.exists():
+    app.mount("/voyages", StaticFiles(directory=str(VOYAGES_SITE), html=True), name="voyages")
+
 if BAVI_SITE.exists():
     app.mount("/", StaticFiles(directory=str(BAVI_SITE), html=True), name="wiki")
 

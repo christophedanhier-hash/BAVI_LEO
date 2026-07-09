@@ -5,13 +5,13 @@
 </style>
 
 <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
-  <button onclick="loadPack('')" id="btn-all" style="padding:4px 12px;background:var(--md-accent-fg-color);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.75rem">🌐 Tous</button>
-  <button onclick="loadPack('michel')" style="padding:4px 12px;background:var(--md-code-bg);color:#a78bfa;border:1px solid #a78bfa;border-radius:4px;cursor:pointer;font-size:.75rem">🔧 Michel</button>
-  <button onclick="loadPack('sylvia')" style="padding:4px 12px;background:var(--md-code-bg);color:#06b6d4;border:1px solid #06b6d4;border-radius:4px;cursor:pointer;font-size:.75rem">🧭 Sylvia</button>
-  <button onclick="loadPack('leo')" style="padding:4px 12px;background:var(--md-code-bg);color:#818cf8;border:1px solid #818cf8;border-radius:4px;cursor:pointer;font-size:.75rem">🤖 Léo</button>
-  <button onclick="loadPack('gerard')" style="padding:4px 12px;background:var(--md-code-bg);color:#f97316;border:1px solid #f97316;border-radius:4px;cursor:pointer;font-size:.75rem">📝 Gérard</button>
-  <button onclick="loadPack('virginie')" style="padding:4px 12px;background:var(--md-code-bg);color:#ec4899;border:1px solid #ec4899;border-radius:4px;cursor:pointer;font-size:.75rem">🩺 Virginie</button>
-  <button onclick="loadPack('emile')" style="padding:4px 12px;background:var(--md-code-bg);color:#f59e0b;border:1px solid #f59e0b;border-radius:4px;cursor:pointer;font-size:.75rem">🎓 Émile</button>
+  <button onclick="loadPack('')" id="btn-all" style="padding:4px 12px;background:var(--md-accent-fg-color);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.7rem">🌐 Tous</button>
+  <button onclick="loadPack('michel')" style="padding:4px 12px;background:var(--md-code-bg);color:#a78bfa;border:1px solid #a78bfa;border-radius:4px;cursor:pointer;font-size:.7rem">🔧 Michel</button>
+  <button onclick="loadPack('sylvia')" style="padding:4px 12px;background:var(--md-code-bg);color:#06b6d4;border:1px solid #06b6d4;border-radius:4px;cursor:pointer;font-size:.7rem">🧭 Sylvia</button>
+  <button onclick="loadPack('leo')" style="padding:4px 12px;background:var(--md-code-bg);color:#818cf8;border:1px solid #818cf8;border-radius:4px;cursor:pointer;font-size:.7rem">🤖 Léo</button>
+  <button onclick="loadPack('gerard')" style="padding:4px 12px;background:var(--md-code-bg);color:#f97316;border:1px solid #f97316;border-radius:4px;cursor:pointer;font-size:.7rem">📝 Gérard</button>
+  <button onclick="loadPack('virginie')" style="padding:4px 12px;background:var(--md-code-bg);color:#ec4899;border:1px solid #ec4899;border-radius:4px;cursor:pointer;font-size:.7rem">🩺 Virginie</button>
+  <button onclick="loadPack('emile')" style="padding:4px 12px;background:var(--md-code-bg);color:#f59e0b;border:1px solid #f59e0b;border-radius:4px;cursor:pointer;font-size:.7rem">🎓 Émile</button>
 </div>
 
 <div id="pack-container" style="background:var(--md-code-bg);border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;height:520px;position:relative">
@@ -55,8 +55,8 @@ async function loadPack(bureau){
 
     const children=Object.entries(groups).map(([bureau,g])=>{
       const sub=[];
-      if(g.active.length)sub.push({name:'Actif',color:g.color,archived:false,children:g.active.map(a=>({name:a.name,value:1,color:a.color,archived:false}))});
-      if(g.archived.length)sub.push({name:'Archives',color:g.color,archived:true,children:g.archived.map(a=>({name:a.name,value:1,color:a.color,archived:true}))});
+      if(g.active.length)sub.push({name:'Actif',color:g.color,archived:false,children:g.active.map(a=>({...a,value:1}))});
+      if(g.archived.length)sub.push({name:'Archives',color:g.color,archived:true,children:g.archived.map(a=>({...a,value:1}))});
       return {name:bureau,color:g.color,children:sub};
     });
 
@@ -97,9 +97,9 @@ async function loadPack(bureau){
         if(meta.date)parts.push(`📅 ${meta.date}`);
         if(meta.version)parts.push(`v${meta.version}`);
         if(meta.statut)parts.push(`📌 ${meta.statut}`);
-        tt.innerHTML=`<strong style="font-size:.75rem">${meta.name}</strong>`+
-          (parts.length?`<br><span style="opacity:.6;font-size:.65rem">${parts.join(' · ')}</span>`:'')+
-          `<br><span style="font-size:.65rem;opacity:.7">${bureau} · ${meta.archived?'📦 Archivé':'🟢 Actif'}</span>`+
+        tt.innerHTML=`<strong style="font-size:.7rem">${meta.name}</strong>`+
+          (parts.length?`<br><span style="opacity:.6;font-size:.6rem">${parts.join(' · ')}</span>`:'')+
+          `<br><span style="font-size:.6rem;opacity:.7">${bureau} · ${meta.archived?'📦 Archivé':'🟢 Actif'}</span>`+
           (meta.tags?`<br><span style="font-size:.6rem;opacity:.4">🏷️ ${meta.tags}</span>`:'');
         tt.style.display='block';
       })
