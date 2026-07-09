@@ -17,6 +17,7 @@
 <div id="pack-container" style="background:var(--md-code-bg);border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;height:520px;position:relative">
   <div id="pack-msg" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--md-default-fg-color--light)">Chargement...</div>
 </div>
+<div id="graph-tooltip" style="display:none;position:fixed;background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:6px;padding:6px 10px;font-size:.7rem;z-index:999;pointer-events:none;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,.5)"></div>
 <div id="pack-info" style="text-align:center;font-size:.7rem;color:var(--md-default-fg-color--light);margin-top:4px"></div>
 <div style="display:flex;justify-content:center;gap:16px;margin-top:6px;font-size:.7rem;color:var(--md-default-fg-color--light)">
   <span>🟢 Actif</span><span>⚫ Archivé</span><span>◌ Bureau</span>
@@ -88,7 +89,26 @@ async function loadPack(bureau){
       .attr('fill',d=>d.data.color)
       .attr('opacity',d=>d.data.archived?0.3:0.85)
       .attr('stroke','#1e293b').attr('stroke-width',0.5)
-      .append('title').text(d=>(d.data.archived?'[Archivé] ':'')+d.data.name);
+      .on('mouseenter',(e,d)=>{
+        const tt=document.getElementById('graph-tooltip');
+        const bureau=d.ancestors().find(a=>a.depth===1)?.data?.name||'?';
+        const meta=d.data;
+        const parts=[];
+        if(meta.date)parts.push(`📅 ${meta.date}`);
+        if(meta.version)parts.push(`v${meta.version}`);
+        if(meta.statut)parts.push(`📌 ${meta.statut}`);
+        tt.innerHTML=`<strong style="font-size:.75rem">${meta.name}</strong>`+
+          (parts.length?`<br><span style="opacity:.6;font-size:.65rem">${parts.join(' · ')}</span>`:'')+
+          `<br><span style="font-size:.65rem;opacity:.7">${bureau} · ${meta.archived?'📦 Archivé':'🟢 Actif'}</span>`+
+          (meta.tags?`<br><span style="font-size:.6rem;opacity:.4">🏷️ ${meta.tags}</span>`:'');
+        tt.style.display='block';
+      })
+      .on('mousemove',(e)=>{
+        const tt=document.getElementById('graph-tooltip');
+        tt.style.left=Math.min(e.clientX+12,window.innerWidth-200)+'px';
+        tt.style.top=(e.clientY-60)+'px';
+      })
+      .on('mouseleave',()=>{document.getElementById('graph-tooltip').style.display='none';});
 
     // Analyse labels (all circles with r > 8)
     g.selectAll('text.alabel').data(nodes.filter(d=>d.depth===3)).join('text')

@@ -174,7 +174,7 @@ async def api_graph(bureau: str = ""):
     for md_file in docs_dir.rglob("*.md"):
         rel = str(md_file.relative_to(docs_dir))
         parts = rel.replace(".md","").split("/")
-        name = parts[-1].replace("-"," ").title()[:25]
+        name = parts[-1].replace("-"," ").title()[:40]
         # Déterminer le bureau
         bureau_id = ""
         for i, p in enumerate(parts):
@@ -188,7 +188,24 @@ async def api_graph(bureau: str = ""):
         is_archived = "/archive/" in rel
         if nid not in nodes:
             color = colors.get(bureau_id,"#64748b")
-            nodes[nid] = {"id":nid,"name":name,"bureau":bureau_id,"color":color,"archived":is_archived}
+            # Parse frontmatter for metadata
+            meta = {"date":"","version":"","tags":"","statut":""}
+            try:
+                content = md_file.read_text()
+                if content.startswith("---"):
+                    end = content.find("---", 3)
+                    if end > 0:
+                        fm = content[3:end]
+                        for line in fm.split("\n"):
+                            line = line.strip()
+                            if line.startswith("date:"): meta["date"] = line.split(":",1)[1].strip()
+                            elif line.startswith("version:"): meta["version"] = line.split(":",1)[1].strip()
+                            elif line.startswith("tags:"):
+                                tags = line.split(":",1)[1].strip()
+                                meta["tags"] = tags.replace("[","").replace("]","").replace('"','').replace("'","")[:60]
+                            elif line.startswith("statut:"): meta["statut"] = line.split(":",1)[1].strip()
+            except: pass
+            nodes[nid] = {"id":nid,"name":name,"bureau":bureau_id,"color":color,"archived":is_archived,**meta}
         nodes[nid]["analyses"] = nodes[nid].get("analyses",0) + 1
         try:
             content = md_file.read_text()
