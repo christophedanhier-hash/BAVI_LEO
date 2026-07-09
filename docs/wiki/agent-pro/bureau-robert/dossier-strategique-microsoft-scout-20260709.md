@@ -425,6 +425,7 @@ Les analyses complètes des 4 experts sont intégrées ci-dessous sous forme d'a
 **Positionnement concurrentiel :** SCOUT est le premier agent OS autonome en production (pas en beta), mais verrouillage Microsoft maximal. Avantage : profondeur d'intégration Windows. Inconvénient : dépendance totale à la stack Microsoft Intune/Frontier/GitHub.
 
 **Timing d'adoption :**
+
 | Période | Phase | Version SCOUT | Public |
 |:--------|:------|:-------------|:-------|
 | H2 2026 | Early Adopter | v1 (buggy, setup lourd) | Tech, startups |
@@ -446,6 +447,7 @@ Les analyses complètes des 4 experts sont intégrées ci-dessous sous forme d'a
 Windows 11 → Microsoft Intune → Microsoft Frontier → GitHub Copilot → SCOUT
 
 **Prérequis techniques :**
+
 | Composant | Statut Solidaris |
 |:----------|:----------------|
 | Windows 11 | ✅ Parc majoritaire |
@@ -454,6 +456,7 @@ Windows 11 → Microsoft Intune → Microsoft Frontier → GitHub Copilot → SC
 | GitHub Copilot | ❌ Licence additionnelle nécessaire |
 
 **Scénarios de déploiement :**
+
 | Scénario | Périmètre | Recommandation |
 |:---------|:---------|:--------------|
 | A — Sandbox contrôlé | 10-20 users pilotes | ✅ Recommandé |
@@ -469,6 +472,7 @@ Windows 11 → Microsoft Intune → Microsoft Frontier → GitHub Copilot → SC
 *Extrait de l'analyse de l'Expert #2 — Sécurité & RGPD*
 
 **Matrice des 10 risques :**
+
 | # | Risque | Score |
 |:-:|:-------|:----:|
 | R9 | Consentement insuffisant (art. 9 RGPD) | **25 🔴** |
@@ -492,6 +496,7 @@ Windows 11 → Microsoft Intune → Microsoft Frontier → GitHub Copilot → SC
 *Extrait de l'analyse de l'Expert #6 — Projet & Programme*
 
 **Scénarios :**
+
 | Scénario | Périmètre | Coût an 1 | Délai |
 |:---------|:---------|:---------:|:----:|
 | A — POC technique | 5-10 users, données synthétiques | ~$3-5k | 4-6 sem |
@@ -499,6 +504,7 @@ Windows 11 → Microsoft Intune → Microsoft Frontier → GitHub Copilot → SC
 | C — Généralisation | 1 000+ users | ~$700k/an | 18 mois |
 
 **Budget estimé (Pilote 200 users) :**
+
 | Poste | Coût/an |
 |:------|:-------:|
 | Licences GitHub Copilot Enterprise | $93 600 |
