@@ -347,7 +347,7 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    subgraph SCENARIO_A["Scénario A : « Sandbox contrôlé » (Recommandé pour phase pilote)"]
+    subgraph SCENARIO_A["Scénario A : " Sandbox contrôlé " (Recommandé pour phase pilote)"]
         A1["Périmètre : 10-20 utilisateurs pilotes (DSI, IT, experts)"]
         A2["Postes : Windows 11, VM ou postes dédiés (pas de production)"]
         A3["SCOUT activé : Oui"]
@@ -360,7 +360,7 @@ flowchart TB
         A10["Journalisation : Complète (Event Viewer + Sentinel)"]
     end
 
-    subgraph SCENARIO_B["Scénario B : « Usages métier ciblés » (Mise en production prudente)"]
+    subgraph SCENARIO_B["Scénario B : " Usages métier ciblés " (Mise en production prudente)"]
         B1["Périmètre : Par service (déploiement progressif)"]
         B2["Postes : Windows 11 standard, politique Intune dédiée"]
         B3["Usages : Production de documents M365 uniquement"]
@@ -371,7 +371,7 @@ flowchart TB
         B8["PowerShell : Scripts signés + approuvés"]
     end
 
-    subgraph SCENARIO_C["Scénario C : « Full open » (Déconseillé à ce stade)"]
+    subgraph SCENARIO_C["Scénario C : " Full open " (Déconseillé à ce stade)"]
         C1["Périmètre : Tout le parc"]
         C2["Toutes capacités activées"]
         C3["❌ Risques : fuite de données, exécution non maîtrisée,<br/>non-conformité RGPD, impossibilité de tracer"]

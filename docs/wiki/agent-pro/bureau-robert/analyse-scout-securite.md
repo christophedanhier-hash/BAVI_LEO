@@ -73,21 +73,21 @@ quadrantChart
 
 ```mermaid
 flowchart TD
-    A[Données de santé<br>transférées via SCOUT] --> B{Base légale<br>identifiée ?}
+    A[Données de santé<br/>transférées via SCOUT] --> B{Base légale<br/>identifiée ?}
     
-    B -->|Non| C[❌ Aucune base légale<br>= Traitement illicite]
+    B -->|Non| C[❌ Aucune base légale<br/>= Traitement illicite]
     B -->|Oui| D{Quelle base ?}
     
-    D -->|Consentement<br>explicite art.9.2.a| E[Rapport asymétrique<br>employeur/mutualité]
-    E --> F[❌ Consentement non valable<br>pour responsable de traitement]
+    D -->|Consentement<br/>explicite art.9.2.a| E[Rapport asymétrique<br/>employeur/mutualité]
+    E --> F[❌ Consentement non valable<br/>pour responsable de traitement]
     
-    D -->|Intérêt public / santé<br>art.9.2.h,i| G[SCOUT est un agent<br>généraliste, pas médical]
+    D -->|Intérêt public / santé<br/>art.9.2.h,i| G[SCOUT est un agent<br/>généraliste, pas médical]
     G --> H[❌ Pas applicable]
     
-    D -->|Obligation légale<br>art.9.2.b| I[Aucune loi n'impose<br>l'usage d'un agent IA]
+    D -->|Obligation légale<br/>art.9.2.b| I[Aucune loi n'impose<br/>l'usage d'un agent IA]
     I --> J[❌ Pas applicable]
     
-    D -->|Exécution contrat<br>art.6.1.b| K[L'agent n'est pas<br>nécessaire aux soins]
+    D -->|Exécution contrat<br/>art.6.1.b| K[L'agent n'est pas<br/>nécessaire aux soins]
     K --> L[❌ Pas applicable]
     
     C --> M[🛑 TRAITEMENT NON CONFORME]
@@ -144,8 +144,8 @@ flowchart LR
     
     subgraph Cloud["☁️ Cloud Microsoft"]
         GH[GitHub Copilot] -->|Prompt enrichi| LLM{Modèle LLM}
-        LLM --> GPT[GPT-4o<br>Microsoft Azure]
-        LLM --> EXT[Modèles externes<br>Gemini, Opus, Claude<br>⚠️ SELON CONFIG]
+        LLM --> GPT[GPT-4o<br/>Microsoft Azure]
+        LLM --> EXT[Modèles externes<br/>Gemini, Opus, Claude<br/>⚠️ SELON CONFIG]
     end
     
     subgraph Tiers["🌐 Services tiers non maîtrisés"]
@@ -155,7 +155,7 @@ flowchart LR
     end
     
     subgraph Données["🔴 Données à risque"]
-        SANTE[Données de santé<br>Art.9 RGPD]
+        SANTE[Données de santé<br/>Art.9 RGPD]
         INAMI[INAMI / BCSS / eHealth]
         NISS[NISS affiliés]
     end
@@ -164,12 +164,12 @@ flowchart LR
     S -->|Commande packages| PYPI
     S -->|Commande packages| PSG
     
-    S -->|Contexte complet<br>via API HTTPS| GH
+    S -->|Contexte complet<br/>via API HTTPS| GH
     
     Données -.-> FS
-    Données -.->|Transférées sans<br>minimisation| S
+    Données -.->|Transférées sans<br/>minimisation| S
     
-    EXT -.->|❌ Pas de DLP<br>sur ces canaux| S
+    EXT -.->|❌ Pas de DLP<br/>sur ces canaux| S
     
     style Données fill:#ff4444,color:#fff,stroke:#cc0000
     style EXT fill:#ffaa00,color:#000
@@ -291,16 +291,16 @@ Solidaris, comme mutualité d'assurance obligatoire, est probablement une **enti
 
 ```mermaid
 flowchart TD
-    START[Déploiement SCOUT<br>en mutualité ?] --> COND1{Toutes les barrières<br>levées ?}
+    START[Déploiement SCOUT<br/>en mutualité ?] --> COND1{Toutes les barrières<br/>levées ?}
     
-    COND1 -->|Non| COND2{Aucune donnée réelle<br>+ réseau isolé<br>+ durée limitée ?}
-    COND1 -->|Oui| C[Déploiement Contrôlé<br>Progressif]
+    COND1 -->|Non| COND2{Aucune donnée réelle<br/>+ réseau isolé<br/>+ durée limitée ?}
+    COND1 -->|Oui| C[Déploiement Contrôlé<br/>Progressif]
     
-    COND2 -->|Non| A[Refus Pur et Simple<br>⚠️ RECOMMANDÉ]
-    COND2 -->|Oui| B[Sandbox Technique Isolée<br>Pilote restreint]
+    COND2 -->|Non| A[Refus Pur et Simple<br/>⚠️ RECOMMANDÉ]
+    COND2 -->|Oui| B[Sandbox Technique Isolée<br/>Pilote restreint]
     
-    A --> A1[Surveiller évolution<br>du produit SCOUT]
-    A --> A2[Préparer stratégie<br>Agent IA souveraine]
+    A --> A1[Surveiller évolution<br/>du produit SCOUT]
+    A --> A2[Préparer stratégie<br/>Agent IA souveraine]
     
     B --> B1[Données synthétiques]
     B --> B2[VLAN dédié]
@@ -308,8 +308,8 @@ flowchart TD
     B --> B4[3 mois max]
     B --> B5[Logs intensifs]
     
-    C --> C1{Barrières requises<br>avant déploiement}
-    C1 --> C2[☐ Contrat Microsoft<br>safe bubble exclusif]
+    C --> C1{Barrières requises<br/>avant déploiement}
+    C1 --> C2[☐ Contrat Microsoft<br/>safe bubble exclusif]
     C1 --> C3[☐ AIPD validée APD]
     C1 --> C4[☐ Certification HDS]
     C1 --> C5[☐ DLP inspection API]
