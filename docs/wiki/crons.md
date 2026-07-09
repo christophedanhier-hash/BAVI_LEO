@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 09/07/2026 à 18:00**
+> **Généré automatiquement le 10/07/2026 à 00:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (28 jobs)
 <!-- AUTO:END header -->
 
@@ -23,7 +23,7 @@
 | 2 | 💾 LEO Backup quotidien → GDrive (script) | `0 6 * * *` | script | ✅ |
 | 3 | 📊 Synthèse Hebdomadaire LEO | `0 20 * * 0` | script | ⚠️ |
 | 4 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
-| 5 | 📋 doc-crons-sync | `0 */6 * * *` | script | ❌ |
+| 5 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
 | 6 | 📓 vault-bavi-daily-journal | `10 23 * * *` | LLM | ✅ |
 | 7 | 📓 vault-daily-journal (vault-leo) | `0 23 * * *` | LLM | ✅ |
 | 8 | 📓 vault-default-daily-journal | `5 23 * * *` | LLM | ✅ |
@@ -34,7 +34,7 @@
 | 13 | 📧 Email Classifier — rule-based (inbox zero) | `*/30 * * * *` | script | ✅ |
 | 14 | 🔄 Auto-commit wikis (toutes les heures) | `0 * * * *` | script | ✅ |
 | 15 | 🔄 Déploiement auto tofdan.be | `5 * * * *` | script | ✅ |
-| 16 | 🔄 Rebuild Wiki BAVI local | `10 * * * *` | script | ✅ |
+| 16 | 🔄 Rebuild Wiki BAVI local | `*/15 * * * *` | script | ✅ |
 | 17 | 🔄 Rebuild Wiki Voyages local | `15 * * * *` | script | ✅ |
 | 18 | 🔄 Refresh Google Tokens (50min) | `*/50 * * * *` | script | ✅ |
 | 19 | 🔄 drive-sync | `0 * * * *` | script | ✅ |
@@ -60,4 +60,4 @@
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 
-_Généré automatiquement le 09/07/2026 à 18:00_
+_Généré automatiquement le 10/07/2026 à 00:00_
