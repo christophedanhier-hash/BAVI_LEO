@@ -45,7 +45,8 @@ experts:
 6. [Projet & Programme : coûts, planning, TCO](#6-projet--programme)
 7. [Matrice décisionnelle consolidée](#7-matrice-décisionnelle-consolidée)
 8. [Recommandations par horizon](#8-recommandations-par-horizon)
-9. [Annexes & analyses détaillées](#9-annexes)
+9. [Mise à jour — Build 2026](#9-mise-à-jour--microsoft-build-2026-juin-2026)
+10. [Annexes](#10-annexes)
 
 ---
 
@@ -352,9 +353,62 @@ flowchart TD
 
 ---
 
-## 9. Annexes
+## 9. Mise à jour — Microsoft Build 2026 (juin 2026)
 
-### 9.1 Analyses détaillées par expert
+La conférence Microsoft Build 2026 (San Francisco, 2-3 juin 2026) apporte des éclaircissements majeurs sur la stratégie agent de Microsoft, qui complètent et précisent l'analyse SCOUT.
+
+### 9.1 Nouveaux modèles MAI (Microsoft AI)
+
+Microsoft a annoncé **9 nouveaux modèles maison** entraînés from scratch sur données sous licence commerciale (sans distillation) :
+
+| Modèle | Type | Usage | Pertinence Solidaris |
+|:-------|:-----|:------|:--------------------:|
+| **MI Synthing** | Raisonnement (35B params) | Tâches complexes, alternative à Sonnet 4 | 🟢 Forte — coût réduit |
+| **MI G 2.5** | Génération d'images | PowerPoint, design | 🟡 Secondaire |
+| **MI Transcribe 1.5** | Transcription (43 langues) | Multilinguisme | 🟡 Selon besoin |
+| **MI Voice** | Clonage vocal | Voice Live, avatars | 🟡 Innovation |
+| **MI Code** | Code (optimisé GitHub) | Développement | 🟢 DSI |
+
+> **Impact :** Microsoft veut sa propre famille de modèles, indépendante d'OpenAI et Anthropic. Pour Solidaris, cela signifie **plus d'options souveraines** (données qui restent dans le tenant Microsoft).
+
+### 9.2 Microsoft Agent Platform (MAP)
+
+MAP est une **plateforme unifiée open source** qui couvre tout le cycle de vie des agents :
+- **Code** : GitHub Copilot + VS Code
+- **Framework** : MAF (Microsoft Agent Framework) — open source, Python/.NET
+- **Run** : Foundry (hosted agents en sandbox sécurisée — GA juillet 2026)
+- **Contexte** : Microsoft IQ (Work IQ, Fabric IQ, Web IQ, Fundr IQ)
+- **Gouvernance** : Agent 365 (Entra + Defender + Purview unifiés)
+- **Déploiement** : M365 + Windows
+
+> **MAP change la donne :** SCOUT n'est plus un produit isolé — c'est le premier cas concret d'une plateforme agent unifiée Microsoft.
+
+### 9.3 Identité gérée pour les agents
+
+Les agents autonomes ont désormais **leur propre identité Entra ID** :
+- Auditables comme un utilisateur
+- Gouvernance via Conditional Access
+- DLP/Purview appliqué automatiquement
+- Agent Registry détecte les agents fantômes
+
+> **🔴 Impact RGPD :** L'identité gérée améliore la traçabilité mais ne résout PAS le problème de transfert de données de santé vers des LLMs.
+
+### 9.4 Implications pour l'analyse SCOUT
+
+| Info nouvelle | Impact sur le verdict |
+|:--------------|:---------------------|
+| MAP + MAF open source | SCOUT devient un composant d'une plateforme plus large |
+| Modèles MAI souverains | Réduit le risque d'exfiltration vers LLMs tiers |
+| Identité gérée | Améliore l'auditabilité mais ne résout pas RGPD |
+| Agent Registry | Réduit le risque d'agents fantômes |
+
+> **Conclusion mise à jour :** Build 2026 confirme et renforce l'analyse initiale. Le risque RGPD reste le principal bloqueur. Mais MAP + modèles MAI offrent une perspective plus structurée.
+
+---
+
+## 10. Annexes
+
+### 10.1 Analyses détaillées par expert
 
 Les 4 analyses complètes sont archivées dans le wiki BAVI LEO :
 
@@ -365,7 +419,7 @@ Les 4 analyses complètes sont archivées dans le wiki BAVI LEO :
 | 🛡️ Sécurité & RGPD | `analyse-scout-securite.md` | Voir wiki |
 | 📋 Projet & Programme | `analyse-scout-deploiement.md` | Voir wiki |
 
-### 9.2 Références
+### 10.2 Références
 
 - Vidéo source : [Microsoft Scout Hands-On — Shane Young](https://youtu.be/PoSWJl3xWrI)
 - PowerApps911 : https://www.powerapps911.com
@@ -373,7 +427,7 @@ Les 4 analyses complètes sont archivées dans le wiki BAVI LEO :
 - NIS2 Directive (EU) 2022/2555
 - Skill BAVI associé : `bavi-leo/bureau-robert`
 
-### 9.3 Prochaines étapes proposées
+### 10.3 Prochaines étapes proposées
 
 1. Présenter ce dossier au **Comité de Direction** (validation de l'approche POC)
 2. Solliciter l'avis du **DPO** sur la question des données de santé

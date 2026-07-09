@@ -451,7 +451,146 @@ gantt
 
 ---
 
-## 10. Synthèse Décisionnelle
+## 11. Mise à jour — Microsoft Build 2026
+
+*Date de mise à jour : 9 juillet 2026*
+
+Lors de la conférence Microsoft Build 2026 (mai 2026), Microsoft a présenté un ensemble de nouvelles fonctionnalités et annonces liées à la sécurité des agents IA qui impactent directement l'analyse de SCOUT en contexte Solidaris.
+
+### 11.1 Microsoft Agent Platform (MAP) — Gouvernance unifiée
+
+Microsoft a annoncé **Microsoft Agent Platform (MAP)** , une plateforme open source unifiée pour gouverner les agents. Pour Solidaris, cela représente une évolution potentiellement positive :
+
+- **Standardisation** : un cadre unique pour la sécurité des agents, au lieu de solutions propriétaires disparates
+- **Ouverture** : plateforme open source, permettant l'audit par la communauté et les RSSI
+- **Orchestration** : possibilité de centraliser les politiques de sécurité applicables à tous les agents Microsoft
+
+**Analyse Solidaris :** MAP est une avancée architecturale, mais elle n'adresse pas le problème fondamental du transfert de données de santé vers le cloud Microsoft. Une plateforme de gouvernance ne rend pas un traitement illicite soudainement licite.
+
+### 11.2 Identité gérée pour chaque agent (Entra ID)
+
+Microsoft introduit la notion d'**identité gérée** pour chaque agent, avec :
+
+- Un **compte Entra ID dédié** par agent → auditabilité comparable à celle d'un utilisateur humain
+- Application automatique de **Conditional Access** (MFA, device compliance, localisation)
+- **DLP/Purview** appliqué automatiquement sur les flux de l'agent
+- Traçabilité complète dans les logs Entra ID (sign-ins, actions, accès aux ressources)
+
+**Analyse Solidaris :** C'est un progrès significatif en matière d'auditabilité. Pouvoir tracer chaque action d'un agent comme on trace un utilisateur (via Entra ID) répond partiellement au risque R6 (traçabilité). Cependant, cela ne résout PAS le problème RGPD du transfert de données de santé :
+
+- L'identité gérée améliore l'auditabilité mais ne résout PAS le problème RGPD du transfert de données de santé — les données partent toujours vers le cloud Microsoft
+- L'application de DLP/Purview sur les flux agents est positive, mais le DLP Microsoft n'est pas calibré pour les catégories particulières de données (art. 9 RGPD) dans un contexte d'agent IA
+- Conditional Access ne peut pas distinguer une interaction légitime d'une exfiltration via prompt engineering
+
+### 11.3 Agent 365 — Plan de contrôle sécurité unifié
+
+**Agent 365** est un nouveau service de sécurité qui unifie **Entra ID + Defender + Purview** pour :
+
+- Sécuriser, gouverner et gérer le cycle de vie des agents
+- Détection des comportements anormaux des agents (UEBA adapté aux agents)
+- Rapports de sécurité centralisés dans le portail Defender
+
+**Analyse Solidaris :** Agent 365 est une brique manquante dans l'écosystème Microsoft. Elle adresse le risque de shadow IT des agents (un agent non autorisé qui s'exécute). Cependant, le service est nouveau et immature — aucun retour d'expérience sectoriel (santé, mutualité) disponible.
+
+### 11.4 Agent Registry — Découverte des agents fantômes
+
+Microsoft a présenté **Agent Registry**, un agent dédié à la découverte des **agents fantômes** (agents non autorisés publiant des endpoints sur les postes de travail).
+
+**Analyse Solidaris :** Utile dans un environnement mutualiste où le shadow IT est un risque réel (agents non approuvés installés par des utilisateurs). Cela comble partiellement le risque R7 (intégrité des traitements mutualistes).
+
+### 11.5 Code MD — 100 agents collaboratifs pour la sécurité offensive
+
+**Code MD** est une initiative de Microsoft utilisant **100 agents collaboratifs** pour :
+
+- Trouver des failles de sécurité en mode red team automatisé
+- Générer des rapports directement dans le portail Defender
+- Tester en continu la surface d'attaque
+
+**Analyse Solidaris :** Peut-être pertinent pour les équipes Sécurité de Solidaris dans le cadre de tests d'intrusion continus, mais hors scope pour l'analyse de SCOUT comme outil utilisateur.
+
+### 11.6 DLP natif sur les flux agents (Purview)
+
+Microsoft renforce **Purview** avec un DLP natif capable d'inspecter les flux agents :
+
+- Bloquer l'envoi de données sensibles (patterns PII, IBAN, NISS) via les API agents
+- Appliquer des politiques DLP automatiquement sur les canaux agent → LLM
+- Alertes en temps réel dans le portail Purview
+
+**Analyse Solidaris :**
+✅ **Points positifs :**
+- Possibilité de détecter l'envoi de NISS, numéros INAMI, données BCSS vers le LLM
+- Blocage en temps réel des flux non conformes
+- Intégration avec l'existant Purview Solidaris (si déployé)
+
+❌ **Limites :**
+- Le DLP Purview inspecte le trafic vers le LLM mais ne peut pas bloquer l'exfiltration via des canaux indirects (agent qui écrit dans un fichier, puis upload manuel)
+- La configuration des patterns DLP pour les données de santé mutualistes (NISS, INAMI, codes eHealth) nécessite un travail important et une maintenance continue
+- Faux positifs potentiellement élevés dans un environnement qui manipule massivement ces données
+- Le DLP ne résout pas le problème de base légale — même avec DLP, le transfert reste juridiquement non fondé
+
+### 11.7 Hosted Agents en sandbox sécurisée (GA juillet 2026)
+
+Microsoft annonce la **disponibilité générale** (GA juillet 2026) des **Hosted Agents** :
+
+- Exécution en sandbox sécurisée avec compute/mémoire/filesystem partagés
+- Isolation des agents par tenant
+- Pas d'accès direct au poste utilisateur
+- Facturation à l'usage
+
+**Analyse Solidaris :** Pour Solidaris, les Hosted Agents sont potentiellement **plus sécurisés** que SCOUT (agent desktop). Une architecture où l'agent s'exécute dans une sandbox cloud et ne peut pas accéder directement au poste limite le risque R2 (exécution de code arbitraire local). Cela pourrait être une alternative à SCOUT desktop pour certains cas d'usage, mais les données de santé transiteraient toujours vers le cloud Microsoft.
+
+### 11.8 Modèles MAI — 9 modèles maison Microsoft sous licence commerciale
+
+Microsoft présente **MAI (Microsoft AI)** , une famille de **9 modèles maison** :
+
+- Entraînés par Microsoft, disponibles sous licence commerciale
+- **Sans distillation** de modèles concurrents (OpenAI, Google, Meta)
+- Les **données restent dans le tenant Microsoft** — réduction du risque d'exfiltration vers LLMs tiers
+- Modèles spécialisés : code, raisonnement, vision, analyse de documents
+
+**Analyse Solidaris :**
+✅ **Points positifs :**
+- Les données ne quittent pas le tenant Microsoft → réduction du périmètre d'exfiltration
+- Licence commerciale → couverture juridique (indemnisations, limitations de responsabilité)
+- 9 modèles spécialisés permettent de choisir le modèle adapté à la tâche sans sur-exposition
+
+❌ **Limites :**
+- Les données restent dans le tenant Microsoft, ce qui ne résout pas le transfert hors EEE si le tenant est hébergé aux US
+- Aucune garantie que les modèles spécialisés ne seront pas entraînés/réentraînés avec les données du tenant
+- La « réduction du risque d'exfiltration vers LLMs tiers » est un argument commercial — le risque principal reste le transfert vers Microsoft lui-même
+
+### 11.9 « Sécurité intégrée, pas ajoutée » — Message officiel Microsoft
+
+Microsoft communique sur le principe de **sécurité intégrée dès la conception** pour ses agents.
+
+**Analyse Solidaris :** Un message politique attendu. Dans les faits, SCOUT reste un agent desktop avec exécution de code local, packages externes, et transfert vers le cloud. Les annonces Build 2026 améliorent le **périmètre de sécurité** mais ne changent pas l'**architecture fondamentale** qui pose problème pour les données de santé mutualistes.
+
+### Synthèse — Impact des annonces Build 2026 sur l'analyse SCOUT
+
+| Risque | Impact Build 2026 | Appréciation |
+|--------|-------------------|-------------|
+| **R1** — Exfiltration vers modèles tiers | ⚠️ Réduit avec MAI (modèles maison), mais pas éliminé | Amélioration partielle |
+| **R2** — Exécution de code arbitraire local | ➡️ Peu d'impact direct (Hosted Agents limitent mais c'est une alternative, pas un patch) | Stable |
+| **R3** — Supply chain packages | ➡️ Non adressé par les annonces | Stable |
+| **R4** — Interaction navigateur | ➡️ Non adressé | Stable |
+| **R5** — Minimisation des données | ➡️ Non adressé (DLP aide à détecter, pas à minimiser) | Stable |
+| **R6** — Traçabilité | ✅ Amélioration significative (identité gérée Entra ID + logs) | Positif |
+| **R7** — Intégrité traitements | ⚠️ Agent Registry aide contre les agents fantômes, mais pas contre SCOUT lui-même | Légère amélioration |
+| **R8** — NIS2 sécurité réseau | ⚠️ DLP Purview sur flux agents = progrès, mais contournable | Amélioration partielle |
+| **R9** — Consentement/base légale | ➡️ **Non adressé** — aucune annonce ne résout le problème de base légale RGPD | **Aucun impact** |
+| **R10** — Dépendance Copilot | ⚠️ MAP + MAI réduisent la dépendance à GitHub Copilot | Amélioration partielle |
+
+**Conclusion Build 2026 :** Les annonces de Microsoft Build 2026 apportent des améliorations notables en matière de gouvernance (MAP), d'auditabilité (identité gérée Entra ID), de détection (Agent Registry, DLP Purview) et de sécurisation des modèles (MAI). Cependant, **le problème fondamental identifié dans cette analyse persiste** : l'absence de base légale RGPD pour le transfert de données de santé vers le cloud Microsoft, quel que soit le niveau de sécurité technique. L'identité gérée améliore l'auditabilité mais ne résout PAS le problème RGPD du transfert de données de santé.
+
+**Recommandation mise à jour :** Les annonces Build 2026 ne changent pas la recommandation de refus de déploiement de SCOUT sur le périmètre mutualiste. Elles renforcent l'intérêt de :
+- Surveiller l'évolution de MAP (gouvernance ouverte) qui pourrait, à terme, permettre une architecture agent compatible avec les exigences mutualistes
+- Tester les Hosted Agents en sandbox cloud plutôt que SCOUT desktop (risque R2 réduit)
+- Négocier avec Microsoft un contrat incluant les modèles MAI exclusivement (pas de modèles tiers) + garantie contractuelle de non-réutilisation des données
+- Préparer une AIPD intégrant ces nouvelles capacités techniques dans l'évaluation du risque
+
+---
+
+## 12. Synthèse Décisionnelle
 
 | Décision | Faisabilité technique | Conformité RGPD | Conformité NIS2 | Sécurité | Coût | Recommandation |
 |----------|----------------------|-----------------|-----------------|----------|------|---------------|
@@ -487,3 +626,47 @@ gantt
 | Safe bubble | Périmètre de confiance Microsoft (Azure + Microsoft 365) |
 | NISS | Numéro d'Identification de la Sécurité Sociale |
 | APD | Autorité de Protection des Données (belge) |
+
+
+---
+
+## 10. Mise à jour — Microsoft Build 2026 (juin 2026)
+
+Les annonces de Build 2026 apportent des évolutions notables en matière de sécurité des agents :
+
+### 10.1 Identité gérée pour les agents
+
+Chaque agent autonome a désormais **sa propre identité Entra ID** :
+- Auditable comme un utilisateur (logs, traces)
+- Gouvernance via Conditional Access et MFA
+- DLP/Purview appliqué automatiquement sur les flux de l'agent
+- Agent Registry détecte les agents fantômes publiant des endpoints sur les postes
+
+**🔴 Impact RGPD :** L'identité gérée améliore l'auditabilité et la traçabilité, ce qui répond à une partie des exigences RGPD (piste d'audit). Mais elle ne résout PAS le problème fondamental du transfert de données de santé vers des LLMs. L'AIPD reste obligatoire.
+
+### 10.2 Agent 365 — Plan de contrôle sécurité unifié
+
+Agent 365 étend Entra + Defender + Purview dans une vue unique pour :
+- Sécuriser, gouverner et gérer le cycle de vie des agents (cloud et locaux)
+- Appliquer des politiques DLP sur les flux agents
+- Détecter les anomalies de comportement via Defender
+
+### 10.3 Modèles MAI souverains
+
+Les 9 nouveaux modèles MAI (Microsoft AI) sont entraînés sur données sous licence commerciale, sans distillation :
+- **Réduction du risque d'exfiltration :** les données restent dans le tenant Microsoft
+- **Alternative aux modèles tiers :** plus besoin d'envoyer des données à OpenAI, Google ou Anthropic
+- **Mais vigilance :** selon la configuration GitHub Copilot, les modèles externes restent accessibles
+
+### 10.4 Implications pour Solidaris
+
+| Avancée sécurité | Impact |
+|:-----------------|:-------|
+| Identité gérée Entra ID | ✅ Améliore traçabilité — pas de RGPD bouclé |
+| Modèles MAI souverains | ✅ Réduit exfiltration vers tiers |
+| Agent Registry | ✅ Détecte agents non autorisés |
+| DLP natif agents | ✅ Complément à l'EDR existant |
+| **Verdict sécurité** | **🔴 Reste NON acceptable pour données de santé sans AIPD + DPA** |
+
+> **Recommandation :** Ces avancées rendent un **POC technique (données synthétiques)** plus réaliste. Mais le déploiement sur données réelles reste bloqué par l'absence de base légale RGPD.
+

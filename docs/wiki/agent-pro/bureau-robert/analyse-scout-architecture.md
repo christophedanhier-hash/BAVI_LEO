@@ -568,5 +568,40 @@ classDiagram
 
 ---
 
+## 11. Mise à jour — Microsoft Build 2026 (juin 2026)
+
+Les annonces de Build 2026 confirment et enrichissent l'architecture présentée :
+
+### 11.1 Microsoft Agent Platform (MAP)
+
+MAP est une plateforme unifiée open source qui couvre tout le cycle de vie des agents, de la conception (GitHub Copilot + VS Code) au run (Foundry) en passant par la gouvernance (Agent 365). Elle s'articule autour de :
+
+| Couche | Technologie | Rôle architectural |
+|:-------|:-----------|:-------------------|
+| **Framework** | MAF (Microsoft Agent Framework) | Open source Python/.NET, base des agents |
+| **Context** | Microsoft IQ (Work + Fabric + Web + Fundr) | Couche sémantique unifiée |
+| **Run** | Foundry (Hosted Agents) | Runtime managé en sandbox sécurisée |
+| **Gov** | Agent 365 (Entra + Defender + Purview) | Cycle de vie & sécurité |
+
+### 11.2 Impact sur l'architecture SI Solidaris
+
+| Changement | Impact |
+|:-----------|:-------|
+| SCOUT devient un composant MAP | Ne plus penser SCOUT isolément — intégrer MAP dans la roadmap SI |
+| Modèles MAI souverains | Les données peuvent rester dans le tenant Microsoft → réduction risque exfiltration |
+| Identité Entra ID pour agents | Chaque SCOUT a une identité → auditabilité, Conditional Access, DLP natif |
+| Agent Registry | Détection des agents fantômes — complément de l'EDR existant |
+| Hosted Agents GA juillet 2026 | Alternative cloud à l'agent local (SCOUT) pour certains cas d'usage |
+
+### 11.3 Nouveaux flux identifiés
+
+- **MAI Foundry** : nouveau flux entre le poste et les API Foundry (modèles MAI)
+- **Agent Registry** : flux de télémétrie entre le poste et le service de découverte
+- **Microsoft IQ** : flux de contexte enrichi entre les IQ et SCOUT
+
+> **Recommandation mise à jour** : La maturation rapide de la plateforme Microsoft (MAP + MAI + identité gérée) rend SCOUT moins "frontier" qu'il y a 2 semaines. Néanmoins, les problématiques de données de santé et de déploiement Intune restent inchangées.
+
+---
+
 *Document produit par le Bureau Robert — Architecture SI (Expert #1)*
 *Pour le compte de la DSI Solidaris — Juillet 2026*

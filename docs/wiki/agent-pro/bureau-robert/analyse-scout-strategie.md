@@ -284,6 +284,80 @@ flowchart TD
 
 ---
 
+## 8. Mise à jour — Microsoft Build 2026 (San Francisco, Juin 2026)
+
+*Cette section intègre les annonces de la conférence Microsoft Build 2026 qui redéfinissent la stratégie IA de Microsoft et impactent directement le positionnement de SCOUT et l'écosystème agents.*
+
+### 8.1 MAI (Microsoft AI) — Une Famille de Modèles Souveraine
+
+Microsoft a dévoilé **9 nouveaux modèles** sous la marque **MAI (Microsoft AI)**, affirmant sa volonté d'être **indépendant d'OpenAI et d'Anthropic** :
+
+| Modèle | Domaine | Point Clé |
+|--------|---------|-----------|
+| **MI Synthing** | Raisonnement (35B) | Surpasse Sonnet 4 à coût réduit |
+| **MI G2.5** | Génération d'images | Compétitif avec DALL-E / Midjourney |
+| **MI Transcribe 1.5** | Transcription vocale | 43 langues supportées |
+| **MI Voice** | Clonage vocal | Synthèse vocale avancée |
+| **MI Code** | Génération de code | Intégré GitHub Copilot |
+
+**Impact Solidaris :** La maîtrise de la chaîne modèle par Microsoft réduit la dépendance à des tiers, mais renforce le verrouillage sur la stack Azure/Microsoft 365.
+
+### 8.2 Microsoft Agent Platform (MAP) — L'Unification des Agents
+
+Microsoft a annoncé **MAP (Microsoft Agent Platform)**, une **plateforme unifiée open source** basée sur **MAF (Microsoft Agent Framework)**, réunissant :
+
+- **Semantic Kernel** (orchestration IA)
+- **AutoGen** (agents multi-systèmes)
+- **Hosted Agents** dans Azure AI Foundry (sandbox sécurisée, **GA juillet 2026**)
+
+**MAP = le standard d'orchestration agents Microsoft** — SCOUT s'y intégrera comme agent OS local, tandis que MAP gère les agents cloud et hybrides.
+
+### 8.3 Microsoft IQ — La Couche de Contexte Unifiée
+
+Microsoft IQ apporte une **couche de contexte transverse** :
+
+| Composant | Rôle |
+|-----------|------|
+| **Work IQ** | Contexte métier (M365, Dynamics) |
+| **Fabric IQ** | Contexte données (Microsoft Fabric) |
+| **Web IQ** | Contexte web (Bing, Edge) |
+| **Fundr IQ** | Contexte financier / ERP |
+
+**Impact SCOUT :** Un agent SCOUT connecté à Microsoft IQ pourrait accéder à un contexte enrichi pour ses décisions — mais cela nécessite une intégration poussée et soulève des questions RGPD supplémentaires.
+
+### 8.4 Sécurité et Gouvernance — Les Annonces Clés
+
+Microsoft a martelé le message **"Sécurité intégrée, pas ajoutée"** avec plusieurs annonces structurantes pour les agents :
+
+| Fonctionnalité | Description | Échéance |
+|----------------|-------------|----------|
+| **Identité gérée par agent** (Entra ID) | Chaque agent a une identité unique → auditabilité complète | Build 2026 |
+| **Conditional Access + DLP** | Politiques d'accès conditionnel et prévention de perte de données applicables par agent | Build 2026 |
+| **Agent Registry** | Détection des agents fantômes installés sur les postes | Build 2026 |
+| **Code MD** | 100 agents collaboratifs pour trouver les failles de sécurité (preuve de concept) | Démo Build |
+
+**Impact SCOUT :** Ces annonces répondent directement au **risque majeur identifié en §3.2** — l'absence d'audit et de contrôle. L'identité gérée par agent (Entra ID) est un changement de paradigme : chaque instance SCOUT pourrait être auditée comme un utilisateur nommé.
+
+### 8.5 GitHub Copilot Natif — L'Agent Développeur
+
+GitHub Copilot devient une **application native** (macOS, Windows, Linux) avec des capacités agentiques étendues, renforçant l'écosystème **MI Code**.
+
+### 8.6 Synthèse pour Solidaris
+
+> **"L'IA ne changera pas votre entreprise, c'est le système qui la fait tourner qui le fera."** — Message clé de Microsoft Build 2026
+
+**Ce que ça change pour notre analyse :**
+
+1. ✅ **Renforcement de la roadmap sécurité** — l'identité gérée + Agent Registry répondent partiellement au risque conformité (§3.2)
+2. ✅ **MAP unifie le paysage** — moins de fragmentation des solutions agents Microsoft
+3. ⚠️ **Accélération du verrouillage** — MAI + MAP + IQ = stack Microsoft encore plus intégrée
+4. ❓ **Microsoft IQ et RGPD** — une couche de contexte unifiée sur les données Solidaris pose des questions de registre et de consentement
+5. 🟢 **Opportunité tactique** — la maturité des Hosted Agents (Foundry, GA juillet 2026) permet un PEC agents cloud avant d'attaquer SCOUT en local
+
+**Recommandation mise à jour :** Profiter des **Hosted Agents Foundry (GA juillet 2026)** pour un premier PEC agents Microsoft **sans exposition des postes**, en parallèle du POC SCOUT restreint. MAP devenant le standard, toute compétence acquise sur Semantic Kernel / AutoGen sera réutilisable.
+
+---
+
 ## Annexe : Checklist de Prérequis SCOUT
 
 | Prérequis | Statut Solidaris (estimation) | Effort |

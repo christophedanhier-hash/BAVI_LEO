@@ -1597,6 +1597,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#11-mise-a-jour-microsoft-build-2026-juin-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Mise à jour — Microsoft Build 2026 (juin 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Mise à jour — Microsoft Build 2026 (juin 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-microsoft-agent-platform-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Microsoft Agent Platform (MAP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-impact-sur-larchitecture-si-solidaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Impact sur l'architecture SI Solidaris
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-nouveaux-flux-identifies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Nouveaux flux identifiés
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2488,6 +2538,82 @@
     Intune --&gt; SCOUT : encadre
     EntraID --&gt; SCOUT : authentifie
     DLP --&gt; SCOUT : surveille</code></pre>
+<hr />
+<h2 id="11-mise-a-jour-microsoft-build-2026-juin-2026">11. Mise à jour — Microsoft Build 2026 (juin 2026)<a class="headerlink" href="#11-mise-a-jour-microsoft-build-2026-juin-2026" title="Permanent link">&para;</a></h2>
+<p>Les annonces de Build 2026 confirment et enrichissent l'architecture présentée :</p>
+<h3 id="111-microsoft-agent-platform-map">11.1 Microsoft Agent Platform (MAP)<a class="headerlink" href="#111-microsoft-agent-platform-map" title="Permanent link">&para;</a></h3>
+<p>MAP est une plateforme unifiée open source qui couvre tout le cycle de vie des agents, de la conception (GitHub Copilot + VS Code) au run (Foundry) en passant par la gouvernance (Agent 365). Elle s'articule autour de :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Couche</th>
+<th style="text-align: left;">Technologie</th>
+<th style="text-align: left;">Rôle architectural</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Framework</strong></td>
+<td style="text-align: left;">MAF (Microsoft Agent Framework)</td>
+<td style="text-align: left;">Open source Python/.NET, base des agents</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Context</strong></td>
+<td style="text-align: left;">Microsoft IQ (Work + Fabric + Web + Fundr)</td>
+<td style="text-align: left;">Couche sémantique unifiée</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Run</strong></td>
+<td style="text-align: left;">Foundry (Hosted Agents)</td>
+<td style="text-align: left;">Runtime managé en sandbox sécurisée</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gov</strong></td>
+<td style="text-align: left;">Agent 365 (Entra + Defender + Purview)</td>
+<td style="text-align: left;">Cycle de vie &amp; sécurité</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-impact-sur-larchitecture-si-solidaris">11.2 Impact sur l'architecture SI Solidaris<a class="headerlink" href="#112-impact-sur-larchitecture-si-solidaris" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Changement</th>
+<th style="text-align: left;">Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SCOUT devient un composant MAP</td>
+<td style="text-align: left;">Ne plus penser SCOUT isolément — intégrer MAP dans la roadmap SI</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modèles MAI souverains</td>
+<td style="text-align: left;">Les données peuvent rester dans le tenant Microsoft → réduction risque exfiltration</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identité Entra ID pour agents</td>
+<td style="text-align: left;">Chaque SCOUT a une identité → auditabilité, Conditional Access, DLP natif</td>
+</tr>
+<tr>
+<td style="text-align: left;">Agent Registry</td>
+<td style="text-align: left;">Détection des agents fantômes — complément de l'EDR existant</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hosted Agents GA juillet 2026</td>
+<td style="text-align: left;">Alternative cloud à l'agent local (SCOUT) pour certains cas d'usage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="113-nouveaux-flux-identifies">11.3 Nouveaux flux identifiés<a class="headerlink" href="#113-nouveaux-flux-identifies" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>MAI Foundry</strong> : nouveau flux entre le poste et les API Foundry (modèles MAI)</li>
+<li><strong>Agent Registry</strong> : flux de télémétrie entre le poste et le service de découverte</li>
+<li><strong>Microsoft IQ</strong> : flux de contexte enrichi entre les IQ et SCOUT</li>
+</ul>
+<blockquote>
+<p><strong>Recommandation mise à jour</strong> : La maturation rapide de la plateforme Microsoft (MAP + MAI + identité gérée) rend SCOUT moins "frontier" qu'il y a 2 semaines. Néanmoins, les problématiques de données de santé et de déploiement Intune restent inchangées.</p>
+</blockquote>
 <hr />
 <p><em>Document produit par le Bureau Robert — Architecture SI (Expert #1)</em>
 <em>Pour le compte de la DSI Solidaris — Juillet 2026</em></p>

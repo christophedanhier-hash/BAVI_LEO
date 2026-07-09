@@ -1547,6 +1547,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#11-mise-a-jour-microsoft-build-2026-juin-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Mise à jour — Microsoft Build 2026 (juin 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Mise à jour — Microsoft Build 2026 (juin 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-map-change-le-perimetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 MAP change le périmètre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-impact-sur-le-tco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Impact sur le TCO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-planning-revise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Planning révisé
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-message-cle-a-retenir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Message clé à retenir
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2760,6 +2821,78 @@
 <p><em>Analyse produite par le </em><em>Bureau Robert — Expert #6 Projet &amp; Programme</em><em> — Modèle : </em><em>deepseek-chat</em><em> — Date : </em><em>2026-07-09</em><em>
 Dernière mise à jour : 2026-07-09</em></p>
 <!-- AUTO:FOOTER:END -->
+
+<hr />
+<h2 id="11-mise-a-jour-microsoft-build-2026-juin-2026">11. Mise à jour — Microsoft Build 2026 (juin 2026)<a class="headerlink" href="#11-mise-a-jour-microsoft-build-2026-juin-2026" title="Permanent link">&para;</a></h2>
+<p>Les annonces de Build 2026 modifient sensiblement le cadrage projet de SCOUT :</p>
+<h3 id="111-map-change-le-perimetre">11.1 MAP change le périmètre<a class="headerlink" href="#111-map-change-le-perimetre" title="Permanent link">&para;</a></h3>
+<p>Microsoft Agent Platform (MAP) est une <strong>plateforme unifiée open source</strong> qui dépasse largement SCOUT :
+- MAF (Microsoft Agent Framework) en Python/.NET
+- Hosted Agents en Foundry (sandbox sécurisée, GA juillet 2026)
+- GitHub Copilot app native (macOS, Windows, <strong>Linux</strong>)
+- Microsoft IQ comme couche de contexte unifiée</p>
+<blockquote>
+<p><strong>Impact projet :</strong> SCOUT n'est plus un produit isolé à évaluer. C'est le premier composant d'une plateforme agent Microsoft. La question devient : <strong>faut-il adopter MAP, et SCOUT en est le premier cas d'usage ?</strong></p>
+</blockquote>
+<h3 id="112-impact-sur-le-tco">11.2 Impact sur le TCO<a class="headerlink" href="#112-impact-sur-le-tco" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Changement</th>
+<th style="text-align: left;">Impact sur les coûts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Modèles MAI souverains (MI Synthing)</td>
+<td style="text-align: left;">Coût réduit vs Opus/Sonnet — économie sur les crédits GitHub Copilot</td>
+</tr>
+<tr>
+<td style="text-align: left;">Frontier Tuning</td>
+<td style="text-align: left;">Fine-tuning données Solidaris → GPT 5.4-like pour 10× moins cher</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identité gérée</td>
+<td style="text-align: left;">Économie sur le coût de gouvernance (audit intégré)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hosted Agents GA</td>
+<td style="text-align: left;">Alternative cloud au déploiement local — mutualisation possible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="113-planning-revise">11.3 Planning révisé<a class="headerlink" href="#113-planning-revise" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Phase</th>
+<th style="text-align: center;">Nouvelle estimation</th>
+<th style="text-align: left;">Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">POC technique</td>
+<td style="text-align: center;"><strong>T3 2026</strong> inchangé</td>
+<td style="text-align: left;">MAP en GA juillet, MAI disponibles</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pilote métier</td>
+<td style="text-align: center;"><strong>T1-T2 2027</strong> inchangé</td>
+<td style="text-align: left;">Toujours besoin de maturité sécurité</td>
+</tr>
+<tr>
+<td style="text-align: left;">Généralisation</td>
+<td style="text-align: center;"><strong>H2 2027 au plus tôt</strong> inchangé</td>
+<td style="text-align: left;">Dépend de AIPD + DPA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="114-message-cle-a-retenir">11.4 Message clé à retenir<a class="headerlink" href="#114-message-cle-a-retenir" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>"L'IA ne changera pas votre entreprise, c'est le système qui la fait tourner qui le fera."</strong></p>
+<p>Cette phrase de Microsoft Build 2026 résume l'enjeu pour Solidaris : SCOUT n'est qu'un outil. La <strong>plateforme</strong> (MAP, MAF, IQ, identité, sécurité) est ce qui crée la valeur. L'investissement dans la plateforme précède et conditionne le ROI de SCOUT.</p>
+</blockquote>
 
 
 

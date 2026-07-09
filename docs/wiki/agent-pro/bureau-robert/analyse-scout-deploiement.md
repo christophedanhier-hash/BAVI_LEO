@@ -412,3 +412,44 @@ gantt
 *Analyse produite par le **Bureau Robert — Expert #6 Projet & Programme** — Modèle : **deepseek-chat** — Date : **2026-07-09**
 Dernière mise à jour : 2026-07-09*
 <!-- AUTO:FOOTER:END -->
+
+
+---
+
+## 11. Mise à jour — Microsoft Build 2026 (juin 2026)
+
+Les annonces de Build 2026 modifient sensiblement le cadrage projet de SCOUT :
+
+### 11.1 MAP change le périmètre
+
+Microsoft Agent Platform (MAP) est une **plateforme unifiée open source** qui dépasse largement SCOUT :
+- MAF (Microsoft Agent Framework) en Python/.NET
+- Hosted Agents en Foundry (sandbox sécurisée, GA juillet 2026)
+- GitHub Copilot app native (macOS, Windows, **Linux**)
+- Microsoft IQ comme couche de contexte unifiée
+
+> **Impact projet :** SCOUT n'est plus un produit isolé à évaluer. C'est le premier composant d'une plateforme agent Microsoft. La question devient : **faut-il adopter MAP, et SCOUT en est le premier cas d'usage ?**
+
+### 11.2 Impact sur le TCO
+
+| Changement | Impact sur les coûts |
+|:-----------|:--------------------|
+| Modèles MAI souverains (MI Synthing) | Coût réduit vs Opus/Sonnet — économie sur les crédits GitHub Copilot |
+| Frontier Tuning | Fine-tuning données Solidaris → GPT 5.4-like pour 10× moins cher |
+| Identité gérée | Économie sur le coût de gouvernance (audit intégré) |
+| Hosted Agents GA | Alternative cloud au déploiement local — mutualisation possible |
+
+### 11.3 Planning révisé
+
+| Phase | Nouvelle estimation | Justification |
+|:------|:-------------------:|:--------------|
+| POC technique | **T3 2026** inchangé | MAP en GA juillet, MAI disponibles |
+| Pilote métier | **T1-T2 2027** inchangé | Toujours besoin de maturité sécurité |
+| Généralisation | **H2 2027 au plus tôt** inchangé | Dépend de AIPD + DPA |
+
+### 11.4 Message clé à retenir
+
+> **"L'IA ne changera pas votre entreprise, c'est le système qui la fait tourner qui le fera."**
+>
+> Cette phrase de Microsoft Build 2026 résume l'enjeu pour Solidaris : SCOUT n'est qu'un outil. La **plateforme** (MAP, MAF, IQ, identité, sécurité) est ce qui crée la valeur. L'investissement dans la plateforme précède et conditionne le ROI de SCOUT.
+
