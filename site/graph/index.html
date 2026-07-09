@@ -909,82 +909,127 @@
 
 
 <h1 id="wiki-graph">🔗 Wiki Graph<a class="headerlink" href="#wiki-graph" title="Permanent link">&para;</a></h1>
+<style>
+#pack-container circle:hover{opacity:1!important;stroke:#fff;stroke-width:2}
+</style>
+
 <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
-  <button onclick="loadGraph('')" id="btn-all" style="padding:4px 12px;background:var(--md-accent-fg-color);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.75rem">🌐 Tous</button>
-  <button onclick="loadGraph('michel')" style="padding:4px 12px;background:var(--md-code-bg);color:#a78bfa;border:1px solid #a78bfa;border-radius:4px;cursor:pointer;font-size:.75rem">🔧 Michel</button>
-  <button onclick="loadGraph('sylvia')" style="padding:4px 12px;background:var(--md-code-bg);color:#06b6d4;border:1px solid #06b6d4;border-radius:4px;cursor:pointer;font-size:.75rem">🧭 Sylvia</button>
-  <button onclick="loadGraph('leo')" style="padding:4px 12px;background:var(--md-code-bg);color:#818cf8;border:1px solid #818cf8;border-radius:4px;cursor:pointer;font-size:.75rem">🤖 Léo</button>
-  <button onclick="loadGraph('gerard')" style="padding:4px 12px;background:var(--md-code-bg);color:#f97316;border:1px solid #f97316;border-radius:4px;cursor:pointer;font-size:.75rem">📝 Gérard</button>
-  <button onclick="loadGraph('virginie')" style="padding:4px 12px;background:var(--md-code-bg);color:#ec4899;border:1px solid #ec4899;border-radius:4px;cursor:pointer;font-size:.75rem">🩺 Virginie</button>
-  <button onclick="loadGraph('emile')" style="padding:4px 12px;background:var(--md-code-bg);color:#f59e0b;border:1px solid #f59e0b;border-radius:4px;cursor:pointer;font-size:.75rem">🎓 Émile</button>
+  <button onclick="loadPack('')" id="btn-all" style="padding:4px 12px;background:var(--md-accent-fg-color);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.75rem">🌐 Tous</button>
+  <button onclick="loadPack('michel')" style="padding:4px 12px;background:var(--md-code-bg);color:#a78bfa;border:1px solid #a78bfa;border-radius:4px;cursor:pointer;font-size:.75rem">🔧 Michel</button>
+  <button onclick="loadPack('sylvia')" style="padding:4px 12px;background:var(--md-code-bg);color:#06b6d4;border:1px solid #06b6d4;border-radius:4px;cursor:pointer;font-size:.75rem">🧭 Sylvia</button>
+  <button onclick="loadPack('leo')" style="padding:4px 12px;background:var(--md-code-bg);color:#818cf8;border:1px solid #818cf8;border-radius:4px;cursor:pointer;font-size:.75rem">🤖 Léo</button>
+  <button onclick="loadPack('gerard')" style="padding:4px 12px;background:var(--md-code-bg);color:#f97316;border:1px solid #f97316;border-radius:4px;cursor:pointer;font-size:.75rem">📝 Gérard</button>
+  <button onclick="loadPack('virginie')" style="padding:4px 12px;background:var(--md-code-bg);color:#ec4899;border:1px solid #ec4899;border-radius:4px;cursor:pointer;font-size:.75rem">🩺 Virginie</button>
+  <button onclick="loadPack('emile')" style="padding:4px 12px;background:var(--md-code-bg);color:#f59e0b;border:1px solid #f59e0b;border-radius:4px;cursor:pointer;font-size:.75rem">🎓 Émile</button>
 </div>
 
-<div id="graph-container" style="background:var(--md-code-bg);border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;height:500px">
-  <div id="graph-msg" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--md-default-fg-color--light);font-size:.85rem">Chargement...</div>
+<div id="pack-container" style="background:var(--md-code-bg);border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;height:520px;position:relative">
+  <div id="pack-msg" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--md-default-fg-color--light)">Chargement...</div>
 </div>
-<div id="graph-info" style="text-align:center;font-size:.7rem;color:var(--md-default-fg-color--light);margin-top:6px"></div>
+<div id="pack-info" style="text-align:center;font-size:.7rem;color:var(--md-default-fg-color--light);margin-top:4px"></div>
+<div style="display:flex;justify-content:center;gap:16px;margin-top:6px;font-size:.7rem;color:var(--md-default-fg-color--light)">
+  <span>🟢 Actif</span><span>⚫ Archivé</span><span>◌ Bureau</span>
+</div>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
-const bureaux = ['michel','sylvia','leo','gerard','virginie','emile'];
-const colors = {michel:'#a78bfa',sylvia:'#06b6d4',leo:'#818cf8',gerard:'#f97316',virginie:'#ec4899',emile:'#f59e0b'};
+function hexToRgb(hex){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return{r,g,b}}
 
-async function loadGraph(bureau){
+async function loadPack(bureau){
   document.querySelectorAll('button').forEach(b=>b.style.background='var(--md-code-bg)');
-  const btn = document.getElementById(bureau?'btn-'+bureau:'btn-all');
-  if(btn) btn.style.background='var(--md-accent-fg-color)';
+  const btn=document.getElementById(bureau?'btn-'+bureau:'btn-all');
+  if(btn)btn.style.background='var(--md-accent-fg-color)';
 
-  const container = document.getElementById('graph-container');
+  const container=document.getElementById('pack-container');
   container.querySelectorAll('svg').forEach(s=>s.remove());
-  document.getElementById('graph-msg').style.display='block';
-  document.getElementById('graph-info').textContent='';
+  document.getElementById('pack-msg').style.display='block';
 
-  const width = container.clientWidth || 800, height = container.clientHeight || 500;
-  const url = bureau ? '/api/graph?bureau='+bureau : '/api/graph';
+  const width=container.clientWidth||800,height=container.clientHeight||500;
+  const url=bureau?'/api/graph?bureau='+bureau:'/api/graph';
 
-  try {
-    const r = await fetch(url);
-    const data = await r.json();
-    document.getElementById('graph-msg').style.display='none';
-    document.getElementById('graph-info').textContent = data.nodes.length+' analyses, '+data.links.length+' liens';
+  try{
+    const r=await fetch(url);
+    const data=await r.json();
+    if(!data.nodes.length){document.getElementById('pack-msg').textContent='Aucune analyse';return}
+    document.getElementById('pack-msg').style.display='none';
 
-    const nodeIds = new Set(data.nodes.map(n => n.id));
-    const links = data.links.filter(l => nodeIds.has(l.source) && nodeIds.has(l.target));
-    const nodes = data.nodes.map(d => ({...d}));
-
-    if(!nodes.length){ document.getElementById('graph-msg').style.display='block'; document.getElementById('graph-msg').textContent='Aucune analyse'; return; }
-
-    const svg = d3.select('#graph-container').append('svg')
-      .attr('width', width).attr('height', height);
-
-    const g = svg.append('g');
-    svg.call(d3.zoom().scaleExtent([0.2, 4]).on('zoom', (e) => { g.attr('transform', e.transform); }));
-
-    const simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(50))
-      .force('charge', d3.forceManyBody().strength(-120))
-      .force('center', d3.forceCenter(0, 0));
-
-    g.selectAll('line').data(links).join('line').attr('stroke', '#475569').attr('stroke-width', 0.6);
-    g.selectAll('circle').data(nodes).join('circle')
-      .attr('r', d => 4 + Math.min(d.analyses || 0, 10))
-      .attr('fill', d => d.color || '#64748b')
-      .attr('stroke', '#1e293b').attr('stroke-width', 1);
-    g.selectAll('text').data(nodes).join('text')
-      .text(d => d.name).attr('font-size', 7).attr('dx', 5).attr('dy', 2)
-      .attr('fill', '#94a3b8');
-
-    simulation.on('tick', () => {
-      g.selectAll('line').attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-      g.selectAll('circle').attr('cx', d => d.x).attr('cy', d => d.y);
-      g.selectAll('text').attr('x', d => d.x).attr('y', d => d.y);
+    // Build hierarchy: root > bureau > [Actif, Archives] > analyses
+    const groups={};
+    data.nodes.forEach(n=>{
+      const b=n.bureau||'autre';
+      if(!groups[b])groups[b]={active:[],archived:[],color:n.color};
+      if(n.archived)groups[b].archived.push(n);else groups[b].active.push(n);
     });
-  } catch(e) {
-    document.getElementById('graph-msg').textContent = 'Erreur';
+
+    const children=Object.entries(groups).map(([bureau,g])=>{
+      const sub=[];
+      if(g.active.length)sub.push({name:'Actif',color:g.color,archived:false,children:g.active.map(a=>({name:a.name,value:1,color:a.color,archived:false}))});
+      if(g.archived.length)sub.push({name:'Archives',color:g.color,archived:true,children:g.archived.map(a=>({name:a.name,value:1,color:a.color,archived:true}))});
+      return {name:bureau,color:g.color,children:sub};
+    });
+
+    const root={name:'BAVI',children};
+    const svg=d3.select('#pack-container').append('svg').attr('width',width).attr('height',height);
+    const g=svg.append('g');
+
+    // Zoom
+    svg.call(d3.zoom().scaleExtent([0.3,4]).on('zoom',(e)=>{g.attr('transform',e.transform)}));
+
+    const pack=d3.pack().size([width,height]).padding(4);
+    const hierarchy=d3.hierarchy(root).sum(d=>d.value||0);
+    const nodes=pack(hierarchy).descendants();
+
+    // Bureau circles (depth 1)
+    g.selectAll('circle.bureau').data(nodes.filter(d=>d.depth===1)).join('circle')
+      .attr('cx',d=>d.x).attr('cy',d=>d.y).attr('r',d=>d.r)
+      .attr('fill','none').attr('stroke',d=>d.data.color).attr('stroke-width',2)
+      .attr('stroke-dasharray','4,3').attr('opacity',0.4);
+
+    // Sub-group circles: Actif/Archives (depth 2)
+    g.selectAll('circle.sub').data(nodes.filter(d=>d.depth===2)).join('circle')
+      .attr('cx',d=>d.x).attr('cy',d=>d.y).attr('r',d=>d.r)
+      .attr('fill','none').attr('stroke',d=>d.data.archived?'#64748b':d.data.color)
+      .attr('stroke-width',1).attr('stroke-dasharray','2,2').attr('opacity',0.6);
+
+    // Analyse circles (depth 3)
+    g.selectAll('circle.leaf').data(nodes.filter(d=>d.depth===3)).join('circle')
+      .attr('cx',d=>d.x).attr('cy',d=>d.y).attr('r',d=>d.r-2)
+      .attr('fill',d=>d.data.color)
+      .attr('opacity',d=>d.data.archived?0.3:0.85)
+      .attr('stroke','#1e293b').attr('stroke-width',0.5)
+      .append('title').text(d=>(d.data.archived?'[Archivé] ':'')+d.data.name);
+
+    // Analyse labels (all circles with r > 8)
+    g.selectAll('text.alabel').data(nodes.filter(d=>d.depth===3)).join('text')
+      .attr('x',d=>d.x).attr('y',d=>d.y)
+      .attr('text-anchor','middle').attr('dominant-baseline','middle')
+      .attr('font-size',d=>Math.max(6,Math.min(10,d.r/3.5)))
+      .attr('fill','#fff').attr('opacity',0.9)
+      .text(d=>d.data.name.substring(0,Math.floor(d.r/4)));
+
+    // Bureau labels
+    g.selectAll('text.blabel').data(nodes.filter(d=>d.depth===1)).join('text')
+      .attr('x',d=>d.x).attr('y',d=>d.y-d.r-4)
+      .attr('text-anchor','middle').attr('font-size',11).attr('font-weight',700)
+      .attr('fill',d=>d.data.color).text(d=>d.data.name.charAt(0).toUpperCase()+d.data.name.slice(1));
+
+    // Sub-group labels
+    g.selectAll('text.slabel').data(nodes.filter(d=>d.depth===2&&d.r>25)).join('text')
+      .attr('x',d=>d.x).attr('y',d=>d.y-d.r+14)
+      .attr('text-anchor','middle').attr('font-size',9)
+      .attr('fill',d=>d.data.archived?'#64748b':d.data.color)
+      .text(d=>d.data.archived?'📦 Archives':'Actif');
+
+    const active=data.nodes.filter(n=>!n.archived).length;
+    const archived=data.nodes.filter(n=>n.archived).length;
+    document.getElementById('pack-info').textContent=`${data.nodes.length} analyses · ${active} actives · ${archived} archivées · ${Object.keys(groups).length} bureaux`;
+
+  }catch(e){
+    document.getElementById('pack-msg').textContent='Erreur: '+e.message;
   }
 }
 
-loadGraph('');
+loadPack('');
 </script>
 
 
@@ -1078,8 +1123,6 @@ loadGraph('');
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../assets/js/live-search.js"></script>
-      
-        <script src="../assets/js/kpi-widget.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
       

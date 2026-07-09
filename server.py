@@ -185,26 +185,38 @@ async def api_graph(bureau: str = ""):
         if not bureau_id or parts[-1] in skip_names:
             continue
         nid = rel.replace(".md","").replace(" ","-").lower().replace("/","_")
+        is_archived = "/archive/" in rel
         if nid not in nodes:
-            nodes[nid] = {"id":nid,"name":name,"bureau":bureau_id,"color":colors.get(bureau_id,"#64748b")}
+            color = colors.get(bureau_id,"#64748b")
+            nodes[nid] = {"id":nid,"name":name,"bureau":bureau_id,"color":color,"archived":is_archived}
         nodes[nid]["analyses"] = nodes[nid].get("analyses",0) + 1
         try:
             content = md_file.read_text()
             for match in re.finditer(r'\[\[([^\]|#]+)(?:[|#][^\]]+)?\]\]', content):
-                target = match.group(1).strip().replace(' ','-').lower()
-                if target and not target.startswith('http') and target != nid and len(links) < 500:
-                    links.append({'source':nid,'target':target})
+                raw = match.group(1).strip().lower().replace(' ','-')
+                if raw and not raw.startswith('http') and raw != nid and len(links) < 500:
+                    links.append({'source':nid,'raw':raw})
             for match in re.finditer(r'\[([^\]]*)\]\(([^)]+)\)', content):
-                target = match.group(2).strip()
-                if target.startswith('http'): continue
-                target = re.sub(r'\.md$','',target)
-                target = re.sub(r'[#?].*$','',target)
-                target = target.replace('/','_').replace(' ','-').lower()
-                if target and target != nid and len(links) < 500:
-                    links.append({'source':nid,'target':target})
+                raw = match.group(2).strip()
+                if raw.startswith('http'): continue
+                raw = re.sub(r'\.md$','',raw)
+                raw = re.sub(r'[#?].*$','',raw)
+                raw = raw.replace('/','_').replace(' ','-').lower()
+                if raw and raw != nid and len(links) < 500:
+                    links.append({'source':nid,'raw':raw})
         except: pass
     node_ids = {n["id"] for n in nodes.values()}
-    valid_links = [l for l in links if l["source"] in node_ids and l["target"] in node_ids]
+    # Resolve raw targets to real node IDs (fuzzy match)
+    resolved_links = []
+    for l in links:
+        raw = l.get("raw","")
+        if raw in node_ids: resolved_links.append({"source":l["source"],"target":raw}); continue
+        # Try substring match
+        for nid in node_ids:
+            if raw and raw in nid:
+                resolved_links.append({"source":l["source"],"target":nid})
+                break
+    valid_links = resolved_links
     # Filter by bureau
     if bureau:
         bureau_nodes = {nid for nid,n in nodes.items() if n["bureau"] == bureau}
