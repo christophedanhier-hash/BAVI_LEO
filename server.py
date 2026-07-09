@@ -3,7 +3,7 @@
 LEO Serveur Unifié — Wiki BAVI + Dashboard + API
 Usage: .venv/bin/uvicorn server:app --host 0.0.0.0 --port 8765
 """
-import json, subprocess, os, sys, urllib.request, urllib.parse
+import json, subprocess, os, sys, re, urllib.request, urllib.parse
 from pathlib import Path
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
@@ -72,7 +72,7 @@ async def api_cron_run(job_id: str, request: Request):
 # ── API: Métriques ──
 @app.get("/api/metrics")
 async def api_metrics(request: Request):
-    if not check_token(request): raise HTTPException(401)
+    # Public endpoint
     if not METRICS_FILE.exists():
         return {"error": "Metrics file not found"}
     try:
@@ -128,7 +128,125 @@ async def dashboard(request: Request):
     if not check_token(request): raise HTTPException(401)
     return HTMLResponse(DASHBOARD_FILE.read_text())
 
+# ── API: Recherche full-text ──
+@app.get("/api/search")
+async def api_search(q: str = ""):
+    # Public endpoint
+    if not q or len(q) < 2:
+        return {"results": []}
+    docs_dir = BASE / "BAVI_LEO/docs"
+    try:
+        r = subprocess.run(
+            ["rg", "--no-heading", "--line-number", "--max-count", "3",
+             "-i", "--type", "md", q, str(docs_dir)],
+            capture_output=True, text=True, timeout=5
+        )
+        results = []
+        seen = set()
+        for line in r.stdout.strip().split("\n")[:20]:
+            if not line: continue
+            parts = line.split(":", 2)
+            if len(parts) < 3: continue
+            filepath, linenum, content = parts
+            rel = filepath.replace(str(docs_dir) + "/", "")
+            title = rel.replace(".md", "").replace("/index", "").rsplit("/", 1)[-1]
+            url = "/" + rel.replace(".md", "/").replace("/index/", "/")
+            if title in seen: continue
+            seen.add(title)
+            results.append({
+                "title": title.replace("-", " ").title(),
+                "path": url,
+                "snippet": content.strip()[:120],
+                "line": int(linenum)
+            })
+        return {"results": results[:10]}
+    except Exception:
+        return {"results": []}
+
+# ── API: Wiki Graph ──
+@app.get("/api/graph")
+async def api_graph():
+    docs_dir = BASE / "BAVI_LEO/docs"
+    nodes = {}
+    links = []
+    colors = {"bureau-michel":"#a78bfa","bureau-sylvia":"#06b6d4","bureau-leo":"#818cf8","bureau-gerard":"#f97316","bureau-virginie":"#ec4899","bureau-emile":"#f59e0b","bureau-robert":"#3b82f6","bureau-sophie":"#22c55e"}
+    for md_file in docs_dir.rglob("*.md"):
+        rel = str(md_file.relative_to(docs_dir))
+        parts = rel.replace(".md","").split("/")
+        name = parts[-1].replace("-"," ").title()[:25]
+        nid = rel.replace(".md","").replace("/","_").replace(" ","")
+        bureau_key = "bureau-"+parts[-2] if len(parts)>=2 else ""
+        if nid not in nodes:
+            nodes[nid] = {"id":nid,"name":name,"analyses":0,"color":colors.get(bureau_key,"#64748b")}
+        nodes[nid]["analyses"] += 1
+        try:
+            content = md_file.read_text()
+            for match in re.finditer(r"\[([^\]]*)\]\(([^)]+\.md)\)", content):
+                target = match.group(2)
+                if target.startswith("http"): continue
+                target = target.replace(".md","").replace("/","_").replace(" ","")
+                if target and target != nid and len(links) < 200:
+                    links.append({"source":nid,"target":target})
+        except: pass
+    node_ids = {n["id"] for n in nodes.values()}
+    valid_links = [l for l in links if l["source"] in node_ids and l["target"] in node_ids]
+    return {"nodes": list(nodes.values()), "links": valid_links}
+
+# ── API: Éditeur ──
+@app.get("/api/editor/load")
+async def editor_load(path: str = ""):
+    if not path or ".." in path:
+        return {"ok": False, "error": "Chemin invalide"}
+    fp = BASE / "BAVI_LEO/docs" / path
+    if not fp.exists():
+        return {"ok": False, "error": "Fichier non trouve"}
+    return {"ok": True, "content": fp.read_text()}
+
+@app.post("/api/editor/save")
+async def editor_save(request: Request):
+    body = await request.json()
+    path = body.get("path", "")
+    content = body.get("content", "")
+    if not path or ".." in path:
+        return {"ok": False, "error": "Chemin invalide"}
+    fp = BASE / "BAVI_LEO/docs" / path
+    fp.parent.mkdir(parents=True, exist_ok=True)
+    fp.write_text(content)
+    # Rebuild
+    try:
+        subprocess.run(["bash", str(BASE / "BAVI_LEO/rebuild-wiki.sh")],
+                      capture_output=True, timeout=30)
+    except: pass
+    return {"ok": True}
+
 # ── Wiki BAVI (static files, dernière priorité) ──
+# ── API: Wiki Graph ──
+@app.get("/api/graph")
+async def api_graph():
+    docs_dir = BASE / "BAVI_LEO/docs"
+    nodes = {}
+    links = []
+    colors = {'bureau-michel':'#a78bfa','bureau-sylvia':'#06b6d4','bureau-leo':'#818cf8','bureau-gerard':'#f97316','bureau-virginie':'#ec4899','bureau-emile':'#f59e0b','bureau-robert':'#3b82f6','bureau-sophie':'#22c55e'}
+    import re
+    for md_file in docs_dir.rglob("*.md"):
+        rel = str(md_file.relative_to(docs_dir))
+        parts = rel.replace(".md","").split("/")
+        bureau = parts[-2] if len(parts) >= 2 else 'root'
+        name = parts[-1].replace("-"," ").title()[:25]
+        nid = rel.replace(".md","").replace("/","_").replace(" ","")
+        if nid not in nodes:
+            nodes[nid] = {"id":nid,"name":name,"analyses":0,"color":colors.get('bureau-'+parts[-2],'#64748b')}
+        nodes[nid]["analyses"] += 1
+        try:
+            content = md_file.read_text()
+            for match in re.finditer(r'\[([^\]]*)\]\(([^)]+\.md)\)', content):
+                target = match.group(2).replace(".md","").replace("/","_").replace(" ","")
+                if target and target != nid and len(links) < 200:
+                    links.append({"source":nid,"target":target})
+        except: pass
+    node_ids = {n["id"] for n in nodes.values()}
+    valid_links = [l for l in links if l["source"] in node_ids and l["target"] in node_ids]
+    return {"nodes": list(nodes.values()), "links": valid_links}
 if BAVI_SITE.exists():
     app.mount("/", StaticFiles(directory=str(BAVI_SITE), html=True), name="wiki")
 

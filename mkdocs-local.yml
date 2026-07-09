@@ -48,13 +48,18 @@ markdown_extensions:
       permalink: true
 
 extra_javascript:
+  - assets/js/live-search.js
+  - assets/js/kpi-widget.js
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
   - assets/js/pdf-download.js
   - assets/js/external-links.js
 
 
 nav:
-  - 🏠 Bureaux: bureaux.md
+  - 🏠 Bureaux:
+    - Dashboard: bureaux.md
+    - 📈 Analytics: analytics.md
+    - 🔗 Graph: graph.md
   - 🔧 Michel: wiki/agent-pro/bureau-michel/index.md
   - 🧭 Sylvia:
     - Bureau: wiki/agent-pro/bureau-sylvia/index.md
