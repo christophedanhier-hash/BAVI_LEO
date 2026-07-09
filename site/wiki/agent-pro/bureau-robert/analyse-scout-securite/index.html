@@ -1546,67 +1546,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#10-mise-a-jour-microsoft-build-2026-juin-2026" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Mise à jour — Microsoft Build 2026 (juin 2026)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="10. Mise à jour — Microsoft Build 2026 (juin 2026)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#101-identite-geree-pour-les-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10.1 Identité gérée pour les agents
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#102-agent-365-plan-de-controle-securite-unifie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10.2 Agent 365 — Plan de contrôle sécurité unifié
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#103-modeles-mai-souverains" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10.3 Modèles MAI souverains
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#104-implications-pour-solidaris" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10.4 Implications pour Solidaris
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2532,60 +2471,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="10-mise-a-jour-microsoft-build-2026-juin-2026">10. Mise à jour — Microsoft Build 2026 (juin 2026)<a class="headerlink" href="#10-mise-a-jour-microsoft-build-2026-juin-2026" title="Permanent link">&para;</a></h2>
-<p>Les annonces de Build 2026 apportent des évolutions notables en matière de sécurité des agents :</p>
-<h3 id="101-identite-geree-pour-les-agents">10.1 Identité gérée pour les agents<a class="headerlink" href="#101-identite-geree-pour-les-agents" title="Permanent link">&para;</a></h3>
-<p>Chaque agent autonome a désormais <strong>sa propre identité Entra ID</strong> :
-- Auditable comme un utilisateur (logs, traces)
-- Gouvernance via Conditional Access et MFA
-- DLP/Purview appliqué automatiquement sur les flux de l'agent
-- Agent Registry détecte les agents fantômes publiant des endpoints sur les postes</p>
-<p><strong>🔴 Impact RGPD :</strong> L'identité gérée améliore l'auditabilité et la traçabilité, ce qui répond à une partie des exigences RGPD (piste d'audit). Mais elle ne résout PAS le problème fondamental du transfert de données de santé vers des LLMs. L'AIPD reste obligatoire.</p>
-<h3 id="102-agent-365-plan-de-controle-securite-unifie">10.2 Agent 365 — Plan de contrôle sécurité unifié<a class="headerlink" href="#102-agent-365-plan-de-controle-securite-unifie" title="Permanent link">&para;</a></h3>
-<p>Agent 365 étend Entra + Defender + Purview dans une vue unique pour :
-- Sécuriser, gouverner et gérer le cycle de vie des agents (cloud et locaux)
-- Appliquer des politiques DLP sur les flux agents
-- Détecter les anomalies de comportement via Defender</p>
-<h3 id="103-modeles-mai-souverains">10.3 Modèles MAI souverains<a class="headerlink" href="#103-modeles-mai-souverains" title="Permanent link">&para;</a></h3>
-<p>Les 9 nouveaux modèles MAI (Microsoft AI) sont entraînés sur données sous licence commerciale, sans distillation :
-- <strong>Réduction du risque d'exfiltration :</strong> les données restent dans le tenant Microsoft
-- <strong>Alternative aux modèles tiers :</strong> plus besoin d'envoyer des données à OpenAI, Google ou Anthropic
-- <strong>Mais vigilance :</strong> selon la configuration GitHub Copilot, les modèles externes restent accessibles</p>
-<h3 id="104-implications-pour-solidaris">10.4 Implications pour Solidaris<a class="headerlink" href="#104-implications-pour-solidaris" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Avancée sécurité</th>
-<th style="text-align: left;">Impact</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Identité gérée Entra ID</td>
-<td style="text-align: left;">✅ Améliore traçabilité — pas de RGPD bouclé</td>
-</tr>
-<tr>
-<td style="text-align: left;">Modèles MAI souverains</td>
-<td style="text-align: left;">✅ Réduit exfiltration vers tiers</td>
-</tr>
-<tr>
-<td style="text-align: left;">Agent Registry</td>
-<td style="text-align: left;">✅ Détecte agents non autorisés</td>
-</tr>
-<tr>
-<td style="text-align: left;">DLP natif agents</td>
-<td style="text-align: left;">✅ Complément à l'EDR existant</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Verdict sécurité</strong></td>
-<td style="text-align: left;"><strong>🔴 Reste NON acceptable pour données de santé sans AIPD + DPA</strong></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Recommandation :</strong> Ces avancées rendent un <strong>POC technique (données synthétiques)</strong> plus réaliste. Mais le déploiement sur données réelles reste bloqué par l'absence de base légale RGPD.</p>
-</blockquote>
 
 
 
