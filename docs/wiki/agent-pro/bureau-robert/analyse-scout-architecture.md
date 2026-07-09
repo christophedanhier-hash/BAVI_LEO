@@ -252,16 +252,16 @@ flowchart LR
 flowchart TB
     subgraph PATTERNS["PATTERNS D'INTÉGRATION"]
         P1["PATTERN 1 : API Directe (M365)"]
-        P1_DESC["SCOUT ──► Graph API ──► SharePoint / Exchange / Teams<br/>✅ Recommandé — natif, sécurisé, traçable"]
+        P1_DESC["SCOUT  >  Graph API  >  SharePoint / Exchange / Teams<br/>✅ Recommandé — natif, sécurisé, traçable"]
 
         P2["PATTERN 2 : Playwright (Web App métier)"]
-        P2_DESC["SCOUT ──► Playwright ──► Browser ──► AO / INAMI / BCSS<br/>⚠️ Usage maîtrisé — fragile, à superviser"]
+        P2_DESC["SCOUT  >  Playwright  >  Browser  >  AO / INAMI / BCSS<br/>⚠️ Usage maîtrisé — fragile, à superviser"]
 
         P3["PATTERN 3 : MCP Server (API métier)"]
-        P3_DESC["SCOUT ──► MCP ──► API Gateway ──► AO / BCSS / eHealth<br/>🔧 À construire — nécessite développement Solidaris"]
+        P3_DESC["SCOUT  >  MCP  >  API Gateway  >  AO / BCSS / eHealth<br/>🔧 À construire — nécessite développement Solidaris"]
 
         P4["PATTERN 4 : PowerShell / Script"]
-        P4_DESC["SCOUT ──► PowerShell ──► Active Directory / Fichier réseau<br/>⚠️ Risqué — nécessite signature de script + supervision"]
+        P4_DESC["SCOUT  >  PowerShell  >  Active Directory / Fichier réseau<br/>⚠️ Risqué — nécessite signature de script + supervision"]
     end
 ```
 
@@ -347,7 +347,7 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    subgraph SCENARIO_A["Scénario A : " Sandbox contrôlé " (Recommandé pour phase pilote)"]
+    subgraph SCENARIO_A["Scénario A : Sandbox contrôlé (Recommandé pour phase pilote)"]
         A1["Périmètre : 10-20 utilisateurs pilotes (DSI, IT, experts)"]
         A2["Postes : Windows 11, VM ou postes dédiés (pas de production)"]
         A3["SCOUT activé : Oui"]
@@ -360,7 +360,7 @@ flowchart TB
         A10["Journalisation : Complète (Event Viewer + Sentinel)"]
     end
 
-    subgraph SCENARIO_B["Scénario B : " Usages métier ciblés " (Mise en production prudente)"]
+    subgraph SCENARIO_B["Scénario B : Usages métier ciblés (Mise en production prudente)"]
         B1["Périmètre : Par service (déploiement progressif)"]
         B2["Postes : Windows 11 standard, politique Intune dédiée"]
         B3["Usages : Production de documents M365 uniquement"]
@@ -371,7 +371,7 @@ flowchart TB
         B8["PowerShell : Scripts signés + approuvés"]
     end
 
-    subgraph SCENARIO_C["Scénario C : " Full open " (Déconseillé à ce stade)"]
+    subgraph SCENARIO_C["Scénario C : Full open (Déconseillé à ce stade)"]
         C1["Périmètre : Tout le parc"]
         C2["Toutes capacités activées"]
         C3["❌ Risques : fuite de données, exécution non maîtrisée,<br/>non-conformité RGPD, impossibilité de tracer"]

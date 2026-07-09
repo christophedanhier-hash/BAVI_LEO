@@ -1946,16 +1946,16 @@
 <pre class="mermaid"><code>flowchart TB
     subgraph PATTERNS["PATTERNS D'INTÉGRATION"]
         P1["PATTERN 1 : API Directe (M365)"]
-        P1_DESC["SCOUT ──► Graph API ──► SharePoint / Exchange / Teams&lt;br/&gt;✅ Recommandé — natif, sécurisé, traçable"]
+        P1_DESC["SCOUT  &gt;  Graph API  &gt;  SharePoint / Exchange / Teams&lt;br/&gt;✅ Recommandé — natif, sécurisé, traçable"]
 
         P2["PATTERN 2 : Playwright (Web App métier)"]
-        P2_DESC["SCOUT ──► Playwright ──► Browser ──► AO / INAMI / BCSS&lt;br/&gt;⚠️ Usage maîtrisé — fragile, à superviser"]
+        P2_DESC["SCOUT  &gt;  Playwright  &gt;  Browser  &gt;  AO / INAMI / BCSS&lt;br/&gt;⚠️ Usage maîtrisé — fragile, à superviser"]
 
         P3["PATTERN 3 : MCP Server (API métier)"]
-        P3_DESC["SCOUT ──► MCP ──► API Gateway ──► AO / BCSS / eHealth&lt;br/&gt;🔧 À construire — nécessite développement Solidaris"]
+        P3_DESC["SCOUT  &gt;  MCP  &gt;  API Gateway  &gt;  AO / BCSS / eHealth&lt;br/&gt;🔧 À construire — nécessite développement Solidaris"]
 
         P4["PATTERN 4 : PowerShell / Script"]
-        P4_DESC["SCOUT ──► PowerShell ──► Active Directory / Fichier réseau&lt;br/&gt;⚠️ Risqué — nécessite signature de script + supervision"]
+        P4_DESC["SCOUT  &gt;  PowerShell  &gt;  Active Directory / Fichier réseau&lt;br/&gt;⚠️ Risqué — nécessite signature de script + supervision"]
     end</code></pre>
 <hr />
 <h2 id="7-impacts-sur-lurbanisation-du-si">7. Impacts sur l'urbanisation du SI<a class="headerlink" href="#7-impacts-sur-lurbanisation-du-si" title="Permanent link">&para;</a></h2>
@@ -2138,7 +2138,7 @@
 </ol>
 <h3 id="83-scenarios-de-deploiement-possibles">8.3 Scénarios de déploiement possibles<a class="headerlink" href="#83-scenarios-de-deploiement-possibles" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart TB
-    subgraph SCENARIO_A["Scénario A : " Sandbox contrôlé " (Recommandé pour phase pilote)"]
+    subgraph SCENARIO_A["Scénario A : Sandbox contrôlé (Recommandé pour phase pilote)"]
         A1["Périmètre : 10-20 utilisateurs pilotes (DSI, IT, experts)"]
         A2["Postes : Windows 11, VM ou postes dédiés (pas de production)"]
         A3["SCOUT activé : Oui"]
@@ -2151,7 +2151,7 @@
         A10["Journalisation : Complète (Event Viewer + Sentinel)"]
     end
 
-    subgraph SCENARIO_B["Scénario B : " Usages métier ciblés " (Mise en production prudente)"]
+    subgraph SCENARIO_B["Scénario B : Usages métier ciblés (Mise en production prudente)"]
         B1["Périmètre : Par service (déploiement progressif)"]
         B2["Postes : Windows 11 standard, politique Intune dédiée"]
         B3["Usages : Production de documents M365 uniquement"]
@@ -2162,7 +2162,7 @@
         B8["PowerShell : Scripts signés + approuvés"]
     end
 
-    subgraph SCENARIO_C["Scénario C : " Full open " (Déconseillé à ce stade)"]
+    subgraph SCENARIO_C["Scénario C : Full open (Déconseillé à ce stade)"]
         C1["Périmètre : Tout le parc"]
         C2["Toutes capacités activées"]
         C3["❌ Risques : fuite de données, exécution non maîtrisée,&lt;br/&gt;non-conformité RGPD, impossibilité de tracer"]
