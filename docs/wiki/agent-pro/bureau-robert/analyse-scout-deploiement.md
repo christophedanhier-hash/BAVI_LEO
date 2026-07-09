@@ -23,7 +23,7 @@ Microsoft **SCOUT** (System Configuration and Orchestration Unified Toolkit) est
 - **Pas inclus dans M365 Copilot** — nécessite GitHub Copilot Business ($19/user/mois) ou Enterprise ($39/user/mois)
 - **Prérequis bloquant :** Windows 11 + Intune + GitHub Copilot + Microsoft Frontier (organisation)
 - **ROI potentiel** : automatisation de processus métier mutualistes à fort volume (gestion des dossiers, extraction de documents, répondre aux mails usagers, suivi BCSS/eHealth)
-- **Risque majeur :** produit encore **frontier** — documentation limitée (1 vidéo détaillée), API/produit susceptible de changer
+- **Risque majeur (analyse initiale) :** produit encore **frontier** — documentation limitée (1 vidéo détaillée), API/produit susceptible de changer
 - **Recommandation :** Attendre la maturation du produit. Si déploiement, commencer par une **Proof of Concept (POC)** ciblée (5-10 utilisateurs) sans engagement pluriannuel.
 
 ---
@@ -195,7 +195,7 @@ SCOUT fonctionne sur un système de **crédits** :
 
 ### 7.2 Risques résiduels non mitigeables
 
-1. **Produit Microsoft « frontier »** — SCOUT n'est pas un produit mature. Microsoft peut en changer les termes, l'API, ou le modèle économique.
+1. **Produit Microsoft « frontier » (analyse initiale, voir mise à jour §🔄 Build 2026)** — SCOUT n'était pas un produit mature. **MAP (Microsoft Agent Platform) change la donne** : SCOUT devient un composant d'une plateforme stratégique open source. Le risque est fortement réduit mais la stack MAP/MAF/Foundry reste jeune.
 2. **Verrouillage Intune** — Une fois SCOUT déployé, le coût de sortie d'Intune est élevé. C'est un choix d'infrastructure à long terme.
 
 ---
@@ -398,6 +398,81 @@ gantt
 | GitHub Copilot licensing guide | GitHub Docs | Modèle de licence |
 | RGPD — Registre des traitements | DPO Solidaris | Conformité |
 
+## 🔄 Mise à jour — Microsoft Build 2026
+
+> **Date :** Juillet 2026
+> **Contexte :** Microsoft Build 2026 a profondément transformé le paysage des agents IA Microsoft. Cette section met à jour l'analyse précédente à la lumière des annonces.
+
+### 13.1 Microsoft Agent Platform (MAP) — Un changement de paradigme
+
+| Élément | Avant Build 2026 (analyse initiale) | Après Build 2026 |
+|:--------|:-----------------------------------|:-----------------|
+| **Périmètre projet** | SCOUT comme produit autonome | SCOUT devient un **composant** de la **Microsoft Agent Platform (MAP)**, plateforme unifiée open source |
+| **Stack technique** | Agent propriétaire Microsoft | MAP open source (Python + .NET) via **Microsoft Agent Framework (MAF)** |
+| **Runtime production** | Aucun runtime managé documenté | **Hosted Agents en Foundry** — runtime managé, sandbox sécurisée, **GA juillet 2026** |
+| **Écosystème modèle** | Opus 4.7 / Sonic 4.6 / GPT 4.1 | + **9 modèles MAI maison** (Microsoft AI) dont MI Synthing (35B, raisonnement, coût réduit), MI Code, etc. |
+| **Identité agents** | Non spécifié | **Identité gérée agents** → coût de gouvernance réduit |
+| **Voix / Avatars** | Non disponible | **Voice Live + avatars virtuels** en GA juillet 2026 |
+| **Base de données** | Non spécifié | **Azure Horizon DB** (PostgreSQL compatible, vector search intégré) en public preview |
+| **Client natif** | GitHub Copilot (web/IDE) | GitHub Copilot **app native** disponible sur macOS, Windows **et Linux** |
+
+### 13.2 Impact sur l'analyse SCOUT
+
+#### 🔄 Message « produit frontier » — Révisé
+
+**L'analyse initiale qualifiait SCOUT de « produit frontier » (immature, documentation limitée, risque d'abandon).** Les annonces Build 2026 changent la donne :
+
+- **MAP est une plateforme stratégique Microsoft**, pas un produit expérimental
+- L'open source (MAF) réduit le risque de verrouillage propriétaire
+- Le runtime Foundry en GA offre une base stable pour la production
+- Le message clé de Build 2026 : *« L'IA ne changera pas votre entreprise, c'est le système qui la fait tourner qui le fera »*
+
+**→ Le ROI ne dépend plus du modèle (MI Synthing, GPT 5.4 fine-tuné) mais de la plateforme et de son intégration dans le SI existant.**
+
+#### 🟢 Opportunités nouvelles
+
+| Opportunité | Description | Impact Solidaris |
+|:------------|:------------|:-----------------|
+| **Frontier Tuning** | Fine-tuning par RL sur données client → modèle type GPT 5.4 pour 10× moins cher | 📉 Réduction significative du coût crédits pour les tâches mutualistes |
+| **MAF open source** | Framework Python/.NET open source | 🔓 Moins de dépendance au vendor lock-in Microsoft |
+| **Hosted Agents Foundry** | Runtime managé, sandbox sécurité | ✅ Solution compatible RGPD plus crédible |
+| **MI Synthing (35B)** | Modèle raisonnement à coût réduit | ✅ Alternative économique à Opus 4.7 pour les tâches complexes |
+| **Horizon DB** | Vector search intégré PostgreSQL | 🧠 RAG natif pour dossiers mutualistes sans infrastructure supplémentaire |
+
+#### 🔴 Risques résiduels mis à jour
+
+| Risque initial | Statut post-Build 2026 | Nouvelle évaluation |
+|:---------------|:-----------------------|:--------------------|
+| **R3 — Format frontier instable** | ⚠️ MAP/MAF réduit ce risque mais la stack est jeune | 🟠 Passé de 🔴 à 🟠 (risque diminué mais pas nul) |
+| **R7 — SCOUT peut disparaître** | ✅ MAP est stratégique pour Microsoft ; SCOUT devient un composant d'une plateforme plus large | 🟢 Risque fortement réduit |
+| **R9 — Dépendance à un seul modèle** | ✅ 9 modèles MAI + Frontier Tuning → diversification réelle | 🟢 Risque réduit |
+| **Nouveau risque — Complexité plateforme** | MAP + MAF + Foundry + Horizon DB = stack plus large à maîtriser | 🟠 Nouveau risque : effort d'intégration accru |
+
+### 13.3 Recommandations mises à jour
+
+| # | Recommandation initiale | Mise à jour Build 2026 |
+|:-:|:------------------------|:-----------------------|
+| 1 | Auditer Intune d'abord | ✅ Inchangé — Intune reste le prérequis |
+| 2 | POC limité (10 users) | ✅ **Toujours valide** — mais le POC doit maintenant tester aussi MAP/MAF, pas seulement SCOUT |
+| 3 | Ne PAS signer d'engagement pluriannuel | ✅ **Renforcé** — attendre la stabilisation de MAP (GA runtime Foundry = juillet 2026, mais MAF et Horizon DB sont encore jeunes) |
+| 4 | AIPD RGPD obligatoire | ✅ **Élargi** — l'identité gérée agents et le runtime Foundry simplifient la gouvernance, mais Horizon DB (vector search) doit être inclus dans l'AIPD |
+| 5 | Former des relais internes | ✅ **Élargi** — la formation doit couvrir MAP/MAF et pas seulement SCOUT |
+| 6 | Veille alternative | ✅ **Renforcé** — MAF open source permet désormais une vraie stratégie multi-agent sans vendor lock-in |
+| 7 | Pilote 200 users si POC OK | ✅ **Revoir le périmètre** — le pilote doit évaluer MAP comme plateforme, pas SCOUT comme outil isolé |
+
+### 13.4 Impact sur le TCO
+
+| Poste | Analyse initiale (SCOUT seul) | Mise à jour (MAP + écosystème) |
+|:------|:----------------------------|:-------------------------------|
+| **Licence GitHub Copilot** | $39/user/mois (Enterprise) | ✅ Inchangé — toujours le point d'entrée |
+| **Crédits SCOUT** | $25k–$75k/an (prod 1000) | 📉 **Potentiellement réduit** grâce à MI Synthing (35B, coût réduit) et Frontier Tuning (10× moins cher) |
+| **Infrastructure supplémentaire** | Non documenté | ⚠️ **Azure Horizon DB** (public preview) — coût à évaluer si RAG vectoriel déployé |
+| **Runtime Foundry** | Inclus ou coût additionnel ? | ❓ **Non documenté** à ce stade — à clarifier avec Microsoft |
+| **Formation** | $30k | 📈 **Augmenté** — périmètre MAP > SCOUT seul |
+| **Intégration** | $5k–$15k | 📈 **Augmenté** — MAP/MAF/Foundry = stack plus large |
+
+> **Conclusion Build 2026 :** MAP n'invalide pas l'analyse initiale, mais elle **change le périmètre du projet**. SCOUT n'est plus un produit isolé à évaluer — c'est un composant d'une plateforme stratégique Microsoft. La recommandation reste valide (POC d'abord, engagement progressif), mais le POC doit maintenant tester la **plateforme** (MAP/MAF/Foundry), pas seulement l'agent SCOUT.
+
 ---
 
 ## 13. Versions
@@ -412,44 +487,3 @@ gantt
 *Analyse produite par le **Bureau Robert — Expert #6 Projet & Programme** — Modèle : **deepseek-chat** — Date : **2026-07-09**
 Dernière mise à jour : 2026-07-09*
 <!-- AUTO:FOOTER:END -->
-
-
----
-
-## 11. Mise à jour — Microsoft Build 2026 (juin 2026)
-
-Les annonces de Build 2026 modifient sensiblement le cadrage projet de SCOUT :
-
-### 11.1 MAP change le périmètre
-
-Microsoft Agent Platform (MAP) est une **plateforme unifiée open source** qui dépasse largement SCOUT :
-- MAF (Microsoft Agent Framework) en Python/.NET
-- Hosted Agents en Foundry (sandbox sécurisée, GA juillet 2026)
-- GitHub Copilot app native (macOS, Windows, **Linux**)
-- Microsoft IQ comme couche de contexte unifiée
-
-> **Impact projet :** SCOUT n'est plus un produit isolé à évaluer. C'est le premier composant d'une plateforme agent Microsoft. La question devient : **faut-il adopter MAP, et SCOUT en est le premier cas d'usage ?**
-
-### 11.2 Impact sur le TCO
-
-| Changement | Impact sur les coûts |
-|:-----------|:--------------------|
-| Modèles MAI souverains (MI Synthing) | Coût réduit vs Opus/Sonnet — économie sur les crédits GitHub Copilot |
-| Frontier Tuning | Fine-tuning données Solidaris → GPT 5.4-like pour 10× moins cher |
-| Identité gérée | Économie sur le coût de gouvernance (audit intégré) |
-| Hosted Agents GA | Alternative cloud au déploiement local — mutualisation possible |
-
-### 11.3 Planning révisé
-
-| Phase | Nouvelle estimation | Justification |
-|:------|:-------------------:|:--------------|
-| POC technique | **T3 2026** inchangé | MAP en GA juillet, MAI disponibles |
-| Pilote métier | **T1-T2 2027** inchangé | Toujours besoin de maturité sécurité |
-| Généralisation | **H2 2027 au plus tôt** inchangé | Dépend de AIPD + DPA |
-
-### 11.4 Message clé à retenir
-
-> **"L'IA ne changera pas votre entreprise, c'est le système qui la fait tourner qui le fera."**
->
-> Cette phrase de Microsoft Build 2026 résume l'enjeu pour Solidaris : SCOUT n'est qu'un outil. La **plateforme** (MAP, MAF, IQ, identité, sécurité) est ce qui crée la valeur. L'investissement dans la plateforme précède et conditionne le ROI de SCOUT.
-
