@@ -165,31 +165,51 @@ async def api_search(q: str = ""):
 
 # ── API: Wiki Graph ──
 @app.get("/api/graph")
-async def api_graph():
+async def api_graph(bureau: str = ""):
     docs_dir = BASE / "BAVI_LEO/docs"
     nodes = {}
     links = []
-    colors = {"bureau-michel":"#a78bfa","bureau-sylvia":"#06b6d4","bureau-leo":"#818cf8","bureau-gerard":"#f97316","bureau-virginie":"#ec4899","bureau-emile":"#f59e0b","bureau-robert":"#3b82f6","bureau-sophie":"#22c55e"}
+    colors = {"michel":"#a78bfa","sylvia":"#06b6d4","leo":"#818cf8","gerard":"#f97316","virginie":"#ec4899","emile":"#f59e0b","robert":"#3b82f6","sophie":"#22c55e"}
+    skip_names = {"index","readme","bureaux","skills","guide-utilisation","analytics","graph","editor","crons","documentation-map","roadbooks"}
     for md_file in docs_dir.rglob("*.md"):
         rel = str(md_file.relative_to(docs_dir))
         parts = rel.replace(".md","").split("/")
         name = parts[-1].replace("-"," ").title()[:25]
-        nid = rel.replace(".md","").replace("/","_").replace(" ","")
-        bureau_key = "bureau-"+parts[-2] if len(parts)>=2 else ""
+        # Déterminer le bureau
+        bureau_id = ""
+        for i, p in enumerate(parts):
+            if p.startswith("bureau-"):
+                bureau_id = p.replace("bureau-","")
+                break
+        # Skip meta pages
+        if not bureau_id or parts[-1] in skip_names:
+            continue
+        nid = rel.replace(".md","").replace(" ","-").lower().replace("/","_")
         if nid not in nodes:
-            nodes[nid] = {"id":nid,"name":name,"analyses":0,"color":colors.get(bureau_key,"#64748b")}
-        nodes[nid]["analyses"] += 1
+            nodes[nid] = {"id":nid,"name":name,"bureau":bureau_id,"color":colors.get(bureau_id,"#64748b")}
+        nodes[nid]["analyses"] = nodes[nid].get("analyses",0) + 1
         try:
             content = md_file.read_text()
-            for match in re.finditer(r"\[([^\]]*)\]\(([^)]+\.md)\)", content):
-                target = match.group(2)
-                if target.startswith("http"): continue
-                target = target.replace(".md","").replace("/","_").replace(" ","")
-                if target and target != nid and len(links) < 200:
-                    links.append({"source":nid,"target":target})
+            for match in re.finditer(r'\[\[([^\]|#]+)(?:[|#][^\]]+)?\]\]', content):
+                target = match.group(1).strip().replace(' ','-').lower()
+                if target and not target.startswith('http') and target != nid and len(links) < 500:
+                    links.append({'source':nid,'target':target})
+            for match in re.finditer(r'\[([^\]]*)\]\(([^)]+)\)', content):
+                target = match.group(2).strip()
+                if target.startswith('http'): continue
+                target = re.sub(r'\.md$','',target)
+                target = re.sub(r'[#?].*$','',target)
+                target = target.replace('/','_').replace(' ','-').lower()
+                if target and target != nid and len(links) < 500:
+                    links.append({'source':nid,'target':target})
         except: pass
     node_ids = {n["id"] for n in nodes.values()}
     valid_links = [l for l in links if l["source"] in node_ids and l["target"] in node_ids]
+    # Filter by bureau
+    if bureau:
+        bureau_nodes = {nid for nid,n in nodes.items() if n["bureau"] == bureau}
+        nodes = {nid:n for nid,n in nodes.items() if nid in bureau_nodes}
+        valid_links = [l for l in valid_links if l["source"] in bureau_nodes and l["target"] in bureau_nodes]
     return {"nodes": list(nodes.values()), "links": valid_links}
 
 # ── API: Éditeur ──
@@ -219,34 +239,6 @@ async def editor_save(request: Request):
     except: pass
     return {"ok": True}
 
-# ── Wiki BAVI (static files, dernière priorité) ──
-# ── API: Wiki Graph ──
-@app.get("/api/graph")
-async def api_graph():
-    docs_dir = BASE / "BAVI_LEO/docs"
-    nodes = {}
-    links = []
-    colors = {'bureau-michel':'#a78bfa','bureau-sylvia':'#06b6d4','bureau-leo':'#818cf8','bureau-gerard':'#f97316','bureau-virginie':'#ec4899','bureau-emile':'#f59e0b','bureau-robert':'#3b82f6','bureau-sophie':'#22c55e'}
-    import re
-    for md_file in docs_dir.rglob("*.md"):
-        rel = str(md_file.relative_to(docs_dir))
-        parts = rel.replace(".md","").split("/")
-        bureau = parts[-2] if len(parts) >= 2 else 'root'
-        name = parts[-1].replace("-"," ").title()[:25]
-        nid = rel.replace(".md","").replace("/","_").replace(" ","")
-        if nid not in nodes:
-            nodes[nid] = {"id":nid,"name":name,"analyses":0,"color":colors.get('bureau-'+parts[-2],'#64748b')}
-        nodes[nid]["analyses"] += 1
-        try:
-            content = md_file.read_text()
-            for match in re.finditer(r'\[([^\]]*)\]\(([^)]+\.md)\)', content):
-                target = match.group(2).replace(".md","").replace("/","_").replace(" ","")
-                if target and target != nid and len(links) < 200:
-                    links.append({"source":nid,"target":target})
-        except: pass
-    node_ids = {n["id"] for n in nodes.values()}
-    valid_links = [l for l in links if l["source"] in node_ids and l["target"] in node_ids]
-    return {"nodes": list(nodes.values()), "links": valid_links}
 if BAVI_SITE.exists():
     app.mount("/", StaticFiles(directory=str(BAVI_SITE), html=True), name="wiki")
 
