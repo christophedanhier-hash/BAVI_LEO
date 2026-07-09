@@ -103,52 +103,52 @@ SCOUT est un **agent IA** développé par Microsoft, intégré à GitHub Copilot
 
 ---
 
-|## 4. Schéma d'architecture conceptuel
-|
-|```mermaid
-|flowchart TB
-|    subgraph SI_SOLIDARIS["SI SOLIDARIS (Vue urbanisation)"]
-|        subgraph DOMAINE_M365["DOMAINE M365 (Cloud Microsoft)"]
-|            Azure_AD["Azure AD /<br/>Entra ID"]
-|            M365_Apps["Exchange Online<br/>SharePoint / OD<br/>Teams / Loop"]
-|            Azure_AD --> M365_Apps
-|        end
-|
-|        subgraph DOMAINE_METIER["DOMAINE MÉTIER (Datacenter Solidaris / Cloud)"]
-|            AO["AO<br/>(gestion)"]
-|            INAMI["INAMI<br/>(tarif)"]
-|            BCSS["BCSS<br/>(ref.)"]
-|            eHealth["Plateforme eHealth<br/>(SSO, Metahub, ...)"]
-|            AO --> eHealth
-|            INAMI --> eHealth
-|            BCSS --> eHealth
-|        end
-|    end
-|
-|    subgraph RESEAU["RÉSEAU D'ENTREPRISE (Proxy, Firewall, ZTA)"]
-|        direction TB
-|    end
-|
-|    subgraph POSTE["POSTE DE TRAVAIL WINDOWS 11"]
-|        subgraph VSCODE["VSCode + SCOUT"]
-|            direction TB
-|            IA["Modèle IA<br/>(local ou cloud)"]
-|            MCP["MCP Servers"]
-|            Playwright["Playwright<br/>(Browser)"]
-|            PS["PowerShell<br/>/ npm / Py"]
-|        end
-|
-|        subgraph M365_LOCAL["Apps M365 (Word, Excel, PPT, Loop)"]
-|        end
-|
-|        subgraph NAV["Accès navigateur (Edge/Chrome)<br/>→ AO, INAMI Web, BCSS, eHealth"]
-|        end
-|    end
-|
-|    DOMAINE_M365 --> RESEAU
-|    DOMAINE_METIER --> RESEAU
-|    RESEAU --> POSTE
-|```
+## 4. Schéma d'architecture conceptuel
+
+```mermaid
+flowchart TB
+    subgraph SI_SOLIDARIS["SI SOLIDARIS (Vue urbanisation)"]
+        subgraph DOMAINE_M365["DOMAINE M365 (Cloud Microsoft)"]
+            Azure_AD["Azure AD /<br/>Entra ID"]
+            M365_Apps["Exchange Online<br/>SharePoint / OD<br/>Teams / Loop"]
+            Azure_AD --> M365_Apps
+        end
+
+        subgraph DOMAINE_METIER["DOMAINE MÉTIER (Datacenter Solidaris / Cloud)"]
+            AO["AO<br/>(gestion)"]
+            INAMI["INAMI<br/>(tarif)"]
+            BCSS["BCSS<br/>(ref.)"]
+            eHealth["Plateforme eHealth<br/>(SSO, Metahub, ...)"]
+            AO --> eHealth
+            INAMI --> eHealth
+            BCSS --> eHealth
+        end
+    end
+
+    subgraph RESEAU["RÉSEAU D'ENTREPRISE (Proxy, Firewall, ZTA)"]
+        direction TB
+    end
+
+    subgraph POSTE["POSTE DE TRAVAIL WINDOWS 11"]
+        subgraph VSCODE["VSCode + SCOUT"]
+            direction TB
+            IA["Modèle IA<br/>(local ou cloud)"]
+            MCP["MCP Servers"]
+            Playwright["Playwright<br/>(Browser)"]
+            PS["PowerShell<br/>/ npm / Py"]
+        end
+
+        subgraph M365_LOCAL["Apps M365 (Word, Excel, PPT, Loop)"]
+        end
+
+        subgraph NAV["Accès navigateur (Edge/Chrome)<br/>→ AO, INAMI Web, BCSS, eHealth"]
+        end
+    end
+
+    DOMAINE_M365 --> RESEAU
+    DOMAINE_METIER --> RESEAU
+    RESEAU --> POSTE
+```
 
 ### 4.1 Flux de données SCOUT
 
@@ -206,34 +206,34 @@ C'est le **cas d'usage le plus prometteur** : SCOUT peut :
 
 ## 6. Patterns d'intégration avec les applicatifs métier
 
-|### 6.1 AO (Application de Gestion des Dossiers — Solidaris)
-|
-|```mermaid
-|flowchart LR
-|    AO[AO<br/>(Web)] <-->|scraping / actions| SCOUT[VSCode + SCOUT<br/>Playwright]
-|```
-|
-|- **Pattern recommandé :** RPA léger via Playwright (connexion, extraction, mise à jour)
-|- **Risque :** Le scraping d'AO est fragile — toute évolution de l'UI casse le script
-|- **Alternative plus robuste :** API AO si disponible (via MCP Server dédié)
-|
-|### 6.2 INAMI (tarification, attestations)
-|
-|```mermaid
-|flowchart LR
-|    INAMI[INAMI<br/>Web] <-->|consultation| SCOUT[VSCode + SCOUT<br/>Playwright]
-|```
+### 6.1 AO (Application de Gestion des Dossiers — Solidaris)
+
+```mermaid
+flowchart LR
+    AO[AO<br/>(Web)] <-->|scraping / actions| SCOUT[VSCode + SCOUT<br/>Playwright]
+```
+
+- **Pattern recommandé :** RPA léger via Playwright (connexion, extraction, mise à jour)
+- **Risque :** Le scraping d'AO est fragile — toute évolution de l'UI casse le script
+- **Alternative plus robuste :** API AO si disponible (via MCP Server dédié)
+
+### 6.2 INAMI (tarification, attestations)
+
+```mermaid
+flowchart LR
+    INAMI[INAMI<br/>Web] <-->|consultation| SCOUT[VSCode + SCOUT<br/>Playwright]
+```
 
 - **Usage :** Consultation d'attestations, vérification de tarifs
 - **Contrainte :** INAMI Web nécessite eHealth / ItsMe — compatible via navigateur contrôlé
 - **Limitation :** SCOUT ne gère **pas les identifiants** — le gestionnaire de mots de passe d'entreprise reste nécessaire
 
-|### 6.3 BCSS (Banque Carrefour Sécurité Sociale)
-|
-|```mermaid
-|flowchart LR
-|    BCSS[BCSS<br/>(Web)] <-->|DMF, DMI, ...| SCOUT[VSCode + SCOUT<br/>Playwright]
-|```
+### 6.3 BCSS (Banque Carrefour Sécurité Sociale)
+
+```mermaid
+flowchart LR
+    BCSS[BCSS<br/>(Web)] <-->|DMF, DMI, ...| SCOUT[VSCode + SCOUT<br/>Playwright]
+```
 
 - **Usage :** Déclarations DMFA, consultation de données sociales
 - **⚠️ Critique :** Les données BCSS sont **hautement sensibles** (RGPD, loi du 15/01/1990). Toute interaction SCOUT doit être **journalisée et tracée.**
@@ -246,24 +246,24 @@ C'est le **cas d'usage le plus prometteur** : SCOUT peut :
 | **Recip-e** | Consultation d'historique médicamenteux (⚠️ sensible) |
 | **Vitalink** | Partage de données de santé (⚠️ très sensible) |
 
-|### 6.5 Schéma récapitulatif des patterns
-|
-|```mermaid
-|flowchart TB
-|    subgraph PATTERNS["PATTERNS D'INTÉGRATION"]
-|        P1["PATTERN 1 : API Directe (M365)"]
-|        P1_DESC["SCOUT ──► Graph API ──► SharePoint / Exchange / Teams<br/>✅ Recommandé — natif, sécurisé, traçable"]
-|
-|        P2["PATTERN 2 : Playwright (Web App métier)"]
-|        P2_DESC["SCOUT ──► Playwright ──► Browser ──► AO / INAMI / BCSS<br/>⚠️ Usage maîtrisé — fragile, à superviser"]
-|
-|        P3["PATTERN 3 : MCP Server (API métier)"]
-|        P3_DESC["SCOUT ──► MCP ──► API Gateway ──► AO / BCSS / eHealth<br/>🔧 À construire — nécessite développement Solidaris"]
-|
-|        P4["PATTERN 4 : PowerShell / Script"]
-|        P4_DESC["SCOUT ──► PowerShell ──► Active Directory / Fichier réseau<br/>⚠️ Risqué — nécessite signature de script + supervision"]
-|    end
-|```
+### 6.5 Schéma récapitulatif des patterns
+
+```mermaid
+flowchart TB
+    subgraph PATTERNS["PATTERNS D'INTÉGRATION"]
+        P1["PATTERN 1 : API Directe (M365)"]
+        P1_DESC["SCOUT ──► Graph API ──► SharePoint / Exchange / Teams<br/>✅ Recommandé — natif, sécurisé, traçable"]
+
+        P2["PATTERN 2 : Playwright (Web App métier)"]
+        P2_DESC["SCOUT ──► Playwright ──► Browser ──► AO / INAMI / BCSS<br/>⚠️ Usage maîtrisé — fragile, à superviser"]
+
+        P3["PATTERN 3 : MCP Server (API métier)"]
+        P3_DESC["SCOUT ──► MCP ──► API Gateway ──► AO / BCSS / eHealth<br/>🔧 À construire — nécessite développement Solidaris"]
+
+        P4["PATTERN 4 : PowerShell / Script"]
+        P4_DESC["SCOUT ──► PowerShell ──► Active Directory / Fichier réseau<br/>⚠️ Risqué — nécessite signature de script + supervision"]
+    end
+```
 
 ---
 
