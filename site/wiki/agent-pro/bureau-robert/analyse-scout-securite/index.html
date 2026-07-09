@@ -1,0 +1,2290 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Portail des bureaux IA — PRO (Solidaris), OCA (Astronomie), Voyages, Infra Hermes">
+      
+      
+        <meta name="author" content="Christophe (Tofdan) & LEO">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Analyse Sécurité — Microsoft SCOUT en contexte Solidaris (Mutualité, Assurance Obligatoire) - BAVI LEO — Bureaux Agentiques Virtuels</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analyse-securite-microsoft-scout-en-contexte-solidaris-mutualite-assurance-obligatoire" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../../.." title="BAVI LEO — Bureaux Agentiques Virtuels" class="md-header__button md-logo" aria-label="BAVI LEO — Bureaux Agentiques Virtuels" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BAVI LEO — Bureaux Agentiques Virtuels
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analyse Sécurité — Microsoft SCOUT en contexte Solidaris (Mutualité, Assurance Obligatoire)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/christophedanhier-hash/BAVI_LEO" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="https://christophedanhier-hash.github.io/hermes-wiki/" class="md-tabs__link">
+          
+  
+  
+  🌐 Portail LEO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../.." class="md-tabs__link">
+          
+  
+  
+  🏠 Accueil
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../bureau-michel/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🔧 Michel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../bureau-sylvia/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🧭 Sylvia
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../bureau-leo/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 Léo
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../bureau-gerard/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📝 Gérard
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../bureau-virginie/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🩺 Virginie
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../bureau-emile/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🎓 Émile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏛️ Robert
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../bureau-sophie/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  💰 Sophie
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="BAVI LEO — Bureaux Agentiques Virtuels" class="md-nav__button md-logo" aria-label="BAVI LEO — Bureaux Agentiques Virtuels" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BAVI LEO — Bureaux Agentiques Virtuels
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/christophedanhier-hash/BAVI_LEO" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 Portail LEO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌐 Portail LEO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://christophedanhier-hash.github.io/hermes-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Wiki LEO (Hermes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://christophedanhier-hash.github.io/wiki-oca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔭 Wiki OCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://christophedanhier-hash.github.io/voyages-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧭 Voyages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/christophedanhier-hash/leo-tracker/issues" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Accueil
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 Accueil
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guide-utilisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../crons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⏰ Crons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ Doc-Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bureau-michel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Michel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bureau-sylvia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧭 Sylvia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bureau-leo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Léo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bureau-gerard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Gérard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bureau-virginie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🩺 Virginie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bureau-emile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎓 Émile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ Robert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bureau-sophie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💰 Sophie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-resume-executif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Résumé Exécutif
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-matrice-des-risques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Matrice des Risques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Matrice des Risques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carte-thermique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Carte thermique
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-analyse-rgpd-approfondie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Analyse RGPD Approfondie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Analyse RGPD Approfondie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-liceite-du-traitement-art-6-art-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Licéité du traitement (Art. 6 + Art. 9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-minimisation-art-51c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Minimisation (Art. 5(1)(c))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-dpo-et-registre-art-30-35-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 DPO et Registre (Art. 30, 35, 37)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-transferts-hors-ue-art-44-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Transferts hors UE (Art. 44-49)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-droit-des-personnes-art-12-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Droit des personnes (Art. 12-23)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-analyse-nis2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Analyse NIS2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Analyse NIS2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-exigences-impactees-par-scout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Exigences impactées par SCOUT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-risque-de-sanction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Risque de sanction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-analyse-iso-27001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Analyse ISO 27001
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-comparaison-avec-lexistant-poste-verrouille-gpo-edr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Comparaison avec l'Existant (Poste Verrouillé + GPO + EDR)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-analyse-des-garde-fous-proposes-intune-permissions-granulaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Analyse des Garde-Fous Proposés (Intune, Permissions Granulaires)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Analyse des Garde-Fous Proposés (Intune, Permissions Granulaires)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-politique-intune-obligatoire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Politique Intune obligatoire
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-permissions-granulaires-allowdenyallow-always" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Permissions granulaires (Allow/Deny/Allow always)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-formulaire-de-consentement-donnees-hors-safe-bubble-microsoft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Formulaire de consentement "Données hors safe bubble Microsoft"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-controle-des-endpoints-via-intune-defender-for-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Contrôle des endpoints via Intune + Defender for Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-scenarios-de-deploiement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Scénarios de Déploiement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Scénarios de Déploiement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-a-refus-pur-et-simple-recommande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scénario A : Refus Pur et Simple ⚠️ RECOMMANDÉ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-b-sandbox-technique-isolee-pilote-restreint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scénario B : Sandbox Technique Isolée ⚠️ PILOTE RESTREINT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-c-deploiement-controle-progressif-non-recommande-a-ce-stade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scénario C : Déploiement Contrôlé Progressif ⚠️ NON RECOMMANDÉ À CE STADE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-recommandations-au-rssi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Recommandations au RSSI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Recommandations au RSSI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#court-terme-0-3-mois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Court terme (0-3 mois)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moyen-terme-3-12-mois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moyen terme (3-12 mois)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-terme-12-mois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long terme (12+ mois)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-synthese-decisionnelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Synthèse Décisionnelle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annexes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annexes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annexe-a-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annexe A — Références
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annexe-b-glossaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annexe B — Glossaire
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/christophedanhier-hash/BAVI_LEO/edit/main/docs/wiki/agent-pro/bureau-robert/analyse-scout-securite.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="analyse-securite-microsoft-scout-en-contexte-solidaris-mutualite-assurance-obligatoire">Analyse Sécurité — Microsoft SCOUT en contexte Solidaris (Mutualité, Assurance Obligatoire)<a class="headerlink" href="#analyse-securite-microsoft-scout-en-contexte-solidaris-mutualite-assurance-obligatoire" title="Permanent link">&para;</a></h1>
+<p><strong>Destinataires :</strong> RSSI, DPO, Direction Sécurité<br />
+<strong>Rédacteur :</strong> Bureau Robert — Expert Sécurité (Expert #2)<br />
+<strong>Date :</strong> 9 juillet 2026<br />
+<strong>Classification :</strong> CONFIDENTIEL — Usage interne Solidaris</p>
+<hr />
+<h2 id="1-resume-executif">1. Résumé Exécutif<a class="headerlink" href="#1-resume-executif" title="Permanent link">&para;</a></h2>
+<p>Microsoft SCOUT est un agent IA desktop profondément intégré à Windows (PowerShell, Python, navigateur, exécution de code local, installation de packages). Pour une mutualité comme Solidaris, qui traite des <strong>données de santé relevant de l'article 9 RGPD</strong> (catégories particulières), SCOUT présente des <strong>risques graves et multiples</strong> que les garde-fous techniques actuels (Intune, permissions granulaires) ne couvrent pas complètement.</p>
+<p><strong>Jugement global : NON acceptable en l'état</strong> pour un déploiement généralisé sur le périmètre mutualiste. Un déploiement sandbox très restreint (pilote technique, pas de données réelles) est le seul scénario envisageable à court terme.</p>
+<hr />
+<h2 id="2-matrice-des-risques">2. Matrice des Risques<a class="headerlink" href="#2-matrice-des-risques" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Risque</th>
+<th>Gravité</th>
+<th>Probabilité</th>
+<th>Criticité</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>Exfiltration données de santé vers modèles tiers (Gemini, Opus via Copilot)</td>
+<td><strong>Critique (5)</strong></td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>20 — CRITIQUE</strong></td>
+<td>Le consentement utilisateur ne couvre pas les données de santé (art. 9 RGPD). Les données Solidaris (INAMI, BCSS, eHealth) peuvent transiter par GitHub Copilot configuré sur des modèles externes.</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Exécution de code arbitraire local (PowerShell, Python)</td>
+<td><strong>Critique (5)</strong></td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>20 — CRITIQUE</strong></td>
+<td>SCOUT exécute du code avec les droits de l'utilisateur. En cas de compromission du prompt ou d'une skill malveillante, escalade de privilèges possible.</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Supply chain — installation de packages npm, Python non vérifiés</td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>16 — ÉLEVÉ</strong></td>
+<td>SCOUT peut installer des dépendances depuis des registres publics. Risque de dependency confusion, package malveillant, ou version vulnérable.</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Interaction non supervisée avec le navigateur</td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>Moyenne (3)</strong></td>
+<td><strong>12 — ÉLEVÉ</strong></td>
+<td>SCOUT peut lire et manipuler le contenu du navigateur. Exfiltration de sessions web, accès à eHealth/BCSS, modification de formulaires.</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>Non-respect de la minimisation des données</td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>16 — ÉLEVÉ</strong></td>
+<td>L'architecture de SCOUT nécessite d'envoyer le contexte (prompt, code, fichiers) à des LLMs. Pas de garantie de minimisation.</td>
+</tr>
+<tr>
+<td>R6</td>
+<td>Absence de traçabilité complète des actions IA</td>
+<td><strong>Moyenne (3)</strong></td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>12 — ÉLEVÉ</strong></td>
+<td>Les logs SCOUT sont immatures. Impossible de garantir une piste d'audit complète pour les autorités de contrôle (APD, INAMI).</td>
+</tr>
+<tr>
+<td>R7</td>
+<td>Violation du principe d'intégrité des traitements mutualistes</td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>Moyenne (3)</strong></td>
+<td><strong>12 — ÉLEVÉ</strong></td>
+<td>Un agent IA modifiant des fichiers ou exécutant des scripts peut altérer des traitements réglementés (statistiques INAMI, remboursements).</td>
+</tr>
+<tr>
+<td>R8</td>
+<td>Non-conformité NIS2 — Sécurité des réseaux et SI</td>
+<td><strong>Élevée (4)</strong></td>
+<td><strong>Moyenne (3)</strong></td>
+<td><strong>12 — ÉLEVÉ</strong></td>
+<td>SCOUT crée des canaux de communication non maîtrisés (LLM cloud, registres packages) qui contournent les contrôles réseau traditionnels.</td>
+</tr>
+<tr>
+<td>R9</td>
+<td>Consentement insuffisant au sens RGPD</td>
+<td><strong>Critique (5)</strong></td>
+<td><strong>Très élevée (5)</strong></td>
+<td><strong>25 — CRITIQUE</strong></td>
+<td>Le formulaire de consentement SCOUT ne distingue pas les données de santé. Le consentement n'est pas une base légale valide pour le traitement de données de santé par un responsable de traitement mutualiste.</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>Dépendance à GitHub Copilot comme unique backend LLM</td>
+<td><strong>Moyenne (3)</strong></td>
+<td><strong>Faible (2)</strong></td>
+<td><strong>6 — MOYEN</strong></td>
+<td>Si Copilot est bridé aux modèles Microsoft (GPT-4o), le risque est moindre. Mais la configuration "modèles externes" est un risque immédiat.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="carte-thermique">Carte thermique<a class="headerlink" href="#carte-thermique" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>quadrantChart
+    title Carte thermique des risques SCOUT
+    x-axis "Faible" --&gt; "Critique"
+    y-axis "Faible" --&gt; "Critique"
+    quadrant-1 "Risques critiques (action immédiate)"
+    quadrant-2 "Risques élevés (surveillance renforcée)"
+    quadrant-3 "Risques moyens (à surveiller)"
+    quadrant-4 "Risques faibles (acceptables)"
+    R1: [0.85, 0.90]
+    R2: [0.90, 0.85]
+    R9: [0.95, 0.95]
+    R3: [0.80, 0.70]
+    R4: [0.65, 0.80]
+    R5: [0.75, 0.75]
+    R6: [0.60, 0.70]
+    R7: [0.55, 0.75]
+    R8: [0.60, 0.65]
+    R10: [0.30, 0.40]</code></pre>
+<hr />
+<h2 id="3-analyse-rgpd-approfondie">3. Analyse RGPD Approfondie<a class="headerlink" href="#3-analyse-rgpd-approfondie" title="Permanent link">&para;</a></h2>
+<h3 id="31-liceite-du-traitement-art-6-art-9">3.1 Licéité du traitement (Art. 6 + Art. 9)<a class="headerlink" href="#31-liceite-du-traitement-art-6-art-9" title="Permanent link">&para;</a></h3>
+<p><strong>Arbre de décision des bases légales :</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    A[Données de santé&lt;br/&gt;transférées via SCOUT] --&gt; B{Base légale&lt;br/&gt;identifiée ?}
+
+    B --&gt;|Non| C[❌ Aucune base légale&lt;br/&gt;= Traitement illicite]
+    B --&gt;|Oui| D{Quelle base ?}
+
+    D --&gt;|Consentement&lt;br/&gt;explicite art.9.2.a| E[Rapport asymétrique&lt;br/&gt;employeur/mutualité]
+    E --&gt; F[❌ Consentement non valable&lt;br/&gt;pour responsable de traitement]
+
+    D --&gt;|Intérêt public / santé&lt;br/&gt;art.9.2.h,i| G[SCOUT est un agent&lt;br/&gt;généraliste, pas médical]
+    G --&gt; H[❌ Pas applicable]
+
+    D --&gt;|Obligation légale&lt;br/&gt;art.9.2.b| I[Aucune loi n'impose&lt;br/&gt;l'usage d'un agent IA]
+    I --&gt; J[❌ Pas applicable]
+
+    D --&gt;|Exécution contrat&lt;br/&gt;art.6.1.b| K[L'agent n'est pas&lt;br/&gt;nécessaire aux soins]
+    K --&gt; L[❌ Pas applicable]
+
+    C --&gt; M[🛑 TRAITEMENT NON CONFORME]
+    F --&gt; M
+    H --&gt; M
+    J --&gt; M
+    L --&gt; M
+
+    style M fill:#ff4444,color:#fff,stroke:#cc0000
+    style C fill:#ff8888,color:#000
+    style A fill:#ffdddd,color:#000,stroke:#cc0000</code></pre>
+<p>Solidaris traite des <strong>catégories particulières de données</strong> (art. 9 RGPD) :
+- Données de santé des affiliés
+- Données INAMI (remboursements, statuts)
+- Données BCSS (mutualité, affiliation)
+- Données eHealth (DMG, dossier médical global)</p>
+<p><strong>Problème fondamental :</strong> SCOUT, par conception, envoie le contexte de la requête à un LLM distant (via GitHub Copilot). La base légale pour ce transfert est :
+- ❌ <strong>Consentement explicite</strong> (art. 9(2)(a)) — Pas valable pour un responsable de traitement mutualiste dans le cadre de ses missions, rapport asymétrique
+- ❌ <strong>Intérêt public / santé</strong> (art. 9(2)(h,i)) — Non applicable à un agent généraliste
+- ❌ <strong>Obligation légale</strong> (art. 9(2)(b)) — Non
+- ❌ <strong>Nécessité contractuelle</strong> (art. 6(1)(b)) — L'agent n'est pas nécessaire à l'exécution des soins</p>
+<p><strong>Conclusion : Aucune base légale identifiée pour le transfert de données de santé vers des LLMs cloud via SCOUT.</strong></p>
+<h3 id="32-minimisation-art-51c">3.2 Minimisation (Art. 5(1)(c))<a class="headerlink" href="#32-minimisation-art-51c" title="Permanent link">&para;</a></h3>
+<p>SCOUT transmet tout le contexte nécessaire à l'exécution de la tâche. Dans un environnement mutualiste, ce contexte inclut quasi-systématiquement des données à caractère personnel (nom, NISS, numéro d'affiliation, code INAMI). La <strong>minimisation est structurellement impossible</strong>.</p>
+<h3 id="33-dpo-et-registre-art-30-35-37">3.3 DPO et Registre (Art. 30, 35, 37)<a class="headerlink" href="#33-dpo-et-registre-art-30-35-37" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>AIPD obligatoire</strong> (Art. 35) : Un déploiement SCOUT nécessite une Analyse d'Impact relative à la Protection des Données. Le risque pour les droits et libertés est manifestement élevé.</li>
+<li><strong>Registre</strong> : Chaque interaction SCOUT génère un traitement qui doit figurer au registre — impraticable à l'échelle.</li>
+</ul>
+<h3 id="34-transferts-hors-ue-art-44-49">3.4 Transferts hors UE (Art. 44-49)<a class="headerlink" href="#34-transferts-hors-ue-art-44-49" title="Permanent link">&para;</a></h3>
+<p>Si GitHub Copilot ou les modèles externes sont hébergés hors EEE :
+- <strong>Data Privacy Framework</strong> (US) : Insuffisant pour des données de santé
+- <strong>Clauses Contractuelles Types</strong> : À vérifier avec Microsoft — ne couvrent pas les modèles tiers
+- <strong>Décision d'adéquation</strong> : Aucune pour les données de santé vers les US</p>
+<p><strong>Diagramme de flux de données SCOUT :</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Poste["🖥️ Poste Solidaris"]
+        U[Utilisateur] --&gt;|Prompt + contexte| S[SCOUT Agent]
+        S --&gt;|Exécute| PS[PowerShell / Python]
+        S --&gt;|Lit| FS[Fichiers locaux]
+        S --&gt;|Interagit| NAV[Navigateur]
+    end
+
+    subgraph Cloud["☁️ Cloud Microsoft"]
+        GH[GitHub Copilot] --&gt;|Prompt enrichi| LLM{Modèle LLM}
+        LLM --&gt; GPT[GPT-4o&lt;br/&gt;Microsoft Azure]
+        LLM --&gt; EXT[Modèles externes&lt;br/&gt;Gemini, Opus, Claude&lt;br/&gt;⚠️ SELON CONFIG]
+    end
+
+    subgraph Tiers["🌐 Services tiers non maîtrisés"]
+        NPM[npm Registry]
+        PYPI[PyPI]
+        PSG[PowerShell Gallery]
+    end
+
+    subgraph Données["🔴 Données à risque"]
+        SANTE[Données de santé&lt;br/&gt;Art.9 RGPD]
+        INAMI[INAMI / BCSS / eHealth]
+        NISS[NISS affiliés]
+    end
+
+    S --&gt;|Commande packages| NPM
+    S --&gt;|Commande packages| PYPI
+    S --&gt;|Commande packages| PSG
+
+    S --&gt;|Contexte complet&lt;br/&gt;via API HTTPS| GH
+
+    Données -.-&gt; FS
+    Données -.-&gt;|Transférées sans&lt;br/&gt;minimisation| S
+
+    EXT -.-&gt;|❌ Pas de DLP&lt;br/&gt;sur ces canaux| S
+
+    style Données fill:#ff4444,color:#fff,stroke:#cc0000
+    style EXT fill:#ffaa00,color:#000
+    style S fill:#d0e0ff,color:#000,stroke:#0066cc
+    style GH fill:#e0e0e0,color:#000</code></pre>
+<h3 id="35-droit-des-personnes-art-12-23">3.5 Droit des personnes (Art. 12-23)<a class="headerlink" href="#35-droit-des-personnes-art-12-23" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Droit à l'information</strong> : Comment expliquer à un affilié Solidaris que ses données transitent par un LLM non déterminé ?</li>
+<li><strong>Droit d'opposition / effacement</strong> : Impossible si les données ont été utilisées pour l'entraînement d'un modèle (bien que OpenAI/Microsoft affirment le contraire, l'auditabilité est nulle)</li>
+</ul>
+<hr />
+<h2 id="4-analyse-nis2">4. Analyse NIS2<a class="headerlink" href="#4-analyse-nis2" title="Permanent link">&para;</a></h2>
+<p>Solidaris, comme mutualité d'assurance obligatoire, est probablement une <strong>entité essentielle</strong> au sens de NIS2 (secteur santé, seuil &gt; 50 employés ou CA &gt; 10M€).</p>
+<h3 id="41-exigences-impactees-par-scout">4.1 Exigences impactées par SCOUT<a class="headerlink" href="#41-exigences-impactees-par-scout" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Exigence NIS2</th>
+<th>Impact</th>
+<th>Analyse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Art. 21(2)(c) — Sécurité des RH</strong></td>
+<td><strong>Rouge</strong></td>
+<td>Les utilisateurs peuvent consentir à des traitements qu'ils ne maîtrisent pas, hors politique de sécurité</td>
+</tr>
+<tr>
+<td><strong>Art. 21(2)(d) — Sécurité des accès</strong></td>
+<td><strong>Orange</strong></td>
+<td>SCOUT contourne les contrôles GPO classiques par son modèle "Allow/Deny" géré par l'utilisateur</td>
+</tr>
+<tr>
+<td><strong>Art. 21(2)(g) — Cryptographie</strong></td>
+<td><strong>Vert</strong></td>
+<td>Chiffrement natif Microsoft, mais les données sont déchiffrées avant envoi au LLM</td>
+</tr>
+<tr>
+<td><strong>Art. 21(2)(i) — Gestion des incidents</strong></td>
+<td><strong>Rouge</strong></td>
+<td>Un incident SCOUT (exfiltration) est indétectable par les EDR classiques</td>
+</tr>
+<tr>
+<td><strong>Art. 23 — Reporting incidents</strong></td>
+<td><strong>Rouge</strong></td>
+<td>Impossible de qualifier un incident dans les délais NIS2 (24h pour les entités essentielles)</td>
+</tr>
+<tr>
+<td><strong>Art. 21(2)(j) — Tests de sécurité</strong></td>
+<td><strong>Orange</strong></td>
+<td>SCOUT nécessite une nouvelle surface d'attaque à tester, non couverte par les pentests classiques</td>
+</tr>
+<tr>
+<td><strong>Art. 24 — Usage de technologies certifiées</strong></td>
+<td><strong>Orange</strong></td>
+<td>Aucune certification cybersécurité (EUCS, SOC 2) spécifique pour SCOUT connu à ce jour</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-risque-de-sanction">4.2 Risque de sanction<a class="headerlink" href="#42-risque-de-sanction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Entité essentielle : amende jusqu'à 10M€ ou 2% du chiffre d'affaires annuel mondial</li>
+<li>Rupture d'obligation de notification d'incident : risque de sanction majoré</li>
+</ul>
+<hr />
+<h2 id="5-analyse-iso-27001">5. Analyse ISO 27001<a class="headerlink" href="#5-analyse-iso-27001" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Contrôle</th>
+<th>Statut SCOUT</th>
+<th>Risque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A.5.14 — Transfert d'information</td>
+<td>Non conforme</td>
+<td>Toutes les données partent vers le LLM</td>
+</tr>
+<tr>
+<td>A.6.7 — Télétravail</td>
+<td>Étendu</td>
+<td>SCOUT aggrave les risques en mobilité</td>
+</tr>
+<tr>
+<td>A.8.10 — Suppression d'information</td>
+<td>Non garanti</td>
+<td>Données potentiellement persistées dans les logs LLM</td>
+</tr>
+<tr>
+<td>A.8.12 — Prévention de fuite de données</td>
+<td>Non conforme</td>
+<td>Aucun DLP n'intercepte les appels API vers Copilot</td>
+</tr>
+<tr>
+<td>A.8.16 — Activités de surveillance</td>
+<td>Insuffisant</td>
+<td>Logs SCOUT limités vs exigences d'audit</td>
+</tr>
+<tr>
+<td>A.10.2 — Dépendances fournisseur</td>
+<td>Critique</td>
+<td>Dépendance à GitHub Copilot + modèles externes</td>
+</tr>
+<tr>
+<td>A.14.2 — Sécurité du développement</td>
+<td>Hors scope</td>
+<td>SCOUT installe des packages non audités</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-comparaison-avec-lexistant-poste-verrouille-gpo-edr">6. Comparaison avec l'Existant (Poste Verrouillé + GPO + EDR)<a class="headerlink" href="#6-comparaison-avec-lexistant-poste-verrouille-gpo-edr" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Situation Actuelle (Solidaris)</th>
+<th>Avec SCOUT</th>
+<th>Évolution du risque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Surface d'attaque</strong></td>
+<td>Poste verrouillé, GPO restrictives, exécution restreinte</td>
+<td>Exécution illimitée Python/PowerShell + installations packages</td>
+<td>⬆️ <strong>CRITIQUE</strong></td>
+</tr>
+<tr>
+<td><strong>DLP / Exfiltration</strong></td>
+<td>Proxy, DLP réseau, blocage USB/applications cloud</td>
+<td>Canal HTTPS direct vers GitHub Copilot + modèles tiers</td>
+<td>⬆️ <strong>CRITIQUE</strong></td>
+</tr>
+<tr>
+<td><strong>Audit / Logs</strong></td>
+<td>Logs Windows, EDR (Defender/ Sentinel)</td>
+<td>Logs SCOUT propriétaires, non intégrés au SIEM central</td>
+<td>⬆️ <strong>ÉLEVÉ</strong></td>
+</tr>
+<tr>
+<td><strong>Contrôle des permissions</strong></td>
+<td>GPO + AD + RBAC strictes</td>
+<td>Permissions SCOUT gérées par Intune + consentement utilisateur</td>
+<td>⬆️ <strong>ÉLEVÉ</strong></td>
+</tr>
+<tr>
+<td><strong>Supply chain</strong></td>
+<td>Catalogue approuvé (SCCM/Intune)</td>
+<td>npm, PyPI, PowerShell Gallery — aucun contrôle</td>
+<td>⬆️ <strong>CRITIQUE</strong></td>
+</tr>
+<tr>
+<td><strong>Sécurité navigateur</strong></td>
+<td>Proxy + GPO Chrome/Edge restreint</td>
+<td>SCOUT peut interagir avec le navigateur</td>
+<td>⬆️ <strong>ÉLEVÉ</strong></td>
+</tr>
+<tr>
+<td><strong>Gestion des identités</strong></td>
+<td>PIV/SSO, MFA obligatoire</td>
+<td>SCOUT ne gère PAS les mots de passe — bon point</td>
+<td>➡️ <strong>NEUTRE</strong></td>
+</tr>
+<tr>
+<td><strong>Mobilité</strong></td>
+<td>VPN + device compliance</td>
+<td>SCOUT mobile non contrôlé</td>
+<td>⬆️ <strong>ÉLEVÉ</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-analyse-des-garde-fous-proposes-intune-permissions-granulaires">7. Analyse des Garde-Fous Proposés (Intune, Permissions Granulaires)<a class="headerlink" href="#7-analyse-des-garde-fous-proposes-intune-permissions-granulaires" title="Permanent link">&para;</a></h2>
+<h3 id="71-politique-intune-obligatoire">7.1 Politique Intune obligatoire<a class="headerlink" href="#71-politique-intune-obligatoire" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Points positifs :</strong>
+- Impose une configuration minimale de sécurité
+- Peut bloquer SCOUT sur les devices non conformes
+- Permet le déploiement sélectif (groupes de test)</p>
+<p>❌ <strong>Limites :</strong>
+- Intune ne contrôle pas ce que fait SCOUT, seulement la configuration du device
+- Aucun contrôle sur le contenu envoyé au LLM
+- BYOD/MDM partiel = trou dans la raquette
+- Les politiques Intune sont contournables si le device est compromis</p>
+<h3 id="72-permissions-granulaires-allowdenyallow-always">7.2 Permissions granulaires (Allow/Deny/Allow always)<a class="headerlink" href="#72-permissions-granulaires-allowdenyallow-always" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Points positifs :</strong>
+- Chaque action sensible déclenche une demande explicite
+- L'admin IT peut centraliser les permissions par automation
+- Permet un blocage fin des actions à risque (ex: installer un package, écrire dans le système)</p>
+<p>❌ <strong>Limites :</strong>
+- <strong>Fatigue de consentement :</strong> L'utilisateur finit par cliquer "Allow always" par habitude
+- <strong>Pas de distinction données de santé :</strong> Le modèle Allow/Deny ne sait pas si le fichier ouvert contient des données de santé
+- <strong>Pas de contexte réglementaire :</strong> SCOUT ne peut pas décider de ce qui est RGPD-compatible
+- <strong>L'utilisateur peut autoriser une action dangereuse</strong> en toute bonne foi</p>
+<h3 id="73-formulaire-de-consentement-donnees-hors-safe-bubble-microsoft">7.3 Formulaire de consentement "Données hors safe bubble Microsoft"<a class="headerlink" href="#73-formulaire-de-consentement-donnees-hors-safe-bubble-microsoft" title="Permanent link">&para;</a></h3>
+<p>❌ <strong>Problème critique :</strong>
+- Le consentement utilisateur ne couvre pas les données de santé (art. 9 RGPD)
+- L'utilisateur d'une mutualité n'est pas habilité à consentir pour le compte de l'organisation ni des affiliés
+- Le formulaire crée une <strong>fausse sécurité juridique</strong></p>
+<h3 id="74-controle-des-endpoints-via-intune-defender-for-endpoint">7.4 Contrôle des endpoints via Intune + Defender for Endpoint<a class="headerlink" href="#74-controle-des-endpoints-via-intune-defender-for-endpoint" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Potentiel :</strong>
+- Blocage des exécutables non signés
+- ASR rules (Attack Surface Reduction) pour bloquer les comportements suspects
+- File Indicator pour bloquer les packages non approuvés</p>
+<p>❌ <strong>Limites :</strong>
+- Les scripts PowerShell signés par Microsoft peuvent être autorisés par défaut
+- Les packages npm/Python sont rarement signés — difficile à bloquer sans casser le workflow
+- Defender n'inspecte pas le contenu envoyé au LLM</p>
+<hr />
+<h2 id="8-scenarios-de-deploiement">8. Scénarios de Déploiement<a class="headerlink" href="#8-scenarios-de-deploiement" title="Permanent link">&para;</a></h2>
+<p><strong>Arbre de décision :</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    START[Déploiement SCOUT&lt;br/&gt;en mutualité ?] --&gt; COND1{Toutes les barrières&lt;br/&gt;levées ?}
+
+    COND1 --&gt;|Non| COND2{Aucune donnée réelle&lt;br/&gt;+ réseau isolé&lt;br/&gt;+ durée limitée ?}
+    COND1 --&gt;|Oui| C[Déploiement Contrôlé&lt;br/&gt;Progressif]
+
+    COND2 --&gt;|Non| A[Refus Pur et Simple&lt;br/&gt;⚠️ RECOMMANDÉ]
+    COND2 --&gt;|Oui| B[Sandbox Technique Isolée&lt;br/&gt;Pilote restreint]
+
+    A --&gt; A1[Surveiller évolution&lt;br/&gt;du produit SCOUT]
+    A --&gt; A2[Préparer stratégie&lt;br/&gt;Agent IA souveraine]
+
+    B --&gt; B1[Données synthétiques]
+    B --&gt; B2[VLAN dédié]
+    B --&gt; B3[5-10 postes IT]
+    B --&gt; B4[3 mois max]
+    B --&gt; B5[Logs intensifs]
+
+    C --&gt; C1{Barrières requises&lt;br/&gt;avant déploiement}
+    C1 --&gt; C2[☐ Contrat Microsoft&lt;br/&gt;safe bubble exclusif]
+    C1 --&gt; C3[☐ AIPD validée APD]
+    C1 --&gt; C4[☐ Certification HDS]
+    C1 --&gt; C5[☐ DLP inspection API]
+    C1 --&gt; C6[☐ Logs SIEM temps réel]
+    C1 --&gt; C7[☐ Formation utilisateurs]
+    C1 --&gt; C8[☐ Politique sécurité RSSI/DPO]
+
+    style A fill:#ff4444,color:#fff,stroke:#cc0000
+    style B fill:#ffaa00,color:#000
+    style C fill:#88cc88,color:#000
+    style START fill:#d0e0ff,color:#000,stroke:#0066cc</code></pre>
+<h3 id="scenario-a-refus-pur-et-simple-recommande">Scénario A : Refus Pur et Simple ⚠️ RECOMMANDÉ<a class="headerlink" href="#scenario-a-refus-pur-et-simple-recommande" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Évaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Risque global</strong></td>
+<td>Acceptable (risque évité)</td>
+</tr>
+<tr>
+<td><strong>Conformité</strong></td>
+<td>Garantie</td>
+</tr>
+<tr>
+<td><strong>Cohérence avec l'existant</strong></td>
+<td>Parfaite</td>
+</tr>
+<tr>
+<td><strong>Coût</strong></td>
+<td>Aucun</td>
+</tr>
+<tr>
+<td><strong>Innovation</strong></td>
+<td>Perdue</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Arguments :</strong>
+- Les risques critiques (R1, R2, R9) ne peuvent pas être atténués techniquement
+- Aucune base légale RGPD pour le transfert de données de santé
+- NIS2 non compatible
+- <strong>Recommandation :</strong> Refuser le déploiement. Surveiller l'évolution de SCOUT (notamment un éventuel modèle privé on-premise).</p>
+<h3 id="scenario-b-sandbox-technique-isolee-pilote-restreint">Scénario B : Sandbox Technique Isolée ⚠️ PILOTE RESTREINT<a class="headerlink" href="#scenario-b-sandbox-technique-isolee-pilote-restreint" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Évaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Risque global</strong></td>
+<td>Acceptable avec contrôles stricts</td>
+</tr>
+<tr>
+<td><strong>Conformité</strong></td>
+<td>Sous condition (pas de données réelles)</td>
+</tr>
+<tr>
+<td><strong>Cohérence avec l'existant</strong></td>
+<td>Silotée</td>
+</tr>
+<tr>
+<td><strong>Coût</strong></td>
+<td>Moyen (infra + supervision)</td>
+</tr>
+<tr>
+<td><strong>Innovation</strong></td>
+<td>Partielle (test technique sans valeur métier)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conditions strictes :</strong>
+1. <strong>Aucune donnée réelle</strong> — données synthétiques uniquement
+2. <strong>Mise en réseau isolée</strong> (VLAN dédié, pas d'accès aux applicatifs métier, proxy bloqué vers les domaines métier)
+3. <strong>Comptes de test dédiés</strong> (pas de comptes réels Solidaris)
+4. <strong>GitHub Copilot bridé aux modèles Microsoft uniquement</strong> (vérification contractuelle)
+5. <strong>Journalisation intensive</strong> (network logs + process logs + SCOUT logs)
+6. <strong>Durée limitée</strong> (3 mois, revue avant extension)
+7. <strong>Périmètre</strong> : 5-10 postes, service IT uniquement (pas de métier)</p>
+<p><strong>Objectif du pilote :</strong>
+- Tester la maturité des logs SCOUT
+- Valider ou infirmer les capacités de blocage Intune
+- Cartographier les canaux d'exfiltration réels
+- Évaluer le comportement des utilisateurs face à Allow/Deny</p>
+<h3 id="scenario-c-deploiement-controle-progressif-non-recommande-a-ce-stade">Scénario C : Déploiement Contrôlé Progressif ⚠️ NON RECOMMANDÉ À CE STADE<a class="headerlink" href="#scenario-c-deploiement-controle-progressif-non-recommande-a-ce-stade" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Évaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Risque global</strong></td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td><strong>Conformité</strong></td>
+<td>Non garantie</td>
+</tr>
+<tr>
+<td><strong>Cohérence avec l'existant</strong></td>
+<td>Difficile</td>
+</tr>
+<tr>
+<td><strong>Coût</strong></td>
+<td>Élevé (Intune + formation + audit + DPO)</td>
+</tr>
+<tr>
+<td><strong>Innovation</strong></td>
+<td>Maximale</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Barrières avant d'envisager ce scénario :</strong>
+☐ Négociation contractuelle Microsoft pour garantir le <strong>traitement exclusif dans le safe bubble Azure</strong> (pas de modèles tiers)
+☐ <strong>AIPD validée</strong> par l'APD (délais 6-12 mois)
+☐ <strong>Certification</strong> SOC 2 + HDS pour SCOUT + GitHub Copilot
+☐ <strong>Chiffrement de bout en bout</strong> des données envoyées au LLM (homomorphique ou à défaut TLS + clé client)
+☐ <strong>DLP</strong> capable d'inspecter les appels API Copilot
+☐ <strong>Logs SCOUT intégrés au SIEM</strong> avec alertes en temps réel
+☐ <strong>Formation obligatoire</strong> de tous les utilisateurs (avec test de non-régression)
+☐ <strong>Politique de sécurité SCOUT</strong> validée par le RSSI, le DPO et la Direction
+☐ <strong>Garantie contractuelle</strong> d'absence de réutilisation des données pour l'entraînement</p>
+<p>Tant que ces barrières ne sont pas toutes levées → <strong>Scénario A ou B uniquement.</strong></p>
+<hr />
+<h2 id="9-recommandations-au-rssi">9. Recommandations au RSSI<a class="headerlink" href="#9-recommandations-au-rssi" title="Permanent link">&para;</a></h2>
+<p><strong>Calendrier de mise en œuvre :</strong></p>
+<pre class="mermaid"><code>gantt
+    title Planning recommandations SCOUT
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %Y
+
+    section Court terme (0-3 mois)
+    Refuser déploiement SCOUT           :done, a1, 2026-07-09, 7d
+    Notifier le DPO                     :a2, after a1, 5d
+    Contacter Microsoft (contrat, certif) :a3, after a2, 30d
+    Préparer position de négociation    :a4, after a3, 20d
+
+    section Moyen terme (3-12 mois)
+    Monter pilote sandbox (Scénario B)  :b1, 2026-10-01, 90d
+    Réaliser AIPD complète              :b2, 2026-09-01, 120d
+    Analyser alternatives souveraines   :b3, 2026-10-01, 90d
+
+    section Long terme (12+ mois)
+    Définir politique Agent IA mutualiste :c1, 2027-07-01, 120d
+    Participer travaux sectoriels       :c2, 2027-07-01, 180d
+    Porter sujet eHealth / SPF Santé    :c3, 2027-09-01, 90d</code></pre>
+<h3 id="court-terme-0-3-mois">Court terme (0-3 mois)<a class="headerlink" href="#court-terme-0-3-mois" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Refuser le déploiement</strong> de SCOUT sur le périmètre mutualiste dans sa forme actuelle</li>
+<li><strong>Notifier le DPO</strong> pour ouverture d'une fiche d'analyse préliminaire</li>
+<li><strong>Contacter Microsoft</strong> pour obtenir :</li>
+<li>Le contrat spécifique Solidaris (indicateurs de sécurité, SLA, engagement de non-réutilisation)</li>
+<li>La confirmation écrite que GitHub Copilot peut être bridé aux modèles Microsoft uniquement</li>
+<li>Les certifications en vigueur pour SCOUT (SOC 2, HDS, EUCS)</li>
+<li><strong>Préparer une position de négociation</strong> : refus sauf garanties contractuelles fermes sur :</li>
+<li>Safe bubble exclusif (Azure OpenAI, pas de modèle tiers)</li>
+<li>Absence de réutilisation des données</li>
+<li>Auditabilités des logs</li>
+<li>Clause résolutoire en cas de non-conformité</li>
+</ol>
+<h3 id="moyen-terme-3-12-mois">Moyen terme (3-12 mois)<a class="headerlink" href="#moyen-terme-3-12-mois" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Monter un pilote sandbox</strong> (Scénario B) si les conditions de sécurité sont réunies</li>
+<li><strong>Réaliser une AIPD</strong> complète en vue d'un éventuel déploiement futur</li>
+<li><strong>Analyser les alternatives</strong> :</li>
+<li>Modèle on-premise (GPT-Next, Mistral Large auto-hébergé)</li>
+<li>Agents IA open-source avec données locales (Hermes Agent, LangChain)</li>
+<li>Partenariat avec un éditeur HDS (Health Data Hosting français)</li>
+</ol>
+<h3 id="long-terme-12-mois">Long terme (12+ mois)<a class="headerlink" href="#long-terme-12-mois" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Définir une politique « Agent IA pour mutualiste »</strong> intégrant :</li>
+<li>Classification des données autorisées / interdites pour les agents</li>
+<li>Principe de minimisation automatique (anonymisation avant envoi LLM)</li>
+<li>Traçabilité obligatoire (logs, preuves de non-rétention)</li>
+<li>Procédure de réponse à incident spécifique aux agents IA</li>
+<li><strong>Participer aux travaux sectoriels</strong> (Mutualité chrétienne, UNMS, UCM) pour une position commune</li>
+<li><strong>Porter le sujet au niveau eHealth / SPF Santé</strong> : les agents IA dans les mutualités sont un enjeu sectoriel</li>
+</ol>
+<hr />
+<h2 id="10-synthese-decisionnelle">10. Synthèse Décisionnelle<a class="headerlink" href="#10-synthese-decisionnelle" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Décision</th>
+<th>Faisabilité technique</th>
+<th>Conformité RGPD</th>
+<th>Conformité NIS2</th>
+<th>Sécurité</th>
+<th>Coût</th>
+<th>Recommandation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Refus</strong></td>
+<td>Immédiate</td>
+<td>✅ Garantie</td>
+<td>✅ Garantie</td>
+<td>✅ Maximale</td>
+<td>Aucun</td>
+<td>🥇 <strong>PRIVILÉGIÉE</strong></td>
+</tr>
+<tr>
+<td><strong>Sandbox test</strong></td>
+<td>2-4 semaines</td>
+<td>⚠️ Sous conditions (données synthétiques)</td>
+<td>⚠️ Acceptable</td>
+<td>⚠️ Acceptable</td>
+<td>€€</td>
+<td>🥈 Acceptable</td>
+</tr>
+<tr>
+<td><strong>Déploiement contrôlé</strong></td>
+<td>6-12 mois</td>
+<td>❌ Non garantie</td>
+<td>❌ Non conforme</td>
+<td>❌ Élevé</td>
+<td>€€€€</td>
+<td>🥉 NON</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion :</strong> Microsoft SCOUT, dans son architecture actuelle (modèle cloud, exécution de code, packages externes, consentement utilisateur), n'est pas compatible avec les exigences réglementaires et de sécurité d'une mutualité d'assurance obligatoire traitant des données de santé. <strong>Recommandation ferme : refuser le déploiement, surveiller l'évolution du produit, et préparer une stratégie « Agent IA mutualiste » souveraine.</strong></p>
+<hr />
+<h2 id="annexes">Annexes<a class="headerlink" href="#annexes" title="Permanent link">&para;</a></h2>
+<h3 id="annexe-a-references">Annexe A — Références<a class="headerlink" href="#annexe-a-references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>RGPD : Règlement (UE) 2016/679, articles 5, 6, 9, 30, 35, 44-49</li>
+<li>NIS2 : Directive (UE) 2022/2555, articles 21, 23, 24</li>
+<li>ISO 27001:2022 — Annexes A.5, A.6, A.8, A.10, A.14</li>
+<li>Loi belge du 30 juillet 2018 relative à la protection des personnes physiques</li>
+<li>Loi coordonnée du 14 juillet 1994 relative à l'assurance obligatoire soins de santé</li>
+<li>Avis CNIL / APD belge sur les agents IA et données de santé</li>
+</ul>
+<h3 id="annexe-b-glossaire">Annexe B — Glossaire<a class="headerlink" href="#annexe-b-glossaire" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BCSS</td>
+<td>Banque Carrefour de la Sécurité Sociale</td>
+</tr>
+<tr>
+<td>eHealth</td>
+<td>Plateforme belge d'échange de données de santé</td>
+</tr>
+<tr>
+<td>INAMI</td>
+<td>Institut National d'Assurance Maladie-Invalidité</td>
+</tr>
+<tr>
+<td>DMG</td>
+<td>Dossier Médical Global</td>
+</tr>
+<tr>
+<td>HDS</td>
+<td>Hébergeur de Données de Santé (agrément français)</td>
+</tr>
+<tr>
+<td>EUCS</td>
+<td>European Union Cybersecurity Certification Scheme</td>
+</tr>
+<tr>
+<td>Safe bubble</td>
+<td>Périmètre de confiance Microsoft (Azure + Microsoft 365)</td>
+</tr>
+<tr>
+<td>NISS</td>
+<td>Numéro d'Identification de la Sécurité Sociale</td>
+</tr>
+<tr>
+<td>APD</td>
+<td>Autorité de Protection des Données (belge)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Christophe Danhier — Propulsé par Hermes Agent
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/christophedanhier-hash" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/tofdan" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../../assets/js/pdf-download.js"></script>
+      
+        <script src="../../../../assets/js/external-links.js"></script>
+      
+    
+  </body>
+</html>
