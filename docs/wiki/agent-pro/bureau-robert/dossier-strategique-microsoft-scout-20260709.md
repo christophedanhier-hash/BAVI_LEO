@@ -47,6 +47,10 @@ experts:
 8. [Recommandations par horizon](#8-recommandations-par-horizon)
 9. [Mise à jour — Build 2026](#9-mise-à-jour--microsoft-build-2026-juin-2026)
 10. [Annexes](#10-annexes)
+    - [Annexe A — Vision Stratégique](#annexe-a--analyse-vision-stratégique-détaillée)
+    - [Annexe B — Architecture SI](#annexe-b--analyse-architecture-si-détaillée)
+    - [Annexe C — Sécurité & RGPD](#annexe-c--analyse-sécurité--rgpd-détaillée)
+    - [Annexe D — Projet & Programme](#annexe-d--analyse-projet--programme-détaillée)
 
 ---
 
@@ -410,14 +414,108 @@ Les agents autonomes ont désormais **leur propre identité Entra ID** :
 
 ### 10.1 Analyses détaillées par expert
 
-Les 4 analyses complètes sont archivées dans le wiki BAVI LEO :
+Les analyses complètes des 4 experts sont intégrées ci-dessous sous forme d'annexes.
 
-| Expert | Document | Lien |
-|:-------|:---------|:-----|
-| 🏛️ Vision Stratégique | `analyse-scout-strategie.md` | Voir wiki |
-| 🏗️ Architecture SI | `analyse-scout-architecture.md` | Voir wiki |
-| 🛡️ Sécurité & RGPD | `analyse-scout-securite.md` | Voir wiki |
-| 📋 Projet & Programme | `analyse-scout-deploiement.md` | Voir wiki |
+---
+
+## Annexe A — Analyse Vision Stratégique détaillée
+
+*Extrait de l'analyse de l'Expert #5 — Vision Stratégique*
+
+**Positionnement concurrentiel :** SCOUT est le premier agent OS autonome en production (pas en beta), mais verrouillage Microsoft maximal. Avantage : profondeur d'intégration Windows. Inconvénient : dépendance totale à la stack Microsoft Intune/Frontier/GitHub.
+
+**Timing d'adoption :**
+| Période | Phase | Version SCOUT | Public |
+|:--------|:------|:-------------|:-------|
+| H2 2026 | Early Adopter | v1 (buggy, setup lourd) | Tech, startups |
+| H1 2027 | Pilotes métiers | v2 (Intune simplifié, guardrails renforcés) | Early adopters |
+| H2 2027 | Early Majority | v3 (skills sectoriels, audit SIEM) | Entreprises |
+| 2028+ | Mainstream | Maturité (certifications, RGPD, SOC2) | Large échelle |
+
+**Facteurs clés pour Solidaris :**
+- Accélération : SCOUT v2 simplifie Intune, skills sectoriels "Santé", certification RGPD
+- Ralentissement : incident sécurité amplifié par la nature autonome
+
+---
+
+## Annexe B — Analyse Architecture SI détaillée
+
+*Extrait de l'analyse de l'Expert #1 — Architecture SI*
+
+**Chaîne de dépendances :**
+Windows 11 → Microsoft Intune → Microsoft Frontier → GitHub Copilot → SCOUT
+
+**Prérequis techniques :**
+| Composant | Statut Solidaris |
+|:----------|:----------------|
+| Windows 11 | ✅ Parc majoritaire |
+| Intune | ✅ Déployé, mais politique SCOUT à créer |
+| Microsoft Frontier | ❓ À vérifier |
+| GitHub Copilot | ❌ Licence additionnelle nécessaire |
+
+**Scénarios de déploiement :**
+| Scénario | Périmètre | Recommandation |
+|:---------|:---------|:--------------|
+| A — Sandbox contrôlé | 10-20 users pilotes | ✅ Recommandé |
+| B — Usages métier ciblés | Par service | 🟠 Sous conditions |
+| C — Full open | Tout le parc | ❌ Déconseillé |
+
+**Architecture conceptuelle :** Le SI Solidaris se compose de 3 domaines (M365 cloud, Métier via eHealth, Poste Windows) interconnectés via le réseau d'entreprise. SCOUT s'exécute dans VSCode sur le poste et communique avec GitHub Copilot (API), M365 (Graph API), le système local (FS/PowerShell/Python), les MCP servers, et le navigateur via Playwright.
+
+---
+
+## Annexe C — Analyse Sécurité & RGPD détaillée
+
+*Extrait de l'analyse de l'Expert #2 — Sécurité & RGPD*
+
+**Matrice des 10 risques :**
+| # | Risque | Score |
+|:-:|:-------|:----:|
+| R9 | Consentement insuffisant (art. 9 RGPD) | **25 🔴** |
+| R1 | Exfiltration données santé vers modèles tiers | **20 🔴** |
+| R2 | Exécution de code arbitraire local | **20 🔴** |
+| R3 | Supply chain packages non vérifiés | **16 🟠** |
+| R4 | Minimisation des données impossible | **16 🟠** |
+| R5-A8 | Autres risques (traçabilité, NIS2, navigateur, etc.) | **12 🟠** |
+
+**Analyse RGPD — Le dealbreaker :**
+- Aucune base légale identifiée pour le transfert de données de santé (art. 9) vers LLMs via SCOUT
+- Minimisation structurellement impossible — SCOUT a besoin du contexte complet
+- Le consentement utilisateur ne couvre pas les données de santé traitées par un responsable de traitement mutualiste
+
+**Impact Build 2026 :** L'identité gérée (Entra ID) améliore l'auditabilité mais ne résout PAS le problème de base légale.
+
+---
+
+## Annexe D — Analyse Projet & Programme détaillée
+
+*Extrait de l'analyse de l'Expert #6 — Projet & Programme*
+
+**Scénarios :**
+| Scénario | Périmètre | Coût an 1 | Délai |
+|:---------|:---------|:---------:|:----:|
+| A — POC technique | 5-10 users, données synthétiques | ~$3-5k | 4-6 sem |
+| B — Pilote métier | 200 users | ~$225k | 6 mois |
+| C — Généralisation | 1 000+ users | ~$700k/an | 18 mois |
+
+**Budget estimé (Pilote 200 users) :**
+| Poste | Coût/an |
+|:------|:-------:|
+| Licences GitHub Copilot Enterprise | $93 600 |
+| Configuration Intune | $40 000 |
+| Formation & accompagnement | $30 000 |
+| Sécurité (audit, AIPD, DPA) | $25 000 |
+| Pilotage & gouvernance | $36 000 |
+| **Total** | **~$225 000** |
+
+**Planning macro (18 mois) :**
+1. Mois 1-2 : Préparation (audit Intune, DPO)
+2. Mois 3-4 : Setup (Intune, Frontier, GitHub)
+3. Mois 5-8 : POC 10 users
+4. Mois 9-14 : Pilote 200 users
+5. Mois 15-18 : Généralisation par vagues
+
+**ROI :** Négatif année 1 (−78%), neutre année 2, positif année 3 (+54%).
 
 ### 10.2 Références
 
