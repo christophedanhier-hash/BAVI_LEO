@@ -931,8 +931,8 @@
 <h1 id="cronjobs-hermes-inventaire-complet">⏰ Cronjobs Hermes — Inventaire complet<a class="headerlink" href="#cronjobs-hermes-inventaire-complet" title="Permanent link">&para;</a></h1>
 <!-- AUTO:START header -->
 <blockquote>
-<p><strong>Généré automatiquement le 09/07/2026 à 06:00</strong>
-Source : <code>profiles/leo-copilot/cron/jobs.json</code> (26 jobs)</p>
+<p><strong>Généré automatiquement le 09/07/2026 à 12:00</strong>
+Source : <code>profiles/leo-copilot/cron/jobs.json</code> (28 jobs)</p>
 </blockquote>
 <!-- AUTO:END header -->
 
@@ -947,7 +947,7 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (26 jobs)</p>
 <tbody>
 <tr>
 <td><strong>Crons Hermes</strong> (tous profils, consolidé)</td>
-<td style="text-align: center;"><strong>26</strong></td>
+<td style="text-align: center;"><strong>28</strong></td>
 </tr>
 <tr>
 <td><strong>Crons hôte</strong> (crontab tofdan@172.17.0.1)</td>
@@ -955,7 +955,7 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (26 jobs)</p>
 </tr>
 <tr>
 <td><strong>Total général</strong></td>
-<td style="text-align: center;"><strong>31</strong></td>
+<td style="text-align: center;"><strong>33</strong></td>
 </tr>
 </tbody>
 </table>
@@ -1087,69 +1087,83 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (26 jobs)</p>
 </tr>
 <tr>
 <td style="text-align: center;">17</td>
+<td>🔄 Rebuild Wiki Voyages local</td>
+<td style="text-align: center;"><code>15 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
 <td>🔄 Refresh Google Tokens (50min)</td>
 <td style="text-align: center;"><code>*/50 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">18</td>
+<td style="text-align: center;">19</td>
 <td>🔄 drive-sync</td>
 <td style="text-align: center;"><code>0 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">19</td>
+<td style="text-align: center;">20</td>
 <td>🔄 sync-skills-to-copilot</td>
 <td style="text-align: center;"><code>*/30 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">20</td>
+<td style="text-align: center;">21</td>
 <td>🔍 Veille IA quotidienne</td>
 <td style="text-align: center;"><code>0 7 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">21</td>
+<td style="text-align: center;">22</td>
 <td>🔧 LEO Maintenance quotidienne</td>
 <td style="text-align: center;"><code>0 3 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">22</td>
+<td style="text-align: center;">23</td>
 <td>🚀 Deploy Unified Dashboard</td>
 <td style="text-align: center;"><code>10 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">23</td>
+<td style="text-align: center;">24</td>
+<td>🛡️ BAVI Server Watchdog</td>
+<td style="text-align: center;"><code>*/5 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
 <td>🛡️ Cron Ownership Watchdog</td>
 <td style="text-align: center;"><code>5,20,35,50 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">24</td>
+<td style="text-align: center;">26</td>
 <td>🛡️ LEO Health Check (script)</td>
 <td style="text-align: center;"><code>2,17,32,47 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">25</td>
+<td style="text-align: center;">27</td>
 <td>🩺 Cron Health Watchdog (log scanner)</td>
 <td style="text-align: center;"><code>3,18,33,48 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">26</td>
+<td style="text-align: center;">28</td>
 <td>🩺 GitHub Actions Watchdog</td>
 <td style="text-align: center;"><code>4,19,34,49 * * * *</code></td>
 <td style="text-align: center;">script</td>
@@ -1190,7 +1204,7 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (26 jobs)</p>
 </tr>
 </tbody>
 </table>
-<p><em>Généré automatiquement le 09/07/2026 à 06:00</em></p>
+<p><em>Généré automatiquement le 09/07/2026 à 12:00</em></p>
 
 
 
