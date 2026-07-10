@@ -412,14 +412,14 @@ Les agents autonomes ont désormais **leur propre identité Entra ID** :
 
 Les analyses complètes produites par les 4 sous-agents sont disponibles dans leur version originale intégrale :
 
-| Expert | Document | 
-|:-------|:---------|
-| 🏛️ Vision Stratégique | `analyse-scout-strategie.md` |
-| 🏗️ Architecture SI | `analyse-scout-architecture.md` |
-| 🛡️ Sécurité & RGPD | `analyse-scout-securite.md` |
-| 📋 Projet & Programme | `analyse-scout-deploiement.md` |
+| Expert | Document V2 |
+|:-------|:------------|
+| 🏛️ Vision Stratégique | `dossier-scout-complet-20260709-v2.md` (Partie 1) |
+| 🏗️ Architecture SI | `dossier-scout-complet-20260709-v2.md` (Partie 2) |
+| 🛡️ Sécurité & RGPD | `dossier-scout-complet-20260709-v2.md` (Partie 3) |
+| 📋 Projet & Programme | `dossier-scout-complet-20260709-v2.md` (Partie 4) |
 
-Ces 4 documents sont archivés dans le dossier `bureau-robert/` au même niveau que ce dossier. Leurs diagrammes Mermaid, tableaux et analyses complètes sont accessibles via le wiki.
+Ces 4 expertises sont désormais fusionnées dans le document V2 ci-dessus. Leurs diagrammes Mermaid, tableaux et analyses complètes y sont accessibles.
 
 ### 10.2 Références
 
