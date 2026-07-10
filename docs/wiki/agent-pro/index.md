@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 10/07/2026 à 22:00*
+*Généré automatiquement le 10/07/2026 à 22:11*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -14,11 +14,11 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 10 | 08/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 3 | N/A |
-| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 6 | 08/07/2026 |
+| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 5 | 08/07/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 2 | 08/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 32 analyse(s) sur l'ensemble des bureaux.**
+**Total : 31 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -31,7 +31,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | 09/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v2 | [Dossier SCOUT Complet (V2) — Microsoft SCOUT (Autopilot)](bureau-robert/dossier-scout-complet-20260709-v2/) | `analyse` `scout` `microsoft` `autopilot` `agent-autonome` `strategique` `architecture` `securite` `deploiement` `projet` `mutualite` `solidaris` | ✅ Finalisé | [📥](bureau-robert/dossier-scout-complet-20260709-v2/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-scout-complet-20260709-v2.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-scout-complet-20260709-v2.md) |
 | 08/07/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v1 | [🩺 Analyse du Bureau Virginie — Orchestration Médicale](bureau-virginie/analyse-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` | ✅ Finalisé | [📥](bureau-virginie/analyse-scope-skills-workflows/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/analyse-scope-skills-workflows.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/analyse-scope-skills-workflows.md) |
 | 08/07/2026 | 🧭 Bureau Sylvia — Voyages | v1 | [🧭 Analyse du Bureau Sylvia — Agence de Voyage](bureau-sylvia/analyse-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` | ✅ Finalisé | [📥](bureau-sylvia/analyse-scope-skills-workflows/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/analyse-scope-skills-workflows.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/analyse-scope-skills-workflows.md) |
-| 08/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Analyse du Bureau LEO — Dossiers & Analyses Personnelles](bureau-leo/analyse-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` | ✅ Finalisé | [📥](bureau-leo/analyse-scope-skills-workflows/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-scope-skills-workflows.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-scope-skills-workflows.md) |
 | 08/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🛡️ Analyse de l'Assurance Obligatoire — Lentille Métier AO](bureau-robert/analyse-ao-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` `pro` | ✅ Finalisé | [📥](bureau-robert/analyse-ao-scope-skills-workflows/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-ao-scope-skills-workflows.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-ao-scope-skills-workflows.md) |
 | 08/07/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🔧 Analyse du Bureau Michel — Infra_Hermes](bureau-michel/analyse-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` `infrastructure` | ✅ Finalisé | [📥](bureau-michel/analyse-scope-skills-workflows/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-scope-skills-workflows.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/analyse-scope-skills-workflows.md) |
 | 08/07/2026 | 🏗️ Bureau Gérard — Documentation T600 | v1 | [📝 Analyse du Bureau Gérard — Documentation Technique T600](bureau-gerard/analyse-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` `t600` | ✅ Finalisé | [📥](bureau-gerard/analyse-scope-skills-workflows/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/analyse-scope-skills-workflows.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-gerard/analyse-scope-skills-workflows.md) |
@@ -61,4 +60,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 10/07/2026 22:00*
+*Index consolidé généré par `agent-pro-index.py` — 10/07/2026 22:11*

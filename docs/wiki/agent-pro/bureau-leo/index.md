@@ -1,12 +1,11 @@
 # 🤖 Bureau LEO — Dossiers & Analyses
 
-*Généré automatiquement le 10/07/2026 à 22:00*
+*Généré automatiquement le 10/07/2026 à 22:11*
 
-**Total : 6 analyse(s)**
+**Total : 5 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 08/07/2026 | v1 | [🤖 Analyse du Bureau LEO — Dossiers & Analyses Personnelles](analyse-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` | ✅ Finalisé | [📥](analyse-scope-skills-workflows/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/analyse-scope-skills-workflows.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-scope-skills-workflows.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-scope-skills-workflows.md) |
 | 08/07/2026 | v1 | [📋 Analyse du Bureau Versioning — Gestion des Versions](analyse-versioning-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` | ✅ Finalisé | [📥](analyse-versioning-scope-skills-workflows/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/analyse-versioning-scope-skills-workflows.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-versioning-scope-skills-workflows.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-versioning-scope-skills-workflows.md) |
 | 08/07/2026 | v1 | [🏗️ Analyse de la Gouvernance BAVI LEO — Framework d'Audit](analyse-governance-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` | ✅ Finalisé | [📥](analyse-governance-scope-skills-workflows/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/analyse-governance-scope-skills-workflows.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-governance-scope-skills-workflows.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/analyse-governance-scope-skills-workflows.md) |
 | 07/07/2026 | v4.0 | [Hermès pour les Nuls 🦁](guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | ✅ Finalisé | [📥](guide-hermes-complet/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/guide-hermes-complet.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+guide-hermes-complet.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |
@@ -15,11 +14,12 @@
 
 ---
 
-### 📦 Archivé (1)
+### 📦 Archivé (2)
 
 | Date | Titre | Restaurer |
 |:-----|:------|:----------|
 | 2026-06-27 | 🤖 Analyse Business & Fonctionnelle — LEO (Bureau Central) | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-leo/analyse-bot-leo-hub.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-bot-leo-hub.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/archive/analyse-bot-leo-hub.md) |
+| 2026-07-08 | 🤖 Analyse du Bureau LEO — Dossiers & Analyses Personnelles | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-leo/analyse-scope-skills-workflows.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-scope-skills-workflows.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/archive/analyse-scope-skills-workflows.md) |
 
 *Pour archiver un fichier : `python3 agent-pro-archive.py <bureau> <fichier>`*
 *Pour restaurer : `python3 agent-pro-restore.py <bureau> <fichier>`*
