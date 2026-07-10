@@ -10,12 +10,12 @@ from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
-BASE = Path("/opt/data")
-BAVI_SITE = BASE / "BAVI_LEO/site"
-DASHBOARD_FILE = BASE / "dashboard.html"
-CRON_JOBS_FILE = BASE / "profiles/leo-copilot/cron/jobs.json"
-N8N_CONFIG_FILE = BASE / "n8n-webhooks.json"
-METRICS_FILE = BASE / "metrics/leo-unified.json"
+BASE = Path("/home/tofdan/.hermes")
+BAVI_SITE = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site-local")
+DASHBOARD_FILE = Path("/home/tofdan/.hermes/leo-dashboard-repo/index.html")
+CRON_JOBS_FILE = Path("/home/tofdan/.hermes/profiles/leo-copilot/cron/jobs.json")
+N8N_CONFIG_FILE = Path("/home/tofdan/.hermes/n8n-webhooks.json")
+METRICS_FILE = Path("/home/tofdan/.hermes/metrics/leo-unified.json")
 AUTH_TOKEN = "leo-panel-2026"
 
 app = FastAPI(title="LEO Unified Server")
@@ -64,7 +64,7 @@ async def api_cron_run(job_id: str, request: Request):
     try:
         r = subprocess.run(["/opt/hermes/.venv/bin/hermes", "cron", "run", "--profile", "leo-copilot", job_id],
                           capture_output=True, text=True, timeout=300,
-                          env={**os.environ, "HOME": "/opt/data/home"})
+                          env={**os.environ, "HOME": "/home/tofdan"})
         return {"ok": r.returncode == 0, "output": r.stdout[:2000], "error": r.stderr[:500]}
     except Exception as e:
         return {"ok": False, "error": str(e)}
@@ -269,7 +269,7 @@ async def editor_save(request: Request):
     return {"ok": True}
 
 # ── Wiki Voyages (static files, monté avant BAVI pour priorité) ──
-VOYAGES_SITE = BASE / "voyages-wiki/site"
+VOYAGES_SITE = Path("/home/tofdan/Projets_Dev/voyages-wiki/site-local")
 if VOYAGES_SITE.exists():
     app.mount("/voyages", StaticFiles(directory=str(VOYAGES_SITE), html=True), name="voyages")
 
