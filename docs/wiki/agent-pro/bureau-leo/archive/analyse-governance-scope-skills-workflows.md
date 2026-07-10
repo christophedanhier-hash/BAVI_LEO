@@ -4,7 +4,7 @@ bureau: bavi-leo-governance
 version: v1
 modele: deepseek-v4-flash
 tags: [analyse, scope, skills, workflows, bavi-leo]
-statut: finalise
+statut: archive
 type: analyse
 ---
 

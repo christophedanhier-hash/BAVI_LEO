@@ -5,7 +5,7 @@ auteur: LEO
 version: v4.0
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
-statut: finalise
+statut: archive
 type: livre
 ---
 
@@ -2188,7 +2188,7 @@ bureau: bureau-michel
 version: v2
 modele: deepseek-v4-pro
 tags: [analyse, infrastructure, crons]
-statut: finalise
+statut: archive
 type: analyse
 ---
 ```
