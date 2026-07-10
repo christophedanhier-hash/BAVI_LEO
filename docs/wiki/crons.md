@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 10/07/2026 à 18:06**
+> **Généré automatiquement le 11/07/2026 à 00:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (29 jobs)
 <!-- AUTO:END header -->
 
@@ -45,7 +45,7 @@
 | 24 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
 | 25 | 🛡️ BAVI Server Watchdog | `*/5 * * * *` | script | ✅ |
 | 26 | 🛡️ Cron Ownership Watchdog | `5,20,35,50 * * * *` | script | ✅ |
-| 27 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ❌ |
+| 27 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
 | 28 | 🩺 Cron Health Watchdog (log scanner) | `3,18,33,48 * * * *` | script | ✅ |
 | 29 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
 
@@ -61,4 +61,4 @@
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 
-_Généré automatiquement le 10/07/2026 à 18:06_
+_Généré automatiquement le 11/07/2026 à 00:00_
