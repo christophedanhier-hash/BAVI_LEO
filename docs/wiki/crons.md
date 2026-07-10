@@ -1,17 +1,17 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 10/07/2026 à 17:24**
-> Source : `profiles/leo-copilot/cron/jobs.json` (30 jobs)
+> **Généré automatiquement le 10/07/2026 à 18:06**
+> Source : `profiles/leo-copilot/cron/jobs.json` (29 jobs)
 <!-- AUTO:END header -->
 
 ## Résumé
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **30** |
+| **Crons Hermes** (tous profils, consolidé) | **29** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **5** |
-| **Total général** | **35** |
+| **Total général** | **34** |
 
 ## Liste exhaustive des crons Hermes
 
@@ -23,7 +23,7 @@
 | 2 | 💾 LEO Backup quotidien → GDrive (script) | `0 6 * * *` | script | ✅ |
 | 3 | 📊 Synthèse Hebdomadaire LEO | `0 20 * * 0` | script | ⚠️ |
 | 4 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
-| 5 | 📋 doc-crons-sync | `0 */6 * * *` | script | ❌ |
+| 5 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
 | 6 | 📓 vault-bavi-daily-journal | `10 23 * * *` | LLM | ✅ |
 | 7 | 📓 vault-daily-journal (vault-leo) | `0 23 * * *` | LLM | ✅ |
 | 8 | 📓 vault-default-daily-journal | `5 23 * * *` | LLM | ✅ |
@@ -43,12 +43,11 @@
 | 22 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script | ✅ |
 | 23 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
 | 24 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
-| 25 | 🚀 Deploy Unified Dashboard | `10 * * * *` | script | ✅ |
-| 26 | 🛡️ BAVI Server Watchdog | `*/5 * * * *` | script | ✅ |
-| 27 | 🛡️ Cron Ownership Watchdog | `5,20,35,50 * * * *` | script | ✅ |
-| 28 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
-| 29 | 🩺 Cron Health Watchdog (log scanner) | `3,18,33,48 * * * *` | script | ✅ |
-| 30 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
+| 25 | 🛡️ BAVI Server Watchdog | `*/5 * * * *` | script | ✅ |
+| 26 | 🛡️ Cron Ownership Watchdog | `5,20,35,50 * * * *` | script | ✅ |
+| 27 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ❌ |
+| 28 | 🩺 Cron Health Watchdog (log scanner) | `3,18,33,48 * * * *` | script | ✅ |
+| 29 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
 
 <!-- AUTO:END hermes-crons -->
 
@@ -62,4 +61,4 @@
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 
-_Généré automatiquement le 10/07/2026 à 17:24_
+_Généré automatiquement le 10/07/2026 à 18:06_
