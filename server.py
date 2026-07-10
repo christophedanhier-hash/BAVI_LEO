@@ -65,10 +65,13 @@ async def api_crons(request: Request):
 async def api_cron_run(job_id: str, request: Request):
     if not check_token(request): raise HTTPException(401)
     try:
-        r = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", "run", "--profile", "leo-copilot", job_id],
-                          capture_output=True, text=True, timeout=300,
-                          env={**os.environ, "HOME": "/home/tofdan"})
-        return {"ok": r.returncode == 0, "output": r.stdout[:2000], "error": r.stderr[:500]}
+        # Lancement asynchrone — retour immédiat
+        subprocess.Popen(
+            ["/home/tofdan/.hermes/venv/bin/hermes", "cron", "run", "--profile", "leo-copilot", job_id],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            env={**os.environ, "HOME": "/home/tofdan"}
+        )
+        return {"ok": True, "output": f"Cron {job_id} déclenché en arrière-plan"}
     except Exception as e:
         return {"ok": False, "error": str(e)}
 
