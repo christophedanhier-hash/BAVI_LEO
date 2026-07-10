@@ -12,11 +12,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 BASE = Path("/home/tofdan/.hermes")
 BAVI_SITE = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site-local")
-DASHBOARD_FILE = Path("/home/tofdan/.hermes/leo-dashboard-repo/index.html")
+LEO_DASHBOARD_REPO = Path("/home/tofdan/.hermes/leo-dashboard-repo")
 CRON_JOBS_FILE = Path("/home/tofdan/.hermes/profiles/leo-copilot/cron/jobs.json")
 N8N_CONFIG_FILE = Path("/home/tofdan/.hermes/n8n-webhooks.json")
 METRICS_FILE = Path("/home/tofdan/.hermes/metrics/leo-unified.json")
 AUTH_TOKEN = "leo-panel-2026"
+
+# Dashboard builder — génération dynamique
+from dashboard_builder import build_html, esc
 
 app = FastAPI(title="LEO Unified Server")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -62,10 +65,30 @@ async def api_crons(request: Request):
 async def api_cron_run(job_id: str, request: Request):
     if not check_token(request): raise HTTPException(401)
     try:
-        r = subprocess.run(["/opt/hermes/.venv/bin/hermes", "cron", "run", "--profile", "leo-copilot", job_id],
+        r = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", "run", "--profile", "leo-copilot", job_id],
                           capture_output=True, text=True, timeout=300,
                           env={**os.environ, "HOME": "/home/tofdan"})
         return {"ok": r.returncode == 0, "output": r.stdout[:2000], "error": r.stderr[:500]}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+
+@app.post("/api/crons/{job_id}/toggle")
+async def api_cron_toggle(job_id: str, request: Request):
+    if not check_token(request): raise HTTPException(401)
+    try:
+        # Get current state
+        r = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", "list", "--profile", "leo-copilot", "--json"],
+                          capture_output=True, text=True, timeout=10,
+                          env={**os.environ, "HOME": "/home/tofdan"})
+        jobs = json.loads(r.stdout) if r.stdout else []
+        job = next((j for j in jobs if j.get("job_id") == job_id), None)
+        if not job:
+            return {"ok": False, "error": "Job not found"}
+        action = "pause" if job.get("enabled") else "resume"
+        r2 = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", action, "--profile", "leo-copilot", job_id],
+                           capture_output=True, text=True, timeout=15,
+                           env={**os.environ, "HOME": "/home/tofdan"})
+        return {"ok": r2.returncode == 0, "action": action, "output": r2.stdout[:500]}
     except Exception as e:
         return {"ok": False, "error": str(e)}
 
@@ -246,7 +269,23 @@ async def monitoring(request: Request):
 @app.get("/dashboard", response_class=HTMLResponse)
 async def dashboard(request: Request):
     if not check_token(request): raise HTTPException(401)
-    return HTMLResponse(DASHBOARD_FILE.read_text())
+    return HTMLResponse(build_html())
+
+# ── Dashboard JS files (served dynamically, no cron needed) ──
+LEO_JS_FILES = {
+    "monitoring.js": LEO_DASHBOARD_REPO / "monitoring.js",
+    "crons.js": LEO_DASHBOARD_REPO / "crons.js",
+}
+
+@app.get("/leo/{filename}")
+async def leo_static(filename: str):
+    if filename not in LEO_JS_FILES:
+        raise HTTPException(404)
+    from fastapi.responses import Response
+    path = LEO_JS_FILES[filename]
+    if not path.exists():
+        raise HTTPException(404)
+    return Response(content=path.read_text(), media_type="text/javascript")
 
 # ── API: Recherche full-text ──
 @app.get("/api/search")
