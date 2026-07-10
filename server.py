@@ -131,6 +131,118 @@ async def api_n8n_run(name: str, request: Request):
         return {"ok": False, "error": str(e)}
 
 # ── Pages ──
+MONITORING_TEMPLATE = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🖥️ Monitoring — LEO</title>
+<style>
+:root {--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--dim:#94a3b8;--green:#34d399;--red:#f87171;--yellow:#fbbf24;--blue:#60a5fa;--accent:#818cf8;--border:#334155}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;padding:20px;min-height:100vh}
+h1{font-size:1.5em;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+h1 span{font-size:.6em;color:var(--dim);font-weight:400}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.card h2{font-size:1em;color:var(--dim);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+.kpi{font-size:2em;font-weight:700}
+.kpi-label{font-size:.8em;color:var(--dim)}
+.row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)}
+.row:last-child{border-bottom:none}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.75em;font-weight:600}
+.badge.up{background:#064e3b;color:var(--green)}
+.badge.down{background:#7f1d1d;color:var(--red)}
+.badge.warn{background:#78350f;color:var(--yellow)}
+.progress-bar{height:8px;border-radius:4px;background:var(--border);margin-top:6px}
+.progress-fill{height:100%;border-radius:4px;transition:width .5s}
+.bar-green{background:var(--green)}
+.bar-yellow{background:var(--yellow)}
+.bar-red{background:var(--red)}
+.process{font-family:'SF Mono',monospace;font-size:.8em;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:400px}
+#updated{text-align:right;color:var(--dim);font-size:.75em;margin-top:10px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.loading{animation:pulse 1.5s infinite}
+</style>
+</head>
+<body>
+<h1>🖥️ Monitoring LEO <span id="uptime">—</span></h1>
+<div class="grid" id="kpis">
+  <div class="card"><h2>💻 CPU</h2><div class="kpi loading" id="cpu">—</div><div class="kpi-label" id="cpu-load"></div><div class="progress-bar"><div class="progress-fill" id="cpu-bar"></div></div></div>
+  <div class="card"><h2>🧠 RAM</h2><div class="kpi loading" id="ram">—</div><div class="kpi-label" id="ram-detail"></div><div class="progress-bar"><div class="progress-fill" id="ram-bar"></div></div></div>
+  <div class="card"><h2>💾 Disque</h2><div class="kpi loading" id="disk">—</div><div class="kpi-label" id="disk-detail"></div><div class="progress-bar"><div class="progress-fill" id="disk-bar"></div></div></div>
+  <div class="card"><h2>🌡️ Température</h2><div class="kpi loading" id="temp">—</div></div>
+  <div class="card"><h2>🐳 Services</h2><div id="services">—</div></div>
+  <div class="card"><h2>⏱️ Crons</h2><div class="kpi" id="crons-total">—</div><div class="kpi-label" id="crons-detail"></div></div>
+</div>
+<div class="card" style="margin-bottom:16px"><h2>📊 Top Processus</h2><div id="processes">—</div></div>
+<div class="card"><h2>🌐 Tailscale</h2><div id="tailscale">—</div></div>
+<div id="updated">Actualisation toutes les 30s</div>
+<script>
+async function refresh(){
+  try{
+    const r=await fetch('/api/machine-kpi');
+    const d=await r.json();
+    document.getElementById('uptime').textContent=d.uptime||'—';
+    // CPU
+    const load=d.cpu?d.cpu.load1:'—';
+    const cores=d.cpu?d.cpu.cores:'?';
+    document.getElementById('cpu').textContent=(load*100).toFixed(0)+'%';
+    document.getElementById('cpu').className='kpi';
+    document.getElementById('cpu-load').textContent='Load '+load+' | '+cores+' cores';
+    const cpuPct=Math.min(load*100/cores*100,100);
+    document.getElementById('cpu-bar').style.width=cpuPct+'%';
+    document.getElementById('cpu-bar').className='progress-fill '+(cpuPct>80?'bar-red':cpuPct>50?'bar-yellow':'bar-green');
+    // RAM
+    const ram=d.ram||{};
+    const ramUsed=parseFloat(ram.used)||0;
+    const ramTotal=parseFloat(ram.total)||1;
+    const ramPct=ramUsed/ramTotal*100;
+    document.getElementById('ram').textContent=ramPct.toFixed(0)+'%';
+    document.getElementById('ram').className='kpi';
+    document.getElementById('ram-detail').textContent=ram.used+' / '+ram.total+' (dispo: '+ram.avail+')';
+    document.getElementById('ram-bar').style.width=ramPct+'%';
+    document.getElementById('ram-bar').className='progress-fill '+(ramPct>85?'bar-red':ramPct>60?'bar-yellow':'bar-green');
+    // Disk
+    const diskParts=(d.disk||'').split(' ');
+    const diskPct=parseInt(diskParts[3])||0;
+    document.getElementById('disk').textContent=diskPct+'%';
+    document.getElementById('disk').className='kpi';
+    document.getElementById('disk-detail').textContent='Utilisé: '+diskParts[1]+' / '+diskParts[0]+' | Libre: '+diskParts[2];
+    document.getElementById('disk-bar').style.width=diskPct+'%';
+    document.getElementById('disk-bar').className='progress-fill '+(diskPct>85?'bar-red':diskPct>60?'bar-yellow':'bar-green');
+    // Temp
+    document.getElementById('temp').textContent=(d.cpu?d.cpu.temp:'—')+'°C';
+    document.getElementById('temp').className='kpi '+(parseFloat(d.cpu?.temp)>75?'bar-red':'bar-green');
+    // Services
+    const svc=d.services||{};
+    document.getElementById('services').innerHTML=Object.entries(svc).map(([k,v])=>'<div class="row"><span>'+k+'</span><span class="badge '+(v==='UP'?'up':'down')+'">'+v+'</span></div>').join('');
+    // Crons
+    const cr=d.crons||{};
+    document.getElementById('crons-total').textContent=(cr.ok||0)+'/'+(cr.total||0)+' OK';
+    document.getElementById('crons-detail').textContent='Erreurs: '+(cr.error||0)+' | En attente: '+(cr.pending||0);
+    // Processus
+    const procs=(d.top_procs||'').split('\\n').filter(l=>l&&!l.startsWith('USER'));
+    document.getElementById('processes').innerHTML=procs.slice(0,8).map(l=>{const p=l.split(/\\s+/);return '<div class="row"><span class="process" title="'+l+'">'+(p[10]||'').split('/').pop()+'</span><span style="color:var(--dim)">'+p[2]+'% CPU | '+p[3]+'% MEM</span></div>'}).join('');
+    // Tailscale
+    const ts=(d.network||'').split('\\n').filter(l=>l.trim());
+    document.getElementById('tailscale').innerHTML=ts.map(l=>{const p=l.split(/\\s+/);const name=p[1]||'?';const status=p[5]||'?';return '<div class="row"><span>'+name+'</span><span class="badge '+(status.includes('offline')?'warn':'up')+'">'+status+'</span></div>'}).join('');
+    document.getElementById('updated').textContent='Mis à jour: '+new Date().toLocaleTimeString('fr-BE');
+  }catch(e){
+    document.getElementById('updated').textContent='Erreur: '+e.message;
+  }
+}
+refresh();
+setInterval(refresh,30000);
+</script>
+</body>
+</html>"""
+
+@app.get("/monitoring", response_class=HTMLResponse)
+async def monitoring(request: Request):
+    """Page monitoring temps réel — LOCAL uniquement."""
+    return HTMLResponse(MONITORING_TEMPLATE)
+
 @app.get("/dashboard", response_class=HTMLResponse)
 async def dashboard(request: Request):
     if not check_token(request): raise HTTPException(401)

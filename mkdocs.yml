@@ -59,6 +59,7 @@ nav:
     - 📋 Tracker: https://github.com/christophedanhier-hash/leo-tracker/issues
   - 🏠 Accueil:
     - Portail: index.md
+    - 🖥️ Monitoring: monitoring.md
     - 📚 Skills: skills.md
     - 📖 Guide: guide-utilisation.md
     - ⏰ Crons: wiki/crons.md
