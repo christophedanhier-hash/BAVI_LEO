@@ -70,6 +70,14 @@ async def api_cron_run(job_id: str, request: Request):
         return {"ok": False, "error": str(e)}
 
 # ── API: Métriques ──
+@app.get("/api/machine-kpi")
+async def api_machine_kpi(request: Request):
+    """KPIs machine pour le dashboard monitoring."""
+    kpi_file = Path("/home/tofdan/.hermes/metrics/machine-kpi.json")
+    if kpi_file.exists():
+        return JSONResponse(json.loads(kpi_file.read_text()))
+    return JSONResponse({"error": "no data"}, status_code=404)
+
 @app.get("/api/metrics")
 async def api_metrics(request: Request):
     # Public endpoint
