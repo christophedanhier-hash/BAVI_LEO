@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 11/07/2026 à 22:00*
+*Généré automatiquement le 11/07/2026 à 23:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -13,8 +13,8 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 4 | 09/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 11/07/2026 |
-| [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 3 | N/A |
-| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 5 | N/A |
+| [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 3 | 11/07/2026 |
+| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 5 | 11/07/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
@@ -26,10 +26,10 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
-| N/A | 🤖 Bureau LEO — Dossiers & Analyses | — | ~~🛡️ LEO Runbook — Procédures d'urgence~~ ⚠️ | — | ⚠️ Non conforme |
-| N/A | 🧭 Bureau Sylvia — Voyages | — | ~~🗺️ Roadbooks — Sylvia~~ ⚠️ | — | ⚠️ Non conforme |
 | 11/07/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v1 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/presentation/) | `virginie` `presentation` `role` `sante` `medical` | 🔄 En préparation | [📥](bureau-virginie/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) |
 | 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/presentation/) | `leo` `presentation` `role` `chat` `dossiers` | ✅ Actif | [📥](bureau-leo/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) |
+| 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1c | [🛡️ LEO Runbook — Procédures d'urgence](bureau-leo/runbook-leo/) | `leo` `runbook` `urgence` `procedure` `infra` `michel` | ✅ Actif | [📥](bureau-leo/runbook-leo/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) |
+| 11/07/2026 | 🧭 Bureau Sylvia — Voyages | v1 | [🗺️ Roadbooks — Sylvia](bureau-sylvia/roadbooks/) | `sylvia` `roadbook` `voyage` `italie` `scandinavie` | 📋 En préparation | [📥](bureau-sylvia/roadbooks/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/roadbooks.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/roadbooks.md) |
 | 11/07/2026 | 🔧 Bureau Michel — Automatisation & Infrastructure n8n | v1 | [🔧 Bureau Michel — Automatisation & Infrastructure](bureau-michel/presentation/) | `michel` `presentation` `role` `infra` `crons` `n8n` | ✅ Actif | [📥](bureau-michel/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-michel/presentation.md) |
 | 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1b | [🏍️ Dossier Quad + Remorque — Can-Am Outlander 700 MAX XT](bureau-leo/dossiers/dossier-quad-remorque/) | `quad` `atv` `can-am` `outlander` `remorque` `saris` `attelage` `camping-car` `tofdan` | ✅ Finalisé | [📥](bureau-leo/dossiers/dossier-quad-remorque/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) |
 | 09/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [Dossier Stratégique — Microsoft SCOUT (Autopilot)](bureau-robert/dossier-strategique-microsoft-scout-20260709/) | `analyse` `scout` `microsoft` `autopilot` `agent-autonome` `strategique` `architecture` `securite` `projet` `mutualite` `solidaris` | ✅ Finalisé | [📥](bureau-robert/dossier-strategique-microsoft-scout-20260709/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-microsoft-scout-20260709.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-microsoft-scout-20260709.md) |
@@ -62,4 +62,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 11/07/2026 22:00*
+*Index consolidé généré par `agent-pro-index.py` — 11/07/2026 23:00*
