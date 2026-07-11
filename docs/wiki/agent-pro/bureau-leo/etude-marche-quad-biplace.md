@@ -449,9 +449,9 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 | **1** | ✅ **OFFRE SIGNÉE** — Can-Am Outlander 700 MAX XT — KD Quad Racing (Manage) | Christophe ✅ |
 | 2 | ✅ Devis n°11307 — **15 142 € TTC** — casques, gants, coffre, intercom inclus | Christophe ✅ |
 | 3 | ✅ Dossier passager + confort validé | Christophe ✅ |
-| 4 | 🔜 **Étude de marché remorque fermée freinée double essieux** | **LEO en cours** |
-| 5 | Vérifier attelage remorque + faisabilité quad | Christophe |
-| 6 | Vérifier PTAC camping-car + permis B — total < 3 500 kg ? | Christophe |
+| 4 | 🔜 **Étude de marché remorque fermée freinée double essieux** | **LEO** — [voir étude](etude-marche-remorque-quad.md) |
+| 5 | 🥇 Aller chez BSA Remorques (Eghezée) ou Tenz (Fleurus) — voir modèles | Christophe |
+| 6 | Commander roue jockey motorisée Al-Ko Premium Electric | Christophe |
 
 ---
 
