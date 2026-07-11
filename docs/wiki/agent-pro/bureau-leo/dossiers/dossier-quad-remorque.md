@@ -112,41 +112,97 @@ type: dossier
 
 ### 3.3 Alternatives
 
-| Alternative | Modèle | Dimensions | Prix TTC | Revendeur | Points forts / faibles |
-|:------------|:-------|:----------:|:--------:|:----------|:-----------------------|
-| **🏆 Choix local** | **Saris GO 306 154 180 2000 2** | 306×154×180 | **6 826 €** | L'Oasis des Loisirs (Tongrinne, 5 km) | ✅ Double essieu, 🇧🇪 Belgique, 3 ans garantie |
-| **🔥 Coup de cœur** | **Debon Cargo 1300** | **300×148×156** | **5 890 €** | **Jaunart Samuel (Belgique)** | **✅ Hayon intégré ! ✅ Polyester aéro ✅ 430 kg** |
-| **⭐ Confort max** | Debon **Roadster 300** | 300×155×190 | **6 690 €** | Jaunart Samuel (Belgique) | ✅ Plus large + plus haut que Cargo |
-| **🏆 Double essieu** | Debon **Roadster 500** | 320×167×200 | À demander | Jaunart Samuel (Belgique) | ✅ Double essieu, très spacieux |
+| Alternative | Modèle | Dimensions (L×l×h) | Prix TTC | Revendeur | Points forts |
+|:------------|:-------|:------------------:|:--------:|:----------|:-------------|
+| **🏆 Choix local** | **Saris GO 306 154 180 2000 2** | 306×154×180 | **6 826 €** | L'Oasis des Loisirs (Tongrinne, 5 km) | ✅ Double essieu, 🇧🇪 Belgique, 3 ans |
+| **🔥 Coup de cœur** | **Debon Cargo 1300** | **300×148×156** | **5 890 €** | **Jaunart Samuel** | ✅ Hayon intégré, polyester, 430 kg |
+| **⭐ Confort max** | Debon **Roadster 300** | 300×155×190 | **6 690 €** | Jaunart Samuel | ✅ Plus large + haut |
+| **🏆 Le must** | Debon **Roadster 500** 🆕 | **320×167×200** | **7 590 €** | **Jaunart Samuel** | **✅ Double essieu, très spacieux, aéro** |
 | 🥈 Moins cher | Brenderup CD260WHBR1300 | 260×155×185 | ~4 500 € | BSA Eghezée (20 km) | Plus petit, 1 300 kg PTAC |
 | ✅ Hayon intégré | Anssems DS 260 | 260×150×170 | ~4 000 € | Import Pays-Bas | Hayon intégré, plus petit |
 | 📍 Proche | Tenz Fourgon DE | 250-300×150×170 | ~3 500-4 500 € | Fleurus (15 km) | Marque polonaise |
 
-### 3.4 Comparatif détaillé — Saris vs Debon Cargo 1300
+### 3.4 Comparatif détaillé — Les 3 meilleurs choix
 
-| Critère | **Debon Cargo 1300** 🔥 | **Saris GO 306 154 180** |
-|:--------|:-----------------------:|:------------------------:|
-| **💰 Prix TTC** | **5 890 €** | **6 826 €** |
-| **Intérieur (L×l×h)** | 300×148×156 cm | 306×154×180 cm |
-| **Marge largeur (quad 121 cm)** | 13,5 cm/côté ⚠️ | **16,5 cm/côté** ✅ |
-| **Hauteur libre** | 156 cm (marge +36 cm) ⚠️ | **180 cm (marge +60 cm)** ✅ |
-| **Poids à vide** | **430 kg** ✅ | 644 kg |
-| **PTAC max** | 1 300 kg | **2 000 kg** |
-| **Charge utile** | 870 kg | **1 356 kg** |
-| **Essieux** | Simple (freiné) | **Double (freiné)** ✅ |
-| **Hayon intégré (rampe)** | **✅ OUI** 🏆 | ❌ Portes battantes |
-| **Matériau** | **Polyester armé** 🏆 | Bois + PRV |
-| **Aérodynamique** | **✅ Oui** (conso réduite) | ❌ Non |
-| **Suspensions** | **Pullman 2** (qualité auto) ✅ | Standard |
-| **Garantie** | Constructeur Debon | 3 ans Saris |
-| **Disponibilité** | Rupture (60j réappro) | Sur commande |
-| **Distance** | Jaunart (Belgique) | Tongrinne (5 km) |
+#### 3.4.1 Debon Roadster 500 🆕🏆 (7 590 €) — Le must
 
-> 🔥 **Debon Cargo 1300 (5 890 €)** : hayon intégré qui sert de rampe, coque polyester aérodynamique, poids léger (430 kg). Le hayon est un **énorme avantage** : plus besoin d'acheter et de transporter une rampe séparée. Par contre, 148 cm de large = juste pour le quad 121 cm (13,5 cm de marge de chaque côté), et simple essieu.
+| Caractéristique | Valeur |
+|:----------------|:-------|
+| **Prix TTC** | **7 590 €** *(Jaunart Samuel, Belgique)* |
+| **Dimensions int.** | **320 × 167 × 200 cm** |
+| **Poids à vide** | **600 kg** |
+| **PTAC max** | **2 000 kg** (1 100-2 000 kg au choix) |
+| **Charge utile** | **1 400 kg** |
+| **Essieux** | **Double freiné** ✅ |
+| **Porte** | Hayon intégré (abattable) — vérifier |
+| **Matériau** | Polyester armé aérodynamique |
+| **Suspensions** | Pullman 2 (qualité auto) |
+| **Disponibilité** | Rupture (60j réappro) |
+
+> 🏆 **Roadster 500 (7 590 €)** : le plus spacieux de tous (320×167×200 cm), double essieu, PTAC 2 000 kg, coque polyester aérodynamique. 167 cm de large = 23 cm de marge de chaque côté pour le quad. Largement son confortable. 600 kg à vide.
+
+#### 3.4.2 Debon Cargo 1300 (5 890 €) — Le rapport Q/P
+
+| Caractéristique | Valeur |
+|:----------------|:-------|
+| **Prix TTC** | **5 890 €** *(Jaunart Samuel)* |
+| **Dimensions int.** | 300 × 148 × 156 cm |
+| **Poids à vide** | **430 kg** |
+| **PTAC max** | 1 300 kg |
+| **Charge utile** | 870 kg |
+| **Essieux** | Simple freiné |
+| **Porte** | **✅ Hayon intégré (pont de chargement)** |
+| **Matériau** | Polyester armé aérodynamique |
+
+#### 3.4.3 Saris GO 306 154 180 2000 2 (6 826 €) — Le local
+
+| Caractéristique | Valeur |
+|:----------------|:-------|
+| **Prix TTC** | **6 826 €** *(L'Oasis des Loisirs, Tongrinne)* |
+| **Dimensions int.** | 306 × 154 × 180 cm |
+| **Poids à vide** | 644 kg |
+| **PTAC max** | 2 000 kg |
+| **Charge utile** | 1 356 kg |
+| **Essieux** | Double freiné |
+| **Porte** | Double battante (rampe séparée) |
+| **Matériau** | Bois + PRV |
+| **Garantie** | 3 ans |
+
+#### 3.4.4 Comparatif côte à côte
+
+| Critère | **Debon Cargo 1300** | **Saris GO 306** | **Debon Roadster 500** 🏆 |
+|:--------|:--------------------:|:----------------:|:-------------------------:|
+| **💰 Prix** | **5 890 €** ✅ | 6 826 € | 7 590 € |
+| **Dimensions** | 300×148×156 | 306×154×180 | **320×167×200** ✅ |
+| **Marge largeur (quad 121 cm)** | 13,5 cm/côté ⚠️ | 16,5 cm/côté | **23 cm/côté** ✅ |
+| **Hauteur libre** | 156 cm ⚠️ | 180 cm | **200 cm** ✅ |
+| **Poids à vide** | **430 kg** ✅ | 644 kg | 600 kg |
+| **PTAC** | 1 300 kg | **2 000 kg** | **2 000 kg** |
+| **Charge utile** | 870 kg | 1 356 kg | **1 400 kg** |
+| **Essieux** | Simple | **Double** ✅ | **Double** ✅ |
+| **Hayon intégré** | **✅ OUI** | ❌ Non | **✅ Oui** 🏆 |
+| **Matériau** | **Polyester** 🏆 | Bois + PRV | **Polyester** 🏆 |
+| **Aérodynamique** | **✅ Oui** | ❌ Non | **✅ Oui** |
+| **Suspensions** | **Pullman 2** ✅ | Standard | **Pullman 2** ✅ |
+| **Distance** | Jaunart (BE) | Tongrinne (5 km) | Jaunart (BE) |
+
+> 🔥 **Debon Cargo 1300 (5 890 €)** : le moins cher, hayon intégré, coque polyester, très léger (430 kg). Idéal si le budget est serré. Largeur 148 cm = OK mais pas de marge excessive.
 >
-> ✅ **Saris GO 306 154 180 (6 826 €)** : plus spacieux (306×154×180), double essieu plus stable, 154 cm de large = chargement confortable. SAV à 5 km. Plus lourd (644 kg) et pas de hayon intégré.
+> ✅ **Saris GO 306 154 180 (6 826 €)** : bon compromis, double essieu, 154 cm de large confortable, SAV à 5 km. Pas de hayon intégré.
 >
-> **Mon avis** : le **Debon Cargo 1300** est vraiment bien pour le prix et le hayon intégré. Si Jaunart est joignable et que la largeur 148 cm suffit (vérifier sur place avec le quad), c'est une excellente option.
+> 🏆 **Debon Roadster 500 (7 590 €)** : le must absolu. 320×167×200 cm (immense), double essieu, polyester aéro, hayon intégré. Confort de chargement maximal. 764 € de plus que le Saris mais bien plus spacieux et mieux fini.
+
+### 3.5 Options béquilles/jockey
+
+Le **Roadster 500** peut être équipé d'options de manutention :
+
+| Option | Description | Prix estimé |
+|:-------|:------------|:-----------:|
+| **Roue jockey motorisée (Al-Ko Premium Electric)** | Moteur électrique 12V, batterie Li-Ion intégrée, 1 000 kg | **~350 €** |
+| **Double béquille** | Deux béquilles stabilisatrices pour maintien à l'arrêt | **~100-200 €** |
+| **Roue jockey à levier (poupée)** | Système à pompe manuelle, 500-1 000 kg | **~100-150 €** |
+
+> 💡 La **roue jockey motorisée** est quasi indispensable pour déplacer la remorque chargée (~1 000 kg). Combinée au hayon intégré du Roadster 500, tu déplaces et charges le quad sans aucun effort.
 
 ---
 
