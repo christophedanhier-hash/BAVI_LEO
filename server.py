@@ -288,7 +288,7 @@ async def leo_static(filename: str):
     path = LEO_JS_FILES[filename]
     if not path.exists():
         raise HTTPException(404)
-    return Response(content=path.read_text(), media_type="text/javascript")
+    return Response(content=path.read_text(), media_type="text/javascript", headers={"Cache-Control": "no-cache, no-store, must-revalidate"})
 
 # ── API: Recherche full-text ──
 @app.get("/api/search")

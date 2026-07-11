@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Dashboard HTML builder — génère le dashboard à partir de leo-unified.json."""
-import json
+import json, time
 from pathlib import Path
 from datetime import datetime, timedelta
 
@@ -84,7 +84,7 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js"></script>
+<script src="/leo/monitoring.js?v={{version}}"></script>
 <script src="/leo/crons.js"></script>
 <script>
 function switchTab(el, id) {{
