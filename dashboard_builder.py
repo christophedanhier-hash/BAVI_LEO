@@ -34,6 +34,9 @@ def build_html():
     d = load_metrics()
     s = d["s"]; b = d["b"]; c = d["c"]; i = d["i"]; n = d["n"]
     ba = d["ba"]; bo = d["bo"]; va = d["va"]; alerts = d["alerts"]
+    bots_list = bo.get("bots", []) if isinstance(bo, dict) else []
+    gw_up = sum(1 for b in bots_list if b.get("online"))
+    gw_total = len(bots_list)
     ts = d["ts"]
     
     balance = b.get("balance", 0)
@@ -195,7 +198,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 
 <div class="header">
   <div><h1>🦁 <span>LEO</span> Dashboard</h1><div class="sub">Mise à jour : {esc(ts[:19])}</div></div>
-  <div style="display:flex;align-items:center;gap:8px"><span class="badge {'ok' if d['status']=='complete' else 'err'}">{d['status'].upper()}</span> {d['ok_count']}/{d['total_count']} sources <button class="toggle-theme" onclick="toggleTheme()">🌓</button></div>
+  <div style="display:flex;align-items:center;gap:8px"><span class="badge {'ok' if d['status']=='complete' else 'err'}">{d['status'].upper()}</span> {d['ok_count']}/{d['total_count']} sources <span class="badge {'ok' if gw_up >= gw_total else 'err'}" style="margin-left:4px">{gw_up}/{gw_total} 🛡️</span> <button class="toggle-theme" onclick="toggleTheme()">🌓</button></div>
 </div>
 
 {"".join(f'<div class="alert-bar {"warn" if a.get("severity")=="warning" else ""}">{"🔴" if a.get("severity")=="critical" else "🟡"} {esc(a["message"])}</div>' for a in alerts[:3])}
