@@ -10,9 +10,9 @@ type: reference
 
 # Droits et accès — Leo & Hermes Agent
 
-> **Date** : 2026-06-27  (màj 2026-06-28 — Léo Copilot padron machine)
+> **Date** : 2026-06-27  (màj 2026-06-28 — Michel padron machine)
 > **Machine** : Leo (`tofdan-System-Product-Name`)
-> **Synthèse** : Accès complets — Léo Copilot est le padron de la machine (root sudo)
+> **Synthèse** : Accès complets — Michel est le padron de la machine (root sudo)
 
 ---
 
@@ -37,7 +37,7 @@ tailscale ssh tofdan@tofdan-system-product-name
 - Mot de passe sudo : même que VNC (`TSec&6769`)
 - Utilisé pour : maintenance standard, vérifications
 
-### Root (Léo Copilot)
+### Root (Michel)
 ```bash
 tailscale ssh root@tofdan-system-product-name
 ```
@@ -196,7 +196,7 @@ server {
 
 | Agent | Accès | Portée |
 |-------|-------|--------|
-| **Léo Copilot** (Michel) | `tailscale ssh root@...` + `sudo` | **Padron machine** — admin système complet |
+| **Michel** (Michel) | `tailscale ssh root@...` + `sudo` | **Padron machine** — admin système complet |
 | **Hermes** (profil default/LEO) | Socket Docker + `/host` | Admin système via Docker |
 
 *Référence stockée dans Bureau Michel — Infra_Hermes — 2026-06-27*

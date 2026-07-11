@@ -1568,7 +1568,7 @@ Un seul bot                                                 3 bots spécialisés
 
 Avec un seul bot, tout est mélangé. Avec plusieurs bots :
 - **LEO** (default) : le hub central, votre premier interlocuteur — analyses, emails, classification, documentation
-- **Léo Copilote** (leo-copilot) : l'ingénieur infrastructure — crons, dashboards, n8n, budget, système (root sudo)
+- **Michel** (leo-copilot) : l'ingénieur infrastructure — crons, dashboards, n8n, budget, système (root sudo)
 - **Sylvia** (bavi-leo) : la voyageuse — roadbooks camping-car, itinéraires, cartes OSM
 
 ### 2. Modèles adaptés à chaque usage
@@ -1576,7 +1576,7 @@ Avec un seul bot, tout est mélangé. Avec plusieurs bots :
 | Bot | Modèle principal | Coût | Usage typique |
 |:----|:-----------------|:----:|:--------------|
 | LEO | DeepSeek V4 Flash | ~0,05 €/j | Quotidien, polyvalent |
-| Léo Copilote | DeepSeek V4 Pro | ~0,10 €/tâche | Analyses complexes, infra |
+| Michel | DeepSeek V4 Pro | ~0,10 €/tâche | Analyses complexes, infra |
 | Sylvia | DeepSeek V4 Flash | ~0,03 €/j | Roadbooks, voyages |
 | Fallback | Gemini 2.5 Flash | Gratuit (1M tokens) | Si DeepSeek indisponible |
 
@@ -1590,7 +1590,7 @@ default.env
 ├── TELEGRAM_ALLOWED_USERS=8718957859
 
 leo-copilot.env
-├── TELEGRAM_BOT_TOKEN=899720...  ← Léo Copilote
+├── TELEGRAM_BOT_TOKEN=899720...  ← Michel
 ├── TELEGRAM_ALLOWED_USERS=8718957859
 
 bavi-leo.env
@@ -1626,9 +1626,9 @@ Cette commande crée un dossier `~/.hermes/profiles/leo-copilot/` avec un `confi
 C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait et comment il se comporte.
 
 ```markdown
-# Léo Copilote — Infrastructure
+# Michel — Infrastructure
 
-Tu es Léo Copilote, l'ingénieur infrastructure de l'écosystème LEO.
+Tu es Michel, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
 - 13 crons automatisés
@@ -1679,10 +1679,10 @@ Le profil principal (source de vérité) synchronise ses skills vers les autres 
 
 ### 3. Délégation de tâches
 
-LEO (hub central) peut déléguer des tâches complexes à Léo Copilote :
+LEO (hub central) peut déléguer des tâches complexes à Michel :
 
 ```yaml
-# Dans le config.yaml de Léo Copilote
+# Dans le config.yaml de Michel
 delegation:
   model: deepseek-v4-pro
   max_concurrent_children: 3
@@ -1695,11 +1695,11 @@ delegation:
 | Profil | Bot Telegram | Modèle | Rôle | 
 |:-------|:-------------|:-------|:-----|
 | `default` | LEO 🦁 | DeepSeek V4 Flash | Hub central — analyses, emails, docs |
-| `leo-copilot` | Léo Copilote 🦁 | DeepSeek V4 Pro | Infrastructure — crons, système, budget |
+| `leo-copilot` | Michel 🦁 | DeepSeek V4 Pro | Infrastructure — crons, système, budget |
 | `bavi-leo` | Sylvia 🚐 | DeepSeek V4 Flash | Roadbooks camping-car, voyages |
 | `emile` | Émile 🎓 | DeepSeek V4 Flash | Assistant pédagogique mémoire |
 
-**Règle d'or** : si un sujet est technique (infra, cron, dashboard), LEO redirige vers Léo Copilote. Si c'est un voyage, LEO redirige vers Sylvia. Les bots savent qui fait quoi.
+**Règle d'or** : si un sujet est technique (infra, cron, dashboard), LEO redirige vers Michel. Si c'est un voyage, LEO redirige vers Sylvia. Les bots savent qui fait quoi.
 # Skills : le super-pouvoir d'Hermès
 
 Un skill Hermes est un fichier Markdown qui décrit **comment accomplir une tâche spécifique**. C'est le mécanisme qui transforme un assistant généraliste en expert multi-domaines.
@@ -1837,7 +1837,7 @@ Les scripts dans `scripts/` peuvent être appelés directement par le skill.
 
 ## Skills et profils : la source de vérité
 
-Dans l'écosystème LEO, le profil `default` (LEO) est la **source de vérité** des skills. Les autres profils (Léo Copilote, Sylvia, Émile) reçoivent les skills par **synchronisation automatique** toutes les 30 minutes.
+Dans l'écosystème LEO, le profil `default` (LEO) est la **source de vérité** des skills. Les autres profils (Michel, Sylvia, Émile) reçoivent les skills par **synchronisation automatique** toutes les 30 minutes.
 
 ```
 default (source) ──sync 30min──→ leo-copilot
@@ -1966,7 +1966,7 @@ Avantage : quand un bot apprend quelque chose, l'autre le sait aussi immédiatem
 ```
 LEO (default) écrit ──→ /opt/data/memories/MEMORY.md
                               ↕ symlink
-Léo Copilote lit ──→ /opt/data/profiles/leo-copilot/memories/MEMORY.md
+Michel lit ──→ /opt/data/profiles/leo-copilot/memories/MEMORY.md
                               (même fichier !)
 ```
 
@@ -2212,7 +2212,7 @@ Ces métadonnées permettent au script `agent-pro-index.py` de générer automat
 - **Ch.15** : Bureau LEO et les autres bureaux
 # Bureau Michel : l'infrastructure
 
-Le Bureau Michel est le bureau technique de LEO. Porté par **Léo Copilote** (profil `leo-copilot`), il gère tout ce qui touche au fonctionnement de l'infrastructure : crons, dashboards, n8n, Google APIs, Git, budget, serveur, sécurité.
+Le Bureau Michel est le bureau technique de LEO. Porté par **Michel** (profil `leo-copilot`), il gère tout ce qui touche au fonctionnement de l'infrastructure : crons, dashboards, n8n, Google APIs, Git, budget, serveur, sécurité.
 
 C'est le padron de la machine — il a accès root complet (`sudo` sans restriction).
 
@@ -3026,7 +3026,7 @@ Chaque profil peut avoir son propre gateway avec son propre token Telegram :
 # Terminal 1 : Léo (default)
 hermes gateway run
 
-# Terminal 2 : Léo Copilote
+# Terminal 2 : Michel
 hermes -p leo-copilot gateway run
 
 # Terminal 3 : Sylvia
@@ -5360,7 +5360,7 @@ Crée un profil Hermes isolé, avec son propre bot Telegram, sa mémoire, ses sk
 hermes -p mon-profil chat
 ```
 
-Lance une session chat avec le profil `mon-profil`. Utile pour basculer entre Léo, Léo Copilote, Sylvia ou Émile.
+Lance une session chat avec le profil `mon-profil`. Utile pour basculer entre Léo, Michel, Sylvia ou Émile.
 
 ## 4. Lister les crons
 
@@ -5431,7 +5431,7 @@ Exécute immédiatement une tâche planifiée, sans attendre son horaire. Utile 
 # 1. Restaurer le backup GDrive
 # 2. Lancer les gateways
 hermes gateway run --replace                    # Léo
-hermes -p leo-copilot gateway run --replace     # Léo Copilote
+hermes -p leo-copilot gateway run --replace     # Michel
 hermes -p bavi-leo gateway run --replace        # Sylvia
 hermes -p emile gateway run --replace           # Émile
 ```

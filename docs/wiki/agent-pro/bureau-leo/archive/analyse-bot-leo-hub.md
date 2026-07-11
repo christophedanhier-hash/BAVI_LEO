@@ -40,7 +40,7 @@ Contrairement aux autres bots (Sylvia pour les voyages, Michel pour l'infra, Emi
 | Utilisateur | Interaction | Fréquence |
 |:------------|:------------|:---------:|
 | 🧑‍✈️ **Christophe** (propriétaire) | DM Telegram quotidien | 🔴 Quotidienne |
-| 🔧 **Léo Copilot** (bot infra) | Sync skills + mémoire (30 min) | 🟡 Continue |
+| 🔧 **Michel** (bot infra) | Sync skills + mémoire (30 min) | 🟡 Continue |
 | 🧭 **Sylvia** (bot voyage) | Sync skills (30 min) | 🟢 Continue |
 | 🎓 **Emile** (bot études) | Sync skills (30 min) | 🟢 Continue |
 
@@ -87,7 +87,7 @@ graph TB
     end
 
     subgraph "🔄 Sync profils"
-        LC[Léo Copilot<br/>Infra]
+        LC[Michel<br/>Infra]
         BV[Bot Voyage<br/>Sylvia]
         BE[Bot Emile<br/>Etudes]
     end
@@ -325,7 +325,7 @@ pie title Repartition cout DeepSeek mensuel
 
 | Fonction | Raison | Qui le fait |
 |:---------|:-------|:------------|
-| Infrastructure Hermes | Spécialisation | 🔧 Léo Copilot |
+| Infrastructure Hermes | Spécialisation | 🔧 Michel |
 | Roadbooks camping-car | Spécialisation | 🧭 Sylvia |
 | Assistance mémoire | Spécialisation | 🎓 Emile |
 | Maintenance n8n | Spécialisation | 🔧 Michel |
@@ -352,7 +352,7 @@ pie title Repartition cout DeepSeek mensuel
 
 ```mermaid
 flowchart LR
-    L[🤖 LEO<br/>Central] -->|sync skills| LC[🔧 Léo Copilot<br/>Infra]
+    L[🤖 LEO<br/>Central] -->|sync skills| LC[🔧 Michel<br/>Infra]
     L -->|sync skills| BV[🧭 Sylvia<br/>Voyage]
     L -->|redirige voyage| BV
     L -->|redirige infra| LC

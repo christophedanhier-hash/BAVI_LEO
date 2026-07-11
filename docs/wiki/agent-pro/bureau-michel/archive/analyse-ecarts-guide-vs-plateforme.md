@@ -21,7 +21,7 @@ Le guide « Hermès pour les Nuls » (6 440 lignes) a été confronté à la pla
 
 | Dans le guide | Réalité |
 |:--------------|:--------|
-| 3 bots (Léo, Léo Copilote, Sylvia) | 4 bots (+ Émile 🎓) |
+| 3 bots (Léo, Michel, Sylvia) | 4 bots (+ Émile 🎓) |
 
 Le guide mentionne systématiquement "3 bots Telegram". Émile (profil pédagogique, créé le 25/06) est absent de toutes les sections.
 

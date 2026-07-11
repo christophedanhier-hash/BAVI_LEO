@@ -154,7 +154,7 @@ curl https://www.tofdan.be/
 | Copie fichiers App Astro → `/var/www/astro/` | 👤 Christophe |
 | Port forwarding routeur (80/443) | ❌ Non nécessaire (Cloudflare Tunnel) |
 | Certificat Let's Encrypt (`certbot`) | ❌ Remplacé par Cloudflare HTTPS |
-| Monitoring uptime | 🔧 Léo Copilot (Michel) |
+| Monitoring uptime | 🔧 Michel (Michel) |
 
 ---
 

@@ -9,10 +9,10 @@ statut: finalise
 type: analyse
 ---
 
-# 🔧 Analyse Business & Fonctionnelle — Léo Copilot (Infra_Hermes)
+# 🔧 Analyse Business & Fonctionnelle — Michel (Infra_Hermes)
 
 > **Bureau :** 🏛️ Robert — Conseil Stratégique IT | **Date :** 27/06/2026
-> **Sujet :** Analyse du bot Léo Copilot, infrastructure Hermes, maintenance système
+> **Sujet :** Analyse du bot Michel, infrastructure Hermes, maintenance système
 
 ---
 
@@ -20,11 +20,11 @@ type: analyse
 
 ### 1.1 Contexte
 
-**Léo Copilot** (profil `leo-copilot`) est le bot **infrastructure** de l'écosystème BAVI. Il porte le bureau **Michel — Infra_Hermes** et gère tout ce qui touche au fonctionnement technique de la plateforme Hermes Agent : crons, dashboards, n8n, Google APIs, Git, skills, budget, machines, réseau.
+**Michel** (profil `leo-copilot`) est le bot **infrastructure** de l'écosystème BAVI. Il porte le bureau **Michel — Infra_Hermes** et gère tout ce qui touche au fonctionnement technique de la plateforme Hermes Agent : crons, dashboards, n8n, Google APIs, Git, skills, budget, machines, réseau.
 
-|Contrairement à LEO (polyvalent/documentation) et Sylvia (voyage), Léo Copilot a un scope **purement technique** — il ne fait ni analyses business, ni roadbooks, ni consultations. Son modèle est DeepSeek V4 Pro (le plus puissant) car ses tâches sont complexes.
+|Contrairement à LEO (polyvalent/documentation) et Sylvia (voyage), Michel a un scope **purement technique** — il ne fait ni analyses business, ni roadbooks, ni consultations. Son modèle est DeepSeek V4 Pro (le plus puissant) car ses tâches sont complexes.
 
-> 🔑 **Changement majeur (v2)** : Léo Copilot dispose désormais de l'**accès root complet** sur la machine LEO (`sudo` sans restriction). Il est devenu le **padron de la machine** et peut tout faire : installation système, configuration Nginx, pare-feu (UFW), DNS, certificats SSL, tunnels Cloudflare, ports réseau — sans dépendre de CodeWhale. L'ère CodeWhale est révolue pour LEO.
+> 🔑 **Changement majeur (v2)** : Michel dispose désormais de l'**accès root complet** sur la machine LEO (`sudo` sans restriction). Il est devenu le **padron de la machine** et peut tout faire : installation système, configuration Nginx, pare-feu (UFW), DNS, certificats SSL, tunnels Cloudflare, ports réseau — sans dépendre de CodeWhale. L'ère CodeWhale est révolue pour LEO.
 
 ### 1.2 Objectifs
 
@@ -75,8 +75,8 @@ graph TB
         TG[Telegram<br/>DM Christophe]
     end
 
-    subgraph "🔧 Léo Copilot"
-        LC[Agent Léo Copilot<br/>Profil leo-copilot<br/>DeepSeek V4 Pro]
+    subgraph "🔧 Michel"
+        LC[Agent Michel<br/>Profil leo-copilot<br/>DeepSeek V4 Pro]
         SK[Skills<br/>Michel + Emile + governance]
         MB[Memoire sessions]
     end
@@ -161,7 +161,7 @@ graph TB
 
 ```mermaid
 flowchart TD
-    U[👤 Christophe] -->|message Telegram| LC[🔧 Léo Copilot]
+    U[👤 Christophe] -->|message Telegram| LC[🔧 Michel]
     
     LC -->|① Cadrage| Q{Type de demande?}
     
@@ -306,7 +306,7 @@ pie title Repartition cout DeepSeek Pro
 
 ## 5. 🚫 Périmètre fonctionnel
 
-### 5.1 Ce que Léo Copilot fait
+### 5.1 Ce que Michel fait
 
 | Fonction | Statut | Détail |
 |:---------|:------:|:-------|
@@ -325,7 +325,7 @@ pie title Repartition cout DeepSeek Pro
 | Tunnels SSH | ✅ Actif | Conteneur → Host |
 | Réseau Tailscale | ✅ Actif | Connectivité privée |
 
-### 5.2 Ce que Léo Copilot ne fait pas
+### 5.2 Ce que Michel ne fait pas
 
 | Fonction | Raison | Qui le fait |
 |:---------|:-------|:------------|
@@ -357,7 +357,7 @@ pie title Repartition cout DeepSeek Pro
 
 ```mermaid
 flowchart LR
-    LC[🔧 Léo Copilot<br/>Infra] -->|depend| HERMES[Hermes Agent<br/>Plateforme]
+    LC[🔧 Michel<br/>Infra] -->|depend| HERMES[Hermes Agent<br/>Plateforme]
     LC -->|sync skills| L[🤖 LEO<br/>Source de verite]
     LC -->|gère infra| BV[🧭 Sylvia<br/>Bot voyage]
     LC -->|gère infra| BE[🎓 Emile<br/>Bot etudes]
@@ -385,8 +385,8 @@ flowchart LR
 
 | Version | Date | Auteur | Description |
 |:--------|:-----|:-------|:------------|
-| v1 | 27/06/2026 | LEO + Robert | Version initiale — analyse business Léo Copilot |
-| v2 | 28/06/2026 | LEO + Robert | 🚀 Léo Copilot devient padron machine — accès root complet, plus de dépendance CodeWhale |
+| v1 | 27/06/2026 | LEO + Robert | Version initiale — analyse business Michel |
+| v2 | 28/06/2026 | LEO + Robert | 🚀 Michel devient padron machine — accès root complet, plus de dépendance CodeWhale |
 
 ---
 

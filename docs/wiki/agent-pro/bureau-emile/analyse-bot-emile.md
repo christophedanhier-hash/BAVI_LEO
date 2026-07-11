@@ -38,7 +38,7 @@ type: analyse
 |:------------|:-----|:------|
 | 🧑‍🎓 **Émilie** (étudiante) | Rédactrice du mémoire | Bot Telegram + Drive partagé |
 | 🧑‍✈️ **Christophe** | Superviseur, propriétaire | Bot Telegram + Drive owner |
-| 🔧 **Léo Copilot** | Infrastructure (cron, sync) | Skill Emile + scripts |
+| 🔧 **Michel** | Infrastructure (cron, sync) | Skill Emile + scripts |
 
 ### 1.4 Chiffres clés
 
@@ -50,7 +50,7 @@ type: analyse
 | Drive partagé | bavi/bureau-emile |
 | Sync cron | Horaire (Drive → Wiki) |
 | Utilisateur actif | 1 (Émilie) |
-| Référent technique | Léo Copilot (Infra_Hermes) |
+| Référent technique | Michel (Infra_Hermes) |
 
 ---
 
@@ -72,7 +72,7 @@ graph TB
 
     subgraph "🔄 Infrastructure"
         CS[Cron sync<br/>Drive → Wiki<br/>Toutes les heures]
-        LC[🔧 Léo Copilot<br/>Maintenance infra]
+        LC[🔧 Michel<br/>Maintenance infra]
     end
 
     subgraph "📚 Contenu"
@@ -109,7 +109,7 @@ graph TB
 | **Wiki** | GitHub Pages (`emile-wiki`) | Publication du mémoire |
 | **Stockage** | Google Drive (`bavi/bureau-emile`) | Brouillons, sources |
 | **Sync** | Hermes cron (horaire) | Conversion Drive → Wiki |
-| **Infra** | Léo Copilot (profil leo-copilot) | Maintenance, déploiement |
+| **Infra** | Michel (profil leo-copilot) | Maintenance, déploiement |
 
 ---
 
@@ -248,7 +248,7 @@ flowchart TD
 | Fonction | Raison | Qui le fait |
 |:---------|:-------|:------------|
 | Roadbooks voyage | Hors scope | 🧭 Sylvia |
-| Analyse infra | Hors scope | 🔧 Léo Copilot |
+| Analyse infra | Hors scope | 🔧 Michel |
 | Conseil IT stratégique | Hors scope | 🏛️ Robert |
 | Envoi emails | Hors scope | 🤖 LEO |
 
@@ -271,7 +271,7 @@ flowchart TD
 ```mermaid
 flowchart LR
     E[🎓 Emile<br/>Etudes] -->|lit contexte| W[🌐 emile-wiki]
-    E -->|depend infra| LC[🔧 Léo Copilot<br/>Infra]
+    E -->|depend infra| LC[🔧 Michel<br/>Infra]
     LC -->|gère sync cron| E
     L[🤖 LEO<br/>Central] -->|source de verite| SK[📋 Skill Emile]
 ```

@@ -3,12 +3,12 @@ date: 2026-06-30
 bureau: bureau-michel
 version: v1
 modele: deepseek-v4-flash
-tags: [hermes, infra, acces, credentials, api-keys, audit, securite, leo-copilot]
+tags: [hermes, infra, acces, credentials, api-keys, audit, securite, michel]
 statut: proposition
 type: analyse
 ---
 
-# 🔐 Audit Accès & Credentials — Léo Copilot
+# 🔐 Audit Accès & Credentials — Michel
 
 > **Machine** : Leo (`tofdan-System-Product-Name`) · Sombreffe, Belgique
 > **Container** : hermes-agent (bridge → host fixé après crash)
@@ -82,7 +82,7 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 | Bot | Token | Profil | Statut |
 |-----|-------|--------|--------|
 | Léo Hermes Agent | `881242...kMZM` | default | ✅ |
-| Léo Copilot | `899720...JZN4` | leo-copilot | ✅ |
+| Michel | `899720...JZN4` | michel | ✅ |
 | Bavi Leo | `885780..._h58` | bavi-leo | ✅ |
 | Bureau Émile | `(token Émile)` | emile | ✅ |
 

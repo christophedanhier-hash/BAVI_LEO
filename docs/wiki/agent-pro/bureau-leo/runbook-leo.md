@@ -30,7 +30,7 @@ cd /home/tofdan/.hermes
 python -m hermes_cli.main gateway run &
 ```
 
-### Léo Copilot — chef infra
+### Michel — chef infra
 ```bash
 cd /home/tofdan/.hermes
 hermes -p leo-copilot gateway run --replace &

@@ -11,7 +11,7 @@ type: analyse
 # 🌐 Stratégie d'hébergement — tofdan.be
 
 > **Objectif :** Migrer le site www.tofdan.be de Google Sites vers le serveur LEO
-> **Orchestrateur :** 🤖 LEO | **Code :** 💻 GitHub Copilot | **Infra hôte :** 🐋 CodeWhale | **Infra conteneur :** 🔧 Léo Copilot
+> **Orchestrateur :** 🤖 LEO | **Code :** 💻 GitHub Copilot | **Infra hôte :** 🐋 CodeWhale | **Infra conteneur :** 🔧 Michel
 
 ---
 
@@ -59,7 +59,7 @@ graph TB
         FILES
     end
     
-    subgraph "Surveillé par Léo Copilot"
+    subgraph "Surveillé par Michel"
         MONIT[Monitoring uptime<br/>Dashboard]
     end
 ```
@@ -76,7 +76,7 @@ graph TB
 | 2 | Configurer le virtual host pour tofdan.be | 🐋 CodeWhale |
 | 3 | Installer Certbot + générer certificat HTTPS | 🐋 CodeWhale |
 | 4 | Configurer le pare-feu (ports 80, 443) | 🐋 CodeWhale |
-| 5 | Vérifier que le site répond en HTTP + HTTPS | 🐋 + 🔧 Léo Copilot |
+| 5 | Vérifier que le site répond en HTTP + HTTPS | 🐋 + 🔧 Michel |
 
 **Estimation :** ~30 min
 
@@ -91,13 +91,13 @@ graph TB
 
 **Estimation :** 1-2 sessions
 
-### Phase 3 — Monitoring (🔧 Léo Copilot)
+### Phase 3 — Monitoring (🔧 Michel)
 
 | # | Tâche | Responsable |
 |:-:|:------|:-----------:|
-| 1 | Ajouter un cron de check uptime (toutes les 5 min) | 🔧 Léo Copilot |
-| 2 | Dashboard stats visites (optionnel : GoAccess ou simple compteur) | 🔧 Léo Copilot |
-| 3 | Alerte si site down | 🔧 Léo Copilot |
+| 1 | Ajouter un cron de check uptime (toutes les 5 min) | 🔧 Michel |
+| 2 | Dashboard stats visites (optionnel : GoAccess ou simple compteur) | 🔧 Michel |
+| 3 | Alerte si site down | 🔧 Michel |
 
 ---
 
@@ -156,7 +156,7 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 **Étapes :**
 1. Analyser le besoin avec Christophe → rédiger la stratégie
 2. Valider le plan avec Christophe
-3. Dispatch les tâches vers CodeWhale, GitHub Copilot, Léo Copilot
+3. Dispatch les tâches vers CodeWhale, GitHub Copilot, Michel
 4. Documenter l'avancement dans le wiki BAVI
 5. Proposer les évolutions (blog, sections, design)
 
@@ -234,9 +234,9 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 ---
 
-### 🔧 Léo Copilot (Michel — Infra_Hermes) — Monitoring
+### 🔧 Michel (Michel — Infra_Hermes) — Monitoring
 
-**Contexte :** Je suis Léo Copilot, le bot infrastructure. Je travaille DANS le conteneur Hermes. Je ne peux pas installer Nginx sur l'hôte.
+**Contexte :** Je suis Michel, le bot infrastructure. Je travaille DANS le conteneur Hermes. Je ne peux pas installer Nginx sur l'hôte.
 
 **Tâches :**
 
@@ -246,7 +246,7 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 | 2 | Ajouter un dashboard | Dans le dashboard Hermes (port 9119) : widget tofdan.be status (vert/rouge) |
 | 3 | Configurer une alerte | Si site down 3 vérifications consécutives → notifier Christophe |
 
-**Contrainte :** Léo Copilot ne travaille que dans le conteneur Hermes. Toute action hors conteneur doit être redirigée vers CodeWhale.
+**Contrainte :** Michel ne travaille que dans le conteneur Hermes. Toute action hors conteneur doit être redirigée vers CodeWhale.
 
 ---
 
@@ -259,7 +259,7 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 | HTTPS | ✅ | ✅ (Let's Encrypt) |
 | Coût | Inclus Google | **0 €** |
 | Performance | Moyen | ⚡ Très rapide (fichiers statiques) |
-| Maintenance | Google s'en charge | Toi + Léo Copilot |
+| Maintenance | Google s'en charge | Toi + Michel |
 
 ---
 
