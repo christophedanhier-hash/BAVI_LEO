@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 11/07/2026 à 00:00**
+> **Généré automatiquement le 11/07/2026 à 06:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (29 jobs)
 <!-- AUTO:END header -->
 
@@ -61,4 +61,4 @@
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 
-_Généré automatiquement le 11/07/2026 à 00:00_
+_Généré automatiquement le 11/07/2026 à 06:00_
