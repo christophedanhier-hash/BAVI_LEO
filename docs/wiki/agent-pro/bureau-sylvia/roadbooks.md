@@ -1,3 +1,14 @@
+---
+date: 2026-07-11
+bureau: bureau-sylvia
+auteur: LEO
+version: v1
+modele: deepseek-v4-flash
+tags: [sylvia, roadbook, voyage, italie, scandinavie]
+statut: 📋 En préparation
+type: liste
+---
+
 # 🗺️ Roadbooks — Sylvia
 
 *Liens vers le wiki Carnet de Voyages (public)*

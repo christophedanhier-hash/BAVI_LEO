@@ -1,3 +1,14 @@
+---
+date: 2026-07-11
+bureau: bureau-leo
+auteur: LEO
+version: v1c
+modele: deepseek-v4-flash
+tags: [leo, runbook, urgence, procedure, infra, michel]
+statut: ✅ Actif
+type: runbook
+---
+
 # 🛡️ LEO Runbook — Procédures d'urgence
 > Dernière mise à jour : 2026-07-11
 > Accessible sur GDrive : Hermes_Christophe/runbook/
