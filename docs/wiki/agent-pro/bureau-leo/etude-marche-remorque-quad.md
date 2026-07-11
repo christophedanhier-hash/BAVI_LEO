@@ -94,23 +94,22 @@ type: analyse
 
 | Concessionnaire | Adresse | Tél. | Marques | Distance |
 |:----------------|:--------|:----:|:--------|:--------:|
+| 🥇 **L'Oasis des Loisirs** 🏆 | Chaussée de Gembloux 69, 5140 Tongrinne | 071 88 99 15 | **Saris** | **~5 km** 🚗 |
 | **BSA Remorques** | Chaussée de Namur 324, 5310 Eghezée | 081 81 77 17 | Brenderup, Anssems | **~20 km** 🚗 |
-| **Brenderup (direct)** | Nivelles (usine) | — | Brenderup | **~25 km** |
-| **Anssems (import)** | Anvers | — | Anssems | ~80 km |
 | **Tenz Remorques** | Rue de la Croix 15, 6220 Fleurus | 071 81 80 89 | Tenz | **~15 km** 🚗 |
-| **Bockmann (import)** | — | — | Bockmann | Import Allemagne |
-| **GD Remorques** | Liège | — | Multi-marques | ~60 km |
+| **Brenderup (direct)** | Nivelles — usine | — | Brenderup | ~25 km |
+| **Anssems (import)** | Anvers | — | Anssems | ~80 km |
+
+> 💡 **L'Oasis des Loisirs (Tongrinne)** est à **5 min de Sombreffe** — c'est le plus proche et distribue Saris. Le modèle **Fourgon King** Saris semble parfait : double porte arrière, fourgon rigide, PTAC 1 350 à 2 700 kg.
 
 ### 3.2 Marques disponibles
 
 | Marque | Origine | Type | Fourgon rigide | Double essieux | Freinée | Remarque |
 |:-------|:--------|:-----|:--------------:|:--------------:|:-------:|:---------|
-| **Brenderup** | 🇩🇪 Allemagne | CargoDynamic™ | ✅ CD série | ✅ CD260/310 | ✅ | Réf. Belge : BSA Remorques |
+| **Saris** 🆕 | 🇧🇪 Belgique | Fourgon King | ✅ Fourgon | ✅ DE dispo | ✅ | **L'Oasis des Loisirs (Tongrinne, 5 km)** 🏆 |
+| **Brenderup** | 🇩🇪 Allemagne | CargoDynamic™ | ✅ CD série | ✅ CD260/310 | ✅ | BSA Remorques (Eghezée, ~20 km) |
 | **Anssems** | 🇳🇱 Pays-Bas | DS, DU, GT | ✅ DS series | ✅ | ✅ | Import Pays-Bas |
-| **Tenz** | 🇵🇱 Pologne | Remorques | ✅ | ✅ | ✅ | Dispo Fleurus (~15 km) |
-| **Bockmann** | 🇩🇪 Allemagne | BullTainer | ✅ Alu | ✅ | ✅ | Premium allemand |
-| **Chevalier** | 🇫🇷 France | Utilitaire | ✅ | ✅ | ✅ | Concession Belgique ? |
-| **Saraz** | 🇩🇪 Allemagne | Roadmaster | ✅ | ✅ | ✅ | Professionnel |
+| **Tenz** | 🇵🇱 Pologne | Remorques | ✅ | ✅ | ✅ | Fleurus (~15 km) |
 
 > 💡 **BSA Remorques (Eghezée, ~20 km)** est le plus pratique. Brenderup est la marque recommandée par l'étude quad initiale avec le CD260WHBR1300.
 
@@ -118,7 +117,19 @@ type: analyse
 
 ## 4. 🔍 Comparatif modèles — Remorques fermées double essieux freinées
 
-### 4.1 Brenderup — CargoDynamic™
+### 4.1 Saris — Fourgon King 🆕🏆
+
+**Revendeur : L'Oasis des Loisirs (Tongrinne, 5 km)**
+
+| Modèle | L int. (cm) | l int. (cm) | H int. (cm) | PTAC | Charge utile | Frein | Porte | Prix estimé |
+|:-------|:-----------:|:-----------:|:------------:|:----:|:------------:|:-----:|:-----:|:-----------:|
+| **Fourgon King DE** 🏆 | **À confirmer** | **À confirmer** | **À confirmer** | **1 350-2 700 kg** | **≥ 900 kg** ✅ | ✅ | **Double porte arrière** | **À demander** |
+
+> ✅ Fourgon rigide, PTAC jusqu'à 2 700 kg, double porte arrière, système d'arrimage TÜV
+> ✅ Roue jockey escamotable disponible
+> 🇧🇪 Marque belge, SAV local (Tongrinne)
+
+### 4.2 Brenderup — CargoDynamic™
 
 | Modèle | L int. (cm) | l int. (cm) | H int. (cm) | PTAC | Charge utile | Frein | Porte | Prix estimé |
 |:-------|:-----------:|:-----------:|:------------:|:----:|:------------:|:-----:|:-----:|:-----------:|
@@ -247,9 +258,9 @@ type: analyse
 
 | Profil | Modèle recommandé | Prix | Raison |
 |:-------|:-----------------|:----:|:-------|
-| **🏆 Meilleur rapport Q/P** | Brenderup **CD260WHBR1300** | **~4 500 €** | 260×155×185 cm, PTAC 1 300 kg, charge utile 905 kg — large confort, pas trop long |
-| **🏆🏆 Confort max** | Brenderup **CD310WHBR1300** | **~5 200 €** | 310 cm de long — marge de chargement ++, idéal pour charger/décharger |
-| **✅ Hayon intégré pratique** | Anssems **DS 260** | **~4 000 €** | Hayon arrière formant rampe — pas besoin d'acheter une rampe séparée |
+| **🏆 Meilleur choix local** | **Saris Fourgon King** — L'Oasis des Loisirs (Tongrinne, **5 km**) 🏆 | **À demander** | Marque belge, fourgon rigide, PTAC 1 350-2 700 kg, double porte, arrimage TÜV — à 5 min de Sombreffe ! 🇧🇪 |
+| **🥈 Brenderup (plan B)** | Brenderup **CD260WHBR1300** | **~4 500 €** | 260×155×185 cm, PTAC 1 300 kg, charge utile 905 kg — BSA Eghezée (20 km) |
+| **✅ Hayon intégré** | Anssems **DS 260** | **~4 000 €** | Hayon arrière formant rampe — pas besoin de rampe séparée |
 | **📍 Proximité** | **Tenz Fleurus** (~15 km) | ~3 500-4 500 € | Le plus proche de Sombreffe — à visiter en priorité |
 | **💰 Moins cher** | Tenz Fourgon DE 250 | ~3 500 € | Entrée de gamme, à vérifier qualité |
 
@@ -268,8 +279,8 @@ type: analyse
 
 | # | Action | Qui |
 |:-:|:-------|:---:|
-| **1** | 🥇 Aller chez **BSA Remorques** (Eghezée, ~20 km) — voir Brenderup CD260WHBR1300 | Christophe |
-| 2 | Aller chez **Tenz** (Fleurus, ~15 km) — voir leur gamme fourgon DE | Christophe |
+| **1** | 🥇 Aller chez **L'Oasis des Loisirs** (Tongrinne, 5 km) — voir Saris **Fourgon King** | Christophe |
+| 2 | Demander dimensions exactes Saris Fourgon King DE (Lxlxh, PTAC, prix) | Christophe |
 | 3 | Demander devis Brenderup **CD260WHBR1300** et **CD310WHBR1300** | Christophe |
 | 4 | Demander devis **Anssems DS 260** (hayon) | Christophe + LEO |
 | 5 | Commander **Al-Ko Premium Electric** (roue jockey motorisée) | Christophe |
