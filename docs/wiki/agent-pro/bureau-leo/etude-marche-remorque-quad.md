@@ -117,15 +117,23 @@ type: analyse
 
 ## 4. 🔍 Comparatif modèles — Remorques fermées double essieux freinées
 
-### 4.1 Saris — Fourgon King 🆕🏆
+### 4.1 Saris — Fourgon GO (Gesloten Opbouw) 🆕🏆
 
-**Revendeur : L'Oasis des Loisirs (Tongrinne, 5 km)**
+**Revendeur : L'Oasis des Loisirs (Tongrinne, 5 km) — Fabriqué aux Pays-Bas — Garantie 3 ans**
 
-| Modèle | L int. (cm) | l int. (cm) | H int. (cm) | PTAC | Charge utile | Frein | Porte | Prix estimé |
-|:-------|:-----------:|:-----------:|:------------:|:----:|:------------:|:-----:|:-----:|:-----------:|
-| **Fourgon King DE** 🏆 | **À confirmer** | **À confirmer** | **À confirmer** | **1 350-2 700 kg** | **≥ 900 kg** ✅ | ✅ | **Double porte arrière** | **À demander** |
+| Modèle | L int. (cm) | l int. (cm) | H int. (cm) | Poids vide | PTAC | Charge utile | Essieux | Frein | **Prix TTC** |
+|:-------|:-----------:|:-----------:|:------------:|:----------:|:----:|:------------:|:-------:|:-----:|:------------:|
+| **GO 306 154 150 2000 2** | 306 | 154 | 150 | 610 kg | 2 000 kg | 1 390 kg | 2 ✅ | ✅ | **7 169 €** |
+| **GO 306 154 180 2000 2** 🏆 | **306** | **154** | **180** | **644 kg** | **2 000 kg** | **1 356 kg** | **2** ✅ | ✅ | **6 826 €** |
+| **GO 306 154 200 2000 2** | 306 | 154 | 200 | 665 kg | 2 000 kg | 1 335 kg | 2 ✅ | ✅ | 7 296 € |
+| GO 306 154 150 2700 2 | 306 | 154 | 150 | 646 kg | 2 700 kg | 2 054 kg | 2 ✅ | ✅ | 7 594 € |
+| GO 306 154 180 2700 2 | 306 | 154 | 180 | 680 kg | 2 700 kg | 2 020 kg | 2 ✅ | ✅ | 7 250 € |
+| GO 306 154 200 2700 2 | 306 | 154 | 200 | 701 kg | 2 700 kg | 1 999 kg | 2 ✅ | ✅ | 7 721 € |
 
-> ✅ Fourgon rigide, PTAC jusqu'à 2 700 kg, double porte arrière, système d'arrimage TÜV
+> ✅ **GO 306 154 180 2000 2** 🏆 = **6 826 € TTC** — Meilleur rapport Q/P : 306×154×180 cm, 2 000 kg PTAC, double essieu, freiné
+> ⚠️ Modèles en **134 cm de large** : trop étroits pour le quad (121 cm + marge nécessaire)
+> ⚠️ Modèles **256 cm** : seulement en 134 cm de large — **largeur 154 cm mini** (sinon passage du quad trop juste)
+> ✅ Fourgon bois + PRV, châssis galvanisé, double porte arrière, arrimage TÜV, éclairage intérieur
 > ✅ Roue jockey escamotable disponible
 > 🇧🇪 Marque belge, SAV local (Tongrinne)
 
@@ -258,7 +266,7 @@ type: analyse
 
 | Profil | Modèle recommandé | Prix | Raison |
 |:-------|:-----------------|:----:|:-------|
-| **🏆 Meilleur choix local** | **Saris Fourgon King** — L'Oasis des Loisirs (Tongrinne, **5 km**) 🏆 | **À demander** | Marque belge, fourgon rigide, PTAC 1 350-2 700 kg, double porte, arrimage TÜV — à 5 min de Sombreffe ! 🇧🇪 |
+| **🏆 Meilleur choix local** | **Saris GO 306 154 180 2000 2** — L'Oasis des Loisirs (Tongrinne) 🏆 | **6 826 € TTC** | 306×154×180 cm, PTAC 2 000 kg, double essieu freiné, 1 356 kg charge utile — **à 5 min de Sombreffe !** 🇧🇪 |
 | **🥈 Brenderup (plan B)** | Brenderup **CD260WHBR1300** | **~4 500 €** | 260×155×185 cm, PTAC 1 300 kg, charge utile 905 kg — BSA Eghezée (20 km) |
 | **✅ Hayon intégré** | Anssems **DS 260** | **~4 000 €** | Hayon arrière formant rampe — pas besoin de rampe séparée |
 | **📍 Proximité** | **Tenz Fleurus** (~15 km) | ~3 500-4 500 € | Le plus proche de Sombreffe — à visiter en priorité |

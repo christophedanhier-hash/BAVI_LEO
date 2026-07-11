@@ -381,7 +381,7 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 | **TVA 21 %** | **2 628 €** | |
 | **💳 Total TTC** | **15 142 €** | **Offre n°11307 - KD QUAD RACING** |
 | **Attelage remorque** | À chiffrer | Attelage quad + boule remorque |
-| **Remorque fermée** | 3 000 – 6 000 € | Freinée, double essieux (étude en cours) |
+| **Remorque fermée** | **6 826 €** | Saris GO 306 154 180 2000 2 — Fourgon DE freiné — L'Oasis des Loisirs (Tongrinne) |
 | **Immatriculation + mise en circulation** | ~500 € | Plaques BE, carte grise quad |
 | **Assurance RC + vol** | ~300 – 500 €/an | Estimatifs |
 
