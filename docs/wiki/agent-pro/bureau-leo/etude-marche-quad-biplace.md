@@ -1,8 +1,8 @@
 ---
-date: 2026-06-28
+date: 2026-07-11
 bureau: bureau-leo
 auteur: LEO
-version: v6
+version: v7
 modele: deepseek-v4-flash
 tags: [quad, atv, achat, etude-marche, remorque, camping-car, tofdan]
 statut: en-cours
@@ -43,7 +43,7 @@ Le quad doit :
 
 | Marque | Origine | Distributeur Belgique | Gamme touring/biplace |
 |:-------|:--------|:----------------------|:----------------------|
-| **Can-Am (BRP)** | 🇨🇦 Canada | KD Quad Manage (officiel) | Outlander 650/850/1000 2-up, Renegade |
+|| **Can-Am (BRP)** | 🇨🇦 Canada | KD Quad Manage (officiel) | Outlander 700/850/1000 2-up, Renegade |
 | **Polaris** | 🇺🇸 USA | ⛔ Aucun dans 50 km de Sombreffe | Sportsman 570/850/1000 Touring |
 | **Yamaha** | 🇯🇵 Japon | M. Mazuin Sport (Fosses, 15 km), Zone Rouge (Haine, 28 km) | Kodiak 700, Grizzly 700 — disponibles neuf ✅ |
 | **CFMOTO** | 🇨🇳 Chine | KD Quad Manage + Tamoto (Jodoigne, 29 km) | C5 Touring, C6 Pro Touring, CFORCE 1000 |
@@ -80,6 +80,7 @@ Le quad doit :
 |:-------|:------:|:----------:|:-----------:|:-----------------:|:-------------:|:-------------:|
 | **Outlander 570 DPS 2-up** | 570cc, 48cv | ~350 | 218×120×120 | ~250 | ✅ XT cab | ~9 500 € |
 | **Outlander 650 DPS 2-up** | 650cc, 62cv | ~365 | 218×120×120 | ~270 | ✅ XT cab | ~10 500 € |
+| **Outlander 700 XT 2-up** 🆕🏆 | **700cc, ~65cv** | **~370** | **~220×121×120** | **~275** | **✅ XT cab + dossier** | **À confirmer KD Quad** |
 | **Outlander 850 DPS 2-up** | 850cc, 72cv | ~385 | 225×122×120 | ~300 | ✅ XT cab confort | ~12 500 € |
 | **Outlander 1000R DPS 2-up** | 1000cc, 91cv | ~405 | 228×124×122 | ~320 | ✅ XT cab + dossier | ~15 500 € |
 
@@ -370,7 +371,7 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 
 | Poste | Estimation | Notes |
 |:------|:----------:|:------|
-| **Quad neuf** (CFORCE 625-850 Touring) | 8 000 – 11 000 € | Neuf, garantie, livré chez distributeur |
+| **Quad neuf** (Can-Am Outlander 700 XT) | **À confirmer KD Quad** | Neuf, garantie BRP, chez KD Quad Manage |
 | **Quad occasion** (~2-5 ans, ~2000-5000 km) | 5 000 – 8 000 € | À vérifier : état, entretien, homologation |
 | **Remorque fermée** | 3 000 – 4 500 € | Brenda, Anssems, Tenz — neuve |
 | **Équipements** (rampe, sangles, antivol) | 300 – 600 € | Rampe aluminium, sangles à cliquet |
@@ -392,7 +393,7 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 | **📱 Moderne & connecté** | Segway **Snarler AT6 L** | ~8 000 € | Biplace confort, écran tactile, connecté |
 | **🛞 Puissance + confort** | CFMOTO **C6 Pro Touring** (650cc) | ~8 500 € | 54ch, dossier série, mais 450 kg (remorque) |
 | **🇹🇼 Fiable utilitaire** | Kymco **MXU 550** | ~6 500 € | Bon réseau BE, prix bas, fiable |
-| **🏆 Premium** | Can-Am **Outlander 650 2-UP** | ~10 500 € | Qualité BRP, concessionnaire Bert Adventure Tielt |
+| **🏆 Premium** | Can-Am **Outlander 700 XT 2-up** 🆕 | **À confirmer KD Quad** | 700cc Rotax V-Twin (~65cv), XT cab, dossier passager, EPS — vu chez KD Quad |
 | **🇯🇵 Japonais** | Yamaha **Kodiak 700 EPS** | ~9 000 € | Valeur sûre, disponible neuf chez Motokaiser/Zone Rouge |
 | **💡 Occasion malin** | CFMOTO C5 Touring (2025) | ~5 000 – 5 500 € | Modèle 2025, peu de km, garantie transferable |
 | **🚀 Max puissance** | CFMOTO CFORCE 1000 Touring Overland | ~12 500 € | Bicylindre 963cc, conçu long voyage |
@@ -440,15 +441,12 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 
 | # | Action | Qui |
 |:-:|:-------|:---:|
-| **1** | 🥇 Aller chez **KD Quad Manage** (Rue de la Croyère 13, 7170 Manage — ~25 km) — essayer l'**assise arrière** des 4 modèles : Kymco MXU 700 Explorer / CFMOTO C5/C6 Touring / Segway Snarler AT6 | Christophe |
-| 2 | Si MXU 700 Explorer confirmé : commander chez KD Quad | Christophe |
-| 3 | Contacter **MOOOF NV** (CFMOTO Benelux) pour devis | Christophe |
-| 4 | Contacter **Bert Adventure Tielt** (051 40 03 13) pour devis Can-Am Outlander 650 2-UP | Christophe |
-| 5 | Vérifier disponibilité **Yamaha Kodiak 700** chez Motokaiser ou Zone Rouge | Christophe |
-| 6 | Vérifier PTAC camping-car + permis B — total < 3 500 kg ? | Christophe |
-| 7 | Demander prix remorque fermée chez BSA Remorques / Brenderup | Christophe |
-| 8 | Vérifier dimensions intérieures remorque : mini 260×130×150 cm | Christophe |
-| 9 | Comparer neuf vs occasion (< 1 an, faible km) | Christophe + LEO |
+| **1** | ✅ En cours — **Chez KD Quad Manage** — essai Can-Am Outlander **700 XT** | Christophe |
+| 2 | Confirmer prix Outlander 700 XT avec KD Quad | Christophe |
+| 3 | Vérifier dossier passager + confort arrière sur le 700 XT | Christophe |
+| 4 | Négocier équipement (rampe, treuil) avec le vendeur | Christophe + LEO |
+| 5 | Vérifier PTAC camping-car + permis B — total < 3 500 kg ? | Christophe |
+| 6 | Demander prix remorque fermée chez BSA Remorques / Brenderup | Christophe |
 
 ---
 
@@ -462,6 +460,7 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 | v4 | 28/06/2026 | LEO | Ré-analyse remorque + section revendeurs Sombreffe |
 | v5 | 28/06/2026 | LEO | Correction revendeurs (Tamoto, Mazuin) + toit amovible remorque |
 | v6 | 28/06/2026 | LEO | 🔑 COC Roller Team : traction freinée 2 000 kg confirmée — plus aucune limite quad/remorque |
+| **v7** | **11/07/2026** | **LEO** | **Ajout Can-Am Outlander 700 XT — achat en cours chez KD Quad Manage** |
 
 ---
 
