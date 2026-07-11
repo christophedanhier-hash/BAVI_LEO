@@ -48,10 +48,10 @@ type: analyse
 
 | Capacité | Valeur | Source |
 |:---------|:------:|:-------|
-| **Traction freinée max** | **2 000 kg** | COC case 18.3 |
+| **Traction freinée max** | **2 000 kg** | COC §18.3 — Roller Team Nimbus ✅ |
 | **PTAC camping-car** | 3 500 kg | COC case 16.1 |
 | **PTAC combiné max** | 4 250 kg | COC case 16.4 |
-| **Permis BE requis** | Si CC + remorque > 3 500 kg | ✅ Christophe a le BE |
+| **Permis BE** | **✅ Christophe** | CC 3 500 kg + remorque 2 000 kg = 5 500 kg → permis BE OK |
 
 > ✅ **Avec 2 000 kg de capacité de traction**, toutes les remorques fermées du marché sont compatibles.
 > ✅ **Avec le permis BE**, le combiné CC + remorque peut dépasser 3 500 kg sans problème.

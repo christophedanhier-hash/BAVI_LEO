@@ -451,7 +451,7 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 | 3 | ✅ Dossier passager + confort validé | Christophe ✅ |
 | 4 | 🔜 **Étude de marché remorque fermée freinée double essieux** | **LEO** — [voir étude](etude-marche-remorque-quad.md) |
 | 5 | 🥇 Aller chez **L'Oasis des Loisirs** (Tongrinne, 5 km) — Saris Fourgon King | Christophe |
-| 6 | Commander roue jockey motorisée Al-Ko Premium Electric | Christophe |
+| 6 | ✅ **Permis BE OK** — traction 2 000 kg confirmée (COC §18.3) | Christophe ✅ |
 
 ---
 
