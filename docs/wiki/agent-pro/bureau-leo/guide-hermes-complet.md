@@ -11,6 +11,8 @@ type: livre
 
 # Hermès pour les Nuls 🦁
 
+> **Note :** Ce guide documente l'architecture au 07/07/2026. Le profil `leo-copilot` et le bot `@hermes_leo_copilot_bot` sont désormais appelés **Michel (infra)**. Les commandes et chemins techniques (`-p leo-copilot`, `/profiles/leo-copilot/`) restent inchangés.
+
 ## Construire son propre assistant IA avec LEO
 
 ---

@@ -1,5 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
+> **Note :** Le profil `leo-copilot` mentionné ci-dessous est désormais **Michel (infra)**. Les chemins techniques (`profiles/leo-copilot/`) sont corrects et inchangés.
+
 <!-- AUTO:START header -->
 > **Généré automatiquement le 11/07/2026 à 18:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (30 jobs)

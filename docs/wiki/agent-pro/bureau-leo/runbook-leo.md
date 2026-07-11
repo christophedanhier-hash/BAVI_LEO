@@ -2,6 +2,8 @@
 > Dernière mise à jour : 2026-07-11
 > Accessible sur GDrive : Hermes_Christophe/runbook/
 
+> **Note :** Le profil `leo-copilot` et le bot `@hermes_leo_copilot_bot` sont désormais **Michel (infra)**. Les chemins techniques (`profiles/leo-copilot/`) sont corrects et inchangés.
+
 ---
 
 ## 🚨 EN CAS DE PANNE GÉNÉRALE

@@ -28,7 +28,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
 | 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 | 🧭 **Sylvia** | Agence de voyage complète — tous modes de transport | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
-| 🔧 **Michel — Infra_Hermes** | Infrastructure Hermes, code, système — **Léo Copilot** | PRIVÉ | ✅ Actif |
+| 🔧 **Michel — Infra_Hermes** | Infrastructure Hermes, code, système — **Michel** | PRIVÉ | ✅ Actif |
 | 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
 | 🎓 **Emile** | Assistant pédagogique — mémoire sciences de l'éducation | PRIVÉ | 🆕 Nouveau |
 | 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | ✅ Actif |
@@ -116,7 +116,7 @@ Le workflow 7 phases s'adapte au format du livrable. Le type est déterminé en 
 | 🛡️ AO | Workflow raccourci ①→③→⑥ (expert unique transverse) |
 | 📝 Gérard | Croisement obligatoire Hardware ↔ Firmware |
 | 🧭 Sylvia | Cartographie OSM en parallèle de l'itinéraire |
-| 🔧 **Michel — Infra_Hermes** | Léo Copilot — Infrastructure Hermes, code, DeepSeek Pro |
+| 🔧 **Michel — Infra_Hermes** | Michel — Infrastructure Hermes, code, DeepSeek Pro |
 | 🩺 **Virginie** | Orchestration médicale — dispatch spécialistes + croisement des diagnostics |
 | 🎓 **Emile** | Assistant pédagogique — mémoire sciences éducation |
 | 🤖 LEO | Cron-driven (collecte → analyse → livrable) |
@@ -198,7 +198,7 @@ flowchart LR
 | `bureau-robert` | 🏛️ Robert | Conseil IT stratégique, 7 experts dispatch | 2.0 |
 | `bureau-sophie` | 💰 Sophie | Pilotage financier, TCO/ROI, 3 scenarii | 2.0 |
 | `assurance-obligatoire` | 🛡️ AO | Lentille métier AO, expert transverse | 2.0 |
-| `bureau-michel` | 🔧 Michel — Infra_Hermes | Léo Copilot — Infrastructure, code, système, DeepSeek Pro | ✅ Actif |
+| `bureau-michel` | 🔧 Michel — Infra_Hermes | Michel — Infrastructure, code, système, DeepSeek Pro | ✅ Actif |
 
 ### Skills PRIVÉ — Personnel
 
