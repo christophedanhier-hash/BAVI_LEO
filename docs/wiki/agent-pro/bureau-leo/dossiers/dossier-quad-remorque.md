@@ -2,7 +2,7 @@
 date: 2026-07-11
 bureau: bureau-leo
 auteur: LEO
-version: v1
+version: v1b
 modele: deepseek-v4-flash
 tags: [quad, atv, can-am, outlander, remorque, saris, attelage, camping-car, tofdan]
 statut: finalise
@@ -343,7 +343,9 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 
 | Version | Date | Auteur | Description |
 |:--------|:-----|:-------|:------------|
-| **v1** | **11/07/2026** | **LEO** | **Version consolidée finale — Quad + Remorque + Attelage + Budget** |
+| **v1** | **11/07/2026** | **LEO** | **Version initiale — Quad Outlander 700 XT + Saris GO 306 154 180** |
+| **v1a** | **11/07/2026** | **LEO** | **+ Debon Cargo 1300 (5 890€), Roadster 300 (6 690€), Roadster 500 (7 590€) — options béquilles** |
+| **v1b** | **11/07/2026** | **LEO** | **+ Attelage Coenen (Corroy-le-Château) — Roller Team 287 TL — escamotable invisible** |
 
 > 🔙 **Documents archivés :**
 > - `archive/etude-marche-quad-biplace-v7.md` — Historique étude quad
