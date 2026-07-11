@@ -1,13 +1,13 @@
 # 🤖 Bureau LEO — Dossiers & Analyses
 
-*Généré automatiquement le 11/07/2026 à 10:00*
+*Généré automatiquement le 11/07/2026 à 11:00*
 
 **Total : 3 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
+| 11/07/2026 | v7 | [🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC](etude-marche-quad-biplace/) | `quad` `atv` `achat` `etude-marche` `remorque` `camping-car` `tofdan` | 🔄 En cours | [📥](etude-marche-quad-biplace/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/etude-marche-quad-biplace.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+etude-marche-quad-biplace.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) |
 | 07/07/2026 | v4.0 | [Hermès pour les Nuls 🦁](guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | archive | [📥](guide-hermes-complet/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/guide-hermes-complet.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+guide-hermes-complet.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |
-| 28/06/2026 | v6 | [🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC](etude-marche-quad-biplace/) | `quad` `atv` `achat` `etude-marche` `remorque` `camping-car` `tofdan` | 🔄 En cours | [📥](etude-marche-quad-biplace/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/etude-marche-quad-biplace.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+etude-marche-quad-biplace.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) |
 | 24/06/2026 | v1 | [🚗 Dossier Skoda Enyaq — Achat & Installation](dossiers/dossier-skoda-enyaq/) | `skoda` `enyaq` `vehicule` `leasing` `borne-recharge` `eneco` | 🔄 En cours | [📥](dossiers/dossier-skoda-enyaq/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/dossier-skoda-enyaq.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+dossier-skoda-enyaq.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-skoda-enyaq.md) |
 
 ---
