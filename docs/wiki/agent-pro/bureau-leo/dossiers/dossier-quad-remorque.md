@@ -75,9 +75,50 @@ type: dossier
 
 ---
 
-## 3. 🚚 Remorque — Saris GO 306 154 180 2000 2
+## 3. 🔌 Attelage camping-car — Coenen (Corroy-le-Château)
 
-### 3.1 Fiche technique
+### 3.1 Le spécialiste
+
+**Attache Remorque Coenen**
+- 📍 **282 Chaussée de Charleroi, B-5032 Corroy-le-Château** (Gembloux)
+- 📞 **+32 (0)81 61 43 37**
+- 📧 info@attacheremorquecoenen.be
+- 🕐 Lun-Jeu 8h-12h / 13h-18h — Ven 8h-12h / 13h-17h
+- 🌐 https://attacheremorquecoenen.eu/
+
+### 3.2 Pour le Roller Team 287 TL
+
+Coenen équipe toutes les marques, dont :
+- **ROLLER-TEAM** ✅ (dans leur catalogue motorhome)
+- **FORD** ✅ (châssis du Transit)
+
+Le Roller Team 287 TL est basé sur un **Ford Transit** — Coenen a l'expérience pour ce type de montage.
+
+### 3.3 Types d'attelage proposés
+
+| Option | Type | Description | Idéal pour |
+|:------:|:-----|:------------|:-----------|
+| 1 | **Fixe** | Rotule toujours visible. Le plus économique. | Utilitaire |
+| 2 | **Escamotable horizontale** | Rotule se démonte, base visible. | Budget intermédiaire |
+| **3** 🏆 | **Escamotable invisible** | **Rotule démontable, base invisible.** | **🏆 Camping-car** |
+| 4 | Monobloc | Pour utilitaire et 4x4 | Utilitaire lourd |
+
+> 🏆 **Option 3 — Escamotable invisible** : recommandée pour le Roller Team. La rotule se démonte et la base devient invisible — esthétique et pratique quand tu ne tractes pas la remorque.
+
+### 3.4 Prix estimé
+
+| Poste | Estimation |
+|:------|:----------:|
+| **Attelage motorhome** (escamotable invisible) + montage | **~600-1 000 €** |
+| **Faisceau électrique 13 broches** (norme camping-car) | Inclus ou ~100 € |
+
+> 💡 Demander un **devis gratuit** via le site Coenen ou par téléphone. Préciser : **Roller Team Nimbus 287 TL — Ford Transit — 202?** (année).
+
+---
+
+## 4. 🚚 Remorque — Saris GO 306 154 180 2000 2
+
+### 4.1 Fiche technique
 
 **Marque :** **Saris** 🇧🇪 (fabrication Pays-Bas)
 **Revendeur :** **L'Oasis des Loisirs** — Ch. de Gembloux 69, **5140 Tongrinne** (5 km de Sombreffe) 📞 071 88 99 15
@@ -206,7 +247,7 @@ Le **Roadster 500** peut être équipé d'options de manutention :
 
 ---
 
-## 4. ⚙️ Équipements et accessoires
+## 5. ⚙️ Équipements et accessoires
 
 ### 4.1 Roue jockey motorisée 🏆
 
@@ -236,11 +277,12 @@ Le Saris GO 306 154 180 2000 2 est équipé de série d'anneaux d'arrimage TÜV 
 
 ---
 
-## 5. 💰 Budget total
+## 6. 💰 Budget total
 
 | Poste | Montant | Notes |
 |:------|:-------:|:------|
 | **Quad** (Can-Am Outlander 700 MAX XT) | **15 142 € TTC** | Devis n°11307 KD Quad Racing |
+| **Attelage CC** (Coenen — escamotable invisible) | **~800 €** | Corroy-le-Château (Gembloux) |
 | **Attelage quad** (boule + faisceau) | **~200-400 €** | À chiffrer chez KD Quad |
 | **Remorque** (Saris GO 306 154 180 2000 2) | **6 826 € TTC** | Configurateur Saris — L'Oasis des Loisirs |
 | **Roue jockey motorisée** (Al-Ko Premium Electric) | **~350 €** | Amazon, Norauto |
@@ -249,11 +291,11 @@ Le Saris GO 306 154 180 2000 2 est équipé de série d'anneaux d'arrimage TÜV 
 | **Assurance quad** (RC + vol) | **~300-500 €/an** | |
 | **Immatriculation remorque** | **~100 €** | Plaques BE |
 | | | |
-| **💰 Total investissement** | **~23 500 €** | Quad + remorque + équipements |
+| **💰 Total investissement** | **~24 300 €** | Quad + attelages + remorque + équipements |
 
 ---
 
-## 6. 🚐 Capacité de traction — COC Roller Team Nimbus
+## 7. 🚐 Capacité de traction — COC Roller Team Nimbus
 
 **Certificat de conformité** (COC) lu et vérifié le 11/07/2026 :
 
@@ -283,12 +325,12 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 
 ---
 
-## 7. 📋 Prochaines étapes
+## 8. 📋 Prochaines étapes
 
 | # | Action | Qui | Priorité |
 |:-:|:-------|:---:|:--------:|
-| **1** | Aller chez **L'Oasis des Loisirs** (Tongrinne) — voir/configurer le **Saris GO 306 154 180 2000 2** | Christophe | 🥇 |
-| 2 | Demander devis Saris + options (roue jockey, hayon/rampe) | Christophe | 🥇 |
+| 1 | Aller chez **L'Oasis des Loisirs** (Tongrinne) — voir/configurer le **Saris GO 306 154 180 2000 2** | Christophe | 🥇 |
+| 2 | Demander **devis attelage Coenen** (Corroy-le-Château) — Roller Team 287 TL, escamotable invisible | Christophe | 🥇 |
 | 3 | Vérifier **attelage quad** chez KD Quad (prix, montage, faisceau) | Christophe | 🥇 |
 | 4 | Commander **Al-Ko Premium Electric** (roue jockey motorisée) | Christophe | 🥈 |
 | 5 | Commander **treuil 12V + rampe aluminium** (Amazon/Norauto) | Christophe | 🥈 |

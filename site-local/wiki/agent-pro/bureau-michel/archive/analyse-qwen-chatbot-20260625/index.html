@@ -1,0 +1,1474 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Portail des bureaux IA — PRO (Solidaris), OCA (Astronomie), Voyages, Infra Hermes">
+      
+      
+        <meta name="author" content="Christophe (Tofdan) & LEO">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Analyse — Bot Telegram : DeepSeek v4 Flash + Gemini 3.5 Flash (fallback) - BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analyse-bot-telegram-deepseek-v4-flash-gemini-35-flash-fallback" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../../../.." title="BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]" class="md-header__button md-logo" aria-label="BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analyse — Bot Telegram : DeepSeek v4 Flash + Gemini 3.5 Flash (fallback)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="http://100.92.102.28:8765" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    100
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../bureaux/" class="md-tabs__link">
+          
+  
+  
+  🏠 Bureaux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🔧 Michel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bureau-sylvia/" class="md-tabs__link">
+          
+  
+  
+  🧭 Sylvia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bureau-leo/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 Léo
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bureau-gerard/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📝 Gérard
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bureau-virginie/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🩺 Virginie
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bureau-emile/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🎓 Émile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bureau-robert/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏛️ Robert
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bureau-sophie/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  💰 Sophie
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]" class="md-nav__button md-logo" aria-label="BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BAVI LEO — Bureaux Agentiques Virtuels [LOCAL]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="http://100.92.102.28:8765" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    100
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Bureaux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 Bureaux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bureaux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📈 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Michel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧭 Sylvia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧭 Sylvia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-sylvia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bureau
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-sylvia/roadbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ Roadbooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-leo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Léo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-gerard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Gérard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-virginie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🩺 Virginie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-emile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎓 Émile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-robert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ Robert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-sophie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💰 Sophie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cout-du-service-bavi-leo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💳 Coût du service BAVI LEO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-cadrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① CADRAGE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="① CADRAGE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-finale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Décision finale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ③ PRODUCTION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="③ PRODUCTION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-v4-flash-primaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek v4 Flash — Primaire
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gemini-35-flash-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini 3.5 Flash — Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-ecartes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modèles écartés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-finale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture finale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-bot-voyage-applique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern « bot voyage » appliqué
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-synthese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⑤ SYNTHÈSE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-livrable-plan-dimplementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⑥ LIVRABLE — Plan d'implémentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-archivage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⑦ ARCHIVAGE
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="analyse-bot-telegram-deepseek-v4-flash-gemini-35-flash-fallback">Analyse — Bot Telegram : DeepSeek v4 Flash + Gemini 3.5 Flash (fallback)<a class="headerlink" href="#analyse-bot-telegram-deepseek-v4-flash-gemini-35-flash-fallback" title="Permanent link">&para;</a></h1>
+<p><strong>Bureau :</strong> Michel — Infra_Hermes 🔧 | <strong>Version :</strong> v3.0
+<strong>Date :</strong> 25/06/2026 | <strong>Type :</strong> Analyse (①→③→⑤→⑥→⑦)</p>
+<hr />
+<h2 id="cout-du-service-bavi-leo">💳 Coût du service BAVI LEO<a class="headerlink" href="#cout-du-service-bavi-leo" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrique</th>
+<th style="text-align: right;">Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Sessions LEO</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tokens consommés</td>
+<td style="text-align: right;">~20K IN · ~8K OUT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Coût DeepSeek réel</td>
+<td style="text-align: right;"><strong>~0,02 €</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Frais de service BAVI LEO</td>
+<td style="text-align: right;">1,00 €</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total facturé</strong></td>
+<td style="text-align: right;"><strong>1,02 €</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-cadrage">① CADRAGE<a class="headerlink" href="#1-cadrage" title="Permanent link">&para;</a></h2>
+<h3 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Description</th>
+<th>Contrainte clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scope 1 — Chat général</strong></td>
+<td>Bot Telegram quotidien</td>
+<td>Fiabilité, coût maîtrisé</td>
+</tr>
+<tr>
+<td><strong>Scope 2 — Mémoire Émile</strong></td>
+<td>Assistant de rédaction pour mémoire de fin d'études (aspects pédagogiques)</td>
+<td>Qualité rédactionnelle, contexte long, rigueur</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decision-finale">Décision finale<a class="headerlink" href="#decision-finale" title="Permanent link">&para;</a></h3>
+<p>Après évaluation de qwen2.5:7b (❌ switch chinois, 32K contexte insuffisant) et des modèles Gemini Pro (💸 coût élevé dû aux <em>thinking tokens</em>), l'architecture retenue est :</p>
+<ul>
+<li><strong>Primaire : DeepSeek v4 Flash</strong> — fiable, économique, déjà en production (LEO Hermes)</li>
+<li><strong>Fallback : Gemini 3.5 Flash</strong> — 1M contexte, dernière génération (mai 2026)</li>
+</ul>
+<p><strong>Type de livrable :</strong> Analyse (①→③→⑤→⑥→⑦)</p>
+<hr />
+<h2 id="3-production">③ PRODUCTION<a class="headerlink" href="#3-production" title="Permanent link">&para;</a></h2>
+<h3 id="deepseek-v4-flash-primaire">DeepSeek v4 Flash — Primaire<a class="headerlink" href="#deepseek-v4-flash-primaire" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Modèle</strong></td>
+<td>deepseek-v4-flash</td>
+</tr>
+<tr>
+<td><strong>Fournisseur</strong></td>
+<td>DeepSeek (Chine)</td>
+</tr>
+<tr>
+<td><strong>Contexte max</strong></td>
+<td>128K tokens (~100 pages)</td>
+</tr>
+<tr>
+<td><strong>Qualité français</strong></td>
+<td>8/10</td>
+</tr>
+<tr>
+<td><strong>Coût input</strong></td>
+<td>~0,15 $ / 1M tokens</td>
+</tr>
+<tr>
+<td><strong>Coût output</strong></td>
+<td>~0,60 $ / 1M tokens</td>
+</tr>
+<tr>
+<td><strong>Fiabilité</strong></td>
+<td>✅ Stable, pas de switch langue</td>
+</tr>
+<tr>
+<td><strong>Expérience LEO</strong></td>
+<td>✅ En production (LEO Hermes, classifieur)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gemini-35-flash-fallback">Gemini 3.5 Flash — Fallback<a class="headerlink" href="#gemini-35-flash-fallback" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Modèle</strong></td>
+<td>gemini-3.5-flash</td>
+</tr>
+<tr>
+<td><strong>Sortie</strong></td>
+<td>Mai 2026 (dernière génération)</td>
+</tr>
+<tr>
+<td><strong>Contexte max</strong></td>
+<td>1M tokens (~700 pages)</td>
+</tr>
+<tr>
+<td><strong>Qualité français</strong></td>
+<td>9/10</td>
+</tr>
+<tr>
+<td><strong>Coût</strong></td>
+<td>Billing Google (pay-per-use)</td>
+</tr>
+<tr>
+<td><strong>Activation</strong></td>
+<td>Seulement si 128K insuffisant ou erreur DeepSeek</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modeles-ecartes">Modèles écartés<a class="headerlink" href="#modeles-ecartes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Modèle</th>
+<th>Raison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>qwen2.5:7b</td>
+<td>❌ Switch chinois, 32K contexte, hallucinations</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Pro</td>
+<td>❌ Thinking tokens coûteux (96% de la sortie = pensée)</td>
+</tr>
+<tr>
+<td>Gemini 3.1 Pro</td>
+<td>❌ Idem — Pro models trop chers pour usage étudiant</td>
+</tr>
+<tr>
+<td>Gemini 2.0 Flash</td>
+<td>❌ Retiré par Google</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architecture-finale">Architecture finale<a class="headerlink" href="#architecture-finale" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────────┐
+│               Bot Telegram (profil unique)            │
+│                                                      │
+│  ┌──────────────────┐   ┌──────────────────────────┐ │
+│  │ Scope 1 : Chat    │   │ Scope 2 : Mémoire Émile   │ │
+│  │ (quotidien)       │   │ (pédagogique)             │ │
+│  └────────┬─────────┘   └──────────┬───────────────┘ │
+│           │                        │                  │
+│           ▼                        ▼                  │
+│  ┌─────────────────────────────────────────────────┐ │
+│  │           DeepSeek v4 Flash (PRIMAIRE)           │ │
+│  │   • 128K contexte                               │ │
+│  │   • Fiable, économique, éprouvé LEO              │ │
+│  │   • Système prompt dédié par scope              │ │
+│  └────────────────────┬────────────────────────────┘ │
+│                       │                               │
+│                       │ Si erreur OU besoin &gt;128K     │
+│                       ▼                               │
+│  ┌─────────────────────────────────────────────────┐ │
+│  │          Gemini 3.5 Flash (FALLBACK)             │ │
+│  │   • 1M contexte                                 │ │
+│  │   • Dernière génération (mai 2026)               │ │
+│  │   • Activé uniquement si nécessaire              │ │
+│  └─────────────────────────────────────────────────┘ │
+└──────────────────────────────────────────────────────┘
+
+Règle : Gemini 3.5 n&#39;est appelé que si DeepSeek échoue
+        OU si le contexte dépasse 128K (chapitre complet de mémoire).
+        90%+ des requêtes → DeepSeek seul.
+</code></pre></div>
+<h3 id="pattern-bot-voyage-applique">Pattern « bot voyage » appliqué<a class="headerlink" href="#pattern-bot-voyage-applique" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Bot Voyage (Sylvie)</th>
+<th>Bot Mémoire (Émile)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Système prompt</strong></td>
+<td>Assistant voyage</td>
+<td>Assistant pédagogique — mémoire de fin d'études</td>
+</tr>
+<tr>
+<td><strong>Personnalité</strong></td>
+<td>Conseiller pratique</td>
+<td>Tuteur académique rigoureux</td>
+</tr>
+<tr>
+<td><strong>Contexte</strong></td>
+<td>Roadbook, itinéraires</td>
+<td>Plan de mémoire, chapitres, bibliographie</td>
+</tr>
+<tr>
+<td><strong>Modèle primaire</strong></td>
+<td>DeepSeek Pro</td>
+<td>DeepSeek v4 Flash</td>
+</tr>
+<tr>
+<td><strong>Modèle fallback</strong></td>
+<td>Aucun</td>
+<td>Gemini 3.5 Flash (1M contexte)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-synthese">⑤ SYNTHÈSE<a class="headerlink" href="#5-synthese" title="Permanent link">&para;</a></h2>
+<p>🟢 <strong>Go pour implémentation</strong></p>
+<ul>
+<li><strong>DeepSeek v4 Flash primaire</strong> : fiable, économique, déjà maîtrisé par LEO</li>
+<li><strong>Gemini 3.5 Flash fallback</strong> : filet de sécurité pour longs contextes (1M) et pannes DeepSeek</li>
+<li><strong>qwen2.5 retiré</strong> de l'architecture — plus utile</li>
+<li><strong>Coût estimé</strong> : &lt; 1€/jour pour usage étudiant normal</li>
+<li><strong>Scope Mémoire</strong> prêt : système prompt à rédiger, pattern bot voyage à adapter</li>
+</ul>
+<hr />
+<h2 id="6-livrable-plan-dimplementation">⑥ LIVRABLE — Plan d'implémentation<a class="headerlink" href="#6-livrable-plan-dimplementation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Action</th>
+<th style="text-align: center;">Scope</th>
+<th style="text-align: center;">Priorité</th>
+<th style="text-align: center;">Effort</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Créer profil Hermes/webhook Telegram</td>
+<td style="text-align: center;">1+2</td>
+<td style="text-align: center;">🔴 Haute</td>
+<td style="text-align: center;">1h</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Configurer DeepSeek v4 Flash comme primaire</td>
+<td style="text-align: center;">1+2</td>
+<td style="text-align: center;">🔴 Haute</td>
+<td style="text-align: center;">30min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Configurer Gemini 3.5 Flash comme fallback (128K+ ou erreur)</td>
+<td style="text-align: center;">1+2</td>
+<td style="text-align: center;">🔴 Haute</td>
+<td style="text-align: center;">30min</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rédiger système prompt « Assistant Mémoire » pour Scope 2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">🔴 Haute</td>
+<td style="text-align: center;">2h</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Test avec extrait de mémoire réel</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">🟡 Moyenne</td>
+<td style="text-align: center;">1h</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Watchdog + cron healthcheck</td>
+<td style="text-align: center;">1+2</td>
+<td style="text-align: center;">🟡 Moyenne</td>
+<td style="text-align: center;">30min</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-archivage">⑦ ARCHIVAGE<a class="headerlink" href="#7-archivage" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Fichier source :</strong> <code>/opt/data/hermes-christophe/BAVI/AGENT-PRO/bureau-michel/analyse-qwen-chatbot-20260625.md</code></li>
+<li><strong>Wiki :</strong> BAVI LEO → Agent Pro → Bureau Michel — Infra_Hermes</li>
+<li><strong>Prochaine étape :</strong> Implémentation — session planifiée demain</li>
+</ul>
+<hr />
+<p><em>Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 25/06/2026</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Christophe Danhier — Propulsé par Hermes Agent
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/christophedanhier-hash" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/tofdan" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["announce.dismiss", "navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../../assets/js/live-search.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../../../assets/js/pdf-download.js"></script>
+      
+        <script src="../../../../../assets/js/external-links.js"></script>
+      
+    
+  </body>
+</html>
