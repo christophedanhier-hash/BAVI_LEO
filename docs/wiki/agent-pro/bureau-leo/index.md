@@ -1,18 +1,18 @@
 # 🤖 Bureau LEO — Dossiers & Analyses
 
-*Généré automatiquement le 11/07/2026 à 12:00*
+*Généré automatiquement le 11/07/2026 à 13:46*
 
 **Total : 3 analyse(s)**
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| 11/07/2026 | v1 | [🏍️ Dossier Quad + Remorque — Can-Am Outlander 700 MAX XT](dossiers/dossier-quad-remorque/) | `quad` `can-am` `outlander` `remorque` `saris` `attelage` `tofdan` | ✅ Finalisé | [📥](dossiers/dossier-quad-remorque/?print-pdf) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) |
+| 11/07/2026 | v1 | [🏍️ Dossier Quad + Remorque — Can-Am Outlander 700 MAX XT](dossiers/dossier-quad-remorque/) | `quad` `atv` `can-am` `outlander` `remorque` `saris` `attelage` `camping-car` `tofdan` | ✅ Finalisé | [📥](dossiers/dossier-quad-remorque/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/dossier-quad-remorque.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+dossier-quad-remorque.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) |
 | 07/07/2026 | v4.0 | [Hermès pour les Nuls 🦁](guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | archive | [📥](guide-hermes-complet/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/guide-hermes-complet.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+guide-hermes-complet.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |
 | 24/06/2026 | v1 | [🚗 Dossier Skoda Enyaq — Achat & Installation](dossiers/dossier-skoda-enyaq/) | `skoda` `enyaq` `vehicule` `leasing` `borne-recharge` `eneco` | 🔄 En cours | [📥](dossiers/dossier-skoda-enyaq/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/dossier-skoda-enyaq.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+dossier-skoda-enyaq.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-skoda-enyaq.md) |
 
 ---
 
-### 📦 Archivé (4)
+### 📦 Archivé (6)
 
 | Date | Titre | Restaurer |
 |:-----|:------|:----------|
@@ -20,6 +20,8 @@
 | 2026-07-08 | 🏗️ Analyse de la Gouvernance BAVI LEO — Framework d'Audit | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-leo/analyse-governance-scope-skills-workflows.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-governance-scope-skills-workflows.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/archive/analyse-governance-scope-skills-workflows.md) |
 | 2026-07-08 | 🤖 Analyse du Bureau LEO — Dossiers & Analyses Personnelles | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-leo/analyse-scope-skills-workflows.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-scope-skills-workflows.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/archive/analyse-scope-skills-workflows.md) |
 | 2026-07-08 | 📋 Analyse du Bureau Versioning — Gestion des Versions | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-leo/analyse-versioning-scope-skills-workflows.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+analyse-versioning-scope-skills-workflows.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/archive/analyse-versioning-scope-skills-workflows.md) |
+| 2026-07-11 | 🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-leo/etude-marche-quad-biplace-v7.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+etude-marche-quad-biplace-v7.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/archive/etude-marche-quad-biplace-v7.md) |
+| 2026-07-11 | 🚚 Étude de Marché — Remorque Fermée pour Quad (Can-Am Outlander 700 MAX XT) | [🔄](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=restore%3A+bureau-leo/etude-marche-remorque-quad-v1.md&body=##+Restauration+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+etude-marche-remorque-quad-v1.md%0A%0AAction+%3A+déplacer+ce+fichier+de+%60archive/%60+vers+la+racine+du+bureau+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/archive/etude-marche-remorque-quad-v1.md) |
 
 *Pour archiver un fichier : `python3 agent-pro-archive.py <bureau> <fichier>`*
 *Pour restaurer : `python3 agent-pro-restore.py <bureau> <fichier>`*

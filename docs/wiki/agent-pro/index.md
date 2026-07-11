@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 11/07/2026 à 12:00*
+*Généré automatiquement le 11/07/2026 à 13:46*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -27,7 +27,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
 | N/A | 🧭 Bureau Sylvia — Voyages | — | ~~🗺️ Roadbooks — Sylvia~~ ⚠️ | — | ⚠️ Non conforme |
-| 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v7 | [🏍️ Étude de Marché — Achat Quad 2 Places pour remorque CC](bureau-leo/etude-marche-quad-biplace/) | `quad` `atv` `achat` `etude-marche` `remorque` `camping-car` `tofdan` | 🔄 En cours | [📥](bureau-leo/etude-marche-quad-biplace/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-quad-biplace.md) |
+| 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🏍️ Dossier Quad + Remorque — Can-Am Outlander 700 MAX XT](bureau-leo/dossiers/dossier-quad-remorque/) | `quad` `atv` `can-am` `outlander` `remorque` `saris` `attelage` `camping-car` `tofdan` | ✅ Finalisé | [📥](bureau-leo/dossiers/dossier-quad-remorque/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) |
 | 09/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [Dossier Stratégique — Microsoft SCOUT (Autopilot)](bureau-robert/dossier-strategique-microsoft-scout-20260709/) | `analyse` `scout` `microsoft` `autopilot` `agent-autonome` `strategique` `architecture` `securite` `projet` `mutualite` `solidaris` | ✅ Finalisé | [📥](bureau-robert/dossier-strategique-microsoft-scout-20260709/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-microsoft-scout-20260709.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-microsoft-scout-20260709.md) |
 | 09/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v2 | [Dossier SCOUT Complet (V2) — Microsoft SCOUT (Autopilot)](bureau-robert/dossier-scout-complet-20260709-v2/) | `analyse` `scout` `microsoft` `autopilot` `agent-autonome` `strategique` `architecture` `securite` `deploiement` `projet` `mutualite` `solidaris` | ✅ Finalisé | [📥](bureau-robert/dossier-scout-complet-20260709-v2/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-scout-complet-20260709-v2.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-scout-complet-20260709-v2.md) |
 | 08/07/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v1 | [🩺 Analyse du Bureau Virginie — Orchestration Médicale](bureau-virginie/analyse-scope-skills-workflows/) | `analyse` `scope` `skills` `workflows` `bavi-leo` | ✅ Finalisé | [📥](bureau-virginie/analyse-scope-skills-workflows/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/analyse-scope-skills-workflows.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/analyse-scope-skills-workflows.md) |
@@ -58,4 +58,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 11/07/2026 12:00*
+*Index consolidé généré par `agent-pro-index.py` — 11/07/2026 13:46*
