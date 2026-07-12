@@ -10,6 +10,22 @@ def esc(t):
     if not t: return ""
     return str(t).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
 
+def norm_model(name):
+    """Normalise les noms de modèles pour l'affichage."""
+    m = (name or "").lower().strip()
+    if "deepseek-v4-pro" in m:
+        return "DS Pro"
+    if "deepseek-chat" in m or "deepseek-v4-flash" in m or "flash" in m:
+        return "DS Flash"
+    if "gemini" in m:
+        return "Gemini"
+    if "claude" in m:
+        return "Claude"
+    if "gpt" in m:
+        return "GPT"
+    short = (name or "").split("/")[-1]
+    return short[:20]
+
 def load_metrics():
     data = json.loads(METRICS_FILE.read_text())
     meta = data.get("_meta", {})
@@ -75,7 +91,7 @@ def build_html():
     js_bh_values = json.dumps([x["balance"] for x in bh[-30:]])
     
     by_model = s.get("by_model", {})
-    js_model_labels = json.dumps(list(by_model.keys()))
+    js_model_labels = json.dumps([norm_model(k) for k in by_model.keys()])
     js_model_sessions = json.dumps([v["sessions"] for v in by_model.values()])
     
     recent = s.get("recent_sessions", [])[:8]
@@ -255,7 +271,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="card">
   <h3>📓 Vaults Obsidian</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px">
-    {"".join(f'<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">{"🦁" if k=="leo" else "🏠" if k=="default" else "🎓" if k=="emile" else "🚐"}</div><div style="font-size:14px;font-weight:700">{vv.get("notes",0)}</div><div style="font-size:9px;color:var(--dim)">{k}</div></div>' for k,vv in va.get("vaults",{}).items())}
+    {"".join(f'<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">{"🦁" if k=="leo" or k=="leo-copilot" else "🏠" if k=="default" else "🎓" if k=="emile" else "🚐"}</div><div style="font-size:14px;font-weight:700">{vv.get("notes",0)}</div><div style="font-size:9px;color:var(--dim)">{"Michel" if k=="leo-copilot" else "Léo" if k=="default" else "Émile" if k=="emile" else k}</div></div>' for k,vv in va.get("vaults",{}).items())}
   </div>
   <div class="sub" style="margin-top:6px;font-size:11px">{va.get("total_dailies",0)} journaux · {va.get("total_notes",0)} notes</div>
 </div>
@@ -348,7 +364,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 
 <h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">🤖 Bots Telegram — Activité par profil</h3>
 <div class="bots-grid">
-{"".join(f'<div class="bot-card"><div class="name">{esc(bot.get("name",""))} {"🟢" if bot.get("online") else "🔴"}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:6px;font-size:11px"><span style="color:var(--dim)">Sessions</span><span style="text-align:right;font-weight:600">{bot.get("sessions",0)}</span><span style="color:var(--dim)">Messages</span><span style="text-align:right;font-weight:600">{bot.get("messages",0):,}</span><span style="color:var(--dim)">Tokens</span><span style="text-align:right;font-weight:600">{(bot.get("tokens_in",0)+bot.get("tokens_out",0))//1000}k</span><span style="color:var(--dim)">Coût</span><span style="text-align:right;font-weight:600">${bot.get("cost",0):.2f}</span><span style="color:var(--dim)">Modèle</span><span style="text-align:right;font-weight:600;font-size:10px">{(bot.get("last_model","") or "").split("/")[-1][:12]}</span><span style="color:var(--dim)">Dernière</span><span style="text-align:right;font-weight:600;font-size:10px">{(bot.get("last_session","") or "")[:16]}</span></div></div>' for bot in bo.get("bots",[]))}
+{"".join(f'<div class="bot-card"><div class="name">{esc(bot.get("name",""))} {"🟢" if bot.get("online") else "🔴"}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:6px;font-size:11px"><span style="color:var(--dim)">Sessions</span><span style="text-align:right;font-weight:600">{bot.get("sessions",0)}</span><span style="color:var(--dim)">Messages</span><span style="text-align:right;font-weight:600">{bot.get("messages",0):,}</span><span style="color:var(--dim)">Tokens</span><span style="text-align:right;font-weight:600">{(bot.get("tokens_in",0)+bot.get("tokens_out",0))//1000}k</span><span style="color:var(--dim)">Coût</span><span style="text-align:right;font-weight:600">${bot.get("cost",0):.2f}</span><span style="color:var(--dim)">Modèle</span><span style="text-align:right;font-weight:600;font-size:10px">{norm_model(bot.get("last_model",""))}</span><span style="color:var(--dim)">Dernière</span><span style="text-align:right;font-weight:600;font-size:10px">{(bot.get("last_session","") or "")[:16]}</span></div></div>' for bot in bo.get("bots",[]))}
 </div>
 
 <h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">🗺️ Voyages</h3>
@@ -360,7 +376,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="card" style="padding:10px">
 <table>
 <thead><tr><th>Modèle</th><th>Sessions</th><th>Tokens</th><th>Coût</th></tr></thead>
-<tbody>{"".join(f'<tr><td>{esc(m)}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(s.get("by_model",{}).items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
+<tbody>{"".join(f'<tr><td>{norm_model(m)}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(s.get("by_model",{}).items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
 </div>
 </div>
 

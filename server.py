@@ -27,6 +27,24 @@ ENERGY_HISTORY_FILE = Path("/home/tofdan/.hermes/metrics/energy_history.json")
 # Dashboard builder — génération dynamique
 from dashboard_builder import build_html, esc
 
+# Normalisation des noms de modèles
+def norm_model(name):
+    """Normalise les noms de modèles pour l'affichage."""
+    m = (name or "").lower().strip()
+    if "deepseek-chat" in m or "deepseek-v4-pro" in m or m == "pro":
+        return "DS Pro"
+    if "deepseek-v4-flash" in m or "flash" in m:
+        return "DS Flash"
+    if "gemini" in m:
+        return "Gemini"
+    if "claude" in m:
+        return "Claude"
+    if "gpt" in m:
+        return "GPT"
+    # Tronquer les noms longs
+    short = name.split("/")[-1]
+    return short[:20]
+
 app = FastAPI(title="LEO Unified Server")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
