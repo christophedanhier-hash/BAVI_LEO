@@ -211,7 +211,28 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
   <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">⚙️ Crons</div>
   <div class="tab" onclick="window.open('/cameras?token=' + encodeURIComponent(new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026'),'_blank')">📷 Caméras</div>
+  <div class="tab" onclick="window.open('/energy?token=' + encodeURIComponent(new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026'),'_blank')">⚡ Énergie</div>
 </div>
+  <div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
+  <span id="energy-pwr" style="color:var(--dim)">⚡ Chargement...</span>
+  <span id="energy-net" style="color:var(--dim)"></span>
+  <span id="energy-imp" style="color:var(--dim);font-size:11px"></span>
+  </div>
+  <script>
+  (function(){{
+  var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+  fetch('/api/energy?token='+token).then(function(r){{return r.json()}}).then(function(d){{
+    if(d.error) return;
+    var pwr = d.power_now_w;
+    var color = pwr < 0 ? 'var(--green)' : 'var(--red)';
+    document.getElementById('energy-pwr').innerHTML = '⚡ '+Math.abs(pwr)+'W '+(pwr < 0 ? '☀️ Injection' : '🔴 Conso');
+    document.getElementById('energy-pwr').style.color = color;
+    document.getElementById('energy-net').innerHTML = 'Net: '+(d.net_kwh>0?'+':'')+d.net_kwh.toFixed(0)+' kWh';
+    document.getElementById('energy-net').style.color = d.net_kwh > 0 ? 'var(--green)' : 'var(--red)';
+    document.getElementById('energy-imp').innerHTML = 'Import: '+d.import_total_kwh.toFixed(0)+' kWh | Export: '+d.export_total_kwh.toFixed(0)+' kWh';
+  }}).catch(function(){{}});
+  }})();
+  </script>
 
 <!-- Synthèse -->
 <div id="tab-syn" class="panel active">

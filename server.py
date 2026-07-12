@@ -21,6 +21,8 @@ METRICS_FILE = Path("/home/tofdan/.hermes/metrics/leo-unified.json")
 AUTH_TOKEN = "leo-panel-2026"
 HA_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0MTIxMDZmOWQ1NWQ0NTFiOThiZjFhMjVhMmJlOTRlZiIsImlhdCI6MTc4MzgzNDc1MCwiZXhwIjoyMDk5MTk0NzUwfQ.CBphayJ3uX6XIT1m5ZOKISOOEfzVgT7IAs8WH9LZhLE"
 HA_URL = "http://localhost:8123"
+ENERGY_FILE = Path("/home/tofdan/.hermes/metrics/energy.json")
+ENERGY_HISTORY_FILE = Path("/home/tofdan/.hermes/metrics/energy_history.json")
 
 # Dashboard builder — génération dynamique
 from dashboard_builder import build_html, esc
@@ -446,15 +448,58 @@ CAMERAS = [
 async def cameras_page(request: Request):
     if not check_token(request): raise HTTPException(401)
     
+    # Récupérer les états des caméras via HA
+    import urllib.request as ur
+    cameras_state = {}
+    try:
+        req = ur.Request(f"{HA_URL}/api/states", headers={"Authorization": f"Bearer {HA_TOKEN}"})
+        with ur.urlopen(req, timeout=5) as r:
+            states = json.loads(r.read())
+            for s in states:
+                eid = s["entity_id"]
+                if eid.startswith("camera.cloudedge"):
+                    cameras_state[eid] = {"state": s["state"], "last": s["last_updated"]}
+                elif eid.startswith("binary_sensor.cloudedge") and "awake" in eid:
+                    cam_id = eid.replace("binary_sensor.", "camera.").replace("_camera_awake", "_camera")
+                    if cam_id not in cameras_state:
+                        cameras_state[cam_id] = {}
+                    cameras_state[cam_id]["awake"] = s["state"] == "on"
+                elif eid.startswith("sensor.cloudedge") and "battery" in eid:
+                    cam_id = eid.replace("sensor.", "camera.").replace("_battery", "_camera")
+                    if cam_id not in cameras_state:
+                        cameras_state[cam_id] = {}
+                    cameras_state[cam_id]["battery"] = s["state"]
+    except:
+        pass
+    
     cards = ""
     for cam in CAMERAS:
+        cs = cameras_state.get(cam["id"], {})
+        battery = cs.get("battery", "?")
+        awake = cs.get("awake", False)
+        last = cs.get("last", "?")[:19].replace("T", " ")
+        
+        wake_id = cam["id"].replace("camera.", "button.").replace("_camera", "_wake_camera")
+        battery_color = "var(--green)" if battery == "100" else "var(--orange)" if int(battery or 0) > 50 else "var(--red)"
+        awake_icon = "🟢" if awake else "💤"
+        
         cards += f'''
         <div class="cam-card">
-            <div class="cam-name">{cam["name"]}</div>
+            <div class="cam-name">
+                {cam["name"]}
+                <span style="float:right;font-size:11px;font-weight:400">
+                    <span style="color:{battery_color}">🔋{battery}%</span>
+                    <span style="margin-left:8px">{awake_icon}</span>
+                </span>
+            </div>
             <div class="cam-frame">
-                <img src="/cameras/snapshot/{cam["id"]}" 
+                <img id="img-{cam["id"]}" src="/cameras/snapshot/{cam["id"]}" 
                      onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 360%22><rect fill=%22%23111%22 width=%22640%22 height=%22360%22/><text fill=%22%23555%22 x=%22320%22 y=%22180%22 text-anchor=%22middle%22 font-size=%2220%22>Chargement…</text></svg>'"
                      style="width:100%;height:100%;object-fit:contain;background:#111">
+            </div>
+            <div class="cam-actions">
+                <button onclick="wakeCam('{cam["id"]}','{wake_id}')" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">📡 Wake</button>
+                <span id="status-{cam["id"]}" style="font-size:10px;color:var(--dim);margin-left:8px">🕐 {last}</span>
             </div>
         </div>'''
     
@@ -465,33 +510,229 @@ async def cameras_page(request: Request):
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
-h1{{font-size:20px;margin-bottom:16px}}
+h1{{font-size:20px;margin-bottom:4px}}
+.note{{color:#8b949e;font-size:11px;margin-bottom:12px}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:12px}}
 .cam-card{{background:#161b22;border:2px solid #30363d;border-radius:8px;overflow:hidden}}
-.cam-name{{padding:8px 12px;font-weight:600;font-size:14px;background:#1c2128;border-bottom:2px solid #30363d}}
+.cam-name{{padding:8px 12px;font-weight:600;font-size:13px;background:#1c2128;border-bottom:2px solid #30363d}}
 .cam-frame{{aspect-ratio:16/9;overflow:hidden}}
-.refresh{{position:fixed;bottom:16px;right:16px;background:#238636;color:#fff;border:none;border-radius:6px;padding:8px 16px;font-size:13px;cursor:pointer;z-index:100}}
-.refresh:hover{{background:#2ea043}}
+.cam-actions{{padding:6px 12px;display:flex;align-items:center;background:#1c2128;border-top:2px solid #30363d}}
 </style></head>
 <body>
-<h1>📷 Caméras LEO <span style="color:#8b949e;font-size:12px;font-weight:400">— refresh auto toutes les 10s</span></h1>
+<h1>📷 Caméras LEO</h1>
+<div class="note">Caméras batterie — image capturée uniquement sur détection de mouvement. Wake = activation détection.</div>
 <div class="grid">{cards}</div>
-<button class="refresh" onclick="document.querySelectorAll('img').forEach(i=>i.src=i.src.split('?')[0]+'?'+Date.now())">🔄 Rafraîchir</button>
-<script>setInterval(()=>document.querySelectorAll('img').forEach(i=>i.src=i.src.split('?')[0]+'?'+Date.now()),10000)</script>
+<script>
+function wakeCam(camId, wakeId) {{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    var status = document.getElementById('status-'+camId);
+    status.textContent = '⏳ Réveil...';
+    status.style.color = 'var(--orange)';
+    
+    fetch('/api/ha/call_service', {{
+        method: 'POST',
+        headers: {{'Content-Type':'application/json'}},
+        body: JSON.stringify({{token:token, domain:'button', service:'press', entity_id:wakeId}})
+    }}).then(function() {{
+        status.textContent = '✅ En veille détection';
+        status.style.color = 'var(--green)';
+        setTimeout(function() {{
+            var img = document.getElementById('img-'+camId);
+            img.src = '/cameras/snapshot/' + camId + '?' + Date.now();
+        }}, 2000);
+    }}).catch(function() {{
+        status.textContent = '❌ Erreur';
+    }});
+}}
+
+// Auto-refresh 60s
+setInterval(function() {{
+    document.querySelectorAll('.cam-frame img').forEach(function(img) {{
+        img.src = img.src.split('?')[0] + '?' + Date.now();
+    }});
+}}, 60000);
+</script>
 </body></html>'''
     return HTMLResponse(html)
 
 @app.get("/cameras/snapshot/{entity_id}")
-async def camera_snapshot(entity_id: str):
+async def camera_snapshot(entity_id: str, request: Request):
     """Proxy vers Home Assistant pour contourner CORS."""
+    from fastapi.responses import Response as FastResponse
     url = f"{HA_URL}/api/camera_proxy/{entity_id}"
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {HA_TOKEN}"})
     try:
-        with urllib.request.urlopen(req, timeout=8) as resp:
-            from fastapi.responses import Response
-            return Response(content=resp.read(), media_type=resp.headers.get("Content-Type", "image/jpeg"))
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return FastResponse(content=resp.read(), media_type=resp.headers.get("Content-Type", "image/jpeg"))
     except:
         raise HTTPException(502, detail="Caméra inaccessible")
+
+@app.post("/api/ha/call_service")
+async def ha_call_service(request: Request):
+    """Appelle un service Home Assistant."""
+    body = await request.json()
+    token = body.get("token", "")
+    if token != AUTH_TOKEN:
+        raise HTTPException(401)
+    
+    domain = body.get("domain")
+    service = body.get("service")
+    entity_id = body.get("entity_id")
+    
+    url = f"{HA_URL}/api/services/{domain}/{service}"
+    data = json.dumps({"entity_id": entity_id}).encode()
+    req = urllib.request.Request(url, data=data, 
+        headers={"Authorization": f"Bearer {HA_TOKEN}", "Content-Type": "application/json"},
+        method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            return JSONResponse(json.loads(r.read()))
+    except Exception as e:
+        raise HTTPException(502, detail=str(e))
+
+@app.get("/api/energy")
+async def api_energy(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    if ENERGY_FILE.exists():
+        return JSONResponse(json.loads(ENERGY_FILE.read_text()))
+    return JSONResponse({"error": "no data"}, status_code=503)
+
+@app.get("/api/energy/history")
+async def api_energy_history(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    if ENERGY_HISTORY_FILE.exists():
+        return JSONResponse(json.loads(ENERGY_HISTORY_FILE.read_text()))
+    return JSONResponse([], status_code=503)
+
+@app.get("/energy")
+async def energy_page(request: Request):
+    """Page dédiée énergie avec KPIs et graphs."""
+    if not check_token(request): raise HTTPException(401)
+    
+    # Lire le snapshot actuel
+    snap = {}
+    if ENERGY_FILE.exists():
+        snap = json.loads(ENERGY_FILE.read_text())
+    
+    html = f"""<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚡ Énergie LEO</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
+h1{{font-size:20px;margin-bottom:16px}}
+.kpi-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}}
+.kpi-card{{background:#161b22;border:2px solid #30363d;border-radius:8px;padding:14px;text-align:center}}
+.kpi-val{{font-size:28px;font-weight:700;margin:4px 0}}
+.kpi-lbl{{font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:.5px}}
+.kpi-sub{{font-size:10px;color:#484f58;margin-top:4px}}
+.chart-box{{background:#161b22;border:2px solid #30363d;border-radius:8px;padding:16px;margin-bottom:12px}}
+canvas{{max-height:300px}}
+.phases{{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}}
+.phase{{background:#0d1117;border-radius:6px;padding:10px;text-align:center}}
+</style></head>
+<body>
+<h1>⚡ Énergie — HomeWizard P1 <span style="color:#8b949e;font-size:12px;font-weight:400">Fluvius {snap.get('meter','?')}</span></h1>
+
+<div class="kpi-grid" id="kpis">
+  <div class="kpi-card"><div class="kpi-val" id="pwr" style="color:var(--dim)">—</div><div class="kpi-lbl">Puissance</div><div class="kpi-sub" id="pwr-sub"></div></div>
+  <div class="kpi-card"><div class="kpi-val" id="net" style="color:var(--dim)">—</div><div class="kpi-lbl">Bilan Net</div><div class="kpi-sub" id="net-sub"></div></div>
+  <div class="kpi-card"><div class="kpi-val" id="imp" style="color:var(--dim)">—</div><div class="kpi-lbl">Import Total</div><div class="kpi-sub">kWh</div></div>
+  <div class="kpi-card"><div class="kpi-val" id="exp" style="color:var(--dim)">—</div><div class="kpi-lbl">Export Total</div><div class="kpi-sub">kWh</div></div>
+  <div class="kpi-card"><div class="kpi-val" id="peak" style="color:var(--dim)">—</div><div class="kpi-lbl">Pic Mensuel</div><div class="kpi-sub">W</div></div>
+  <div class="kpi-card"><div class="kpi-val" id="volt" style="color:var(--dim)">—</div><div class="kpi-lbl">Tension</div><div class="kpi-sub">V L1</div></div>
+</div>
+
+<div class="chart-box"><canvas id="powerChart"></canvas></div>
+
+<div class="chart-box">
+  <h3 style="margin:0 0 12px;font-size:14px">🔌 Phases</h3>
+  <div class="phases" id="phases"></div>
+</div>
+
+<script>
+var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+var powerChart = null;
+
+function loadSnapshot() {{
+  fetch('/api/energy?token='+token).then(r=>r.json()).then(d=>{{
+    if(d.error) return;
+    var pwr = d.power_now_w;
+    var color = pwr < 0 ? '#3fb950' : '#f85149';
+    document.getElementById('pwr').textContent = Math.abs(pwr)+' W';
+    document.getElementById('pwr').style.color = color;
+    document.getElementById('pwr-sub').textContent = pwr < 0 ? '☀️ Injection' : '⚡ Conso';
+    
+    document.getElementById('net').textContent = (d.net_kwh>0?'+':'')+d.net_kwh.toFixed(0)+' kWh';
+    document.getElementById('net').style.color = d.net_kwh>0?'#3fb950':'#f85149';
+    
+    document.getElementById('imp').textContent = d.import_total_kwh.toFixed(0)+' kWh';
+    document.getElementById('imp').style.color = '#58a6ff';
+    document.getElementById('exp').textContent = d.export_total_kwh.toFixed(0)+' kWh';
+    document.getElementById('exp').style.color = '#3fb950';
+    document.getElementById('peak').textContent = d.peak_month_w+' W';
+    document.getElementById('peak').style.color = '#d29922';
+    document.getElementById('volt').textContent = d.voltage_v.toFixed(1)+' V';
+    document.getElementById('volt').style.color = '#bc8cff';
+    
+    // Phases
+    var ph = d.phases;
+    document.getElementById('phases').innerHTML = ['l1','l2','l3'].map(function(p){{
+      var phase = ph[p];
+      return '<div class="phase"><div style="font-size:20px;font-weight:700;color:'+(phase.w<0?'#3fb950':'#f85149')+'">'+phase.w+' W</div><div style="font-size:11px">'+phase.v.toFixed(1)+'V · '+phase.a.toFixed(1)+'A</div><div style="font-size:10px;color:#8b949e;margin-top:2px">'+p.toUpperCase()+'</div></div>';
+    }}).join('');
+  }});
+}}
+
+function loadHistory() {{
+  fetch('/api/energy/history?token='+token).then(r=>r.json()).then(history=>{{
+    if(!history || !history.length) return;
+    
+    var labels = history.map(function(p){{return p.ts.substring(11,16)}});
+    var values = history.map(function(p){{return Math.abs(p.w)}});
+    var colors = history.map(function(p){{return p.w < 0 ? 'rgba(63,185,80,.4)' : 'rgba(248,81,73,.4)'}});
+    var borders = history.map(function(p){{return p.w < 0 ? '#3fb950' : '#f85149'}});
+    
+    if(powerChart) powerChart.destroy();
+    var ctx = document.getElementById('powerChart').getContext('2d');
+    powerChart = new Chart(ctx, {{
+      type: 'bar',
+      data: {{
+        labels: labels,
+        datasets: [{{
+          label: 'Puissance (W)',
+          data: values,
+          backgroundColor: colors,
+          borderColor: borders,
+          borderWidth: 1,
+          borderRadius: 2
+        }}]
+      }},
+      options: {{
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {{
+          legend: {{display:false}},
+          title: {{display:true, text:'📈 Puissance — 24h', color:'#8b949e', font:{{size:13}}}}
+        }},
+        scales: {{
+          x: {{ticks:{{color:'#484f58',font:{{size:9}},maxTicksLimit:30}},grid:{{color:'#21262d'}}}},
+          y: {{ticks:{{color:'#484f58',font:{{size:9}}}},grid:{{color:'#21262d'}}}}
+        }}
+      }}
+    }});
+  }});
+}}
+
+loadSnapshot();
+loadHistory();
+setInterval(loadSnapshot, 30000);
+setInterval(loadHistory, 120000);
+</script>
+</body></html>"""
+    return HTMLResponse(html)
 
 # ── Wiki Voyages (static files, monté avant BAVI pour priorité) ──
 VOYAGES_SITE = Path("/home/tofdan/Projets_Dev/voyages-wiki/site-local")
