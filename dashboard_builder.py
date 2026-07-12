@@ -90,8 +90,19 @@ def build_html():
     js_bh_labels = json.dumps([x["date"][-5:] for x in bh[-30:]])
     js_bh_values = json.dumps([x["balance"] for x in bh[-30:]])
     
-    by_model = s.get("by_model", {})
-    js_model_labels = json.dumps([norm_model(k) for k in by_model.keys()])
+    by_model_raw = s.get("by_model", {})
+    # Fusionner par nom normalisé
+    by_model = {}
+    for m, v in by_model_raw.items():
+        nm = norm_model(m)
+        if nm not in by_model:
+            by_model[nm] = {"sessions": 0, "tokens_in": 0, "tokens_out": 0, "cost": 0.0}
+        by_model[nm]["sessions"] += v.get("sessions", 0)
+        by_model[nm]["tokens_in"] += v.get("tokens_in", 0)
+        by_model[nm]["tokens_out"] += v.get("tokens_out", 0)
+        by_model[nm]["cost"] += v.get("cost", 0.0)
+    
+    js_model_labels = json.dumps(list(by_model.keys()))
     js_model_sessions = json.dumps([v["sessions"] for v in by_model.values()])
     
     recent = s.get("recent_sessions", [])[:8]
@@ -376,7 +387,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="card" style="padding:10px">
 <table>
 <thead><tr><th>Modèle</th><th>Sessions</th><th>Tokens</th><th>Coût</th></tr></thead>
-<tbody>{"".join(f'<tr><td>{norm_model(m)}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(s.get("by_model",{}).items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
+<tbody>{"".join(f'<tr><td>{m}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(by_model.items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
 </div>
 </div>
 

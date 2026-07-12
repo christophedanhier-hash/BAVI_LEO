@@ -528,9 +528,10 @@ async def cameras_page(request: Request):
 <title>📷 Caméras LEO</title>'''
     
     css = '''<style>
-:root{--bg:#0d1117;--text:#c9d1d9;--card:#161b22;--border:#30363d;--accent:#1f6feb;--dim:#8b949e;--green:#3fb950;--red:#f85149;--orange:#d29922}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}
+:root{{--bg:#0d1117;--text:#c9d1d9;--card:#161b22;--border:#30363d;--accent:#1f6feb;--dim:#8b949e;--green:#3fb950;--red:#f85149;--orange:#d29922}}
+[data-theme="light"]{{--bg:#f0f2f5;--text:#1a1a2e;--card:#fff;--border:#d1d5db;--accent:#2563eb;--dim:#6b7280;--green:#059669;--red:#dc2626;--orange:#d97706}}
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
 h1{font-size:20px;margin-bottom:4px}
 .note{color:var(--dim);font-size:11px;margin-bottom:12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:12px}
@@ -554,6 +555,8 @@ h1{font-size:20px;margin-bottom:4px}
 <div class="note">Caméras batterie — image capturée uniquement sur détection de mouvement. Wake = activation détection.</div>
 <div class="grid">{cards}</div>
 <script>
+//Sync theme
+(function(){{var t=localStorage.getItem('leo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}})();
 function wakeCam(camId, wakeId) {{
     var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
     var status = document.getElementById('status-'+camId);
@@ -650,6 +653,7 @@ async def energy_page(request: Request):
 {chartjs}
 <style>
 :root{{--bg:#0d1117;--text:#c9d1d9;--card:#161b22;--border:#30363d;--accent:#1f6feb;--dim:#8b949e;--green:#3fb950;--red:#f85149;--orange:#d29922;--purple:#bc8cff;--blue:#58a6ff}}
+[data-theme="light"]{{--bg:#f0f2f5;--text:#1a1a2e;--card:#fff;--border:#d1d5db;--accent:#2563eb;--dim:#6b7280;--green:#059669;--red:#dc2626;--orange:#d97706;--purple:#7c3aed;--blue:#2563eb}}
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
 h1{{font-size:20px;margin-bottom:16px}}
@@ -661,7 +665,7 @@ h1{{font-size:20px;margin-bottom:16px}}
 .chart-box{{background:var(--card);border:2px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px}}
 canvas{{max-height:280px}}
 .phases{{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}}
-.phase{{background:#0d1117;border-radius:6px;padding:10px;text-align:center}}
+.phase{{background:var(--card);border-radius:6px;padding:10px;text-align:center}}
 </style>
 {"</head><body>" if not embed else ""}
 <h1>{'⚡ Énergie — HomeWizard P1' if not embed else ''} <span style="color:var(--dim);font-size:12px;font-weight:400">Fluvius {snap.get('meter','?')}</span></h1>
@@ -679,6 +683,8 @@ canvas{{max-height:280px}}
 <div class="chart-box"><h3 style="margin:0 0 12px;font-size:14px">🔌 Phases</h3><div class="phases" id="phases"></div></div>
 
 <script>
+//Sync theme
+(function(){{var t=localStorage.getItem('leo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}})();
 var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
 var powerChart = null;
 
