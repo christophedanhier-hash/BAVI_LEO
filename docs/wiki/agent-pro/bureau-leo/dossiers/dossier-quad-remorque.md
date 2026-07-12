@@ -2,7 +2,7 @@
 date: 2026-07-11
 bureau: bureau-leo
 auteur: LEO
-version: v1b
+version: v1c
 modele: deepseek-v4-flash
 tags: [quad, atv, can-am, outlander, remorque, saris, attelage, camping-car, tofdan]
 statut: finalise
@@ -23,7 +23,7 @@ type: dossier
 | **Quad** | Can-Am **Outlander 700 MAX XT** (2026) — GRIS MAT | ✅ **Offre signée** |
 | **Concessionnaire quad** | **KD QUAD RACING** — Rue Trigaux 246, 7170 Manage | ✅ |
 | **Offre n°** | **11307** du 11/07/2026 | ✅ |
-| **Remorque** | **Saris GO 306 154 180 2000 2** — Fourgon DE freiné | 🔜 À commander |
+| **Remorque** | **Saris GO 306 154 180 2000 2** — Fourgon DE freiné | ✅ **Devis reçu 6 883 €** |
 | **Revendeur remorque** | **L'Oasis des Loisirs** — Chaussée de Gembloux 69, 5140 Tongrinne | 🔜 À visiter |
 | **Attelage quad** | Boule d'attelage + faisceau 7 broches (chez KD Quad) | 🔜 À chiffrer |
 | **Roue jockey motorisée** | **Al-Ko Premium Electric** (1 000 kg, ~350 €) | 🔜 À commander |
@@ -195,11 +195,12 @@ Le Roller Team 287 TL est basé sur un **Ford Transit** — Coenen a l'expérien
 | **Porte** | **✅ Hayon intégré (pont de chargement)** |
 | **Matériau** | Polyester armé aérodynamique |
 
-#### 3.4.3 Saris GO 306 154 180 2000 2 (6 826 €) — Le local
+#### 3.4.3 Saris GO 306 154 180 2000 2 (6 883 €) — Le local
 
 | Caractéristique | Valeur |
 |:----------------|:-------|
-| **Prix TTC** | **6 826 €** *(L'Oasis des Loisirs, Tongrinne)* |
+| **Prix TTC** | **6 883,35 €** *(L'Oasis des Loisirs, Tongrinne — offre 12/07)* |
+| **Détail options** | Pont d'accès 396 € + serrure sécurité 31 € + béquilles arrière 63 € + amortisseurs 227 € |
 | **Dimensions int.** | 306 × 154 × 180 cm |
 | **Poids à vide** | 644 kg |
 | **PTAC max** | 2 000 kg |
@@ -208,12 +209,13 @@ Le Roller Team 287 TL est basé sur un **Ford Transit** — Coenen a l'expérien
 | **Porte** | Double battante (rampe séparée) |
 | **Matériau** | Bois + PRV |
 | **Garantie** | 3 ans |
+| **Délai** | 4 à 6 semaines |
 
 #### 3.4.4 Comparatif côte à côte
 
 | Critère | **Debon Cargo 1300** | **Saris GO 306** | **Debon Roadster 500** 🏆 |
 |:--------|:--------------------:|:----------------:|:-------------------------:|
-| **💰 Prix** | **5 890 €** ✅ | 6 826 € | 7 590 € |
+| **💰 Prix** | **5 890 €** ✅ | **6 883 €** | 7 590 € |
 | **Dimensions** | 300×148×156 | 306×154×180 | **320×167×200** ✅ |
 | **Marge largeur (quad 121 cm)** | 13,5 cm/côté ⚠️ | 16,5 cm/côté | **23 cm/côté** ✅ |
 | **Hauteur libre** | 156 cm ⚠️ | 180 cm | **200 cm** ✅ |
@@ -229,7 +231,7 @@ Le Roller Team 287 TL est basé sur un **Ford Transit** — Coenen a l'expérien
 
 > 🔥 **Debon Cargo 1300 (5 890 €)** : le moins cher, hayon intégré, coque polyester, très léger (430 kg). Idéal si le budget est serré. Largeur 148 cm = OK mais pas de marge excessive.
 >
-> ✅ **Saris GO 306 154 180 (6 826 €)** : bon compromis, double essieu, 154 cm de large confortable, SAV à 5 km. Pas de hayon intégré.
+> ✅ **Saris GO 306 154 180 (6 883 €)** : bon compromis, double essieu, 154 cm de large confortable, SAV à 5 km. Devis signé (12/07) : 6 883,35 € TTC avec options. Pas de hayon intégré.
 >
 > 🏆 **Debon Roadster 500 (7 590 €)** : le must absolu. 320×167×200 cm (immense), double essieu, polyester aéro, hayon intégré. Confort de chargement maximal. 764 € de plus que le Saris mais bien plus spacieux et mieux fini.
 
