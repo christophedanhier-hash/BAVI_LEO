@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Auto-refresh Viessmann IoT token via developer portal (Playwright)."""
-import asyncio, json, os, sys
+import asyncio, json, os, sys, re
 from playwright.async_api import async_playwright
 
 PORTAL = "https://app.developer.viessmann-climatesolutions.com/"
@@ -15,60 +15,65 @@ async def refresh_token():
         page = await ctx.new_page()
 
         try:
-            # 1. Login
+            # 1. Login — step 1: email
             await page.goto(PORTAL, timeout=20000)
             await page.wait_for_load_state("networkidle")
-
-            # Fill email
-            await page.fill('input[type="text"], input[name="email"], input[placeholder*="Email"]', USERNAME)
-            await page.click('button:has-text("Next"), button[type="submit"]')
-
-            # Wait for password field (avoid hidden-password)
-            await page.wait_for_selector('input[type="password"]:not([tabindex="-1"])', timeout=10000)
-            await page.fill('input[type="password"]:not([tabindex="-1"])', PASSWORD)
-            await page.click('button:has-text("Login"), button[type="submit"]')
-            await page.wait_for_load_state("networkidle", timeout=15000)
-
-            # 2. Navigate to API Clients page
-            # Try to find "Access Tokens" or "API Clients" in nav
-            if 'clients' not in page.url:
-                # Click on Clients/API menu
-                try:
-                    await page.click('a[href*="client"], a:has-text("Clients"), a:has-text("API")', timeout=5000)
-                    await page.wait_for_load_state("networkidle", timeout=5000)
-                except:
-                    pass
-
-            # 3. Generate new token
-            # Look for "Generate Access Token" button
             await page.wait_for_timeout(2000)
 
-            # Click the client "HomeAssistant"
+            # Fill email and click Next
+            await page.fill('input[type="text"]', USERNAME)
+            await page.click('button:has-text("Next")')
+            await page.wait_for_timeout(3000)
+
+            # 2. Login — step 2: password
+            pw_sel = 'input[type="password"]:not([tabindex="-1"])'
+            await page.wait_for_selector(pw_sel, timeout=10000)
+            await page.fill(pw_sel, PASSWORD)
+            await page.click('button:has-text("Login")')
+            
+            # Wait for redirect to portal
+            await page.wait_for_url("**/app.developer.viessmann**", timeout=20000)
+            await page.wait_for_load_state("networkidle")
+            await page.wait_for_timeout(3000)
+            print(f"1. Logged in: {page.url}")
+
+            # 3. Navigate to the client "HomeAssistant"
+            # Try to find and click the client
             try:
-                await page.click('text=HomeAssistant', timeout=5000)
+                await page.click('text="HomeAssistant"', timeout=5000)
+                print("2. Clicked HomeAssistant")
+            except:
+                # Maybe on dashboard — find the clients link
+                await page.click('a[href*="client"]', timeout=5000)
                 await page.wait_for_load_state("networkidle")
+                await page.click('text="HomeAssistant"', timeout=5000)
+                print("2. Found HomeAssistant via nav")
+
+            await page.wait_for_load_state("networkidle")
+            await page.wait_for_timeout(2000)
+
+            # 4. Generate token
+            # Look for "Access Tokens" tab or "Generate" button
+            try:
+                await page.click('text="Access Tokens"', timeout=3000)
+                await page.wait_for_timeout(1500)
             except:
                 pass
 
-            # Click Generate Token
             try:
-                await page.click('button:has-text("Generate"), button:has-text("Token"), a:has-text("Generate")', timeout=5000)
-                await page.wait_for_load_state("networkidle")
+                await page.click('button:has-text("Generate")', timeout=5000)
+                print("3. Clicked Generate")
             except:
-                pass
+                print("3. Generate button not found, trying alternatives...")
 
-            # 4. Extract token from page
-            # The token might be in a code block or pre element
+            await page.wait_for_timeout(3000)
             content = await page.content()
-            
-            # Look for JWT pattern in the page
-            import re
+
+            # 5. Extract JWT token
             jwts = re.findall(r'eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+', content)
-            
             if jwts:
-                # Prefer the longest one (likely the access token)
                 token = max(jwts, key=len)
-                print(f"✅ Token: {token[:40]}... (len={len(token)})")
+                print(f"✅ Token trouvé: {token[:30]}... ({len(token)} chars)")
 
                 # Save to .env
                 with open(ENV_FILE, "r") as f:
@@ -79,15 +84,26 @@ async def refresh_token():
                             f.write(f"VIESSMANN_TOKEN={token}\n")
                         else:
                             f.write(line)
+                
+                # Run collection immediately
+                import subprocess
+                env = os.environ.copy()
+                env["VIESSMANN_TOKEN"] = token
+                subprocess.run(
+                    [sys.executable, os.path.join(os.path.dirname(__file__), "collect-viessmann.py")],
+                    env=env, timeout=30
+                )
+                
                 return token
             else:
-                print("❌ No JWT token found on page")
-                print(f"Page URL: {page.url}")
-                print(f"Page title: {await page.title()}")
+                print(f"❌ No JWT found. Page: {page.url}")
+                # Screenshot for debugging
+                await page.screenshot(path="/tmp/viessmann_debug.png")
                 return None
 
         except Exception as e:
             print(f"❌ Error: {e}")
+            await page.screenshot(path="/tmp/viessmann_error.png")
             return None
         finally:
             await browser.close()
@@ -95,8 +111,8 @@ async def refresh_token():
 if __name__ == "__main__":
     result = asyncio.run(refresh_token())
     if result:
-        print("✅ Token refreshed successfully")
+        print("✅ Token refreshed")
         sys.exit(0)
     else:
-        print("❌ Token refresh failed")
+        print("❌ Failed")
         sys.exit(1)
