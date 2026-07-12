@@ -6,7 +6,7 @@ Usage: .venv/bin/uvicorn server:app --host 0.0.0.0 --port 8765
 import json, subprocess, os, sys, re, urllib.request, urllib.parse
 from pathlib import Path
 from fastapi import FastAPI, Request, HTTPException
-from fastapi.responses import HTMLResponse, Response, JSONResponse
+from fastapi.responses import HTMLResponse, Response, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -847,58 +847,6 @@ setInterval(function(){{
 
 if VOYAGES_SITE.exists():
     app.mount("/voyages", StaticFiles(directory=str(VOYAGES_SITE), html=True), name="voyages")
-
-# ── N8N Proxy ──
-@app.api_route("/n8n/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"])
-async def n8n_proxy(request: Request, path: str):
-    if not check_token(request): raise HTTPException(401)
-    import httpx
-    n8n_url = f"http://localhost:5678/{path}"
-    query = str(request.url.query)
-    if query:
-        n8n_url += f"?{query}"
-    headers = dict(request.headers)
-    headers.pop("host", None)
-    headers.pop("content-length", None)
-    body = await request.body() or None
-    async with httpx.AsyncClient() as client:
-        r = await client.request(
-            request.method, n8n_url, headers=headers, content=body,
-            follow_redirects=True, timeout=30
-        )
-    resp_headers = dict(r.headers)
-    resp_headers.pop("content-encoding", None)  # Éviter les problèmes de décodage
-    content = r.content
-    # Inject base tag in HTML responses
-    ct = resp_headers.get("content-type", "")
-    if "text/html" in ct:
-        content = content.replace(b"<head>", b'<head><base href="/n8n/">')
-    return Response(content=content, status_code=r.status_code, headers=resp_headers)
-
-@app.api_route("/n8n", methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"])
-async def n8n_proxy_root(request: Request):
-    if not check_token(request): raise HTTPException(401)
-    import httpx
-    n8n_url = "http://localhost:5678/"
-    query = str(request.url.query)
-    if query:
-        n8n_url += f"?{query}"
-    headers = dict(request.headers)
-    headers.pop("host", None)
-    headers.pop("content-length", None)
-    body = await request.body() or None
-    async with httpx.AsyncClient() as client:
-        r = await client.request(
-            request.method, n8n_url, headers=headers, content=body,
-            follow_redirects=True, timeout=30
-        )
-    resp_headers = dict(r.headers)
-    resp_headers.pop("content-encoding", None)
-    content = r.content
-    ct = resp_headers.get("content-type", "")
-    if "text/html" in ct:
-        content = content.replace(b"<head>", b'<head><base href="/n8n/">')
-    return Response(content=content, status_code=r.status_code, headers=resp_headers)
 
 if BAVI_SITE.exists():
     app.mount("/", StaticFiles(directory=str(BAVI_SITE), html=True), name="wiki")
