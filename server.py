@@ -10,13 +10,17 @@ from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
+import urllib.request
+
 BASE = Path("/home/tofdan/.hermes")
 BAVI_SITE = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site-local")
 LEO_DASHBOARD_REPO = Path("/home/tofdan/.hermes/leo-dashboard-repo")
-CRON_JOBS_FILE = Path("/home/tofdan/.hermes/profiles/michel/cron/jobs.json")
+CRON_JOBS_FILE = Path("/home/tofdan/.hermes/profiles/leo-copilot/cron/jobs.json")
 N8N_CONFIG_FILE = Path("/home/tofdan/.hermes/n8n-webhooks.json")
 METRICS_FILE = Path("/home/tofdan/.hermes/metrics/leo-unified.json")
 AUTH_TOKEN = "leo-panel-2026"
+HA_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0MTIxMDZmOWQ1NWQ0NTFiOThiZjFhMjVhMmJlOTRlZiIsImlhdCI6MTc4MzgzNDc1MCwiZXhwIjoyMDk5MTk0NzUwfQ.CBphayJ3uX6XIT1m5ZOKISOOEfzVgT7IAs8WH9LZhLE"
+HA_URL = "http://localhost:8123"
 
 # Dashboard builder — génération dynamique
 from dashboard_builder import build_html, esc
@@ -67,7 +71,7 @@ async def api_cron_run(job_id: str, request: Request):
     try:
         # Lancement asynchrone — retour immédiat
         subprocess.Popen(
-            ["/home/tofdan/.hermes/venv/bin/hermes", "cron", "run", "--profile", "michel", job_id],
+            ["/home/tofdan/.hermes/venv/bin/hermes", "cron", "run", "--profile", "leo-copilot", job_id],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
             env={**os.environ, "HOME": "/home/tofdan"}
         )
@@ -80,7 +84,7 @@ async def api_cron_toggle(job_id: str, request: Request):
     if not check_token(request): raise HTTPException(401)
     try:
         # Get current state
-        r = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", "list", "--profile", "michel", "--json"],
+        r = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", "list", "--profile", "leo-copilot", "--json"],
                           capture_output=True, text=True, timeout=10,
                           env={**os.environ, "HOME": "/home/tofdan"})
         jobs = json.loads(r.stdout) if r.stdout else []
@@ -88,7 +92,7 @@ async def api_cron_toggle(job_id: str, request: Request):
         if not job:
             return {"ok": False, "error": "Job not found"}
         action = "pause" if job.get("enabled") else "resume"
-        r2 = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", action, "--profile", "michel", job_id],
+        r2 = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", action, "--profile", "leo-copilot", job_id],
                            capture_output=True, text=True, timeout=15,
                            env={**os.environ, "HOME": "/home/tofdan"})
         return {"ok": r2.returncode == 0, "action": action, "output": r2.stdout[:500]}
@@ -429,6 +433,65 @@ async def editor_save(request: Request):
                       capture_output=True, timeout=30)
     except: pass
     return {"ok": True}
+
+# ── Cameras (proxy vers Home Assistant) ──
+CAMERAS = [
+    {"id": "camera.cloudedge_meari_devant_maison_camera", "name": "📷 Devant Maison"},
+    {"id": "camera.cloudedge_meari_arriere_maison_camera", "name": "📷 Arrière Maison"},
+    {"id": "camera.cloudedge_meari_tic_camera", "name": "📷 TIC Camera"},
+    {"id": "camera.cloudedge_meari_pignon_maison_camera", "name": "📷 Pignon Maison"},
+]
+
+@app.get("/cameras")
+async def cameras_page(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    
+    cards = ""
+    for cam in CAMERAS:
+        cards += f'''
+        <div class="cam-card">
+            <div class="cam-name">{cam["name"]}</div>
+            <div class="cam-frame">
+                <img src="/cameras/snapshot/{cam["id"]}" 
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 360%22><rect fill=%22%23111%22 width=%22640%22 height=%22360%22/><text fill=%22%23555%22 x=%22320%22 y=%22180%22 text-anchor=%22middle%22 font-size=%2220%22>Chargement…</text></svg>'"
+                     style="width:100%;height:100%;object-fit:contain;background:#111">
+            </div>
+        </div>'''
+    
+    html = f'''<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📷 Caméras LEO</title>
+<style>
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
+h1{{font-size:20px;margin-bottom:16px}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:12px}}
+.cam-card{{background:#161b22;border:2px solid #30363d;border-radius:8px;overflow:hidden}}
+.cam-name{{padding:8px 12px;font-weight:600;font-size:14px;background:#1c2128;border-bottom:2px solid #30363d}}
+.cam-frame{{aspect-ratio:16/9;overflow:hidden}}
+.refresh{{position:fixed;bottom:16px;right:16px;background:#238636;color:#fff;border:none;border-radius:6px;padding:8px 16px;font-size:13px;cursor:pointer;z-index:100}}
+.refresh:hover{{background:#2ea043}}
+</style></head>
+<body>
+<h1>📷 Caméras LEO <span style="color:#8b949e;font-size:12px;font-weight:400">— refresh auto toutes les 10s</span></h1>
+<div class="grid">{cards}</div>
+<button class="refresh" onclick="document.querySelectorAll('img').forEach(i=>i.src=i.src.split('?')[0]+'?'+Date.now())">🔄 Rafraîchir</button>
+<script>setInterval(()=>document.querySelectorAll('img').forEach(i=>i.src=i.src.split('?')[0]+'?'+Date.now()),10000)</script>
+</body></html>'''
+    return HTMLResponse(html)
+
+@app.get("/cameras/snapshot/{entity_id}")
+async def camera_snapshot(entity_id: str):
+    """Proxy vers Home Assistant pour contourner CORS."""
+    url = f"{HA_URL}/api/camera_proxy/{entity_id}"
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {HA_TOKEN}"})
+    try:
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            from fastapi.responses import Response
+            return Response(content=resp.read(), media_type=resp.headers.get("Content-Type", "image/jpeg"))
+    except:
+        raise HTTPException(502, detail="Caméra inaccessible")
 
 # ── Wiki Voyages (static files, monté avant BAVI pour priorité) ──
 VOYAGES_SITE = Path("/home/tofdan/Projets_Dev/voyages-wiki/site-local")

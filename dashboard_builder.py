@@ -210,6 +210,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-monitoring')">🖥️ Monitoring</div>
   <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
   <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">⚙️ Crons</div>
+  <div class="tab" onclick="window.open('/cameras?token=' + encodeURIComponent(new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026'),'_blank')">📷 Caméras</div>
 </div>
 
 <!-- Synthèse -->
