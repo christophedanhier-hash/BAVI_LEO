@@ -447,6 +447,7 @@ CAMERAS = [
 @app.get("/cameras")
 async def cameras_page(request: Request):
     if not check_token(request): raise HTTPException(401)
+    embed = request.query_params.get("embed") == "1"
     
     # Récupérer les états des caméras via HA
     import urllib.request as ur
@@ -503,23 +504,35 @@ async def cameras_page(request: Request):
             </div>
         </div>'''
     
-    html = f'''<!DOCTYPE html>
+    head = "" if embed else '''<!DOCTYPE html>
 <html lang="fr">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>📷 Caméras LEO</title>
-<style>
-*{{margin:0;padding:0;box-sizing:border-box}}
-body{{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
-h1{{font-size:20px;margin-bottom:4px}}
-.note{{color:#8b949e;font-size:11px;margin-bottom:12px}}
-.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:12px}}
-.cam-card{{background:#161b22;border:2px solid #30363d;border-radius:8px;overflow:hidden}}
-.cam-name{{padding:8px 12px;font-weight:600;font-size:13px;background:#1c2128;border-bottom:2px solid #30363d}}
-.cam-frame{{aspect-ratio:16/9;overflow:hidden}}
-.cam-actions{{padding:6px 12px;display:flex;align-items:center;background:#1c2128;border-top:2px solid #30363d}}
-</style></head>
-<body>
-<h1>📷 Caméras LEO</h1>
+<title>📷 Caméras LEO</title>'''
+    
+    css = '''<style>
+:root{--bg:#0d1117;--text:#c9d1d9;--card:#161b22;--border:#30363d;--accent:#1f6feb;--dim:#8b949e;--green:#3fb950;--red:#f85149;--orange:#d29922}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}
+h1{font-size:20px;margin-bottom:4px}
+.note{color:var(--dim);font-size:11px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:12px}
+.cam-card{background:var(--card);border:2px solid var(--border);border-radius:8px;overflow:hidden}
+.cam-name{padding:8px 12px;font-weight:600;font-size:13px;background:#1c2128;border-bottom:2px solid var(--border)}
+.cam-frame{aspect-ratio:16/9;overflow:hidden}
+.cam-actions{padding:6px 12px;display:flex;align-items:center;background:#1c2128;border-top:2px solid var(--border)}
+</style>'''
+    
+    body_open = "" if embed else f'''{head}
+{css}
+</head>
+<body>'''
+    
+    body_close = "" if embed else '''</body></html>'''
+    
+    title = '<h1>📷 Caméras LEO</h1>' if not embed else ''
+    
+    html = f'''{body_open}
+{title}
 <div class="note">Caméras batterie — image capturée uniquement sur détection de mouvement. Wake = activation détection.</div>
 <div class="grid">{cards}</div>
 <script>
@@ -545,14 +558,13 @@ function wakeCam(camId, wakeId) {{
     }});
 }}
 
-// Auto-refresh 60s
 setInterval(function() {{
     document.querySelectorAll('.cam-frame img').forEach(function(img) {{
         img.src = img.src.split('?')[0] + '?' + Date.now();
     }});
 }}, 60000);
 </script>
-</body></html>'''
+{body_close}'''
     return HTMLResponse(html)
 
 @app.get("/cameras/snapshot/{entity_id}")
@@ -606,51 +618,47 @@ async def api_energy_history(request: Request):
 
 @app.get("/energy")
 async def energy_page(request: Request):
-    """Page dédiée énergie avec KPIs et graphs."""
     if not check_token(request): raise HTTPException(401)
+    embed = request.query_params.get("embed") == "1"
     
-    # Lire le snapshot actuel
     snap = {}
     if ENERGY_FILE.exists():
         snap = json.loads(ENERGY_FILE.read_text())
     
-    html = f"""<!DOCTYPE html>
-<html lang="fr">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>⚡ Énergie LEO</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    head = "" if embed else '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>⚡ Énergie LEO</title>'
+    chartjs = '<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>'
+    
+    html = f"""{head}
+{chartjs}
 <style>
+:root{{--bg:#0d1117;--text:#c9d1d9;--card:#161b22;--border:#30363d;--accent:#1f6feb;--dim:#8b949e;--green:#3fb950;--red:#f85149;--orange:#d29922;--purple:#bc8cff;--blue:#58a6ff}}
 *{{margin:0;padding:0;box-sizing:border-box}}
-body{{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
+body{{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
 h1{{font-size:20px;margin-bottom:16px}}
-.kpi-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}}
-.kpi-card{{background:#161b22;border:2px solid #30363d;border-radius:8px;padding:14px;text-align:center}}
-.kpi-val{{font-size:28px;font-weight:700;margin:4px 0}}
-.kpi-lbl{{font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:.5px}}
+.kpi-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}}
+.kpi-card{{background:var(--card);border:2px solid var(--border);border-radius:8px;padding:14px;text-align:center}}
+.kpi-val{{font-size:26px;font-weight:700;margin:4px 0}}
+.kpi-lbl{{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px}}
 .kpi-sub{{font-size:10px;color:#484f58;margin-top:4px}}
-.chart-box{{background:#161b22;border:2px solid #30363d;border-radius:8px;padding:16px;margin-bottom:12px}}
-canvas{{max-height:300px}}
+.chart-box{{background:var(--card);border:2px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px}}
+canvas{{max-height:280px}}
 .phases{{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}}
 .phase{{background:#0d1117;border-radius:6px;padding:10px;text-align:center}}
-</style></head>
-<body>
-<h1>⚡ Énergie — HomeWizard P1 <span style="color:#8b949e;font-size:12px;font-weight:400">Fluvius {snap.get('meter','?')}</span></h1>
+</style>
+{"</head><body>" if not embed else ""}
+<h1>{'⚡ Énergie — HomeWizard P1' if not embed else ''} <span style="color:var(--dim);font-size:12px;font-weight:400">Fluvius {snap.get('meter','?')}</span></h1>
 
-<div class="kpi-grid" id="kpis">
-  <div class="kpi-card"><div class="kpi-val" id="pwr" style="color:var(--dim)">—</div><div class="kpi-lbl">Puissance</div><div class="kpi-sub" id="pwr-sub"></div></div>
-  <div class="kpi-card"><div class="kpi-val" id="net" style="color:var(--dim)">—</div><div class="kpi-lbl">Bilan Net</div><div class="kpi-sub" id="net-sub"></div></div>
-  <div class="kpi-card"><div class="kpi-val" id="imp" style="color:var(--dim)">—</div><div class="kpi-lbl">Import Total</div><div class="kpi-sub">kWh</div></div>
-  <div class="kpi-card"><div class="kpi-val" id="exp" style="color:var(--dim)">—</div><div class="kpi-lbl">Export Total</div><div class="kpi-sub">kWh</div></div>
-  <div class="kpi-card"><div class="kpi-val" id="peak" style="color:var(--dim)">—</div><div class="kpi-lbl">Pic Mensuel</div><div class="kpi-sub">W</div></div>
-  <div class="kpi-card"><div class="kpi-val" id="volt" style="color:var(--dim)">—</div><div class="kpi-lbl">Tension</div><div class="kpi-sub">V L1</div></div>
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="kpi-val" id="pwr">—</div><div class="kpi-lbl">Puissance</div><div class="kpi-sub" id="pwr-sub"></div></div>
+  <div class="kpi-card"><div class="kpi-val" id="net">—</div><div class="kpi-lbl">Bilan Net</div></div>
+  <div class="kpi-card"><div class="kpi-val" id="imp">—</div><div class="kpi-lbl">Import Total</div><div class="kpi-sub">kWh</div></div>
+  <div class="kpi-card"><div class="kpi-val" id="exp">—</div><div class="kpi-lbl">Export Total</div><div class="kpi-sub">kWh</div></div>
+  <div class="kpi-card"><div class="kpi-val" id="peak">—</div><div class="kpi-lbl">Pic Mensuel</div><div class="kpi-sub">W</div></div>
+  <div class="kpi-card"><div class="kpi-val" id="volt">—</div><div class="kpi-lbl">Tension</div><div class="kpi-sub">V L1</div></div>
 </div>
 
 <div class="chart-box"><canvas id="powerChart"></canvas></div>
-
-<div class="chart-box">
-  <h3 style="margin:0 0 12px;font-size:14px">🔌 Phases</h3>
-  <div class="phases" id="phases"></div>
-</div>
+<div class="chart-box"><h3 style="margin:0 0 12px;font-size:14px">🔌 Phases</h3><div class="phases" id="phases"></div></div>
 
 <script>
 var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
@@ -661,13 +669,12 @@ function loadSnapshot() {{
     if(d.error) return;
     var pwr = d.power_now_w;
     var color = pwr < 0 ? '#3fb950' : '#f85149';
+    ['pwr','net','imp','exp','peak','volt'].forEach(function(id){{ var el=document.getElementById(id); if(!el)return; }});
     document.getElementById('pwr').textContent = Math.abs(pwr)+' W';
     document.getElementById('pwr').style.color = color;
-    document.getElementById('pwr-sub').textContent = pwr < 0 ? '☀️ Injection' : '⚡ Conso';
-    
+    document.getElementById('pwr-sub') && (document.getElementById('pwr-sub').textContent = pwr < 0 ? '☀️ Injection' : '⚡ Conso');
     document.getElementById('net').textContent = (d.net_kwh>0?'+':'')+d.net_kwh.toFixed(0)+' kWh';
     document.getElementById('net').style.color = d.net_kwh>0?'#3fb950':'#f85149';
-    
     document.getElementById('imp').textContent = d.import_total_kwh.toFixed(0)+' kWh';
     document.getElementById('imp').style.color = '#58a6ff';
     document.getElementById('exp').textContent = d.export_total_kwh.toFixed(0)+' kWh';
@@ -677,11 +684,10 @@ function loadSnapshot() {{
     document.getElementById('volt').textContent = d.voltage_v.toFixed(1)+' V';
     document.getElementById('volt').style.color = '#bc8cff';
     
-    // Phases
     var ph = d.phases;
     document.getElementById('phases').innerHTML = ['l1','l2','l3'].map(function(p){{
       var phase = ph[p];
-      return '<div class="phase"><div style="font-size:20px;font-weight:700;color:'+(phase.w<0?'#3fb950':'#f85149')+'">'+phase.w+' W</div><div style="font-size:11px">'+phase.v.toFixed(1)+'V · '+phase.a.toFixed(1)+'A</div><div style="font-size:10px;color:#8b949e;margin-top:2px">'+p.toUpperCase()+'</div></div>';
+      return '<div class="phase"><div style="font-size:20px;font-weight:700;color:'+(phase.w<0?'#3fb950':'#f85149')+'">'+phase.w+' W</div><div style="font-size:11px">'+phase.v.toFixed(1)+'V · '+phase.a.toFixed(1)+'A</div><div style="font-size:10px;color:var(--dim);margin-top:2px">'+p.toUpperCase()+'</div></div>';
     }}).join('');
   }});
 }}
@@ -689,7 +695,6 @@ function loadSnapshot() {{
 function loadHistory() {{
   fetch('/api/energy/history?token='+token).then(r=>r.json()).then(history=>{{
     if(!history || !history.length) return;
-    
     var labels = history.map(function(p){{return p.ts.substring(11,16)}});
     var values = history.map(function(p){{return Math.abs(p.w)}});
     var colors = history.map(function(p){{return p.w < 0 ? 'rgba(63,185,80,.4)' : 'rgba(248,81,73,.4)'}});
@@ -699,28 +704,10 @@ function loadHistory() {{
     var ctx = document.getElementById('powerChart').getContext('2d');
     powerChart = new Chart(ctx, {{
       type: 'bar',
-      data: {{
-        labels: labels,
-        datasets: [{{
-          label: 'Puissance (W)',
-          data: values,
-          backgroundColor: colors,
-          borderColor: borders,
-          borderWidth: 1,
-          borderRadius: 2
-        }}]
-      }},
-      options: {{
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {{
-          legend: {{display:false}},
-          title: {{display:true, text:'📈 Puissance — 24h', color:'#8b949e', font:{{size:13}}}}
-        }},
-        scales: {{
-          x: {{ticks:{{color:'#484f58',font:{{size:9}},maxTicksLimit:30}},grid:{{color:'#21262d'}}}},
-          y: {{ticks:{{color:'#484f58',font:{{size:9}}}},grid:{{color:'#21262d'}}}}
-        }}
+      data: {{ labels: labels, datasets: [{{ label: 'Puissance (W)', data: values, backgroundColor: colors, borderColor: borders, borderWidth: 1, borderRadius: 2 }}] }},
+      options: {{ responsive: true, maintainAspectRatio: false,
+        plugins: {{ legend: {{display:false}}, title: {{display:true, text:'📈 Puissance — 24h', color:'#8b949e', font:{{size:12}}}} }},
+        scales: {{ x: {{ticks:{{color:'#484f58',font:{{size:9}},maxTicksLimit:25}},grid:{{color:'#21262d'}}}}, y: {{ticks:{{color:'#484f58',font:{{size:9}}}},grid:{{color:'#21262d'}}}} }}
       }}
     }});
   }});
@@ -731,7 +718,7 @@ loadHistory();
 setInterval(loadSnapshot, 30000);
 setInterval(loadHistory, 120000);
 </script>
-</body></html>"""
+{"</body></html>" if not embed else ""}"""
     return HTMLResponse(html)
 
 # ── Wiki Voyages (static files, monté avant BAVI pour priorité) ──

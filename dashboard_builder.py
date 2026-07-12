@@ -88,28 +88,6 @@ def build_html():
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="/leo/monitoring.js?v={{version}}"></script>
-<script src="/leo/crons.js"></script>
-<script>
-function switchTab(el, id) {{
-  var tabs = document.querySelectorAll('.tab');
-  var panels = document.querySelectorAll('.panel');
-  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
-  for (var i = 0; i < panels.length; i++) panels[i].classList.remove('active');
-  el.classList.add('active');
-  document.getElementById(id).classList.add('active');
-  if (id === 'tab-monitoring') startMonitoring();
-  if (id === 'tab-crons-mgmt') loadCrons();
-}}
-function toggleTheme() {{
-  var html = document.documentElement;
-  var theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', theme);
-  localStorage.setItem('leo-theme', theme);
-}}
-(function() {{
-  var saved = localStorage.getItem('leo-theme');
-  if (saved) document.documentElement.setAttribute('data-theme', saved);
-}})();
 </script>
 <style>
 :root {{
@@ -210,10 +188,11 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-monitoring')">🖥️ Monitoring</div>
   <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
   <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">⚙️ Crons</div>
-  <div class="tab" onclick="window.open('/cameras?token=' + encodeURIComponent(new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026'),'_blank')">📷 Caméras</div>
-  <div class="tab" onclick="window.open('/energy?token=' + encodeURIComponent(new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026'),'_blank')">⚡ Énergie</div>
+  <div class="tab" onclick="switchTab(this,'tab-cameras');loadCameras()">📷 Caméras</div>
+  <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergy()">⚡ Énergie</div>
 </div>
-  <div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
+<!-- Energy bar -->
+<div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
   <span id="energy-pwr" style="color:var(--dim)">⚡ Chargement...</span>
   <span id="energy-net" style="color:var(--dim)"></span>
   <span id="energy-imp" style="color:var(--dim);font-size:11px"></span>
@@ -383,6 +362,20 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <thead><tr><th>Modèle</th><th>Sessions</th><th>Tokens</th><th>Coût</th></tr></thead>
 <tbody>{"".join(f'<tr><td>{esc(m)}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(s.get("by_model",{}).items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
 </div>
+</div>
+
+<!-- Caméras -->
+<div id="tab-cameras" class="panel" style="padding:0;background:transparent;border:none">
+  <div id="cameras-content" style="width:100%;min-height:500px;display:flex;align-items:center;justify-content:center">
+    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
+  </div>
+</div>
+
+<!-- Énergie -->
+<div id="tab-energy" class="panel" style="padding:0;background:transparent;border:none">
+  <div id="energy-content" style="width:100%;min-height:500px;display:flex;align-items:center;justify-content:center">
+    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
+  </div>
 </div>
 
 <div class="footer">🦁 LEO Dashboard · Généré dynamiquement</div>
