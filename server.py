@@ -157,7 +157,11 @@ async def api_metrics(request: Request):
 @app.get("/api/n8n")
 async def api_n8n(request: Request):
     if not check_token(request): raise HTTPException(401)
-    return json.loads(N8N_CONFIG_FILE.read_text()) if N8N_CONFIG_FILE.exists() else []
+    data_file = Path.home() / ".hermes" / "metrics" / "n8n.json"
+    if not data_file.exists():
+        return {"error": "no data", "timestamp": None}
+    with open(data_file) as f:
+        return json.load(f)
 
 @app.post("/api/n8n/save")
 async def api_n8n_save(request: Request):

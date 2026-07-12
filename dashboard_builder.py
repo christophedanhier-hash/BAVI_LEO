@@ -218,7 +218,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-cameras');loadCameras()">📷 Caméras</div>
   <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergy()">⚡ Énergie</div>
   <div class="tab" onclick="switchTab(this,'tab-viessmann');loadViessmann()">🔥 Viessmann</div>
-  <a href="http://100.92.102.28:5678" target="_blank" class="tab" style="text-decoration:none;color:var(--fg)">🔧 N8N</a>
+  <div class="tab" onclick="switchTab(this,'tab-n8n');loadN8n()">🔧 N8N</div>
 </div>
 <!-- Energy bar -->
 <div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
@@ -410,6 +410,13 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <!-- Viessmann -->
 <div id="tab-viessmann" class="panel" style="padding:0;background:transparent;border:none">
   <div id="viessmann-content" style="width:100%;min-height:420px;display:flex;align-items:center;justify-content:center">
+    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
+  </div>
+</div>
+
+<!-- N8N -->
+<div id="tab-n8n" class="panel" style="padding:12px">
+  <div id="n8n-content" style="display:flex;flex-direction:column;gap:8px">
     <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
   </div>
 </div>
