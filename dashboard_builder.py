@@ -217,6 +217,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">⚙️ Crons</div>
   <div class="tab" onclick="switchTab(this,'tab-cameras');loadCameras()">📷 Caméras</div>
   <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergy()">⚡ Énergie</div>
+  <div class="tab" onclick="switchTab(this,'tab-viessmann');loadViessmann()">🔥 Viessmann</div>
 </div>
 <!-- Energy bar -->
 <div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
@@ -401,6 +402,13 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <!-- Énergie -->
 <div id="tab-energy" class="panel" style="padding:0;background:transparent;border:none">
   <div id="energy-content" style="width:100%;min-height:500px;display:flex;align-items:center;justify-content:center">
+    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
+  </div>
+</div>
+
+<!-- Viessmann -->
+<div id="tab-viessmann" class="panel" style="padding:0;background:transparent;border:none">
+  <div id="viessmann-content" style="width:100%;min-height:420px;display:flex;align-items:center;justify-content:center">
     <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
   </div>
 </div>

@@ -747,6 +747,104 @@ setInterval(loadHistory, 120000);
 
 # ── Wiki Voyages (static files, monté avant BAVI pour priorité) ──
 VOYAGES_SITE = Path("/home/tofdan/Projets_Dev/voyages-wiki/site-local")
+@app.get("/api/viessmann")
+async def api_viessmann(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    data_file = Path.home() / ".hermes" / "metrics" / "viessmann.json"
+    if not data_file.exists():
+        return {"error": "no data", "timestamp": None}
+    with open(data_file) as f:
+        return json.load(f)
+
+@app.get("/viessmann")
+async def viessmann_page(request: Request):
+    """Page Viessmann — chaudière gaz + solaire."""
+    if not check_token(request): raise HTTPException(401)
+    embed = request.query_params.get("embed") == "1"
+    theme = request.query_params.get("theme", "light")
+    
+    data_file = Path.home() / ".hermes" / "metrics" / "viessmann.json"
+    data = {}
+    if data_file.exists():
+        try:
+            with open(data_file) as f:
+                data = json.load(f)
+        except:
+            pass
+    
+    cards_html = f"""
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-lbl">🔥 Chaudière</div>
+        <div class="kpi-val">{data.get('boiler_temp', '?')}<span style="font-size:16px">°C</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">🌡️ Extérieure</div>
+        <div class="kpi-val">{data.get('outside_temp', '?')}<span style="font-size:16px">°C</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">🚿 Eau chaude</div>
+        <div class="kpi-val">{data.get('dhw_temp', '?')}<span style="font-size:16px">°C</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">🔧 Brûleur</div>
+        <div class="kpi-val">{data.get('burner_modulation', '?')}<span style="font-size:16px">%</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">📐 Circuit 0</div>
+        <div class="kpi-val">{data.get('circuit0_supply', '?')}<span style="font-size:16px">°C</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-lbl">☀️ Solaire prod</div>
+        <div class="kpi-val">{data.get('solar_production', '0')}<span style="font-size:16px">W</span></div>
+      </div>
+    </div>
+    <div class="info-line">
+      Mode: <strong>{data.get('circuit0_mode', '?')}</strong> · Programme: <strong>{data.get('circuit0_program', '?')}</strong> · 
+      Consigne ECS: <strong>{data.get('dhw_target', '?')}°C</strong> · 
+      Solaire total: <strong>{data.get('solar_cumulative', '?')} kWh</strong> · 
+      MàJ: <span id="viessmann-updated">{data.get('timestamp', '?')[:19]}</span>
+    </div>
+    """
+    
+    html_open = f'<html lang="fr" data-theme="{theme}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>🔥 Viessmann</title>' if not embed else ""
+    html_close = "</body></html>" if not embed else ""
+    body_tag = '<body>' if not embed else ""
+    title_tag = '<h1>🔥 Viessmann — Sombreffe</h1>' if not embed else ''
+    
+    html = f"""{html_open}
+<style>
+:root{{--bg:#0d1117;--text:#c9d1d9;--card:#161b22;--border:#30363d;--accent:#1f6feb;--dim:#8b949e;--green:#3fb950;--red:#f85149;--orange:#d29922}}
+[data-theme="light"]{{--bg:#f0f2f5;--text:#1a1a2e;--card:#fff;--border:#d1d5db;--accent:#2563eb;--dim:#6b7280;--green:#059669;--red:#dc2626;--orange:#d97706}}
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding:16px}}
+h1{{font-size:20px;margin-bottom:16px}}
+.kpi-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}}
+.kpi-card{{background:var(--card);border:2px solid var(--border);border-radius:8px;padding:14px;text-align:center}}
+.kpi-val{{font-size:26px;font-weight:700;margin:4px 0}}
+.kpi-lbl{{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px}}
+.info-line{{font-size:13px;color:var(--dim);text-align:center;padding:8px;background:var(--card);border-radius:8px;border:2px solid var(--border)}}
+</style>
+{body_tag}
+{title_tag}
+{cards_html}
+<script>
+(function(){{var t=localStorage.getItem('leo-theme');if(t)document.documentElement.setAttribute('data-theme',t);}})();
+var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+setInterval(function(){{
+  fetch('/api/viessmann?token='+token).then(function(r){{return r.json();}}).then(function(d){{
+    if(d.error) return;
+    document.querySelectorAll('.kpi-val').forEach(function(el,i){{
+      var vals = [d.boiler_temp+'°C', d.outside_temp+'°C', d.dhw_temp+'°C', d.burner_modulation+'%', d.circuit0_supply+'°C', (d.solar_production||0)+'W'];
+      if(vals[i]) el.innerHTML = '<span style=\"font-size:26px\">'+vals[i]+'</span>';
+    }});
+    document.getElementById('viessmann-updated').textContent = (d.timestamp||'').substring(0,19);
+  }});
+}},30000);
+</script>
+{html_close}"""
+    return HTMLResponse(html)
+
 if VOYAGES_SITE.exists():
     app.mount("/voyages", StaticFiles(directory=str(VOYAGES_SITE), html=True), name="voyages")
 
