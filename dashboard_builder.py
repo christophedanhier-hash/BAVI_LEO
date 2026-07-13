@@ -40,7 +40,7 @@ def load_metrics():
         "b": data.get("budget", {}) or {},
         "c": data.get("crons", {}) or {},
         "i": data.get("infra", {}) or {},
-        "n": data.get("n8n", {}) or {},
+        "n": data.get("wf", {}) or {},
         "ba": data.get("bavi", {}) or {},
         "bo": data.get("bots", {}) or {},
         "va": data.get("vaults", {}) or {},
@@ -218,7 +218,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-cameras');loadCameras()">📷 Caméras</div>
   <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergy()">⚡ Énergie</div>
   <div class="tab" onclick="switchTab(this,'tab-viessmann');loadViessmann()">🔥 Viessmann</div>
-  <div class="tab" onclick="switchTab(this,'tab-n8n');loadN8n()">🔧 N8N</div>
+  <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🔧 Workflows</div>
 </div>
 <!-- Energy bar -->
 <div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
@@ -320,7 +320,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="kpi-grid">
   <div class="kpi-card"><div class="icon">🌐</div><div class="val" style="color:var(--green)">RUN</div><div class="lbl">Gateway</div></div>
   <div class="kpi-card"><div class="icon">🦙</div><div class="val" style="color:var(--green)">OK</div><div class="lbl">Ollama</div></div>
-  <div class="kpi-card"><div class="icon">🔧</div><div class="val" style="color:var(--green)">OK</div><div class="lbl">n8n</div></div>
+  <div class="kpi-card"><div class="icon">🔧</div><div class="val" style="color:var(--green)">OK</div><div class="lbl">Workflows</div></div>
   <div class="kpi-card"><div class="icon">🖥️</div><div class="val">{i.get('machines',[{}])[0].get('cpu_load','?') if i.get('machines') else '?'}</div><div class="lbl">CPU</div></div>
   <div class="kpi-card"><div class="icon">💾</div><div class="val">{i.get('machines',[{}])[0].get('ram_pct','?') if i.get('machines') else '?'}%</div><div class="lbl">RAM</div></div>
   <div class="kpi-card"><div class="icon">💿</div><div class="val">{i.get('machines',[{}])[0].get('disk_pct','?') if i.get('machines') else '?'}%</div><div class="lbl">Disque</div></div>
@@ -414,9 +414,9 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   </div>
 </div>
 
-<!-- N8N -->
-<div id="tab-n8n" class="panel" style="padding:12px">
-  <div id="n8n-content" style="display:flex;flex-direction:column;gap:8px">
+<!-- Workflows -->
+<div id="tab-wf" class="panel" style="padding:12px">
+  <div id="wf-content" style="display:flex;flex-direction:column;gap:8px">
     <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
   </div>
 </div>

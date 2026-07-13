@@ -154,12 +154,12 @@ async def api_metrics(request: Request):
         return {"error": str(e)}
 
 # ── API: n8n ──
-@app.get("/api/n8n")
-async def api_n8n(request: Request):
+@app.get("/api/wf")
+async def api_workflows(request: Request):
     if not check_token(request): raise HTTPException(401)
-    data_file = Path.home() / ".hermes" / "metrics" / "n8n.json"
+    data_file = Path.home() / ".hermes" / "metrics" / "workflows.json"
     if not data_file.exists():
-        return {"error": "no data", "timestamp": None}
+        return {"error": "no data"}
     with open(data_file) as f:
         return json.load(f)
 
