@@ -1,17 +1,17 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 13/07/2026 à 18:00**
-> Source : `profiles/leo-copilot/cron/jobs.json` (35 jobs)
+> **Généré automatiquement le 14/07/2026 à 00:00**
+> Source : `profiles/leo-copilot/cron/jobs.json` (36 jobs)
 <!-- AUTO:END header -->
 
 ## Résumé
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **35** |
+| **Crons Hermes** (tous profils, consolidé) | **36** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
-| **Total général** | **41** |
+| **Total général** | **42** |
 
 ## Liste exhaustive des crons Hermes
 
@@ -31,11 +31,11 @@
 | 10 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
 | 11 | 📋 Doc Watch Auto (sync documents) | `*/2 * * * *` | script | ✅ |
 | 12 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
-| 13 | 📓 Journaux Quotidiens (4 vaults) | `0 23 * * *` | LLM | ⚠️ |
+| 13 | 📓 Journaux Quotidiens (4 vaults) | `0 23 * * *` | LLM | ✅ |
 | 14 | 📝 docs-update | `0 */4 * * *` | script | ✅ |
 | 15 | 📡 Machine KPI Collector | `*/5 * * * *` | script | ✅ |
 | 16 | 📦 Auto-Archive BAVI LEO (5min) | `every 5m` | script | ✅ |
-| 17 | 📧 Check Gmail Watchdog | `*/5 * * * *` | script | ✅ |
+| 17 | 📦 Cron Log Archiver (horaire) | `15 * * * *` | script | ✅ |
 | 18 | 📧 Check Gmail — emails importants (30min) | `every 30m` | script | ✅ |
 | 19 | 📧 Email Classifier — rule-based (inbox zero) | `*/30 * * * *` | script | ✅ |
 | 20 | 📷 Surveillance caméras — mouvement → Telegram | `*/5 * * * *` | script | ✅ |
@@ -47,13 +47,14 @@
 | 26 | 🔄 Refresh Google Tokens (50min) | `*/50 * * * *` | script | ✅ |
 | 27 | 🔄 drive-sync | `0 * * * *` | script | ✅ |
 | 28 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script | ✅ |
-| 29 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
-| 30 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
-| 31 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
-| 32 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
-| 33 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
-| 34 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
-| 35 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
+| 29 | 🔍 Audit Infra (cohérence globale) | `0 * * * *` | script | ✅ |
+| 30 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
+| 31 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
+| 32 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
+| 33 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
+| 34 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
+| 35 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
+| 36 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
 
 <!-- AUTO:END hermes-crons -->
 
@@ -68,4 +69,4 @@
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 13/07/2026 à 18:00_
+_Généré automatiquement le 14/07/2026 à 00:00_
