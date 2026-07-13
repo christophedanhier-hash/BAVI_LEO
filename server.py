@@ -138,11 +138,33 @@ async def api_crons_history(job_id: str, request: Request):
     
     history = []
     status_dir = Path("/home/tofdan/.hermes/cron/output")
-    if status_dir.exists():
+    
+    # 1. Chercher le .history.jsonl (historique cumulatif)
+    if status_dir.exists() and script_name:
+        hist_file = status_dir / f"{script_name}.history.jsonl"
+        if hist_file.exists():
+            try:
+                for line in hist_file.read_text().splitlines():
+                    if not line.strip():
+                        continue
+                    d = json.loads(line)
+                    history.append({
+                        "script": d.get("name", script_name),
+                        "timestamp": d.get("timestamp", ""),
+                        "exit_code": d.get("exit_code", -1),
+                        "duration_sec": d.get("duration_sec", 0),
+                        "stderr_lines": d.get("stderr_lines", 0),
+                        "stdout_last": d.get("stdout_last", "")[:200]
+                    })
+                history.sort(key=lambda x: x["timestamp"], reverse=True)
+            except:
+                pass
+    
+    # 2. Fallback: .status.json si pas d'historique
+    if not history and status_dir.exists():
         for f in sorted(status_dir.glob("*.status.json"), key=lambda x: x.stat().st_mtime, reverse=True):
             try:
                 d = json.loads(f.read_text())
-                # Filtrer par nom de script si dispo
                 if script_name and script_name not in d.get("name", "") and script_name not in f.stem:
                     continue
                 history.append({
@@ -156,7 +178,7 @@ async def api_crons_history(job_id: str, request: Request):
             except:
                 pass
     
-    # Fallback: si pas de .status.json, utiliser last_run du jobs.json
+    # 3. Fallback ultime: last_run du jobs.json
     if not history and job:
         history.append({
             "script": job.get("name", ""),
@@ -167,7 +189,7 @@ async def api_crons_history(job_id: str, request: Request):
             "stdout_last": job.get("last_status", "?")
         })
     
-    return {"history": history[:20]}
+    return {"history": history[:50]}
 
 # ── API: Métriques ──
 @app.get("/api/machine-kpi")
@@ -212,6 +234,33 @@ async def api_workflows(request: Request):
         return {"error": "no data"}
     with open(data_file) as f:
         return json.load(f)
+
+@app.post("/api/wf/{name}/run")
+async def api_wf_run(name: str, request: Request):
+    if not check_token(request): raise HTTPException(401)
+    import subprocess
+    scripts_dir = Path.home() / ".hermes" / "scripts"
+    # Mapper nom de workflow → script correspondant
+    wf_to_script = {
+        "gardien-drive": "gardien-drive-wrapper.sh",
+        "drive-issue": "drive-issue-wrapper.sh",
+        "save-contacts": "save-contacts-wrapper.sh",
+        "check-gmail": "check-gmail.py",
+    }
+    script_name = wf_to_script.get(name, f"{name}.py")
+    script_path = scripts_dir / script_name
+    if not script_path.exists():
+        script_path = scripts_dir / f"{name}-wrapper.sh"
+    if not script_path.exists():
+        return {"ok": False, "error": f"Script {script_name} introuvable"}
+    
+    subprocess.Popen(
+        ["bash", str(script_path)] if str(script_path).endswith(".sh")
+        else ["/home/tofdan/.hermes/venv/bin/python3", str(script_path)],
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        env={**os.environ, "HOME": "/home/tofdan"}
+    )
+    return {"ok": True}
 
 @app.post("/api/n8n/save")
 async def api_n8n_save(request: Request):

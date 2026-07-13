@@ -115,7 +115,6 @@ def build_html():
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="/leo/monitoring.js?v={{version}}"></script>
-</script>
 <style>
 :root {{
   --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
@@ -158,7 +157,6 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 .card{{background:var(--card);border:2px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px;box-shadow:0 1px 4px var(--shadow)}}
 .card h3{{font-size:13px;color:var(--text);text-transform:uppercase;letter-spacing:.3px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--border)}}
 .grid-2{{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}}
-@media(max-width:768px){{.grid-2{{grid-template-columns:1fr}}}}
 .chart-box canvas{{max-height:220px;width:100%}}
 table{{width:100%;border-collapse:collapse;font-size:12px}}
 th{{text-align:left;padding:8px 10px;color:var(--dim);font-weight:500;border-bottom:2px solid var(--th-border);background:var(--th-bg);position:sticky;top:0}}
@@ -167,8 +165,8 @@ tr:hover td{{background:var(--row-hover)}}
 .badge{{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;border:1px solid}}
 .badge.ok{{background:var(--badge-ok-bg);color:var(--green);border-color:var(--badge-ok-border)}}
 .badge.err{{background:var(--badge-err-bg);color:var(--red);border-color:var(--badge-err-border)}}
-.badge.pending{{background:var(--badge-pending-bg);color:var(--yellow);border-color:var(--badge-pending-border)}}
-.progress{{height:6px;background:var(--progress-bg);border-radius:3px;margin-top:6px;overflow:hidden}}
+</style>
+<style>
 .progress-bar{{height:100%;border-radius:3px;transition:width .5s}}
 .footer{{text-align:center;color:var(--dim);font-size:11px;padding:20px 0;border-top:2px solid var(--footer-border);margin-top:10px}}
 a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline}}
@@ -196,7 +194,6 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 .mon-svc:last-child{{border-bottom:none}}
 .badge.up{{background:var(--badge-ok-bg);color:var(--green);border-color:var(--badge-ok-border)}}
 .badge.down{{background:var(--badge-err-bg);color:var(--red);border-color:var(--badge-err-border)}}
-.gauge-wrap{{position:relative;width:100px;height:100px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -289,20 +286,12 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="card">
   <h3>🔥 Top sessions</h3>
   <table><thead><tr><th>Titre</th><th>Source</th><th>Msg</th><th>Tokens</th><th>Coût</th></tr></thead>
-  <tbody>{"".join(f'<tr><td style="max-width:280px;overflow:hidden;text-overflow:ellipsis">{esc((r.get("title") or ("#" + r.get("id","")[:10]))[:45])}</td><td><span class="badge ok">{esc(r.get("source","?"))}</span></td><td>{r.get("messages",0)}</td><td>{(r.get("tokens_in",0)+r.get("tokens_out",0))//1000}k</td><td>${r.get("cost",0):.4f}</td></tr>' for r in recent[:8])}</tbody></table>
+  <tbody>{"".join(f'<tr><td style="max-width:280px;overflow:hidden;text-overflow:ellipsis">{esc((r.get("title") or ("#" + r.get("id","")[:10]))[:45])}</td><td><span class="badge ok">{esc(r.get("source","?"))}</span></td><td>{r.get("messages",0)}</td><td>{(r.get("tokens_in",0)+r.get("tokens_out",0))//1000}k</td><td>${r.get("cost",0):.4f}</td></tr>' for r in [x for x in recent if x.get("source") != "cron"][:8])}</tbody></table>
 </div>
 </div>
 
 <!-- Infra -->
 <div id="tab-infra" class="panel">
-<div class="kpi-grid">
-  <div class="kpi-card"><div class="icon">🌐</div><div class="val" style="color:var(--green)">RUN</div><div class="lbl">Gateway</div></div>
-  <div class="kpi-card"><div class="icon">🦙</div><div class="val" style="color:var(--green)">OK</div><div class="lbl">Ollama</div></div>
-  <div class="kpi-card"><div class="icon">🔧</div><div class="val" style="color:var(--green)">OK</div><div class="lbl">Workflows</div></div>
-  <div class="kpi-card"><div class="icon">🖥️</div><div class="val">{i.get('machines',[{}])[0].get('cpu_load','?') if i.get('machines') else '?'}</div><div class="lbl">CPU</div></div>
-  <div class="kpi-card"><div class="icon">💾</div><div class="val">{i.get('machines',[{}])[0].get('ram_pct','?') if i.get('machines') else '?'}%</div><div class="lbl">RAM</div></div>
-  <div class="kpi-card"><div class="icon">💿</div><div class="val">{i.get('machines',[{}])[0].get('disk_pct','?') if i.get('machines') else '?'}%</div><div class="lbl">Disque</div></div>
-</div>
 
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
@@ -334,22 +323,40 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 
 <!-- BAVI -->
 <div id="tab-bavi" class="panel">
+<div class="tabs" style="margin-bottom:12px">
+  <div class="tab active" onclick="switchBAVITab(this,'bavi-bureaux')" style="font-size:12px;padding:4px 12px">🏛️ Bureaux</div>
+  <div class="tab" onclick="switchBAVITab(this,'bavi-bots')" style="font-size:12px;padding:4px 12px">🤖 Bots</div>
+  <div class="tab" onclick="switchBAVITab(this,'bavi-voyages')" style="font-size:12px;padding:4px 12px">🗺️ Voyages</div>
+  <div class="tab" onclick="switchBAVITab(this,'bavi-modeles')" style="font-size:12px;padding:4px 12px">📊 Coûts</div>
+</div>
 
-<h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">🤖 Bots Telegram — Activité par profil</h3>
+<div id="bavi-bureaux" class="bavi-panel" style="display:block">
+<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">🏛️ Bureaux BAVI — {len(ba.get("bureaux",[]))} bureaux · {sum(b.get("analyses",0) for b in ba.get("bureaux",[]))} analyses</h3>
+<div class="bots-grid">
+{"".join(f'<div class="bot-card"><div class="name">{esc(b.get("name",""))}</div><div style="color:var(--dim);font-size:11px">{esc(b.get("role",""))}</div><div style="font-size:10px;color:var(--accent);margin-top:4px">{b.get("analyses",0)} analyses</div></div>' for b in ba.get("bureaux",[]))}
+</div>
+</div>
+
+<div id="bavi-bots" class="bavi-panel" style="display:none">
+<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">🤖 Bots Telegram</h3>
 <div class="bots-grid">
 {"".join(f'<div class="bot-card"><div class="name">{esc(bot.get("name",""))} {"🟢" if bot.get("online") else "🔴"}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:6px;font-size:11px"><span style="color:var(--dim)">Sessions</span><span style="text-align:right;font-weight:600">{bot.get("sessions",0)}</span><span style="color:var(--dim)">Messages</span><span style="text-align:right;font-weight:600">{bot.get("messages",0):,}</span><span style="color:var(--dim)">Tokens</span><span style="text-align:right;font-weight:600">{(bot.get("tokens_in",0)+bot.get("tokens_out",0))//1000}k</span><span style="color:var(--dim)">Coût</span><span style="text-align:right;font-weight:600">${bot.get("cost",0):.2f}</span><span style="color:var(--dim)">Modèle</span><span style="text-align:right;font-weight:600;font-size:10px">{norm_model(bot.get("last_model",""))}</span><span style="color:var(--dim)">Dernière</span><span style="text-align:right;font-weight:600;font-size:10px">{(bot.get("last_session","") or "")[:16]}</span></div></div>' for bot in bo.get("bots",[]))}
 </div>
 
-<h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">🗺️ Voyages</h3>
+<div id="bavi-voyages" class="bavi-panel" style="display:none">
+<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">🗺️ Voyages</h3>
 <div class="bots-grid">
 {"".join(f'<div class="bot-card"><div class="name">{esc(v.get("name",""))}</div></div>' for v in ba.get("voyages",{}).get("roadbooks",[]))}
 </div>
+</div>
 
-<h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">📊 Modèles & Coûts</h3>
+<div id="bavi-modeles" class="bavi-panel" style="display:none">
+<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">📊 Modèles & Coûts</h3>
 <div class="card" style="padding:10px">
 <table>
 <thead><tr><th>Modèle</th><th>Sessions</th><th>Tokens</th><th>Coût</th></tr></thead>
 <tbody>{"".join(f'<tr><td>{m}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(by_model.items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
+</div>
 </div>
 </div>
 
