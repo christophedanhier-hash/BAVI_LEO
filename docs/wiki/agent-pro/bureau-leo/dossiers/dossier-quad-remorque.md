@@ -2,7 +2,7 @@
 date: 2026-07-11
 bureau: bureau-leo
 auteur: LEO
-version: v1c
+version: v1d
 modele: deepseek-v4-flash
 tags: [quad, atv, can-am, outlander, remorque, saris, attelage, camping-car, tofdan]
 statut: finalise
@@ -24,7 +24,8 @@ type: dossier
 | **Concessionnaire quad** | **KD QUAD RACING** — Rue Trigaux 246, 7170 Manage | ✅ |
 | **Offre n°** | **11307** du 11/07/2026 | ✅ |
 | **Remorque** | **Saris GO 306 154 180 2000 2** — Fourgon DE freiné | ✅ **Devis reçu 6 883 €** |
-| **Revendeur remorque** | **L'Oasis des Loisirs** — Chaussée de Gembloux 69, 5140 Tongrinne | 🔜 À visiter |
+| **Revendeur remorque** | **L'Oasis des Loisirs** — Chaussée de Gembloux 69, 5140 Tongrinne | 🔜 À commander |
+| **Attelage CC** (Coenen) | Attelage + câblage 13 pôles — **1 950 € TVAC** | ✅ **Devis reçu — Docs envoyés** |
 | **Attelage quad** | Boule d'attelage + faisceau 7 broches (chez KD Quad) | 🔜 À chiffrer |
 | **Roue jockey motorisée** | **Al-Ko Premium Electric** (1 000 kg, ~350 €) | 🔜 À commander |
 | **Treuil** | Électrique 12V 2 000-3 500 lbs + rampe aluminium | 🔜 À prévoir |
@@ -85,34 +86,41 @@ type: dossier
 - 📧 info@attacheremorquecoenen.be
 - 🕐 Lun-Jeu 8h-12h / 13h-18h — Ven 8h-12h / 13h-17h
 - 🌐 https://attacheremorquecoenen.eu/
+- 🔔 Fermeture annuelle : **10 août → 23 août**
 
-### 3.2 Pour le Roller Team 287 TL
+### 3.2 Devis reçu — 13/07/2026
 
-Coenen équipe toutes les marques, dont :
-- **ROLLER-TEAM** ✅ (dans leur catalogue motorhome)
-- **FORD** ✅ (châssis du Transit)
+| Poste | Montant |
+|:------|:-------:|
+| **Attache remorque motorhome** (Ford Roller Team Performance 287 TL) | |
+| Montage complet | |
+| Câblage 13 pôles avec boîtier électronique | |
+| **💰 Prix TVAC** | **1 950,00 €** |
+| ⏳ Délai rdv | ~3 semaines |
+| 🔐 Devis valable | **15 jours** |
+| ⚠️ Diminution charge utile | -55 kg |
 
-Le Roller Team 287 TL est basé sur un **Ford Transit** — Coenen a l'expérience pour ce type de montage.
+### 3.3 Documents envoyés (13/07)
 
-### 3.3 Types d'attelage proposés
+| Document | Fichier |
+|:---------|:--------|
+| ✅ Certificat de conformité (COC) | `cc_ford.pdf` |
+| ✅ Scan documents véhicule | `numérisé_20260711-1208.pdf` |
+| ✅ 3 photos châssis arrière | `PXL_20260713_*.jpg` |
 
-| Option | Type | Description | Idéal pour |
-|:------:|:-----|:------------|:-----------|
-| 1 | **Fixe** | Rotule toujours visible. Le plus économique. | Utilitaire |
-| 2 | **Escamotable horizontale** | Rotule se démonte, base visible. | Budget intermédiaire |
-| **3** 🏆 | **Escamotable invisible** | **Rotule démontable, base invisible.** | **🏆 Camping-car** |
-| 4 | Monobloc | Pour utilitaire et 4x4 | Utilitaire lourd |
+### 3.4 Vérifications
 
-> 🏆 **Option 3 — Escamotable invisible** : recommandée pour le Roller Team. La rotule se démonte et la base devient invisible — esthétique et pratique quand tu ne tractes pas la remorque.
+| Point | Statut |
+|:------|:------:|
+| **Traction 2 000 kg autorisée** (COC §18.3) | ✅ OK |
+| **COC du véhicule fourni** | ✅ Envoyé |
+| **Photos châssis arrière fournies** | ✅ Envoyées |
+| **Passage contrôle technique obligatoire** | 🔜 Après montage |
 
-### 3.4 Prix estimé
+### 3.5 Disponibilités
 
-| Poste | Estimation |
-|:------|:----------:|
-| **Attelage motorhome** (escamotable invisible) + montage | **~600-1 000 €** |
-| **Faisceau électrique 13 broches** (norme camping-car) | Inclus ou ~100 € |
-
-> 💡 Demander un **devis gratuit** via le site Coenen ou par téléphone. Préciser : **Roller Team Nimbus 287 TL — Ford Transit — 202?** (année).
+- ✅ Semaine du **4 août** (avant fermeture)
+- ✅ Après le **23 août** (réouverture)
 
 ---
 
@@ -284,16 +292,16 @@ Le Saris GO 306 154 180 2000 2 est équipé de série d'anneaux d'arrimage TÜV 
 | Poste | Montant | Notes |
 |:------|:-------:|:------|
 | **Quad** (Can-Am Outlander 700 MAX XT) | **15 142 € TTC** | Devis n°11307 KD Quad Racing |
-| **Attelage CC** (Coenen — escamotable invisible) | **~800 €** | Corroy-le-Château (Gembloux) |
+| **Attelage CC** (Coenen) | **1 950 € TVAC** | Devis reçu 13/07/2026 — Serge Coenen |
 | **Attelage quad** (boule + faisceau) | **~200-400 €** | À chiffrer chez KD Quad |
-| **Remorque** (Saris GO 306 154 180 2000 2) | **6 826 € TTC** | Configurateur Saris — L'Oasis des Loisirs |
+| **Remorque** (Saris GO 306 154 180 2000 2) | **6 883 € TTC** | Offre L'Oasis des Loisirs 12/07/2026 |
 | **Roue jockey motorisée** (Al-Ko Premium Electric) | **~350 €** | Amazon, Norauto |
 | **Treuil électrique + rampe + sangles** | **~300-500 €** | Amazon |
 | **Immatriculation quad** | **~500 €** | Plaques BE, carte grise |
 | **Assurance quad** (RC + vol) | **~300-500 €/an** | |
 | **Immatriculation remorque** | **~100 €** | Plaques BE |
 | | | |
-| **💰 Total investissement** | **~24 300 €** | Quad + attelages + remorque + équipements |
+| **💰 Total investissement** | **~25 700 €** | Quad + attelages + remorque + équipements |
 
 ---
 
@@ -331,13 +339,14 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 
 | # | Action | Qui | Priorité |
 |:-:|:-------|:---:|:--------:|
-| 1 | Aller chez **L'Oasis des Loisirs** (Tongrinne) — voir/configurer le **Saris GO 306 154 180 2000 2** | Christophe | 🥇 |
-| 2 | Demander **devis attelage Coenen** (Corroy-le-Château) — Roller Team 287 TL, escamotable invisible | Christophe | 🥇 |
-| 3 | Vérifier **attelage quad** chez KD Quad (prix, montage, faisceau) | Christophe | 🥇 |
-| 4 | Commander **Al-Ko Premium Electric** (roue jockey motorisée) | Christophe | 🥈 |
-| 5 | Commander **treuil 12V + rampe aluminium** (Amazon/Norauto) | Christophe | 🥈 |
-| 6 | Immatriculation quad + assurance | Christophe | 🥈 |
-| 7 | Immatriculation remorque | Christophe | 🥉 |
+| 1 | Commander **remorque Saris** à L'Oasis des Loisirs (Tongrinne) | Christophe | 🥇 |
+| 2 | ✅ **Devis Coenen reçu** (1 950 €) — **DOCS ENVOYÉS** (COC + photos) | ✅ **Fait** | ✅ |
+| 3 | Confirmer **rdv Coenen** (avant 10 août ou après 23 août) | Christophe | 🥇 |
+| 4 | Vérifier **attelage quad** chez KD Quad (prix, montage, faisceau) | Christophe | 🥇 |
+| 5 | Commander **Al-Ko Premium Electric** (roue jockey motorisée) | Christophe | 🥈 |
+| 6 | Commander **treuil 12V + rampe aluminium** (Amazon/Norauto) | Christophe | 🥈 |
+| 7 | Immatriculation quad + assurance | Christophe | 🥈 |
+| 8 | Immatriculation remorque | Christophe | 🥉 |
 
 ---
 
@@ -348,6 +357,8 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 | **v1** | **11/07/2026** | **LEO** | **Version initiale — Quad Outlander 700 XT + Saris GO 306 154 180** |
 | **v1a** | **11/07/2026** | **LEO** | **+ Debon Cargo 1300 (5 890€), Roadster 300 (6 690€), Roadster 500 (7 590€) — options béquilles** |
 | **v1b** | **11/07/2026** | **LEO** | **+ Attelage Coenen (Corroy-le-Château) — Roller Team 287 TL — escamotable invisible** |
+| **v1c** | **12/07/2026** | **LEO** | **+ Prix réel Saris 6 883€ (offre PDF 12/07) + détail options** |
+| **v1d** | **13/07/2026** | **LEO** | **+ Devis Coenen réel 1 950€ + docs envoyés + budget recalculé ~25 700€ + tâches mises à jour** |
 
 > 🔙 **Documents archivés :**
 > - `archive/etude-marche-quad-biplace-v7.md` — Historique étude quad
