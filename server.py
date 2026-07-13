@@ -522,6 +522,7 @@ async def cameras_page(request: Request):
             </div>
             <div class="cam-actions">
                 <button onclick="wakeCam('{cam["id"]}','{wake_id}')" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">📡 Wake</button>
+                <button onclick="refreshCam('{cam["id"]}')" style="background:var(--green);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">🔄 Refresh</button>
                 <span id="status-{cam["id"]}" style="font-size:10px;color:var(--dim);margin-left:8px">🕐 {last}</span>
             </div>
         </div>'''
@@ -581,6 +582,17 @@ function wakeCam(camId, wakeId) {{
     }}).catch(function() {{
         status.textContent = '❌ Erreur';
     }});
+}}
+
+function refreshCam(camId) {{
+    var img = document.getElementById('img-'+camId);
+    var status = document.getElementById('status-'+camId);
+    if (img) {{
+        img.src = '/cameras/snapshot/' + camId + '?' + Date.now();
+        status.textContent = '🔄 Rafraîchi';
+        status.style.color = 'var(--green)';
+        setTimeout(function() {{ status.textContent = '🕐 ' + new Date().toLocaleTimeString(); }}, 2000);
+    }}
 }}
 
 setInterval(function() {{

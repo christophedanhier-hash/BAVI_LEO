@@ -216,31 +216,9 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
   <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">⚙️ Crons</div>
   <div class="tab" onclick="switchTab(this,'tab-cameras');loadCameras()">📷 Caméras</div>
-  <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergy()">⚡ Énergie</div>
   <div class="tab" onclick="switchTab(this,'tab-viessmann');loadViessmann()">🔥 Viessmann</div>
   <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🔧 Workflows</div>
 </div>
-<!-- Energy bar -->
-<div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
-  <span id="energy-pwr" style="color:var(--dim)">⚡ Chargement...</span>
-  <span id="energy-net" style="color:var(--dim)"></span>
-  <span id="energy-imp" style="color:var(--dim);font-size:11px"></span>
-  </div>
-  <script>
-  (function(){{
-  var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
-  fetch('/api/energy?token='+token).then(function(r){{return r.json()}}).then(function(d){{
-    if(d.error) return;
-    var pwr = d.power_now_w;
-    var color = pwr < 0 ? 'var(--green)' : 'var(--red)';
-    document.getElementById('energy-pwr').innerHTML = '⚡ '+Math.abs(pwr)+'W '+(pwr < 0 ? '☀️ Injection' : '🔴 Conso');
-    document.getElementById('energy-pwr').style.color = color;
-    document.getElementById('energy-net').innerHTML = 'Net: '+(d.net_kwh>0?'+':'')+d.net_kwh.toFixed(0)+' kWh';
-    document.getElementById('energy-net').style.color = d.net_kwh > 0 ? 'var(--green)' : 'var(--red)';
-    document.getElementById('energy-imp').innerHTML = 'Import: '+d.import_total_kwh.toFixed(0)+' kWh | Export: '+d.export_total_kwh.toFixed(0)+' kWh';
-  }}).catch(function(){{}});
-  }})();
-  </script>
 
 <!-- Synthèse -->
 <div id="tab-syn" class="panel active">
@@ -396,13 +374,6 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <!-- Caméras -->
 <div id="tab-cameras" class="panel" style="padding:0;background:transparent;border:none">
   <div id="cameras-content" style="width:100%;min-height:500px;display:flex;align-items:center;justify-content:center">
-    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
-  </div>
-</div>
-
-<!-- Énergie -->
-<div id="tab-energy" class="panel" style="padding:0;background:transparent;border:none">
-  <div id="energy-content" style="width:100%;min-height:500px;display:flex;align-items:center;justify-content:center">
     <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
   </div>
 </div>
