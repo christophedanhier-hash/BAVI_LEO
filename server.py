@@ -102,17 +102,17 @@ async def api_cron_run(job_id: str, request: Request):
 @app.post("/api/crons/{job_id}/toggle")
 async def api_cron_toggle(job_id: str, request: Request):
     if not check_token(request): raise HTTPException(401)
+    HERMES = "/home/tofdan/.hermes/venv/bin/hermes"
     try:
-        # Get current state
-        r = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", "list", "--profile", "leo-copilot", "--json"],
-                          capture_output=True, text=True, timeout=10,
-                          env={**os.environ, "HOME": "/home/tofdan"})
-        jobs = json.loads(r.stdout) if r.stdout else []
-        job = next((j for j in jobs if j.get("job_id") == job_id), None)
+        if not CRON_JOBS_FILE.exists():
+            return {"ok": False, "error": "No jobs file"}
+        data = json.loads(CRON_JOBS_FILE.read_text())
+        jobs = data if isinstance(data, list) else data.get("jobs", [])
+        job = next((j for j in jobs if j.get("id") == job_id or j.get("job_id") == job_id), None)
         if not job:
             return {"ok": False, "error": "Job not found"}
-        action = "pause" if job.get("enabled") else "resume"
-        r2 = subprocess.run(["/home/tofdan/.hermes/venv/bin/hermes", "cron", action, "--profile", "leo-copilot", job_id],
+        action = "pause" if job.get("enabled", True) else "resume"
+        r2 = subprocess.run([HERMES, "cron", action, "--profile", "leo-copilot", job_id],
                            capture_output=True, text=True, timeout=15,
                            env={**os.environ, "HOME": "/home/tofdan"})
         return {"ok": r2.returncode == 0, "action": action, "output": r2.stdout[:500]}
