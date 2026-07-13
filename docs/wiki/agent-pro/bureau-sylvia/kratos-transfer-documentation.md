@@ -2,7 +2,7 @@
 date: 2026-07-13
 bureau: bureau-sylvia
 auteur: LEO 🤖
-version: v1
+version: v2
 modele: deepseek-v4-flash
 tags: [sylvia, kratos, transfert, documentation, voyage, hermes, bot-telegram]
 statut: finalise
@@ -15,7 +15,7 @@ type: documentation-transfert
 > 
 > **De :** BAVI LEO — Bureau Sylvia  
 > **À :** Kratos — Plateforme Vermès de John  
-> **Date :** 13/07/2026 | **Version :** v1
+> **Date :** 13/07/2026 | **Version :** v2
 
 ---
 
@@ -66,34 +66,32 @@ type: documentation-transfert
 
 ### 2.1 Vue d'ensemble
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        UTILISATEURS                              │
-│                    📱 Telegram (groupe)                          │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      HERMES AGENT                                │
-│  ┌─────────────┐  ┌──────────────┐  ┌────────────────────────┐ │
-│  │ Profil Hermes│  │   Skill      │  │  Mémoire & Sessions   │ │
-│  │ (isolé)      │  │  bureau-     │  │  (contexte utilisateur)│ │
-│  │              │  │  kratos      │  └────────────────────────┘ │
-│  │ Modèle:      │  │  (source     │                               │
-│  │ DeepSeek     │  │   de vérité) │                               │
-│  │ Flash        │  └──────────────┘                               │
-│  └─────────────┘                                                   │
-└─────────────────────────────────────────────────────────────────┘
-                         │
-         ┌───────────────┼───────────────┐
-         ▼               ▼               ▼
-┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-│  Google Drive │ │  GitHub       │ │  Gmail API    │
-│  (brouillons, │ │  (wiki de     │ │  (envoi       │
-│   sources)    │ │   voyages)    │ │   confirm.)   │
-└──────────────┘ │  GitHub Pages │ └──────────────┘
-                 │  (site web)   │
-                 └──────────────┘
+```mermaid
+graph TB
+    subgraph "📱 Utilisateurs"
+        T[Telegram Groupe]
+    end
+
+    subgraph "🧠 Hermes Agent (Kratos)"
+        PRO[Profil isolé kratos]
+        SK[Skill bureau-kratos]
+        MEM[Mémoire & Sessions]
+    end
+
+    subgraph "🗄️ Stockage & Services"
+        DRV[Google Drive]
+        GH[GitHub - voyages-wiki]
+        WP[GitHub Pages]
+        GM[Gmail API]
+    end
+
+    T <-->|messages| PRO
+    PRO -->|charge| SK
+    PRO -->|sauvegarde| MEM
+    SK -->|fichiers| DRV
+    SK -->|commit+push| GH
+    GH -->|déploiement| WP
+    SK -->|envoi emails| GM
 ```
 
 ### 2.2 Stack technique
@@ -111,17 +109,16 @@ type: documentation-transfert
 
 ### 2.3 Flux de communication
 
-```
-Utilisateur ──message Telegram──▶ Sylvia (bot Hermes)
-                                    │
-                                    ├──▶ Recherche web (campings, horaires, itinéraires)
-                                    ├──▶ Génération roadbook .md
-                                    ├──▶ Génération carte Folium .html
-                                    ├──▶ Génération PDF
-                                    ├──▶ Commit + Push vers GitHub
-                                    └──▶ Email de confirmation (si réservation)
-
-Sylvia ──réponse Telegram──▶ Utilisateur
+```mermaid
+flowchart LR
+    U[👤 Utilisateur] -->|message Telegram| S[🧠 Kratos]
+    S -->|recherche web| W[🌐 Sites]
+    S -->|génère| R[📄 Roadbook .md]
+    S -->|génère| C[🗺️ Carte Folium .html]
+    S -->|génère| P[📑 PDF]
+    S -->|commit + push| G[🐙 GitHub]
+    S -->|email| E[📧 Confirmation]
+    S -->|réponse| U
 ```
 
 ---
@@ -136,8 +133,8 @@ Le cœur du système est un fichier **SKILL.md** unique qui contient toute la lo
 📁 bureau-kratos/
 ├── 📄 SKILL.md              ← La source de vérité (tout le code métier)
 ├── 📁 references/
-│   ├── bavi-leo-pricing.md  ← Modèle économique
-│   └── cost-transparency-rules.md ← Règles de transparence
+│   ├── pricing.md           ← Modèle économique
+│   └── cost-rules.md        ← Règles de transparence
 └── 📁 templates/
     └── (templates optionnels)
 ```
@@ -153,7 +150,7 @@ Le skill doit impérativement contenir ces sections :
 | **Rôle** | Définition : "Tu es Kratos, l'agent de voyage" |
 | **Contexte multi-utilisateurs** | Gestion du groupe Telegram, identification des personnes |
 | **Pièges à éviter** | Tous les lessons learned (format table) |
-| **Production du roadbook** | Workflows A à L (voir section 5) |
+| **Production du roadbook** | Workflows A à L |
 | **Format de sortie** | Dates belges, distances routières |
 | **Périmètre** | Ce que Kratos fait / ne fait pas |
 | **Tarification** | Abonnements et forfaits |
@@ -181,15 +178,8 @@ Le skill doit impérativement contenir ces sections :
 
 ### 4.1 Hermes Agent — Profil isolé
 
-Créer un profil Hermes dédié au bot voyage :
-
 ```bash
-# Créer le profil
 hermes profile create kratos
-
-# Configurer le modèle
-# → DeepSeek V4 Flash (ou équivalent selon budget)
-# → Profil isolé : le bot voyage ne doit pas interférer avec l'agent principal de John
 ```
 
 **Pourquoi un profil isolé ?**
@@ -201,32 +191,33 @@ hermes profile create kratos
 
 ```bash
 # Via @BotFather sur Telegram
-1. /newbot → KratosTravelBot → @kratos_travel_bot (exemple)
-2. Récupérer le token API
-3. Configurer dans Hermes :
-   hermes config set telegram.bot_token "VOTRE_TOKEN"
+/newbot → KratosTravelBot → @kratos_travel_bot
+# Puis configurer dans Hermes :
+hermes config set telegram.bot_token "VOTRE_TOKEN"
 ```
 
 ### 4.3 GitHub Repository — Wiki de voyages
 
 ```bash
-# Créer un repo public
 gh repo create voyages-wiki --public --description "Wiki des voyages Kratos"
+```
 
-# Structure du repo
+Structure du repo :
+
+```
 voyages-wiki/
 ├── docs/
-│   ├── index.md              ← Page d'accueil du wiki
-│   ├── guide-utilisateur.md  ← Guide pour les amis
+│   ├── index.md
+│   ├── guide-utilisateur.md
 │   ├── italie-2026/
-│   │   ├── index.md          ← Roadbook complet
-│   │   ├── carte.html        ← Carte interactive
+│   │   ├── index.md
+│   │   ├── carte.html
 │   │   └── roadbook-italie.pdf
 │   └── espagne-2026/
 │       ├── index.md
 │       ├── carte.html
 │       └── roadbook-espagne.pdf
-├── mkdocs.yml                ← Configuration GitHub Pages
+├── mkdocs.yml
 └── README.md
 ```
 
@@ -251,8 +242,7 @@ nav:
 
 ### 4.5 Google Drive
 
-```bash
-# Créer un dossier dans Google Drive
+```
 GDrive/Kratos/
 ├── brouillons/
 └── references/
@@ -261,21 +251,9 @@ GDrive/Kratos/
 ### 4.6 Gmail API
 
 ```python
-# Configuration OAuth Gmail pour envoi d'emails
-# 1. Aller sur Google Cloud Console
-# 2. Créer un projet
-# 3. Activer Gmail API
-# 4. Créer un OAuth 2.0 Client ID (type: Desktop app)
-# 5. Télécharger client_secret.json
-# 6. Authentifier et générer le token
-
-# Script d'authentification (à exécuter une fois)
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
-
 flow = InstalledAppFlow.from_client_secrets_file("client_secret.json", SCOPES)
 creds = flow.run_local_server(port=0)
 
@@ -289,21 +267,15 @@ with open("kratos_token.json", "w") as f:
 
 ### 5.1 Processus complet d'un roadbook
 
-```
-① CADRAGE
-  ↓ Comprendre la demande, les dates, les personnes
-② VALIDATION ORDRE
-  ↓ Valider l'ordre des étapes AVANT d'écrire
-③ PRODUCTION
-  ↓ Recherche hébergements, itinéraires, POIs
-④ GÉNÉRATION CARTE
-  ↓ Folium carte interactive (.html)
-⑤ GÉNÉRATION PDF
-  ↓ WeasyPrint markdown → PDF
-⑥ ARCHIVAGE
-  ↓ Commit + Push vers GitHub
-⑦ FACTURATION
-  ↓ Mise à jour des KPIs et coûts
+```mermaid
+flowchart TD
+    C[① Cadrage] -->|valider ordre| V[② Validation ordre]
+    V -->|recherche| P[③ Production]
+    P -->|Folium| CARTE[④ Carte OSM]
+    P -->|WeasyPrint| PDF[⑤ Génération PDF]
+    CARTE -->|commit+push| ARC[⑥ Archivage]
+    PDF --> ARC
+    ARC -->|màj KPIs| FAC[⑦ Facturation]
 ```
 
 ### 5.2 Workflow A — Génération de la carte OSM (Folium)
@@ -311,30 +283,19 @@ with open("kratos_token.json", "w") as f:
 ```python
 import folium
 
-# Carte centrée sur la zone du voyage
 m = folium.Map(location=[LATITUDE_CENTRE, LONGITUDE_CENTRE],
                zoom_start=6, control_scale=True)
 
-# Marqueurs pour chaque étape
 for i, (lat, lon, name, description) in enumerate(route):
     color = "green" if i == 0 or i == len(route)-1 else "blue"
     icon_type = "flag" if i == 0 or i == len(route)-1 else "info-sign"
-    
-    folium.Marker(
-        [lat, lon],
-        popup=f"<b>{name}</b><br>{description}",
-        tooltip=name,
-        icon=folium.Icon(color=color, icon=icon_type)
-    ).add_to(m)
+    folium.Marker([lat, lon], popup=f"<b>{name}</b><br>{description}",
+                  tooltip=name, icon=folium.Icon(color=color, icon=icon_type)).add_to(m)
 
-# Lignes de route entre les étapes
 for i in range(len(route) - 1):
-    folium.PolyLine(
-        [[route[i][0], route[i][1]], [route[i+1][0], route[i+1][1]]],
-        color="red", weight=3, opacity=0.6
-    ).add_to(m)
+    folium.PolyLine([[route[i][0], route[i][1]], [route[i+1][0], route[i+1][1]]],
+                    color="red", weight=3, opacity=0.6).add_to(m)
 
-# Sauvegarde
 m.save("docs/{voyage}/carte.html")
 ```
 
@@ -345,34 +306,26 @@ import markdown, re, os
 from weasyprint import HTML
 
 voyage = "nom-du-voyage"
-titre = "🇮🇹 Voyage Exemple — Planning"
+titre = "Voyage Exemple — Planning"
 
 with open(f"docs/{voyage}/index.md") as f:
     md = f.read()
 
-# 1. Supprimer la section coûts (interne — pas pour le PDF)
+# Supprimer la section coûts (interne)
 md = re.sub(r'## 💳 Coût du service .+?\n(> .*?\n)?', '', md)
 
-# 2. Remplacer iframes par un lien cliquable
-md = re.sub(
-    r'<iframe[^>]*></iframe>',
-    f'> 🗺️ **Carte interactive** : [Ouvrir la carte](https://john.github.io/voyages-wiki/{voyage}/carte.html)',
-    md
-)
+# Remplacer iframes par un lien
+md = re.sub(r'<iframe[^>]*></iframe>',
+    f'> 🗺️ **Carte interactive** : [Ouvrir](https://john.github.io/voyages-wiki/{voyage}/carte.html)', md)
 
-# 3. Convertir markdown → HTML
-html_body = markdown.markdown(md, extensions=[
-    'markdown.extensions.tables',
-    'markdown.extensions.fenced_code'
-])
+html_body = markdown.markdown(md, extensions=['tables', 'fenced_code'])
 
 html = f'''<!DOCTYPE html>
 <html><head><meta charset="utf-8">
 <style>
     @page {{ size: A4; margin: 2cm 1.5cm; }}
     body {{ font-family: "DejaVu Sans", Arial, sans-serif; font-size: 10pt; }}
-    h1 {{ color: #1a5276; border-bottom: 3px solid #e63946; padding-bottom: 6px; }}
-    h2 {{ color: #1a5276; border-bottom: 2px solid #457b9d; }}
+    h1 {{ color: #1a5276; border-bottom: 3px solid #e63946; }}
     table {{ width: 100%; border-collapse: collapse; }}
     th {{ background: #1a5276; color: white; padding: 5px; }}
     td {{ padding: 4px; border: 1px solid #ccc; }}
@@ -386,17 +339,15 @@ HTML(string=html).write_pdf(f"docs/{voyage}/roadbook-{voyage}.pdf")
 
 ### 5.4 Workflow C — Checklist de fin
 
-Après CHAQUE création ou modification, vérifier :
-
-```
-□ Le compteur Sessions a-t-il été incrémenté ?
-□ Les KPIs (messages, appels, outils, tokens) sont-ils mis à jour ?
-□ La page d'accueil du wiki est-elle à jour ?
-□ Tous les fichiers sont-ils commités ET pushés ?
-□ Le PDF a-t-il été regénéré si l'itinéraire a changé ?
-□ La carte a-t-elle été regénérée si l'itinéraire a changé ?
-□ Le site web est-il accessible en ligne ? (~1 min GitHub Pages)
-```
+| # | Vérification |
+|:-:|:-------------|
+| 1 | Le compteur Sessions a-t-il été incrémenté ? |
+| 2 | Les KPIs (messages, appels, outils, tokens) sont-ils mis à jour ? |
+| 3 | La page d'accueil du wiki est-elle à jour ? |
+| 4 | Tous les fichiers sont-ils commités ET pushés ? |
+| 5 | Le PDF a-t-il été regénéré si l'itinéraire a changé ? |
+| 6 | La carte a-t-elle été regénérée si l'itinéraire a changé ? |
+| 7 | Le site web est-il accessible en ligne ? (~1 min GitHub Pages) |
 
 ### 5.5 Workflow D — Gestion multi-utilisateurs
 
@@ -423,7 +374,6 @@ Après CHAQUE création ou modification, vérifier :
 
 ### 6.2 Tableau de coûts dans chaque roadbook
 
-```markdown
 | Métrique | Valeur |
 |:---------|------:|
 | **Sessions** | X |
@@ -435,7 +385,6 @@ Après CHAQUE création ou modification, vérifier :
 | **Coût LLM réel** | **~X,XX €** |
 | **Frais de service** | **X,XX €** forfait |
 | **Total facturé** | **X,XX €** |
-```
 
 ---
 
@@ -445,8 +394,8 @@ Après CHAQUE création ou modification, vérifier :
 
 | Fichier | Contenu |
 |:--------|:--------|
-| `references/bavi-leo-pricing.md` | Modèle économique, tarifs, calcul des coûts |
-| `references/cost-transparency-rules.md` | Règles de transparence des coûts |
+| `references/pricing.md` | Modèle économique, tarifs, calcul des coûts |
+| `references/cost-rules.md` | Règles de transparence des coûts |
 | `references/gmail-booking-extraction.md` | Extraction d'emails de réservation |
 | `references/gmail-booking-send.md` | Envoi d'emails de confirmation |
 | `references/modeles-compacts-cc.md` | Conseils achat camping-car |
@@ -458,7 +407,7 @@ Après CHAQUE création ou modification, vérifier :
 - [Hermes Agent Documentation](https://hermes-agent.nousresearch.com/docs)
 - [Folium Documentation](https://python-visualization.github.io/folium/)
 - [WeasyPrint Documentation](https://doc.courtbouillon.org/weasyprint/stable/)
-- [GitHub Pages Documentation](https://pages.github.com/)
+- [GitHub Pages](https://pages.github.com/)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 - [Google Gmail API](https://developers.google.com/gmail/api)
 - [Telegram Bot API](https://core.telegram.org/bots/api)
@@ -471,41 +420,41 @@ Après CHAQUE création ou modification, vérifier :
 
 | Piège | Solution |
 |:------|:---------|
-| **Icône folium 'home' ne s'affiche pas** | Utiliser `icon="flag"` ou pas d'icône personnalisée (défaut `info-sign`) |
-| **Marqueurs folium superposés** | NE PAS placer 2 marqueurs aux mêmes coordonnées |
-| **Distances vol d'oiseau inutiles** | TOUJOURS utiliser distances routières (OSRM) + temps estimé + 1h buffer |
-| **iframes dans le PDF** | WeasyPrint ne supporte pas les iframes → remplacer par lien cliquable |
-| **Dates belges ambiguës** | "2/9" = 2 septembre, pas 2 juillet. Toujours clarifier si jour ≤ 12 |
-| **Tables markdown désalignées** | TOUJOURS commencer les lignes par `| ` (pipe simple), jamais `||` |
-| **PDF sans titre de document** | Ajouter manuellement un `<h1>` dans le template HTML du PDF |
-| **Section coûts dans le PDF** | TOUJOURS supprimer la section coûts avant génération PDF |
-| **OAuth Gmail — redirect_uri mismatch** | Configurer `redirect_uri=http://localhost` (sans port) dans les scripts |
+| Icône folium 'home' ne s'affiche pas | Utiliser `icon="flag"` ou pas d'icône personnalisée |
+| Marqueurs folium superposés | NE PAS placer 2 marqueurs aux mêmes coordonnées |
+| Distances vol d'oiseau inutiles | TOUJOURS distances routières (OSRM) + 1h buffer |
+| iframes dans le PDF | WeasyPrint ne supporte pas → remplacer par lien |
+| Dates belges ambiguës | "2/9" = 2 septembre, pas 2 juillet |
+| Tables markdown désalignées | TOUJOURS commencer par `|` simple, jamais `||` |
+| PDF sans titre de document | Ajouter un `<h1>` dans le template HTML |
+| Section coûts dans le PDF | TOUJOURS la supprimer avant génération |
+| OAuth redirect_uri mismatch | Configurer `redirect_uri=http://localhost` (sans port) |
 
 ### 8.2 Pièges métier
 
 | Piège | Solution |
 |:------|:---------|
-| **Ordre des étapes non validé** | Valider l'ordre AVANT d'écrire le roadbook |
-| **Modifications non pushées** | Commit + push immédiat après chaque modification |
-| **Mise à jour partielle** | Après modif : vérifier TOUTES les sections du roadbook, pas seulement l'évidente |
-| **Oubli des coûts (transparence)** | Mettre à jour les 4 fichiers : roadbook, docs/index.md, carte, PDF |
-| **Nom du bot mal orthographié** | Le bot voyage = Kratos (pas Krotos, ni un autre nom) |
-| **Confusion entre voyageurs** | Toujours identifier qui parle avant d'agir |
-| **Réservation préexistante oubliée** | En phase cadrage : demander "Avez-vous déjà des réservations ?" |
-| **Spot nuit mal choisi** | Demander "Plutôt camping avec sanitaires ou parking gratuit ?" |
-| **Campings absents d'OSM** | Géocoder l'adresse postale ou la ville à défaut |
-| **Historique des lieux demandé** | Ajouter une section `> 📜 **Un peu d'histoire :** ...` pour chaque étape |
+| Ordre des étapes non validé | Valider l'ordre AVANT d'écrire le roadbook |
+| Modifications non pushées | Commit + push immédiat après chaque modif |
+| Mise à jour partielle | Vérifier TOUTES les sections, pas seulement l'évidente |
+| Oubli des coûts (transparence) | Mettre à jour les 4 fichiers : roadbook, index, carte, PDF |
+| Nom du bot mal orthographié | Le bot voyage = Kratos |
+| Confusion entre voyageurs | Toujours identifier qui parle |
+| Réservation préexistante oubliée | Demander "Avez-vous déjà des réservations ?" |
+| Spot nuit mal choisi | Demander "Camping ou parking gratuit ?" |
+| Campings absents d'OSM | Géocoder l'adresse postale ou la ville |
+| Historique des lieux demandé | Ajouter `> 📜 **Un peu d'histoire :** ...` par étape |
 
 ### 8.3 Règles d'or pour Kratos
 
-1. **Un roadbook = 3 fichiers** : `index.md` + `carte.html` + `roadbook-xxx.pdf`. Jamais un sans les autres.
-2. **Toute modification = commit + push immédiat**. Ne jamais laisser du travail non publié.
-3. **Transparence des coûts** : chaque ami doit pouvoir voir d'un coup d'œil le volume de travail.
-4. **Avant d'écrire, valider l'ordre**. Demander confirmation à l'utilisateur.
-5. **Dates belges (jj/mm/aaaa)**. Si ambiguïté, demander le mois.
-6. **Distances routières réelles** (OSRM ou équivalent), jamais Haversine (vol d'oiseau).
-7. **1h de buffer** sur toutes les estimations de temps de route.
-8. **Le SKILL.md est la source de vérité**. Tout est dedans. Le maintenir à jour.
+1. **Un roadbook = 3 fichiers** : `index.md` + `carte.html` + `roadbook-xxx.pdf`
+2. **Toute modification = commit + push immédiat**
+3. **Transparence des coûts** pour chaque ami
+4. **Avant d'écrire, valider l'ordre** des étapes
+5. **Dates belges (jj/mm/aaaa)** — si ambiguïté, demander le mois
+6. **Distances routières réelles** (OSRM), jamais Haversine
+7. **1h de buffer** sur toutes les estimations de temps de route
+8. **Le SKILL.md est la source de vérité** — le maintenir à jour
 
 ---
 
@@ -513,51 +462,51 @@ Après CHAQUE création ou modification, vérifier :
 
 ### Phase 1 — Création du compte et infrastructure
 
-```
-□ Créer un compte GitHub pour John (ou utiliser existant)
-□ Créer un profil Hermes dédié : `kratos`
-□ Configurer le modèle LLM (DeepSeek Flash ou équivalent)
-□ Créer le bot Telegram via @BotFather
-□ Configurer le token Telegram dans Hermes
-□ Créer le repo GitHub `voyages-wiki`
-□ Configurer GitHub Pages (mkdocs.yml + GitHub Actions)
-□ Créer le dossier Google Drive `Kratos/`
-□ Configurer Gmail API (client OAuth + token)
-```
+| # | Action |
+|:-:|:-------|
+| 1 | Créer un compte GitHub pour John (ou utiliser existant) |
+| 2 | Créer un profil Hermes dédié : `kratos` |
+| 3 | Configurer le modèle LLM (DeepSeek Flash ou équivalent) |
+| 4 | Créer le bot Telegram via @BotFather |
+| 5 | Configurer le token Telegram dans Hermes |
+| 6 | Créer le repo GitHub `voyages-wiki` |
+| 7 | Configurer GitHub Pages (mkdocs.yml + GitHub Actions) |
+| 8 | Créer le dossier Google Drive `Kratos/` |
+| 9 | Configurer Gmail API (client OAuth + token) |
 
 ### Phase 2 — Installation du skill
 
-```
-□ Transférer le SKILL.md adapté dans ~/.hermes/skills/kratos/
-□ Créer les fichiers de référence (references/)
-□ Créer les templates (templates/)
-□ Adapter les variables (nom du bot, URLs, etc.)
-□ Tester avec un premier roadbook factice
-```
+| # | Action |
+|:-:|:-------|
+| 1 | Transférer le SKILL.md adapté dans `~/.hermes/skills/kratos/` |
+| 2 | Créer les fichiers de référence (`references/`) |
+| 3 | Créer les templates (`templates/`) |
+| 4 | Adapter les variables (nom du bot, URLs, etc.) |
+| 5 | Tester avec un premier roadbook factice |
 
 ### Phase 3 — Tests et validation
 
-```
-□ Test de chat simple (question rapide)
-□ Test de production d'un roadbook complet
-□ Test de génération de carte Folium
-□ Test de génération PDF
-□ Test de commit + push GitHub
-□ Test de déploiement GitHub Pages
-□ Test de la carte interactive en ligne
-□ Test multi-utilisateurs (2 personnes dans le groupe)
-□ Test de facturation (affichage des coûts)
-```
+| # | Test |
+|:-:|:-----|
+| 1 | Chat simple (question rapide) |
+| 2 | Production d'un roadbook complet |
+| 3 | Génération de carte Folium |
+| 4 | Génération PDF |
+| 5 | Commit + push GitHub |
+| 6 | Déploiement GitHub Pages |
+| 7 | Carte interactive en ligne |
+| 8 | Multi-utilisateurs (2 personnes dans le groupe) |
+| 9 | Facturation (affichage des coûts) |
 
 ### Phase 4 — Mise en production
 
-```
-□ Présenter Kratos aux amis de John dans le groupe Telegram
-□ Distribuer le guide utilisateur
-□ Lancer le 1er vrai voyage
-□ Vérifier les coûts réels après 1 mois
-□ Ajuster les tarifs si nécessaire
-```
+| # | Action |
+|:-:|:-------|
+| 1 | Présenter Kratos aux amis de John dans le groupe Telegram |
+| 2 | Distribuer le guide utilisateur |
+| 3 | Lancer le 1er vrai voyage |
+| 4 | Vérifier les coûts réels après 1 mois |
+| 5 | Ajuster les tarifs si nécessaire |
 
 ---
 
@@ -626,7 +575,8 @@ Bienvenue sur le wiki des voyages organisés par **Kratos** !
 
 | Version | Date | Auteur | Description |
 |:--------|:-----|:-------|:------------|
-| **v1** | **13/07/2026** | **LEO** 🤖 | **Document de transfert complet — Sylvia → Kratos** |
+| v1 | 13/07/2026 | LEO 🤖 | Version initiale |
+| **v2** | **13/07/2026** | **LEO** 🤖 | **Ajout diagrammes Mermaid, correction tableaux (pipes simples), formatage** |
 
 ---
 
