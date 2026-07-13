@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 13/07/2026 à 18:00*
+*Généré automatiquement le 13/07/2026 à 19:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -26,7 +26,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
-| 13/07/2026 | 🧭 Bureau Sylvia — Voyages | v1 | [🧭 Transfert de Compétence — Bot Voyage Sylvia → Kratos](bureau-sylvia/kratos-transfer-documentation/) | `sylvia` `kratos` `transfert` `documentation` `voyage` `hermes` `bot-telegram` | ✅ Finalisé | [📥](bureau-sylvia/kratos-transfer-documentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) |
+| 13/07/2026 | 🧭 Bureau Sylvia — Voyages | v2 | [🧭 Transfert de Compétence — Bot Voyage Sylvia → Kratos](bureau-sylvia/kratos-transfer-documentation/) | `sylvia` `kratos` `transfert` `documentation` `voyage` `hermes` `bot-telegram` | ✅ Finalisé | [📥](bureau-sylvia/kratos-transfer-documentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) |
 | 13/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🛡️ Rapport ISO/IEC 27001:2022 — Spécifications & Standards](bureau-robert/rapport-iso27001-20260713/) | `iso27001` `securite` `isms` `certification` `norme` `conformite` `strategie-it` | ✅ Finalisé | [📥](bureau-robert/rapport-iso27001-20260713/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/rapport-iso27001-20260713.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/rapport-iso27001-20260713.md) |
 | 13/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v2 | [🛡️ ANNEXE A — ISO/IEC 27001:2022](bureau-robert/annexe-a-iso27001-controles-complets/) | `iso27001` `securite` `isms` `certification` `norme` `conformite` `annexe-a` `controles` | ✅ Finalisé | [📥](bureau-robert/annexe-a-iso27001-controles-complets/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) |
 | 11/07/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v1 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/presentation/) | `virginie` `presentation` `role` `sante` `medical` | 🔄 En préparation | [📥](bureau-virginie/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) |
@@ -65,4 +65,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 13/07/2026 18:00*
+*Index consolidé généré par `agent-pro-index.py` — 13/07/2026 19:00*
