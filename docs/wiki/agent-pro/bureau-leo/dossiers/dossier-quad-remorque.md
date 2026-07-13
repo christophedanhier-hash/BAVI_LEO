@@ -344,6 +344,9 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 | 3 | Confirmer **rdv Coenen** (avant 10 août ou après 23 août) | Christophe | 🥇 |
 | 4 | Vérifier **attelage quad** chez KD Quad (prix, montage, faisceau) | Christophe | 🥇 |
 | 5 | Contacter **Yannick (Gerardy)** pour assurance quad + remorque | ✅ **Contact pris** | ✅ |
+| | 📞 **Yannick Van Melsen** — Gerardy Assurances | | |
+| | 📱 **GSM : +32 495 30 46 92** — 🏢 Fixe : +32 87 68 01 60 | | |
+| | 📧 yannick.vanmelsen@gerardy.be — 📍 Rue de la Station 45, 4880 Aubel | | |
 | 6 | Commander **Al-Ko Premium Electric** (roue jockey motorisée) | Christophe | 🥈 |
 | 7 | Commander **treuil 12V + rampe aluminium** (Amazon/Norauto) | Christophe | 🥈 |
 | 8 | Immatriculation quad + assurance | Christophe | 🥈 |
