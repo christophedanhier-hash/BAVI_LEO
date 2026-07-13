@@ -119,6 +119,56 @@ async def api_cron_toggle(job_id: str, request: Request):
     except Exception as e:
         return {"ok": False, "error": str(e)}
 
+@app.get("/api/crons/{job_id}/history")
+async def api_crons_history(job_id: str, request: Request):
+    if not check_token(request): raise HTTPException(401)
+    # Déduire le nom du script depuis jobs.json
+    job = None
+    try:
+        if not CRON_JOBS_FILE.exists():
+            return {"history": []}
+        data = json.loads(CRON_JOBS_FILE.read_text())
+        jobs = data if isinstance(data, list) else data.get("jobs", [])
+        job = next((j for j in jobs if j.get("id") == job_id or j.get("job_id") == job_id), None)
+        script_name = ""
+        if job:
+            script_name = (job.get("script") or "").replace("-wrapper.sh", "").replace(".sh", "").replace(".py", "")
+    except:
+        script_name = ""
+    
+    history = []
+    status_dir = Path("/home/tofdan/.hermes/cron/output")
+    if status_dir.exists():
+        for f in sorted(status_dir.glob("*.status.json"), key=lambda x: x.stat().st_mtime, reverse=True):
+            try:
+                d = json.loads(f.read_text())
+                # Filtrer par nom de script si dispo
+                if script_name and script_name not in d.get("name", "") and script_name not in f.stem:
+                    continue
+                history.append({
+                    "script": d.get("name", f.stem),
+                    "timestamp": d.get("timestamp", ""),
+                    "exit_code": d.get("exit_code", -1),
+                    "duration_sec": d.get("duration_sec", 0),
+                    "stderr_lines": d.get("stderr_lines", 0),
+                    "stdout_last": d.get("stdout_last", "")[:200]
+                })
+            except:
+                pass
+    
+    # Fallback: si pas de .status.json, utiliser last_run du jobs.json
+    if not history and job:
+        history.append({
+            "script": job.get("name", ""),
+            "timestamp": job.get("last_run_at", ""),
+            "exit_code": 0 if job.get("last_status") == "ok" else 1,
+            "duration_sec": 0,
+            "stderr_lines": 0,
+            "stdout_last": job.get("last_status", "?")
+        })
+    
+    return {"history": history[:20]}
+
 # ── API: Métriques ──
 @app.get("/api/machine-kpi")
 async def api_machine_kpi(request: Request):

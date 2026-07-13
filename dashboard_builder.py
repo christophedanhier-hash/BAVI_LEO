@@ -209,38 +209,16 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 {"".join(f'<div class="alert-bar {"warn" if a.get("severity")=="warning" else ""}">{"🔴" if a.get("severity")=="critical" else "🟡"} {esc(a["message"])}</div>' for a in alerts[:3])}
 
 <div class="tabs">
-  <div class="tab active" onclick="switchTab(this,'tab-syn')">🏠 Synthèse</div>
-  <div class="tab" onclick="switchTab(this,'tab-ana')">📊 Analyse</div>
-  <div class="tab" onclick="switchTab(this,'tab-infra')">⚙️ Infra</div>
+  <div class="tab active" onclick="switchTab(this,'tab-syn')">📊 Synthèse</div>
+  <div class="tab" onclick="switchTab(this,'tab-ana')">📈 Analyse</div>
+  <div class="tab" onclick="switchTab(this,'tab-infra');loadCrons()">🕐 Crons</div>
+  <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🐍 Workflows</div>
   <div class="tab" onclick="switchTab(this,'tab-monitoring')">🖥️ Monitoring</div>
-  <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
-  <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">⚙️ Crons</div>
   <div class="tab" onclick="switchTab(this,'tab-cameras');loadCameras()">📷 Caméras</div>
   <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergy()">⚡ Énergie</div>
   <div class="tab" onclick="switchTab(this,'tab-viessmann');loadViessmann()">🔥 Viessmann</div>
-  <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🔧 Workflows</div>
+  <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
 </div>
-<!-- Energy bar -->
-<div id="energy-bar" style="display:flex;justify-content:center;align-items:center;gap:16px;padding:8px 16px;background:var(--card);border:2px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600">
-  <span id="energy-pwr" style="color:var(--dim)">⚡ Chargement...</span>
-  <span id="energy-net" style="color:var(--dim)"></span>
-  <span id="energy-imp" style="color:var(--dim);font-size:11px"></span>
-  </div>
-  <script>
-  (function(){{
-  var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
-  fetch('/api/energy?token='+token).then(function(r){{return r.json()}}).then(function(d){{
-    if(d.error) return;
-    var pwr = d.power_now_w;
-    var color = pwr < 0 ? 'var(--green)' : 'var(--red)';
-    document.getElementById('energy-pwr').innerHTML = '⚡ '+Math.abs(pwr)+'W '+(pwr < 0 ? '☀️ Injection' : '🔴 Conso');
-    document.getElementById('energy-pwr').style.color = color;
-    document.getElementById('energy-net').innerHTML = 'Net: '+(d.net_kwh>0?'+':'')+d.net_kwh.toFixed(0)+' kWh';
-    document.getElementById('energy-net').style.color = d.net_kwh > 0 ? 'var(--green)' : 'var(--red)';
-    document.getElementById('energy-imp').innerHTML = 'Import: '+d.import_total_kwh.toFixed(0)+' kWh | Export: '+d.export_total_kwh.toFixed(0)+' kWh';
-  }}).catch(function(){{}});
-  }})();
-  </script>
 
 <!-- Synthèse -->
 <div id="tab-syn" class="panel active">
@@ -327,16 +305,11 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 </div>
 
 <div class="card">
-  <h3>⏱️ Crons — {cr_ok} OK · {cr_err} erreur · {cr_total} total</h3>
-  <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px">
-    <span style="background:var(--badge-ok-bg);color:var(--green);padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;border:1px solid var(--badge-ok-border)">✅ {cr_ok} OK</span>
-    <span style="background:var(--badge-err-bg);color:var(--red);padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;border:1px solid var(--badge-err-border)">❌ {cr_err} erreur</span>
-    <span style="background:var(--card);color:var(--dim);padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;border:1px solid var(--border)">⏸️ {c.get("status_paused",0)} en pause</span>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <h3 style="margin:0;border:none;padding:0">⏱️ Crons — {cr_ok} OK · {cr_err} erreur · {cr_total} total</h3>
+    <button onclick="loadCrons()" style="background:var(--accent);border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px">🔄 Rafraîchir</button>
   </div>
-  <table>
-    <thead><tr><th></th><th>Cron</th><th>Horaire</th><th>Statut</th></tr></thead>
-    <tbody>{"".join(f'<tr><td style="width:14px"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:{j["status"]=="ok" and "var(--green)" or j["status"]=="error" and "var(--red)" or "var(--yellow)"}"></span></td><td style="font-weight:500">{esc(j["name"][:45])}</td><td style="color:var(--dim);font-size:11px">{esc(j.get("schedule_human",""))}</td><td><span class="badge {j["status"]}" style="font-size:10px">{j["status"]}</span></td></tr>' for j in c.get("jobs",[]))}</tbody>
-  </table>
+  <div id="cron-list-container"><span style="color:var(--dim)">Cliquez sur 🔄 pour charger...</span></div>
 </div>
 </div>
 
@@ -356,24 +329,11 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 </div>
 
 <!-- Gestion Crons -->
-<div id="tab-crons-mgmt" class="panel">
-<div class="card">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-    <h3 style="margin:0;border:none;padding:0">⏱️ Gestion des Crons</h3>
-    <button onclick="loadCrons()" style="background:var(--accent);border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px">🔄 Rafraîchir</button>
-  </div>
-  <table>
-    <thead><tr><th></th><th>Nom</th><th>Horaire</th><th>Statut</th><th style="text-align:right">Actions</th></tr></thead>
-    <tbody id="crons-mgmt-body"><tr><td colspan="5" style="text-align:center;padding:20px">Chargement...</td></tr></tbody>
-  </table>
-</div>
+
 </div>
 
 <!-- BAVI -->
 <div id="tab-bavi" class="panel">
-<div class="bureaux-grid">
-{"".join(f'<div class="bureau-card"><div class="name" style="color:{b.get("color","#58a6ff")}">{esc(b.get("name",""))}</div><div class="desc">{esc(b.get("role",""))}</div><div style="font-size:20px;font-weight:700;color:{b.get("color","#58a6ff")};opacity:.4;position:absolute;top:8px;right:12px">{b.get("analyses",0)}</div></div>' for b in ba.get("bureaux",[]))}
-</div>
 
 <h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">🤖 Bots Telegram — Activité par profil</h3>
 <div class="bots-grid">
