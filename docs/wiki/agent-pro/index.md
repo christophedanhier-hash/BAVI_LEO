@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 13/07/2026 à 13:00*
+*Généré automatiquement le 13/07/2026 à 14:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 4 | 09/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 6 | 13/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 11/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 3 | 11/07/2026 |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 33 analyse(s) sur l'ensemble des bureaux.**
+**Total : 35 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -26,6 +26,8 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
+| 13/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🛡️ Rapport ISO/IEC 27001:2022 — Spécifications & Standards](bureau-robert/rapport-iso27001-20260713/) | `iso27001` `securite` `isms` `certification` `norme` `conformite` `strategie-it` | ✅ Finalisé | [📥](bureau-robert/rapport-iso27001-20260713/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/rapport-iso27001-20260713.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/rapport-iso27001-20260713.md) |
+| 13/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v2 | [🛡️ ANNEXE A — ISO/IEC 27001:2022](bureau-robert/annexe-a-iso27001-controles-complets/) | `iso27001` `securite` `isms` `certification` `norme` `conformite` `annexe-a` `controles` | ✅ Finalisé | [📥](bureau-robert/annexe-a-iso27001-controles-complets/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) |
 | 11/07/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v1 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/presentation/) | `virginie` `presentation` `role` `sante` `medical` | 🔄 En préparation | [📥](bureau-virginie/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) |
 | 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/presentation/) | `leo` `presentation` `role` `chat` `dossiers` | ✅ Actif | [📥](bureau-leo/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) |
 | 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1c | [🛡️ LEO Runbook — Procédures d'urgence](bureau-leo/runbook-leo/) | `leo` `runbook` `urgence` `procedure` `infra` `michel` | ✅ Actif | [📥](bureau-leo/runbook-leo/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) |
@@ -62,4 +64,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 13/07/2026 13:00*
+*Index consolidé généré par `agent-pro-index.py` — 13/07/2026 14:00*
