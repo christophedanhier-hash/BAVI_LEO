@@ -114,7 +114,7 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js?v=1783972723"></script>
+<script src="/leo/monitoring.js?v=1783973876"></script>
 </script>
 <style>
 :root {{
@@ -309,6 +309,83 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 </div>
 <div class="card chart-box" style="height:280px"><h3>📈 Historique (30 points — 5 minutes)</h3><canvas id="mon-history-chart"></canvas></div>
 </div>
+<script>
+(function(){{
+  var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+  var _historyChart = null;
+  
+  function drawGauge(canvasId, value, max, color) {{
+    var canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+    var cx = w/2, cy = h/2, r = Math.min(w,h)/2 - 8;
+    ctx.clearRect(0, 0, w, h);
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.strokeStyle='#21262d'; ctx.lineWidth=10; ctx.stroke();
+    var angle = (Math.min(value,max)/max) * Math.PI*1.5 - Math.PI*0.75;
+    ctx.beginPath(); ctx.arc(cx, cy, r, -Math.PI*0.75, angle); ctx.strokeStyle=color; ctx.lineWidth=10; ctx.lineCap='round'; ctx.stroke();
+    ctx.fillStyle='#c9d1d9'; ctx.font='bold 18px -apple-system,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(Math.round(value)+'%', cx, cy);
+  }}
+  
+  function loadMon() {{
+    fetch('/api/machine-kpi?token='+token).then(function(r){{return r.json()}}).then(function(d){{
+      var cpu = d.cpu || {{}}, ram = d.ram || {{}}, disk = (d.disk||'').split(' ');
+      var cpuPct = Math.min((parseFloat(cpu.load1)||0)*100/(cpu.cores||8), 100);
+      drawGauge('mon-cpu-gauge', cpuPct, 100, cpuPct>80?'#f85149':cpuPct>50?'#d29922':'#3fb950');
+      var el = document.getElementById('mon-cpu-val'); if(el) el.textContent = String(cpu.load1||'?').substring(0,4);
+      el = document.getElementById('mon-cpu-detail'); if(el) el.textContent = (cpu.load5||'?')+' / '+(cpu.load15||'?')+' · '+(cpu.cores||8)+' cores '+(cpu.temp||'')+'°C';
+      
+      var ramUsed = parseFloat((ram.used||'0').replace(',','.').replace(/[^0-9.]/g,''))||0;
+      var ramTotal = parseFloat((ram.total||'1').replace(/[^0-9.]/g,''))||1;
+      drawGauge('mon-ram-gauge', Math.min(ramUsed/ramTotal*100,100), 100, ramUsed/ramTotal>0.8?'#f85149':ramUsed/ramTotal>0.5?'#d29922':'#3fb950');
+      el = document.getElementById('mon-ram-val'); if(el) el.textContent = ram.used||'?';
+      el = document.getElementById('mon-ram-detail'); if(el) el.textContent = 'total '+(ram.total||'?')+' · avail '+(ram.avail||'?');
+      
+      var diskPct = parseFloat(disk[3]||0);
+      drawGauge('mon-disk-gauge', diskPct, 100, diskPct>80?'#f85149':diskPct>50?'#d29922':'#3fb950');
+      el = document.getElementById('mon-disk-val'); if(el) el.textContent = disk[1]||'?';
+      el = document.getElementById('mon-disk-detail'); if(el) el.textContent = 'total '+(disk[0]||'?')+' · libre '+(disk[2]||'?');
+      
+      el = document.getElementById('mon-temp-val'); if(el) el.textContent = (cpu.temp||'--')+'°C';
+      
+      var svc = d.services || {{}};
+      el = document.getElementById('mon-services');
+      if(el) {{
+        var h = '';
+        Object.keys(svc).forEach(function(n){{ var s=svc[n]; h+='<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);font-size:12px"><span>'+n+'</span><span style="color:'+(s==='UP'?'#3fb950':s==='DOWN'?'#f85149':'#d29922')+';font-weight:600">'+s+'</span></div>'; }});
+        el.innerHTML = h || '<span style="color:var(--dim)">Aucun</span>';
+      }}
+      
+      el = document.getElementById('mon-updated'); if(el) el.textContent = 'MàJ: '+new Date().toLocaleTimeString('fr-BE');
+      
+      var hist = d.history || [];
+      if(hist.length) {{
+        var labels = hist.slice(-30).map(function(p){{return p.ts}});
+        var values = hist.slice(-30).map(function(p){{return p.cpu}});
+        var ctx = document.getElementById('mon-history-chart');
+        if(ctx) {{
+          if(_historyChart) _historyChart.destroy();
+          _historyChart = new Chart(ctx, {{
+            type:'line', data:{{labels:labels,datasets:[{{data:values,borderColor:'#58a6ff',backgroundColor:'rgba(88,166,255,.1)',fill:true,tension:.3,pointRadius:0}}]}},
+            options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}}}},scales:{{x:{{ticks:{{color:'#484f58',font:{{size:9}},maxTicksLimit:15}},grid:{{color:'#21262d'}}}},y:{{min:0,ticks:{{color:'#484f58',font:{{size:9}}}},grid:{{color:'#21262d'}}}}}}}}
+          }});
+        }}
+      }}
+    }}).catch(function(e){{ console.error('monitoring:',e); }});
+  }}
+  
+  // Charger quand l'onglet devient visible
+  var origSwitchTab = window.switchTab;
+  window.switchTab = function(el, id) {{
+    if(origSwitchTab) origSwitchTab(el, id);
+    if(id === 'tab-monitoring') {{ loadMon(); setInterval(loadMon, 10000); }}
+  }};
+  
+  // Charger aussi au premier affichage si déjà visible
+  if(document.getElementById('tab-monitoring').classList.contains('active')) loadMon();
+}})();
+</script>
 
 <!-- Gestion Crons -->
 <div id="tab-crons-mgmt" class="panel">
