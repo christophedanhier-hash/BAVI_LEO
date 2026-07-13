@@ -114,7 +114,8 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js?v={{version}}"></script>
+<script src="/leo/monitoring.js?v=1783972723"></script>
+</script>
 <style>
 :root {{
   --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
@@ -157,6 +158,7 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 .card{{background:var(--card);border:2px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px;box-shadow:0 1px 4px var(--shadow)}}
 .card h3{{font-size:13px;color:var(--text);text-transform:uppercase;letter-spacing:.3px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--border)}}
 .grid-2{{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}}
+@media(max-width:768px){{.grid-2{{grid-template-columns:1fr}}}}
 .chart-box canvas{{max-height:220px;width:100%}}
 table{{width:100%;border-collapse:collapse;font-size:12px}}
 th{{text-align:left;padding:8px 10px;color:var(--dim);font-weight:500;border-bottom:2px solid var(--th-border);background:var(--th-bg);position:sticky;top:0}}
@@ -165,8 +167,8 @@ tr:hover td{{background:var(--row-hover)}}
 .badge{{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;border:1px solid}}
 .badge.ok{{background:var(--badge-ok-bg);color:var(--green);border-color:var(--badge-ok-border)}}
 .badge.err{{background:var(--badge-err-bg);color:var(--red);border-color:var(--badge-err-border)}}
-</style>
-<style>
+.badge.pending{{background:var(--badge-pending-bg);color:var(--yellow);border-color:var(--badge-pending-border)}}
+.progress{{height:6px;background:var(--progress-bg);border-radius:3px;margin-top:6px;overflow:hidden}}
 .progress-bar{{height:100%;border-radius:3px;transition:width .5s}}
 .footer{{text-align:center;color:var(--dim);font-size:11px;padding:20px 0;border-top:2px solid var(--footer-border);margin-top:10px}}
 a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline}}
@@ -194,6 +196,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 .mon-svc:last-child{{border-bottom:none}}
 .badge.up{{background:var(--badge-ok-bg);color:var(--green);border-color:var(--badge-ok-border)}}
 .badge.down{{background:var(--badge-err-bg);color:var(--red);border-color:var(--badge-err-border)}}
+.gauge-wrap{{position:relative;width:100px;height:100px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -208,12 +211,12 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="tabs">
   <div class="tab active" onclick="switchTab(this,'tab-syn')">📊 Synthèse</div>
   <div class="tab" onclick="switchTab(this,'tab-ana')">📈 Analyse</div>
-  <div class="tab" onclick="switchTab(this,'tab-infra');loadCrons()">🕐 Crons</div>
+  <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">🕐 Crons</div>
   <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🐍 Workflows</div>
   <div class="tab" onclick="switchTab(this,'tab-monitoring')">🖥️ Monitoring</div>
-  <div class="tab" onclick="switchTab(this,'tab-cameras');loadCameras()">📷 Caméras</div>
-  <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergy()">⚡ Énergie</div>
-  <div class="tab" onclick="switchTab(this,'tab-viessmann');loadViessmann()">🔥 Viessmann</div>
+  <div class="tab" onclick="switchTab(this,'tab-cameras')">📷 Caméras</div>
+  <div class="tab" onclick="switchTab(this,'tab-energy')">⚡ Énergie</div>
+  <div class="tab" onclick="switchTab(this,'tab-viessmann')">🔥 Viessmann</div>
   <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
 </div>
 
@@ -286,20 +289,10 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="card">
   <h3>🔥 Top sessions</h3>
   <table><thead><tr><th>Titre</th><th>Source</th><th>Msg</th><th>Tokens</th><th>Coût</th></tr></thead>
-  <tbody>{"".join(f'<tr><td style="max-width:280px;overflow:hidden;text-overflow:ellipsis">{esc((r.get("title") or ("#" + r.get("id","")[:10]))[:45])}</td><td><span class="badge ok">{esc(r.get("source","?"))}</span></td><td>{r.get("messages",0)}</td><td>{(r.get("tokens_in",0)+r.get("tokens_out",0))//1000}k</td><td>${r.get("cost",0):.4f}</td></tr>' for r in [x for x in recent if x.get("source") != "cron"][:8])}</tbody></table>
+  <tbody>{"".join(f'<tr><td style="max-width:280px;overflow:hidden;text-overflow:ellipsis">{esc((r.get("title") or ("#" + r.get("id","")[:10]))[:45])}</td><td><span class="badge ok">{esc(r.get("source","?"))}</span></td><td>{r.get("messages",0)}</td><td>{(r.get("tokens_in",0)+r.get("tokens_out",0))//1000}k</td><td>${r.get("cost",0):.4f}</td></tr>' for r in recent[:8])}</tbody></table>
 </div>
 </div>
 
-<!-- Infra -->
-<div id="tab-infra" class="panel">
-
-<div class="card">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-    <h3 style="margin:0;border:none;padding:0">⏱️ Crons — {cr_ok} OK · {cr_err} erreur · {cr_total} total</h3>
-    <button onclick="loadCrons()" style="background:var(--accent);border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px">🔄 Rafraîchir</button>
-  </div>
-  <div id="cron-list-container"><span style="color:var(--dim)">Cliquez sur 🔄 pour charger...</span></div>
-</div>
 </div>
 
 <!-- Monitoring -->
@@ -318,67 +311,153 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 </div>
 
 <!-- Gestion Crons -->
-
+<div id="tab-crons-mgmt" class="panel">
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <h3 style="margin:0;border:none;padding:0">⏱️ Gestion des Crons</h3>
+    <button onclick="loadCrons()" style="background:var(--accent);border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px">🔄 Rafraîchir</button>
+  </div>
+  <table>
+    <thead><tr><th></th><th>Nom</th><th>Horaire</th><th>Statut</th><th style="text-align:right">Actions</th></tr></thead>
+    <tbody id="crons-mgmt-body"><tr><td colspan="5" style="text-align:center;padding:20px">Chargement...</td></tr></tbody>
+  </table>
+</div>
 </div>
 
 <!-- BAVI -->
 <div id="tab-bavi" class="panel">
-<div class="tabs" style="margin-bottom:12px">
-  <div class="tab active" onclick="switchBAVITab(this,'bavi-bureaux')" style="font-size:12px;padding:4px 12px">🏛️ Bureaux</div>
-  <div class="tab" onclick="switchBAVITab(this,'bavi-bots')" style="font-size:12px;padding:4px 12px">🤖 Bots</div>
-  <div class="tab" onclick="switchBAVITab(this,'bavi-voyages')" style="font-size:12px;padding:4px 12px">🗺️ Voyages</div>
-  <div class="tab" onclick="switchBAVITab(this,'bavi-modeles')" style="font-size:12px;padding:4px 12px">📊 Coûts</div>
+<div class="bureaux-grid">
+{"".join(f'<div class="bureau-card"><div class="name" style="color:{b.get("color","#58a6ff")}">{esc(b.get("name",""))}</div><div class="desc">{esc(b.get("role",""))}</div><div style="font-size:20px;font-weight:700;color:{b.get("color","#58a6ff")};opacity:.4;position:absolute;top:8px;right:12px">{b.get("analyses",0)}</div></div>' for b in ba.get("bureaux",[]))}
 </div>
 
-<div id="bavi-bureaux" class="bavi-panel" style="display:block">
-<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">🏛️ Bureaux BAVI — {len(ba.get("bureaux",[]))} bureaux · {sum(b.get("analyses",0) for b in ba.get("bureaux",[]))} analyses</h3>
-<div class="bots-grid">
-{"".join(f'<div class="bot-card"><div class="name">{esc(b.get("name",""))}</div><div style="color:var(--dim);font-size:11px">{esc(b.get("role",""))}</div><div style="font-size:10px;color:var(--accent);margin-top:4px">{b.get("analyses",0)} analyses</div></div>' for b in ba.get("bureaux",[]))}
-</div>
-</div>
-
-<div id="bavi-bots" class="bavi-panel" style="display:none">
-<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">🤖 Bots Telegram</h3>
+<h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">🤖 Bots Telegram — Activité par profil</h3>
 <div class="bots-grid">
 {"".join(f'<div class="bot-card"><div class="name">{esc(bot.get("name",""))} {"🟢" if bot.get("online") else "🔴"}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:6px;font-size:11px"><span style="color:var(--dim)">Sessions</span><span style="text-align:right;font-weight:600">{bot.get("sessions",0)}</span><span style="color:var(--dim)">Messages</span><span style="text-align:right;font-weight:600">{bot.get("messages",0):,}</span><span style="color:var(--dim)">Tokens</span><span style="text-align:right;font-weight:600">{(bot.get("tokens_in",0)+bot.get("tokens_out",0))//1000}k</span><span style="color:var(--dim)">Coût</span><span style="text-align:right;font-weight:600">${bot.get("cost",0):.2f}</span><span style="color:var(--dim)">Modèle</span><span style="text-align:right;font-weight:600;font-size:10px">{norm_model(bot.get("last_model",""))}</span><span style="color:var(--dim)">Dernière</span><span style="text-align:right;font-weight:600;font-size:10px">{(bot.get("last_session","") or "")[:16]}</span></div></div>' for bot in bo.get("bots",[]))}
 </div>
 
-<div id="bavi-voyages" class="bavi-panel" style="display:none">
-<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">🗺️ Voyages</h3>
+<h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">🗺️ Voyages</h3>
 <div class="bots-grid">
 {"".join(f'<div class="bot-card"><div class="name">{esc(v.get("name",""))}</div></div>' for v in ba.get("voyages",{}).get("roadbooks",[]))}
 </div>
-</div>
 
-<div id="bavi-modeles" class="bavi-panel" style="display:none">
-<h3 style="margin:0 0 8px;font-size:14px;color:#8b949e">📊 Modèles & Coûts</h3>
+<h3 style="margin:16px 0 8px;font-size:14px;color:#8b949e">📊 Modèles & Coûts</h3>
 <div class="card" style="padding:10px">
 <table>
 <thead><tr><th>Modèle</th><th>Sessions</th><th>Tokens</th><th>Coût</th></tr></thead>
 <tbody>{"".join(f'<tr><td>{m}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(by_model.items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
 </div>
 </div>
-</div>
 
 <!-- Caméras -->
 <div id="tab-cameras" class="panel" style="padding:0;background:transparent;border:none">
-  <div id="cameras-content" style="width:100%;min-height:500px;display:flex;align-items:center;justify-content:center">
-    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
-  </div>
+  <iframe id="cameras-frame" src="" style="width:100%;height:600px;border:none;border-radius:8px"></iframe>
+  <script>
+  (function(){{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    document.getElementById('cameras-frame').src = '/cameras?embed=1&token=' + token;
+  }})();
+  </script>
 </div>
 
 <!-- Énergie -->
-<div id="tab-energy" class="panel" style="padding:0;background:transparent;border:none">
-  <div id="energy-content" style="width:100%;min-height:500px;display:flex;align-items:center;justify-content:center">
-    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
+<div id="tab-energy" class="panel" style="padding:16px">
+  <div class="kpi-grid" style="margin-bottom:12px">
+    <div class="kpi-card"><div class="icon">⚡</div><div class="val" id="e-pwr" style="font-size:28px">—</div><div class="lbl" id="e-pwr-sub">Chargement...</div></div>
+    <div class="kpi-card"><div class="icon">📊</div><div class="val" id="e-net" style="font-size:22px">—</div><div class="lbl">Net</div></div>
+    <div class="kpi-card"><div class="icon">📥</div><div class="val" id="e-imp" style="font-size:22px;color:#58a6ff">—</div><div class="lbl">Import</div></div>
+    <div class="kpi-card"><div class="icon">📤</div><div class="val" id="e-exp" style="font-size:22px;color:#3fb950">—</div><div class="lbl">Export</div></div>
+    <div class="kpi-card"><div class="icon">🔺</div><div class="val" id="e-peak" style="font-size:22px;color:#d29922">—</div><div class="lbl">Pic mois</div></div>
+    <div class="kpi-card"><div class="icon">⚡</div><div class="val" id="e-volt" style="font-size:22px;color:#bc8cff">—</div><div class="lbl">Voltage</div></div>
   </div>
+  <div style="display:flex;gap:8px;margin-bottom:12px" id="e-phases"></div>
+  <div class="card chart-box" style="height:260px">
+    <canvas id="powerChart"></canvas>
+  </div>
+  <script>
+  (function(){{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    var powerChart = null;
+    
+    function loadSnapshot() {{
+      fetch('/api/energy?token='+token).then(function(r){{return r.json()}}).then(function(d){{
+        if(d.error) return;
+        var pwr = d.power_now_w;
+        var color = pwr < 0 ? '#3fb950' : '#f85149';
+        var el = document.getElementById('e-pwr');
+        if(el) {{ el.textContent = Math.abs(pwr)+' W'; el.style.color = color; }}
+        var sub = document.getElementById('e-pwr-sub');
+        if(sub) sub.textContent = pwr < 0 ? '☀️ Injection' : '⚡ Conso';
+        var net = document.getElementById('e-net');
+        if(net) {{ net.textContent = (d.net_kwh>0?'+':'')+d.net_kwh.toFixed(0)+' kWh'; net.style.color = d.net_kwh>0?'#3fb950':'#f85149'; }}
+        var imp = document.getElementById('e-imp');
+        if(imp) imp.textContent = d.import_total_kwh.toFixed(0)+' kWh';
+        var exp = document.getElementById('e-exp');
+        if(exp) exp.textContent = d.export_total_kwh.toFixed(0)+' kWh';
+        var peak = document.getElementById('e-peak');
+        if(peak) peak.textContent = d.peak_month_w+' W';
+        var volt = document.getElementById('e-volt');
+        if(volt) volt.textContent = d.voltage_v.toFixed(1)+' V';
+        var ph = d.phases;
+        var phasesEl = document.getElementById('e-phases');
+        if(phasesEl && ph) {{
+          phasesEl.innerHTML = ['l1','l2','l3'].map(function(p){{
+            var phase = ph[p];
+            return '<div class="kpi-card" style="flex:1"><div class="val" style="font-size:20px;color:'+(phase.w<0?'#3fb950':'#f85149')+'">'+phase.w+' W</div><div class="lbl" style="font-size:10px">'+phase.v.toFixed(1)+'V · '+phase.a.toFixed(1)+'A</div><div style="font-size:10px;color:var(--dim);margin-top:2px">'+p.toUpperCase()+'</div></div>';
+          }}).join('');
+        }}
+      }});
+    }}
+    
+    function loadHistory() {{
+      fetch('/api/energy/history?token='+token).then(function(r){{return r.json()}}).then(function(history){{
+        if(!history || !history.length) return;
+        var labels = history.map(function(p){{return p.ts.substring(11,16)}});
+        var values = history.map(function(p){{return Math.abs(p.w)}});
+        var colors = history.map(function(p){{return p.w < 0 ? 'rgba(63,185,80,.4)' : 'rgba(248,81,73,.4)'}});
+        var borders = history.map(function(p){{return p.w < 0 ? '#3fb950' : '#f85149'}});
+        if(powerChart) powerChart.destroy();
+        var ctx = document.getElementById('powerChart');
+        if(!ctx) return;
+        powerChart = new Chart(ctx, {{
+          type: 'bar',
+          data: {{ labels: labels, datasets: [{{ label: 'Puissance (W)', data: values, backgroundColor: colors, borderColor: borders, borderWidth: 1, borderRadius: 2 }}] }},
+          options: {{ responsive: true, maintainAspectRatio: false,
+            plugins: {{ legend: {{display:false}}, title: {{display:true, text:'📈 Puissance — 24h', color:'#8b949e', font:{{size:12}}}} }},
+            scales: {{ x: {{ticks:{{color:'#484f58',font:{{size:9}},maxTicksLimit:25}},grid:{{color:'#21262d'}}}}, y: {{ticks:{{color:'#484f58',font:{{size:9}}}},grid:{{color:'#21262d'}}}} }}
+          }}
+        }});
+      }});
+    }}
+    
+    loadSnapshot();
+    loadHistory();
+  }})();
+  </script>
 </div>
 
 <!-- Viessmann -->
-<div id="tab-viessmann" class="panel" style="padding:0;background:transparent;border:none">
-  <div id="viessmann-content" style="width:100%;min-height:420px;display:flex;align-items:center;justify-content:center">
-    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
+<div id="tab-viessmann" class="panel" style="padding:16px">
+  <div class="kpi-grid" id="v-kpi">
+    <div class="kpi-card"><div class="icon">🔥</div><div class="val">—</div><div class="lbl">Chaudière</div></div>
+    <div class="kpi-card"><div class="icon">🌡️</div><div class="val">—</div><div class="lbl">Extérieure</div></div>
+    <div class="kpi-card"><div class="icon">🚿</div><div class="val">—</div><div class="lbl">Eau chaude</div></div>
+    <div class="kpi-card"><div class="icon">🔧</div><div class="val">—</div><div class="lbl">Brûleur</div></div>
+    <div class="kpi-card"><div class="icon">📐</div><div class="val">—</div><div class="lbl">Circuit 0</div></div>
+    <div class="kpi-card"><div class="icon">☀️</div><div class="val">—</div><div class="lbl">Solaire</div></div>
   </div>
+  <div class="card" style="font-size:12px;color:var(--dim)" id="v-info">Chargement...</div>
+  <script>
+  (function(){{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    fetch('/api/viessmann?token='+token).then(function(r){{return r.json()}}).then(function(d){{
+      if(d.error) return;
+      var cards = document.querySelectorAll('#v-kpi .kpi-card .val');
+      var data = [d.boiler_temp+'°C', d.outside_temp+'°C', d.dhw_temp+'°C', (d.burner_modulation||'?')+'%', (d.circuit0_supply||'?')+'°C', (d.solar_production||'0')+'W'];
+      cards.forEach(function(c,i){{ if(data[i]) c.textContent = data[i]; }});
+      document.getElementById('v-info').innerHTML = 'Mode: <strong>'+(d.circuit0_mode||'?')+'</strong> · Programme: <strong>'+(d.circuit0_program||'?')+'</strong> · Consigne ECS: <strong>'+(d.dhw_target||'?')+'°C</strong> · Solaire total: <strong>'+(d.solar_cumulative||'?')+' kWh</strong> · MàJ: '+(d.timestamp||'?').substring(0,19);
+    }});
+  }})();
+  </script>
 </div>
 
 <!-- Workflows -->
