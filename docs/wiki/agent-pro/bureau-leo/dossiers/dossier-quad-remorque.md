@@ -2,7 +2,7 @@
 date: 2026-07-11
 bureau: bureau-leo
 auteur: LEO
-version: v1d
+version: v1e
 modele: deepseek-v4-flash
 tags: [quad, atv, can-am, outlander, remorque, saris, attelage, camping-car, tofdan]
 statut: finalise
@@ -343,10 +343,11 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 | 2 | ✅ **Devis Coenen reçu** (1 950 €) — **DOCS ENVOYÉS** (COC + photos) | ✅ **Fait** | ✅ |
 | 3 | Confirmer **rdv Coenen** (avant 10 août ou après 23 août) | Christophe | 🥇 |
 | 4 | Vérifier **attelage quad** chez KD Quad (prix, montage, faisceau) | Christophe | 🥇 |
-| 5 | Commander **Al-Ko Premium Electric** (roue jockey motorisée) | Christophe | 🥈 |
-| 6 | Commander **treuil 12V + rampe aluminium** (Amazon/Norauto) | Christophe | 🥈 |
-| 7 | Immatriculation quad + assurance | Christophe | 🥈 |
-| 8 | Immatriculation remorque | Christophe | 🥉 |
+| 5 | Contacter **Yannick (Gerardy)** pour assurance quad + remorque | ✅ **Contact pris** | ✅ |
+| 6 | Commander **Al-Ko Premium Electric** (roue jockey motorisée) | Christophe | 🥈 |
+| 7 | Commander **treuil 12V + rampe aluminium** (Amazon/Norauto) | Christophe | 🥈 |
+| 8 | Immatriculation quad + assurance | Christophe | 🥈 |
+| 9 | Immatriculation remorque | Christophe | 🥉 |
 
 ---
 
@@ -359,6 +360,7 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 | **v1b** | **11/07/2026** | **LEO** | **+ Attelage Coenen (Corroy-le-Château) — Roller Team 287 TL — escamotable invisible** |
 | **v1c** | **12/07/2026** | **LEO** | **+ Prix réel Saris 6 883€ (offre PDF 12/07) + détail options** |
 | **v1d** | **13/07/2026** | **LEO** | **+ Devis Coenen réel 1 950€ + docs envoyés + budget recalculé ~25 700€ + tâches mises à jour** |
+| **v1e** | **13/07/2026** | **LEO** | **+ Contact Yannick (Gerardy) pour assurance quad + remorque + tâche mise à jour** |
 
 > 🔙 **Documents archivés :**
 > - `archive/etude-marche-quad-biplace-v7.md` — Historique étude quad
