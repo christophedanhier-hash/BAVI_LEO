@@ -114,7 +114,7 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js?v=1784032007"></script>
+<script src="/leo/monitoring.js?v=1784060105"></script>
 </script>
 <style>
 :root {{
@@ -392,14 +392,56 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div id="tab-crons-mgmt" class="panel">
 <div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-    <h3 style="margin:0;border:none;padding:0">⏱️ Gestion des Crons</h3>
+    <div>
+      <span id="cr-ok" style="color:var(--green);font-weight:600">0</span> OK ·
+      <span id="cr-err" style="color:var(--red);font-weight:600">0</span> Erreurs ·
+      <span id="cr-total" style="color:var(--dim)">0</span> jobs
+    </div>
     <button onclick="loadCrons()" style="background:var(--accent);border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px">🔄 Rafraîchir</button>
   </div>
   <table>
-    <thead><tr><th></th><th>Nom</th><th>Horaire</th><th>Statut</th><th style="text-align:right">Actions</th></tr></thead>
+    <thead><tr><th></th><th>Nom</th><th>Horaire</th><th>Statut</th><th>Actions</th></tr></thead>
     <tbody id="crons-mgmt-body"><tr><td colspan="5" style="text-align:center;padding:20px">Chargement...</td></tr></tbody>
   </table>
+  <div style="font-size:10px;color:var(--dim);text-align:right;margin-top:4px" id="cr-updated"></div>
 </div>
+<script>
+(function(){{
+  var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+  
+  function loadCrons() {{
+    var tbody = document.getElementById('crons-mgmt-body');
+    if (!tbody) return;
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:20px">⏳</td></tr>';
+    fetch('/api/crons?token='+token).then(function(r){{return r.json()}}).then(function(jobs){{
+      var html = '', ok = 0, err = 0;
+      jobs.forEach(function(j){{
+        var status = j.last_status || 'pending';
+        var badge = status === 'ok' ? 'ok' : status === 'error' ? 'err' : 'warn';
+        if(status==='ok') ok++; else if(status==='error') err++;
+        html += '<tr><td style="width:20px">'+(j.enabled?'🟢':'🔴')+'</td>'+
+          '<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;font-size:12px" title="'+(j.name||'')+'">'+(j.name||j.id||'?').substring(0,45)+'</td>'+
+          '<td style="font-size:10px;color:var(--dim)">'+(j.schedule||'?')+'</td>'+
+          '<td><span class="badge '+badge+'">'+status+'</span></td>'+
+          '<td style="white-space:nowrap"><button onclick="runCronInline(\\''+j.id+'\\',this)" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:10px">▶</button></td></tr>';
+      }});
+      tbody.innerHTML = html;
+      document.getElementById('cr-ok').textContent = ok;
+      document.getElementById('cr-err').textContent = err;
+      document.getElementById('cr-total').textContent = jobs.length;
+      document.getElementById('cr-updated').textContent = new Date().toLocaleTimeString('fr-BE');
+    }});
+  }}
+  
+  window.loadCrons = loadCrons;
+  window.runCronInline = function(id, btn) {{
+    btn.textContent = '...'; btn.disabled = true;
+    fetch('/api/crons/'+id+'/run?token='+token, {{method:'POST'}}).then(function(r){{return r.json()}}).then(function(){{
+      setTimeout(function(){{ loadCrons(); }}, 2000);
+    }});
+  }};
+}}());
+</script>
 </div>
 
 <!-- BAVI -->
@@ -747,8 +789,39 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <!-- Workflows -->
 <div id="tab-wf" class="panel" style="padding:12px">
   <div id="wf-content" style="display:flex;flex-direction:column;gap:8px">
-    <span style="color:var(--dim)">Cliquez sur l'onglet pour charger...</span>
+    <span style="color:var(--dim)">Chargement...</span>
   </div>
+  <div style="font-size:10px;color:var(--dim);text-align:right;margin-top:4px" id="wf-updated"></div>
+  <script>
+  (function(){{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    
+    function loadWorkflows() {{
+      var panel = document.getElementById('wf-content');
+      if (!panel) return;
+      panel.innerHTML = '<span style="color:var(--dim)">⏳</span>';
+      fetch('/api/wf?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+        if(data.error){{ panel.innerHTML='<span style="color:var(--red)">❌ '+data.error+'</span>'; return; }}
+        var keys = Object.keys(data);
+        if(!keys.length){{ panel.innerHTML='<span style="color:var(--dim)">Aucun workflow</span>'; return; }}
+        var html = '<table style="width:100%;font-size:12px"><thead><tr><th>Workflow</th><th>Dernier</th><th>Statut</th></tr></thead><tbody>';
+        keys.forEach(function(key){{
+          var wf = data[key];
+          var name = (wf.workflow||key).substring(0,55);
+          var ts = (wf.timestamp||'?').substring(0,19);
+          var status = wf.heartbeat==='ok'?'ok':(wf.heartbeat==='error'?'error':'warn');
+          var badge = status==='ok'?'ok':status==='error'?'err':'warn';
+          html += '<tr><td style="max-width:250px;overflow:hidden;text-overflow:ellipsis;font-size:11px">'+name+'</td><td style="font-size:10px;color:var(--dim)">'+ts.replace('T',' ')+'</td><td><span class="badge '+badge+'">'+status+'</span></td></tr>';
+        }});
+        html += '</tbody></table>';
+        panel.innerHTML = html;
+        document.getElementById('wf-updated').textContent = new Date().toLocaleTimeString('fr-BE');
+      }}).catch(function(e){{ panel.innerHTML='<span style="color:var(--red)">❌ '+e+'</span>'; }});
+    }}
+    
+    window.loadWorkflows = loadWorkflows;
+  }}());
+  </script>
 </div>
 
 <div class="footer">🦁 LEO Dashboard · Généré dynamiquement</div>
