@@ -423,7 +423,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
           '<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;font-size:12px" title="'+(j.name||'')+'">'+(j.name||j.id||'?').substring(0,45)+'</td>'+
           '<td style="font-size:10px;color:var(--dim)">'+(j.schedule||'?')+'</td>'+
           '<td><span class="badge '+badge+'">'+status+'</span></td>'+
-          '<td style="white-space:nowrap"><button onclick="runCronInline(\\''+j.id+'\\',this)" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:10px">▶</button></td></tr>';
+          '<td style="white-space:nowrap"><button onclick="runCronInline(\\''+j.id+'\\',this)" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:10px">▶</button> <button onclick="showCronLog(\\''+j.id+'\\',\\''+(name.replace(/'/g,"\\'"))+'\\')" style="background:var(--card);border:1px solid var(--border);color:var(--dim);border-radius:4px;padding:2px 6px;cursor:pointer;font-size:10px">📋</button></td></tr>';
       }});
       tbody.innerHTML = html;
       document.getElementById('cr-ok').textContent = ok;
@@ -438,6 +438,40 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     btn.textContent = '...'; btn.disabled = true;
     fetch('/api/crons/'+id+'/run?token='+token, {{method:'POST'}}).then(function(r){{return r.json()}}).then(function(){{
       setTimeout(function(){{ loadCrons(); }}, 2000);
+    }});
+  }};
+  
+  window.showCronLog = function(id, name) {{
+    var overlay = document.createElement('div');
+    overlay.id = 'log-overlay';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:9999;display:flex;align-items:center;justify-content:center';
+    overlay.onclick = function(e) {{ if(e.target===overlay) overlay.remove(); }};
+    
+    var box = document.createElement('div');
+    box.style.cssText = 'background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px;max-width:750px;max-height:85vh;overflow-y:auto;width:92%;box-shadow:0 8px 32px rgba(0,0,0,.5)';
+    box.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">'+
+      '<h3 style="margin:0;border:none;padding:0;font-size:15px">📋 '+name+'</h3>'+
+      '<span style="font-size:10px;color:var(--dim)">'+id.substring(0,8)+'</span></div>'+
+      '<div id="log-content" style="font-size:11px;color:var(--dim)">Chargement...</div>'+
+      '<button onclick="document.getElementById(\\'log-overlay\\').remove()" style="margin-top:12px;background:var(--accent);border:none;color:#fff;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:12px">Fermer</button>';
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+    
+    fetch('/api/crons/logs?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+      var entries = data.jobs[id] || [];
+      if (!entries.length) {{ document.getElementById('log-content').innerHTML = 'Aucun log'; return; }}
+      var html = '<table style="width:100%;font-size:11px"><thead><tr><th style="text-align:left">Heure</th><th style="text-align:left">Statut</th><th style="text-align:left">Résumé</th></tr></thead><tbody>';
+      entries.forEach(function(e){{
+        var icon = e.status==='error' ? '🔴' : e.status==='warn' ? '🟡' : '🟢';
+        var st = e.status==='error' ? 'ERREUR' : e.status==='warn' ? 'AVERT.' : 'OK';
+        var stColor = e.status==='error' ? '#f85149' : e.status==='warn' ? '#d29922' : '#3fb950';
+        html += '<tr style="border-bottom:1px solid var(--border)">'+
+          '<td style="padding:6px 8px;white-space:nowrap;font-weight:600">'+icon+' '+e.ts.substring(11,16)+'</td>'+
+          '<td style="padding:6px 8px"><span style="color:'+stColor+';font-weight:600;font-size:10px">'+st+'</span></td>'+
+          '<td style="padding:6px 8px;max-width:400px;overflow:hidden;text-overflow:ellipsis">'+(e.summary||'—')+'</td></tr>';
+      }});
+      html += '</tbody></table>';
+      document.getElementById('log-content').innerHTML = html;
     }});
   }};
 }}());
