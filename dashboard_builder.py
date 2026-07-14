@@ -114,7 +114,7 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js?v=1784002138"></script>
+<script src="/leo/monitoring.js?v=1784003054"></script>
 </script>
 <style>
 :root {{
@@ -453,6 +453,9 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div style="display:flex;gap:8px;margin:12px 0">
     <button onclick="switchEnergyView('daily')" id="btn-e-daily" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📅 7 jours</button>
     <button onclick="switchEnergyView('monthly')" id="btn-e-monthly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📆 12 mois</button>
+    <span style="flex:1"></span>
+    <button onclick="switchEnergyMode('conso')" id="btn-e-conso" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">⚡ Conso</button>
+    <button onclick="switchEnergyMode('prod')" id="btn-e-prod" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">☀️ Prod</button>
   </div>
   <div class="card chart-box" style="height:260px">
     <canvas id="energyHistoryChart"></canvas>
@@ -518,11 +521,22 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     loadEnergyDaily();
     
     var _energyHistChart = null;
+    var _energyMode = 'conso';  // 'conso' ou 'prod'
+    var _energyView = 'daily';  // 'daily' ou 'monthly'
     
     function switchEnergyView(view) {{
+      _energyView = view;
       document.getElementById('btn-e-daily').style.background = view==='daily' ? 'var(--accent)' : 'var(--card)';
       document.getElementById('btn-e-monthly').style.background = view==='monthly' ? 'var(--accent)' : 'var(--card)';
       if(view === 'daily') loadEnergyDaily();
+      else loadEnergyMonthly();
+    }}
+    
+    function switchEnergyMode(mode) {{
+      _energyMode = mode;
+      document.getElementById('btn-e-conso').style.background = mode==='conso' ? 'var(--accent)' : 'var(--card)';
+      document.getElementById('btn-e-prod').style.background = mode==='prod' ? 'var(--accent)' : 'var(--card)';
+      if(_energyView === 'daily') loadEnergyDaily();
       else loadEnergyMonthly();
     }}
     
@@ -531,8 +545,12 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
         if(!data || !data.length) return;
         var last7 = data.slice(-7);
         var labels = last7.map(function(d){{return d.date.substring(5)}});
-        var values = last7.map(function(d){{return d.kwh}});
-        renderEnergyHist(labels, values, '📅 Conso journalière — 7 jours', '#3fb950', 'rgba(63,185,80,.3)');
+        var field = _energyMode === 'prod' ? 'prod_kwh' : 'conso_kwh';
+        var values = last7.map(function(d){{return d[field] || 0}});
+        var title = _energyMode === 'prod' ? '☀️ Production solaire — 7 jours' : '⚡ Consommation — 7 jours';
+        var color = _energyMode === 'prod' ? '#d29922' : '#f85149';
+        var bg = _energyMode === 'prod' ? 'rgba(210,153,34,.3)' : 'rgba(248,81,73,.3)';
+        renderEnergyHist(labels, values, title, color, bg);
       }});
     }}
     
@@ -541,8 +559,12 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
         if(!data || !data.length) return;
         var last12 = data.slice(-12);
         var labels = last12.map(function(d){{return d.month}});
-        var values = last12.map(function(d){{return d.kwh}});
-        renderEnergyHist(labels, values, '📆 Conso mensuelle — 12 mois', '#58a6ff', 'rgba(88,166,255,.3)');
+        var field = _energyMode === 'prod' ? 'prod_kwh' : 'conso_kwh';
+        var values = last12.map(function(d){{return d[field] || 0}});
+        var title = _energyMode === 'prod' ? '☀️ Production solaire — 12 mois' : '⚡ Consommation — 12 mois';
+        var color = _energyMode === 'prod' ? '#d29922' : '#f85149';
+        var bg = _energyMode === 'prod' ? 'rgba(210,153,34,.3)' : 'rgba(248,81,73,.3)';
+        renderEnergyHist(labels, values, title, color, bg);
       }});
     }}
     
@@ -560,6 +582,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     }}
     
     window.switchEnergyView = switchEnergyView;
+    window.switchEnergyMode = switchEnergyMode;
   }})();
   </script>
 </div>
