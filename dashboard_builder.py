@@ -838,14 +838,14 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
         if(data.error){{ panel.innerHTML='<span style="color:var(--red)">❌ '+data.error+'</span>'; return; }}
         var keys = Object.keys(data);
         if(!keys.length){{ panel.innerHTML='<span style="color:var(--dim)">Aucun workflow</span>'; return; }}
-        var html = '<table style="width:100%;font-size:12px"><thead><tr><th>Workflow</th><th>Dernier</th><th>Statut</th></tr></thead><tbody>';
+        var html = '<table style="width:100%;font-size:12px"><thead><tr><th>Workflow</th><th>Dernier</th><th>Statut</th><th></th></tr></thead><tbody>';
         keys.forEach(function(key){{
           var wf = data[key];
           var name = (wf.workflow||key).substring(0,55);
           var ts = (wf.timestamp||'?').substring(0,19);
           var status = wf.status==='ok' ? 'ok' : (wf.error ? 'error' : 'ok');
           var badge = status==='ok'?'ok':status==='error'?'err':'warn';
-          html += '<tr><td style="max-width:250px;overflow:hidden;text-overflow:ellipsis;font-size:11px">'+name+'</td><td style="font-size:10px;color:var(--dim)">'+ts.replace('T',' ')+'</td><td><span class="badge '+badge+'">'+status+'</span></td></tr>';
+          html += '<tr><td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;font-size:11px">'+name+'</td><td style="font-size:10px;color:var(--dim)">'+ts.replace('T',' ')+'</td><td><span class="badge '+badge+'">'+status+'</span></td><td style="white-space:nowrap"><button onclick="runWf(\\''+key+'\\',this)" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:10px">▶</button> <button onclick="showWfLog(\\''+key+'\\',\\''+name.replace(/'/g,"\\'")+'\\')" style="background:var(--card);border:1px solid var(--border);color:var(--dim);border-radius:4px;padding:2px 6px;cursor:pointer;font-size:10px">📋</button></td></tr>';
         }});
         html += '</tbody></table>';
         panel.innerHTML = html;
@@ -854,6 +854,38 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     }}
     
     window.loadWorkflows = loadWorkflows;
+    
+    window.runWf = function(name, btn) {{
+      btn.textContent = '...'; btn.disabled = true;
+      fetch('/api/wf/'+name+'/run?token='+token, {{method:'POST'}}).then(function(r){{return r.json()}}).then(function(d){{
+        btn.textContent = d.ok ? '✅' : '❌';
+        setTimeout(function(){{ btn.textContent = '▶'; btn.disabled = false; loadWorkflows(); }}, 3000);
+      }}).catch(function(){{ btn.textContent = '❌'; }});
+    }};
+    
+    window.showWfLog = function(key, name) {{
+      var overlay = document.createElement('div');
+      overlay.id = 'log-overlay';
+      overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:9999;display:flex;align-items:center;justify-content:center';
+      overlay.onclick = function(e) {{ if(e.target===overlay) overlay.remove(); }};
+      var box = document.createElement('div');
+      box.style.cssText = 'background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px;max-width:650px;max-height:80vh;overflow-y:auto;width:90%;box-shadow:0 8px 32px rgba(0,0,0,.5)';
+      box.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h3 style="margin:0;border:none;padding:0;font-size:15px">📋 '+name+'</h3><span style="font-size:10px;color:var(--dim)">'+key+'</span></div><div id="log-content" style="font-size:11px;color:var(--dim)">Chargement...</div><button onclick="document.getElementById(\\'log-overlay\\').remove()" style="margin-top:12px;background:var(--accent);border:none;color:#fff;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:12px">Fermer</button>';
+      overlay.appendChild(box);
+      document.body.appendChild(overlay);
+      
+      fetch('/api/wf?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+        var wf = data[key];
+        if(!wf) {{ document.getElementById('log-content').innerHTML = 'Aucune donnée'; return; }}
+        var html = '<table style="width:100%;font-size:11px">';
+        Object.keys(wf).forEach(function(k){{
+          var v = typeof wf[k]==='object' ? JSON.stringify(wf[k]).substring(0,200) : String(wf[k]);
+          html += '<tr style="border-bottom:1px solid var(--border)"><td style="padding:4px 8px;color:var(--dim);font-weight:600;width:140px">'+k+'</td><td style="padding:4px 8px;max-width:400px;overflow:hidden;text-overflow:ellipsis">'+v+'</td></tr>';
+        }});
+        html += '</table>';
+        document.getElementById('log-content').innerHTML = html;
+      }});
+    }};
   }}());
   </script>
 </div>
