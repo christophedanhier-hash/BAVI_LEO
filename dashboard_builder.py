@@ -214,7 +214,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">🕐 Crons</div>
   <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🐍 Workflows</div>
   <div class="tab" onclick="switchTab(this,'tab-monitoring')">🖥️ Monitoring</div>
-  <div class="tab" onclick="switchTab(this,'tab-notifications');loadNotifications()">📋 Notifs</div>
+  <div class="tab" onclick="switchTab(this,'tab-notifications');refreshNotifs()">📋 Notifs</div>
   <div class="tab" onclick="switchTab(this,'tab-cameras')">📷 Caméras</div>
   <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergyDaily()">⚡ Énergie</div>
   <div class="tab" onclick="switchTab(this,'tab-viessmann')">🔥 Viessmann</div>
@@ -433,6 +433,12 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <script>
   (function(){{
     var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    var _notifCounter = 0;
+    
+    function refreshNotifs() {{
+      loadNotifications();
+      _notifCounter++;
+    }}
     
     function loadNotifications() {{
       fetch('/api/crons/logs?token='+token).then(function(r){{return r.json()}}).then(function(data){{
@@ -475,12 +481,14 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
         summary += '</div>';
         
         document.getElementById('notif-list').innerHTML = summary + h;
-        document.getElementById('notif-updated').textContent = 'MàJ: '+new Date().toLocaleTimeString('fr-BE');
+        document.getElementById('notif-updated').textContent = 'MàJ: '+new Date().toLocaleTimeString('fr-BE')+' · refresh #'+_notifCounter;
       }});
     }}
     
     window.loadNotifications = loadNotifications;
-    setInterval(loadNotifications, 30000);
+    window.refreshNotifs = refreshNotifs;
+    setInterval(refreshNotifs, 30000);
+    loadNotifications();
   }})();
   </script>
 </div>
