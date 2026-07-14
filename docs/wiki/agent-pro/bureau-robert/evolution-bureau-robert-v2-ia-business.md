@@ -16,8 +16,8 @@ La différence : il dispose désormais de **deux pools d'experts** au lieu d'un.
 flowchart TD
     A[📨 Demande - Direction AO] --> B[🏛️ Robert - Orchestrateur]
     B --> C{Analyse & Dispatch}
-    C --> D[Pool IT - 10 experts]
-    C --> E[Pool Business - 6 experts]
+    C --> D[Pool IT - 9 experts]
+    C --> E[Pool Business - 7 experts]
     D --> F[Synthèse croisée]
     E --> F
     F --> G[📄 Recommandation finale]
@@ -27,7 +27,7 @@ flowchart TD
 
 ## 2. Architecture des sous-agents
 
-### 2.1 Pool IT — Renforcé (existants + nouveaux)
+### 2.1 Pool IT — Renforcé (9 experts)
 
 | # | Sous-agent | Rôle | Expertise clé |
 |:-:|:-----------|:-----|:--------------|
@@ -35,28 +35,28 @@ flowchart TD
 | 2 | 🏗️ **Architecture SI** | Intégration technique, patterns, dépendances | APIs, cloud, SI Solidaris |
 | 3 | 🛡️ **Sécurité & RGPD** | Risques, conformité, AIPD | Données santé, NIS2, AI Act |
 | 4 | 📋 **Projet & Programme** | Planning, coûts, TCO, jalons | Gestion de projet IT |
-| 5 | ⚖️ **Assurance Obligatoire (AO)** | Impact INAMI/BCSS, réglementation mutualiste | Contexte métier Solidaris |
-| 6 | 💰 **Budget & TCO** | Modélisation financière, ROI | Coûts IT, scénarios |
-| 7 | 🔄 **Interopérabilité** | eHealth, BCSS, MyCareNet, connecteurs | Standards mutualistes belges |
+| 5 | 💰 **Budget & TCO** | Modélisation financière, ROI | Coûts IT, scénarios |
+| 6 | 🔄 **Interopérabilité** | eHealth, BCSS, MyCareNet, connecteurs | Standards mutualistes belges |
 
 **Nouveaux experts IT (pour répondre au Business IA) :**
 
 | # | Sous-agent | Rôle | Expertise clé | Pourquoi |
 |:-:|:-----------|:-----|:--------------|:---------|
-| 8 | 🧪 **Data Engineering & IA Ops** | Pipelines de données, préparation datasets, feature engineering, MLOps | Python, bases vectorielles, embeddings, RAG | Le Business va demander des PoC IA → quelqu'un doit les construire |
-| 9 | ☁️ **Infrastructure & Cloud IA** | GPU, vecteur DB, déploiement modèles, scaling | Azure OpenAI, AWS Bedrock, huggingface | Les modèles LLM ne tournent pas sur un serveur classique |
-| 10 | 🔗 **API & Intégration IA** | Sécurisation des appels API IA, proxy, caching, rate limiting, monitoring tokens | OpenAI API, gestion coûts tokens, gateway IA | Connecter les modèles externes au SI Solidaris sans fuite de données |
+| 7 | 🧪 **Data Engineering & IA Ops** | Pipelines de données, préparation datasets, feature engineering, MLOps | Python, bases vectorielles, embeddings, RAG | Le Business va demander des PoC IA → quelqu'un doit les construire |
+| 8 | ☁️ **Infrastructure & Cloud IA** | GPU, vecteur DB, déploiement modèles, scaling | Azure OpenAI, AWS Bedrock, huggingface | Les modèles LLM ne tournent pas sur un serveur classique |
+| 9 | 🔗 **API & Intégration IA** | Sécurisation des appels API IA, proxy, caching, rate limiting, monitoring tokens | OpenAI API, gestion coûts tokens, gateway IA | Connecter les modèles externes au SI Solidaris sans fuite de données |
 
-### 2.2 Pool Business — Nouveaux
+### 2.2 Pool Business — Nouveaux (7 experts)
 
 | # | Sous-agent | Rôle | Expertise clé | Quand l'activer |
 |:-:|:-----------|:-----|:--------------|:----------------|
-| 8 | 🏢 **Architecture des Processus Métier** | Cartographier les processus AO, identifier les goulots et points d'entrée IA | BPMN, flux métier, analyse de valeur | Dès qu'un processus métier est concerné |
-| 9 | 🧪 **R&D & Innovation IA** | Veille cas d'usage mutualistes, POC, prototypage | IA générative, RPA, OCR, NLP, agents | Pour tout sujet IA concret |
-| 10 | 🔄 **Gestion du Changement** | Impact organisationnel, adoption, accompagnement des équipes | Conduite du changement, formation | Projets impactant les agents AO |
-| 11 | ⚖️ **Juridique & Conformité Métier** | AI Act, RGPD santé, droit mutualiste, responsabilité | Droit social, assurances, données santé | Obligatoire pour tout projet avec données réelles |
-| 12 | 🎓 **Acculturation & Formation** | Création de supports, ateliers, vulgarisation IA | Pédagogie, cas d'usage concrets | En amont ou parallèle au déploiement |
-| 13 | 📊 **Data & Analyse** | Données disponibles, qualité, préparation, indicateurs | Data governance, analytics, KPI | Pour tout projet data-driven |
+| 10 | ⚖️ **Expert Métier AO** | Connaissance des processus INAMI/BCSS, réglementation mutualiste Solidaris | Contexte métier AO, circuits de remboursement | Tout projet touchant au métier AO |
+| 11 | 🏢 **Architecture des Processus Métier** | Cartographier les processus AO, identifier les goulots et points d'entrée IA | BPMN, flux métier, analyse de valeur | Dès qu'un processus métier est concerné |
+| 12 | 🧪 **R&D & Innovation IA** | Veille cas d'usage mutualistes, POC, prototypage | IA générative, RPA, OCR, NLP, agents | Pour tout sujet IA concret |
+| 13 | 🔄 **Gestion du Changement** | Impact organisationnel, adoption, accompagnement des équipes | Conduite du changement, formation | Projets impactant les agents AO |
+| 14 | ⚖️ **Juridique & Conformité Métier** | AI Act, RGPD santé, droit mutualiste, responsabilité | Droit social, assurances, données santé | Obligatoire pour tout projet avec données réelles |
+| 15 | 🎓 **Acculturation & Formation** | Création de supports, ateliers, vulgarisation IA | Pédagogie, cas d'usage concrets | En amont ou parallèle au déploiement |
+| 16 | 📊 **Data & Analyse** | Données disponibles, qualité, préparation, indicateurs | Data governance, analytics, KPI | Pour tout projet data-driven |
 
 ---
 
@@ -72,12 +72,12 @@ flowchart TB
     R -->|Contexte: données santé,<br>agents AO, backoffice INAMI| D[Dispatch : 6 experts]
 
     subgraph DISPATCH [① Dispatch - Questions aux experts]
-        A2["🏗️ Archi SI<br><i>Quels systèmes intégrer ?</i>"]
-        A3["🛡️ Sécurité<br><i>Risques RGPD données santé ?</i>"]
-        A5["⚖️ Expert AO<br><i>Sujets récurrents des agents ?</i>"]
-        A8["🏢 Processus<br><i>Où placer le chatbot ?</i>"]
-        A9["🧪 R&D<br><i>Solutions existantes mutualité ?</i>"]
-        A11["⚖️ Juridique<br><i>Contraintes légales ?</i>"]
+        A2["🏗️ Archi SI #2<br><i>Quels systèmes intégrer ?</i>"]
+        A3["🛡️ Sécurité #3<br><i>Risques RGPD données santé ?</i>"]
+        A10["⚖️ Expert AO #10<br><i>Sujets récurrents des agents ?</i>"]
+        A11["🏢 Processus #11<br><i>Où placer le chatbot ?</i>"]
+        A12["🧪 R&D #12<br><i>Solutions existantes mutualité ?</i>"]
+        A14["⚖️ Juridique #14<br><i>Contraintes légales ?</i>"]
     end
 
     D --> DISPATCH
@@ -99,12 +99,12 @@ flowchart TB
 
 | Condition | Dispatch |
 |:----------|:---------|
-| Sujet avec **données de santé** | Toujours activer Sécurité (3) + Juridique (11) |
-| Sujet avec **impact agents AO** | Toujours activer Changement (10) + Processus (8) |
+| Sujet avec **données de santé** | Toujours activer Sécurité (3) + Juridique (14) |
+| Sujet avec **impact agents AO** | Toujours activer Changement (13) + Processus (11) + **Expert AO (10)** |
 | Sujet **technologique pur** (cloud, infra) | Pool IT uniquement |
 | Sujet **organisationnel** (transformation) | Pool Business uniquement |
-| **Projet IA concret** (POC, déploiement) | **Tous les nouveaux IT** (8,9,10) + R&D (9) + Sécurité(3) |
-| **Nouveau concept IA** | Toujours activer R&D (9) + Data Eng (8) |
+| **Projet IA concret** (POC, déploiement) | IT IA (7,8,9) + Sécurité (3) + Expert AO (10) + R&D (12) |
+| **Nouveau concept IA** | Toujours activer R&D (12) + Data Eng (7) + **Expert AO (10)** |
 
 ---
 
