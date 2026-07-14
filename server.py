@@ -812,10 +812,14 @@ async def api_crons_logs(request: Request):
                 for line in content.split("\n"):
                     if line.startswith("# "):
                         title = line[2:].strip()
+                    # Ignorer les faux positifs "0 échec", "0 erreur", "0 FAIL"
+                    if "0 échec" in line.lower() or "0 erreur" in line.lower() or "0 fail" in line.lower():
+                        continue
                     if "❌" in line or "FAIL" in line.upper() or "ERREUR" in line.upper():
                         status = "error"
                     if "⚠️" in line:
-                        status = "warn"
+                        if status == "ok":
+                            status = "warn"
                 # Extraire le résumé (dernière ligne non-vide après ---)
                 summary = ""
                 parts = content.split("---")

@@ -809,7 +809,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
           var wf = data[key];
           var name = (wf.workflow||key).substring(0,55);
           var ts = (wf.timestamp||'?').substring(0,19);
-          var status = wf.heartbeat==='ok'?'ok':(wf.heartbeat==='error'?'error':'warn');
+          var status = wf.status==='ok' ? 'ok' : (wf.error ? 'error' : 'ok');
           var badge = status==='ok'?'ok':status==='error'?'err':'warn';
           html += '<tr><td style="max-width:250px;overflow:hidden;text-overflow:ellipsis;font-size:11px">'+name+'</td><td style="font-size:10px;color:var(--dim)">'+ts.replace('T',' ')+'</td><td><span class="badge '+badge+'">'+status+'</span></td></tr>';
         }});
