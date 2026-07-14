@@ -114,7 +114,7 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js?v=1784004200"></script>
+<script src="/leo/monitoring.js?v=1784032007"></script>
 </script>
 <style>
 :root {{
@@ -214,6 +214,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-crons-mgmt');loadCrons()">🕐 Crons</div>
   <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🐍 Workflows</div>
   <div class="tab" onclick="switchTab(this,'tab-monitoring')">🖥️ Monitoring</div>
+  <div class="tab" onclick="switchTab(this,'tab-notifications');loadNotifications()">📋 Notifs</div>
   <div class="tab" onclick="switchTab(this,'tab-cameras')">📷 Caméras</div>
   <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergyDaily()">⚡ Énergie</div>
   <div class="tab" onclick="switchTab(this,'tab-viessmann')">🔥 Viessmann</div>
@@ -423,6 +424,64 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <thead><tr><th>Modèle</th><th>Sessions</th><th>Tokens</th><th>Coût</th></tr></thead>
 <tbody>{"".join(f'<tr><td>{m}</td><td>{v.get("sessions",0)}</td><td>{(v.get("tokens_in",0)+v.get("tokens_out",0))//1000}k</td><td>{"$"+str(round(v.get("cost",0),4)) if v.get("cost",0)>0 else "-"}</td></tr>' for m,v in sorted(by_model.items(), key=lambda x:-x[1].get("cost",0)))} <tr style="font-weight:700;border-top:2px solid var(--border)"><td>TOTAL</td><td>{s.get("total",0)}</td><td>{(s.get("total_tokens_in",0)+s.get("total_tokens_out",0))//1000}k</td><td>${s.get("total_estimated_cost",0):.2f}</td></tr></tbody></table>
 </div>
+</div>
+
+<!-- Notifications Crons -->
+<div id="tab-notifications" class="panel" style="padding:16px">
+  <div id="notif-list" style="max-height:600px;overflow-y:auto"></div>
+  <div style="margin-top:8px;font-size:11px;color:var(--dim);text-align:right" id="notif-updated"></div>
+  <script>
+  (function(){{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    
+    function loadNotifications() {{
+      fetch('/api/crons/logs?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+        var h = '';
+        var errors = 0, warns = 0, oks = 0;
+        var jobIds = Object.keys(data.jobs || {{}}).sort();
+        
+        jobIds.forEach(function(jid) {{
+          var entries = data.jobs[jid] || [];
+          var last = entries[0];
+          if(!last) return;
+          
+          var icon = last.status==='error' ? '🔴' : last.status==='warn' ? '🟡' : '🟢';
+          var bg = last.status==='error' ? '#3d1f1f' : last.status==='warn' ? '#3d3510' : 'var(--card)';
+          if(last.status==='error') errors++;
+          else if(last.status==='warn') warns++;
+          else oks++;
+          
+          var name = last.title.replace('Cron Job: ','').substring(0,45);
+          var time = last.ts.substring(11,16);
+          
+          h += '<div style="background:'+bg+';border-radius:6px;padding:8px 10px;margin-bottom:6px;font-size:12px;border-left:3px solid '+(last.status==='error'?'#f85149':last.status==='warn'?'#d29922':'#3fb950')+'">';
+          h += '<div style="display:flex;justify-content:space-between;align-items:center">';
+          h += '<span style="font-weight:600">'+icon+' '+name+'</span>';
+          h += '<span style="color:var(--dim);font-size:10px">'+time+'</span>';
+          h += '</div>';
+          if(last.summary) {{
+            h += '<div style="color:var(--dim);margin-top:3px;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+last.summary.substring(0,100)+'</div>';
+          }}
+          h += '</div>';
+        }});
+        
+        // Résumé en haut
+        var summary = '<div style="display:flex;gap:12px;margin-bottom:10px;font-size:12px">';
+        if(errors) summary += '<span style="color:#f85149">🔴 '+errors+' erreur(s)</span>';
+        if(warns) summary += '<span style="color:#d29922">🟡 '+warns+' avert.</span>';
+        summary += '<span style="color:#3fb950">🟢 '+oks+' OK</span>';
+        summary += '<span style="color:var(--dim);margin-left:auto">'+data.total+' jobs</span>';
+        summary += '</div>';
+        
+        document.getElementById('notif-list').innerHTML = summary + h;
+        document.getElementById('notif-updated').textContent = 'MàJ: '+new Date().toLocaleTimeString('fr-BE');
+      }});
+    }}
+    
+    window.loadNotifications = loadNotifications;
+    setInterval(loadNotifications, 30000);
+  }})();
+  </script>
 </div>
 
 <!-- Caméras -->

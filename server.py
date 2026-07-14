@@ -784,6 +784,56 @@ async def api_energy_telegram(request: Request):
         pass
     return JSONResponse({"error": "telegram unavailable"}, status_code=503)
 
+@app.get("/api/crons/logs")
+async def api_crons_logs(request: Request):
+    """Derniers logs de tous les crons (30 dernières minutes)."""
+    if not check_token(request): raise HTTPException(401)
+    import glob
+    from datetime import datetime, timedelta
+    
+    base = "/home/tofdan/.hermes/profiles/leo-copilot/cron/output"
+    jobs = {}
+    
+    for job_dir in sorted(os.listdir(base)):
+        jpath = os.path.join(base, job_dir)
+        if not os.path.isdir(jpath):
+            continue
+        mds = sorted(glob.glob(os.path.join(jpath, "*.md")), reverse=True)[:5]
+        entries = []
+        for md in mds:
+            try:
+                mtime = os.path.getmtime(md)
+                fname = os.path.basename(md).replace(".md", "")
+                with open(md) as f:
+                    content = f.read(500)
+                # Extraire le titre et statut
+                title = ""
+                status = "ok"
+                for line in content.split("\n"):
+                    if line.startswith("# "):
+                        title = line[2:].strip()
+                    if "❌" in line or "FAIL" in line.upper() or "ERREUR" in line.upper():
+                        status = "error"
+                    if "⚠️" in line:
+                        status = "warn"
+                # Extraire le résumé (dernière ligne non-vide après ---)
+                summary = ""
+                parts = content.split("---")
+                if len(parts) > 1:
+                    summary = parts[-1].strip()[:200]
+                entries.append({
+                    "ts": fname,
+                    "timestamp": mtime,
+                    "title": title,
+                    "status": status,
+                    "summary": summary
+                })
+            except:
+                pass
+        jobs[job_dir[:12]] = entries
+    
+    return JSONResponse({"jobs": jobs, "total": len(jobs)})
+
 @app.get("/energy")
 async def energy_page(request: Request):
     if not check_token(request): raise HTTPException(401)
