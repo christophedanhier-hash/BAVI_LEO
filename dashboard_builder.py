@@ -114,7 +114,7 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js?v=1784003054"></script>
+<script src="/leo/monitoring.js?v=1784004200"></script>
 </script>
 <style>
 :root {{
@@ -447,6 +447,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     <div class="kpi-card"><div class="icon">⚡</div><div class="val" id="e-volt" style="font-size:22px;color:#bc8cff">—</div><div class="lbl">Voltage</div></div>
   </div>
   <div style="display:flex;gap:8px;margin-bottom:12px" id="e-phases"></div>
+  <div id="e-tables" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:12px"></div>
   <div class="card chart-box" style="height:260px">
     <canvas id="powerChart"></canvas>
   </div>
@@ -459,6 +460,9 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   </div>
   <div class="card chart-box" style="height:260px">
     <canvas id="energyHistoryChart"></canvas>
+  </div>
+  <div class="card chart-box" style="height:260px;margin-top:12px">
+    <canvas id="dsmrChart"></canvas>
   </div>
   <script>
   (function(){{
@@ -519,10 +523,70 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     loadSnapshot();
     loadHistory();
     loadEnergyDaily();
+    loadTelegram();
     
     var _energyHistChart = null;
     var _energyMode = 'conso';  // 'conso' ou 'prod'
     var _energyView = 'daily';  // 'daily' ou 'monthly'
+    
+    function loadTelegram() {{
+      fetch('/api/energy/telegram?token='+token).then(function(r){{return r.json()}}).then(function(d){{
+        if(d.error) return;
+        var h = '';
+        
+        // Tableau Infos compteur
+        h += '<div class=\"card\" style=\"padding:10px;font-size:12px\"><h4 style=\"margin:0 0 6px;font-size:12px;border:none;padding:0\">📡 Infos compteur</h4><table style=\"width:100%\">';
+        h += '<tr><td style=\"color:var(--dim)\">Modèle</td><td style=\"font-weight:600\">'+d.meter+'</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">WiFi</td><td>'+d.wifi+'%</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">Tarif actif</td><td>'+(d.tariff==2?'🌙 Heures creuses':'☀️ Heures pleines')+'</td></tr>';
+        h += '</table></div>';
+        
+        // Tableau Puissance instantanée
+        h += '<div class=\"card\" style=\"padding:10px;font-size:12px\"><h4 style=\"margin:0 0 6px;font-size:12px;border:none;padding:0\">⚡ Puissance instantanée</h4><table style=\"width:100%\">';
+        h += '<tr><td style=\"color:var(--dim)\">Totale</td><td style=\"font-weight:600;color:'+(d.power_total_w<0?'#3fb950':'#f85149')+'\">'+d.power_total_w+' W</td></tr>';
+        var pp = d.phase_power || {{}};
+        ['l1','l2','l3'].forEach(function(p){{ h += '<tr><td style=\"color:var(--dim)\">'+p.toUpperCase()+'</td><td>'+(pp[p]*1000).toFixed(0)+' W</td></tr>'; }});
+        h += '<tr><td style=\"color:var(--dim)\">Moyenne</td><td>'+d.power_average_w+' W</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">Pic mois</td><td style=\"color:#d29922;font-weight:600\">'+d.peak_month_w+' W</td></tr>';
+        h += '</table></div>';
+        
+        // Tableau Tension & Courant
+        var pv = d.phase_voltage || {{}}, pc = d.phase_current || {{}};
+        h += '<div class=\"card\" style=\"padding:10px;font-size:12px\"><h4 style=\"margin:0 0 6px;font-size:12px;border:none;padding:0\">🔌 Tension & Courant</h4><table style=\"width:100%\">';
+        ['l1','l2','l3'].forEach(function(p){{ h += '<tr><td style=\"color:var(--dim)\">'+p.toUpperCase()+'</td><td>'+(pv[p]||0).toFixed(1)+' V · '+(pc[p]||0).toFixed(1)+' A</td></tr>'; }});
+        h += '</table></div>';
+        
+        // Tableau Totaux compteur
+        h += '<div class=\"card\" style=\"padding:10px;font-size:12px\"><h4 style=\"margin:0 0 6px;font-size:12px;border:none;padding:0\">📥📤 Totaux compteur</h4><table style=\"width:100%\">';
+        h += '<tr><td style=\"color:var(--dim)\">Import total</td><td style=\"color:#58a6ff;font-weight:600\">'+d.import_total.toFixed(0)+' kWh</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">Import T1</td><td>'+d.import_t1.toFixed(0)+' kWh</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">Import T2</td><td>'+d.import_t2.toFixed(0)+' kWh</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">Export total</td><td style=\"color:#3fb950;font-weight:600\">'+d.export_total.toFixed(0)+' kWh</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">Export T1</td><td>'+d.export_t1.toFixed(0)+' kWh</td></tr>';
+        h += '<tr><td style=\"color:var(--dim)\">Export T2</td><td>'+d.export_t2.toFixed(0)+' kWh</td></tr>';
+        h += '</table></div>';
+        
+        document.getElementById('e-tables').innerHTML = h;
+        
+        // Graphique DSMR historique pics
+        var hist = d.dsmr_history || [];
+        if(hist.length > 1) {{
+          var labels = hist.map(function(p){{return p.period_end.substring(0,7)}});
+          var values = hist.map(function(p){{return p.peak_kw}});
+          var ctx = document.getElementById('dsmrChart');
+          if(ctx) {{
+            if(window._dsmrChart) window._dsmrChart.destroy();
+            window._dsmrChart = new Chart(ctx, {{
+              type:'bar', data:{{labels:labels,datasets:[{{data:values,backgroundColor:'rgba(210,153,34,.3)',borderColor:'#d29922',borderWidth:1,borderRadius:4}}]}},
+              options:{{responsive:true,maintainAspectRatio:false,
+                plugins:{{legend:{{display:false}},title:{{display:true,text:'📊 Pic mensuel — 13 mois (DSMR)',color:'#8b949e',font:{{size:12}}}}}},
+                scales:{{x:{{ticks:{{color:'#484f58',font:{{size:9}}}},grid:{{color:'#21262d'}}}},y:{{ticks:{{color:'#484f58',font:{{size:9}},callback:function(v){{return v+' kW'}}}},grid:{{color:'#21262d'}}}}}}
+              }}
+            }});
+          }}
+        }}
+      }});
+    }}
     
     function switchEnergyView(view) {{
       _energyView = view;

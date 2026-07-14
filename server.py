@@ -768,6 +768,22 @@ async def api_energy_monthly(request: Request):
         return JSONResponse(json.loads(monthly_file.read_text()))
     return JSONResponse([], status_code=503)
 
+@app.get("/api/energy/telegram")
+async def api_energy_telegram(request: Request):
+    """Données détaillées DSMR + tableaux."""
+    if not check_token(request): raise HTTPException(401)
+    import subprocess
+    try:
+        result = subprocess.run(
+            ["/home/tofdan/.hermes/venv/bin/python3", "/home/tofdan/.hermes/scripts/energy-telegram.py"],
+            capture_output=True, text=True, timeout=10
+        )
+        if result.returncode == 0:
+            return JSONResponse(json.loads(result.stdout))
+    except:
+        pass
+    return JSONResponse({"error": "telegram unavailable"}, status_code=503)
+
 @app.get("/energy")
 async def energy_page(request: Request):
     if not check_token(request): raise HTTPException(401)
