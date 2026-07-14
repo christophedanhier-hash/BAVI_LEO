@@ -446,7 +446,8 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
           if(!last) return;
           
           var icon = last.status==='error' ? '🔴' : last.status==='warn' ? '🟡' : '🟢';
-          var bg = last.status==='error' ? '#3d1f1f' : last.status==='warn' ? '#3d3510' : 'var(--card)';
+          var bg = last.status==='error' ? '#2d1518' : last.status==='warn' ? '#2d2610' : 'var(--card)';
+          var border = last.status==='error' ? '#f85149' : last.status==='warn' ? '#d29922' : '#3fb950';
           if(last.status==='error') errors++;
           else if(last.status==='warn') warns++;
           else oks++;
@@ -454,7 +455,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
           var name = last.title.replace('Cron Job: ','').substring(0,45);
           var time = last.ts.substring(11,16);
           
-          h += '<div style="background:'+bg+';border-radius:6px;padding:8px 10px;margin-bottom:6px;font-size:12px;border-left:3px solid '+(last.status==='error'?'#f85149':last.status==='warn'?'#d29922':'#3fb950')+'">';
+          h += '<div style="background:'+bg+';border-radius:6px;padding:8px 10px;margin-bottom:6px;font-size:12px;border-left:3px solid '+border+'">';
           h += '<div style="display:flex;justify-content:space-between;align-items:center">';
           h += '<span style="font-weight:600">'+icon+' '+name+'</span>';
           h += '<span style="color:var(--dim);font-size:10px">'+time+'</span>';
