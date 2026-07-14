@@ -446,7 +446,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
           if(!last) return;
           
           var icon = last.status==='error' ? '🔴' : last.status==='warn' ? '🟡' : '🟢';
-          var bg = last.status==='error' ? '#2d1518' : last.status==='warn' ? '#2d2610' : 'var(--card)';
+          var bg = 'var(--card)';
           var border = last.status==='error' ? '#f85149' : last.status==='warn' ? '#d29922' : '#3fb950';
           if(last.status==='error') errors++;
           else if(last.status==='warn') warns++;
