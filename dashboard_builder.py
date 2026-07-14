@@ -114,7 +114,7 @@ def build_html():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LEO Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script src="/leo/monitoring.js?v=1783973876"></script>
+<script src="/leo/monitoring.js?v=1784002138"></script>
 </script>
 <style>
 :root {{
@@ -215,7 +215,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="tab" onclick="switchTab(this,'tab-wf');loadWorkflows()">🐍 Workflows</div>
   <div class="tab" onclick="switchTab(this,'tab-monitoring')">🖥️ Monitoring</div>
   <div class="tab" onclick="switchTab(this,'tab-cameras')">📷 Caméras</div>
-  <div class="tab" onclick="switchTab(this,'tab-energy')">⚡ Énergie</div>
+  <div class="tab" onclick="switchTab(this,'tab-energy');loadEnergyDaily()">⚡ Énergie</div>
   <div class="tab" onclick="switchTab(this,'tab-viessmann')">🔥 Viessmann</div>
   <div class="tab" onclick="switchTab(this,'tab-bavi')">🏛️ BAVI</div>
 </div>
@@ -450,6 +450,13 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   <div class="card chart-box" style="height:260px">
     <canvas id="powerChart"></canvas>
   </div>
+  <div style="display:flex;gap:8px;margin:12px 0">
+    <button onclick="switchEnergyView('daily')" id="btn-e-daily" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📅 7 jours</button>
+    <button onclick="switchEnergyView('monthly')" id="btn-e-monthly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📆 12 mois</button>
+  </div>
+  <div class="card chart-box" style="height:260px">
+    <canvas id="energyHistoryChart"></canvas>
+  </div>
   <script>
   (function(){{
     var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
@@ -508,6 +515,51 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     
     loadSnapshot();
     loadHistory();
+    loadEnergyDaily();
+    
+    var _energyHistChart = null;
+    
+    function switchEnergyView(view) {{
+      document.getElementById('btn-e-daily').style.background = view==='daily' ? 'var(--accent)' : 'var(--card)';
+      document.getElementById('btn-e-monthly').style.background = view==='monthly' ? 'var(--accent)' : 'var(--card)';
+      if(view === 'daily') loadEnergyDaily();
+      else loadEnergyMonthly();
+    }}
+    
+    function loadEnergyDaily() {{
+      fetch('/api/energy/daily?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+        if(!data || !data.length) return;
+        var last7 = data.slice(-7);
+        var labels = last7.map(function(d){{return d.date.substring(5)}});
+        var values = last7.map(function(d){{return d.kwh}});
+        renderEnergyHist(labels, values, '📅 Conso journalière — 7 jours', '#3fb950', 'rgba(63,185,80,.3)');
+      }});
+    }}
+    
+    function loadEnergyMonthly() {{
+      fetch('/api/energy/monthly?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+        if(!data || !data.length) return;
+        var last12 = data.slice(-12);
+        var labels = last12.map(function(d){{return d.month}});
+        var values = last12.map(function(d){{return d.kwh}});
+        renderEnergyHist(labels, values, '📆 Conso mensuelle — 12 mois', '#58a6ff', 'rgba(88,166,255,.3)');
+      }});
+    }}
+    
+    function renderEnergyHist(labels, values, title, color, bgColor) {{
+      var ctx = document.getElementById('energyHistoryChart');
+      if(!ctx) return;
+      if(_energyHistChart) _energyHistChart.destroy();
+      _energyHistChart = new Chart(ctx, {{
+        type:'bar', data:{{labels:labels,datasets:[{{data:values,backgroundColor:bgColor,borderColor:color,borderWidth:1,borderRadius:4}}]}},
+        options:{{responsive:true,maintainAspectRatio:false,
+          plugins:{{legend:{{display:false}},title:{{display:true,text:title,color:'#8b949e',font:{{size:12}}}}}},
+          scales:{{x:{{ticks:{{color:'#484f58',font:{{size:10}}}},grid:{{color:'#21262d'}}}},y:{{ticks:{{color:'#484f58',font:{{size:10}},callback:function(v){{return v+' kWh'}}}},grid:{{color:'#21262d'}}}}}}
+        }}
+      }});
+    }}
+    
+    window.switchEnergyView = switchEnergyView;
   }})();
   </script>
 </div>

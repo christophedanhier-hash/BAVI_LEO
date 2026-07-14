@@ -752,6 +752,22 @@ async def api_energy_history(request: Request):
         return JSONResponse(json.loads(ENERGY_HISTORY_FILE.read_text()))
     return JSONResponse([], status_code=503)
 
+@app.get("/api/energy/daily")
+async def api_energy_daily(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    daily_file = Path("/home/tofdan/.hermes/metrics/energy_daily.json")
+    if daily_file.exists():
+        return JSONResponse(json.loads(daily_file.read_text()))
+    return JSONResponse([], status_code=503)
+
+@app.get("/api/energy/monthly")
+async def api_energy_monthly(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    monthly_file = Path("/home/tofdan/.hermes/metrics/energy_monthly.json")
+    if monthly_file.exists():
+        return JSONResponse(json.loads(monthly_file.read_text()))
+    return JSONResponse([], status_code=503)
+
 @app.get("/energy")
 async def energy_page(request: Request):
     if not check_token(request): raise HTTPException(401)
