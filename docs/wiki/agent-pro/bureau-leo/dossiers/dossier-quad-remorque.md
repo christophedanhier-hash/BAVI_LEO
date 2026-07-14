@@ -2,7 +2,7 @@
 date: 2026-07-11
 bureau: bureau-leo
 auteur: LEO
-version: v1e
+version: v1f
 modele: deepseek-v4-flash
 tags: [quad, atv, can-am, outlander, remorque, saris, attelage, camping-car, tofdan]
 statut: finalise
@@ -23,9 +23,9 @@ type: dossier
 | **Quad** | Can-Am **Outlander 700 MAX XT** (2026) — GRIS MAT | ✅ **Offre signée** |
 | **Concessionnaire quad** | **KD QUAD RACING** — Rue Trigaux 246, 7170 Manage | ✅ |
 | **Offre n°** | **11307** du 11/07/2026 | ✅ |
-| **Remorque** | **Saris GO 306 154 180 2000 2** — Fourgon DE freiné | ✅ **Devis reçu 6 883 €** |
-| **Revendeur remorque** | **L'Oasis des Loisirs** — Chaussée de Gembloux 69, 5140 Tongrinne | 🔜 À commander |
-| **Attelage CC** (Coenen) | Attelage + câblage 13 pôles — **1 950 € TVAC** | ✅ **Devis reçu — Docs envoyés** |
+| **Remorque** | **Saris GO 306 154 180 2000 2** — Fourgon DE freiné | ✅ **Décision prise** |
+| **Revendeur remorque** | **L'Oasis des Loisirs** — Chaussée de Gembloux 69, 5140 Tongrinne | 🔜 **À commander** |
+| **Attelage CC** (Coenen) | Attelage + câblage 13 pôles — **1 950 € TVAC** | ✅ **Rendez-vous 3 août** |
 | **Attelage quad** | Boule d'attelage + faisceau 7 broches (chez KD Quad) | 🔜 À chiffrer |
 | **Roue jockey motorisée** | **Al-Ko Premium Electric** (1 000 kg, ~350 €) | 🔜 À commander |
 | **Treuil** | Électrique 12V 2 000-3 500 lbs + rampe aluminium | 🔜 À prévoir |
@@ -100,13 +100,14 @@ type: dossier
 | 🔐 Devis valable | **15 jours** |
 | ⚠️ Diminution charge utile | -55 kg |
 
-### 3.3 Documents envoyés (13/07)
+### 3.3 Documents envoyés (13/07) & rendez-vous (3 août)
 
-| Document | Fichier |
-|:---------|:--------|
+| Document / Action | Fichier / Date |
+|:------------------|:---------------|
 | ✅ Certificat de conformité (COC) | `cc_ford.pdf` |
 | ✅ Scan documents véhicule | `numérisé_20260711-1208.pdf` |
 | ✅ 3 photos châssis arrière | `PXL_20260713_*.jpg` |
+| ✅ **Rendez-vous pris** | **3 août 2026** (avant fermeture 10 août) |
 
 ### 3.4 Vérifications
 
@@ -340,8 +341,8 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 | # | Action | Qui | Priorité |
 |:-:|:-------|:---:|:--------:|
 | 1 | Commander **remorque Saris** à L'Oasis des Loisirs (Tongrinne) | Christophe | 🥇 |
-| 2 | ✅ **Devis Coenen reçu** (1 950 €) — **DOCS ENVOYÉS** (COC + photos) | ✅ **Fait** | ✅ |
-| 3 | Confirmer **rdv Coenen** (avant 10 août ou après 23 août) | Christophe | 🥇 |
+| 2 | ✅ **Devis Coenen signé — Rendez-vous 3 août** | ✅ **Confirmé** | ✅ |
+| 3 | **Étape attelage Coenen** — **Rendez-vous 3 août** (avant fermeture 10 août) | Christophe | 🥇 |
 | 4 | Vérifier **attelage quad** chez KD Quad (prix, montage, faisceau) | Christophe | 🥇 |
 | 5 | Contacter **Yannick (Gerardy)** pour assurance quad + remorque | ✅ **Contact pris** | ✅ |
 | | 📞 **Yannick Van Melsen** — Gerardy Assurances | | |
@@ -363,6 +364,7 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 | **v1b** | **11/07/2026** | **LEO** | **+ Attelage Coenen (Corroy-le-Château) — Roller Team 287 TL — escamotable invisible** |
 | **v1c** | **12/07/2026** | **LEO** | **+ Prix réel Saris 6 883€ (offre PDF 12/07) + détail options** |
 | **v1d** | **13/07/2026** | **LEO** | **+ Devis Coenen réel 1 950€ + docs envoyés + budget recalculé ~25 700€ + tâches mises à jour** |
+| **v1f** | **13/07/2026** | **LEO** | **+ Décision remorque Saris (6 883 €) — Rendez-vous Coenen 3 août — Attelage CC confirmé** |
 | **v1e** | **13/07/2026** | **LEO** | **+ Contact Yannick (Gerardy) pour assurance quad + remorque + tâche mise à jour** |
 
 > 🔙 **Documents archivés :**
