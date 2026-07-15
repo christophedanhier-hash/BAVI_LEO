@@ -20,6 +20,7 @@ type: index
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------:|:------|:-----|:------:|:-------:|
 | 15/07/2026 | v1 | 📚 [Référentiel du Bureau Connaissance](referentiel-bureau-connaissance.md) | `connaissance` `memoire` `capitalisation` `v1` | ✅ Finalisé | [📥](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-connaissance/referentiel-bureau-connaissance.md) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/blob/main/docs/wiki/agent-pro/bureau-connaissance/referentiel-bureau-connaissance.md) [🔗](referentiel-bureau-connaissance.md) |
+| 15/07/2026 | v1 | 📖 [Bibliothèque de Cas IA](bibliotheque-cas-ia.md) | `bibliotheque` `cas` `ia` `analyses` `index` | ✅ Finalisé | [📥](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-connaissance/bibliotheque-cas-ia.md) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/blob/main/docs/wiki/agent-pro/bureau-connaissance/bibliotheque-cas-ia.md) [🔗](bibliotheque-cas-ia.md) |
 
 ---
 
