@@ -2,9 +2,9 @@
 date: 2026-07-15
 bureau: bureau-robert
 auteur: Robert (Bureau Robert)
-version: v4
+version: v5
 modele: deepseek-v4-flash
-tags: [evolution, referentiel, mise-en-place, validation, sophie, integration, experts, dispatch, solidaris, ao, robert-v2]
+tags: [evolution, referentiel, mise-en-place, validation, sophie, connaissance, capitalisation, experts, dispatch, solidaris, ao, robert-v2]
 statut: finalise
 type: referentiel-evolution
 ---
@@ -25,6 +25,7 @@ type: referentiel-evolution
 | **v2** | 14/07/2026 | LEO 🤖 | ✅ Archivé | Design 16 experts (brouillon conception) |
 | **v3** | 15/07/2026 | 🏛️ **Robert** | ✅ **Finalisé** | Validation environnement + fiches expert |
 | **v4** | 15/07/2026 | 🏛️ **Robert** | ✅ **Finalisé** | Intégration Sophie (expert transverse #17) + documentation invocation directe |
+| **v5** | 15/07/2026 | 🏛️ **Robert** | ✅ **Finalisé** | Gouvernance Bureau Connaissance + alimentation automatique bibliothèque de cas |
 
 ---
 
@@ -706,7 +707,64 @@ Christophe : Sophie, analyse le TCO de la solution cloud Azure pour notre POC IA
 
 ---
 
-## 16. Stockage
+## 16. 📚 Gouvernance du Bureau de la Connaissance
+
+### 16.1 Principe
+
+Le **Bureau de la Connaissance** est un bureau dédié à la capitalisation et à la mémoire organisationnelle. Il est **rattaché à Robert** mais constitue un bureau autonome avec son propre dossier dans le wiki.
+
+**URL :** `https://christophedanhier-hash.github.io/BAVI_LEO/wiki/agent-pro/bureau-connaissance/`
+
+### 16.2 Alimentation — Mode « au fil de l'eau »
+
+La bibliothèque de cas est alimentée **automatiquement par Robert** à chaque analyse produite :
+
+```
+Toi : « Robert, analyse [sujet] »
+  ↓
+Robert produit l'analyse → stockée dans bureau-robert/
+  ↓
+Robert ajoute une fiche dans la bibliothèque de cas
+  ↓
+📖 https://.../bureau-connaissance/bibliotheque-cas-ia/
+```
+
+**Règle :**
+- **Analyses structurées** (note, dossier, projet) → entrée ajoutée dans la bibliothèque
+- **Quick scans** simples (échange rapide) → pas d'entrée
+- **Mise à jour** d'une analyse existante (v1→v2) → ligne ajoutée avec mention « MàJ »
+
+### 16.3 Contenu de la bibliothèque
+
+Chaque entrée contient :
+
+| Colonne | Contenu |
+|:--------|:--------|
+| **Date** | Date de l'analyse |
+| **Cas** | Titre de l'analyse |
+| **Problème** | Problème traité |
+| **Solution** | Solution proposée |
+| **Expert** | Expert(s) sollicité(s) |
+| **Statut** | ✅ Finalisé / 📝 Brouillon |
+| **Lien** | Lien vers l'analyse complète |
+
+### 16.4 Rôles
+
+| Tâche | Qui | Statut |
+|:------|:----|:------:|
+| Créer la bibliothèque de cas | **Robert** | ✅ Fait |
+| Alimenter après chaque analyse | **Robert** (auto) | ✅ Actif |
+| Crons (veille, patterns) | **Michel** 🔧 | ⬜ À venir |
+
+### 16.5 Exemple de ligne dans la bibliothèque
+
+```
+| 15/07/2026 | 📚 **Création Bureau Connaissance** | Absence de capitalisation transverse | Bureau dédié | Robert | ✅ Actif | [↗](lien) |
+```
+
+---
+
+## 17. Stockage
 
 Toutes les analyses produites par Robert sont stockées dans :
 `BAVI_LEO/docs/wiki/agent-pro/bureau-robert/`
