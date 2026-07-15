@@ -436,32 +436,36 @@ flowchart TB
 
 ---
 
-## 10. 🛠️ Instructions pour Michel — Mise en œuvre
+## 10. 🛠️ Plan de mise en œuvre — Répartition Léo / Michel
 
 > Les sections Email (9) et Teams (6) ne sont pas à l'ordre du jour. Seul **Telegram** est à mettre en place.
 
-### 10.1 Création du profil Hermes `bureau-robert`
+### 10.1 Prérequis livrés par Léo (contenu)
 
-| Action | Détail |
-|:-------|:-------|
-| **Nom du profil** | `bureau-robert` |
-| **Modèle** | `deepseek-v4-flash` (comme Léo) |
-| **Provider** | `deepseek` |
-| **Fallback** | `deepseek-v4-flash` (même config que default) |
-| **Langue** | Français |
-| **Délégation** | Doit pouvoir déléguer à des sous-agents (16 experts) |
+Avant que Michel n'intervienne sur l'infrastructure, **Léo prépare et livre** :
 
-Fichier de config attendu : `~/.hermes/profiles/bureau-robert/config.yaml`
+| Livrable | Détail | Statut |
+|:---------|:-------|:-------|
+| 📝 **SKILL.md complet** | Contenu prêt à copier (section 10.3 ci-dessous) | ✅ **Prêt** |
+| 🧠 **16 fiches experts** | Mission, domaine, condition d'activation | ✅ **Prêt** |
+| ⚙️ **Règles de dispatch** | Impératives + optionnelles | ✅ **Prêt** |
+| 📋 **Modes de saisine** | Quick scan → Projet déploiement | ✅ **Prêt** |
+| 🗂️ **Structure dossier wiki** | `bureau-robert/` avec index à jour | ✅ **Prêt** |
+| 📊 **Schémas Mermaid** | Architecture, flux, dispatch | ✅ **Prêt** |
+| 🏛️ **Identité Robert** | Nom, rôle, signature, présentation | ✅ **Prêt** |
 
-### 10.2 Bot Telegram dédié
+> Une fois ces prérequis validés par Christophe, Michel peut implémenter.
 
-| Action | Détail |
-|:-------|:-------|
-| **Créer un bot** | Via @BotFather sur Telegram — nom suggéré : `Robert_Conseil_Bot` ou `@RobertConseilBot` |
-| **Token** | Le transmettre à Christophe + le configurer dans le profil |
-| **Chat ID** | Associer au chat de Christophe (et future Direction AO) |
-| **Plugin** | Activer le transport Telegram dans le profil |
-| **Signature bot** | "🏛️ Robert — Conseil Stratégique IA" |
+### 10.2 Implémentation par Michel (infrastructure)
+
+| Action | Détail | Dépend de |
+|:-------|:-------|:----------|
+| **Création profil** | `~/.hermes/profiles/bureau-robert/config.yaml` | Prérequis Léo (validé) |
+| **Bot Telegram** | @BotFather → token → config profil | Profil créé |
+| **SKILL.md installé** | Copier le contenu section 10.3 dans `skills/bureau-robert/SKILL.md` | ✅ Livré par Léo |
+| **Accès vault Obsidian** | Git clone + droits écriture | Profil créé |
+| **Monitoring Gateway** | Dashboard Hermes → ajouter Robert | Profil actif |
+| **Test** | "Bonjour, je suis Robert 🤖" → Christophe validé | Tout le reste |
 
 ### 10.3 SKILL.md — Règles d'orchestration
 
@@ -584,7 +588,7 @@ productions et synthétise.
 5. Robert peut déléguer à ses sous-agents via `delegate_task`
 ```
 
-### 10.4 Accès au vault Obsidian
+### 10.4 Accès au vault Obsidian (Michel)
 
 | Point | Configuration |
 |:------|:--------------|
@@ -594,7 +598,7 @@ productions et synthétise.
 | **Mémoire** | Mémoire persistante activée (comme Léo) |
 | **Git** | Robert doit pouvoir `git add`, `git commit`, `git push` sur le dépôt BAVI LEO |
 
-### 10.5 Monitoring — Dashboard Gateway
+### 10.5 Monitoring — Dashboard Gateway (Michel)
 
 | Point | Configuration |
 |:------|:--------------|
@@ -603,31 +607,33 @@ productions et synthétise.
 | **Watchdog** | Health check de Robert (vérifier que le profil répond) |
 | **Alertes** | Les alertes monitoring remontent à Michel (comme pour les autres profils) |
 
-### 10.6 Règles générales (applicables à Robert)
+### 10.6 Règles générales (applicables à Robert) — Léo + Michel
 
-Ces règles sont les mêmes que pour les autres bureaux :
+| Règle | Détail | Par |
+|:------|:--------|:----|
+| 🔒 **Rôles** | Léo = contenu, rédaction, documents. **Michel = infrastructure, configs, crons, scripts, coûts, modèles** | ✅ Établi |
+| 🔄 **Git** | Commit + push immédiat après chaque modification de document | Léo |
+| 📝 **Frontmatter** | Tout document wiki doit avoir un frontmatter YAML valide (date, bureau, auteur, version, tags, statut) | Léo |
+| 🗂️ **Obsidian** | Tous les documents sont dans le vault Obsidian BAVI LEO | Léo |
+| 📊 **Mermaid** | Tous les schémas doivent être en Mermaid (pas d'ASCII art) | Léo |
+| 🔌 **Transport** | Telegram uniquement pour l'instant (pas de Teams, pas d'email) | Michel |
+| ⚙️ **Config profil** | Modèle deepseek-v4-flash, fallback deepseek-v4-flash, pas de Gemini | Michel |
 
-| Règle | Détail |
-|:------|:--------|
-| 🔒 **Rôles** | Léo = contenu, rédaction, documents. **Michel = infrastructure, configs, crons, scripts, coûts, modèles** |
-| 🔄 **Git** | Commit + push immédiat après chaque modification de document |
-| 📝 **Frontmatter** | Tout document wiki doit avoir un frontmatter YAML valide (date, bureau, auteur, version, tags, statut) |
-| 🗂️ **Obsidian** | Tous les documents sont dans le vault Obsidian BAVI LEO |
-| 📊 **Mermaid** | Tous les schémas doivent être en Mermaid (pas d'ASCII art) |
-| 🔌 **Transport** | Telegram uniquement pour l'instant (pas de Teams, pas d'email) |
+### 10.7 Vérification — Checklist déploiement
 
-### 10.7 Vérification — Checklist de déploiement
-
-| # | Vérification | ✅ |
-|:-:|:-------------|:-:|
-| 1 | Profil `bureau-robert` créé dans `~/.hermes/profiles/` | ⬜ |
-| 2 | Bot Telegram créé (@BotFather) et token configuré | ⬜ |
-| 3 | Robert répond sur Telegram ("Bonjour, je suis Robert 🤖") | ⬜ |
-| 4 | SKILL.md avec règles d'orchestration déployé | ⬜ |
-| 5 | Accès au vault Obsidian (git clone + pull) | ⬜ |
-| 6 | Mémoire persistante activée | ⬜ |
-| 7 | Robert apparaît dans le dashboard Gateway | ⬜ |
-| 8 | Christophe notifié que Robert est opérationnel | ⬜ |
+| # | Vérification | Qui | ✅ |
+|:-:|:-------------|:----|:-:|
+| 1 | SKILL.md livré par Léo (section 10.3) | **Léo** | ✅ |
+| 2 | Documentation des 16 experts complète | **Léo** | ✅ |
+| 3 | Schémas Mermaid et règles dispatch validés | **Léo** | ✅ |
+| 4 | Profil `bureau-robert` créé dans `~/.hermes/profiles/` | Michel | ⬜ |
+| 5 | Bot Telegram créé (@BotFather) et token configuré | Michel | ⬜ |
+| 6 | SKILL.md installé dans le profil (copie du contenu §10.3) | Michel | ⬜ |
+| 7 | Robert répond sur Telegram ("Bonjour, je suis Robert 🤖") | Michel | ⬜ |
+| 8 | Accès au vault Obsidian (git clone + pull) | Michel | ⬜ |
+| 9 | Mémoire persistante activée | Michel | ⬜ |
+| 10 | Robert apparaît dans le dashboard Gateway | Michel | ⬜ |
+| 11 | Christophe notifié que Robert est opérationnel | Michel | ⬜ |
 
 ---
 
