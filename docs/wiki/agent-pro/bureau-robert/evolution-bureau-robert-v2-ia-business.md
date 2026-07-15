@@ -1,3 +1,14 @@
+---
+date: 2026-07-14
+bureau: bureau-robert
+auteur: LEO
+version: brouillon-v2
+modele: deepseek-v4-flash
+tags: [evolution, ia, business, solidaris, ao, strategie, innovation, robert-v2]
+statut: brouillon
+type: analyse-evolution
+---
+
 # 🏛️ Bureau Robert v2 — Évolution Stratégique IA  
 ## Analyse : Architecture multi-experts IT & Business pour l'intégration de l'IA
 
