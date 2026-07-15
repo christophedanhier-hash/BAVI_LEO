@@ -385,6 +385,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../agent-pro/bureau-connaissance/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📚 Connaissance
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1101,6 +1120,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-pro/bureau-connaissance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Connaissance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1188,8 +1234,8 @@
 <h1 id="cronjobs-hermes-inventaire-complet">⏰ Cronjobs Hermes — Inventaire complet<a class="headerlink" href="#cronjobs-hermes-inventaire-complet" title="Permanent link">&para;</a></h1>
 <!-- AUTO:START header -->
 <blockquote>
-<p><strong>Généré automatiquement le 10/07/2026 à 18:06</strong>
-Source : <code>profiles/leo-copilot/cron/jobs.json</code> (29 jobs)</p>
+<p><strong>Généré automatiquement le 15/07/2026 à 18:00</strong>
+Source : <code>profiles/leo-copilot/cron/jobs.json</code> (37 jobs)</p>
 </blockquote>
 <!-- AUTO:END header -->
 
@@ -1204,15 +1250,15 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (29 jobs)</p>
 <tbody>
 <tr>
 <td><strong>Crons Hermes</strong> (tous profils, consolidé)</td>
-<td style="text-align: center;"><strong>29</strong></td>
+<td style="text-align: center;"><strong>37</strong></td>
 </tr>
 <tr>
 <td><strong>Crons hôte</strong> (crontab tofdan@172.17.0.1)</td>
-<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>6</strong></td>
 </tr>
 <tr>
 <td><strong>Total général</strong></td>
-<td style="text-align: center;"><strong>34</strong></td>
+<td style="text-align: center;"><strong>43</strong></td>
 </tr>
 </tbody>
 </table>
@@ -1232,205 +1278,261 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (29 jobs)</p>
 <tbody>
 <tr>
 <td style="text-align: center;">1</td>
+<td>Drive → Issue GitHub</td>
+<td style="text-align: center;"><code>*/30 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Gardien du Drive</td>
+<td style="text-align: center;"><code>0 */6 * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Save Contacts</td>
+<td style="text-align: center;"><code>*/15 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>⚡ Énergie — HomeWizard P1</td>
+<td style="text-align: center;"><code>*/2 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
 <td>💰 Budget Alert</td>
 <td style="text-align: center;"><code>0 8,20 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
 <td>💾 LEO Backup quotidien → GDrive (script)</td>
 <td style="text-align: center;"><code>0 6 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">3</td>
+<td style="text-align: center;">7</td>
+<td>💾 Recovery State Export → GDrive (horaire)</td>
+<td style="text-align: center;"><code>30 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>📊 Agrégation Énergie (horaire)</td>
+<td style="text-align: center;"><code>0 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
 <td>📊 Synthèse Hebdomadaire LEO</td>
 <td style="text-align: center;"><code>0 20 * * 0</code></td>
 <td style="text-align: center;">script</td>
-<td style="text-align: center;">⚠️</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">10</td>
 <td>📊 Unified Collector v2</td>
 <td style="text-align: center;"><code>*/15 * * * *</code></td>
 <td style="text-align: center;">LLM</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">11</td>
+<td>📋 Doc Watch Auto (sync documents)</td>
+<td style="text-align: center;"><code>*/2 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
 <td>📋 doc-crons-sync</td>
 <td style="text-align: center;"><code>0 */6 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">6</td>
-<td>📓 vault-bavi-daily-journal</td>
-<td style="text-align: center;"><code>10 23 * * *</code></td>
-<td style="text-align: center;">LLM</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td style="text-align: center;">7</td>
-<td>📓 vault-daily-journal (vault-leo)</td>
+<td style="text-align: center;">13</td>
+<td>📓 Journaux Quotidiens (4 vaults)</td>
 <td style="text-align: center;"><code>0 23 * * *</code></td>
 <td style="text-align: center;">LLM</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">8</td>
-<td>📓 vault-default-daily-journal</td>
-<td style="text-align: center;"><code>5 23 * * *</code></td>
-<td style="text-align: center;">LLM</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td style="text-align: center;">9</td>
-<td>📓 vault-emile-daily-journal</td>
-<td style="text-align: center;"><code>15 23 * * *</code></td>
-<td style="text-align: center;">LLM</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td style="text-align: center;">10</td>
-<td>📖 doc-watch-auto</td>
-<td style="text-align: center;"><code>0 */6 * * *</code></td>
-<td style="text-align: center;">script</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td style="text-align: center;">11</td>
+<td style="text-align: center;">14</td>
 <td>📝 docs-update</td>
 <td style="text-align: center;"><code>0 */4 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">12</td>
+<td style="text-align: center;">15</td>
 <td>📡 Machine KPI Collector</td>
 <td style="text-align: center;"><code>*/5 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">13</td>
+<td style="text-align: center;">16</td>
 <td>📦 Auto-Archive BAVI LEO (5min)</td>
 <td style="text-align: center;"><code>every 5m</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">14</td>
+<td style="text-align: center;">17</td>
+<td>📦 Cron Log Archiver (horaire)</td>
+<td style="text-align: center;"><code>15 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td>📧 Check Gmail — emails importants (30min)</td>
+<td style="text-align: center;"><code>every 30m</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
 <td>📧 Email Classifier — rule-based (inbox zero)</td>
 <td style="text-align: center;"><code>*/30 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">15</td>
+<td style="text-align: center;">20</td>
+<td>📷 Surveillance caméras — mouvement → Telegram</td>
+<td style="text-align: center;"><code>*/5 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
 <td>🔄 Auto-commit wikis (toutes les heures)</td>
 <td style="text-align: center;"><code>0 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">16</td>
-<td>🔄 Dashboard Server Watchdog</td>
-<td style="text-align: center;"><code>*/2 * * * *</code></td>
-<td style="text-align: center;">script</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td style="text-align: center;">17</td>
+<td style="text-align: center;">22</td>
 <td>🔄 Déploiement auto tofdan.be</td>
 <td style="text-align: center;"><code>5 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">18</td>
+<td style="text-align: center;">23</td>
+<td>🔄 Gateway Auto-Restart</td>
+<td style="text-align: center;"><code>*/15 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
 <td>🔄 Rebuild Wiki BAVI local</td>
 <td style="text-align: center;"><code>*/15 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">19</td>
+<td style="text-align: center;">25</td>
 <td>🔄 Rebuild Wiki Voyages local</td>
 <td style="text-align: center;"><code>15 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">20</td>
+<td style="text-align: center;">26</td>
 <td>🔄 Refresh Google Tokens (50min)</td>
 <td style="text-align: center;"><code>*/50 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">21</td>
+<td style="text-align: center;">27</td>
 <td>🔄 drive-sync</td>
 <td style="text-align: center;"><code>0 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">22</td>
+<td style="text-align: center;">28</td>
 <td>🔄 sync-skills-to-copilot</td>
 <td style="text-align: center;"><code>*/30 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">23</td>
+<td style="text-align: center;">29</td>
+<td>🔍 Audit Infra (cohérence globale)</td>
+<td style="text-align: center;"><code>0 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
 <td>🔍 Veille IA quotidienne</td>
 <td style="text-align: center;"><code>0 7 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">24</td>
+<td style="text-align: center;">31</td>
 <td>🔧 LEO Maintenance quotidienne</td>
 <td style="text-align: center;"><code>0 3 * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">25</td>
-<td>🛡️ BAVI Server Watchdog</td>
+<td style="text-align: center;">32</td>
+<td>🖥️ Dashboards Watchdog (8765+9119)</td>
+<td style="text-align: center;"><code>*/2 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">33</td>
+<td>🛡️ LEO Health Check (script)</td>
+<td style="text-align: center;"><code>2,17,32,47 * * * *</code></td>
+<td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">34</td>
+<td>🛡️ Watchdog BAVI-LEO (Sylvia)</td>
 <td style="text-align: center;"><code>*/5 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">26</td>
-<td>🛡️ Cron Ownership Watchdog</td>
-<td style="text-align: center;"><code>5,20,35,50 * * * *</code></td>
+<td style="text-align: center;">35</td>
+<td>🩺 Cron Watchdog v2 (logs + ownership)</td>
+<td style="text-align: center;"><code>*/15 * * * *</code></td>
 <td style="text-align: center;">script</td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td style="text-align: center;">27</td>
-<td>🛡️ LEO Health Check (script)</td>
-<td style="text-align: center;"><code>2,17,32,47 * * * *</code></td>
-<td style="text-align: center;">script</td>
-<td style="text-align: center;">❌</td>
-</tr>
-<tr>
-<td style="text-align: center;">28</td>
-<td>🩺 Cron Health Watchdog (log scanner)</td>
-<td style="text-align: center;"><code>3,18,33,48 * * * *</code></td>
-<td style="text-align: center;">script</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td style="text-align: center;">29</td>
+<td style="text-align: center;">36</td>
 <td>🩺 GitHub Actions Watchdog</td>
 <td style="text-align: center;"><code>4,19,34,49 * * * *</code></td>
 <td style="text-align: center;">script</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: center;">37</td>
+<td>Collecte Viessmann</td>
+<td style="text-align: center;"><code>*/5 * * * *</code></td>
+<td style="text-align: center;">LLM</td>
 <td style="text-align: center;">✅</td>
 </tr>
 </tbody>
@@ -1466,9 +1568,13 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (29 jobs)</p>
 <td style="text-align: center;">H5</td>
 <td><code>0 2 * * * /opt/n8n-data/backup.sh &gt;&gt; /opt/n8n-data/backups/backup.log</code></td>
 </tr>
+<tr>
+<td style="text-align: center;">H6</td>
+<td><code>*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh</code></td>
+</tr>
 </tbody>
 </table>
-<p><em>Généré automatiquement le 10/07/2026 à 18:06</em></p>
+<p><em>Généré automatiquement le 15/07/2026 à 18:00</em></p>
 
 
 

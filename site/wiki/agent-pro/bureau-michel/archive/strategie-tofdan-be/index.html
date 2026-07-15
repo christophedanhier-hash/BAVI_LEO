@@ -379,6 +379,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bureau-connaissance/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📚 Connaissance
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1010,6 +1029,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bureau-connaissance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Connaissance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1110,10 +1156,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-3-monitoring-leo-copilot" class="md-nav__link">
+  <a href="#phase-3-monitoring-michel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 3 — Monitoring (🔧 Léo Copilot)
+        Phase 3 — Monitoring (🔧 Michel)
       
     </span>
   </a>
@@ -1204,10 +1250,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#leo-copilot-michel-infra_hermes-monitoring" class="md-nav__link">
+  <a href="#michel-michel-infra_hermes-monitoring" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔧 Léo Copilot (Michel — Infra_Hermes) — Monitoring
+        🔧 Michel (Michel — Infra_Hermes) — Monitoring
       
     </span>
   </a>
@@ -1269,7 +1315,7 @@
 <h1 id="strategie-dhebergement-tofdanbe">🌐 Stratégie d'hébergement — tofdan.be<a class="headerlink" href="#strategie-dhebergement-tofdanbe" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Objectif :</strong> Migrer le site www.tofdan.be de Google Sites vers le serveur LEO
-<strong>Orchestrateur :</strong> 🤖 LEO | <strong>Code :</strong> 💻 GitHub Copilot | <strong>Infra hôte :</strong> 🐋 CodeWhale | <strong>Infra conteneur :</strong> 🔧 Léo Copilot</p>
+<strong>Orchestrateur :</strong> 🤖 LEO | <strong>Code :</strong> 💻 GitHub Copilot | <strong>Infra hôte :</strong> 🐋 CodeWhale | <strong>Infra conteneur :</strong> 🔧 Michel</p>
 </blockquote>
 <hr />
 <h2 id="1-objectifs">1. 🎯 Objectifs<a class="headerlink" href="#1-objectifs" title="Permanent link">&para;</a></h2>
@@ -1331,7 +1377,7 @@
         FILES
     end
 
-    subgraph "Surveillé par Léo Copilot"
+    subgraph "Surveillé par Michel"
         MONIT[Monitoring uptime&lt;br/&gt;Dashboard]
     end</code></pre>
 <hr />
@@ -1369,7 +1415,7 @@
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">Vérifier que le site répond en HTTP + HTTPS</td>
-<td style="text-align: center;">🐋 + 🔧 Léo Copilot</td>
+<td style="text-align: center;">🐋 + 🔧 Michel</td>
 </tr>
 </tbody>
 </table>
@@ -1407,7 +1453,7 @@
 </tbody>
 </table>
 <p><strong>Estimation :</strong> 1-2 sessions</p>
-<h3 id="phase-3-monitoring-leo-copilot">Phase 3 — Monitoring (🔧 Léo Copilot)<a class="headerlink" href="#phase-3-monitoring-leo-copilot" title="Permanent link">&para;</a></h3>
+<h3 id="phase-3-monitoring-michel">Phase 3 — Monitoring (🔧 Michel)<a class="headerlink" href="#phase-3-monitoring-michel" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1420,17 +1466,17 @@
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">Ajouter un cron de check uptime (toutes les 5 min)</td>
-<td style="text-align: center;">🔧 Léo Copilot</td>
+<td style="text-align: center;">🔧 Michel</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">Dashboard stats visites (optionnel : GoAccess ou simple compteur)</td>
-<td style="text-align: center;">🔧 Léo Copilot</td>
+<td style="text-align: center;">🔧 Michel</td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">Alerte si site down</td>
-<td style="text-align: center;">🔧 Léo Copilot</td>
+<td style="text-align: center;">🔧 Michel</td>
 </tr>
 </tbody>
 </table>
@@ -1535,7 +1581,7 @@ Contient : exploration système solaire 2D/3D, Lune, Terre &amp; saisons, guide 
 <p><strong>Étapes :</strong>
 1. Analyser le besoin avec Christophe → rédiger la stratégie
 2. Valider le plan avec Christophe
-3. Dispatch les tâches vers CodeWhale, GitHub Copilot, Léo Copilot
+3. Dispatch les tâches vers CodeWhale, GitHub Copilot, Michel
 4. Documenter l'avancement dans le wiki BAVI
 5. Proposer les évolutions (blog, sections, design)</p>
 <hr />
@@ -1672,8 +1718,8 @@ Contient : exploration système solaire 2D/3D, Lune, Terre &amp; saisons, guide 
 </code></pre></div></p>
 <p><strong>Résultat attendu :</strong> Site complet, responsive, design propre.</p>
 <hr />
-<h3 id="leo-copilot-michel-infra_hermes-monitoring">🔧 Léo Copilot (Michel — Infra_Hermes) — Monitoring<a class="headerlink" href="#leo-copilot-michel-infra_hermes-monitoring" title="Permanent link">&para;</a></h3>
-<p><strong>Contexte :</strong> Je suis Léo Copilot, le bot infrastructure. Je travaille DANS le conteneur Hermes. Je ne peux pas installer Nginx sur l'hôte.</p>
+<h3 id="michel-michel-infra_hermes-monitoring">🔧 Michel (Michel — Infra_Hermes) — Monitoring<a class="headerlink" href="#michel-michel-infra_hermes-monitoring" title="Permanent link">&para;</a></h3>
+<p><strong>Contexte :</strong> Je suis Michel, le bot infrastructure. Je travaille DANS le conteneur Hermes. Je ne peux pas installer Nginx sur l'hôte.</p>
 <p><strong>Tâches :</strong></p>
 <table>
 <thead>
@@ -1701,7 +1747,7 @@ Contient : exploration système solaire 2D/3D, Lune, Terre &amp; saisons, guide 
 </tr>
 </tbody>
 </table>
-<p><strong>Contrainte :</strong> Léo Copilot ne travaille que dans le conteneur Hermes. Toute action hors conteneur doit être redirigée vers CodeWhale.</p>
+<p><strong>Contrainte :</strong> Michel ne travaille que dans le conteneur Hermes. Toute action hors conteneur doit être redirigée vers CodeWhale.</p>
 <hr />
 <h2 id="8-avantages-vs-google-sites">8. ✅ Avantages vs Google Sites<a class="headerlink" href="#8-avantages-vs-google-sites" title="Permanent link">&para;</a></h2>
 <table>
@@ -1741,7 +1787,7 @@ Contient : exploration système solaire 2D/3D, Lune, Terre &amp; saisons, guide 
 <tr>
 <td style="text-align: left;">Maintenance</td>
 <td style="text-align: center;">Google s'en charge</td>
-<td style="text-align: center;">Toi + Léo Copilot</td>
+<td style="text-align: center;">Toi + Michel</td>
 </tr>
 </tbody>
 </table>
