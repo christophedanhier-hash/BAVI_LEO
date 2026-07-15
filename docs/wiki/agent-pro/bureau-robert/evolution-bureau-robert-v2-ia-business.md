@@ -446,7 +446,7 @@ Avant que Michel n'intervienne sur l'infrastructure, **Léo prépare et livre** 
 
 | Livrable | Détail | Statut |
 |:---------|:-------|:-------|
-| 📝 **SKILL.md complet** | Contenu prêt à copier (section 10.3 ci-dessous) | ✅ **Prêt** |
+| 📝 **SKILL.md complet** | Fichier créé dans `bavi-leo/bureau-robert` | ✅ **Créé** |
 | 🧠 **16 fiches experts** | Mission, domaine, condition d'activation | ✅ **Prêt** |
 | ⚙️ **Règles de dispatch** | Impératives + optionnelles | ✅ **Prêt** |
 | 📋 **Modes de saisine** | Quick scan → Projet déploiement | ✅ **Prêt** |
