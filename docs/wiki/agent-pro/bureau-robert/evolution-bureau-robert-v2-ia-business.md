@@ -147,35 +147,58 @@ Avec 13 sous-agents à coordonner, Robert a besoin de :
 
 ## 6. Canal de communication — Telegram vs Microsoft Teams
 
-Robert aura besoin d'un canal pour interagir avec la Direction AO. Deux options possibles :
+> **Décision :** Dans un premier temps, Robert utilisera **Telegram**. L'option Teams est documentée ci-dessous pour une évolution future.
 
-| Critère | Telegram | Microsoft Teams |
-|:--------|:---------|:----------------|
-| ✅ **Disponible maintenant** | ✅ Compte existant | 🔜 À configurer (Azure Bot) |
-| 🏢 **Contexte pro Solidaris** | ❌ Personnel | ✅ **Compte professionnel** |
-| 🔒 **Données sensibles** | ⚠️ Limité | ✅ Sécurité entreprise |
-| 🔌 **Plugin Hermes** | ✅ Natif | ✅ Plugin `teams-platform` disponible |
-| 📱 **Déjà utilisé** | ✅ Par Christophe | ❌ À déployer |
-| 👥 **Partage Direction** | ❌ Pas d'accès | ✅ Canal Teams dédié |
+### 6.1 Choix immédiat — Telegram
 
-### Recommandation
+Robert aura un bot Telegram dédié pour les échanges avec Christophe et la Direction AO. C'est la solution la plus rapide à mettre en place.
 
-Si Robert est destiné **exclusivement à un usage Solidaris / AO**, **Teams** est le bon choix — le plugin Hermes existe, il faut que Michel le configure.
+### 6.2 Évolution possible — Microsoft Teams
 
-Si Robert doit aussi pouvoir être consulté par Christophe en dehors du cadre pro, **Telegram** reste un bon complément.
+Si la Direction AO souhaite intégrer Robert dans l'environnement professionnel Solidaris, Teams est une option.
 
-### Configuration nécessaire pour Teams
+#### 🤖 Le Bot Azure — À quoi il sert ?
+
+C'est une **passerelle** entre Teams et Hermes :
+
+```mermaid
+flowchart LR
+    T[👤 Toi dans Teams] --> B[🤖 Azure Bot Service]
+    B -->|webhook HTTPS| H[🔗 Hermes Agent - Robert]
+    H --> B
+    B --> T
+```
+
+Le bot Azure ne fait **rien** lui-même — il reçoit ton message dans Teams, le transmet à Hermes via un webhook, et renvoie la réponse dans Teams.
+
+#### Ce que l'IT Solidaris doit fournir
+
+| Élément | À demander à l'IT | Pourquoi |
+|:--------|:-------------------|:---------|
+| 🔑 **TEAMS_CLIENT_ID** | "Un App Registration dans Azure AD avec les droits Bot Framework" | Identifiant de l'application bot |
+| 🔑 **TEAMS_CLIENT_SECRET** | "Le secret de l'App Registration" | Mot de passe pour que Hermes s'authentifie |
+| 🔑 **TEAMS_TENANT_ID** | "L'ID du tenant Azure AD Solidaris" | Pour savoir que le bot appartient à Solidaris |
+| 🌐 **Port webhook ouvert** | "Autoriser un webhook entrant HTTPS sur le port 3978" | Pour que Microsoft Bot Service puisse joindre Hermes |
+| 👤 **TEAMS_ALLOWED_USERS** | Optionnel : "Limiter le bot à certains utilisateurs" | Pour que seules les personnes autorisées parlent à Robert |
+
+#### Ce que l'IT Solidaris n'a PAS besoin de faire
+
+- ❌ **Pas d'infrastructure Microsoft 365 supplémentaire**
+- ❌ **Pas de licence spéciale** (Bot Framework inclus dans Azure)
+- ❌ **Pas de modification des politiques Teams existantes**
+
+#### Configuration Hermes (par Michel)
 
 | Élément | Responsable |
 |:--------|:------------|
-| Créer une App Azure (Bot Framework) | Michel |
-| Configurer `TEAMS_CLIENT_ID`, `TEAMS_CLIENT_SECRET`, `TEAMS_TENANT_ID` | Michel |
-| Activer le plugin `teams-platform` dans Hermes | Michel |
+| Créer l'App Azure (Bot Framework) | IT Solidaris |
+| Fournir les 3 credentials | IT Solidaris → Christophe → Michel |
+| Activer le plugin `teams-platform` | Michel |
 | Déployer le webhook (port 3978) | Michel |
-| Créer un canal Teams dédié "Robert - Conseil IA" | Christophe / IT Solidaris |
 | Créer le profil Hermes `bureau-robert` | Michel |
+| Créer un canal Teams dédié "Robert - Conseil IA" | Christophe |
 
-> 💡 **Proposition :** Robert pourrait avoir **deux canaux** — Teams pour les sujets Solidaris/AO (pro), Telegram pour les sollicitations de Christophe (perso). Le même profil Hermes peut supporter les deux transports.
+> 💡 **Vision long terme :** Robert pourrait avoir **deux canaux** — Teams pour les sujets Solidaris/AO (pro), Telegram pour Christophe (perso). Le même profil Hermes peut supporter les deux transports.
 
 ---
 
