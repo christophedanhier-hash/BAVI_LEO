@@ -208,24 +208,16 @@ Le bot Azure ne fait **rien** lui-même — il reçoit ton message dans Teams, l
 
 Robert (comme Léo, Michel, etc.) est un **agent Hermes**. Il tourne sur la même machine que les autres — le serveur de Christophe.
 
-```
-┌─────────────────────────────────────────────────┐
-│           SERVEUR CHRISTOPHE                     │
-│                                                   │
-│   ┌───────────────────────────────────────┐      │
-│   │    Hermes Agent                        │      │
-│   │                                        │      │
-│   │  ┌──────────┐ ┌──────────┐ ┌────────┐ │      │
-│   │  │   Léo    │ │  Michel  │ │ Robert │ │      │
-│   │  │ (default)│ │(leo-cop) │ │(à créer)│ │      │
-│   │  └──────────┘ └──────────┘ └────────┘ │      │
-│   └───────────────────────────────────────┘      │
-│                                                   │
-│   🌐 Connexion Internet + Ports :                 │
-│   • 3978 (webhook Teams, si activé)               │
-│   • 443 (Telegram API)                            │
-│   • 25/587 (SMTP email)                           │
-└─────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph SERVEUR [🖥️ Serveur Christophe]
+        subgraph HERMES [Hermes Agent]
+            L[🤖 Léo - default]
+            M[🛡️ Michel - leo-copilot]
+            R[🏛️ Robert - à créer]
+        end
+        PORTS[🌐 Ports: 3978 Teams · 443 Telegram · 587 SMTP]
+    end
 ```
 
 ### 7.2 Si Teams est activé — Flux réseau
@@ -422,18 +414,22 @@ flowchart TB
 
 ### 9.6 Recommandation — Architecture cible
 
-```
-                    ┌─────────────────────────┐
-                    │        ROBERT            │
-                    │   (profil Hermes)        │
-                    └──────┬──────────┬───────┘
-                           │          │
-              ┌────────────┼──────────┼────────────┐
-              ▼            ▼          ▼            ▼
-        ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌──────────┐
-        │Telegram │ │ Teams   │ │ Email   │ │ Réponse  │
-        │ (chat)  │ │ (canal) │ │ (boîte) │ │ email    │
-        └─────────┘ └─────────┘ └─────────┘ └──────────┘
+```mermaid
+flowchart TB
+    subgraph ROBERT ["🏛️ Robert (profil Hermes)"]
+        direction LR
+        TG[💬 Telegram]
+        TM[💼 Teams]
+        EM[📧 Email]
+        RP[📤 Réponse email]
+    end
+
+    TG --- CH[👤 Christophe]
+    TM --- DA[👥 Direction AO]
+    EM --- PE[📧 Partenaires]
+    EM --- CH
+    EM --- DA
+    RP --- DEST[📧 Destinataires]
 ```
 
 > 💡 **À retenir :** L'email comme 3ème canal ne nécessite **presque aucune infrastructure supplémentaire** — la Gmail API est déjà en place, la signature à personnaliser, et le cron à dupliquer pour Robert. C'est Michel qui fait la copie du cron et du script d'envoi.
