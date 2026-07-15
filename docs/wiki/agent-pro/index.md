@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 15/07/2026 à 16:00*
+*Généré automatiquement le 15/07/2026 à 16:06*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 7 | 14/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 9 | 15/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 11/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 4 | 13/07/2026 |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 37 analyse(s) sur l'ensemble des bureaux.**
+**Total : 39 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -26,7 +26,9 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
-| 14/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | brouillon-v2 | [🏛️ Bureau Robert v2 — Évolution Stratégique IA](bureau-robert/evolution-bureau-robert-v2-ia-business/) | `evolution` `ia` `business` `solidaris` `ao` `strategie` `innovation` `robert-v2` | 📝 Brouillon | [📥](bureau-robert/evolution-bureau-robert-v2-ia-business/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/evolution-bureau-robert-v2-ia-business.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/evolution-bureau-robert-v2-ia-business.md) |
+| 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Expert #1 — Vision Stratégique](bureau-robert/expert-01-vision-strategique/) | `fiche-expert` `vision` `strategie` `marche` `benchmark` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-01-vision-strategique/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-01-vision-strategique.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-01-vision-strategique.md) |
+| 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v3 | [🏛️ Bureau Robert v2 — Référentiel de Mise en Place](bureau-robert/evolution-bureau-robert-v2-ia-business/) | `evolution` `referentiel` `mise-en-place` `validation` `environnement` `experts` `dispatch` `solidaris` `ao` `robert-v2` | ✅ Finalisé | [📥](bureau-robert/evolution-bureau-robert-v2-ia-business/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/evolution-bureau-robert-v2-ia-business.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/evolution-bureau-robert-v2-ia-business.md) |
+| 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏗️ Expert #2 — Architecture SI](bureau-robert/expert-02-architecture-si/) | `fiche-expert` `architecture` `si` `integration` `cloud` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-02-architecture-si/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-02-architecture-si.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-02-architecture-si.md) |
 | 13/07/2026 | 🧭 Bureau Sylvia — Voyages | v2 | [🧭 Transfert de Compétence — Bot Voyage Sylvia → Kratos](bureau-sylvia/kratos-transfer-documentation/) | `sylvia` `kratos` `transfert` `documentation` `voyage` `hermes` `bot-telegram` | ✅ Finalisé | [📥](bureau-sylvia/kratos-transfer-documentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) |
 | 13/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🛡️ Rapport ISO/IEC 27001:2022 — Spécifications & Standards](bureau-robert/rapport-iso27001-20260713/) | `iso27001` `securite` `isms` `certification` `norme` `conformite` `strategie-it` | ✅ Finalisé | [📥](bureau-robert/rapport-iso27001-20260713/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/rapport-iso27001-20260713.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/rapport-iso27001-20260713.md) |
 | 13/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v2 | [🛡️ ANNEXE A — ISO/IEC 27001:2022](bureau-robert/annexe-a-iso27001-controles-complets/) | `iso27001` `securite` `isms` `certification` `norme` `conformite` `annexe-a` `controles` | ✅ Finalisé | [📥](bureau-robert/annexe-a-iso27001-controles-complets/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) |
@@ -66,4 +68,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 15/07/2026 16:00*
+*Index consolidé généré par `agent-pro-index.py` — 15/07/2026 16:06*
