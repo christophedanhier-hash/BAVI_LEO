@@ -434,9 +434,91 @@ flowchart TB
 
 > 💡 **À retenir :** L'email comme 3ème canal ne nécessite **presque aucune infrastructure supplémentaire** — la Gmail API est déjà en place, la signature à personnaliser, et le cron à dupliquer pour Robert. C'est Michel qui fait la copie du cron et du script d'envoi.
 
-- Faut-il que Robert ait **un bot Telegram dédié** en plus de Teams, ou uniquement Teams ?
-- La Direction AO est-elle prête à utiliser un canal Teams pour interagir avec un agent IA ?
-- Faut-il prévoir un **mode dégradé** (email) si Teams est indisponible ?
+---
+
+## 10. 🛠️ Instructions pour Michel — Mise en œuvre
+
+> Les sections Email (9) et Teams (6) ne sont pas à l'ordre du jour. Seul **Telegram** est à mettre en place.
+
+### 10.1 Création du profil Hermes `bureau-robert`
+
+| Action | Détail |
+|:-------|:-------|
+| **Nom du profil** | `bureau-robert` |
+| **Modèle** | `deepseek-v4-flash` (comme Léo) |
+| **Provider** | `deepseek` |
+| **Fallback** | `deepseek-v4-flash` (même config que default) |
+| **Langue** | Français |
+| **Délégation** | Doit pouvoir déléguer à des sous-agents (16 experts) |
+
+Fichier de config attendu : `~/.hermes/profiles/bureau-robert/config.yaml`
+
+### 10.2 Bot Telegram dédié
+
+| Action | Détail |
+|:-------|:-------|
+| **Créer un bot** | Via @BotFather sur Telegram — nom suggéré : `Robert_Conseil_Bot` ou `@RobertConseilBot` |
+| **Token** | Le transmettre à Christophe + le configurer dans le profil |
+| **Chat ID** | Associer au chat de Christophe (et future Direction AO) |
+| **Plugin** | Activer le transport Telegram dans le profil |
+| **Signature bot** | "🏛️ Robert — Conseil Stratégique IA" |
+
+### 10.3 SKILL.md — Règles d'orchestration
+
+Le skill principal de Robert doit contenir :
+
+| Élément | Description |
+|:--------|:------------|
+| **Rôle** | Robert est un **orchestrateur**. Il reçoit une demande, analyse, dispatche aux experts compétents, croise les analyses, produit la synthèse |
+| **Pool IT (9 experts)** | Experts 1 à 9 (Vision, Archi, Sécurité, Projet, Budget, Interop, Data Eng, Cloud IA, API IA) |
+| **Pool Business (7 experts)** | Experts 10 à 16 (Expert AO, Processus, R&D IA, Changement, Juridique, Formation, Data Analyse) |
+| **Règles de dispatch** | Voir section 3.3 du présent document |
+| **Modes de saisine** | Quick scan (1-3 experts), Note d'analyse (3-4), Dossier stratégique (5-8), Projet IA (7-10) |
+
+### 10.4 Accès au vault Obsidian
+
+| Point | Configuration |
+|:------|:--------------|
+| **Dossier wiki** | `/home/tofdan/Projets_Dev/BAVI_LEO/docs/wiki/agent-pro/bureau-robert/` |
+| **Dépôt GitHub** | `christophedanhier-hash/BAVI_LEO` (branch `main`) |
+| **Skills** | Skills de Robert dans `~/.hermes/profiles/bureau-robert/skills/` |
+| **Mémoire** | Mémoire persistante activée (comme Léo) |
+| **Git** | Robert doit pouvoir `git add`, `git commit`, `git push` sur le dépôt BAVI LEO |
+
+### 10.5 Monitoring — Dashboard Gateway
+
+| Point | Configuration |
+|:------|:--------------|
+| **Gateway** | Robert doit apparaître dans le dashboard Hermes Gateway |
+| **Crons actifs** | Si des crons sont nécessaires (ex : veille), les créer dans le profil `bureau-robert` |
+| **Watchdog** | Health check de Robert (vérifier que le profil répond) |
+| **Alertes** | Les alertes monitoring remontent à Michel (comme pour les autres profils) |
+
+### 10.6 Règles générales (applicables à Robert)
+
+Ces règles sont les mêmes que pour les autres bureaux :
+
+| Règle | Détail |
+|:------|:--------|
+| 🔒 **Rôles** | Léo = contenu, rédaction, documents. **Michel = infrastructure, configs, crons, scripts, coûts, modèles** |
+| 🔄 **Git** | Commit + push immédiat après chaque modification de document |
+| 📝 **Frontmatter** | Tout document wiki doit avoir un frontmatter YAML valide (date, bureau, auteur, version, tags, statut) |
+| 🗂️ **Obsidian** | Tous les documents sont dans le vault Obsidian BAVI LEO |
+| 📊 **Mermaid** | Tous les schémas doivent être en Mermaid (pas d'ASCII art) |
+| 🔌 **Transport** | Telegram uniquement pour l'instant (pas de Teams, pas d'email) |
+
+### 10.7 Vérification — Checklist de déploiement
+
+| # | Vérification | ✅ |
+|:-:|:-------------|:-:|
+| 1 | Profil `bureau-robert` créé dans `~/.hermes/profiles/` | ⬜ |
+| 2 | Bot Telegram créé (@BotFather) et token configuré | ⬜ |
+| 3 | Robert répond sur Telegram ("Bonjour, je suis Robert 🤖") | ⬜ |
+| 4 | SKILL.md avec règles d'orchestration déployé | ⬜ |
+| 5 | Accès au vault Obsidian (git clone + pull) | ⬜ |
+| 6 | Mémoire persistante activée | ⬜ |
+| 7 | Robert apparaît dans le dashboard Gateway | ⬜ |
+| 8 | Christophe notifié que Robert est opérationnel | ⬜ |
 
 ---
 
