@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 22 | 15/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 21 | 15/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 11/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 4 | 13/07/2026 |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 52 analyse(s) sur l'ensemble des bureaux.**
+**Total : 51 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -44,7 +44,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [⚖️ Expert #10 — Expert Métier AO](bureau-robert/expert-10-expert-metier-ao/) | `fiche-expert` `ao` `inami` `bcss` `mutualite` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-10-expert-metier-ao/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-10-expert-metier-ao.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-10-expert-metier-ao.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [☁️ Expert #8 — Infrastructure & Cloud IA](bureau-robert/expert-08-infra-cloud-ia/) | `fiche-expert` `infra` `cloud` `gpu` `deploiement` `llm` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-08-infra-cloud-ia/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-08-infra-cloud-ia.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-08-infra-cloud-ia.md) |
 | 13/07/2026 | 🧭 Bureau Sylvia — Voyages | v2 | [🧭 Transfert de Compétence — Bot Voyage Sylvia → Kratos](bureau-sylvia/kratos-transfer-documentation/) | `sylvia` `kratos` `transfert` `documentation` `voyage` `hermes` `bot-telegram` | ✅ Finalisé | [📥](bureau-sylvia/kratos-transfer-documentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-sylvia/kratos-transfer-documentation.md) |
-| 13/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v2 | [🛡️ ANNEXE A — ISO/IEC 27001:2022](bureau-robert/annexe-a-iso27001-controles-complets/) | `iso27001` `securite` `isms` `certification` `norme` `conformite` `annexe-a` `controles` | ✅ Finalisé | [📥](bureau-robert/annexe-a-iso27001-controles-complets/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/annexe-a-iso27001-controles-complets.md) |
 | 11/07/2026 | 🩺 Bureau Virginie — Orchestration Médicale | v1 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/presentation/) | `virginie` `presentation` `role` `sante` `medical` | 🔄 En préparation | [📥](bureau-virginie/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-virginie/presentation.md) |
 | 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1 | [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/presentation/) | `leo` `presentation` `role` `chat` `dossiers` | ✅ Actif | [📥](bureau-leo/presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) |
 | 11/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1c | [🛡️ LEO Runbook — Procédures d'urgence](bureau-leo/runbook-leo/) | `leo` `runbook` `urgence` `procedure` `infra` `michel` | ✅ Actif | [📥](bureau-leo/runbook-leo/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) |
