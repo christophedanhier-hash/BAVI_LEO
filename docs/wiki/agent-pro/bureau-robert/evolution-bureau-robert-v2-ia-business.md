@@ -571,13 +571,13 @@ flowchart TB
 | `expert-07-data-engineering.md` | Fiche expert | ✅ Finalisé |
 | `expert-08-infra-cloud-ia.md` | Fiche expert | ✅ Finalisé |
 | `expert-09-api-integration-ia.md` | Fiche expert | ✅ Finalisé |
-| `expert-10-expert-metier-ao.md` | Fiche expert | 📝 À rédiger |
-| `expert-11-architecture-processus.md` | Fiche expert | 📝 À rédiger |
-| `expert-12-rd-innovation-ia.md` | Fiche expert | 📝 À rédiger |
-| `expert-13-gestion-changement.md` | Fiche expert | 📝 À rédiger |
-| `expert-14-juridique-conformite.md` | Fiche expert | 📝 À rédiger |
-| `expert-15-acculturation-formation.md` | Fiche expert | 📝 À rédiger |
-| `expert-16-data-analyse.md` | Fiche expert | 📝 À rédiger |
+| `expert-10-expert-metier-ao.md` | Fiche expert | ✅ Finalisé |
+| `expert-11-architecture-processus.md` | Fiche expert | ✅ Finalisé |
+| `expert-12-rd-innovation-ia.md` | Fiche expert | ✅ Finalisé |
+| `expert-13-gestion-changement.md` | Fiche expert | ✅ Finalisé |
+| `expert-14-juridique-conformite.md` | Fiche expert | ✅ Finalisé |
+| `expert-15-acculturation-formation.md` | Fiche expert | ✅ Finalisé |
+| `expert-16-data-analyse.md` | Fiche expert | ✅ Finalisé |
 | Autres analyses (SCOUT, ISO, AO) | Archives historiques | ✅ Existants |
 
 > **Note :** Les documents d'analyse antérieurs (SCOUT, ISO 27001, Assurance Obligatoire) sont des **archives historiques** stockées dans le wiki. Ils ne constituent pas la configuration du Bureau Robert et n'influencent pas son fonctionnement.
