@@ -202,7 +202,110 @@ Le bot Azure ne fait **rien** lui-même — il reçoit ton message dans Teams, l
 
 ---
 
-## 7. Questions ouvertes
+## 7. Infrastructure réseau et hébergement
+
+### 7.1 Où tourne Robert ?
+
+Robert (comme Léo, Michel, etc.) est un **agent Hermes**. Il tourne sur la même machine que les autres — le serveur de Christophe.
+
+```
+┌─────────────────────────────────────────────────┐
+│           SERVEUR CHRISTOPHE                     │
+│                                                   │
+│   ┌───────────────────────────────────────┐      │
+│   │    Hermes Agent                        │      │
+│   │                                        │      │
+│   │  ┌──────────┐ ┌──────────┐ ┌────────┐ │      │
+│   │  │   Léo    │ │  Michel  │ │ Robert │ │      │
+│   │  │ (default)│ │(leo-cop) │ │(à créer)│ │      │
+│   │  └──────────┘ └──────────┘ └────────┘ │      │
+│   └───────────────────────────────────────┘      │
+│                                                   │
+│   🌐 Connexion Internet + Ports :                 │
+│   • 3978 (webhook Teams, si activé)               │
+│   • 443 (Telegram API)                            │
+│   • 25/587 (SMTP email)                           │
+└─────────────────────────────────────────────────┘
+```
+
+### 7.2 Si Teams est activé — Flux réseau
+
+```mermaid
+flowchart LR
+    U[👤 Utilisateur Teams] -->|message| AZ[☁️ Azure Bot Service]
+    AZ -->|HTTPS| FW[🚧 Firewall Solidaris]
+    FW -->|port 3978| H[🖥️ Serveur Christophe]
+    H -->|réponse| FW
+    FW --> AZ
+    AZ --> U
+```
+
+### 7.3 Ce qu'il faut ouvrir côté réseau
+
+| Flux | De | Vers | Port | Protocole | Qui ouvre |
+|:-----|:---|:-----|:----:|:---------|:----------|
+| 🔌 **Webhook Teams → Hermes** | Internet (Azure) | Serveur Christophe | **3978** | HTTPS | Christophe (ou Michel) |
+| 📩 **Envoi email (mode dégradé)** | Serveur Christophe | SMTP Gmail | 587 | TLS | Déjà ouvert |
+| 📱 **Telegram API** | Serveur Christophe | api.telegram.org | 443 | HTTPS | Déjà ouvert |
+
+> ⚠️ Le port 3978 doit être accessible **depuis Internet** (Azure Bot Service ne peut pas joindre un réseau local). Il faut soit :
+> - Ouvrir le port sur le routeur de Christophe
+> - Utiliser un **tunnel** (Cloudflare Tunnel, ngrok, ou le tunnel déjà en place pour Hermes)
+> - Configurer un **reverse proxy** si le serveur est derrière un NAT
+
+### 7.4 Sécurité
+
+| Point | Solution |
+|:------|:---------|
+| 🔒 **Authentification** | Le bot Azure valide l'identité via les credentials Teams |
+| 🔑 **Validation du webhook** | Le secret Teams permet à Hermes de vérifier que la requête vient bien d'Azure |
+| 👤 **Contrôle d'accès** | `TEAMS_ALLOWED_USERS` limite les utilisateurs autorisés |
+| 📝 **Journalisation** | Hermes logue toutes les interactions |
+| 🌐 **TLS** | Le flux est chiffré de bout en bout (HTTPS) |
+
+---
+
+## 8. Mode dégradé — Si Teams est indisponible
+
+**Oui, il faut prévoir un mode dégradé.** Teams peut être indisponible pour plusieurs raisons :
+- Panne Azure / Microsoft 365
+- Problème réseau Solidaris
+- Maintenance programmée
+- Expiration des credentials
+
+### Scénarios de dégradation
+
+| Situation | Impact | Solution |
+|:----------|:-------|:---------|
+| 🔴 **Teams indisponible** (panne Azure) | Robert injoignable sur Teams | Basculer sur **Telegram** (si activé) ou **email** |
+| 🟡 **Bot Teams non déployé** (phase initiale) | Robert accessible uniquement sur Telegram | C'est le plan actuel — Telegram d'abord |
+| 🟢 **Credentials expirés** | Le bot Teams ne répond plus | Michel renouvelle les credentials Azure AD |
+
+### Mode dégradé — Email
+
+Si Teams est indisponible et que Robert n'a pas Telegram, **l'email permet de garder le contact** :
+
+```mermaid
+flowchart TD
+    Q[👤 Question] -->|Si Teams OK| T[💬 Teams]
+    Q -->|Si Teams KO| E[📧 Email direction@solidaris.be]
+    T --> R[🤖 Robert répond]
+    E -->|Michel relève| R
+    R -->|Réponse| T
+    R -->|Réponse| E
+```
+
+### Quand utiliser l'email
+
+| Cas | Action |
+|:----|:-------|
+| ✅ **Phase de test** (avant déploiement Teams) | Utiliser Telegram uniquement |
+| ⚠️ **Teams indisponible temporairement** | Informer par email, orienter vers Telegram |
+| 🔴 **Teams indisponible longue durée** | Basculer sur email + Telegram jusqu'au rétablissement |
+| ✅ **Demande simple** | Peut être traitée par email sans urgence |
+| ❌ **Demande urgente** | Nécessite Telegram (temps réel, plus rapide) |
+
+> 💡 **Recommandation :** Activer **Telegram + Teams** pour Robert. Si Teams tombe, Telegram prend le relais. L'email reste un filet de sécurité pour les communications écrites non urgentes.
 
 - Faut-il que Robert ait **un bot Telegram dédié** en plus de Teams, ou uniquement Teams ?
 - La Direction AO est-elle prête à utiliser un canal Teams pour interagir avec un agent IA ?
