@@ -145,5 +145,47 @@ Avec 13 sous-agents à coordonner, Robert a besoin de :
 
 ---
 
+## 6. Canal de communication — Telegram vs Microsoft Teams
+
+Robert aura besoin d'un canal pour interagir avec la Direction AO. Deux options possibles :
+
+| Critère | Telegram | Microsoft Teams |
+|:--------|:---------|:----------------|
+| ✅ **Disponible maintenant** | ✅ Compte existant | 🔜 À configurer (Azure Bot) |
+| 🏢 **Contexte pro Solidaris** | ❌ Personnel | ✅ **Compte professionnel** |
+| 🔒 **Données sensibles** | ⚠️ Limité | ✅ Sécurité entreprise |
+| 🔌 **Plugin Hermes** | ✅ Natif | ✅ Plugin `teams-platform` disponible |
+| 📱 **Déjà utilisé** | ✅ Par Christophe | ❌ À déployer |
+| 👥 **Partage Direction** | ❌ Pas d'accès | ✅ Canal Teams dédié |
+
+### Recommandation
+
+Si Robert est destiné **exclusivement à un usage Solidaris / AO**, **Teams** est le bon choix — le plugin Hermes existe, il faut que Michel le configure.
+
+Si Robert doit aussi pouvoir être consulté par Christophe en dehors du cadre pro, **Telegram** reste un bon complément.
+
+### Configuration nécessaire pour Teams
+
+| Élément | Responsable |
+|:--------|:------------|
+| Créer une App Azure (Bot Framework) | Michel |
+| Configurer `TEAMS_CLIENT_ID`, `TEAMS_CLIENT_SECRET`, `TEAMS_TENANT_ID` | Michel |
+| Activer le plugin `teams-platform` dans Hermes | Michel |
+| Déployer le webhook (port 3978) | Michel |
+| Créer un canal Teams dédié "Robert - Conseil IA" | Christophe / IT Solidaris |
+| Créer le profil Hermes `bureau-robert` | Michel |
+
+> 💡 **Proposition :** Robert pourrait avoir **deux canaux** — Teams pour les sujets Solidaris/AO (pro), Telegram pour les sollicitations de Christophe (perso). Le même profil Hermes peut supporter les deux transports.
+
+---
+
+## 7. Questions ouvertes
+
+- Faut-il que Robert ait **un bot Telegram dédié** en plus de Teams, ou uniquement Teams ?
+- La Direction AO est-elle prête à utiliser un canal Teams pour interagir avec un agent IA ?
+- Faut-il prévoir un **mode dégradé** (email) si Teams est indisponible ?
+
+---
+
 *Document de réflexion — v2 — Architecture multi-experts IT & Business*
 *Produit par Léo 🤖 — Juillet 2026 — Rien n'est implémenté*
