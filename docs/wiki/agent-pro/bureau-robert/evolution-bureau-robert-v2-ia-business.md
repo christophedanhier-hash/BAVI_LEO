@@ -2,9 +2,9 @@
 date: 2026-07-15
 bureau: bureau-robert
 auteur: Robert (Bureau Robert)
-version: v3
+version: v4
 modele: deepseek-v4-flash
-tags: [evolution, referentiel, mise-en-place, validation, environnement, experts, dispatch, solidaris, ao, robert-v2]
+tags: [evolution, referentiel, mise-en-place, validation, sophie, integration, experts, dispatch, solidaris, ao, robert-v2]
 statut: finalise
 type: referentiel-evolution
 ---
@@ -24,6 +24,7 @@ type: referentiel-evolution
 | **v1** | 08/07/2026 | LEO 🤖 | ✅ Finalisé | Analyse initiale — 7 experts IT |
 | **v2** | 14/07/2026 | LEO 🤖 | ✅ Archivé | Design 16 experts (brouillon conception) |
 | **v3** | 15/07/2026 | 🏛️ **Robert** | ✅ **Finalisé** | Validation environnement + fiches expert |
+| **v4** | 15/07/2026 | 🏛️ **Robert** | ✅ **Finalisé** | Intégration Sophie (expert transverse #17) + documentation invocation directe |
 
 ---
 
@@ -647,12 +648,64 @@ type: analyse-xxx
 
 | Bureau | Quand appeler | Comment |
 |--------|--------------|---------|
-| 💰 **Sophie** | Analyse avec volet financier (TCO, business case) | Appel skill `bureau-sophie` |
+| 💰 **Sophie** | Analyse financière approfondie | Voir **section 15** pour le protocole complet |
 | 🛡️ **Assurance Obligatoire** | Impact métier AO spécifique | Expert AO (10) intégré au pool Business |
 
 ---
 
-## 15. Stockage
+## 15. 🤝 Intégration de Sophie (Bureau Financier)
+
+### 15.1 Principe
+
+Sophie est une **experte financière transverse** intégrée à Robert comme expert #17. Elle n'a **pas de profil Hermes dédié** ni de bot Telegram propre — elle vit à travers le canal de Robert.
+
+### 15.2 Comment Christophe invoque Sophie
+
+Tu peux t'adresser à Sophie **directement dans le chat Robert** :
+
+```
+Christophe : « Sophie, peux-tu analyser le TCO de la solution X ? »
+```
+
+**Robert détecte** que le message est pour Sophie et :
+1. Lance Sophie via `delegate_task`
+2. Sophie produit l'analyse financière
+3. Robert relaye sa réponse dans le chat
+
+> 💡 **Règle :** Tu n'as pas besoin de passer par une instruction spéciale. Dis simplement « Sophie, … » et Robert comprend.
+
+### 15.3 Les 5 situations de dispatch
+
+| Situation | Ce qui se passe |
+|:----------|:----------------|
+| **Budget simple / TCO rapide** dans une analyse IT | Robert gère avec son expert **Budget (5)** — réponse intégrée |
+| **Analyse financière approfondie** (business case, ROI, scénarios) | Robert appelle **Sophie** via delegate_task |
+| **Christophe dit « Sophie, … »** dans le chat | Robert détecte → lance Sophie → relaye la réponse |
+| **Mission mixte** (IT + Finance avancée) | Robert + Sophie travaillent en parallèle, liens croisés |
+| **Sophie indisponible** | Robert répond avec son expert Budget (5) + vous informe |
+
+### 15.4 Stockage des analyses Sophie
+
+| Analyse produite par | Dossier de destination |
+|:--------------------|:----------------------|
+| Robert (Budget rapide) | `bureau-robert/` |
+| Sophie (analyse approfondie) | `bureau-sophie/` |
+| Robert + Sophie (mission mixte) | Les deux dossiers + lien croisé |
+
+### 15.5 Exemple d'échange
+
+```
+Christophe : Sophie, analyse le TCO de la solution cloud Azure pour notre POC IA
+     Robert : Je transmets à Sophie 🔄
+     Robert : ✅ Sophie a terminé. Voici son analyse :
+              → TCO sur 3 ans : 45 000 € (scénario recommandé)
+              → Détail : [lien vers l'analyse]
+              → Résumé : [...]
+```
+
+---
+
+## 16. Stockage
 
 Toutes les analyses produites par Robert sont stockées dans :
 `BAVI_LEO/docs/wiki/agent-pro/bureau-robert/`
