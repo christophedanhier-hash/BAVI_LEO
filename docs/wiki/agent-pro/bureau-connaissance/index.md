@@ -17,9 +17,9 @@ type: index
 
 ## 📋 Documents
 
-| Date | Version | Titre | Tags | Statut |
-|:-----|:-------:|:------|:-----|:------:|
-| 15/07/2026 | v1 | 📚 **Référentiel du Bureau Connaissance** | `connaissance` `memoire` `capitalisation` `v1` | ✅ Finalisé |
+| Date | Version | Titre | Tags | Statut | Actions |
+|:-----|:-------:|:------|:-----|:------:|:-------:|
+| 15/07/2026 | v1 | 📚 [Référentiel du Bureau Connaissance](referentiel-bureau-connaissance.md) | `connaissance` `memoire` `capitalisation` `v1` | ✅ Finalisé | [📥](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-connaissance/referentiel-bureau-connaissance.md) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/blob/main/docs/wiki/agent-pro/bureau-connaissance/referentiel-bureau-connaissance.md) [🔗](referentiel-bureau-connaissance.md) |
 
 ---
 
