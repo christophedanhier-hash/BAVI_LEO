@@ -768,6 +768,22 @@ async def api_energy_monthly(request: Request):
         return JSONResponse(json.loads(monthly_file.read_text()))
     return JSONResponse([], status_code=503)
 
+@app.get("/api/energy/weekly")
+async def api_energy_weekly(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    weekly_file = Path("/home/tofdan/.hermes/metrics/energy_weekly.json")
+    if weekly_file.exists():
+        return JSONResponse(json.loads(weekly_file.read_text()))
+    return JSONResponse([], status_code=503)
+
+@app.get("/api/energy/yearly")
+async def api_energy_yearly(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    yearly_file = Path("/home/tofdan/.hermes/metrics/energy_yearly.json")
+    if yearly_file.exists():
+        return JSONResponse(json.loads(yearly_file.read_text()))
+    return JSONResponse([], status_code=503)
+
 @app.get("/api/energy/telegram")
 async def api_energy_telegram(request: Request):
     """Données détaillées DSMR + tableaux."""

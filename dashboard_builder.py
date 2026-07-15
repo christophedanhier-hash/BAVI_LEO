@@ -596,8 +596,10 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     <canvas id="powerChart"></canvas>
   </div>
   <div style="display:flex;gap:8px;margin:12px 0">
-    <button onclick="switchEnergyView('daily')" id="btn-e-daily" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📅 7 jours</button>
-    <button onclick="switchEnergyView('monthly')" id="btn-e-monthly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📆 12 mois</button>
+    <button onclick="switchEnergyView('daily')" id="btn-e-daily" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📅 7j</button>
+    <button onclick="switchEnergyView('weekly')" id="btn-e-weekly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📊 54sem</button>
+    <button onclick="switchEnergyView('monthly')" id="btn-e-monthly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📆 12m</button>
+    <button onclick="switchEnergyView('yearly')" id="btn-e-yearly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📈 Ans</button>
     <span style="flex:1"></span>
     <button onclick="switchEnergyMode('conso')" id="btn-e-conso" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">⚡ Conso</button>
     <button onclick="switchEnergyMode('prod')" id="btn-e-prod" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">☀️ Prod</button>
@@ -734,10 +736,14 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     
     function switchEnergyView(view) {{
       _energyView = view;
-      document.getElementById('btn-e-daily').style.background = view==='daily' ? 'var(--accent)' : 'var(--card)';
-      document.getElementById('btn-e-monthly').style.background = view==='monthly' ? 'var(--accent)' : 'var(--card)';
+      ['daily','weekly','monthly','yearly'].forEach(function(v){{
+        var btn = document.getElementById('btn-e-'+v);
+        if(btn) btn.style.background = view===v ? 'var(--accent)' : 'var(--card)';
+      }});
       if(view === 'daily') loadEnergyDaily();
-      else loadEnergyMonthly();
+      else if(view === 'weekly') loadEnergyWeekly();
+      else if(view === 'monthly') loadEnergyMonthly();
+      else loadEnergyYearly();
     }}
     
     function switchEnergyMode(mode) {{
@@ -745,7 +751,9 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
       document.getElementById('btn-e-conso').style.background = mode==='conso' ? 'var(--accent)' : 'var(--card)';
       document.getElementById('btn-e-prod').style.background = mode==='prod' ? 'var(--accent)' : 'var(--card)';
       if(_energyView === 'daily') loadEnergyDaily();
-      else loadEnergyMonthly();
+      else if(_energyView === 'weekly') loadEnergyWeekly();
+      else if(_energyView === 'monthly') loadEnergyMonthly();
+      else loadEnergyYearly();
     }}
     
     function loadEnergyDaily() {{
@@ -770,6 +778,33 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
         var field = _energyMode === 'prod' ? 'prod_kwh' : 'conso_kwh';
         var values = last12.map(function(d){{return d[field] || 0}});
         var title = _energyMode === 'prod' ? '☀️ Production solaire — 12 mois' : '⚡ Consommation — 12 mois';
+        var color = _energyMode === 'prod' ? '#d29922' : '#f85149';
+        var bg = _energyMode === 'prod' ? 'rgba(210,153,34,.3)' : 'rgba(248,81,73,.3)';
+        renderEnergyHist(labels, values, title, color, bg);
+      }});
+    }}
+    
+    function loadEnergyWeekly() {{
+      fetch('/api/energy/weekly?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+        if(!data || !data.length) return;
+        var last54 = data.slice(-54);
+        var labels = last54.map(function(d){{return d.week.substring(5)}});
+        var field = _energyMode === 'prod' ? 'prod_kwh' : 'conso_kwh';
+        var values = last54.map(function(d){{return d[field] || 0}});
+        var title = _energyMode === 'prod' ? '☀️ Production solaire — 54 semaines' : '⚡ Consommation — 54 semaines';
+        var color = _energyMode === 'prod' ? '#d29922' : '#f85149';
+        var bg = _energyMode === 'prod' ? 'rgba(210,153,34,.3)' : 'rgba(248,81,73,.3)';
+        renderEnergyHist(labels, values, title, color, bg);
+      }});
+    }}
+    
+    function loadEnergyYearly() {{
+      fetch('/api/energy/yearly?token='+token).then(function(r){{return r.json()}}).then(function(data){{
+        if(!data || !data.length) return;
+        var labels = data.map(function(d){{return d.year}});
+        var field = _energyMode === 'prod' ? 'prod_kwh' : 'conso_kwh';
+        var values = data.map(function(d){{return d[field] || 0}});
+        var title = _energyMode === 'prod' ? '☀️ Production solaire — Années' : '⚡ Consommation — Années';
         var color = _energyMode === 'prod' ? '#d29922' : '#f85149';
         var bg = _energyMode === 'prod' ? 'rgba(210,153,34,.3)' : 'rgba(248,81,73,.3)';
         renderEnergyHist(labels, values, title, color, bg);
