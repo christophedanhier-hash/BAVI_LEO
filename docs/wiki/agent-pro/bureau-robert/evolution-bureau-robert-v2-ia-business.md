@@ -650,6 +650,7 @@ type: analyse-xxx
 |--------|--------------|---------|
 | 💰 **Sophie** | Analyse financière approfondie | Voir **section 15** pour le protocole complet |
 | 🛡️ **Assurance Obligatoire** | Impact métier AO spécifique | Expert AO (10) intégré au pool Business |
+| 📚 **Bureau de la Connaissance** | Capitalisation, mémoire, synthèses, recherche transverse | Nouveau bureau — docs dans `bureau-connaissance/` |
 
 ---
 
