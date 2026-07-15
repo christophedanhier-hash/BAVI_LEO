@@ -307,6 +307,137 @@ flowchart TD
 
 > 💡 **Recommandation :** Activer **Telegram + Teams** pour Robert. Si Teams tombe, Telegram prend le relais. L'email reste un filet de sécurité pour les communications écrites non urgentes.
 
+---
+
+## 9. Canal email — Architecture et mise en place
+
+Au-delà du mode dégradé, l'email peut être un **troisième canal de communication à part entière** pour Robert.
+
+### 9.1 Concept
+
+```mermaid
+flowchart LR
+    subgraph CANAUX [Robert - 3 canaux]
+        T[💬 Telegram]
+        M[💼 Teams]
+        E[📧 Email]
+    end
+
+    subgraph UTILISATEURS [Qui peut contacter Robert]
+        C[👤 Christophe]
+        D[👥 Direction AO]
+        P[📧 Partenaires externes]
+    end
+
+    C --> T
+    C --> M
+    C --> E
+    D --> M
+    D --> E
+    P --> E
+```
+
+Chaque canal a son usage :
+
+| Canal | Usage principal | Qui parle |
+|:------|:----------------|:----------|
+| 💬 **Telegram** | Christophe ←→ Robert | Christophe uniquement |
+| 💼 **Teams** | Direction AO ←→ Robert | Équipe Solidaris |
+| 📧 **Email** | Tous ←→ Robert | Christophe, Direction, partenaires |
+
+### 9.2 Architecture technique
+
+L'email fonctionne en deux temps : **réception** et **envoi**.
+
+```mermaid
+flowchart TB
+    subgraph ENVOI [📤 Envoi - Robert répond par email]
+        ROBERT["🤖 Robert
+        (profil Hermes)"]
+        SMTP["📨 SMTP Gmail
+        Port 587"]
+        DEST["👤 Destinataire
+        reçoit la réponse"]
+        ROBERT -->|skript email| SMTP --> DEST
+    end
+
+    subgraph RECEPTION [📥 Réception - Robert reçoit un email]
+        EXP["👤 Expéditeur
+        envoie un email"]
+        GMAIL["📧 Gmail API
+        (boîte dédiée)"]
+        CRON["⏱️ Cron Michel
+        toutes les 30 min"]
+        ROBERT2["🤖 Robert
+        lit et répond"]
+        EXP --> GMAIL
+        GMAIL -->|scanne| CRON
+        CRON -->|alerte| ROBERT2
+    end
+```
+
+### 9.3 Fonctionnement détaillé
+
+#### 📥 Réception — Comment Robert reçoit un email
+
+```
+1. Un email arrive dans la boîte dédiée (ex: robert@... ou un libellé Gmail)
+2. Le cron Michel (toutes les 30 min) détecte le nouvel email
+3. Robert reçoit l'alerte et peut :
+   a. Lire l'email via Gmail API
+   b. Comprendre la demande
+   c. Y répondre (par le même canal ou un autre)
+```
+
+#### 📤 Envoi — Comment Robert répond par email
+
+```
+1. Robert décide de répondre par email
+2. Il exécute un script d'envoi (Gmail API ou SMTP)
+3. L'email part avec une signature "Robert — Conseil Stratégique IA"
+4. Le destinataire reçoit la réponse dans sa boîte
+```
+
+### 9.4 Configuration nécessaire
+
+| Élément | Solution | Qui fait |
+|:--------|:---------|:---------|
+| 📧 **Boîte email dédiée** | Libellé Gmail dédié `Robert/` ou adresse dédiée | Christophe |
+| 🔌 **Gmail API** | Déjà en place (Léo utilise la même) | ✅ Existant |
+| ⏱️ **Cron surveillance** | Copie du check-gmail adaptée pour Robert | Michel |
+| 📝 **Script d'envoi** | Script Python Gmail API (existe déjà pour Léo) | Michel |
+| 👤 **Signature email** | "Robert — Conseil Stratégique IA / Solidaris" | Léo (contenu) |
+
+### 9.5 Comparatif des 3 canaux
+
+| Critère | 💬 Telegram | 💼 Teams | 📧 Email |
+|:--------|:-----------|:---------|:---------|
+| ⏱️ **Temps réel** | ✅ Oui | ✅ Oui | ❌ Non (30 min) |
+| 🔒 **Sécurité pro** | ⚠️ Limité | ✅ Élevée | ✅ Chiffré |
+| 📎 **Pièces jointes** | ✅ Limité | ✅ Oui | ✅ Oui |
+| 👥 **Multi-utilisateurs** | ❌ Groupe limité | ✅ Canal Teams | ✅ N'importe qui |
+| 🔌 **Nécessite un bot** | ✅ Bot Telegram | ✅ Azure Bot | ❌ Juste une boîte |
+| 📋 **Traçabilité** | ❌ Faible | ✅ Moyenne | ✅ Excellente |
+| 💰 **Coût** | ✅ Gratuit | ⚠️ Azure | ✅ Gratuit |
+
+### 9.6 Recommandation — Architecture cible
+
+```
+                    ┌─────────────────────────┐
+                    │        ROBERT            │
+                    │   (profil Hermes)        │
+                    └──────┬──────────┬───────┘
+                           │          │
+              ┌────────────┼──────────┼────────────┐
+              ▼            ▼          ▼            ▼
+        ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌──────────┐
+        │Telegram │ │ Teams   │ │ Email   │ │ Réponse  │
+        │ (chat)  │ │ (canal) │ │ (boîte) │ │ email    │
+        └─────────┘ └─────────┘ └─────────┘ └──────────┘
+```
+
+> 💡 **À retenir :** L'email comme 3ème canal ne nécessite **presque aucune infrastructure supplémentaire** — la Gmail API est déjà en place, la signature à personnaliser, et le cron à dupliquer pour Robert. C'est Michel qui fait la copie du cron et du script d'envoi.
+
 - Faut-il que Robert ait **un bot Telegram dédié** en plus de Teams, ou uniquement Teams ?
 - La Direction AO est-elle prête à utiliser un canal Teams pour interagir avec un agent IA ?
 - Faut-il prévoir un **mode dégradé** (email) si Teams est indisponible ?
