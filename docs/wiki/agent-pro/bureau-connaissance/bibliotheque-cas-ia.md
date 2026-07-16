@@ -20,8 +20,9 @@ type: index-bibliotheque
 |:-----|:----|:---------|:---------|:-----------------|:------:|:-----|
 | 15/07/2026 | 📚 **Création Bureau Connaissance** | Absence de capitalisation transverse | Bureau de la Connaissance dédié | Robert | ✅ Actif | [↗](https://christophedanhier-hash.github.io/BAVI_LEO/wiki/agent-pro/bureau-connaissance/) |
 | 15/07/2026 | 🤝 **Intégration Sophie** | Sophie sans canal propre | Expert transverse #17 dans Robert | Robert + Sophie | ✅ Actif | [↗](https://christophedanhier-hash.github.io/BAVI_LEO/wiki/agent-pro/bureau-robert/evolution-bureau-robert-v2-ia-business/#15-integration-de-sophie) |
+| 16/07/2026 | 🏛️ **Note stratégique — Prédictions IA Dario Amodei** | Anticiper l'impact des prédictions IA sur Solidaris | Analyse SWOT, recommandations court/moyen/long terme pour la Direction AO | Vision Stratégique + R&D + Expert AO | ✅ Finalisé | [↗](https://christophedanhier-hash.github.io/BAVI_LEO/wiki/agent-pro/bureau-robert/note-strategique-predictions-amodei-20260716/) |
 | — | *Prochaine analyse → ajout automatique ici* | | | | 🔜 | |
 
 ---
 
-*Dernière mise à jour : 15/07/2026 par Robert 🏛️*
+*Dernière mise à jour : 16/07/2026 par Robert 🏛️*
