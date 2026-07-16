@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 16/07/2026 à 21:00*
+*Généré automatiquement le 16/07/2026 à 22:25*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 20 | 16/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 22 | N/A |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 11/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 4 | 13/07/2026 |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 50 analyse(s) sur l'ensemble des bureaux.**
+**Total : 52 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -26,7 +26,9 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
+| N/A | 🏛️ Bureau Robert — Conseil Stratégique IT | — | ~~🏛️ Prompt NotebookLM — Présentation Stratégique IA pour Solidaris~~ ⚠️ | — | ⚠️ Non conforme |
 | 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Note Stratégique — Prédictions IA de Dario Amodei (Claude/Anthropic)](bureau-robert/note-strategique-predictions-amodei-20260716/) | `analyse-strategique` `vision` `claude` `anthropic` `amodei` `predictions` `ia` `solidaris` `ao` `pro` | ✅ Finalisé | [📥](bureau-robert/note-strategique-predictions-amodei-20260716/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/note-strategique-predictions-amodei-20260716.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/note-strategique-predictions-amodei-20260716.md) |
+| 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Dossier Stratégique — Microsoft Copilot Cowork](bureau-robert/dossier-strategique-copilot-cowork-20260716/) | `analyse-strategique` `microsoft` `copilot` `cowork` `credits` `couts` `budget` `solidaris` `ao` `pro` | ✅ Finalisé | [📥](bureau-robert/dossier-strategique-copilot-cowork-20260716/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-copilot-cowork-20260716.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-copilot-cowork-20260716.md) |
 | 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [Transcription — Le PDG de Claude prédit l'avenir](bureau-robert/vision-ia-solidaris-transcription/) | `vision` `ia` `strategie` `solidaris` `anthropic` `claude` `prospective` | a-analyser | [📥](bureau-robert/vision-ia-solidaris-transcription/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/vision-ia-solidaris-transcription.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/vision-ia-solidaris-transcription.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🧪 Expert #7 — Data Engineering & IA Ops](bureau-robert/expert-07-data-engineering/) | `fiche-expert` `data` `mlops` `rag` `llm` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-07-data-engineering/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-07-data-engineering.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-07-data-engineering.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🧪 Expert #12 — R&D & Innovation IA](bureau-robert/expert-12-rd-innovation-ia/) | `fiche-expert` `rd` `innovation` `ia` `poc` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-12-rd-innovation-ia/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-12-rd-innovation-ia.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-12-rd-innovation-ia.md) |
@@ -79,4 +81,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 16/07/2026 21:00*
+*Index consolidé généré par `agent-pro-index.py` — 16/07/2026 22:25*
