@@ -1,20 +1,12 @@
 # 🏛️ Bureau Robert — Conseil Stratégique IT
 
-*Généré automatiquement le 16/07/2026 à 22:25*
+*Généré automatiquement le 16/07/2026 à 22:30*
 
 **Total : 22 analyse(s)**
 
-### ⚠️ Problèmes détectés
-
-| Fichier | Problème |
-|:--------|:---------|
-| `prompt-notebooklm-presentation/` | Frontmatter manquant ou invalide |
-
----
-
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| N/A | ~~🏛️ Prompt NotebookLM — Présentation Stratégique IA pour Solidaris~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
+| 16/07/2026 | v1 | [🏛️ Prompt NotebookLM — Présentation Stratégique IA pour Solidaris](prompt-notebooklm-presentation/) | `prompt` `notebooklm` `presentation` `strategie` `solidaris` `pro` | ✅ Finalisé | [📥](prompt-notebooklm-presentation/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-robert/prompt-notebooklm-presentation.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-robert%0A-+**Fichier**+%3A+prompt-notebooklm-presentation.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/prompt-notebooklm-presentation.md) |
 | 16/07/2026 | v1 | [🏛️ Note Stratégique — Prédictions IA de Dario Amodei (Claude/Anthropic)](note-strategique-predictions-amodei-20260716/) | `analyse-strategique` `vision` `claude` `anthropic` `amodei` `predictions` `ia` `solidaris` `ao` `pro` | ✅ Finalisé | [📥](note-strategique-predictions-amodei-20260716/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-robert/note-strategique-predictions-amodei-20260716.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-robert%0A-+**Fichier**+%3A+note-strategique-predictions-amodei-20260716.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/note-strategique-predictions-amodei-20260716.md) |
 | 16/07/2026 | v1 | [🏛️ Dossier Stratégique — Microsoft Copilot Cowork](dossier-strategique-copilot-cowork-20260716/) | `analyse-strategique` `microsoft` `copilot` `cowork` `credits` `couts` `budget` `solidaris` `ao` `pro` | ✅ Finalisé | [📥](dossier-strategique-copilot-cowork-20260716/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-robert/dossier-strategique-copilot-cowork-20260716.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-robert%0A-+**Fichier**+%3A+dossier-strategique-copilot-cowork-20260716.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-copilot-cowork-20260716.md) |
 | 16/07/2026 | v1 | [Transcription — Le PDG de Claude prédit l'avenir](vision-ia-solidaris-transcription/) | `vision` `ia` `strategie` `solidaris` `anthropic` `claude` `prospective` | a-analyser | [📥](vision-ia-solidaris-transcription/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-robert/vision-ia-solidaris-transcription.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-robert%0A-+**Fichier**+%3A+vision-ia-solidaris-transcription.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/vision-ia-solidaris-transcription.md) |
