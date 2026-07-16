@@ -575,7 +575,8 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
           card += '</div>';
           // Erreur / avertissement
           if(errorMsg) {{
-            card += '<div style="font-size:11px;color:'+(last.status==='error'?'#f85149':'#d29922')+';margin-bottom:4px;padding:4px 6px;background:rgba(248,81,73,.1);border-radius:3px;word-break:break-all">'+errorMsg+'</div>';
+            var escapedError = errorMsg.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            card += '<div style="font-size:11px;color:'+(last.status==='error'?'#f85149':'#d29922')+';margin-bottom:4px;padding:4px 6px;background:rgba(248,81,73,.1);border-radius:3px;word-break:break-all">'+escapedError+'</div>';
           }}
           // Résumé
           if(summary) {{
