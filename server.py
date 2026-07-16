@@ -625,8 +625,6 @@ async def cameras_page(request: Request):
             <div class="cam-actions">
                 <button onclick="wakeCam('{cam["id"]}','{wake_id}')" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">📡 Wake</button>
                 <button onclick="refreshCam('{cam["id"]}')" style="background:var(--green);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">🔄</button>
-                <button onclick="toggleMotion('{cam["id"]}')" id="btn-motion-{cam["id"]}" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px 8px;cursor:pointer;font-size:11px">🚫 Mot.</button>
-                <button onclick="recordCam('{cam["id"]}')" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px 8px;cursor:pointer;font-size:11px">🎥 10s</button>
                 <span id="status-{cam["id"]}" style="font-size:10px;color:var(--dim);margin-left:auto">🕐 {last}</span>
             </div>
         </div>'''
