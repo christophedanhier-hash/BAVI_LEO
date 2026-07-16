@@ -1,3 +1,12 @@
+---
+date: 2026-07-16
+bureau: bureau-robert
+version: v1
+tags: [prompt, notebooklm, presentation, strategie, solidaris, pro]
+statut: finalise
+type: prompt
+---
+
 # 🏛️ Prompt NotebookLM — Présentation Stratégique IA pour Solidaris
 ## À coller dans NotebookLM après avoir importé les 3 sources
 
