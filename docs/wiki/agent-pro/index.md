@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 18 | 16/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 17 | 16/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 11/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 4 | 13/07/2026 |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 48 analyse(s) sur l'ensemble des bureaux.**
+**Total : 47 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -26,7 +26,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 | Date | Bureau | Version | Titre | Tags | Statut | Actions |
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
-| 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Prompt NotebookLM — Présentation Stratégique IA pour Solidaris](bureau-robert/prompt-notebooklm-presentation/) | `prompt` `notebooklm` `presentation` `strategie` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/prompt-notebooklm-presentation/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/prompt-notebooklm-presentation.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/prompt-notebooklm-presentation.md) |
 | 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Prompt NotebookLM — Copilot Cowork pour CIO & EA](bureau-robert/prompt-notebooklm-cowork-cio-ea/) | `prompt` `notebooklm` `cowork` `cio` `ea` `strategie` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/prompt-notebooklm-cowork-cio-ea/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/prompt-notebooklm-cowork-cio-ea.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/prompt-notebooklm-cowork-cio-ea.md) |
 | 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Note Stratégique — Prédictions IA de Dario Amodei (Claude/Anthropic)](bureau-robert/note-strategique-predictions-amodei-20260716/) | `analyse-strategique` `vision` `claude` `anthropic` `amodei` `predictions` `ia` `solidaris` `ao` `pro` | ✅ Finalisé | [📥](bureau-robert/note-strategique-predictions-amodei-20260716/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/note-strategique-predictions-amodei-20260716.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/note-strategique-predictions-amodei-20260716.md) |
 | 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Dossier Stratégique — Microsoft Copilot Cowork](bureau-robert/dossier-strategique-copilot-cowork-20260716/) | `analyse-strategique` `microsoft` `copilot` `cowork` `credits` `couts` `budget` `solidaris` `ao` `pro` | ✅ Finalisé | [📥](bureau-robert/dossier-strategique-copilot-cowork-20260716/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-copilot-cowork-20260716.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-copilot-cowork-20260716.md) |
