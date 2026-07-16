@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 16/07/2026 à 22:48*
+*Généré automatiquement le 16/07/2026 à 22:54*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 17 | 16/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 16 | 16/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 11/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 4 | 13/07/2026 |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 47 analyse(s) sur l'ensemble des bureaux.**
+**Total : 46 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -31,7 +31,6 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | 16/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Dossier Stratégique — Microsoft Copilot Cowork](bureau-robert/dossier-strategique-copilot-cowork-20260716/) | `analyse-strategique` `microsoft` `copilot` `cowork` `credits` `couts` `budget` `solidaris` `ao` `pro` | ✅ Finalisé | [📥](bureau-robert/dossier-strategique-copilot-cowork-20260716/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-copilot-cowork-20260716.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/dossier-strategique-copilot-cowork-20260716.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🧪 Expert #7 — Data Engineering & IA Ops](bureau-robert/expert-07-data-engineering/) | `fiche-expert` `data` `mlops` `rag` `llm` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-07-data-engineering/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-07-data-engineering.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-07-data-engineering.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🔧 Briefing Infrastructure — Michel](bureau-robert/briefing-michel-infrastructure/) | `michel` `infrastructure` `crons` `deploiement` `contexte` `pro` | ✅ Finalisé | [📥](bureau-robert/briefing-michel-infrastructure/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/briefing-michel-infrastructure.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/briefing-michel-infrastructure.md) |
-| 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🔄 Expert #13 — Gestion du Changement](bureau-robert/expert-13-gestion-changement/) | `fiche-expert` `changement` `adoption` `accompagnement` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-13-gestion-changement/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-13-gestion-changement.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-13-gestion-changement.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [📋 Expert #4 — Projet & Programme](bureau-robert/expert-04-projet-programme/) | `fiche-expert` `projet` `programme` `planning` `tco` `jalon` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-04-projet-programme/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-04-projet-programme.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-04-projet-programme.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [📊 Expert #16 — Data & Analyse](bureau-robert/expert-16-data-analyse/) | `fiche-expert` `data` `analyse` `gouvernance` `kpi` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-16-data-analyse/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-16-data-analyse.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-16-data-analyse.md) |
 | 15/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [💰 Expert #5 — Budget & TCO](bureau-robert/expert-05-budget-tco/) | `fiche-expert` `budget` `tco` `finance` `solidaris` `pro` | ✅ Finalisé | [📥](bureau-robert/expert-05-budget-tco/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-05-budget-tco.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/expert-05-budget-tco.md) |
@@ -76,4 +75,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 16/07/2026 22:48*
+*Index consolidé généré par `agent-pro-index.py` — 16/07/2026 22:54*
