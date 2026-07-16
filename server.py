@@ -611,18 +611,23 @@ async def cameras_page(request: Request):
                 {cam["name"]}
                 <span style="float:right;font-size:11px;font-weight:400">
                     <span style="color:{battery_color}">🔋{battery}%</span>
-                    <span style="margin-left:8px">{awake_icon}</span>
+                    <span style="margin-left:8px" id="motion-{cam["id"]}">{awake_icon}</span>
                 </span>
             </div>
             <div class="cam-frame">
-                <img id="img-{cam["id"]}" src="/cameras/snapshot/{cam["id"]}" 
+                <img id="img-{cam["id"]}" src="/cameras/snapshot/{cam["id"]}"
                      onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 360%22><rect fill=%22%23111%22 width=%22640%22 height=%22360%22/><text fill=%22%23555%22 x=%22320%22 y=%22180%22 text-anchor=%22middle%22 font-size=%2220%22>Chargement…</text></svg>'"
                      style="width:100%;height:100%;object-fit:contain;background:#111">
             </div>
+            <div class="cam-history" id="history-{cam["id"]}" style="display:flex;gap:4px;padding:4px 8px;background:#111;overflow-x:auto;min-height:50px;align-items:center">
+                <span style="font-size:10px;color:#555">Historique</span>
+            </div>
             <div class="cam-actions">
                 <button onclick="wakeCam('{cam["id"]}','{wake_id}')" style="background:var(--accent);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">📡 Wake</button>
-                <button onclick="refreshCam('{cam["id"]}')" style="background:var(--green);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">🔄 Refresh</button>
-                <span id="status-{cam["id"]}" style="font-size:10px;color:var(--dim);margin-left:8px">🕐 {last}</span>
+                <button onclick="refreshCam('{cam["id"]}')" style="background:var(--green);color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:11px">🔄</button>
+                <button onclick="toggleMotion('{cam["id"]}')" id="btn-motion-{cam["id"]}" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px 8px;cursor:pointer;font-size:11px">🚫 Mot.</button>
+                <button onclick="recordCam('{cam["id"]}')" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px 8px;cursor:pointer;font-size:11px">🎥 10s</button>
+                <span id="status-{cam["id"]}" style="font-size:10px;color:var(--dim);margin-left:auto">🕐 {last}</span>
             </div>
         </div>'''
     
@@ -687,16 +692,71 @@ function refreshCam(camId) {{
     var img = document.getElementById('img-'+camId);
     var status = document.getElementById('status-'+camId);
     if (img) {{
-        img.src = '/cameras/snapshot/' + camId + '?' + Date.now();
+        var ts = Date.now();
+        img.src = '/cameras/snapshot/' + camId + '?' + ts;
+        addToHistory(camId, img.src);
         status.textContent = '🔄 Rafraîchi';
         status.style.color = 'var(--green)';
-        setTimeout(function() {{ status.textContent = '🕐 ' + new Date().toLocaleTimeString(); }}, 2000);
+        setTimeout(function() {{ status.textContent = '🕐 ' + new Date().toLocaleTimeString('fr-BE'); }}, 2000);
     }}
+}}
+
+var _motionState = {{}};
+function toggleMotion(camId) {{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    var btn = document.getElementById('btn-motion-'+camId);
+    var enable = !_motionState[camId];
+    btn.textContent = enable ? '⏳...' : '⏳...';
+    fetch('/api/ha/camera/motion', {{
+        method:'POST', headers:{{'Content-Type':'application/json'}},
+        body: JSON.stringify({{token:token, entity_id:camId, enable:enable}})
+    }}).then(function(r){{return r.json()}}).then(function() {{
+        _motionState[camId] = enable;
+        btn.textContent = enable ? '✅ Mot.' : '🚫 Mot.';
+        btn.style.background = enable ? 'var(--green)' : 'var(--card)';
+        btn.style.color = enable ? '#fff' : 'var(--text)';
+        document.getElementById('motion-'+camId).textContent = enable ? '🟢' : '💤';
+    }}).catch(function() {{
+        btn.textContent = '❌';
+    }});
+}}
+
+function recordCam(camId) {{
+    var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+    var status = document.getElementById('status-'+camId);
+    status.textContent = '🎥 Record...';
+    status.style.color = 'var(--orange)';
+    fetch('/api/ha/camera/record', {{
+        method:'POST', headers:{{'Content-Type':'application/json'}},
+        body: JSON.stringify({{token:token, entity_id:camId, duration:10}})
+    }}).then(function(r){{return r.json()}}).then(function() {{
+        status.textContent = '✅ 10s enregistré';
+        status.style.color = 'var(--green)';
+    }}).catch(function() {{
+        status.textContent = '❌ Erreur';
+    }});
+}}
+
+var _snapshotHistory = {{}};
+function addToHistory(camId, src) {{
+    var container = document.getElementById('history-'+camId);
+    if(!container) return;
+    if(!_snapshotHistory[camId]) _snapshotHistory[camId] = [];
+    _snapshotHistory[camId].unshift(src);
+    if(_snapshotHistory[camId].length > 5) _snapshotHistory[camId].pop();
+    var html = '';
+    _snapshotHistory[camId].forEach(function(s) {{
+        html += '<img src=\"'+s+'\" style=\"width:60px;height:34px;object-fit:cover;border:1px solid #333;border-radius:2px;cursor:pointer\" onclick=\"document.getElementById(\\'img-'+camId+'\\').src=\\''+s.split('?')[0]+'?'+Date.now()+'\\'\">';
+    }});
+    container.innerHTML = html || '<span style=\"font-size:10px;color:#555\">Historique</span>';
 }}
 
 setInterval(function() {{
     document.querySelectorAll('.cam-frame img').forEach(function(img) {{
-        img.src = img.src.split('?')[0] + '?' + Date.now();
+        var src = img.src.split('?')[0] + '?' + Date.now();
+        img.src = src;
+        var camId = img.id.replace('img-','');
+        addToHistory(camId, src);
     }});
 }}, 60000);
 </script>
@@ -735,6 +795,43 @@ async def ha_call_service(request: Request):
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
             return JSONResponse(json.loads(r.read()))
+    except Exception as e:
+        raise HTTPException(502, detail=str(e))
+
+@app.post("/api/ha/camera/motion")
+async def ha_camera_motion(request: Request):
+    """Active/désactive la détection de mouvement d'une caméra."""
+    body = await request.json()
+    if body.get("token") != AUTH_TOKEN:
+        raise HTTPException(401)
+    entity_id = body.get("entity_id")
+    enable = body.get("enable", True)
+    service = "enable_motion_detection" if enable else "disable_motion_detection"
+    url = f"{HA_URL}/api/services/camera/{service}"
+    data = json.dumps({"entity_id": entity_id}).encode()
+    req = urllib.request.Request(url, data=data,
+        headers={"Authorization": f"Bearer {HA_TOKEN}", "Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            return JSONResponse({"ok": True, "action": service})
+    except Exception as e:
+        raise HTTPException(502, detail=str(e))
+
+@app.post("/api/ha/camera/record")
+async def ha_camera_record(request: Request):
+    """Enregistre une vidéo de X secondes depuis une caméra."""
+    body = await request.json()
+    if body.get("token") != AUTH_TOKEN:
+        raise HTTPException(401)
+    entity_id = body.get("entity_id")
+    duration = body.get("duration", 10)
+    url = f"{HA_URL}/api/services/camera/record"
+    data = json.dumps({"entity_id": entity_id, "duration": duration, "lookback": duration}).encode()
+    req = urllib.request.Request(url, data=data,
+        headers={"Authorization": f"Bearer {HA_TOKEN}", "Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return JSONResponse({"ok": True, "duration": duration})
     except Exception as e:
         raise HTTPException(502, detail=str(e))
 
