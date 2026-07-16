@@ -802,10 +802,26 @@ async def api_energy_telegram(request: Request):
 
 @app.get("/api/crons/logs")
 async def api_crons_logs(request: Request):
-    """Derniers logs de tous les crons (30 dernières minutes)."""
+    """Derniers logs de tous les crons avec métadonnées enrichies."""
     if not check_token(request): raise HTTPException(401)
     import glob
     from datetime import datetime, timedelta
+    
+    # Charger les métadonnées des crons
+    cron_meta = {}
+    if CRON_JOBS_FILE.exists():
+        try:
+            cron_data = json.loads(CRON_JOBS_FILE.read_text())
+            for j in cron_data.get("jobs", []):
+                cron_meta[j["id"][:12]] = {
+                    "name": j.get("name", ""),
+                    "schedule": j.get("schedule", {}).get("display", ""),
+                    "script": j.get("script", ""),
+                    "skills": j.get("skills", []),
+                    "no_agent": j.get("no_agent", False),
+                }
+        except:
+            pass
     
     base = "/home/tofdan/.hermes/profiles/leo-copilot/cron/output"
     jobs = {}
@@ -821,36 +837,48 @@ async def api_crons_logs(request: Request):
                 mtime = os.path.getmtime(md)
                 fname = os.path.basename(md).replace(".md", "")
                 with open(md) as f:
-                    content = f.read(500)
-                # Extraire le titre et statut
+                    content = f.read(2000)
                 title = ""
                 status = "ok"
+                error_msg = ""
                 for line in content.split("\n"):
                     if line.startswith("# "):
                         title = line[2:].strip()
-                    # Ignorer les faux positifs "0 échec", "0 erreur", "0 FAIL"
                     if "0 échec" in line.lower() or "0 erreur" in line.lower() or "0 fail" in line.lower():
                         continue
                     if "❌" in line or "FAIL" in line.upper() or "ERREUR" in line.upper():
                         status = "error"
+                        error_msg = line.strip()[:150]
                     if "⚠️" in line:
                         if status == "ok":
                             status = "warn"
-                # Extraire le résumé (dernière ligne non-vide après ---)
+                        if not error_msg:
+                            error_msg = line.strip()[:150]
                 summary = ""
                 parts = content.split("---")
                 if len(parts) > 1:
-                    summary = parts[-1].strip()[:200]
+                    summary = parts[-1].strip()[:300]
+                
                 entries.append({
                     "ts": fname,
                     "timestamp": mtime,
                     "title": title,
                     "status": status,
-                    "summary": summary
+                    "summary": summary,
+                    "error_msg": error_msg,
                 })
             except:
                 pass
-        jobs[job_dir[:12]] = entries
+        
+        jid_short = job_dir[:12]
+        meta = cron_meta.get(jid_short, {})
+        jobs[jid_short] = {
+            "entries": entries,
+            "name": meta.get("name", ""),
+            "schedule": meta.get("schedule", ""),
+            "script": meta.get("script", ""),
+            "no_agent": meta.get("no_agent", False),
+        }
     
     return JSONResponse({"jobs": jobs, "total": len(jobs)})
 

@@ -539,40 +539,63 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     function loadNotifications() {{
       fetch('/api/crons/logs?token='+token).then(function(r){{return r.json()}}).then(function(data){{
         var h = '';
-        var errors = 0, warns = 0, oks = 0;
+        var errors = [], warns = [], oks = [];
         var jobIds = Object.keys(data.jobs || {{}}).sort();
         
         jobIds.forEach(function(jid) {{
-          var entries = data.jobs[jid] || [];
+          var job = data.jobs[jid];
+          var entries = job.entries || [];
           var last = entries[0];
           if(!last) return;
           
           var icon = last.status==='error' ? '🔴' : last.status==='warn' ? '🟡' : '🟢';
-          var bg = 'var(--card)';
           var border = last.status==='error' ? '#f85149' : last.status==='warn' ? '#d29922' : '#3fb950';
-          if(last.status==='error') errors++;
-          else if(last.status==='warn') warns++;
-          else oks++;
+          var bg = last.status==='error' ? 'rgba(248,81,73,.08)' : last.status==='warn' ? 'rgba(210,153,34,.06)' : 'var(--card)';
           
-          var name = last.title.replace('Cron Job: ','').substring(0,45);
+          var name = job.name || last.title.replace('Cron Job: ','').substring(0,50);
           var time = last.ts.substring(11,16);
+          var schedule = job.schedule || '';
+          var script = job.script || '';
+          var tag = job.no_agent ? '⚙️ script' : '🧠 agent';
+          var errorMsg = last.error_msg || '';
+          var summary = last.summary || '';
           
-          h += '<div style="background:'+bg+';border-radius:6px;padding:8px 10px;margin-bottom:6px;font-size:12px;border-left:3px solid '+border+'">';
-          h += '<div style="display:flex;justify-content:space-between;align-items:center">';
-          h += '<span style="font-weight:600">'+icon+' '+name+'</span>';
-          h += '<span style="color:var(--dim);font-size:10px">'+time+'</span>';
-          h += '</div>';
-          if(last.summary) {{
-            h += '<div style="color:var(--dim);margin-top:3px;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+last.summary.substring(0,100)+'</div>';
+          // Grouper par statut
+          var card = '<div style="background:'+bg+';border-radius:6px;padding:10px 12px;margin-bottom:6px;font-size:12px;border-left:3px solid '+border+'">';
+          // Ligne 1 : icône + nom + heure
+          card += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">';
+          card += '<span style="font-weight:600">'+icon+' '+name+'</span>';
+          card += '<span style="color:var(--dim);font-size:10px">'+time+'</span>';
+          card += '</div>';
+          // Ligne 2 : métadonnées
+          card += '<div style="font-size:10px;color:var(--dim);margin-bottom:4px;display:flex;gap:8px;flex-wrap:wrap">';
+          card += '<span>'+tag+'</span>';
+          if(schedule) card += '<span>🕐 '+schedule+'</span>';
+          if(script) card += '<span>📄 '+script+'</span>';
+          card += '</div>';
+          // Erreur / avertissement
+          if(errorMsg) {{
+            card += '<div style="font-size:11px;color:'+(last.status==='error'?'#f85149':'#d29922')+';margin-bottom:4px;padding:4px 6px;background:rgba(248,81,73,.1);border-radius:3px;word-break:break-all">'+errorMsg+'</div>';
           }}
-          h += '</div>';
+          // Résumé
+          if(summary) {{
+            card += '<div style="color:var(--dim);font-size:11px;max-height:40px;overflow:hidden;line-height:1.3">'+summary.substring(0,200)+'</div>';
+          }}
+          card += '</div>';
+          
+          if(last.status==='error') errors.push(card);
+          else if(last.status==='warn') warns.push(card);
+          else oks.push(card);
         }});
         
-        // Résumé en haut
+        // Assembler : erreurs d'abord, puis warns, puis OKs (max 10)
+        h = errors.join('') + warns.join('') + oks.slice(0,15).join('');
+        
+        // Résumé
         var summary = '<div style="display:flex;gap:12px;margin-bottom:10px;font-size:12px">';
-        if(errors) summary += '<span style="color:#f85149">🔴 '+errors+' erreur(s)</span>';
-        if(warns) summary += '<span style="color:#d29922">🟡 '+warns+' avert.</span>';
-        summary += '<span style="color:#3fb950">🟢 '+oks+' OK</span>';
+        if(errors.length) summary += '<span style="color:#f85149">🔴 '+errors.length+' erreur(s)</span>';
+        if(warns.length) summary += '<span style="color:#d29922">🟡 '+warns.length+' avert.</span>';
+        summary += '<span style="color:#3fb950">🟢 '+(oks.length)+' OK</span>';
         summary += '<span style="color:var(--dim);margin-left:auto">'+data.total+' jobs</span>';
         summary += '</div>';
         
