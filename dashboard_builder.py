@@ -640,10 +640,6 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     <canvas id="powerChart"></canvas>
   </div>
   <div style="display:flex;gap:8px;margin:12px 0">
-    <button onclick="switchEnergyView('daily')" id="btn-e-daily" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📅 7j</button>
-    <button onclick="switchEnergyView('weekly')" id="btn-e-weekly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📊 54sem</button>
-    <button onclick="switchEnergyView('monthly')" id="btn-e-monthly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📆 12m</button>
-    <button onclick="switchEnergyView('yearly')" id="btn-e-yearly" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">📈 Ans</button>
     <span style="flex:1"></span>
     <button onclick="switchEnergyMode('conso')" id="btn-e-conso" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">⚡ Conso</button>
     <button onclick="switchEnergyMode('prod')" id="btn-e-prod" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px">☀️ Prod</button>
