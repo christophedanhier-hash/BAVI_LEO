@@ -1176,6 +1176,13 @@
 <td style="text-align: center;">✅ <strong>Finalisé</strong></td>
 <td style="text-align: left;">Intégration Sophie (expert transverse #17) + documentation invocation directe</td>
 </tr>
+<tr>
+<td style="text-align: left;"><strong>v5</strong></td>
+<td style="text-align: center;">15/07/2026</td>
+<td style="text-align: left;">🏛️ <strong>Robert</strong></td>
+<td style="text-align: center;">✅ <strong>Finalisé</strong></td>
+<td style="text-align: left;">Gouvernance Bureau Connaissance + alimentation automatique bibliothèque de cas</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -2645,7 +2652,96 @@
               → Résumé : [...]
 </code></pre></div>
 <hr />
-<h2 id="16-stockage">16. Stockage<a class="headerlink" href="#16-stockage" title="Permanent link">&para;</a></h2>
+<h2 id="16-gouvernance-du-bureau-de-la-connaissance">16. 📚 Gouvernance du Bureau de la Connaissance<a class="headerlink" href="#16-gouvernance-du-bureau-de-la-connaissance" title="Permanent link">&para;</a></h2>
+<h3 id="161-principe">16.1 Principe<a class="headerlink" href="#161-principe" title="Permanent link">&para;</a></h3>
+<p>Le <strong>Bureau de la Connaissance</strong> est un bureau dédié à la capitalisation et à la mémoire organisationnelle. Il est <strong>rattaché à Robert</strong> mais constitue un bureau autonome avec son propre dossier dans le wiki.</p>
+<p><strong>URL :</strong> <code>https://christophedanhier-hash.github.io/BAVI_LEO/wiki/agent-pro/bureau-connaissance/</code></p>
+<h3 id="162-alimentation-mode-au-fil-de-leau">16.2 Alimentation — Mode « au fil de l'eau »<a class="headerlink" href="#162-alimentation-mode-au-fil-de-leau" title="Permanent link">&para;</a></h3>
+<p>La bibliothèque de cas est alimentée <strong>automatiquement par Robert</strong> à chaque analyse produite :</p>
+<div class="highlight"><pre><span></span><code>Toi : « Robert, analyse [sujet] »
+  ↓
+Robert produit l&#39;analyse → stockée dans bureau-robert/
+  ↓
+Robert ajoute une fiche dans la bibliothèque de cas
+  ↓
+📖 https://.../bureau-connaissance/bibliotheque-cas-ia/
+</code></pre></div>
+<p><strong>Règle :</strong>
+- <strong>Analyses structurées</strong> (note, dossier, projet) → entrée ajoutée dans la bibliothèque
+- <strong>Quick scans</strong> simples (échange rapide) → pas d'entrée
+- <strong>Mise à jour</strong> d'une analyse existante (v1→v2) → ligne ajoutée avec mention « MàJ »</p>
+<h3 id="163-contenu-de-la-bibliotheque">16.3 Contenu de la bibliothèque<a class="headerlink" href="#163-contenu-de-la-bibliotheque" title="Permanent link">&para;</a></h3>
+<p>Chaque entrée contient :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Colonne</th>
+<th style="text-align: left;">Contenu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Date</strong></td>
+<td style="text-align: left;">Date de l'analyse</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cas</strong></td>
+<td style="text-align: left;">Titre de l'analyse</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Problème</strong></td>
+<td style="text-align: left;">Problème traité</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Solution</strong></td>
+<td style="text-align: left;">Solution proposée</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Expert</strong></td>
+<td style="text-align: left;">Expert(s) sollicité(s)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Statut</strong></td>
+<td style="text-align: left;">✅ Finalisé / 📝 Brouillon</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lien</strong></td>
+<td style="text-align: left;">Lien vers l'analyse complète</td>
+</tr>
+</tbody>
+</table>
+<h3 id="164-roles">16.4 Rôles<a class="headerlink" href="#164-roles" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tâche</th>
+<th style="text-align: left;">Qui</th>
+<th style="text-align: center;">Statut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Créer la bibliothèque de cas</td>
+<td style="text-align: left;"><strong>Robert</strong></td>
+<td style="text-align: center;">✅ Fait</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alimenter après chaque analyse</td>
+<td style="text-align: left;"><strong>Robert</strong> (auto)</td>
+<td style="text-align: center;">✅ Actif</td>
+</tr>
+<tr>
+<td style="text-align: left;">Crons (veille, patterns)</td>
+<td style="text-align: left;"><strong>Michel</strong> 🔧</td>
+<td style="text-align: center;">⬜ À venir</td>
+</tr>
+</tbody>
+</table>
+<h3 id="165-exemple-de-ligne-dans-la-bibliotheque">16.5 Exemple de ligne dans la bibliothèque<a class="headerlink" href="#165-exemple-de-ligne-dans-la-bibliotheque" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>| 15/07/2026 | 📚 **Création Bureau Connaissance** | Absence de capitalisation transverse | Bureau dédié | Robert | ✅ Actif | [↗](lien) |
+</code></pre></div>
+<hr />
+<h2 id="17-stockage">17. Stockage<a class="headerlink" href="#17-stockage" title="Permanent link">&para;</a></h2>
 <p>Toutes les analyses produites par Robert sont stockées dans :
 <code>BAVI_LEO/docs/wiki/agent-pro/bureau-robert/</code></p>
 <p>Index auto-généré : <code>agent-pro-index.py --bureau robert</code></p>

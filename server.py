@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import urllib.request
 
 BASE = Path("/home/tofdan/.hermes")
-BAVI_SITE = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site-local")
+BAVI_SITE = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site")
 LEO_DASHBOARD_REPO = Path("/home/tofdan/.hermes/leo-dashboard-repo")
 CRON_JOBS_FILE = Path("/home/tofdan/.hermes/profiles/leo-copilot/cron/jobs.json")
 N8N_CONFIG_FILE = Path("/home/tofdan/.hermes/n8n-webhooks.json")
@@ -1066,7 +1066,9 @@ if VOYAGES_SITE.exists():
     app.mount("/voyages", StaticFiles(directory=str(VOYAGES_SITE), html=True), name="voyages")
 
 if BAVI_SITE.exists():
-    app.mount("/", StaticFiles(directory=str(BAVI_SITE), html=True), name="wiki")
+    assets_dir = BAVI_SITE / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
 
 if __name__ == "__main__":
     import uvicorn
