@@ -1,3 +1,12 @@
+---
+date: 2026-07-16
+bureau: bureau-robert
+version: v1
+tags: [prompt, notebooklm, cowork, cio, ea, strategie, solidaris, pro]
+statut: finalise
+type: prompt
+---
+
 # 🏛️ Prompt NotebookLM — Copilot Cowork pour CIO & EA
 ## Présentation au Directeur des Systèmes d'Information & Architecture d'Entreprise
 
