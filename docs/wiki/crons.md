@@ -9,10 +9,10 @@
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **42** (38 leo-copilot + 2 emile + 2 bavi-leo) |
+| **Crons Hermes** (tous profils, consolidé) | **38** (leo-copilot exclusif) |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
-| **Total général** | **48** |
-> ⚠️ Anomalie : 4 crons hors leo-copilot (emile=2, bavi-leo=2) — règle « ZÉRO hors leo-copilot » violée |
+| **Total général** | **44** |
+> ✅ Règle « ZÉRO hors leo-copilot » respectée — emile=0, bavi-leo=0, default=0 |
 
 ## Liste exhaustive des crons Hermes
 
@@ -75,4 +75,4 @@
 _Généré automatiquement le 17/07/2026 à 18:01_
 
 ---
-> 🤖 Dernier audit : 17/07/2026 à 21:06 (UTC+2) — total 44→48 (crons emile+bavi-leo ajoutés), H5 n8n marqué ⚠️ déprécié
+> 🤖 Dernier audit : 17/07/2026 à 22:30 (UTC+2) — total 48→44 (emile+bavi-leo crons supprimés, règle ZÉRO rétablie), H5 n8n déprécié confirmé

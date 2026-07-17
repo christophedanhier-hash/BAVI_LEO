@@ -947,7 +947,7 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (38 jobs)</p>
 <tbody>
 <tr>
 <td><strong>Crons Hermes</strong> (tous profils, consolidé)</td>
-<td style="text-align: center;"><strong>38</strong></td>
+<td style="text-align: center;"><strong>42</strong> (38 leo-copilot + 2 emile + 2 bavi-leo)</td>
 </tr>
 <tr>
 <td><strong>Crons hôte</strong> (crontab tofdan@172.17.0.1)</td>
@@ -955,7 +955,11 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (38 jobs)</p>
 </tr>
 <tr>
 <td><strong>Total général</strong></td>
-<td style="text-align: center;"><strong>44</strong></td>
+<td style="text-align: center;"><strong>48</strong></td>
+</tr>
+<tr>
+<td>&gt; ⚠️ Anomalie : 4 crons hors leo-copilot (emile=2, bavi-leo=2) — règle « ZÉRO hors leo-copilot » violée</td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
@@ -1270,7 +1274,7 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (38 jobs)</p>
 </tr>
 <tr>
 <td style="text-align: center;">H5</td>
-<td><code>0 2 * * * /opt/n8n-data/backup.sh &gt;&gt; /opt/n8n-data/backups/backup.log</code></td>
+<td><code>0 2 * * * /opt/n8n-data/backup.sh &gt;&gt; /opt/n8n-data/backups/backup.log</code> ⚠️ n8n déprécié 13/07/2026</td>
 </tr>
 <tr>
 <td style="text-align: center;">H6</td>
@@ -1279,6 +1283,10 @@ Source : <code>profiles/leo-copilot/cron/jobs.json</code> (38 jobs)</p>
 </tbody>
 </table>
 <p><em>Généré automatiquement le 17/07/2026 à 18:01</em></p>
+<hr />
+<blockquote>
+<p>🤖 Dernier audit : 17/07/2026 à 21:06 (UTC+2) — total 44→48 (crons emile+bavi-leo ajoutés), H5 n8n marqué ⚠️ déprécié</p>
+</blockquote>
 
 
 

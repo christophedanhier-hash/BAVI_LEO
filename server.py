@@ -1198,9 +1198,11 @@ if BAVI_SITE.exists():
 async def api_audit(request: Request):
     """Rapport d'audit de contenu des wikis."""
     if not check_token(request): raise HTTPException(401)
-    audit_file = Path("/home/tofdan/.hermes/metrics/audit-contenu.json")
-    if audit_file.exists():
-        return JSONResponse(json.loads(audit_file.read_text()))
+    # Priorité: audit rédactionnel DeepSeek > audit mécanique
+    for fname in ["audit-redactionnel.json", "audit-contenu.json"]:
+        audit_file = Path(f"/home/tofdan/.hermes/metrics/{fname}")
+        if audit_file.exists():
+            return JSONResponse(json.loads(audit_file.read_text()))
     return JSONResponse({"error": "Pas encore d'audit", "issues": [], "timestamp": None})
 
 @app.get("/api/audit/md")

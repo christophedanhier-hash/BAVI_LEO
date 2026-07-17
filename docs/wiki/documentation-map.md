@@ -10,7 +10,7 @@
 | 1 | `index.md` | Portail BAVI, présentation des 8 bureaux, architecture | Toutes | ✅ |
 || 2 | `skills.md` | Catalogue des 130 skills LEO — *section AUTO* | 1, guide | ✅ |
 | 3 | `guide-utilisation.md` | Guide d'utilisation BAVI, navigation inter-wikis | 1 | ✅ |
-| 4 | `wiki/crons.md` | 38 crons automatisés — *section AUTO* | bureau-michel | ✅ |
+| 4 | `wiki/crons.md` | 38 crons automatisés (leo-copilot exclusif) — *section AUTO* | bureau-michel | ✅ |
 
 ## 🧠 Bureaux Agent Pro — 9 bureaux, ~46 pages
 
@@ -138,4 +138,4 @@ bureau-gerard/t600/document-reference-t600.md
 *Document créé le 07/07/2026 — Léo 🦁*
 
 ---
-> 🤖 Dernier audit : 17/07/2026 à 21:06 (UTC+2) — vérifié : 9 bureaux, 38→42 crons, n8n déprécié confirmé
+> 🤖 Dernier audit : 17/07/2026 à 22:30 (UTC+2) — vérifié : 9 bureaux, 38 crons leo-copilot exclusif, n8n déprécié confirmé, emile/bavi-leo=0 crons
