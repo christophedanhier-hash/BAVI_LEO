@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 17/07/2026 à 18:01**
+> **Généré automatiquement le 18/07/2026 à 00:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (38 jobs)
 <!-- AUTO:END header -->
 
@@ -9,10 +9,9 @@
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **38** (leo-copilot exclusif) |
+| **Crons Hermes** (tous profils, consolidé) | **38** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
 | **Total général** | **44** |
-> ✅ Règle « ZÉRO hors leo-copilot » respectée — emile=0, bavi-leo=0, default=0 |
 
 ## Liste exhaustive des crons Hermes
 
@@ -33,7 +32,7 @@
 | 11 | 📋 Doc Watch Auto (sync documents) | `*/2 * * * *` | script | ✅ |
 | 12 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
 | 13 | 📓 Journaux Quotidiens (4 vaults) | `0 23 * * *` | LLM | ✅ |
-| 14 | 📝 Audit rédactionnel DeepSeek (cross-check API) | `0 6 * * *` | LLM | ✅ |
+| 14 | 📝 Audit rédactionnel unifié (2 wikis, 1 passage) | `0 6 * * *` | LLM | ✅ |
 | 15 | 📝 docs-update | `0 */4 * * *` | script | ✅ |
 | 16 | 📡 Machine KPI Collector | `*/5 * * * *` | script | ✅ |
 | 17 | 📦 Auto-Archive BAVI LEO (5min) | `every 5m` | script | ✅ |
@@ -69,10 +68,7 @@
 | H2 | `0 23 * * * cd /home/tofdan/scripts-hermes && python3 backup-daily.py >` |
 | H3 | `30 22 * * * cd /home/tofdan/scripts-hermes && python3 dashboard/budget` |
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
-| H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` ⚠️ n8n déprécié 13/07/2026 |
+| H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 17/07/2026 à 18:01_
-
----
-> 🤖 Dernier audit : 17/07/2026 à 22:30 (UTC+2) — total 48→44 (emile+bavi-leo crons supprimés, règle ZÉRO rétablie), H5 n8n déprécié confirmé
+_Généré automatiquement le 18/07/2026 à 00:00_
