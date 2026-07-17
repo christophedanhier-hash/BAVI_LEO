@@ -1203,6 +1203,15 @@ async def api_audit(request: Request):
         return JSONResponse(json.loads(audit_file.read_text()))
     return JSONResponse({"error": "Pas encore d'audit", "issues": [], "timestamp": None})
 
+@app.get("/api/audit/md")
+async def api_audit_md(request: Request):
+    """Rapport d'audit en Markdown lisible."""
+    if not check_token(request): raise HTTPException(401)
+    md_file = Path("/home/tofdan/.hermes/metrics/audit-contenu.md")
+    if md_file.exists():
+        return Response(content=md_file.read_text(), media_type="text/markdown")
+    raise HTTPException(404, detail="Pas encore d'audit")
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8765)

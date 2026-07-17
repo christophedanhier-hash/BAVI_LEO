@@ -571,6 +571,7 @@ function loadAudit() {{
     if(!issues.length) h = '<div style="color:var(--green);text-align:center;padding:20px">✅ Aucune anomalie détectée</div>';
     document.getElementById('audit-list').innerHTML = h;
     document.getElementById('audit-updated').textContent = 'Audit: '+d.timestamp+' · '+d.model;
+    document.getElementById('audit-updated').innerHTML = 'Audit: '+d.timestamp+' · <a href=\"/api/audit/md?token='+token+'\" target=\"_blank\" style=\"color:var(--accent)\">📄 Rapport MD</a>';
   }}).catch(function(e){{
     document.getElementById('audit-list').innerHTML = '<div style="color:#f85149">❌ Audit non disponible</div>';
   }});
