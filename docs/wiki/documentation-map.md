@@ -10,7 +10,7 @@
 | 1 | `index.md` | Portail BAVI, présentation des 8 bureaux, architecture | Toutes | ✅ |
 | 2 | `skills.md` | Catalogue des 125 skills LEO — *section AUTO* | 1, guide | ✅ |
 | 3 | `guide-utilisation.md` | Guide d'utilisation BAVI, navigation inter-wikis | 1 | ✅ |
-| 4 | `wiki/crons.md` | 22 crons automatisés — *section AUTO* | bureau-michel | ✅ |
+| 4 | `wiki/crons.md` | 37 crons automatisés — *section AUTO* | bureau-michel | ✅ |
 
 ## 🧠 Bureaux Agent Pro — 8 bureaux, ~46 pages
 
