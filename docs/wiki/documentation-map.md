@@ -138,4 +138,4 @@ bureau-gerard/t600/document-reference-t600.md
 *Document créé le 07/07/2026 — Léo 🦁*
 
 ---
-> 🤖 Dernier audit : 17/07/2026 à 18:00 (UTC+2) — pages n8n marquées 📦 (déprécié), statuts vérifiés
+> 🤖 Dernier audit : 17/07/2026 à 21:06 (UTC+2) — vérifié : 9 bureaux, 38→42 crons, n8n déprécié confirmé

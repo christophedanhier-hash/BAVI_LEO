@@ -9,9 +9,10 @@
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **38** |
+| **Crons Hermes** (tous profils, consolidé) | **42** (38 leo-copilot + 2 emile + 2 bavi-leo) |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
-| **Total général** | **44** |
+| **Total général** | **48** |
+> ⚠️ Anomalie : 4 crons hors leo-copilot (emile=2, bavi-leo=2) — règle « ZÉRO hors leo-copilot » violée |
 
 ## Liste exhaustive des crons Hermes
 
@@ -68,7 +69,10 @@
 | H2 | `0 23 * * * cd /home/tofdan/scripts-hermes && python3 backup-daily.py >` |
 | H3 | `30 22 * * * cd /home/tofdan/scripts-hermes && python3 dashboard/budget` |
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
-| H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
+| H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` ⚠️ n8n déprécié 13/07/2026 |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
 _Généré automatiquement le 17/07/2026 à 18:01_
+
+---
+> 🤖 Dernier audit : 17/07/2026 à 21:06 (UTC+2) — total 44→48 (crons emile+bavi-leo ajoutés), H5 n8n marqué ⚠️ déprécié
