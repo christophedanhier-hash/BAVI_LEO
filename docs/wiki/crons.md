@@ -2,16 +2,16 @@
 
 <!-- AUTO:START header -->
 > **Généré automatiquement le 17/07/2026 à 12:00**
-> Source : `profiles/leo-copilot/cron/jobs.json` (37 jobs)
+> Source : `profiles/leo-copilot/cron/jobs.json` (38 jobs)
 <!-- AUTO:END header -->
 
 ## Résumé
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **37** |
+| **Crons Hermes** (tous profils, consolidé) | **38** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
-| **Total général** | **43** |
+| **Total général** | **44** |
 _Généré automatiquement le 17/07/2026 à 12:00_
 
 ## Crons hôte
