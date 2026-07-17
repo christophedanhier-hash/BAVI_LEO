@@ -52,4 +52,25 @@ _Généré automatiquement le 17/07/2026 à 12:00_
 | 18 | 📧 Check Gmail — emails importants (30min) | `every 30m` | script | ✅ |
 | 19 | 📧 Email Classifier — rule-based (inbox zero) | `*/30 * * * *` | script | ✅ |
 | 20 | 📷 Surveillance caméras — mouvement → Telegram | `*/5 * * * *` | script | ✅ |
-| 21 | 🔄 Auto-commit wikis (toutes les heures) | `0
+| 21 | 🔄 Auto-commit wikis (toutes les heures) | `0 * * * *` | script | ✅ |
+| 22 | 🔄 drive-sync | `0 * * * *` | script | ✅ |
+| 23 | 🔄 Déploiement auto tofdan.be | `5 * * * *` | script | ✅ |
+| 24 | 🔄 Refresh Google Tokens (50min) | `*/50 * * * *` | script | ✅ |
+| 25 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script | ✅ |
+| 26 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
+| 27 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
+| 28 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
+| 29 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
+| 30 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
+| 31 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
+| 32 | 🔍 Audit Infra (cohérence globale) | `0 * * * *` | script | ✅ |
+| 33 | 📝 Audit rédactionnel DeepSeek (cross-check API) | `0 6 * * *` | LLM | ✅ |
+| 34 | Collecte Viessmann | `*/5 * * * *` | LLM | ⚠️ |
+| 35 | 🔄 Rebuild Wiki BAVI local | `15 * * * *` | script | ✅ |
+| 36 | 🔄 Rebuild Wiki Voyages local | `15 * * * *` | script | ✅ |
+| 37 | Collecte Viessmann (script) | `*/5 * * * *` | LLM | ⚠️ |
+
+<!-- AUTO:END hermes-crons -->
+
+---
+> 🤖 Dernier audit : 17/07/2026 à 15:05 (UTC+2) — table complétée (fichier était tronqué à 21/38 crons)

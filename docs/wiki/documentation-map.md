@@ -8,11 +8,11 @@
 | # | Page | Contenu | Pages liées | Statut |
 |:-:|:-----|:--------|:-----------:|:------:|
 | 1 | `index.md` | Portail BAVI, présentation des 8 bureaux, architecture | Toutes | ✅ |
-| 2 | `skills.md` | Catalogue des 125 skills LEO — *section AUTO* | 1, guide | ✅ |
+|| 2 | `skills.md` | Catalogue des 130 skills LEO — *section AUTO* | 1, guide | ✅ |
 | 3 | `guide-utilisation.md` | Guide d'utilisation BAVI, navigation inter-wikis | 1 | ✅ |
 | 4 | `wiki/crons.md` | 38 crons automatisés — *section AUTO* | bureau-michel | ✅ |
 
-## 🧠 Bureaux Agent Pro — 8 bureaux, ~46 pages
+## 🧠 Bureaux Agent Pro — 9 bureaux, ~46 pages
 
 ### Bureau Léo — Hermes Agent
 
@@ -77,6 +77,12 @@
 | `bureau-emile/index.md` | Présentation bureau Émile (Mémoire) | — | ✅ |
 | `bureau-emile/analyse-bot-emile.md` | Analyse bot Émile assistant pédagogique | — | ✅ |
 
+### Bureau Connaissance — Mémoire & Capitalisation
+
+| Page | Contenu | Pages liées | Statut |
+|:-----|:--------|:-----------:|:------:|
+| `bureau-connaissance/` | Mémoire & Capitalisation BAVI | — | ✅ |
+
 ### Bureau Virginie — Médical
 
 | Page | Contenu | Pages liées | Statut |
@@ -130,3 +136,6 @@ bureau-gerard/t600/document-reference-t600.md
 ---
 
 *Document créé le 07/07/2026 — Léo 🦁*
+
+---
+> 🤖 Dernier audit : 17/07/2026 à 15:00 (UTC+2) — 3 corrections appliquées
