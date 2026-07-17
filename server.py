@@ -1193,6 +1193,16 @@ if BAVI_SITE.exists():
     if assets_dir.exists():
         app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
 
+
+@app.get("/api/audit")
+async def api_audit(request: Request):
+    """Rapport d'audit de contenu des wikis."""
+    if not check_token(request): raise HTTPException(401)
+    audit_file = Path("/home/tofdan/.hermes/metrics/audit-contenu.json")
+    if audit_file.exists():
+        return JSONResponse(json.loads(audit_file.read_text()))
+    return JSONResponse({"error": "Pas encore d'audit", "issues": [], "timestamp": None})
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8765)
