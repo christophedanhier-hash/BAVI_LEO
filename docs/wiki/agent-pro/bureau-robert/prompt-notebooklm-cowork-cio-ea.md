@@ -75,4 +75,4 @@ Un document structuré avec les sections suivantes :
 
 ---
 
-*Prompt généré par Robert 🏛️ — Juillet 2026*
+*Prompt généré le 16/07/2026*
