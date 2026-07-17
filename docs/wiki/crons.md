@@ -22,7 +22,7 @@ _Généré automatiquement le 17/07/2026 à 12:00_
 | H2 | `0 23 * * * cd /home/tofdan/scripts-hermes && python3 backup-daily.py >` |
 | H3 | `30 22 * * * cd /home/tofdan/scripts-hermes && python3 dashboard/budget` |
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
-| H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
+| H5 | ~~`0 2 * * * /opt/n8n-data/backup.sh`~~ — **DÉPRÉCIÉ** (n8n retiré 13/07/2026) |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
 _Généré automatiquement le 17/07/2026 à 12:00_
@@ -68,9 +68,7 @@ _Généré automatiquement le 17/07/2026 à 12:00_
 | 34 | Collecte Viessmann | `*/5 * * * *` | LLM | ⚠️ |
 | 35 | 🔄 Rebuild Wiki BAVI local | `15 * * * *` | script | ✅ |
 | 36 | 🔄 Rebuild Wiki Voyages local | `15 * * * *` | script | ✅ |
-| 37 | Collecte Viessmann (script) | `*/5 * * * *` | LLM | ⚠️ |
-
 <!-- AUTO:END hermes-crons -->
 
 ---
-> 🤖 Dernier audit : 17/07/2026 à 15:05 (UTC+2) — table complétée (fichier était tronqué à 21/38 crons)
+> 🤖 Dernier audit : 17/07/2026 à 18:00 (UTC+2) — doublon Viessmann supprimé (37→36 entrées), H5 n8n marqué déprécié, table nettoyée

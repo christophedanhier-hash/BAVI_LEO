@@ -45,8 +45,8 @@
 | `bureau-michel/pra-leo-recovery-20260629.md` | Plan reprise activité LEO | credentials | ✅ |
 | `bureau-michel/prompt-kilo-code-tofdan.md` | Prompt Kilo Code | — | ✅ |
 | `bureau-michel/rapport-audit-leo-2026-07-05.md` | Rapport audit LEO juillet | — | ✅ |
-| `bureau-michel/n8n/ping-workflow.md` | Workflow n8n Ping | — | ✅ |
-| `bureau-michel/n8n/rapport-n8n-leo-20260619.md` | Rapport n8n LEO | — | ✅ |
+| `bureau-michel/n8n/ping-workflow.md` | Workflow n8n Ping — **n8n déprécié 13/07/2026** | — | 📦 |
+| `bureau-michel/n8n/rapport-n8n-leo-20260619.md` | Rapport n8n LEO — **n8n déprécié 13/07/2026** | — | 📦 |
 | `bureau-michel/archive/` (10 fichiers) | Anciennes analyses pré-crash | — | 📦 |
 
 ### Bureau Robert — Stratégie
@@ -138,4 +138,4 @@ bureau-gerard/t600/document-reference-t600.md
 *Document créé le 07/07/2026 — Léo 🦁*
 
 ---
-> 🤖 Dernier audit : 17/07/2026 à 15:00 (UTC+2) — 3 corrections appliquées
+> 🤖 Dernier audit : 17/07/2026 à 18:00 (UTC+2) — pages n8n marquées 📦 (déprécié), statuts vérifiés
