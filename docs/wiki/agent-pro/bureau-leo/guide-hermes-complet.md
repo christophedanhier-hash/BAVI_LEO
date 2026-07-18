@@ -127,7 +127,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
   - Plateformes : Telegram, Discord, Slack, email, et plus
 
 - **[Ch.3 — L'architecture LEO](01-decouvrir-hermes/ch03-architecture-leo.md)**
-  - Vue d'ensemble : 5 bots, 5 profils, providers dédiés
+  - Vue d'ensemble : 4 profils actifs, providers dédiés
   - Le Gateway DeepSeek : pont entre Telegram et l'agent
   - Hiérarchie des providers : quand utiliser quoi
   - Les chiffres clés de LEO (dashboards, crons, skills)
@@ -559,7 +559,7 @@ Les crons Hermes ne sont pas de simples tâches shell. Chaque cron peut être :
 - **Un prompt LLM** — l'agent réfléchit et agit
 - **Un script + un prompt** — collecte des données puis analyse
 
-LEO a **14 crons actifs** dont 13 en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
+LEO a **38 crons Hermes + 6 crons hôte** dont la plupart en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
 
 #### 5. 🗂️ Profils et gateways parallèles
 
@@ -615,7 +615,7 @@ Telegram ──→ Gateway Hermes ──→ Profil default ──→ DeepSeek Fl
                                     └──→ Gemini (fallback automatique)
 ```
 
-### Les 5 bots Telegram
+### Les profils Telegram actifs
 
 | Bot | Profil | Provider | Rôle | Latence | Coût |
 |:----|:-------|:---------|:-----|:-------:|:----:|
@@ -681,9 +681,9 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 |:----------|:----|:--------|:---:|
 | 🦁 **LEO Dashboard** | [lien](https://christophedanhier-hash.github.io/leo-dashboard/) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
 
-### Les 14 crons (tâches planifiées)
+### Les 38 crons (+ 6 crons hôte)
 
-> 13 sur 14 sont en `no_agent` = **0$ par mois** de consommation LLM pour les tâches répétitives. Un **auto-fix-daemon** (`*/15 min`) assure une détection rapide.
+LEO a 38 crons Hermes + 6 crons hôte qui exécutent des tâches planifiées
 
 | Vague | Horaires | Crons |
 |:------|:---------|:------|
@@ -720,6 +720,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 | 💰 **Sophie** | Pilotage économique | **PRO** |
 | 📋 **Gérard** | Documentation T600 | Technique |
 | 🛡️ **AO** | Assurance Obligatoire | **PRO** |
+| 📚 **Connaissance** | Base de connaissance centralisée — bibliothèque cas IA, référentiels | Privé |
 | 📦 **Versioning** | Gestion des versions | Technique |
 
 ## Les leçons apprises
@@ -728,7 +729,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 **Erreur :** Création d'un profil `local` pour Ollama. Arrêt du gateway `local` = perte totale d'accès Telegram.
 
-**Leçon :** Unifier dans un seul profil, Ollama par API directe. **Fiabilité > flexibilité.**
+**Leçon :** Structurer les profils par domaine (default/leo-copilot/bavi-leo), Ollama par API directe. **Fiabilité > flexibilité.**
 
 ### 13/06 — La précipitation coûte cher
 
@@ -762,7 +763,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 ## 📝 À retenir
 
-- LEO = 1 serveur principal + 5 bots Telegram + 1 dashboard central (9 onglets) + 38 crons + 157 skills
+- LEO = 1 serveur principal + 5 bots Telegram + 1 dashboard central (9 onglets) + 38 crons + 130+ skills
 - Tout tourne sur Hermes Agent dans un conteneur Docker supervisé par s6
 - Le secret : une organisation stricte (profils, bureaux, skills) qui permet à l'agent de gérer la complexité
 - Les erreurs du passé ont forgé les règles du présent
@@ -1220,7 +1221,7 @@ Structure d'un profil dans `~/.hermes/profiles/<nom>/` :
 └── logs/           # Logs
 ```
 
-### Règle LEO : un seul profil
+### Règle LEO : profils spécialisés
 
 > *"Un seul profil, un seul gateway, tout dedans."*
 
@@ -1633,7 +1634,7 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Michel, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 13 crons automatisés
+- 38 crons automatisés (+6 hôte)
 - 1 dashboard central (4 onglets)
 - 3 workflows n8n (2 actifs)
 - Les gateways Hermes
@@ -2092,7 +2093,7 @@ BAVI/AGENT-PRO/
 
 ### 2. Des experts spécialisés
 
-Chaque bureau peut faire appel à des sous-experts (agents CrewAI). Par exemple, le Bureau Michel a 8 experts :
+Chaque bureau peut faire appel à des sous-experts (agents CrewAI). Par exemple, le Bureau Robert a 16 experts :
 
 ```
 Bureau Michel
@@ -2222,7 +2223,7 @@ C'est le padron de la machine — il a accès root complet (`sudo` sans restrict
 
 ```
 Bureau Michel = l'ingénieur système de LEO
-├── 🔧 13 crons automatisés
+├── 🔧 38 crons automatisés (+6 hôte)
 ├── 📊 1 dashboard central (4 onglets)
 ├── 🔄 3 workflows n8n (2 actifs)
 ├── 🌐 Nginx + Cloudflare Tunnel
@@ -2232,7 +2233,7 @@ Bureau Michel = l'ingénieur système de LEO
 └── 🔑 Accès root complet (sudo)
 ```
 
-## Les 8 experts du bureau
+## Les 16 experts du bureau Robert
 
 | Expert | Compétence | Activer quand... |
 |:-------|:-----------|:-----------------|
@@ -2294,7 +2295,7 @@ Utilisateur ──→ tofdan.be ──→ Cloudflare ──→ Tunnel ──→ 
 |:--------|:---|:---:|:--------:|:-----|
 | **LEO** 🖥️ | Ubuntu 26.04 | 22 Go | 457 Go SSD + 1 To HDD | Serveur unique (toute la plateforme) |
 
-## Les 14 crons
+## Les 38 crons (+ 6 hôte)
 
 Les crons sont le cœur de l'automatisation. 14 tâches planifiées tournent 24/7, complétées par un **auto-fix-daemon** `*/15` qui assure la détection rapide :
 
@@ -2362,7 +2363,7 @@ cron-metrics:
   script: collect-metrics.sh
 ```
 
-Sur 14 crons, **13 sont en no_agent** — le coût total des crons est d'environ **quelques centimes par jour**, limité à la veille IA (DeepSeek Flash).
+Sur 38 crons Hermes, la plupart sont en **no_agent** (0$ LLM) — seuls quelques crons (veille IA, audit) utilisent un LLM. Le coût total des crons est d'environ **quelques centimes par jour**.
 
 ## Les 1 dashboard (4 onglets)
 
@@ -2410,10 +2411,12 @@ Le 30 juin, un crash système a vidé les sessions des 4 bots et cassé les gate
 
 ## n8n — Workflows d'automatisation
 
-n8n est utilisé pour les workflows qui nécessitent des webhooks ou des intégrations API :
+> **📦 HISTORIQUE — Déprécié le 13/07/2026.** n8n a été remplacé par des scripts Python et l'auto-heal natif de Hermes. Les watchdogs et l'auto-heal fonctionnent désormais sans dépendance n8n.
 
-- **n8n v2.26.8 Docker** — 3 workflows, **2 actifs**
-- **3 credentials** (Google, GitHub, n8n)
+n8n était utilisé pour les workflows qui nécessitent des webhooks ou des intégrations API :
+
+- **n8n v2.26.8 Docker** — 3 workflows, **2 actifs** (remplacés)
+- **3 credentials** (Google, GitHub, n8n) — désormais gérés par les scripts Hermes
 - Accès via Tailscale uniquement (`100.92.102.28:5678`)
 - **Base SQLite** dans un volume Docker dédié
 - **Workflow emblématique : LEO Ping** — endpoint `GET /webhook/ping` → `{"response":"pong"}`
@@ -4446,7 +4449,7 @@ nvidia-smi
 ```
 # Monitoring crons : le tableau de bord des tâches
 
-Avec 13 crons qui tournent 24h/24 et un auto-fix-daemon `*/5`, le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
+Avec 38 crons Hermes + 6 hôte qui tournent 24h/24 et un auto-fix-daemon `*/5`, le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
 
 ## Le tableau de bord des crons
 
@@ -4486,7 +4489,7 @@ cd /opt/data/crons-dashboard && git push
 | Dérive horaire | <5min | 5-15min | >15min |
 | Erreurs consécutives | 0 | 1-2 | >3 |
 
-## Les 13 crons de LEO
+## Les crons de LEO
 
 ### Horaires (toutes les heures)
 
@@ -4884,7 +4887,7 @@ Le flag `--no-agent` est essentiel : sans LLM, l'exécution est gratuite.
 Toutes les heures (minute 0):
   - Dashboard LEO KPI      → collecte sessions, tokens, budget
   - Dashboard Machines     → CPU, RAM, disque 3 machines
-  - Dashboard Crons        → statut 13 crons
+  - Dashboard Crons        → statut 38 crons
   - Dashboard GitHub       → activité repos
   - Dashboard BAVI LEO     → KPIs voyages
 
@@ -5559,7 +5562,7 @@ Le code source, les issues, les discussions. Idéal pour suivre les évolutions,
 
 🌐 **christophedanhier-hash.github.io/BAVI_LEO**
 
-La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 13 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
+La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 38 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
 
 ## 4. Le guide Hermès pour les Nuls
 
@@ -6034,7 +6037,7 @@ Tâche → Script pur ? → no_agent (0 token)
 
 ### 4. Un seul profil
 
-LEO a vécu la perte d'accès Telegram lors d'un basculement de profil. Leçon apprise : **un seul profil, un seul gateway, tout dedans**.
+LEO a vécu la perte d'accès Telegram lors d'un basculement de profil. Leçon apprise : **un seul profil principal (default), des profils spécialisés pour les tâches dédiées**.
 
 ### 5. Sécurité email
 
@@ -6071,7 +6074,7 @@ LEO a vécu la perte d'accès Telegram lors d'un basculement de profil. Leçon a
 
 **Problème :** Création d'un profil `local` pour Ollama. Arrêt du gateway `local` = perte d'accès Telegram.
 
-**Solution :** Unifier dans un seul profil, Ollama par API directe. Fiabilité > flexibilité.
+**Solution :** Structurer les profils par domaine (default/leo-copilot/bavi-leo), Ollama par API directe. Fiabilité > flexibilité.
 
 ### 13/06/2026 — Précipitation
 
