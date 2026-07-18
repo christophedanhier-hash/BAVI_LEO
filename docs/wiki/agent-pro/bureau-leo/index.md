@@ -4,17 +4,10 @@
 
 **Total : 8 analyse(s)**
 
-### ⚠️ Problèmes détectés
-
-| Fichier | Problème |
-|:--------|:---------|
-| `01-evolution-ia-2020-2026/` | Frontmatter manquant ou invalide |
-
----
-
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
 | 11/07/2026 | v1 | [🤖 Bureau LEO — Dossiers & Analyses](presentation/) | `leo` `presentation` `role` `chat` `dossiers` | ✅ Actif | [📥](presentation/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/presentation.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+presentation.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) |
+| 18/07/2026 | v1 | [🎯 Évolution IA 2020-2026 — Source NotebookLM](01-evolution-ia-2020-2026/) | `ia` `evolution` `chatgpt` `loop-engineering` `presentation` `direction` `pro` | ✅ Finalisé | [📥](01-evolution-ia-2020-2026/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/01-evolution-ia-2020-2026.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+01-evolution-ia-2020-2026.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/01-evolution-ia-2020-2026.md) |
 | 11/07/2026 | v1c | [🛡️ LEO Runbook — Procédures d'urgence](runbook-leo/) | `leo` `runbook` `urgence` `procedure` `infra` `michel` | ✅ Actif | [📥](runbook-leo/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/runbook-leo.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+runbook-leo.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) |
 | 11/07/2026 | v1f | [🏍️ Dossier Quad + Remorque — Can-Am Outlander 700 MAX XT](dossiers/dossier-quad-remorque/) | `quad` `atv` `can-am` `outlander` `remorque` `saris` `attelage` `camping-car` `tofdan` | ✅ Finalisé | [📥](dossiers/dossier-quad-remorque/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/dossier-quad-remorque.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+dossier-quad-remorque.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) |
 | 07/07/2026 | v4.0 | [Hermès pour les Nuls 🦁](guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` | archive | [📥](guide-hermes-complet/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/guide-hermes-complet.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+guide-hermes-complet.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet.md) |

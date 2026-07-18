@@ -1,12 +1,16 @@
 ---
 date: 2026-07-18
 bureau: bureau-leo
-auteur: Léo
+auteur: LEO
 version: v1
+modele: deepseek-v4-flash
 tags: [ia, evolution, chatgpt, loop-engineering, presentation, direction, notebooklm, pro]
-statut: finalise
-type: source-notebooklm
+statut: ✅ Finalisé
+type: analyse
 ---
+
+> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 10:02 — Léo 🦁
+> **Dernier commit :** `76fc973` — 18/07/2026 à 10:07
 
 # L'Intelligence Artificielle : Évolution de 2020 à Juillet 2026
 ## Document source pour présentation — Direction Générale
@@ -213,4 +217,4 @@ type: source-notebooklm
 
 ---
 
-*Document préparé pour NotebookLM — Juillet 2026*
+*Document mis à jour le 18/07/2026 à 10:02 — Léo 🦁*
