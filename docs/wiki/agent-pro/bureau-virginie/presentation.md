@@ -3,7 +3,7 @@ date: 2026-07-11
 bureau: bureau-virginie
 auteur: Christophe & LEO
 version: v1
-modele: deepseek-chat
+modele: deepseek-v4-pro
 tags: [virginie, presentation, role, sante, medical]
 statut: 🔄 En préparation
 type: presentation

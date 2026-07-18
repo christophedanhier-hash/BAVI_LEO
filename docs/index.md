@@ -227,7 +227,7 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 9 (3 PRO + 6 PRIVÉ) |
+| **Bureaux** | 9 conceptuels (5 profils Hermes : bavi-leo, bureau-robert, default, emile, leo-copilot) · 3 PRO + 6 PRIVÉ |
 | **Dashboards** | 1 unifié (leo-dashboard) |
 | **Crons Hermes** | 38 ✅ (leo-copilot exclusif) |
 | **Crons hôte (crontab)** | 6 |

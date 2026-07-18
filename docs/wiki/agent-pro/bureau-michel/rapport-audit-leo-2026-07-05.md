@@ -9,9 +9,10 @@ bureau: leo-agent
 
 # 🦁 Rapport d'Audit Complet — LEO Ecosystem
 
-**Rédigé par :** LEO Agent (bureau Michel — Infrastructure Hermes)
-**Date :** 2026-07-05 · **Lu par :** Christophe & Michel
-**Statut :** ✅ 10/10 sources OK · ✅ 18 crons ops
+**Rédigé par :** LEO Agent (bureau Michel — Infrastructure Hermes)  
+**Date :** 2026-07-05 · **Lu par :** Christophe & Michel  
+**Statut :** ⚠️ PÉRIMÉ — Audit du 05/07/2026. Données obsolètes : n8n retiré, 38 crons (vs 18), 5 profils (vs 4), 5 gateways (vs 4). Conserver à titre d'archive historique.  
+**⚠️ Ancien résumé (05/07)** : ✅ 10/10 sources OK · ✅ 18 crons ops
 
 ---
 

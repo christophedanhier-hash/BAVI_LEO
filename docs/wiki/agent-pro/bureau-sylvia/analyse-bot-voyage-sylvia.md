@@ -1,7 +1,7 @@
 ---
 date: 2026-06-27
-bureau: bureau-robert
-auteur: LEO + Robert
+bureau: bureau-sylvia
+auteur: LEO + Robert (analyse produite par Robert sur Sylvia)
 version: v1
 modele: deepseek-v4-flash
 tags: [robert, sylvia, voyage, analyse, business, bpmn, data-flow, architecture]
@@ -89,7 +89,7 @@ graph TB
 | **Versioning** | GitHub (`christophedanhier-hash/voyages-wiki`) | Wiki, historique des commits |
 | **Hébergement** | GitHub Pages | Site web public du wiki |
 | **Email** | Gmail API (compte `leodanhieria@gmail.com`) | Envoi confirmations |
-| **Sync cron** | Hermes cron (`wiki-sync`) | Synchronisation Drive → Wiki |
+| **Sync cron** | Hermes cron (`drive-sync`) | Synchronisation Drive → Wiki |
 
 ---
 

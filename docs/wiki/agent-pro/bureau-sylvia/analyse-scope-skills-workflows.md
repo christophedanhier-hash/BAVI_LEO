@@ -80,7 +80,7 @@ Chaque roadbook est rattaché à un **propriétaire identifié** (Christophe, Pa
 | Bureau | Quand appeler | Comment |
 |--------|--------------|---------|
 | 🤖 **LEO** (bureau-leo) | Analyse personnelle de voyage | Appel skill `bureau-leo` |
-| 💰 **Sophie** | Impact financier du voyage | Appel skill `bureau-sophie` (rare) |
+| 🏛️ **Robert** (bureau-robert → dispatch Sophie) | Impact financier du voyage | Appel skill `bureau-robert` → dispatch Sophie |
 
 ## 📊 État
 

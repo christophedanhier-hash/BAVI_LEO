@@ -6,7 +6,7 @@ titre: "Le PDG de Claude vient de prédire l'avenir (personne n'est prêt)"
 url: https://youtu.be/bWJamTls13E
 tags: [vision, ia, strategie, solidaris, anthropic, claude, prospective]
 type: transcription
-statut: a-analyser
+statut: à analyser
 ---
 
 # Transcription — Le PDG de Claude prédit l'avenir

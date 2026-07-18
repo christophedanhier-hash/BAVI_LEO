@@ -1,4 +1,4 @@
-# 🔧 Bureau Michel — Automatisation & Infrastructure n8n
+# 🔧 Bureau Michel — Infrastructure Hermes
 
 *Généré automatiquement le 18/07/2026 à 07:00*
 

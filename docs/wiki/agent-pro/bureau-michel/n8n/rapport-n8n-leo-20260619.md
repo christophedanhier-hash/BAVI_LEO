@@ -7,6 +7,8 @@ tags: [n8n, installation, docker, rapport]
 statut: finalise
 ---
 
+# ⚠️ OBSOLÈTE — n8n retiré le 13/07/2026
+#
 # Étude d'Installation — n8n sur LEO
 **Bureau :** Michel 🔧  
 **Date :** 20 juin 2026  

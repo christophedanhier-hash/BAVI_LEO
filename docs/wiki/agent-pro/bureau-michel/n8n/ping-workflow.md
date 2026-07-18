@@ -8,7 +8,9 @@ statut: finalise
 workflows: [ping]
 ---
 
-Workflow n8n LEO Ping — fonctionnel
+# ⚠️ OBSOLÈTE — n8n retiré le 13/07/2026
+#
+# Workflow n8n LEO Ping — fonctionnel
 Créé le 19/06/2026 par sous-agent DeepSeek Pro
 ID: MwT0XLeN6hFjzkxS
 Endpoint: GET http://100.92.102.28:5678/webhook/ping → {"response":"pong"}

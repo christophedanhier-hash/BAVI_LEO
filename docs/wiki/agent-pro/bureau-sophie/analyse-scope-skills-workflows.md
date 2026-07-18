@@ -70,4 +70,4 @@ Le **Bureau Sophie** est l'orchestratrice du **pôle économique et financier IT
 
 ## 📊 État
 
-Pas encore d'analyses déposées dans AGENT-PRO/bureau-sophie/.
+Pas encore d'analyses déposées dans `docs/wiki/agent-pro/bureau-sophie/`.
