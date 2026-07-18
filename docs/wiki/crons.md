@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 18/07/2026 à 06:00**
+> **Généré automatiquement le 18/07/2026 à 06:19**
 > Source : `profiles/leo-copilot/cron/jobs.json` (38 jobs)
 <!-- AUTO:END header -->
 
@@ -30,7 +30,7 @@
 | 9 | 📊 Synthèse Hebdomadaire LEO | `0 20 * * 0` | script | ✅ |
 | 10 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
 | 11 | 📋 Doc Watch Auto (sync documents) | `*/2 * * * *` | script | ✅ |
-| 12 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
+| 12 | 📋 doc-crons-sync | `0 */6 * * *` | script | ❌ |
 | 13 | 📓 Journaux Quotidiens (4 vaults) | `0 23 * * *` | LLM | ✅ |
 | 14 | 📝 Audit rédactionnel unifié (2 wikis, 1 passage) | `0 6 * * *` | LLM | ✅ |
 | 15 | 📝 docs-update | `0 */4 * * *` | script | ✅ |
@@ -71,4 +71,4 @@
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 18/07/2026 à 06:00_
+_Généré automatiquement le 18/07/2026 à 06:19_
