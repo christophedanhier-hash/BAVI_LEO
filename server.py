@@ -1008,6 +1008,7 @@ async def api_crons_logs(request: Request):
 @app.get("/api/bavi/delete")
 async def api_bavi_delete(request: Request):
     """Supprime définitivement un fichier d'un bureau BAVI LEO."""
+    from datetime import datetime
     if not check_token(request): raise HTTPException(401)
     bureau = request.query_params.get("bureau", "")
     filename = request.query_params.get("file", "")
