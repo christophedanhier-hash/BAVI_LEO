@@ -1005,6 +1005,24 @@ async def api_crons_logs(request: Request):
     
     return JSONResponse({"jobs": jobs, "total": len(jobs)})
 
+@app.get("/api/contacts")
+async def api_contacts(request: Request):
+    """Retourne les contacts depuis le Google Sheets (cache local)."""
+    if not check_token(request): raise HTTPException(401)
+    cache = Path("/home/tofdan/.hermes/contacts-backup.json")
+    if not cache.exists():
+        return JSONResponse({"contacts": [], "error": "Cache vide"})
+    contacts = json.loads(cache.read_text())
+    # Formater : première ligne = en-têtes
+    headers = contacts[0] if contacts else []
+    rows = []
+    for row in contacts[1:]:
+        entry = {}
+        for i, h in enumerate(headers):
+            entry[h.lower()] = row[i] if i < len(row) else ""
+        rows.append(entry)
+    return JSONResponse({"contacts": rows, "total": len(rows), "ts": cache.stat().st_mtime})
+
 @app.get("/api/bavi/delete")
 async def api_bavi_delete(request: Request):
     """Page de confirmation de suppression — puis suppression effective."""
