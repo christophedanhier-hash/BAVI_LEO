@@ -138,4 +138,4 @@ bureau-gerard/t600/document-reference-t600.md
 *Document créé le 07/07/2026 — Léo 🦁*
 
 ---
-> 🤖 Dernier audit : 17/07/2026 à 22:30 (UTC+2) — vérifié : 9 bureaux, 38 crons leo-copilot exclusif, n8n déprécié confirmé, emile/bavi-leo=0 crons
+> 🤖 Dernier audit : 18/07/2026 à 12:00 (UTC+2) — vérifié : 9 bureaux, 38 crons leo-copilot exclusif, n8n retiré, 5 profils+5 bots

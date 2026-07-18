@@ -34,7 +34,7 @@ LEO va alors :
 
 **Exemple concret :**
 ```
-Utilisateur : "reprends l'étude d'installation n8n et crée la v2 avec la config SSL"
+Utilisateur : "reprends l'analyse de l'architecture dashboards et crée la v2 avec le nouveau collecteur"
 LEO → incrémente → modifie → archive v1 → commit → push → visible dans le wiki
 ```
 
@@ -99,7 +99,7 @@ La suppression ne se fait pas depuis le wiki (site statique). Pour supprimer une
 > *"supprime l'analyse [titre]"*
 
 LEO va alors :
-1. Supprimer le fichier source dans `/opt/data/hermes-christophe/BAVI/AGENT-PRO/<bureau>/`
+1. Supprimer le fichier source dans `BAVI_LEO/docs/wiki/agent-pro/<bureau>/`
 2. Régénérer les index automatiquement
 3. Commit + push la suppression
 4. L'analyse disparaît du tableau

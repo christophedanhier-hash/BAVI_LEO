@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 23 crons Hermes automatisés · 5 crons hôte · 8 bureaux spécialisés · 1 dashboard central (9 onglets) · 4 bots Telegram · 🤖 Bureau LEO créé
+> 38 crons Hermes automatisés · 6 crons hôte · 9 bureaux spécialisés · 1 dashboard unifié · 5 bots Telegram
 
 ---
 
@@ -228,14 +228,15 @@ flowchart LR
 | Métrique | Valeur |
 |----------|-------:|
 | **Bureaux** | 9 (3 PRO + 6 PRIVÉ) |
-| **Dashboards temps réel** | 7 |
-| **Crons Hermes** | 23 ✅ tous verts |
-| **Crons hôte (crontab)** | 5 |
-| **Sessions Hermes** | 90+ |
-| **Messages échangés** | 4 651+ |
-| **Skills installés** | 126 |
-| **Modèles LLM** | 4 (DeepSeek V4 Flash, DeepSeek V4 Pro, Ollama qwen2.5:7b, Gemini 3.5 Flash) |
-| **Coût DeepSeek** | Suivi dashboard (budget fr) |
+| **Dashboards** | 1 unifié (leo-dashboard) |
+| **Crons Hermes** | 38 ✅ (leo-copilot exclusif) |
+| **Crons hôte (crontab)** | 6 |
+| **Sessions Hermes** | 1500+ |
+| **Messages échangés** | 24 000+ |
+| **Skills installés** | 130+ |
+| **Modèles LLM** | 4 (DeepSeek Flash, DeepSeek Pro, Ollama qwen2.5:7b, Gemini 3.5 Flash) |
+| **Bots Telegram** | 5 (default, leo-copilot, bavi-leo, emile, bureau-robert) |
+| **Dashboards** | 1 unifié (leo-dashboard) |
 
 ---
 
@@ -260,11 +261,15 @@ flowchart LR
 | Documentation vivante | ✅ Wikis auto-déployés GH Pages |
 | Distribution skills par profil | ✅ Chaque bot a ses compétences (Michel → infra, Sylvia → voyages) |
 | Gestion des coûts API | ✅ Budget dashboard suivi |
-| Fiabilité crons | ✅ 21 crons Hermes, tous verts, no_agent |
+| Fiabilité crons | ✅ 38 crons Hermes, tous verts, leo-copilot exclusif |
 | Miroir Drive ↔ GitHub | ✅ Sync bidirectionnelle 18h |
 | 📋 Suivi implémentations | ✅ [leo-tracker](https://github.com/christophedanhier-hash/leo-tracker) |
 
 ---
 
-> 🕐 **Dernière mise en ligne : 18/07/2026 07:00**  
+> 🕐 **Dernière mise en ligne : 18/07/2026 12:00**  
 > *Document généré par LEO · 🦁*
+
+---
+
+> 🤖 Dernier audit : 18/07/2026 à 12:00 (UTC+2) — 38 crons, 9 bureaux, 5 bots, dashboard unifié
