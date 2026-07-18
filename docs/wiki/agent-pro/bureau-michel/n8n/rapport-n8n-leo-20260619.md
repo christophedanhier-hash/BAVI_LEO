@@ -468,4 +468,4 @@ curl -w "\n%{http_code}" http://localhost:5678/healthz
 **Prochaine revue :** 20 juillet 2026 (M+1 après déploiement)
 
 ---
-*Document mis à jour le 04/07/2026 — 00:00:00 — Léo 🦁*
+*Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
