@@ -6,125 +6,80 @@ version: v1.0
 modele: deepseek-v4-flash
 tags: [hermes, guide, notebooklm, presentation, video, prompts, strategie]
 statut: ✅ Nouveau
-type: prompt-notebooklm
+type: guide
 hide:
   - toc
 ---
 
-> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 14:00 — Léo 🦁
-> **Usage :** Google NotebookLM — importer les 10 chapitres du guide Hermès v5.0 avant d'utiliser ces prompts.
+> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 14:00 — Leo 🦁
+> **Usage :** Google NotebookLM — importer les 10 chapitres du guide Hermes v5.0 avant d'utiliser ces prompts.
 
-# 🎤 Prompts NotebookLM — Présentation & Vidéo
+# Prompts NotebookLM - Presentation & Video
 
-Ces prompts sont conçus pour être utilisés avec **Google NotebookLM**. Importez d'abord le guide Hermès v5.0 complet (`guide-hermes-complet.md` ou les fichiers découpés) dans votre notebook, puis copiez-collez le prompt correspondant.
-
----
-
-## Prompt 1 — Présentation Direction Générale
-
-### Usage
-Importez le guide Hermès v5.0 dans NotebookLM, puis collez le prompt ci-dessous pour générer un script de présentation destiné à la direction générale.
-
-### Prompt
-
-```
-Tu es un conseiller stratégique IA spécialisé dans les architectures agentic. Tu t'adresses à un comité de direction générale — des décideurs·ses qui comprennent la stratégie mais pas le détail technique. Ton ton est professionnel, concis, chiffré.
-
-Tu disposes du guide complet "Hermès pour les Nuls v5.0" comme source de référence.
-
-Génère un script de présentation orale structuré en 4 parties (durée totale estimée : 20-25 minutes) :
-
-1. **Contexte IA en 2026** (3-4 min)
-   - Évolution 2020→2026 : chatbots → agents autonomes
-   - Pourquoi les entreprises doivent passer à l'agentic aujourd'hui
-   - Chiffres clés : réduction de 40-70% du temps sur les tâches répétitives
-
-2. **Hermès Agent — La plateforme** (5-6 min)
-   - Open source, pas de vendor lock-in
-   - Architecture : gateway multi-plateforme, multi-providers LLM, skills modulaires
-   - Coûts maîtrisés : DeepSeek Flash à ~$0.04/M tokens, modèle local gratuit via Ollama
-
-3. **BAVI LEO — L'organisation des bureaux** (6-7 min)
-   - 10 bureaux spécialisés (infra, finances, RH, voyages, juridique, etc.)
-   - Chaque bureau a ses propres procédures documentées dans des "skills"
-   - Exemple réel : système tournant 24/7 avec 38 crons, 4 bots Telegram, auto-documenté
-
-4. **Bénéfices pour la direction** (5-6 min)
-   - Réduction des coûts opérationnels
-   - Prise de décision accélérée par des dashboards temps réel
-   - Capitalisation de la connaissance (skills = procédures réutilisables)
-   - ROI estimé : retour sur investissement en 3-6 mois
-
-Termine par une conclusion impactante de 30 secondes maximum.
-
-Formats acceptés :
-- Markdown structuré avec indications de ton et de rythme
-- Indications de slide (ex: [SLIDE 1]) si pertinent
-- Durée estimée par partie
-```
+Importer d'abord dans NotebookLM les 10 URLs raw GitHub (voir section Import), puis coller le prompt choisi.
 
 ---
 
-## Prompt 2 — Script Vidéo YouTube
+## Import dans NotebookLM
 
-### Usage
-Importez le guide Hermès v5.0 dans NotebookLM, puis collez le prompt ci-dessous pour générer un script vidéo YouTube dynamique et pédagogique.
+Fichier > Importer > URL > coller ces 10 URLs :
 
-### Prompt
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/index.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/01-decouvrir-hermes.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/02-configurer-assistant.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/03-bureaux-bavi.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/04-skills.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/05-dashboards-crons.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/06-partie-des-dix.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/07-annexes-cli.md
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/08-guide-rapide.md
 
-```
-Tu es Barthélémy Nobili, créateur de contenu tech spécialisé dans l'IA et les outils pour développeurs. Ta chaîne YouTube est connue pour ses vidéos dynamiques, claires et accessibles. Tu parles vite, tu vas à l'essentiel, et tu utilises des visuels percutants à l'écran.
-
-Tu disposes du guide complet "Hermès pour les Nuls v5.0" comme source de référence.
-
-Génère un script vidéo YouTube structuré en 5 actes (durée totale estimée : 15-20 minutes) :
-
-**Acte 1 — Le constat** (3-4 min)
-- "Tous les jours, Christophe faisait les mêmes actions manuellement : lancer des scripts, vérifier des dashboards, envoyer des emails."
-- Les assistants IA classiques ? Ils répondent. Mais ils n'agissent pas.
-- Illustration : split screen entre l'avant (actions manuelles chronophages) et l'après (automatisation)
-
-**Acte 2 — La solution Hermès Agent** (3-4 min)
-- Hermes Agent : c'est quoi ? Une plateforme open source qui transforme un LLM en assistant qui agit.
-- Démo rapide : `curl -fsSL ... | bash` → premier agent en 60 secondes
-- Les super-pouvoirs : terminal, navigation web, vision, skills. Montrer `hermes doctor`.
-
-**Acte 3 — Les Bureaux BAVI** (4-5 min)
-- Le concept : diviser son assistant en bureaux spécialisés
-- Exemples visuels :
-  - 🦁 Bureau Michel → infra, crons, serveurs
-  - 🦁 Bureau Sophie → finances, budget
-  - 🦁 Bureau Sylvia → voyages, organisation
-  - 🦁 Bureau Robert → stratégie, conseil des experts
-- Comment ça s'installe : fichiers markdown + skills, sans base de données complexe
-
-**Acte 4 — Les chiffres qui parlent** (3-4 min)
-- 38 crons qui tournent sans intervention humaine
-- 4 bots Telegram simultanés (LEO + Hub + Copilot + Gateway)
-- 16 experts dans le Conseil Robert avec DeepSeek V4
-- Budget : < 30€/mois pour faire tourner tout l'écosystème
-- Dashboard en temps réel : tout est visible, rien n'est caché
-
-**Acte 5 — Conclusion** (2-3 min)
-- "LEO est un assistant personnel comme aucun autre — parce qu'il n'attend pas qu'on lui demande."
-- Call to action : téléchargez Hermes, lisez le guide, créez votre propre LEO
-- Outro : "Moi, c'était Barthélémy Nobili. Si cette vidéo vous a plu, abonnez-vous — et n'oubliez pas : le futur de l'IA, c'est vous qui le construisez."
-
-Consignes de style :
-- Rythme soutenu : maximum 140 mots par minute
-- Indications visuelles dans [CROCHETS] : [ÉCRAN PARTAGÉ], [CAPTURE TERMINAL], [ANIMATION RÉSEAU]
-- Effets de voix suggérés : accélération, pause dramatique, insistance
-- Durée estimée par acte
-- Format : script brut, prêt à lire face caméra
-- Les 🦁 sont des visuels à superposer à l'écran
-```
+Ou alternative en 1 fichier archive :
+https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet-archive.md
 
 ---
 
-> **💡 Astuce :** Après avoir généré le script, vous pouvez le peaufiner dans NotebookLM en posant des questions de suivi — ajuster la durée, renforcer les chiffres, ou adapter le ton à un public spécifique.
->
-> **⚠️ Attention :** Les prompts ci-dessus supposent que vous avez importé le guide complet v5.0 dans NotebookLM. Sans cette source, les scripts seront génériques.
+## PROMPT 1 - PRESENTATION DIRECTION GENERALE
+
+Tu es un conseiller strategique IA specialise dans les architectures agentic. Tu t'adresses a un comite de direction generale. Ton ton est professionnel, concis, chiffre. Tu disposes du guide complet Hermes pour les Nuls v5.0 comme source.
+
+Genere un script de presentation orale en 4 parties (20-25 min) :
+
+1. Contexte IA 2026 (3-4 min) : evolution chatbots vers agents autonomes, pourquoi passer a l'agentic aujourd'hui, reduction 40-70% du temps sur taches repetitives.
+
+2. Hermes Agent (5-6 min) : open source, gateway multi-plateforme, multi-providers LLM, skills modulaires, couts : DeepSeek Flash a 0.04$/M tokens, Ollama local gratuit.
+
+3. BAVI LEO (6-7 min) : 10 bureaux specialises (Michel infra 38 crons, Robert 16 experts bot Telegram, Sophie finances, Sylvia voyages), systeme 24/7, 4 bots Telegram, auto-documente.
+
+4. Benefices direction (5-6 min) : reduction couts operationnels, decision acceleree dashboards temps reel, capitalisation connaissance skills reutilisables, ROI 3-6 mois.
+
+Conclusion 30 secondes max. Format : markdown structure avec indications ton/rythme, suggestions slides, duree par partie.
 
 ---
 
-*Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v1.0*
+## PROMPT 2 - SCRIPT VIDEO YOUTUBE
+
+Tu es Barthelemy Nobili, createur de contenu tech IA. Style dynamique, clair, rythme soutenu. Tu disposes du guide Hermes v5.0 complet comme source.
+
+Genere un script video YouTube en 5 actes (15-20 min) :
+
+Acte 1 - Le constat (3-4 min) : Christophe faisait tout manuellement. Les chatbots repondent mais n'agissent pas.
+
+Acte 2 - Hermes Agent (3-4 min) : plateforme open source qui transforme un LLM en assistant qui agit. Installation en 60 secondes. Pouvoirs : terminal, web, vision, skills, memoire.
+
+Acte 3 - Bureaux BAVI (4-5 min) : 10 bureaux specialises. Michel infra 38 crons, Robert 16 experts bot Telegram, Sophie budget. Fichiers markdown et skills, pas de base de donnees complexe.
+
+Acte 4 - Chiffres (3-4 min) : 38 crons plus 6 watchdogs sans intervention humaine, 4 bots Telegram simultanes, 130 skills, 16 experts DeepSeek V4, budget sous 30 euros par mois, dashboard 20 KPI temps reel.
+
+Acte 5 - Conclusion (2-3 min) : LEO anticipe sans qu'on lui demande. Call to action : telechargez Hermes, lisez le guide, creez votre propre LEO.
+
+Consignes : max 140 mots par minute, indications visuelles en crochets, duree par acte, script brut pret a lire face camera.
+
+---
+
+> Astuce : apres avoir genere le script, peaufinez dans NotebookLM avec des questions de suivi (ajuster duree, renforcer chiffres, adapter ton).
+> Attention : ces prompts supposent le guide v5.0 importe. Sans source, les scripts seront generiques.
+
+---
+
+*Document mis a jour le 18/07/2026 a 14:00 - Leo 🦁 | v1.0*
