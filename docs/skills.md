@@ -1,7 +1,21 @@
+---
+date: 2026-07-18
+bureau: bureau-leo
+auteur: LEO
+version: v2
+modele: deepseek-v4-flash
+tags: [skills, catalogue, bavi-leo, hermes, audit]
+statut: ✅ À jour
+type: guide
+---
+
+> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 11:00 — Léo 🦁
+> **Dernier commit :** `3bdd456` — 18/07/2026 à 10:30
+
 # 📚 Catalogue des Skills — BAVI LEO & Hermes
 
-> **Document généré le** : 07/07/2026
-> **Source** : Audit complet des 126 skills installés
+> **Document généré le** : 18/07/2026 (mise à jour v2)
+> **Source** : Audit complet des skills installés
 > **Usage** : Ce document liste et décrit tous les skills disponibles dans l'écosystème LEO.
 
 <!-- AUTO:START skills -->
@@ -40,26 +54,26 @@ Total : **125 skills**
 
 ---
 
-## 🏛️ BAVI LEO — 6 skills
+## 🏛️ BAVI LEO — 9 skills
 
 Les **Bureaux Agentiques Virtuels** sont le cœur métier de LEO. Chaque bureau est un agent spécialisé avec son propre rôle, ses sous-experts, et son workflow standardisé en 7 phases.
 
 ### 1. 🏗️ bavi-leo-governance
 | | |
 |---|---|
-| **Version** | v1.4 |
-| **Description** | Framework de gouvernance multi-bureaux — audit, workflow 7 phases, dispatch conditionnel, interopérabilité |
+| **Version** | v1.11 |
+| **Description** | Framework de gouvernance multi-bureaux — audit, workflow 7 phases, dispatch conditionnel, interopérabilité, règles documentaires |
 | **Quand l'utiliser** | Créer un nouveau bureau, auditer l'écosystème, optimiser un bureau existant |
-| **Dépendances** | Références : audit-matrix, full-system-audit-checklist, pricing-model. Template : pdf-from-markdown |
+| **Dépendances** | Références : audit-matrix, full-system-audit-checklist, pricing-model, règles périmètre wiki. Template : pdf-from-markdown |
 
 ### 2. 🏛️ bureau-robert
 | | |
 |---|---|
-| **Version** | v2.0 |
-| **Type** | Orchestrateur Conseil Stratégique IT |
-| **Sous-experts** | Architecture, Sécurité, Data, Gouvernance, Vision Stratégique, Projet & Programme, Assurance Obligatoire |
+| **Version** | v2.1 |
+| **Type** | Orchestrateur Conseil Stratégique IT & Business |
+| **Sous-experts** | 16 experts — Architecture, Sécurité, Data, Gouvernance, Budget, Juridique, etc. |
 | **Interop** | → Appelle `assurance-obligatoire`, `bureau-sophie` |
-| **Quand l'utiliser** | Analyses IT transversales, notes stratégiques, arbitrages pour la direction |
+| **Quand l'utiliser** | Analyses IT transversales, notes stratégiques, arbitrages pour la direction Solidaris |
 
 ### 3. 💰 bureau-sophie
 | | |
@@ -68,7 +82,7 @@ Les **Bureaux Agentiques Virtuels** sont le cœur métier de LEO. Chaque bureau 
 | **Type** | Orchestrateur Pilotage Économique & Financier IT |
 | **Sous-experts** | Analyste Marché & Business Case, Modélisateur Financier IT, Risques & Conformité IT |
 | **Parallélisation** | Marché + Risques en parallèle |
-| **Quand l'utiliser** | Business cases, TCO/ROI, 3 scenarii, analyse de rentabilité |
+| **Quand l'utiliser** | Business cases, TCO/ROI, 3 scenarii |
 
 ### 4. 📝 bureau-gerard
 | | |
@@ -76,8 +90,7 @@ Les **Bureaux Agentiques Virtuels** sont le cœur métier de LEO. Chaque bureau 
 | **Version** | v2.0 |
 | **Type** | Orchestrateur Documentation Technique T600 |
 | **Sous-experts** | Ethnographe, Astro-optique, Hardware, Firmware, Rédacteur Technique, Formateur |
-| **Croisement obligatoire** | Hardware ↔ Firmware quand les deux sont activés |
-| **Quand l'utiliser** | Documentation du télescope T600 (Observatoire Centre Ardenne) |
+| **Croisement** | Hardware ↔ Firmware |
 | **Wiki** | [wiki-oca/t600](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
 
 ### 5. 🧭 bureau-sylvia (Sylvia)
@@ -87,17 +100,55 @@ Les **Bureaux Agentiques Virtuels** sont le cœur métier de LEO. Chaque bureau 
 | **Type** | Orchestrateur Organisation de Voyages |
 | **Sous-experts** | Curateur d'Expériences, Navigateur Camping-Car, Journaliste de Bord |
 | **Bot Telegram** | [@bavi_leo_voyages_bot](https://t.me/bavi_leo_voyages_bot) |
-| **Quand l'utiliser** | Roadbooks camping-car, planification d'itinéraires, cartes Folium |
-| **Règles clés** | Pas de Google Maps, pas de photos dans le wiki, context voyageur obligatoire, distances Haversine, astuces CC (ZTL, hauteur) |
+| **Règles clés** | Cartes Folium, distances Haversine, astuces CC |
 
-### 6. 🛡️ assurance-obligatoire
+### 6. 🔧 bureau-michel
+| | |
+|---|---|
+| **Version** | v2.0 |
+| **Type** | Infra Hermes — code, système, dashboards, crons |
+| **Domaine** | Infrastructure LEO, Docker, Hermes, Ollama, réseau |
+| **Quand l'utiliser** | Tout ce qui est technique / infrastructure |
+
+### 7. 🤖 bureau-leo
+| | |
+|---|---|
+| **Version** | v1 |
+| **Type** | Dossiers & Analyses personnelles |
+| **Contenu** | Études de marché, analyses personnelles, documents transverses |
+| **Quand l'utiliser** | Travaux personnels, présentations, documents de référence |
+
+### 8. 🎓 bureau-emile
+| | |
+|---|---|
+| **Version** | v1 |
+| **Type** | Assistant pédagogique |
+| **Domaine** | Mémoire fin d'études, sciences de l'éducation |
+| **Wiki** | Wiki BAVI LEO → Émile |
+
+### 9. 🩺 bureau-virginie
+| | |
+|---|---|
+| **Version** | v1 |
+| **Type** | Orchestrateur médical |
+| **Sous-experts** | Panel de médecins (généralistes, spécialistes) |
+| **Quand l'utiliser** | Analyses médicales, diagnostics croisés |
+
+### 10. 📚 bureau-connaissance
+| | |
+|---|---|
+| **Version** | v1 |
+| **Type** | Base de connaissance centralisée |
+| **Contenu** | Bibliothèque de cas IA, référentiels |
+| **Quand l'utiliser** | Recherche documentaire, consultation des référentiels |
+
+### 11. 🛡️ assurance-obligatoire
 | | |
 |---|---|
 | **Version** | v2.0 |
 | **Type** | Expert métier transverse (inter-bureaux) |
 | **Domaine** | INAMI, BCSS, eHealth, MyCareNet, Intermutualité |
 | **Modes** | Sous-agent de Robert OU skill autonome |
-| **Quand l'utiliser** | Analyse IT avec impact métier Assurance Obligatoire |
 
 ---
 
@@ -319,4 +370,4 @@ hermes skills list
 
 ---
 
-*Document généré par LEO — 07/07/2026 | Source : skills Hermes Agent*
+*Document mis à jour le 18/07/2026 à 11:00 — Léo 🦁 | v2*
