@@ -6,7 +6,7 @@ version: v5.0
 modele: deepseek-v4-flash
 tags: [hermes, guide, skills, hermes-agent, gateway, profils, memoire, crons, dashboards, wikis, email, budget, devops, backup, monitoring, creatif, veille, arxiv, blogwatcher, creation, skill-authoring]
 statut: ✅ À jour
-type: livre
+type: guide
 hide:
   - toc
 ---
@@ -1253,3 +1253,7 @@ flowchart LR
 ---
 
 > *Partie IV terminée — Prochaine étape : [Partie V — Dashboards et Monitoring](05-dashboards-crons.md)*
+
+---
+
+*Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*

@@ -11,6 +11,8 @@ hide:
   - toc
 ---
 
+> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 13:00 — Léo 🦁
+
 # Annexe A — Référence CLI Hermès
 
 > Dernière mise à jour : 18/07/2026
@@ -517,3 +519,7 @@ Tout nouveau cron doit être **no_agent** sauf justification explicite. Les cron
 
 ---
 *Fin de l'annexe — 07-annexes-cli.md — Hermès pour les Nuls 🦁 v5.0*
+
+---
+
+*Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*

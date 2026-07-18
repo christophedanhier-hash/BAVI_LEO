@@ -438,3 +438,7 @@ Le meilleur endroit pour poser des questions, partager vos réalisations, et ren
 ---
 
 *Fin de la Partie VII — La partie des Dix.*
+
+---
+
+*Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*

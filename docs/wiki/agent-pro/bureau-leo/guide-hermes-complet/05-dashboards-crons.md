@@ -6,7 +6,7 @@ version: v5.0
 modele: deepseek-v4-flash
 tags: [hermes, guide, dashboards, monitoring, crons, budget, watchdogs, auto-heal, drive-sync, backup, veille-ia]
 statut: ✅ À jour
-type: livre
+type: guide
 hide:
   - toc
 ---
@@ -1113,3 +1113,7 @@ Règle: GitHub gagne en cas de conflit.
 ---
 
 > *Parties V et VI terminées — Prochaine étape : [Partie VII — La Partie des Dix](06-partie-des-dix.md)*
+
+---
+
+*Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
