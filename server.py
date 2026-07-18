@@ -1007,25 +1007,59 @@ async def api_crons_logs(request: Request):
 
 @app.get("/api/bavi/delete")
 async def api_bavi_delete(request: Request):
-    """Supprime définitivement un fichier d'un bureau BAVI LEO."""
+    """Page de confirmation de suppression — puis suppression effective."""
     from datetime import datetime
     if not check_token(request): raise HTTPException(401)
     bureau = request.query_params.get("bureau", "")
     filename = request.query_params.get("file", "")
     filepath = request.query_params.get("path", "")
+    confirmed = request.query_params.get("confirm", "")
     
     if not bureau or not filename:
-        raise HTTPException(400, detail="Paramètres bureau et file requis")
+        return HTMLResponse("<body style='font-family:sans-serif;padding:20px;background:#0d1117;color:#c9d1d9'><h2>❌ Erreur</h2><p>Paramètres bureau et file requis.</p></body>")
     
-    # Déterminer le chemin absolu
+    # Si pas confirmé, afficher la page de confirmation
+    if confirmed != "oui":
+        safe_path = filepath or f"{bureau}/{filename}"
+        return HTMLResponse(f"""<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>🗑️ Supprimer — {filename}</title>
+<style>
+  body {{ font-family: -apple-system, sans-serif; background: #0d1117; color: #c9d1d9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }}
+  .box {{ background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 32px; max-width: 480px; text-align: center; }}
+  h2 {{ color: #f85149; margin: 0 0 16px; }}
+  .file {{ background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 8px 16px; margin: 16px 0; font-family: monospace; word-break: break-all; }}
+  .btns {{ display: flex; gap: 12px; justify-content: center; margin-top: 20px; }}
+  .btn {{ padding: 10px 24px; border-radius: 8px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; text-decoration: none; }}
+  .btn-danger {{ background: #da3633; color: #fff; }}
+  .btn-danger:hover {{ background: #f85149; }}
+  .btn-cancel {{ background: #21262d; color: #c9d1d9; border: 1px solid #30363d; }}
+  .btn-cancel:hover {{ background: #30363d; }}
+  .info {{ font-size: 12px; color: #8b949e; margin-top: 12px; }}
+</style></head>
+<body>
+<div class="box">
+  <h2>🗑️ Suppression définitive</h2>
+  <p>Tu es sur le point de supprimer :</p>
+  <div class="file">📄 {filename}</div>
+  <p style="color:#f85149;font-size:13px">⚠️ Cette action est irréversible.<br>Un backup sera conservé dans trash.</p>
+  <div class="btns">
+    <a class="btn btn-cancel" href="javascript:window.close()">Annuler</a>
+    <a class="btn btn-danger" href="?bureau={bureau}&file={filename}&path={filepath or ''}&confirm=oui&token=leo-panel-2026">🗑️ Supprimer</a>
+  </div>
+  <div class="info">Bureau: {bureau}</div>
+</div>
+</body>
+</html>""")
+    
+    # Confirmation = oui → supprimer
     if filepath and os.path.exists(filepath):
         target = Path(filepath)
     else:
         bureau_dir = Path(f"/home/tofdan/Projets_Dev/BAVI_LEO/docs/wiki/agent-pro/{bureau}")
-        # Chercher dans le bureau, les sous-dossiers, et l'archive
         candidates = list(bureau_dir.rglob(filename))
         if not candidates:
-            raise HTTPException(404, detail=f"Fichier {filename} introuvable dans {bureau}")
+            return HTMLResponse(f"<body style='font-family:sans-serif;padding:20px;background:#0d1117;color:#c9d1d9'><h2>❌ Fichier introuvable</h2><p>{filename} non trouvé dans {bureau}.</p><a href='javascript:window.close()'>Fermer</a></body>")
         target = candidates[0]
     
     if not target.exists():
@@ -1077,13 +1111,25 @@ async def api_bavi_delete(request: Request):
     except:
         pass
     
-    return JSONResponse({
-        "ok": True,
-        "bureau": bureau,
-        "file": target.name,
-        "backup": str(backup_path),
-        "message": f"🗑️ {target.name} supprimé de {bureau} — backup dans trash/"
-    })
+    return HTMLResponse(f"""<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>✅ Supprimé — {target.name}</title>
+<style>
+  body {{ font-family: -apple-system, sans-serif; background: #0d1117; color: #c9d1d9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }}
+  .box {{ background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 32px; max-width: 480px; text-align: center; }}
+  h2 {{ color: #3fb950; margin: 0 0 16px; }}
+  .btn {{ padding: 10px 24px; border-radius: 8px; background: #21262d; color: #c9d1d9; border: 1px solid #30363d; cursor: pointer; font-size: 14px; text-decoration: none; margin-top: 12px; display: inline-block; }}
+  .btn:hover {{ background: #30363d; }}
+</style></head>
+<body>
+<div class="box">
+  <h2>✅ Supprimé</h2>
+  <p>📄 {target.name}</p>
+  <p style="color:#8b949e;font-size:13px">Bureau: {bureau}<br>Backup: trash/bavi-deleted/</p>
+  <a class="btn" href="javascript:window.close()">Fermer</a>
+</div>
+</body>
+</html>""")
 
 @app.get("/energy")
 async def energy_page(request: Request):
