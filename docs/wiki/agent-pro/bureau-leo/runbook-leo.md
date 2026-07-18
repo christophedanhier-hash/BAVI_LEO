@@ -75,12 +75,12 @@ URL : `http://100.92.102.28:8765/dashboard?token=leo-panel-2026`
 
 ---
 
-## 🔧 REDÉMARRER N8N
+## 🔧 REDÉMARRER N8N (⚠️ RETIRÉ 13/07/2026)
 
 ```bash
-docker restart n8n
+# docker restart n8n  # n8n retiré 13/07/2026
 # ou
-docker start n8n
+# docker start n8n  # n8n retiré 13/07/2026
 ```
 
 ---

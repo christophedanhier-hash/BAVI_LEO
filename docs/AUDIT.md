@@ -1,17 +1,17 @@
-## 🤖 Audit Rédactionnel — 17/07/2026 à 22:17 (UTC+2)
+# 📝 Journal d'Audit — BAVI LEO
 
-> Audit complet par DeepSeek Chat · 156 fichiers (94 infra + 62 contenu) · Coût: $0.05
+> Dernier audit : 2026-07-18 06:10 (UTC+2)
+> Modèle : DeepSeek V4 Flash + grep patterns
+> 157 fichiers scannés · 33 corrections automatiques
 
-| Page | Section | Statut | Correction |
-|------|---------|--------|------------|
-| crons.md | Résumé | ✅ ok | 38 crons leo-copilot, 0 ailleurs, n8n déprécié confirmé |
-| documentation-map.md | Vérification | ✅ ok | 9 bureaux, n8n déprécié confirmés |
-| guide-utilisation.md | Vérification | ✅ ok | Cohérent avec la réalité |
-| index.md | Vérification | ✅ ok | Structure à jour |
+## Dernier audit (2026-07-18 06:10)
 
-### Vérité terrain
+Voir le rapport complet : `~/.hermes/metrics/audit-redactionnel.md`
 
-- **38 crons** dans leo-copilot exclusivement
-- **0 cron** dans default, emile, bavi-leo, bureau-robert
-- **n8n** : ❌ retiré le 13/07/2026
-- **5 profils** : bavi-leo, bureau-robert, default, emile, leo-copilot
+**Corrections appliquées dans BAVI_LEO :**
+- `index.md` : 4 → 9 onglets dashboard
+- `guide-hermes-complet.md` : compteurs profils/bots/crons mis à jour
+- `agent-pro/index.md` : titre Michel sans n8n
+- `bureau-michel/presentation.md` : 4 → 5 profils, 30 → 38 crons
+- `bureau-michel/projet-synthese-hebdo-20260707.md` : gemma-agentic → qwen2.5:7b
+- `bureau-leo/runbook-leo.md` : commandes docker n8n commentées

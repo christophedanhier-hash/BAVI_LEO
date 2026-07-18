@@ -127,7 +127,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
   - Plateformes : Telegram, Discord, Slack, email, et plus
 
 - **[Ch.3 — L'architecture LEO](01-decouvrir-hermes/ch03-architecture-leo.md)**
-  - Vue d'ensemble : 4 bots, 4 profils, providers dédiés
+  - Vue d'ensemble : 5 bots, 5 profils, providers dédiés
   - Le Gateway DeepSeek : pont entre Telegram et l'agent
   - Hiérarchie des providers : quand utiliser quoi
   - Les chiffres clés de LEO (dashboards, crons, skills)
@@ -615,7 +615,7 @@ Telegram ──→ Gateway Hermes ──→ Profil default ──→ DeepSeek Fl
                                     └──→ Gemini (fallback automatique)
 ```
 
-### Les 4 bots Telegram
+### Les 5 bots Telegram
 
 | Bot | Profil | Provider | Rôle | Latence | Coût |
 |:----|:-------|:---------|:-----|:-------:|:----:|
@@ -762,7 +762,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 ## 📝 À retenir
 
-- LEO = 1 serveur principal + 4 bots Telegram + 1 dashboard central (4 onglets) + 13 crons + 117 skills
+- LEO = 1 serveur principal + 5 bots Telegram + 1 dashboard central (9 onglets) + 38 crons + 157 skills
 - Tout tourne sur Hermes Agent dans un conteneur Docker supervisé par s6
 - Le secret : une organisation stricte (profils, bureaux, skills) qui permet à l'agent de gérer la complexité
 - Les erreurs du passé ont forgé les règles du présent
@@ -1545,9 +1545,9 @@ Ce n'est pas grave si votre fichier `config.yaml` est plus ou moins complexe. L'
 
 - Voir la [documentation des providers Hermes](https://hermes-agent.nousresearch.com/docs)
 - Voir `02-configuration/profiles.md` pour les profils et gateways
-# Multi-bots : pourquoi 3 bots valent mieux qu'un
+# Multi-bots : pourquoi 5 bots valent mieux qu'un
 
-LEO ne tourne pas avec un seul bot Telegram, mais avec **trois bots spécialisés** (et bientôt quatre). Chaque bot a son propre profil Hermes, son propre modèle, son propre rôle — et ils communiquent entre eux.
+LEO ne tourne pas avec un seul bot Telegram, mais avec **cinq bots spécialisés** (et bientôt quatre). Chaque bot a son propre profil Hermes, son propre modèle, son propre rôle — et ils communiquent entre eux.
 
 ## Pourquoi plusieurs bots ?
 
@@ -1556,7 +1556,7 @@ Un seul bot peut tout faire. Alors pourquoi en créer plusieurs ?
 ### 1. Séparation des responsabilités
 
 ``` 
-Un seul bot                                                 3 bots spécialisés
+Un seul bot                                                 5 bots spécialisés
 ┌─────────────────────┐           ┌──────────┐ ┌──────────┐ ┌──────────┐
 │ 🦁 LEO              │           │ 🦁 LEO   │ │ 🔧       │ │ 🧭       │
 │                     │           │ Central  │ │ Copilote │ │ Sylvia   │

@@ -2,7 +2,7 @@
 date: 2026-07-07
 bureau: bureau-michel
 version: v1
-modele: gemma-agentic
+modele: qwen2.5:7b
 tags: [synthese, hebdomadaire, veille, budget, monitoring, gemma, agentic]
 statut: concept
 type: analyse
@@ -11,7 +11,7 @@ type: analyse
 # 📊 Projet : Synthèse Hebdomadaire LEO
 
 > **Bureau :** Michel 🔧
-> **Modèle cible :** gemma-agentic (local, Ollama)
+> **Modèle cible :** qwen2.5:7b (local, Ollama)
 > **Date :** 07/07/2026
 > **Statut :** Concept validé, à implémenter
 
@@ -25,7 +25,7 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 - **Métriques machines** (CPU, VRAM, uptime, incidents LEO/Yoga/Penguin)
 - **État des crons** (échecs, alertes)
 
-→ Via **gemma-agentic** en local (Ollama), gratuit, privé.
+→ Via **qwen2.5:7b** en local (Ollama), gratuit, privé.
 
 ---
 
@@ -36,7 +36,7 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
      ┌─────────┐          ┌────────────────┐        ┌──────────┐
      │ Veille  │          │  Collecte →    │        │ Telegram │
      │ Budget  │ ──────→ │  Prompt →      │ ─────→ │ (ou DM)  │
-     │ Metrics │          │  gemma-agentic │        │          │
+     │ Metrics │          │  qwen2.5:7b │        │          │
      │ Crons   │          │  → Synthèse    │        └──────────┘
      └─────────┘          └────────────────┘
 ```
@@ -63,7 +63,7 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 |:-----:|--------|:-----------:|
 | ① | Définir les sources exactes + format extraction | — |
 | ② | Écrire script collecte (récupère les 4 sources) | Phase ① |
-| ③ | Écrire prompt gemma-agentic pour la synthèse | Phase ② |
+| ③ | Écrire prompt qwen2.5:7b pour la synthèse | Phase ② |
 | ④ | Créer le cron Hermes (domingo 20h) | Phase ③ |
 | ⑤ | Tester et ajuster le prompt | Phase ④ |
 
@@ -81,5 +81,5 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 ## 📎 Références
 
 - Analyse initiale : `analyse-fable-leo-20260707.md`
-- Modèle : gemma-agentic (Ollama, 6.1 GB, ~20 tok/s)
+- Modèle : qwen2.5:7b (Ollama, 6.1 GB, ~20 tok/s)
 - API Ollama : `http://100.92.102.28:11434/v1`

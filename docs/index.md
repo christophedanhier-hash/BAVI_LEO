@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 23 crons Hermes automatisés · 5 crons hôte · 8 bureaux spécialisés · 1 dashboard central (4 onglets) · 4 bots Telegram · 🤖 Bureau LEO créé
+> 23 crons Hermes automatisés · 5 crons hôte · 8 bureaux spécialisés · 1 dashboard central (9 onglets) · 4 bots Telegram · 🤖 Bureau LEO créé
 
 ---
 

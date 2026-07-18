@@ -21,11 +21,11 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 
 | Domaine | Détail |
 |:--------|:-------|
-| ⏰ **30 crons** | Veille IA, backups, budget, watchdogs, wiki sync, classification mail... |
+| ⏰ **38 crons** | Veille IA, backups, budget, watchdogs, wiki sync, classification mail... |
 | 🔄 **n8n** | Workflows d'automatisation (budget, monitoring, drive) |
 | 📜 **~100 scripts** | Collecte, backup, dashboard, déploiement, maintenance |
 | 🛡️ **Watchdogs** | Gateways, serveurs, machines, santé système |
-| 🚪 **Gateways** | 4 profils (default, leo-copilot, emile, bavi-leo) — maintenance et stabilité |
+| 🚪 **Gateways** | 5 profils (default, leo-copilot, emile, bavi-leo, bureau-robert) — maintenance et stabilité |
 | 💾 **Backups** | Backup quotidien vers GDrive + rotation 7 jours |
 | 📊 **Dashboards** | KPIs, budget, machines, santé |
 
