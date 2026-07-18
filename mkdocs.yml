@@ -61,8 +61,6 @@ nav:
     - Portail: index.md
     - 📚 Skills: skills.md
     - 📖 Guide: guide-utilisation.md
-    - ⏰ Crons: wiki/crons.md
-    - 🗺️ Doc-Map: wiki/documentation-map.md
   - 🔧 Michel: wiki/agent-pro/bureau-michel/index.md
   - 🧭 Sylvia: wiki/agent-pro/bureau-sylvia/index.md
   - 🤖 Léo: wiki/agent-pro/bureau-leo/index.md
