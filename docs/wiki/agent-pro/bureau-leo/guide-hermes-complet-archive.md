@@ -5,16 +5,17 @@ auteur: LEO
 version: v5.0
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture, bavi]
-statut: ✅ À jour
+statut: archive
 type: livre
 hide:
   - toc
 ---
 
-> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 12:30 — Léo 🦁
-> **Dernier commit :** `f6da9c7` — 18/07/2026 à 12:18
+> **📦 ARCHIVE — Ce fichier monolithique a été refactorisé en chapitres le 18/07/2026.**
+> **Le nouveau guide est dans `guide-hermes-complet/index.md` (10 fichiers).**
+> **Dernière version avant découpage : v5.0 — 18/07/2026**
 
-# Hermès pour les Nuls 🦁
+# Hermès pour les Nuls 🦁 (ARCHIVE)
 
 > **Note :** Ce guide documente l'architecture au 18/07/2026. Mise à jour v5.0 : n8n déprécié, crons 38+6, Robert 16 experts, multi-profils, bureau Connaissance ajouté.
 
