@@ -1,3 +1,13 @@
+---
+date: 2026-07-18
+bureau: bureau-leo
+auteur: Léo
+version: v1
+tags: [presentation, direction, notebooklm, prompt, ia, loop-engineering, pro]
+statut: finalise
+type: prompt-notebooklm
+---
+
 # 🎤 Prompt NotebookLM — Présentation Direction Générale
 ## "L'IA de ChatGPT au Loop Engineering : Comprendre pour Décider"
 

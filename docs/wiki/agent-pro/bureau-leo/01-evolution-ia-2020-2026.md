@@ -1,3 +1,13 @@
+---
+date: 2026-07-18
+bureau: bureau-leo
+auteur: Léo
+version: v1
+tags: [ia, evolution, chatgpt, loop-engineering, presentation, direction, notebooklm, pro]
+statut: finalise
+type: source-notebooklm
+---
+
 # L'Intelligence Artificielle : Évolution de 2020 à Juillet 2026
 ## Document source pour présentation — Direction Générale
 

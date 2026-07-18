@@ -1,3 +1,13 @@
+---
+date: 2026-07-18
+bureau: bureau-leo
+auteur: Léo
+version: v1
+tags: [video, loop-engineering, notebooklm, prompt, ia, presentation, pro]
+statut: finalise
+type: prompt-notebooklm
+---
+
 # 🎬 Prompt NotebookLM — Script Vidéo
 ## "Loop Engineering : La nouvelle norme de l'IA expliquée simplement"
 
