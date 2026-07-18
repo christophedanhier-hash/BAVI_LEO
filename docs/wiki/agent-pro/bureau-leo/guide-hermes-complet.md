@@ -7,6 +7,8 @@ modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture, bavi]
 statut: ✅ À jour
 type: livre
+hide:
+  - toc
 ---
 
 > **Dernière mise à jour rédactionnelle :** 18/07/2026 à 12:30 — Léo 🦁
