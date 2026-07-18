@@ -25,7 +25,7 @@ Tous les documents produits par les bureaux BAVI LEO sont accessibles depuis le 
    - **Titre** (cliquable pour lire)
    - **Tags** pour identifier le sujet
    - **Statut** (✅ Finalisé, 🔄 En cours, archive)
-   - **Actions** : 📥 (télécharger PDF), 📦 (archiver), 🔗 (fichier brut)
+   - **Actions** : 📥 (télécharger PDF), 📦 (mettre à l'archive — retire du tableau actif), 🔗 (fichier brut)
 
 ### Modèles utilisés
 
@@ -61,6 +61,24 @@ Pour archiver un document (le retirer du tableau mais le garder dans Git) :
 3. Soumettre l'issue → LEO archive le document automatiquement
 
 > ⚠️ L'historique reste conservé dans Git — le document archivé est toujours récupérable via l'icône 🔄 dans la section Archivé.
+
+---
+
+## 🗑️ Supprimer un document
+
+Pour supprimer définitivement un document (retirer du tableau + supprimer le fichier) :
+
+Demander à LEO :
+
+> *"supprime l'analyse [titre]"*
+
+LEO va alors :
+1. Supprimer le fichier source dans le dépôt
+2. Régénérer l'index automatiquement
+3. Commit + push la suppression
+4. Le document disparaît du tableau
+
+> ⚠️ L'historique Git conserve une trace — le fichier supprimé est toujours récupérable via `git log`.
 
 ---
 

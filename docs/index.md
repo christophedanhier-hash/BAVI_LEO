@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 38 crons Hermes automatisés · 6 crons hôte · 9 bureaux spécialisés · 1 dashboard unifié · 5 bots Telegram
+> 38 crons Hermes automatisés · 6 crons hôte · 10 bureaux spécialisés · 1 dashboard unifié · 5 bots Telegram
 
 ---
 
@@ -32,6 +32,7 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 | 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
 | 🎓 **Emile** | Assistant pédagogique — mémoire sciences de l'éducation | PRIVÉ | 🆕 Nouveau |
 | 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | ✅ Actif |
+| 📚 **Connaissance** | Base de connaissance centralisée — bibliothèque de cas IA, référentiels | PRIVÉ | 🆕 Nouveau |
 
 ---
 
@@ -139,6 +140,7 @@ Toutes les analyses produites par les bureaux sont indexées dans le **[Portail 
 | 💰 Sophie | Pilotage Économique & Financier | [Voir les analyses](wiki/agent-pro/bureau-sophie/index.md) |
 | 🔧 Michel — Infra_Hermes | Infrastructure Hermes | [Voir les analyses](wiki/agent-pro/bureau-michel/index.md) |
 | 🧭 Sylvia | Voyages | [Voir les analyses](wiki/agent-pro/bureau-sylvia/index.md) |
+| 📚 Connaissance | Base de connaissance | [Voir les analyses](wiki/agent-pro/bureau-connaissance/index.md) |
 
 ### Appels formels PRO
 
@@ -209,6 +211,7 @@ flowchart LR
 | `bureau-leo` | 🤖 LEO | Dossiers & analyses personnelles | ✅ Actif |
 | `bureau-virginie` | 🩺 Virginie | Orchestration médicale, panel de médecins | 🆕 Nouveau |
 | `bureau-emile` | 🎓 Emile | Assistant pédagogique, mémoire sciences éducation | 🆕 Nouveau |
+| `bureau-connaissance` | 📚 Connaissance | Base de connaissance centralisée, bibliothèque cas IA | 🆕 Nouveau |
 
 ### Infrastructure — Monitoring & Outils
 
@@ -227,7 +230,7 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 9 conceptuels (5 profils Hermes : bavi-leo, bureau-robert, default, emile, leo-copilot) · 3 PRO + 6 PRIVÉ |
+| **Bureaux** | 10 conceptuels (5 profils Hermes : bavi-leo, bureau-robert, default, emile, leo-copilot) · 3 PRO + 7 PRIVÉ |
 | **Dashboards** | 1 unifié (leo-dashboard) |
 | **Crons Hermes** | 38 ✅ (leo-copilot exclusif) |
 | **Crons hôte (crontab)** | 6 |
@@ -267,7 +270,7 @@ flowchart LR
 
 ---
 
-> 🕐 **Dernière mise en ligne : 18/07/2026 11:00**  
+> 🕐 **Dernière mise en ligne : 18/07/2026 12:00**  
 > *Document généré par LEO · 🦁*
 
 ---
