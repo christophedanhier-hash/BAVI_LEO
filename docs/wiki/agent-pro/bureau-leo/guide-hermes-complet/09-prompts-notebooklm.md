@@ -11,8 +11,8 @@ hide:
   - toc
 ---
 
-> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 13:00 — Léo 🦁
-> **Usage :** Google NotebookLM — importer le guide Hermès v5.0 avant d'utiliser ces prompts.
+> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 14:00 — Léo 🦁
+> **Usage :** Google NotebookLM — importer les 10 chapitres du guide Hermès v5.0 avant d'utiliser ces prompts.
 
 # 🎤 Prompts NotebookLM — Présentation & Vidéo
 
