@@ -951,8 +951,36 @@ async def api_crons_logs(request: Request):
                             error_msg = line.strip()[:150]
                 summary = ""
                 parts = content.split("---")
-                if len(parts) > 1:
-                    summary = parts[-1].strip()[:300]
+                # Stratégie: prendre le dernier bloc non-vide après ---, 
+                # en ignorant les traces Python et les blocs vides
+                for part in reversed(parts):
+                    part = part.strip()
+                    if not part:
+                        continue
+                    # Ignorer les traces d'erreur Python
+                    if "Traceback" in part or "subprocess.CalledProcessError" in part or "File \"" in part:
+                        continue
+                    if "returned non-zero exit status" in part:
+                        # Extraire juste la ligne d'erreur utile
+                        for line in part.split("\n"):
+                            if "returned non-zero" in line:
+                                summary = line.strip()[:300]
+                                break
+                        if summary:
+                            break
+                        continue
+                    summary = part[:300]
+                    break
+                # Fallback: prendre le statut détecté comme résumé
+                if not summary and error_msg:
+                    summary = error_msg[:300]
+                elif not summary:
+                    # Prendre la dernière ligne non-vide du contenu
+                    for line in reversed(content.split("\n")):
+                        line = line.strip()
+                        if line and not line.startswith("#") and len(line) > 5:
+                            summary = line[:300]
+                            break
                 
                 entries.append({
                     "ts": fname,

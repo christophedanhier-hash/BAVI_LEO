@@ -459,7 +459,8 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     document.body.appendChild(overlay);
     
     fetch('/api/crons/logs?token='+token).then(function(r){{return r.json()}}).then(function(data){{
-      var entries = data.jobs[id] || [];
+      var jobData = data.jobs[id];
+      var entries = (jobData && jobData.entries) ? jobData.entries : [];
       if (!entries.length) {{ document.getElementById('log-content').innerHTML = 'Aucun log'; return; }}
       var html = '<table style="width:100%;font-size:11px"><thead><tr><th style="text-align:left">Heure</th><th style="text-align:left">Statut</th><th style="text-align:left">Résumé</th></tr></thead><tbody>';
       entries.forEach(function(e){{
