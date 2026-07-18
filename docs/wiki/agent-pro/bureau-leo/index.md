@@ -9,16 +9,11 @@
 | Fichier | Problème |
 |:--------|:---------|
 | `01-evolution-ia-2020-2026/` | Frontmatter manquant ou invalide |
-| `02-prompt-presentation-direction/` | Frontmatter manquant ou invalide |
-| `03-prompt-video-loo-engineering/` | Frontmatter manquant ou invalide |
 
 ---
 
 | Date | Version | Titre | Tags | Statut | Actions |
 |:-----|:--------|:------|:-----|:-------|:--------|
-| N/A | ~~🎬 Prompt NotebookLM — Script Vidéo~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
-| N/A | ~~🎤 Prompt NotebookLM — Présentation Direction Générale~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
-| N/A | ~~L'Intelligence Artificielle : Évolution de 2020 à Juillet 2026~~ ⚠️ (frontmatter invalide) | — | ⚠️ Non conforme | — |
 | 11/07/2026 | v1 | [🤖 Bureau LEO — Dossiers & Analyses](presentation/) | `leo` `presentation` `role` `chat` `dossiers` | ✅ Actif | [📥](presentation/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/presentation.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+presentation.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/presentation.md) |
 | 11/07/2026 | v1c | [🛡️ LEO Runbook — Procédures d'urgence](runbook-leo/) | `leo` `runbook` `urgence` `procedure` `infra` `michel` | ✅ Actif | [📥](runbook-leo/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/runbook-leo.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+runbook-leo.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/runbook-leo.md) |
 | 11/07/2026 | v1f | [🏍️ Dossier Quad + Remorque — Can-Am Outlander 700 MAX XT](dossiers/dossier-quad-remorque/) | `quad` `atv` `can-am` `outlander` `remorque` `saris` `attelage` `camping-car` `tofdan` | ✅ Finalisé | [📥](dossiers/dossier-quad-remorque/?print-pdf) [📦](https://github.com/christophedanhier-hash/BAVI_LEO/issues/new?title=archive%3A+bureau-leo/dossier-quad-remorque.md&body=##+Archive+demandée%0A%0A-+**Bureau**+%3A+bureau-leo%0A-+**Fichier**+%3A+dossier-quad-remorque.md%0A%0AAction+%3A+déplacer+ce+fichier+vers+%60archive/%60+et+regénérer+l'index.&labels=archive) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/dossiers/dossier-quad-remorque.md) |
