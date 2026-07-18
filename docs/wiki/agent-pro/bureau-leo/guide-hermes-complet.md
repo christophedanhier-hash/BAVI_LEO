@@ -21,6 +21,8 @@ type: livre
 
 **Hermès pour les Nuls** n'est pas un énième manuel technique. C'est l'histoire d'une aventure — celle de **LEO**, l'assistant IA personnel de Christophe, et comment il a été construit avec **Hermes Agent**, une plateforme open source.
 
+Ce guide sert également de **document source pour NotebookLM** — importez-le dans Google NotebookLM pour générer présentations, scripts vidéo ou résumés.
+
 Ce livre vous guide pas à pas, de l'installation d'Hermes sur votre machine jusqu'à la construction d'un écosystème complet : bots Telegram, skills intelligents, dashboards de monitoring, tâches automatisées, et bien plus. Chaque concept est illustré par l'exemple réel de LEO — pas un exemple artificiel, mais un système qui tourne 24h/24, 7j/7, et qui fait le travail tous les jours.
 
 ### Ce que vous apprendrez
@@ -29,7 +31,7 @@ Ce livre vous guide pas à pas, de l'installation d'Hermes sur votre machine jus
 - **Partie II — Configurer votre assistant** : installer le gateway, choisir vos providers, créer vos premiers bots
 - **Partie III — Les Bureaux BAVI** : organiser vos connaissances avec le système de bureaux
 - **Partie IV — La Puissance des Skills** : exploiter 117 skills prêts à l'emploi et créer les vôtres
-- **Partie V — Dashboards et Monitoring** : visualiser tout avec 1 dashboard central (4 onglets)
+- **Partie V — Dashboards et Monitoring** : visualiser tout avec 1 dashboard central (4 onglets), audit rédactionnel automatisé
 - **Partie VI — Automatisation et Crons** : faire tourner 13 tâches planifiées + daemon sans lever le petit doigt
 - **Partie VII — La Partie des Dix** : les astuces, commandes et ressources qui sauvent
 
@@ -3501,6 +3503,18 @@ python3 /opt/data/scripts/hermes-backup.py --check
 ## Monitoring : savoir avant que ça casse
 
 Le skill `monitoring` (catégorie infrastructure) regroupe tous les outils de surveillance de LEO.
+
+### Audit rédactionnel unifié (quotidien)
+
+Depuis juillet 2026, un cron quotidien (`hermes cron run`) analyse l'ensemble des pages du wiki à 6h00. Il vérifie :
+
+- **Cohérence des dates** — footers, en-têtes de mise à jour
+- **Pages manquantes** — liens brisés, fichiers orphelins
+- **Frontmatter YAML** — validité des méta-données
+- **Navigation** — chemins existants dans mkdocs.yml
+- **Doublons** — sections redondantes entre pages
+
+Le rapport est livré dans le wiki en tant qu'analyse du jour (`aujourdhui-YYYY-MM-DD.md`). La **carte documentaire** (`documentation-map.md`) sert de référentiel maître pour cet audit.
 
 ### Auto-heal (toutes les 30 minutes)
 
