@@ -65,12 +65,7 @@ nav:
     - 🗺️ Doc-Map: wiki/documentation-map.md
   - 🔧 Michel: wiki/agent-pro/bureau-michel/index.md
   - 🧭 Sylvia: wiki/agent-pro/bureau-sylvia/index.md
-  - 🤖 Léo:
-    - 📋 Bureau LEO: wiki/agent-pro/bureau-leo/index.md
-    - 📊 Présentation IA (NotebookLM):
-      - 🎯 Source Document: wiki/agent-pro/bureau-leo/presentations/01-evolution-ia-2020-2026.md
-      - 🎤 Prompt Direction: wiki/agent-pro/bureau-leo/presentations/02-prompt-presentation-direction.md
-      - 🎬 Prompt Vidéo: wiki/agent-pro/bureau-leo/presentations/03-prompt-video-loo-engineering.md
+  - 🤖 Léo: wiki/agent-pro/bureau-leo/index.md
   - 📝 Gérard: wiki/agent-pro/bureau-gerard/index.md
   - 🩺 Virginie: wiki/agent-pro/bureau-virginie/index.md
   - 🎓 Émile: wiki/agent-pro/bureau-emile/index.md
