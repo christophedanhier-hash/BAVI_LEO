@@ -538,39 +538,6 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px" id="contacts-grid">Chargement...</div>
 </div>
-<script>
-function loadContacts(){{
-  fetch('/api/contacts?token='+token).then(r=>r.json()).then(data=>{{
-    window._contacts = data.contacts || [];
-    document.getElementById('contact-count').textContent = window._contacts.length + ' contacts';
-    renderContacts(window._contacts);
-  }});
-}}
-function renderContacts(list){{
-  var html='';
-  list.forEach(c=>{{
-    var name = (c.prénom||'') + ' ' + (c.nom||'');
-    var email = c.email||'';
-    var role = c.rôle||'';
-    var tags = (c.tags||'').split(',').map(t=>'<span style="background:var(--card);padding:1px 6px;border-radius:3px;font-size:10px;margin-right:3px">'+t.trim()+'</span>').join('');
-    var gsm = c.gsm||'';
-    var actif = c.actif||'✅';
-    html += '<div class="card" style="padding:12px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-weight:600;color:var(--accent)">'+name+'</span><span>'+actif+'</span></div>';
-    if(role) html += '<div style="font-size:11px;color:var(--dim);margin:4px 0">🎯 '+role+'</div>';
-    if(email) html += '<div style="font-size:12px;margin:2px 0">📧 <a href="mailto:'+email+'" style="color:var(--accent)">'+email+'</a></div>';
-    if(gsm) html += '<div style="font-size:12px">📱 '+gsm+'</div>';
-    if(tags) html += '<div style="margin-top:6px">'+tags+'</div>';
-    html += '</div>';
-  }});
-  document.getElementById('contacts-grid').innerHTML = html || 'Aucun contact';
-}}
-function filterContacts(){{
-  var q = document.getElementById('contact-search').value.toLowerCase();
-  var filtered = (window._contacts||[]).filter(c=>JSON.stringify(c).toLowerCase().includes(q));
-  document.getElementById('contact-count').textContent = filtered.length+' / '+(window._contacts||[]).length;
-  renderContacts(filtered);
-}}
-</script>
 <div id="tab-audit" class="panel" style="padding:16px">
   <div id="audit-summary" style="margin-bottom:12px"></div>
   <div id="audit-list" style="max-height:600px;overflow-y:auto"></div>
