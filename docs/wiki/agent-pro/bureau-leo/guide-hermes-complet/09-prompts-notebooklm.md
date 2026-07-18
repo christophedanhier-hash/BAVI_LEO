@@ -127,4 +127,4 @@ Consignes de style :
 
 ---
 
-*Document créé le 18/07/2026 — Léo 🦁 | v1.0*
+*Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v1.0*
