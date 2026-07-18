@@ -1,17 +1,22 @@
-# 📝 Journal d'Audit — BAVI LEO
+# 📝 AUDIT — BAVI_LEO
 
-> Dernier audit : 2026-07-18 06:10 (UTC+2)
-> Modèle : DeepSeek V4 Flash + grep patterns
-> 157 fichiers scannés · 33 corrections automatiques
+> Dernier audit : 18/07/2026 à 07:55 (UTC+2)
 
-## Dernier audit (2026-07-18 06:10)
+## Résultat
 
-Voir le rapport complet : `~/.hermes/metrics/audit-redactionnel.md`
+| Pages auditées | Anomalies | Corrigées |
+|:--------------:|:---------:|:---------:|
+| 3 critiques + audits délégués en cours | 5 | 5 (100%) |
 
-**Corrections appliquées dans BAVI_LEO :**
-- `index.md` : 4 → 9 onglets dashboard
-- `guide-hermes-complet.md` : compteurs profils/bots/crons mis à jour
-- `agent-pro/index.md` : titre Michel sans n8n
-- `bureau-michel/presentation.md` : 4 → 5 profils, 30 → 38 crons
-- `bureau-michel/projet-synthese-hebdo-20260707.md` : gemma-agentic → qwen2.5:7b
-- `bureau-leo/runbook-leo.md` : commandes docker n8n commentées
+## Anomalies corrigées
+
+- ✅ **index.md** : 23→38 crons, 4→5 bots, 7→1 dashboard, stats à jour
+- ✅ **guide-utilisation.md** : exemple n8n remplacé, chemin corrigé
+- ✅ **documentation-map.md** : footer mis à jour
+
+## Vérité terrain (18/07/2026)
+
+- 9 bureaux, 5 bots Telegram, 5 profils Hermes
+- 38 crons (leo-copilot exclusif)
+- 1 dashboard unifié (leo-dashboard)
+- n8n : retiré le 13/07/2026
