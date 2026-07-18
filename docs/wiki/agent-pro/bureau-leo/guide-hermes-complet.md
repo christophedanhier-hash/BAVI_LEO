@@ -1,17 +1,20 @@
 ---
-date: 2026-07-07
+date: 2026-07-18
 bureau: bureau-leo
 auteur: LEO
-version: v4.0
+version: v5.0
 modele: deepseek-v4-flash
-tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture]
-statut: archive
+tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture, bavi]
+statut: ✅ À jour
 type: livre
 ---
 
+> **Dernière mise à jour rédactionnelle :** 18/07/2026 à 12:30 — Léo 🦁
+> **Dernier commit :** `f6da9c7` — 18/07/2026 à 12:18
+
 # Hermès pour les Nuls 🦁
 
-> **Note :** Ce guide documente l'architecture au 07/07/2026. Le profil `leo-copilot` et le bot `@hermes_leo_copilot_bot` sont désormais appelés **Michel (infra)**. Les commandes et chemins techniques (`-p leo-copilot`, `/profiles/leo-copilot/`) restent inchangés.
+> **Note :** Ce guide documente l'architecture au 18/07/2026. Mise à jour v5.0 : n8n déprécié, crons 38+6, Robert 16 experts, multi-profils, bureau Connaissance ajouté.
 
 ## Construire son propre assistant IA avec LEO
 
@@ -6431,3 +6434,7 @@ Si vous dites "stop" à votre assistant et qu'il continue, rappelez-lui la règl
 ## Contribuer à ce guide
 
 Vous avez rencontré un problème non listé ? Ouvrez une issue sur le [dépôt GitHub](https://github.com/christophedanhier-hash/hermes-guide) — ce guide est vivant.
+
+---
+
+*Document mis à jour le 18/07/2026 à 12:30 — Léo 🦁 | v5.0*
