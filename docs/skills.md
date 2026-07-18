@@ -14,8 +14,6 @@ type: guide
 
 # 📚 Catalogue des Skills — BAVI LEO & Hermes
 
-> **Document généré le** : 18/07/2026 (mise à jour v2)
-> **Source** : Audit complet des skills installés
 > **Usage** : Ce document liste et décrit tous les skills disponibles dans l'écosystème LEO.
 
 <!-- AUTO:START skills -->
