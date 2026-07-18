@@ -3,7 +3,7 @@
 LEO Serveur Unifié — Wiki BAVI + Dashboard + API
 Usage: .venv/bin/uvicorn server:app --host 0.0.0.0 --port 8765
 """
-import json, subprocess, os, sys, re, urllib.request, urllib.parse
+import json, subprocess, os, sys, re, urllib.request, urllib.parse, shutil
 from pathlib import Path
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import HTMLResponse, Response, JSONResponse, FileResponse
@@ -1004,6 +1004,85 @@ async def api_crons_logs(request: Request):
         }
     
     return JSONResponse({"jobs": jobs, "total": len(jobs)})
+
+@app.get("/api/bavi/delete")
+async def api_bavi_delete(request: Request):
+    """Supprime définitivement un fichier d'un bureau BAVI LEO."""
+    if not check_token(request): raise HTTPException(401)
+    bureau = request.query_params.get("bureau", "")
+    filename = request.query_params.get("file", "")
+    filepath = request.query_params.get("path", "")
+    
+    if not bureau or not filename:
+        raise HTTPException(400, detail="Paramètres bureau et file requis")
+    
+    # Déterminer le chemin absolu
+    if filepath and os.path.exists(filepath):
+        target = Path(filepath)
+    else:
+        bureau_dir = Path(f"/home/tofdan/Projets_Dev/BAVI_LEO/docs/wiki/agent-pro/{bureau}")
+        # Chercher dans le bureau, les sous-dossiers, et l'archive
+        candidates = list(bureau_dir.rglob(filename))
+        if not candidates:
+            raise HTTPException(404, detail=f"Fichier {filename} introuvable dans {bureau}")
+        target = candidates[0]
+    
+    if not target.exists():
+        raise HTTPException(404, detail=f"Fichier {target} introuvable")
+    
+    # Backup avant suppression
+    backup_dir = Path("/home/tofdan/.hermes/trash/bavi-deleted")
+    backup_dir.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_path = backup_dir / f"{ts}_{bureau}_{target.name}"
+    shutil.copy2(str(target), str(backup_path))
+    
+    # Supprimer
+    target.unlink()
+    
+    # Commit + push
+    repo_dir = "/home/tofdan/Projets_Dev/BAVI_LEO"
+    try:
+        subprocess.run(["git", "add", "-A"], cwd=repo_dir, capture_output=True, timeout=10)
+        subprocess.run(["git", "commit", "-m", f"🗑️ Delete {bureau}/{target.name} via dashboard"],
+                      cwd=repo_dir, capture_output=True, timeout=10)
+        # Push avec token GitHub
+        token = os.environ.get("GH_TOKEN", "")
+        if not token:
+            env_file = Path("/home/tofdan/.hermes/.env")
+            if env_file.exists():
+                for line in env_file.read_text().split("\n"):
+                    if line.startswith("GH_TOKEN"):
+                        token = line.split("=", 1)[1].strip().strip('"').strip("'")
+        if token:
+            url = f"https://git:{token}@github.com/christophedanhier-hash/BAVI_LEO.git"
+            subprocess.run(["git", "push", url, "main"], cwd=repo_dir, capture_output=True, timeout=15)
+    except Exception as e:
+        # Restaurer le backup si le commit échoue
+        shutil.copy2(str(backup_path), str(target))
+        raise HTTPException(500, detail=f"Erreur commit: {e}")
+    
+    # Regénérer l'index
+    try:
+        subprocess.run([sys.executable, "/home/tofdan/.hermes/profiles/leo-copilot/scripts/agent-pro-index.py",
+                       "--bureau", bureau.replace("bureau-", "")],
+                      capture_output=True, timeout=30)
+        subprocess.run(["git", "add", "-A"], cwd=repo_dir, capture_output=True, timeout=10)
+        subprocess.run(["git", "commit", "-m", f"📋 Rebuild index after delete {bureau}/{target.name}"],
+                      cwd=repo_dir, capture_output=True, timeout=10)
+        if token:
+            url = f"https://git:{token}@github.com/christophedanhier-hash/BAVI_LEO.git"
+            subprocess.run(["git", "push", url, "main"], cwd=repo_dir, capture_output=True, timeout=15)
+    except:
+        pass
+    
+    return JSONResponse({
+        "ok": True,
+        "bureau": bureau,
+        "file": target.name,
+        "backup": str(backup_path),
+        "message": f"🗑️ {target.name} supprimé de {bureau} — backup dans trash/"
+    })
 
 @app.get("/energy")
 async def energy_page(request: Request):
