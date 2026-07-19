@@ -421,7 +421,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
         var status = j.last_status || 'pending';
         var badge = status === 'ok' ? 'ok' : status === 'error' ? 'err' : 'warn';
         if(status==='ok') ok++; else if(status==='error') err++;
-        html += '<tr><td style="width:20px">'+(j.enabled?'🟢':'🔴')+'</td>'+
+        html += '<tr><td style="width:20px"><span onclick="toggleCron(\\''+j.id+'\\',this)" style="cursor:pointer;font-size:14px" title=\"Activer/Désactiver\">'+(j.enabled?'🟢':'🔴')+'</span></td>'+
           '<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;font-size:12px" title="'+(j.name||'')+'">'+(j.name||j.id||'?').substring(0,45)+'</td>'+
           '<td style="font-size:10px;color:var(--dim)">'+(j.schedule||'?')+'</td>'+
           '<td><span class="badge '+badge+'">'+status+'</span></td>'+
@@ -443,6 +443,14 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
     }});
   }};
   
+  window.toggleCron = function(id, el) {{
+    el.textContent = '⏳';
+    fetch('/api/crons/'+id+'/toggle?token='+token, {{method:'POST'}}).then(function(r){{return r.json()}}).then(function(d){{
+      el.textContent = d.action === 'resume' ? '🟢' : '🔴';
+      setTimeout(function(){{ loadCrons(); }}, 1000);
+    }}).catch(function(){{ el.textContent = '❌'; }});
+  }};
+
   window.showCronLog = function(id, name) {{
     var overlay = document.createElement('div');
     overlay.id = 'log-overlay';
