@@ -30,7 +30,7 @@ Mais vous avez aussi ressenti la frustration : « *Peux-tu envoyer cet email à 
 
 ### Chatbot vs Agent : la différence fondamentale
 
-```
+```text
 ┌──────────────────────────────────────────────────────┐
 │                      CHATBOT                         │
 │  Vous : "Quel temps fait-il à Paris ?"               │
@@ -291,7 +291,7 @@ LEO n'est pas un simple script lancé sur un Raspberry Pi. C'est un écosystème
 
 ### Vue d'ensemble
 
-```
+```text
 Telegram ──→ Gateway Hermes ──→ Profil default ──→ DeepSeek Flash (dialogue)
                                     │
                                     ├──→ @hermes_leo_copilot_bot → DeepSeek V4 Pro (code/infra)
@@ -328,7 +328,7 @@ L'un des atouts d'Hermès est de pouvoir utiliser **plusieurs LLMs** et de chois
 
 LEO tourne sur **1 machine serveur**. Les autres postes (Yoga, Penguin) sont des stations de travail clientes — elles n'hébergent aucun service de la plateforme.
 
-```
+```text
 🌐 LEO (serveur unique)
    ├── Processeur : Intel Core i7-7700K
    ├── RAM : 22 Go
@@ -344,7 +344,7 @@ LEO tourne sur **1 machine serveur**. Les autres postes (Yoga, Penguin) sont des
 
 Tout tourne dans un **conteneur Docker** supervisé par **s6** :
 
-```
+```text
 Docker Container
 ├── hermes-gateway (s6 supervisé)
 │   ├── default (profil principal)

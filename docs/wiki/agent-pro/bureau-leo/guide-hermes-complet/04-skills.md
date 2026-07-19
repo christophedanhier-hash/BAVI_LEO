@@ -87,7 +87,7 @@ Quand vous lancez `hermes gateway run`, Hermes :
 4. Pour chaque message : charge le contexte, appelle le LLM, exécute les outils, renvoie la réponse
 5. Gère le cycle de vie : reconnexion, heartbeat, shutdown
 
-```
+```text
 Message entrant
      │
      ▼
@@ -855,7 +855,7 @@ Le skill `ai-tech-watch` est le plus sophistiqué des skills de veille. Chaque m
 
 ### Fonctionnement
 
-```
+```text
 06:00 — Collecte RSS (15 sources)
    │
    ▼

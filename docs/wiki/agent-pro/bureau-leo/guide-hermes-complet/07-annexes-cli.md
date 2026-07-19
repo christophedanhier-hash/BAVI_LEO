@@ -346,7 +346,7 @@ LEO est l'assistant personnel de Christophe. Cette section détaille son archite
 
 ## Identité
 
-```
+```text
 Nom : LEO
 Type : Majordome numérique
 Hôte : Linux (Debian-like)
@@ -437,7 +437,7 @@ Avant chaque action impliquant un choix technique, identifier 2-3 approches, pes
 
 ### 2. Arbitrage LLM (3 niveaux)
 
-```
+```text
 Tâche → Script pur ? → no_agent (0 token)
        → A besoin d'un LLM ? → Ollama (gratuit)
                               → Gemini (fallback)
@@ -471,7 +471,7 @@ Tout nouveau cron doit être **no_agent** sauf justification explicite. Les cron
 
 ## Structure des fichiers
 
-```
+```text
 /opt/data/
 ├── config.yaml           → Configuration Hermes
 ├── .env                  → Variables d'environnement (clés API)

@@ -87,7 +87,7 @@ every monday 9am → Tous les lundis 9h
 
 ### `pip install` échoue (installation manuelle)
 
-```
+```text
 ERROR: Could not find a version that satisfies the requirement...
 ```
 
@@ -116,7 +116,7 @@ pip install -e .
 
 ### `hermes doctor` signale des erreurs
 
-```
+```text
 ✗ Gateway telegram: bot token not configured
 ✗ Profile default: provider unreachable
 ```

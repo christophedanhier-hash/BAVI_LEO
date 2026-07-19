@@ -81,7 +81,7 @@ hermes
 
 Vous devriez voir apparaître l'interface :
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │  ⚕ Hermes Agent v0.17.0                                │
 │  Type /help for slash commands, /quit to exit            │
@@ -457,7 +457,7 @@ hermes -p mon-profil chat # flag explicite
 
 ### Structure d'un profil
 
-```
+```text
 ~/.hermes/profiles/mon-profil/
 ├── config.yaml     # Modèle, provider, outils
 ├── .env            # Clés API, tokens
@@ -625,7 +625,7 @@ Hermes Agent peut utiliser plusieurs fournisseurs de modèles de langage (LLM). 
 
 ### Principe
 
-```
+```text
 Un seul profil = plusieurs providers disponibles
        │
        ├── Provider principal → Conversations, tâches complexes
@@ -811,7 +811,7 @@ Un seul bot peut tout faire. Alors pourquoi en créer plusieurs ?
 
 #### 1. Séparation des responsabilités
 
-```
+```text
 Un seul bot                                                 5 bots spécialisés
 ┌─────────────────────┐           ┌──────────┐ ┌──────────┐ ┌──────────┐
 │ 🦁 LEO              │           │ 🦁 LEO   │ │ 🔧       │ │ 🧭       │
@@ -842,7 +842,7 @@ Avec un seul bot, tout est mélangé. Avec plusieurs bots :
 
 Chaque bot a son propre token Telegram. Si un token est compromis ou rate-limity, les autres bots continuent de fonctionner.
 
-```
+```text
 default.env
 ├── TELEGRAM_BOT_TOKEN=881242...  ← Léo (vous)
 ├── TELEGRAM_ALLOWED_USERS=8718957859
@@ -967,7 +967,7 @@ Un skill Hermes est un fichier Markdown qui décrit **comment accomplir une tâc
 
 ### Principe
 
-```
+```text
 Skill = fichier .md + dossier
 ├── SKILL.md          ← Les instructions : contexte, étapes, pièges
 ├── references/       ← Documentation complémentaire
@@ -1004,7 +1004,7 @@ category: infrastructure
 
 Environ **126 skills** répartis en **22 catégories** :
 
-```
+```text
 skills/
 ├── infrastructure/     ← Docker, Nginx, Cloudflare, backup
 │   └── bureau-michel/SKILL.md
@@ -1036,7 +1036,7 @@ skills/
 
 #### Comment Hermes charge les skills
 
-```
+```text
 1. Vous dites : "Installe Nginx sur le serveur"
 2. Hermes cherche des skills pertinents
 3. Trouve "infrastructure/nginx-install"
@@ -1100,7 +1100,7 @@ Les scripts dans `scripts/` peuvent être appelés directement par le skill.
 
 Dans l'écosystème LEO, le profil `default` (LEO) est la **source de vérité** des skills. Les autres profils (Michel, Sylvia, Émile) reçoivent les skills par **synchronisation automatique** toutes les 30 minutes.
 
-```
+```text
 default (source) ──sync 30min──→ leo-copilot
                 ──sync 30min──→ bavi-leo (Sylvia)
                 ──sync 30min──→ emile
@@ -1227,7 +1227,7 @@ ln -s /opt/data/memories/USER.md /opt/data/profiles/leo-copilot/memories/USER.md
 
 Avantage : quand un bot apprend quelque chose, l'autre le sait aussi immédiatement.
 
-```
+```text
 LEO (default) écrit ──→ /opt/data/memories/MEMORY.md
                               ↕ symlink
 Michel lit ──→ /opt/data/profiles/leo-copilot/memories/MEMORY.md
@@ -1238,7 +1238,7 @@ Michel lit ──→ /opt/data/profiles/leo-copilot/memories/MEMORY.md
 
 #### MEMORY.md (extrait réel)
 
-```
+```text
 RÈGLE commit : toute modif fichier repo git = commit + push immédiat
 §  
 Wikis: BAVI_LEO=portail, hermes-christophe=source, les2→sync+push
@@ -1253,7 +1253,7 @@ Backup GDrive 73.7MB téléchargé + extrait. 4 gateways relancés.
 
 #### USER.md (extrait réel)
 
-```
+```text
 Christophe: Décisif, action directe, pattern-first.
 Exige vérification AVANT livraison (curl 200, grep valeur réelle).
 Zéro tolérance oubli sync (BAVI_LEO + hermes-christophe).
@@ -1264,7 +1264,7 @@ Préfère process automatisé aux corrections.
 
 La mémoire traverse les sessions. Si vous dites "souviens-toi que mon serveur est à Bruxelles", l'information persiste :
 
-```
+```text
 Session 1 : "Mon serveur est à Bruxelles"
   → Hermes écrit dans USER.md : "Serveur situé à Bruxelles (Europe/Brussels)"
 

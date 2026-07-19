@@ -36,7 +36,7 @@ Imaginez une entreprise ou :
 
 ### 2.1 Vue d'ensemble
 
-```
+```text
                     ☀️ CHRISTOPHE (l'humain)
                             │
                     ┌───────┴───────┐
@@ -94,7 +94,7 @@ Imaginez une entreprise ou :
 
 BAVI LEO parle via 5 robots Telegram distincts, chacun avec son profil Hermes isole :
 
-```
+```text
 BOT                PROFIL      PROVIDER        ROLE
 ─────────────────────────────────────────────────────────
 🤖 @hermes_leo_bot       default     DeepSeek Flash   Chat quotidien, analyses
@@ -113,7 +113,7 @@ Chaque bot est independant :
 
 ### 2.3 L'infrastructure physique
 
-```
+```text
 🌐 Machine LEO (serveur unique)
    CPU  : Intel Core i7-7700K (4 coeurs, 4.5 GHz)
    RAM  : 22 Go DDR4
@@ -144,7 +144,7 @@ Chaque bot est independant :
 
 ### 3.1 Tableau complet
 
-```
+```text
 BUREAU         ROLE                          STATUT     MODELE
 ────────────────────────────────────────────────────────────────
 🔧 Michel      Infrastructure, crons,        ✅ Actif   DeepSeek V4 Pro
@@ -177,7 +177,7 @@ Le plus gros bureau. Michel gere toute l'infrastructure technique :
 - 39 crons Hermes + 6 watchdogs (supervision)
 - 8 sous-experts specialises :
 
-```
+```text
 SysAdmin    → Administration du serveur, installation
 DevOps      → Docker, deploiement, CI/CD
 Scripteur   → Scripts Python/Bash, automation
@@ -194,7 +194,7 @@ Michel utilise DeepSeek V4 Pro pour les taches complexes, et s'appuie sur Ollama
 
 Robert est le "comite de direction" de BAVI LEO. Il dispose de **16 experts** organises en 2 groupes :
 
-```
+```text
 EXPERTS IT (9)                          EXPERTS BUSINESS (7)
 ─────────────────────────────────────────  ───────────────────────────
 🔷 Architecture IT                      🔶 Strategie digitale
@@ -287,7 +287,7 @@ Les skills sont le "cerveau" de chaque bureau. Ce sont des fichiers markdown (.m
 
 ### 4.1 Structure d'un skill
 
-```
+```text
 ---
 name: nom-du-skill
 description: "Ce que fait ce skill"
@@ -315,7 +315,7 @@ tags: [domaine, mots-cles]
 
 ### 4.2 Les 130+ skills par domaine
 
-```
+```text
 INFRASTRUCTURE (Michel) :
   deployment-checklist  : Checklist avant chaque modification
   cron-lifecycle        : Planifier, auditer, nettoyer les crons
@@ -385,7 +385,7 @@ Avantage : les procedures sont **documentees, versionnees, reutilisables**. Un n
 
 ### 5.1 Les 39 crons Hermes + 6 watchdogs
 
-```
+```text
 CRONS HORAIRES (toutes les heures) :
   :00  - check-dashboard-kpi-refresh    → Rafraichit le dashboard
   :00  - update-machines-metrics         → Metriques 3 machines
@@ -424,7 +424,7 @@ WATCHDOGS (supervision automatique) :
 
 95% des crons tournent en mode **no_agent** = execution directe du script, sans LLM. Exemple :
 
-```
+```text
 Phase 1 : Collecte (no_agent, 0 token)
   Script Python → lit state.db 4 profils
                → mesure CPU/RAM/disque 3 machines
@@ -449,7 +449,7 @@ URL : https://christophedanhier-hash.github.io/leo-dashboard/
 
 Un seul dashboard HTML statique (Chart.js) qui regroupe 4 onglets :
 
-```
+```text
 ONGLET 1 : Sessions
   - Nombre de sessions actives (4 profils)
   - Messages echanges (24h/7j/30j)
@@ -490,7 +490,7 @@ Un script Python (`collect-v2.py`) centralise toutes les donnees :
 
 Toute analyse ou document produit par BAVI LEO suit un cycle standardise en 7 phases :
 
-```
+```text
 ① CADRAGE
    Comprendre la demande, le contexte, les contraintes
    │
@@ -521,7 +521,7 @@ Toute analyse ou document produit par BAVI LEO suit un cycle standardise en 7 ph
 
 Variantes selon le type :
 
-```
+```text
 Analyse  : ①→③→⑤→⑥→⑦ (simple, pas de dispatch)
 Rapport  : ①→②→③→④→⑤→⑥→⑦ (complet)
 Note     : ①→③→⑥ (rapide)
@@ -535,7 +535,7 @@ Memoire  : ①→②→③→④↔④↔④→⑤→⑥→⑦ (iteratif)
 
 Les bureaux peuvent s'appeler mutuellement :
 
-```
+```text
 Demande : "Quel est l'impact budgetaire d'un nouveau serveur ?"
    │
    ├── Robert (analyse strategique)
@@ -567,7 +567,7 @@ Contrairement a un chatbot qui oublie tout entre deux sessions, BAVI LEO apprend
 
 ## 10. Les couts
 
-```
+```text
 POSTE               COUT/MOIS     NOTES
 ─────────────────────────────────────────────
 DeepSeek Flash       ~15-20 EUR     Usage quotidien, 4 bots

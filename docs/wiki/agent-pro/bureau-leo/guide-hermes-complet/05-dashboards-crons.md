@@ -24,7 +24,7 @@ Visualisez l'activité de votre assistant en temps réel avec des dashboards HTM
 
 Un dashboard est un fichier HTML statique (zéro JavaScript serveur, zéro backend) :
 
-```
+```text
 Script de collecte → JSON + HTML → Push GitHub Pages
                                       ↓
                     https://user.github.io/mon-dashboard/
@@ -432,7 +432,7 @@ tail -50 /opt/data/logs/errors.log
 
 Quand un cron échoue, l'auto-heal tente de le corriger :
 
-```
+```text
 1. Détection : cron en erreur 2 fois de suite
 2. Diagnostic : erreur de permission ? script manquant ? timeout ?
 3. Correction : recopie du script, ajustement du timeout, redémarrage
@@ -523,7 +523,7 @@ Hermes Agent peut exécuter des actions automatiquement selon un planning. C'est
 
 ## Principe
 
-```
+```text
 Cron = tâche planifiée qui s'exécute automatiquement
      │
      ├── Script pur (no_agent) → Aucun LLM, exécution directe 0$ ✅
@@ -580,7 +580,7 @@ ou tourner sur Ollama. DeepSeek est réservé aux interactions directes.
 Quand plusieurs crons tournent à la même fréquence, décalez les minutes pour
 éviter l'embouteillage :
 
-```
+```text
 H:00 → machines-kpi   (collecte métriques)
 H:05 → budget-check   (solde API)
 H:10 → dashboard-KPI  (génération HTML)
@@ -1047,7 +1047,7 @@ Le sync = le meilleur des deux mondes
 
 ## Fonctionnement
 
-```
+```text
 Google Docs
      │
      ▼
