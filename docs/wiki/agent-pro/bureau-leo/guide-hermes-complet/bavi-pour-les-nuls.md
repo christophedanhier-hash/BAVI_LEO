@@ -46,7 +46,7 @@ Imaginez une entreprise ou :
                     ▼               ▼
             ┌─────────────────────────────────┐
             │     GATEWAY HERMES (s6)         │
-            │  4 profils, 4 bots Telegram     │
+            │  5 profils, 5 bots Telegram     │
             │  Supervision + auto-restart      │
             └────────┬────────────────────────┘
                      │
@@ -67,7 +67,7 @@ Imaginez une entreprise ou :
             │  │  Procedures .md    │  │
             │  └────────────────────┘  │
             │  ┌────────────────────┐  │
-            │  │  38 CRONS + 6 WD  │  │
+            │  │  39 CRONS + 6 WD  │  │
             │  │  Tâches auto      │  │
             │  └────────────────────┘  │
             │  ┌────────────────────┐  │
@@ -90,9 +90,9 @@ Imaginez une entreprise ou :
             └────────────────────┘
 ```
 
-### 2.2 Les 4 bots Telegram
+### 2.2 Les 5 bots Telegram
 
-BAVI LEO parle via 4 robots Telegram distincts, chacun avec son profil Hermes isole :
+BAVI LEO parle via 5 robots Telegram distincts, chacun avec son profil Hermes isole :
 
 ```
 BOT                PROFIL      PROVIDER        ROLE
@@ -101,6 +101,7 @@ BOT                PROFIL      PROVIDER        ROLE
 🟪 @hermes_leo_copilot   leo-copilot DeepSeek V4 Pro  Code, infra, crons
 🧭 @bavi_leo_voyages_bot bavi-leo    DeepSeek Flash   Voyages camping-car
 🎓 @Bureau_ia_emilie_bot emile       Flash+Gemini     Pedagogie memoire
+🏛 @bureau_robert_bot    bureau-robert DeepSeek Flash  Conseil strategique IT
 ```
 
 Chaque bot est independant :
@@ -173,7 +174,7 @@ BUREAU         ROLE                          STATUT     MODELE
 #### 🔧 Bureau Michel (Infrastructure)
 
 Le plus gros bureau. Michel gere toute l'infrastructure technique :
-- 38 crons Hermes + 6 watchdogs (supervision)
+- 39 crons Hermes + 6 watchdogs (supervision)
 - 8 sous-experts specialises :
 
 ```
@@ -382,7 +383,7 @@ Avantage : les procedures sont **documentees, versionnees, reutilisables**. Un n
 
 ## 5. Le systeme de Crons (automatisation)
 
-### 5.1 Les 38 crons Hermes + 6 watchdogs
+### 5.1 Les 39 crons Hermes + 6 watchdogs
 
 ```
 CRONS HORAIRES (toutes les heures) :
@@ -462,7 +463,7 @@ ONGLET 2 : Budget
   - Cout par bureau
 
 ONGLET 3 : Crons & Services
-  - Statut des 38 crons
+  - Statut des 39 crons
   - Derniere execution reussie/echouee
   - Temps depuis dernier echec
   - Statut des 4 gateways

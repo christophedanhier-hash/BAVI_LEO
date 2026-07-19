@@ -68,7 +68,7 @@ Si votre conversation ou document dépasse 128K tokens, DeepSeek plante.
 
 ```yaml
 # Solution : fallback Gemini (1M tokens, gratuit)
-fallback_providers: '[{"provider": "gemini", "model": "gemini-2.5-flash"}]'
+fallback_providers: '[{"provider": "gemini", "model": "gemini-3.5-flash"}]'
 ```
 
 Gemini a un contexte 8 fois plus grand — parfait pour les longs documents.
@@ -343,7 +343,7 @@ Tous vos bots partagent la même mémoire. Ce que l'un apprend, les autres le sa
 ### 9. Multi-modèles (routage intelligent)
 
 ```yaml
-fallback_providers: '[{"provider": "gemini", "model": "gemini-2.5-flash"}]'
+fallback_providers: '[{"provider": "gemini", "model": "gemini-3.5-flash"}]'
 ```
 
 DeepSeek pour le quotidien, Gemini pour les longs contextes (1M tokens), Ollama pour le gratuit. Le meilleur des trois mondes.
@@ -383,7 +383,7 @@ Le code source, les issues, les discussions. Idéal pour suivre les évolutions,
 
 🌐 **christophedanhier-hash.github.io/BAVI_LEO**
 
-La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 38 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
+La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 39 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
 
 ### 4. Le guide Hermès pour les Nuls
 

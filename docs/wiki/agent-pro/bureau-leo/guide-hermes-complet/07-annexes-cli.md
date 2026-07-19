@@ -368,9 +368,9 @@ LEO communique uniquement par **Telegram** (pas d'autre canal). L'email est util
 
 ## Tâches quotidiennes
 
-### Crons (44 actifs — 38 crons Hermes + 6 watchdogs)
+### Crons (44 actifs — 39 crons Hermes + 6 watchdogs)
 
-> **Note mise à jour v5.0 :** Le système de crons est passé à **38 crons Hermes + 6 watchdogs** depuis la version v4.0 du guide. Les watchdogs (code-server, tunnels, auto-heal) sont intégrés comme crons Hermes.
+> **Note mise à jour v5.0 :** Le système de crons est passé à **39 crons Hermes + 6 watchdogs** depuis la version v4.0 du guide. Les watchdogs (code-server, tunnels, auto-heal) sont intégrés comme crons Hermes.
 
 | Cron | Horaire | Type | Coût | Description |
 |------|---------|------|------|-------------|

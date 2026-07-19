@@ -214,7 +214,7 @@ C'est le padron de la machine — il a accès root complet (`sudo` sans restrict
 
 ```
 Bureau Michel = l'ingénieur système de LEO
-├── 🔧 38 crons automatisés (+6 hôte)
+├── 🔧 39 crons automatisés (+6 hôte)
 ├── 📊 1 dashboard central (4 onglets)
 ├── 🌐 Nginx + Cloudflare Tunnel
 ├── 🔒 UFW + SSL + DNS
@@ -278,7 +278,7 @@ Utilisateur ──→ tofdan.be ──→ Cloudflare ──→ Tunnel ──→ 
 - **Cloudflare** : gère le HTTPS (mode Flexible), le tunnel et le DNS
 - **UFW** : ports ouverts 80, 443, 11434, 3389, 7844
 
-### Les 38 crons (+ 6 hôte)
+### Les 39 crons (+ 6 hôte)
 
 Les crons sont le cœur de l'automatisation. 14 tâches planifiées tournent 24/7, complétées par un **auto-fix-daemon** `*/15` qui assure la détection rapide :
 
@@ -346,7 +346,7 @@ cron-metrics:
   script: collect-metrics.sh
 ```
 
-Sur 38 crons Hermes, la plupart sont en **no_agent** (0$ LLM) — seuls quelques crons (veille IA, audit) utilisent un LLM. Le coût total des crons est d'environ **quelques centimes par jour**.
+Sur 39 crons Hermes, la plupart sont en **no_agent** (0$ LLM) — seuls quelques crons (veille IA, audit) utilisent un LLM. Le coût total des crons est d'environ **quelques centimes par jour**.
 
 ### Le dashboard central (4 onglets)
 

@@ -242,7 +242,7 @@ Les crons Hermes ne sont pas de simples tâches shell. Chaque cron peut être :
 - **Un prompt LLM** — l'agent réfléchit et agit
 - **Un script + un prompt** — collecte des données puis analyse
 
-LEO a **38 crons Hermes + 6 crons hôte** dont la plupart en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
+LEO a **39 crons Hermes + 6 crons hôte** dont la plupart en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
 
 ##### 5. 🗂️ Profils et gateways parallèles
 
@@ -367,9 +367,9 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 |:----------|:----|:--------|:---:|
 | 🦁 **LEO Dashboard** | [lien](https://christophedanhier-hash.github.io/leo-dashboard/) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
 
-#### Les 38 crons (+ 6 crons hôte)
+#### Les 39 crons (+ 6 crons hôte)
 
-LEO a 38 crons Hermes + 6 crons hôte qui exécutent des tâches planifiées
+LEO a 39 crons Hermes + 6 crons hôte qui exécutent des tâches planifiées
 
 | Vague | Horaires | Crons |
 |:------|:---------|:------|
@@ -451,7 +451,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 ### 📝 À retenir
 
-- LEO = 1 serveur principal + 5 bots Telegram + 1 dashboard central (4 onglets) + 38 crons + 6 crons hôte + 130+ skills
+- LEO = 1 serveur principal + 5 bots Telegram + 1 dashboard central (4 onglets) + 39 crons + 6 crons hôte + 130+ skills
 - Tout tourne sur Hermes Agent dans un conteneur Docker supervisé par s6
 - Le secret : une organisation stricte (profils, bureaux, skills) qui permet à l'agent de gérer la complexité
 - Les erreurs du passé ont forgé les règles du présent

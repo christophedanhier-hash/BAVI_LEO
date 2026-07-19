@@ -12,7 +12,7 @@ hide:
 ---
 
 > **Dernière mise à jour rédactionnelle :** 18/07/2026 — Léo 🦁
-> **Partie V+VI — Dashboards, Monitoring, Crons & Watchdogs :** 38 crons Hermes + 6 hôte, 1 dashboard central (4 onglets, 20 KPI), auto-heal, sync Drive ↔ GitHub | **Audit rédactionnel :** ✅ conforme | **n8n** marqué ⚠️ historique déprécié
+> **Partie V+VI — Dashboards, Monitoring, Crons & Watchdogs :** 39 crons Hermes + 6 hôte, 1 dashboard central (4 onglets, 20 KPI), auto-heal, sync Drive ↔ GitHub | **Audit rédactionnel :** ✅ conforme | **n8n** marqué ⚠️ historique déprécié
 
 # Partie V — Dashboards et Monitoring
 
@@ -327,7 +327,7 @@ nvidia-smi
 
 # Partie VI — Automatisation et Crons
 
-Avec **38 crons Hermes + 6 crons hôte** qui tournent 24h/24 et un auto-fix-daemon `*/5`, LEO est entièrement automatisé. Le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
+Avec **39 crons Hermes + 6 crons hôte** qui tournent 24h/24 et un auto-fix-daemon `*/5`, LEO est entièrement automatisé. Le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
 
 ---
 
@@ -775,7 +775,7 @@ Le flag `--no-agent` est essentiel : sans LLM, l'exécution est gratuite.
 Toutes les heures (minute 0):
   - Dashboard LEO KPI      → collecte sessions, tokens, budget
   - Dashboard Machines     → CPU, RAM, disque 3 machines
-  - Dashboard Crons        → statut 38 crons
+  - Dashboard Crons        → statut 39 crons
   - Dashboard GitHub       → activité repos
   - Dashboard BAVI LEO     → KPIs voyages
 

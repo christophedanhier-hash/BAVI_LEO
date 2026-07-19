@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 38 crons Hermes automatisés · 6 crons hôte · 10 bureaux spécialisés · 1 dashboard unifié · 5 bots Telegram
+> 39 crons Hermes automatisés · 6 crons hôte · 10 bureaux spécialisés · 1 dashboard unifié · 5 bots Telegram
 
 ---
 
@@ -264,15 +264,15 @@ flowchart LR
 | Documentation vivante | ✅ Wikis auto-déployés GH Pages |
 | Distribution skills par profil | ✅ Chaque bot a ses compétences (Michel → infra, Sylvia → voyages) |
 | Gestion des coûts API | ✅ Budget dashboard suivi |
-| Fiabilité crons | ✅ 38 crons Hermes, tous verts, leo-copilot exclusif |
+| Fiabilité crons | ✅ 39 crons Hermes, tous verts, leo-copilot exclusif |
 | Miroir Drive ↔ GitHub | ✅ Sync bidirectionnelle 18h |
 | 📋 Suivi implémentations | ✅ [leo-tracker](https://github.com/christophedanhier-hash/leo-tracker) |
 
 ---
 
-> 🕐 **Dernière mise en ligne : 19/07/2026 05:00**  
+> 🕐 **Dernière mise en ligne : 19/07/2026 06:00**  
 > *Document généré par LEO · 🦁*
 
 ---
 
-> 🤖 Dernier audit : 18/07/2026 à 12:00 (UTC+2) — 38 crons, 9 bureaux, 5 bots, dashboard unifié
+> 🤖 Dernier audit : 19/07/2026 à 06:10 (UTC+2)

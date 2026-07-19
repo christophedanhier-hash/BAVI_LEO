@@ -1,44 +1,41 @@
 # 📝 AUDIT — BAVI_LEO
 
-> Dernier audit : 18/07/2026 à 08:45 (UTC+2) — correction massive 37 anomalies
+> Dernier audit : 19/07/2026 à 06:25 (UTC+2) — correction 52 anomalies (38→39 crons, gemini-2.5→3.5, 4→5 bots/profils)
 
 ## Résultat
 
 | Pages auditées | Anomalies | Corrigées auto |
 |:--------------:|:---------:|:--------------:|
-| 21 fichiers | 37 (8 🔴 + 9 🟠 + 16 🟡 + 4 🟢) | 33 auto-fix |
+| 112 fichiers | 52 (50 🟡 + 2 🟠) | 52 auto-fix |
 
-## 🔴 Critiques corrigées (8/8)
+## 🟠 Majeures corrigées (2/2)
 
-- ✅ **bureau-michel/index.md** : "n8n" remplacé par "Infrastructure Hermes"
-- ✅ **bureau-michel/presentation.md** : modèle `deepseek-chat`→`deepseek-v4-pro`, ligne n8n supprimée, tags mis à jour
-- ✅ **bureau-michel/n8n/ping-workflow.md** : bandeau OBSOLÈTE ajouté
-- ✅ **bureau-michel/n8n/rapport-n8n-leo-20260619.md** : bandeau OBSOLÈTE ajouté
-- ✅ **bureau-michel/rapport-audit-leo-2026-07-05.md** : bandeau PÉRIMÉ + obsolescence documentée
-- ✅ **bureau-virginie/presentation.md** : modèle `deepseek-chat`→`deepseek-v4-pro`
-- ✅ **bureau-sylvia/analyse-bot-voyage-sylvia.md** : bureau→sylvia, wiki-sync→drive-sync
+- ✅ **guide-hermes-complet/bavi-pour-les-nuls.md** : diagramme 4→5 profils/bots, +bureau-robert dans la table des bots, 38→39 crons
+- ✅ **guide-hermes-complet/02-configurer-assistant.md** : 4× gemini-2.5-flash → gemini-3.5-flash, 38→39 crons
 
-## 🟠 Majeures corrigées
+## 🟡 Modérées corrigées (50/50)
 
-- ✅ **index.md** : crons 38 déjà en place, bureaux clarifiés (9 conceptuels / 5 profils)
-- ✅ **bureau-virginie** : modèle uniformisé à `deepseek-v4-pro`
-- ✅ **bureau-sylvia** : interop Sophie→Robert, skill `bureau-sophie`→`bureau-robert`
+### Correction massive 38→39 crons (46 occurrences)
+- ✅ **index.md** : ligne d'en-tête + tableau KPI + footer
+- ✅ **guide-hermes-complet/01-decouvrir-hermes.md** : 4 occurrences
+- ✅ **guide-hermes-complet/02-configurer-assistant.md** : 1 occurrence
+- ✅ **guide-hermes-complet/03-bureaux-bavi.md** : 3 occurrences
+- ✅ **guide-hermes-complet/05-dashboards-crons.md** : 3 occurrences
+- ✅ **guide-hermes-complet/06-partie-des-dix.md** : 1 occurrence
+- ✅ **guide-hermes-complet/07-annexes-cli.md** : 2 occurrences + 44→45 actifs
+- ✅ **guide-hermes-complet/09-prompts-notebooklm.md** : 3 occurrences
+- ✅ **guide-hermes-complet/bavi-pour-les-nuls.md** : 3 occurrences
+- ✅ **guide-hermes-complet/index.md** : 1 occurrence
+- ✅ **bureau-michel/presentation.md** : 1 occurrence
 
-## 🟡 Modérées corrigées
+### Correction gemini-2.5 → 3.5 (4 occurrences)
+- ✅ **guide-hermes-complet/04-skills.md** : 1×
+- ✅ **guide-hermes-complet/06-partie-des-dix.md** : 2×
 
-- ✅ **bureau-sylvia/analyse-scope-skills-workflows.md** : interop Sophie→Robert dispatch
-- ✅ **bureau-leo/dossiers/dossier-skoda-enyaq.md** : bureau-sylvia→bureau-leo
-- ✅ **bureau-robert/archive/vision-ia-solidaris-transcription.md** : typo `a-analyser`→`à analyser`
-- ✅ **bureau-sophie/analyse-scope-skills-workflows.md** : chemin corrigé
+## Non modifiés (archives)
 
-## Vérité terrain (18/07/2026)
-
-- 9 bureaux conceptuels, 5 profils Hermes, 5 bots Telegram
-- 38 crons (leo-copilot exclusif)
-- 1 dashboard unifié (leo-dashboard)
-- n8n : retiré le 13/07/2026 — tous les docs marqués OBSOLÈTE
-- Modèle Michel/Virginie : `deepseek-v4-pro`
+Les fichiers dans `bureau-michel/archive/`, `bureau-robert/archive/`, et `guide-hermes-complet-archive.md` conservent leurs données historiques. Les références n8n/Docker y sont documentaires.
 
 ---
 
-> 🤖 Dernier audit : 18/07/2026 à 08:45 (UTC+2) — correction massive 37 anomalies
+> 🤖 Dernier audit : 19/07/2026 à 06:25 (UTC+2)

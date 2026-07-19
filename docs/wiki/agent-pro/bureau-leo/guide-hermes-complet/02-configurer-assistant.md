@@ -145,7 +145,7 @@ Pas de clé API, pas de compte, tout tourne chez vous.
 export GEMINI_API_KEY=votre_clé_ici
 
 # Configuration
-hermes config set model.default gemini-2.5-flash
+hermes config set model.default gemini-3.5-flash
 ```
 
 ### Vérification de l'installation
@@ -740,7 +740,7 @@ Gemini peut servir de provider de secours si le principal est indisponible.
 # Dans config.yaml — comme fallback
 fallback_providers:
   - provider: google
-    model: gemini-2.5-flash
+    model: gemini-3.5-flash
 ```
 
 Stockez la clé dans `.env` :
@@ -788,7 +788,7 @@ providers:
 
 fallback_providers:
   - provider: google
-    model: gemini-2.5-flash
+    model: gemini-3.5-flash
 ```
 
 Ce n'est pas grave si votre fichier `config.yaml` est plus ou moins complexe. L'important est qu'il fonctionne pour **vous**.
@@ -889,7 +889,7 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Michel, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 38 crons automatisés (+6 hôte)
+- 39 crons automatisés (+6 hôte)
 - 1 dashboard central (4 onglets)
 - 3 workflows n8n (2 actifs, historiques)
 - Les gateways Hermes
@@ -906,7 +906,7 @@ Exemple de configuration pour un profil spécialisé infra :
 model:
   default: deepseek-v4-pro        # Modèle puissant pour l'infra
   provider: deepseek
-fallback_providers: '[{"provider": "gemini", "model": "gemini-2.5-flash"}]'
+fallback_providers: '[{"provider": "gemini", "model": "gemini-3.5-flash"}]'
 display:
   language: fr
 timezone: Europe/Brussels
