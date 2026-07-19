@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 19/07/2026 à 18:00**
+> **Généré automatiquement le 20/07/2026 à 00:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (39 jobs)
 <!-- AUTO:END header -->
 
@@ -50,14 +50,14 @@
 | 29 | 🔄 drive-sync | `0 * * * *` | script | ✅ |
 | 30 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script | ✅ |
 | 31 | 🔍 Audit Infra (cohérence globale) | `0 * * * *` | script | ✅ |
-| 32 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
-| 33 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
-| 34 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
-| 35 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
-| 36 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
-| 37 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
-| 38 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
-| 39 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
+| 32 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
+| 33 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
+| 34 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
+| 35 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
+| 36 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
+| 37 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
+| 38 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
+| 39 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
 
 <!-- AUTO:END hermes-crons -->
 
@@ -72,4 +72,4 @@
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 19/07/2026 à 18:00_
+_Généré automatiquement le 20/07/2026 à 00:00_
