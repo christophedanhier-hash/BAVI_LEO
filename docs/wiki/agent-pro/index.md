@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 19/07/2026 à 22:00*
+*Généré automatiquement le 19/07/2026 à 23:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -78,4 +78,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 19/07/2026 22:00*
+*Index consolidé généré par `agent-pro-index.py` — 19/07/2026 23:00*
