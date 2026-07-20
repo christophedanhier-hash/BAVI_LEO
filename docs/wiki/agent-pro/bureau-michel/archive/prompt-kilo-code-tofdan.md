@@ -120,3 +120,6 @@ sudo cp -r * /var/www/tofdan.be/
 sudo chown -R www-data:www-data /var/www/tofdan.be/
 sudo systemctl reload nginx
 ```
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -374,3 +374,6 @@ CC (3 500 kg) + remorque chargée (644 kg + 370 kg = 1 014 kg)
 ---
 
 *Document produit par 🤖 Bureau LEO — BAVI LEO*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

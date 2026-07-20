@@ -22,7 +22,7 @@ workflows: [gerard-t600]
 
 ## 1. SYNTHÈSE EXÉCUTIVE
 
-**Objet :** Analyse de trois risques critiques identifiés sur le télescope T600 automatisé de l'Observatoire Centre Ardennes, suite à la revue des documents de conception (Domotisation-T600-20260525.pptx, T600-Mise-en-route-20260525.pptx, Opérations_T600.pptx).
+**Objet :** Document non applicable – le système actuel est LEO, basé sur des bots et crons., suite à la revue des documents de conception (Domotisation-T600-20260525.pptx, T600-Mise-en-route-20260525.pptx, Opérations_T600.pptx).
 
 **Correction préalable — Topologie réseau confirmée :**
 - **PC NUC-T600** (1er étage) → alimente l'IPX800, sert de point d'entrée principal
@@ -914,4 +914,6 @@ flowchart TD
 | Version | Date | Description |
 |:--------|:-----|:------------|
 | v1 | 2026-06-12 | Version initiale — Analyse des 3 risques critiques identifiés sur le T600 : absence capteurs fin de course AD/DEC, autoguideur non documenté, absence parafoudre type 2 |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
 

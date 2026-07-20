@@ -20,7 +20,7 @@ type: analyse
 
 ### 1.1 Contexte
 
-**LEO** est le bot central de l'écosystème BAVI (Bureaux Agentiques Virtuels). Il est le point d'entrée unique de **Christophe** pour tous les sujets : documentation, analyses, emails, classification, et gouvernance des bureaux.
+**LEO** est l'ensemble des profils agentiques centraux de l'écosystème BAVI (Bureaux Agentiques Virtuels). Il est le point d'entrée unique de **Christophe** pour tous les sujets : documentation, analyses, emails, classification, et gouvernance des bureaux.
 
 Contrairement aux autres bots (Sylvia pour les voyages, Michel pour l'infra, Emile pour les études), LEO est **polyvalent** et **orchestrateur** — il ne fait pas un métier, il les coordonne tous.
 
@@ -40,9 +40,11 @@ Contrairement aux autres bots (Sylvia pour les voyages, Michel pour l'infra, Emi
 | Utilisateur | Interaction | Fréquence |
 |:------------|:------------|:---------:|
 | 🧑‍✈️ **Christophe** (propriétaire) | DM Telegram quotidien | 🔴 Quotidienne |
-| 🔧 **Michel** (bot infra) | Sync skills + mémoire (30 min) | 🟡 Continue |
-| 🧭 **Sylvia** (bot voyage) | Sync skills (30 min) | 🟢 Continue |
-| 🎓 **Emile** (bot études) | Sync skills (30 min) | 🟢 Continue |
+| 🤖 **leo-copilot** (bot orchestrateur) | Sync skills + mémoire (continu) | 🔴 Quotidienne |
+| 🤖 **default** (bot par défaut) | Sync skills (30 min) | 🟡 Continue |
+| 🤖 **bureau-robert** (bot conseil) | Sync skills (30 min) | 🟢 Continue |
+| 🤖 **bavi-leo** (bot backup) | Sync skills (30 min) | 🟢 Continue |
+| 🤖 **emile** (bot études) | Sync skills (30 min) | 🟢 Continue |
 
 ### 1.4 Chiffres clés
 
@@ -52,9 +54,9 @@ Contrairement aux autres bots (Sylvia pour les voyages, Michel pour l'infra, Emi
 | Messages échangés | 13 089 |
 | Bureaux gérés | 10 |
 | Skills installés | 112 |
-| Crons automatisés | 30 |
+| Crons automatisés | 39 |
 | Emails classifiés | 3 240 |
-| Modèle | DeepSeek V4 Flash |
+| Modèle | DeepSeek Flash, Qwen 2.5 7B, OpenAI, Gemini, Grok, Anthropic |
 
 ---
 
@@ -72,7 +74,7 @@ graph TB
         L[Agent LEO<br/>Profil default<br/>DeepSeek Flash]
         SK[Skills BAVI<br/>10 bureaux]
         MB[Memoire<br/>431 sessions]
-        CR[Crons<br/>30 automatismes]
+        CR[Crons<br/>39 automatismes]
     end
 
     subgraph "🧠 Bureaux dispatches"
@@ -385,3 +387,6 @@ flowchart LR
 ---
 
 *Analyse produite par 🏛️ Bureau Robert — BAVI LEO*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

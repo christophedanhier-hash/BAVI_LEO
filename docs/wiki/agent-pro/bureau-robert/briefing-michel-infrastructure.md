@@ -135,3 +135,6 @@ Robert est un **profil Hermes dédié** (`bureau-robert`) qui orchestre 16 exper
 
 *Document produit par Robert 🏛️ à destination de Michel 🛡️*
 *Juillet 2026*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

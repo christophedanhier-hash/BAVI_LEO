@@ -1257,3 +1257,6 @@ flowchart LR
 ---
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

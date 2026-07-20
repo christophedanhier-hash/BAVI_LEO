@@ -26,7 +26,18 @@ title: "Audit Penguin — Debian 13, 6.3GB RAM"
 | Port | Service |
 |---|---|
 | 22 | SSH (ouvert) |
-| 46502 | Kilo Code (?) |
+| 53 | DNS |
+| 80 | HTTP |
+| 443 | HTTPS |
+| 631 | CUPS |
+| 3389 | RDP |
+| 5901 | VNC |
+| 7681 | TTYD |
+| 8123 | ? |
+| 8765 | Panel Dashboard |
+| 9119 | Hermes Dashboard |
+| 11434 | Ollama |
+| 20241 | ? |
 | **IP Tailscale** | 100.113.110.40 |
 | **Hostname TS** | penguin |
 
@@ -44,7 +55,7 @@ title: "Audit Penguin — Debian 13, 6.3GB RAM"
 | Python | 3.13.5 |
 | Node | 20.20.2 |
 | VS Code | Installé (actif) |
-| Kilo Code | Actif (port 46502) |
+| Kilo Code | ❌ Non installé |
 | Docker | ❌ Non installé |
 
 ## Clés SSH Autorisées (4)
@@ -68,3 +79,6 @@ title: "Audit Penguin — Debian 13, 6.3GB RAM"
 - RAM disponible faible (1.5 GB), risque de saturation
 - Si Terminal Crostini ne s'ouvre plus → `vmc stop termina` dans Crosh
 *Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

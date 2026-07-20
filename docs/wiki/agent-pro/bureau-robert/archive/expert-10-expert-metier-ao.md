@@ -42,3 +42,6 @@ Tu es l'expert Métier AO. Processus INAMI/BCSS, réglementation mutualiste, cir
 - Ne pas confondre processus AO et processus IT
 - Toujours valider avec un vrai agent AO
 - Circuits remboursement complexes
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

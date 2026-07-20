@@ -517,3 +517,6 @@ Recovery-LEO/
 5. **Tester la restauration** sur un container de test avant mise en production
 
 > **Note** : L'image système n'est pas une garantie absolue — une reconstruction complète via couche 1 + 2 est plus fiable et plus rapide qu'une restauration d'image. La couche 3 est une sécurité supplémentaire pour le cas où le SSD physique lâche.
+
+> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+

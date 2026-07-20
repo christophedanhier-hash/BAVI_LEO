@@ -44,3 +44,6 @@ Tu sécurises les appels API IA : proxy, caching, rate limiting, tokens, gateway
 - Coûts tokens explosent sans monitoring
 - Caching intelligent : -40 à 60% coûts
 - Data residency : Europe obligatoire
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

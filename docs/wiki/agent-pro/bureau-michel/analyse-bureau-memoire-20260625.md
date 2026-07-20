@@ -99,7 +99,7 @@ sequenceDiagram
     BOT->>DS: [Système prompt + plan + chapitre]
     
     alt Chapitre < 128K tokens
-        DS-->>BOT: Analyse, suggestions
+        Compléter le diagramme (ex: retour de réponse) ou remplacer par un diagramme valide.alyse, suggestions
     else Chapitre > 128K tokens
         BOT->>GM: [Même contexte]
         GM-->>BOT: Analyse, suggestions
@@ -309,3 +309,6 @@ L'architecture couvre tout le cycle :
 - Logs : `/opt/data/logs/gateways/emile/`
 
 *Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 25/06/2026, implémenté et documenté 26/06/2026*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

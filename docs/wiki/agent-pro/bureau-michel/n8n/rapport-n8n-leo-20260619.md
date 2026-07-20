@@ -21,7 +21,7 @@ statut: finalise
 
 Ce rapport étudie l'installation de **n8n** (plateforme d'automatisation workflow open source, v2.27.1 stable) sur le serveur **LEO** — Debian 13 (trixie) hébergeant déjà Hermes Agent, Ollama et Tailscale.
 
-**Conclusion :** L'installation est **faisable immédiatement** avec un niveau de risque faible. La méthode **Docker (`network=host`)** est recommandée pour sa simplicité opérationnelle, son isolation, sa faible empreinte mémoire (~300–500 Mo RAM) et sa maintenance quasi nulle. Deux scripts de déploiement sont déjà prêts dans `/opt/data/n8n/`.
+**Conclusion :** n8n a été retiré le 13/07/2026. L'automatisation est désormais gérée par des crons Python autonomes orchestrés par leo-copilot. pour sa simplicité opérationnelle, son isolation, sa faible empreinte mémoire (~300–500 Mo RAM) et sa maintenance quasi nulle. Les scripts de déploiement n8n ont été supprimés car la solution a été migrée.
 
 La seule contrainte technique identifiée est un **bug de routage Docker NAT ↔ Tailscale** impactant certains appels API internes (login POST 401) — sans conséquence pour l'usage normal via navigateur. Un SSH tunnel ou l'IP locale contourne le problème si nécessaire.
 
@@ -471,3 +471,6 @@ curl -w "\n%{http_code}" http://localhost:5678/healthz
 
 ---
 *Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+

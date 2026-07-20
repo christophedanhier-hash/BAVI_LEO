@@ -73,3 +73,6 @@
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
 _Généré automatiquement le 20/07/2026 à 06:00_
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

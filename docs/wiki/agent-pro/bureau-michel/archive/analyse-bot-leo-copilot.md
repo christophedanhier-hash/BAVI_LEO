@@ -20,9 +20,9 @@ type: analyse
 
 ### 1.1 Contexte
 
-**Michel** (profil `leo-copilot`) est le bot **infrastructure** de l'écosystème BAVI. Il porte le bureau **Michel — Infra_Hermes** et gère tout ce qui touche au fonctionnement technique de la plateforme Hermes Agent : crons, dashboards, n8n, Google APIs, Git, skills, budget, machines, réseau.
+**Michel** (profil `leo-copilot`) est le bot **infrastructure** de l'écosystème BAVI. Il porte le bureau **Michel — Infra_Hermes** et gère tout ce qui touche au fonctionnement technique de la plateforme Hermes Agent : crons, dashboards, Google APIs, Git, skills, budget, machines, réseau.
 
-|Contrairement à LEO (polyvalent/documentation) et Sylvia (voyage), Michel a un scope **purement technique** — il ne fait ni analyses business, ni roadbooks, ni consultations. Son modèle est DeepSeek V4 Pro (le plus puissant) car ses tâches sont complexes.
+|Contrairement à LEO (polyvalent/documentation) et Sylvia (voyage), Michel a un scope **purement technique** — il ne fait ni analyses business, ni roadbooks, ni consultations. Michel utilise plusieurs modèles d'IA (DeepSeek, OpenAI, Gemini, Grok, Anthropic) et un modèle local Ollama qwen2.5:7b, selon les besoins.
 
 > 🔑 **Changement majeur (v2)** : Michel dispose désormais de l'**accès root complet** sur la machine LEO (`sudo` sans restriction). Il est devenu le **padron de la machine** et peut tout faire : installation système, configuration Nginx, pare-feu (UFW), DNS, certificats SSL, tunnels Cloudflare, ports réseau — sans dépendre de CodeWhale. L'ère CodeWhale est révolue pour LEO.
 
@@ -31,7 +31,7 @@ type: analyse
 | Objectif | Description |
 |:---------|:------------|
 | 🏗️ **Installer & maintenir** les services système (Nginx, Cloudflare, DNS, SSL, UFW) | CodeWhale remplacé ✅ |
-| ⚙️ **Maintenir** l'infrastructure Hermes (30 crons, 8 dashboards) |
+| ⚙️ **Maintenir** l'infrastructure Hermes (39 crons, 8 dashboards) |
 | 🛠️ **Dépanner** les services (gateways, conteneurs, SSH, tunnels) |
 | 📊 **Surveiller** les machines (LEO, Yoga, Penguin — CPU, RAM, disque) |
 | 💰 **Suivre** le budget DeepSeek ($19,46 solde, suivi horaire) |
@@ -391,3 +391,6 @@ flowchart LR
 ---
 
 *Analyse produite par 🏛️ Bureau Robert — BAVI LEO*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+

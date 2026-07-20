@@ -48,7 +48,7 @@ Le **Bureau de la Connaissance** comble ce vide.
 | 💬 **Recherche** | Christophe dit « qu'avait-on dit sur X ? » | Lancer le Bibliothécaire | Immédiat | Robert |
 | ⚡ **Seuil** | Même sujet 3× en 30 jours | Alerte : « pattern détecté » | Automatique | **Michel** 🔧 |
 
-> **Note infrastructure :** Les crons programmés et l'automatisation par seuil sont gérés par **Michel** (responsable infrastructure Hermes). Voir section 6.
+> **Note infrastructure :** Les crons programmés et l'automatisation par seuil sont gérés par **leo-copilot** (responsable infrastructure). Voir section 6.
 
 ---
 
@@ -140,3 +140,6 @@ Robert → active Mémorialiste + Analyste →
 
 *Document : Référentiel du Bureau de la Connaissance — v1*
 *Produit par Robert 🏛️ — Juillet 2026*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

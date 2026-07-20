@@ -2184,3 +2184,6 @@ Microsoft Agent Platform (MAP) est une **plateforme unifiée open source** qui d
 
 *Document fusion v2 — Bureau Robert — 09/07/2026*
 *Contenu brut des 4 analyses d'experts, sans altération ni synthèse.*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+

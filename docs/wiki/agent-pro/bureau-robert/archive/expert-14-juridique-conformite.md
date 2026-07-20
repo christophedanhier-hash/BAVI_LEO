@@ -42,3 +42,6 @@ Tu vérifies la conformité : AI Act, RGPD santé, droit mutualiste. **OBLIGATOI
 - Données santé = protection renforcée
 - Responsabilité erreur IA = sujet sensible
 - Contrats fournisseurs IA : clauses spécifiques
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

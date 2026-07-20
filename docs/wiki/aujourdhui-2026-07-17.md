@@ -64,3 +64,6 @@ Aucune session active détectée aujourd'hui.
 ---
 
 *Généré par LEO — 17/07/2026 23:00*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

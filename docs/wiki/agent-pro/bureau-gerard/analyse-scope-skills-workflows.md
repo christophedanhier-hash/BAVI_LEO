@@ -2,7 +2,7 @@
 date: 2026-07-08
 bureau: bureau-gerard
 version: v1
-modele: deepseek-v4-flash
+modele: qwen2.5:7b
 tags: [analyse, scope, skills, workflows, bavi-leo, t600]
 statut: finalise
 type: analyse
@@ -26,7 +26,7 @@ Le **Bureau Gérard** est dédié à la documentation technique du projet **T600
 
 | Skill | Rôle | Usage |
 |-------|------|-------|
-| **bureau-gerard** ⭐ | Skill principal | Orchestrateur — 6 experts, dispatch conditionnel |
+| **bureau-robert** ⭐ | Skill principal | Orchestrateur — ... |
 | **bureau-versioning** | Versioning analyses | Gestion des versions des docs T600 |
 
 **Expertise :** DeepSeek Flash 80% (rédaction courante), DeepSeek Pro 20% (audits complexes).
@@ -46,11 +46,9 @@ Le **Bureau Gérard** est dédié à la documentation technique du projet **T600
 
 ## 🔄 Workflows définis
 
-### Workflow complet — 7 phases BAVI
+### Workflows actuels
 
-```
-① CADRAGE → ② DISPATCH → ③ PRODUCTION → ④ CROISEMENT → ⑤ SYNTHÈSE → ⑥ LIVRABLE → ⑦ ARCHIVAGE
-```
+Les tâches sont gérées par des crons Python autonomes orchestrés par leo-copilot. Aucun workflow BAVI n'est actif.
 
 | Phase | Description | Parallélisable |
 |:-----:|-------------|:--------------:|
@@ -81,3 +79,6 @@ Gérard n'appelle pas d'autres bureaux actuellement. Ces documents sont archivé
 | document-reference-t600.md | v1 |
 | analyse-risques-t600.md | v1 |
 | formation-operateur-t600.md | v1 |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -42,7 +42,7 @@ Bienvenue dans le guide **Hermès pour les Nuls**, entièrement refactorisé en 
 
 - **Refactorisation** : 1 fichier monolithique (6442 lignes) → 10 chapitres indépendants
 - **n8n** : marqué historique/déprécié (remplacé par scripts Python)
-- **Crons** : 13/14 → **38 Hermes + 6 hôte**
+- **Crons** : 13/14 → **33 Hermes + 6 hôte**
 - **Robert** : 8 → **16 experts** + bot Telegram
 - **Multi-profils** : remplace la règle "un seul profil"
 - **Bureau Connaissance** : ajouté aux 10 bureaux
@@ -55,3 +55,6 @@ Bienvenue dans le guide **Hermès pour les Nuls**, entièrement refactorisé en 
 ---
 
 *Document mis à jour le 18/07/2026 à 14:00 — Léo 🦁 | v5.0*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

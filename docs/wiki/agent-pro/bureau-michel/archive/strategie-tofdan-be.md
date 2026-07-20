@@ -11,7 +11,7 @@ type: analyse
 # 🌐 Stratégie d'hébergement — tofdan.be
 
 > **Objectif :** Migrer le site www.tofdan.be de Google Sites vers le serveur LEO
-> **Orchestrateur :** 🤖 LEO | **Code :** 💻 GitHub Copilot | **Infra hôte :** 🐋 CodeWhale | **Infra conteneur :** 🔧 Michel
+> **Orchestrateur :** 🤖 LEO | **Code :** 💻 GitHub Copilot | **Infra hôte :** 🐋 leo-copilot | **Infra conteneur :** 🔧 Michel
 
 ---
 
@@ -35,7 +35,7 @@ Internet
 🌐 Cloudflare (DNS, cache, DDOS protection) — optionnel
   ↓ IP du serveur LEO
 🏠 Serveur LEO (hôte)
-  └── 🐋 CodeWhale installe :
+  └── 🐋 leo-copilot installe :
       ├── Nginx ou Caddy (serveur web)
       ├── Certbot (HTTPS Let's Encrypt)
       └── Reverse proxy (si plusieurs services)
@@ -50,7 +50,7 @@ graph TB
     DNS --> NGINX[Nginx<br/>Port 80/443]
     NGINX --> FILES[📁 /var/www/tofdan.be/<br/>HTML, CSS, JS]
     
-    subgraph "Installé par CodeWhale"
+    subgraph "Installé par default"
         NGINX
         CERT[Certbot<br/>Let's Encrypt]
     end
@@ -59,7 +59,7 @@ graph TB
         FILES
     end
     
-    subgraph "Surveillé par Michel"
+    subgraph "Surveillé par bureau-robert"
         MONIT[Monitoring uptime<br/>Dashboard]
     end
 ```
@@ -68,14 +68,14 @@ graph TB
 
 ## 3. 📋 Plan d'action
 
-### Phase 1 — Installation serveur (🐋 CodeWhale)
+### Phase 1 — Installation serveur (🐋 leo-copilot)
 
 | # | Tâche | Responsable |
 |:-:|:------|:-----------:|
-| 1 | Installer Nginx ou Caddy sur l'hôte | 🐋 CodeWhale |
-| 2 | Configurer le virtual host pour tofdan.be | 🐋 CodeWhale |
-| 3 | Installer Certbot + générer certificat HTTPS | 🐋 CodeWhale |
-| 4 | Configurer le pare-feu (ports 80, 443) | 🐋 CodeWhale |
+| 1 | Installer Nginx ou Caddy sur l'hôte | 🐋 leo-copilot |
+| 2 | Configurer le virtual host pour tofdan.be | 🐋 leo-copilot |
+| 3 | Installer Certbot + générer certificat HTTPS | 🐋 leo-copilot |
+| 4 | Configurer le pare-feu (ports 80, 443) | 🐋 leo-copilot |
 | 5 | Vérifier que le site répond en HTTP + HTTPS | 🐋 + 🔧 Michel |
 
 **Estimation :** ~30 min
@@ -162,7 +162,7 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 ---
 
-### 🐋 CodeWhale — Installation serveur hôte (hors conteneur)
+### 🐋 leo-copilot — Installation serveur hôte (hors conteneur)
 
 **Contexte :** Le site www.tofdan.be doit migrer de Google Sites vers un auto-hébergement sur le serveur LEO (Linux, Ubuntu, IP 100.92.102.28 via Tailscale). Le serveur fait déjà tourner Hermes Agent dans un conteneur Docker. L'installation doit se faire sur l'HÔTE, pas dans le conteneur.
 
@@ -272,3 +272,6 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 ---
 
 *Analyse produite par 🤖 LEO — BAVI LEO*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

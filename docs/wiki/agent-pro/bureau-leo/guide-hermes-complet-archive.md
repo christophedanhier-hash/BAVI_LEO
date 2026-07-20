@@ -3,7 +3,7 @@ date: 2026-07-18
 bureau: bureau-leo
 auteur: LEO
 version: v5.0
-modele: deepseek-v4-flash
+modele: qwen2.5:7b (Ollama) + deepseek, openai, gemini, grok, anthropic
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture, bavi]
 statut: archive
 type: livre
@@ -17,7 +17,7 @@ hide:
 
 # Hermès pour les Nuls 🦁 (ARCHIVE)
 
-> **Note :** Ce guide documente l'architecture au 18/07/2026. Mise à jour v5.0 : n8n déprécié, crons 38+6, Robert 16 experts, multi-profils, bureau Connaissance ajouté.
+> **Note :** Ce guide documente l'architecture au 18/07/2026. Mise à jour v5.0 : n8n retiré (13/07/2026), workflows Docker supprimés, migré vers crons Python, crons 39, Robert <nombre_actuel> experts, multi-profils, bureau Connaissance ajouté.
 
 ## Construire son propre assistant IA avec LEO
 
@@ -36,9 +36,9 @@ Ce livre vous guide pas à pas, de l'installation d'Hermes sur votre machine jus
 - **Partie I — Découvrir Hermès** : comprendre ce qu'est un agent IA, pourquoi Hermes, et l'architecture de LEO
 - **Partie II — Configurer votre assistant** : installer le gateway, choisir vos providers, créer vos premiers bots
 - **Partie III — Les Bureaux BAVI** : organiser vos connaissances avec le système de bureaux
-- **Partie IV — La Puissance des Skills** : exploiter 117 skills prêts à l'emploi et créer les vôtres
+- **Partie IV — La Puissance des Skills** : exploiter <nombre_actuel> skills prêts à l'emploi et créer les vôtres
 - **Partie V — Dashboards et Monitoring** : visualiser tout avec 1 dashboard central (4 onglets), audit rédactionnel automatisé
-- **Partie VI — Automatisation et Crons** : faire tourner 13 tâches planifiées + daemon sans lever le petit doigt
+- **Partie VI — Automatisation et Crons** : faire tourner 39 crons actifs + daemon sans lever le petit doigt
 - **Partie VII — La Partie des Dix** : les astuces, commandes et ressources qui sauvent
 
 ### Public visé
@@ -171,7 +171,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
 
 - **[Ch.8 — Skills : le super-pouvoir d'Hermès](02-configurer/ch08-skills.md)**
   - Qu'est-ce qu'un skill ?
-  - Les 117 skills de LEO : classification et navigation
+  - Les <nombre_actuel> skills de LEO : classification et navigation
   - Installer, charger, et utiliser des skills
   - Skills système vs skills utilisateur
 
@@ -5582,7 +5582,7 @@ Le code source, les issues, les discussions. Idéal pour suivre les évolutions,
 
 🌐 **christophedanhier-hash.github.io/BAVI_LEO**
 
-La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 38 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
+La documentation complète de l'écosystème LEO : 10 bureaux, <nombre_actuel> skills, 38 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
 
 ## 4. Le guide Hermès pour les Nuls
 
@@ -6441,3 +6441,6 @@ Vous avez rencontré un problème non listé ? Ouvrez une issue sur le [dépôt 
 ---
 
 *Document mis à jour le 18/07/2026 à 12:30 — Léo 🦁 | v5.0*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

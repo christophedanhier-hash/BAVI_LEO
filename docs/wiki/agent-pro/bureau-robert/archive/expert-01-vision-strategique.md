@@ -80,3 +80,6 @@ type: analyse-vision
 - Attention à ne pas être trop théorique : les recommandations doivent être **actionnables pour Solidaris**
 - Toujours contextualiser les benchmarks par rapport à la taille et au secteur de Solidaris
 - Éviter les recommandations qui nécessitent des investissements irréalistes sans l'avis du Budget (5)
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -67,3 +67,6 @@ Le **Bureau Versioning** est un **skill transverse** qui gère les versions des 
 ## 📊 État
 
 Cron auto-archive actif (toutes les 5 min, no_agent=true). Label `archive` créé sur BAVI_LEO.
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

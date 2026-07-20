@@ -42,3 +42,6 @@ Tu explores les cas d'usage IA dans la mutualité : veille, POC, prototypage. **
 - POC raté = résultat valide (apprentissage)
 - Définir critères succès POC avant
 - Éviter shiny object syndrome
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

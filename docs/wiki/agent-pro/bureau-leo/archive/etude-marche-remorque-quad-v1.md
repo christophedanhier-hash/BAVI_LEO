@@ -308,3 +308,6 @@ type: analyse
 ---
 
 *Analyse produite par 🤖 Bureau LEO — BAVI LEO*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

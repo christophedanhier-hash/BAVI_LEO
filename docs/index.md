@@ -2,7 +2,7 @@
 
 **Propulsé par [Hermes Agent](https://hermes-agent.nousresearch.com) · 🦁 LEO**
 
-> 39 crons Hermes automatisés · 6 crons hôte · 10 bureaux spécialisés · 1 dashboard unifié · 5 bots Telegram
+> 39 crons Hermes automatisés · 0 crons hôte · 10 bureaux spécialisés · 2 dashboards (Panel & Hermes) · 5 bots Telegram
 
 ---
 
@@ -275,4 +275,6 @@ flowchart LR
 
 ---
 
-> 🤖 Dernier audit : 19/07/2026 à 06:10 (UTC+2)
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+
+

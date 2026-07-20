@@ -1,6 +1,6 @@
 # 🏗️ Architecture des Processus — Bureau Michel
 
-> Analyse BPMN v2 — 01/07/2026 19:15 — 14 crons + 3→5 workflows n8n
+> Analyse BPMN v2 — 01/07/2026 19:15 — 39 crons Python autonomes
 > **Statut réel : 15/15 tests OK** (test-all-processes.py)
 
 ## 🩺 Diagnostic n8n (01/07 — 19:00)
@@ -62,13 +62,13 @@ graph TB
 
 La couche de contrôle est désormais dans **n8n** (pas de tokens LLM, tracing natif, exécutions traçables) :
 
-| # | Daemon | Trigger | Action |
+| # | Cron Python | Schedule | Action |
 |---|---|---|---|
-| 1 | **Alerte LEO** | Webhook `/leo-alert` | Forward vers Telegram |
-| 2 | **Data Freshness** | Schedule */5min | Si leo-unified.json > 15min → POST Alerte LEO |
-| 3 | **Budget Alert** | Schedule 2×/jour | Si balance < $10 → POST Alerte LEO |
-| 4 | **Cron Error Escalation** | Schedule */15min | Si cron en erreur 3× consécutives → POST Alerte LEO |
-| 5 | **Dashboard Health** | Schedule */5min | Si dashboard HTTP ≠ 200 → POST Alerte LEO |
+| 1 | **Alerte LEO** | continu (écoute via API) | Forward alerte vers Telegram |
+| 2 | **Data Freshness** | */5min | Vérifie âge de leo-unified.json ; si >15min → déclenche alerte |
+| 3 | **Budget Alert** | 2×/jour | Vérifie balance DeepSeek ; si < $10 → alerte |
+| 4 | **Cron Error Escalation** | */15min | Lit state.db ; si erreur 3× consécutive → alerte |
+| 5 | **Dashboard Health** | */5min | HTTP GET sur dashboard ; si ≠200 → alerte |
 
 ## ⏱️ Chronogramme
 
@@ -122,3 +122,6 @@ python3 /opt/data/scripts/test-all-processes.py
 | Data | Collector, Freshness, Dashboard | 3/3 ✅ |
 | Monitoring | Crons, Builds, Archives | 3/3 ✅ |
 | Services | Email, BAVI wiki | 2/2 ✅ |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+

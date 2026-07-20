@@ -2,7 +2,8 @@
 date: 2026-07-08
 bureau: bureau-virginie
 version: v1
-modele: deepseek-v4-flash
+modele: qwen2.5:7b
+providers: deepseek, openai, gemini, grok, anthropic
 tags: [analyse, scope, skills, workflows, bavi-leo]
 statut: finalise
 type: analyse
@@ -27,9 +28,9 @@ Le **Bureau Virginie** orchestre un **panel de médecins** pour le meilleur diag
 
 | Skill | Rôle | Usage |
 |-------|------|-------|
-| **bureau-virginie** ⭐ | Skill principal | Orchestratrice — 12+ experts médicaux, dispatch conditionnel |
-| **bureau-leo** | Analyse personnelle | Appelé pour analyse personnelle de santé |
-| **bureau-sophie** | Impact financier | Si parcours de soins avec impact financier |
+| **bavi-leo** | Bureau médical principal | Coordination des diagnostics et analyses |
+| **leo-copilot** | Assistant personnel | Gestion des crons, mémoire unifiée |
+| **bureau-robert** | Bureau financier | Analyse d'impact financier |
 
 **Expertise :** DeepSeek V4 Flash.
 
@@ -84,3 +85,6 @@ Rapport détaillé avec sections obligatoires : analyses complètes par spécial
 |--------|--------------|---------|
 | 🤖 **LEO** | Analyse personnelle de santé | Appel skill `bureau-leo` |
 | 💰 **Sophie** | Si parcours de soins avec impact financier | Appel skill `bureau-sophie` |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

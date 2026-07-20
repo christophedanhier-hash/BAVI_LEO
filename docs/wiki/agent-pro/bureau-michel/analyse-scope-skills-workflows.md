@@ -20,7 +20,7 @@ Le **Bureau Michel** est l'orchestrateur technique de l'infrastructure et du cod
 - Réseau : DNS, proxy, ports, firewall, Tailscale
 - Scripting Python/bash : automation, crons
 - Documentation technique : audits, rapports
-- Dashboard KPI, n8n, Ollama, Google APIs
+- Dashboard KPI, Ollama, Google APIs
 
 **🔑 Accès root complet** — Michel a `sudo` sans restriction sur la machine LEO.
 
@@ -92,3 +92,6 @@ Toute analyse produite par Michel est livrée **dans le wiki BAVI** (pas dans `/
 | 🏛️ **Robert** | Impact stratégique avant installation | Appel skill `bureau-robert` (phase ①/②) |
 | 💰 **Sophie** | Estimation coûts infrastructure (TCO) | Appel skill `bureau-sophie` (phase ①/②) |
 | 📝 **Gérard** | Documentation technique liée au T600 | Appel skill `bureau-gerard` (phase ⑥) |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -48,3 +48,6 @@ Tu es l'expert Budget & TCO. Tu modélises les coûts : investissement, licensin
 - Coûts cloud récurrents variables
 - Licensing Microsoft : vérifier contrats Solidaris
 - Marge 15-20%
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

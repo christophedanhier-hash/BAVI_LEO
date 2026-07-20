@@ -67,3 +67,6 @@ title: "Audit Penguin — Debian 13, 6.3GB RAM"
 - VS Code + Kilo Code = ~2 GB RAM à eux seuls
 - RAM disponible faible (1.5 GB), risque de saturation
 - Si Terminal Crostini ne s'ouvre plus → `vmc stop termina` dans Crosh
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -1,6 +1,6 @@
 ---
 date: 2026-06-26
-bureau: bureau-michel
+bureau: bureau-robert (or appropriate)
 version: v3.0
 modele: deepseek-v4-pro
 tags: [gpu, llm, local, deepseek, gemma4, qwen3, llama4, open-models, hardware, infrastructure, analyse]
@@ -39,9 +39,11 @@ type: analyse
 
 > Données réelles extraites de HuggingFace le 26/06/2026.
 
-### Les 5 modèles open-source majeurs
+### Local model currently in use
 
-| Modèle | Architecture | Params | VRAM Q4 | VRAM Q6 | VRAM Q8 | ⭐ Likes | 📥 Downloads |
+| Modèle | Architecture | Params | Quant |
+|:-------|:------------|:------:|:-----:|
+| **Qwen 2.5 7B** | Dense | 7B | Q4 (4GB) |
 |:-------|:------------|:------:|:------:|:------:|:------:|:--------:|:------------:|
 | **Gemma 4 31B** | Dense | 31B | 18 GB | 25 GB | 34 GB | 3 062 | 11.2M |
 | **Gemma 4 26B-A4B** | MoE (4B actifs) | 26B | 16 GB | 22 GB | 30 GB | 1 190 | 13.2M |
@@ -53,7 +55,9 @@ type: analyse
 
 ### Compatibilité 32 GB (RTX 3050 + RTX 3090)
 
-| Modèle | Q4 (18-19 GB) | Q6 (25-26 GB) | Q8 (30-34 GB) | Vitesse estimée |
+| Modèle | Quant | VRAM | Vitesse estimée |
+|:-------|:-----:|:----:|:---------------|
+| **Qwen 2.5 7B** | Q4_K_M | ~5 GB | ~60 tok/s |
 |:-------|:-------------:|:-------------:|:-------------:|:---------------|
 | **Gemma 4 31B** | ✅ Large | ✅ Confortable | ❌ 34 GB | ~35 tok/s Q6 |
 | **Gemma 4 26B MoE** | ✅ Large | ✅ Large | ✅ 30 GB | 🚀 **80+ tok/s** |
@@ -109,8 +113,11 @@ Le gap n'est plus de 50% comme avec les petits modèles. À 85%, la différence 
 
 ## ⑥ LIVRABLE
 
-- **Fichier :** `/opt/data/hermes-christophe/BAVI/AGENT-PRO/bureau-michel/analyse-gpu-local-ia-20260626.md`
+- **Fichier :** `/opt/data/hermes-christophe/BAVI/AGENT-PRO/bureau-robert (or appropriate)/analyse-gpu-local-ia-20260626.md`
 - **Version :** v3.0 — Tous modèles open-source juin 2026
 - **Recommandation :** RTX 3090 24GB (~700€) + Gemma 4 26B MoE Q8 = remplacement DeepSeek Flash pour chat quotidien
 
 *Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 26/06/2026*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

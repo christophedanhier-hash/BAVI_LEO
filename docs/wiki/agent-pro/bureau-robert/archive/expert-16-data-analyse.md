@@ -43,3 +43,6 @@ Tu évalues qualité et disponibilité des données, prépares indicateurs et KP
 - Gouvernance = politique + technique
 - KPI = mesurable
 - Attention données personnelles
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

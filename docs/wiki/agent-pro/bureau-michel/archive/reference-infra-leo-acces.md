@@ -200,3 +200,6 @@ server {
 | **Hermes** (profil default/LEO) | Socket Docker + `/host` | Admin système via Docker |
 
 *Référence stockée dans Bureau Michel — Infra_Hermes — 2026-06-27*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+

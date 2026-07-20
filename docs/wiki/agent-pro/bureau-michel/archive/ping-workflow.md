@@ -68,3 +68,6 @@ Payload de création (POST /rest/workflows) :
 | Version | Date | Description |
 |:--------|:-----|:------------|
 | v1 | 19/06/2026 | Version initiale — Workflow LEO Ping |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+

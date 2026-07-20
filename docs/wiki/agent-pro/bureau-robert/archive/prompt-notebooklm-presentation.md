@@ -108,3 +108,6 @@ Les 3 documents suivants sont déjà importés dans le notebook :
 1. `dossier-strategique-copilot-cowork-20260716.md` — Analyse détaillée Cowork
 2. `note-strategique-predictions-amodei-20260716.md` — Prédictions IA
 3. `evolution-bureau-robert-v2-ia-business.md` — Contexte et gouvernance Robert
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

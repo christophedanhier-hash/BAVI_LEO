@@ -41,3 +41,6 @@ Tu accompagnes la transformation : impact organisationnel, adoption. Obligatoire
 - Impliquer utilisateurs tôt
 - Résistances = informations
 - Accompagnement post-déploiement 3-6 mois
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

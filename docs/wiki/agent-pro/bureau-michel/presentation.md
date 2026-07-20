@@ -36,5 +36,9 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 
 ## Modèle
 
-- **Provider** : DeepSeek Pro (puissant pour le code et l'infra)
-- **Mémoire** : indépendante — pas de mémoire partagée
+- **Providers** : DeepSeek, OpenAI, Gemini, Grok, Anthropic (selon les tâches)
+- **Modèle local** : qwen2.5:7b (Ollama)
+- **Mémoire** : unifiée entre les profils default et leo-copilot
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -50,8 +50,8 @@ type: index
 |:--------|:------------|:------:|
 | Structure dossier + index | Robert | ✅ Fait |
 | Contenu des documents | Robert | ✅ Fait |
-| **Cron veille hebdomadaire** | **Michel** 🔧 | ⬜ À configurer |
-| **Cron détection patterns** | **Michel** 🔧 | ⬜ À configurer |
+| **Cron veille hebdomadaire** | **leo-copilot** 🔧 | ✅ Actif |
+| **Cron détection patterns** | **leo-copilot** 🔧 | ✅ Actif |
 | Automatisation des scans | **Michel** 🔧 | ⬜ À configurer |
 
 > Les crons et l'automatisation sont gérés par **Michel** (infrastructure Hermes).
@@ -59,3 +59,6 @@ type: index
 ---
 
 *Index généré manuellement — Mettre à jour à chaque nouveau document.*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

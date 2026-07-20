@@ -9,12 +9,12 @@ statut: finalise
 type: documentation-transfert
 ---
 
-# 🧭 Transfert de Compétence — Bot Voyage Sylvia → Kratos
+# 🧭 Transfert de Compétence — Bot Voyage Sylvia → Kratos (à créer)
 
-> **Document de transfert** pour que **Kratos** (l'agent Hermès de **John**) puisse reconstruire intégralement le système **Sylvia — Agence de Voyage**
+> **Document de transfert** pour que **Kratos (à créer)** (l'agent Hermès de **John**) puisse reconstruire intégralement le système **Sylvia — Agence de Voyage**
 > 
 > **De :** BAVI LEO — Bureau Sylvia  
-> **À :** Kratos — Plateforme Vermès de John  
+> **À :** Kratos (à créer) — Plateforme Vermès de John  
 > **Date :** 13/07/2026 | **Version :** v2
 
 ---
@@ -29,7 +29,7 @@ type: documentation-transfert
 6. [Modèle économique](#6-modèle-économique)
 7. [Références et templates](#7-références-et-templates)
 8. [Pièges à éviter](#8-pièges-à-éviter)
-9. [Checklist déploiement Kratos](#9-checklist-déploiement-kratos)
+9. [Checklist déploiement Kratos (à créer)](#9-checklist-déploiement-kratos)
 
 ---
 
@@ -37,7 +37,7 @@ type: documentation-transfert
 
 ### 1.1 Qu'est-ce que Sylvia ?
 
-**Sylvia** est un assistant de voyage intelligent, déployé comme bot Telegram `@bavi_leo_voyages_bot`. Elle fonctionne comme **une agence de voyage complète** capable de gérer tous modes de transport et hébergements pour planifier des voyages sur mesure.
+**Sylvia** est un assistant de voyage intelligent, déployé comme bot Telegram `@bavi_leo`. Elle fonctionne comme **une agence de voyage complète** capable de gérer tous modes de transport et hébergements pour planifier des voyages sur mesure.
 
 ### 1.2 Capacités
 
@@ -72,7 +72,7 @@ graph TB
         T[Telegram Groupe]
     end
 
-    subgraph "🧠 Hermes Agent (Kratos)"
+    subgraph "🧠 Hermes Agent (Kratos (à créer))"
         PRO[Profil isolé kratos]
         SK[Skill bureau-kratos]
         MEM[Mémoire & Sessions]
@@ -111,7 +111,7 @@ graph TB
 
 ```mermaid
 flowchart LR
-    U[👤 Utilisateur] -->|message Telegram| S[🧠 Kratos]
+    U[👤 Utilisateur] -->|message Telegram| S[🧠 Kratos (à créer)]
     S -->|recherche web| W[🌐 Sites]
     S -->|génère| R[📄 Roadbook .md]
     S -->|génère| C[🗺️ Carte Folium .html]
@@ -147,12 +147,12 @@ Le skill doit impérativement contenir ces sections :
 
 | Section | Contenu |
 |:--------|:--------|
-| **Rôle** | Définition : "Tu es Kratos, l'agent de voyage" |
+| **Rôle** | Définition : "Tu es Kratos (à créer), l'agent de voyage" |
 | **Contexte multi-utilisateurs** | Gestion du groupe Telegram, identification des personnes |
 | **Pièges à éviter** | Tous les lessons learned (format table) |
 | **Production du roadbook** | Workflows A à L |
 | **Format de sortie** | Dates belges, distances routières |
-| **Périmètre** | Ce que Kratos fait / ne fait pas |
+| **Périmètre** | Ce que Kratos (à créer) fait / ne fait pas |
 | **Tarification** | Abonnements et forfaits |
 | **Types de documents** | Roadbook vs Note PDF |
 
@@ -160,9 +160,9 @@ Le skill doit impérativement contenir ces sections :
 
 | Variable | Valeur BAVI LEO | À adapter pour John |
 |:---------|:----------------|:--------------------|
-| Nom du bot | Sylvia | Kratos |
+| Nom du bot | Sylvia | Kratos (à créer) |
 | Profil Hermes | `bavi-leo` | `kratos` (ou nom choisi) |
-| Bot Telegram | @bavi_leo_voyages_bot | @nom_du_bot_de_john |
+| Bot Telegram | @bavi_leo | @nom_du_bot_de_john |
 | GitHub Org | christophedanhier-hash | john-org |
 | Repo wiki | voyages-wiki | voyages-wiki |
 | URL wiki | christophedanhier-hash.github.io/voyages-wiki | john.github.io/voyages-wiki |
@@ -191,7 +191,7 @@ hermes profile create kratos
 
 ```bash
 # Via @BotFather sur Telegram
-/newbot → KratosTravelBot → @kratos_travel_bot
+/newbot → Kratos (à créer)TravelBot → @kratos_travel_bot
 # Puis configurer dans Hermes :
 hermes config set telegram.bot_token "VOTRE_TOKEN"
 ```
@@ -199,7 +199,7 @@ hermes config set telegram.bot_token "VOTRE_TOKEN"
 ### 4.3 GitHub Repository — Wiki de voyages
 
 ```bash
-gh repo create voyages-wiki --public --description "Wiki des voyages Kratos"
+gh repo create voyages-wiki --public --description "Wiki des voyages Kratos (à créer)"
 ```
 
 Structure du repo :
@@ -225,7 +225,7 @@ voyages-wiki/
 
 ```yaml
 # mkdocs.yml
-site_name: "Voyages Kratos"
+site_name: "Voyages Kratos (à créer)"
 site_url: https://john.github.io/voyages-wiki/
 theme:
   name: material
@@ -243,7 +243,7 @@ nav:
 ### 4.5 Google Drive
 
 ```
-GDrive/Kratos/
+GDrive/Kratos (à créer)/
 ├── brouillons/
 └── references/
 ```
@@ -438,14 +438,14 @@ HTML(string=html).write_pdf(f"docs/{voyage}/roadbook-{voyage}.pdf")
 | Modifications non pushées | Commit + push immédiat après chaque modif |
 | Mise à jour partielle | Vérifier TOUTES les sections, pas seulement l'évidente |
 | Oubli des coûts (transparence) | Mettre à jour les 4 fichiers : roadbook, index, carte, PDF |
-| Nom du bot mal orthographié | Le bot voyage = Kratos |
+| Nom du bot mal orthographié | Le bot voyage = Kratos (à créer) |
 | Confusion entre voyageurs | Toujours identifier qui parle |
 | Réservation préexistante oubliée | Demander "Avez-vous déjà des réservations ?" |
 | Spot nuit mal choisi | Demander "Camping ou parking gratuit ?" |
 | Campings absents d'OSM | Géocoder l'adresse postale ou la ville |
 | Historique des lieux demandé | Ajouter `> 📜 **Un peu d'histoire :** ...` par étape |
 
-### 8.3 Règles d'or pour Kratos
+### 8.3 Règles d'or pour Kratos (à créer)
 
 1. **Un roadbook = 3 fichiers** : `index.md` + `carte.html` + `roadbook-xxx.pdf`
 2. **Toute modification = commit + push immédiat**
@@ -458,7 +458,7 @@ HTML(string=html).write_pdf(f"docs/{voyage}/roadbook-{voyage}.pdf")
 
 ---
 
-## 9. Checklist déploiement Kratos
+## 9. Checklist déploiement Kratos (à créer)
 
 ### Phase 1 — Création du compte et infrastructure
 
@@ -471,7 +471,7 @@ HTML(string=html).write_pdf(f"docs/{voyage}/roadbook-{voyage}.pdf")
 | 5 | Configurer le token Telegram dans Hermes |
 | 6 | Créer le repo GitHub `voyages-wiki` |
 | 7 | Configurer GitHub Pages (mkdocs.yml + GitHub Actions) |
-| 8 | Créer le dossier Google Drive `Kratos/` |
+| 8 | Créer le dossier Google Drive `Kratos (à créer)/` |
 | 9 | Configurer Gmail API (client OAuth + token) |
 
 ### Phase 2 — Installation du skill
@@ -502,7 +502,7 @@ HTML(string=html).write_pdf(f"docs/{voyage}/roadbook-{voyage}.pdf")
 
 | # | Action |
 |:-:|:-------|
-| 1 | Présenter Kratos aux amis de John dans le groupe Telegram |
+| 1 | Présenter Kratos (à créer) aux amis de John dans le groupe Telegram |
 | 2 | Distribuer le guide utilisateur |
 | 3 | Lancer le 1er vrai voyage |
 | 4 | Vérifier les coûts réels après 1 mois |
@@ -551,9 +551,9 @@ gmail.users().messages().send(userId="me", body={"raw": raw}).execute()
 ### B. Exemple de page d'accueil du wiki
 
 ```markdown
-# 🌍 Voyages Kratos
+# 🌍 Voyages Kratos (à créer)
 
-Bienvenue sur le wiki des voyages organisés par **Kratos** !
+Bienvenue sur le wiki des voyages organisés par **Kratos (à créer)** !
 
 ## Voyages John 🧑‍✈️
 
@@ -580,5 +580,8 @@ Bienvenue sur le wiki des voyages organisés par **Kratos** !
 
 ---
 
-*Document produit par 🤖 Bureau LEO pour transfert vers 🏛️ Kratos (Vermès / John)*
+*Document produit par 🤖 Bureau LEO pour transfert vers 🏛️ Kratos (à créer) (Vermès / John)*
 *BAVI LEO — Juillet 2026*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

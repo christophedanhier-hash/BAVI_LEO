@@ -1,5 +1,5 @@
 ---
-date: 2026-06-27
+date: 2026-07-14
 bureau: bureau-robert
 version: v1.0
 modele: deepseek-v4-pro
@@ -10,7 +10,7 @@ type: note
 
 # 💻 Prompt pour Kilo Code — Développement site tofdan.be
 
-> **Contexte :** Tu es Kilo Code, assistant code utilisant DeepSeek V4 Pro. Tu travailles dans VS Code sur le poste de Christophe. Tu dois créer le nouveau site www.tofdan.be pour remplacer l'actuel Google Sites.
+> **Contexte :** Tu es leo-copilot, assistant code utilisant le modèle local qwen2.5:7b et les providers deepseek, openai, gemini, grok, anthropic. Tu travailles sur le serveur LEO via SSH, avec les outils en ligne de commande. Tu dois créer le nouveau site www.tofdan.be pour remplacer l'actuel Google Sites.
 
 ---
 
@@ -121,3 +121,6 @@ sudo chown -R www-data:www-data /var/www/tofdan.be/
 sudo systemctl reload nginx
 ```
 *Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

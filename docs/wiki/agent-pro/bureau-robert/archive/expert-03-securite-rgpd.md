@@ -68,3 +68,6 @@ Tu es **l'expert Sécurité & RGPD** du Bureau Robert. Tu maîtrises la cybersé
 - L'AI Act évolue — vérifier la version la plus récente
 - NIS2 s'applique au secteur santé
 - AIPD quasi-systématique pour les projets IA avec données de santé
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

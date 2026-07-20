@@ -42,3 +42,6 @@ Tu crées supports, ateliers, vulgarisation IA pour équipes non techniques.
 - Ateliers pratiques > présentations
 - Adapter vocabulaire au public
 - Suivi : formation continue
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

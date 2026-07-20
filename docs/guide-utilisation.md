@@ -3,7 +3,7 @@ date: 2026-07-18
 bureau: bureau-leo
 auteur: LEO
 version: v2
-modele: deepseek-v4-flash
+modele: deepseek
 tags: [guide, utilisation, documentation, bavi-leo]
 statut: ✅ À jour
 type: guide
@@ -31,10 +31,14 @@ Tous les documents produits par les bureaux BAVI LEO sont accessibles depuis le 
 
 | Modèle | Usage |
 |:-------|:------|
-| **DeepSeek Flash** | 80% des analyses — rédaction, notes, suivi courant |
-| **DeepSeek Pro** | Analyse complexes, infrastructure, code |
-| **Ollama Qwen 2.5** | 7B local — veille IA, prototypage, tests gratuits |
-| **Gemini 3.5** | Fallback en cas d'indisponibilité DeepSeek |
+| Modèle / Fournisseur | Usage |
+|:-------|:------|
+| **DeepSeek** | Analyses courantes et complexes |
+| **OpenAI** | Analyses complémentaires |
+| **Gemini** | Fallback |
+| **Grok** | Recherche et novveautés |
+| **Anthropic** | Sécurité et éthique |
+| **Ollama qwen2.5:7b** | Veille locale, prototypage, tests gratuits |
 
 ---
 
@@ -104,7 +108,7 @@ date: 2026-07-18
 bureau: bureau-leo
 auteur: LEO
 version: v1
-modele: deepseek-v4-flash
+modele: deepseek
 tags: [sujet, mots-clés]
 statut: ✅ Finalisé
 type: analyse|rapport|note|dossier|guide
@@ -123,3 +127,6 @@ type: analyse|rapport|note|dossier|guide
 ---
 
 *Document mis à jour le 18/07/2026 à 11:00 — Léo 🦁*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

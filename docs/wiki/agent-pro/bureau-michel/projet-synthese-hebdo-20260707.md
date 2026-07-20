@@ -83,3 +83,6 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 - Analyse initiale : `analyse-fable-leo-20260707.md`
 - Modèle : qwen2.5:7b (Ollama, 6.1 GB, ~20 tok/s)
 - API Ollama : `http://100.92.102.28:11434/v1`
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -471,3 +471,6 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 ---
 
 *Analyse produite par 🤖 Bureau LEO — BAVI LEO*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

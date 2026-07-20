@@ -84,3 +84,6 @@ type: analyse-architecture
 - Attention aux dépendances implicites (un changement API peut impacter 5 systèmes)
 - Les schémas Mermaid sont OBLIGATOIRES pour toute proposition d'architecture
 - Tenir compte des contraintes de sécurité du secteur mutualiste belge
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

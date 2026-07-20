@@ -1,8 +1,8 @@
 ---
 date: 2026-06-25
-bureau: bureau-virginie
+bureau: bureau-robert
 version: v2
-modele: deepseek-v4-flash
+modele: qwen2.5:7b
 tags: [virginie, consultation, sylvie, medical, diagnostique, pluridisciplinaire]
 statut: finalise
 ---
@@ -362,3 +362,6 @@ Le tableau clinique de Sylvie est dominé par un **diabète de type 2 évolué e
 ---
 
 *Rapport généré par 🩺 Virginie — Bureau d'Orchestration Médicale BAVI LEO | 25/06/2026*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

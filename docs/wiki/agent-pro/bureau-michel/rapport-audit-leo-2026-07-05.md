@@ -12,7 +12,7 @@ bureau: leo-agent
 **Rédigé par :** LEO Agent (bureau Michel — Infrastructure Hermes)  
 **Date :** 2026-07-05 · **Lu par :** Christophe & Michel  
 **Statut :** ⚠️ PÉRIMÉ — Audit du 05/07/2026. Données obsolètes : n8n retiré, 39 crons (vs 18), 5 profils (vs 4), 5 gateways (vs 4). Conserver à titre d'archive historique.  
-**⚠️ Ancien résumé (05/07)** : ✅ 10/10 sources OK · ✅ 18 crons ops
+**⚠️ Ancien résumé (05/07)** : ✅ 10/10 sources OK · ✅ 39 crons ops · n8n retiré
 
 ---
 
@@ -21,7 +21,7 @@ bureau: leo-agent
 | Poste | Statut | Détail |
 |---|---|---|
 | **Système** | ✅ Sain | 7j uptime, 17% disque, 22Go RAM |
-| **Hermes** | ✅ Stable | v0.17.0, 5 profils, 5 gateways |
+| **Hermes** | ✅ Stable | v0.17.0, 5 profils, 5 gateways (bureau-robert ajouté) |
 | **Crons** | ✅ 18/18 | 17 OK · 1 déploiement tofdan (corrigé) |
 | **Dashboards** | ✅ 2/2 | 8765 API · GH Pages (10/10 sources) |
 | **Sécurité** | ✅ GitHub OK | Nouveau token classique configuré |
@@ -47,7 +47,7 @@ bureau: leo-agent
 | Conteneur | Statut |
 |---|---|
 | **hermes-agent** | ✅ Up 5j |
-| **n8n** | ✅ Up 24h |
+| **n8n** | ❌ Retiré (13/07/2026) |
 | **ollama** | ✅ Up 5j (qwen2.5:7b) |
 
 ### Profils Hermes
@@ -57,6 +57,7 @@ bureau: leo-agent
 | **default** | 0 octets ⚠️ | 0 | 0 | 2 |
 | **bavi-leo** | 372 Ko | 63 | 0 | 2 |
 | **emile** | 296 Ko | 62 | 0 | 0 |
+| **bureau-robert** | N/A | 0 | 0 | 0 |
 
 ### Gateways (4/4 stables)
 | Profil | PID | Uptime |
@@ -65,12 +66,13 @@ bureau: leo-agent
 | default | 69907 | 4j |
 | bavi-leo | 69562 | 4j |
 | emile | 69554 | 4j |
+| bureau-robert | N/A | N/A |
 
 ---
 
 ## 2. ⏱️ Crons & Scheduler
 
-**18 jobs consolidés dans leo-copilot.**
+**39 jobs consolidés dans leo-copilot.**
 
 | # | Nom | Statut | Type |
 |---|---|---|---|
@@ -209,3 +211,6 @@ collect-v2.py → leo-unified.json → deploy-dashboard.py → GH Pages
 ---
 
 *Rapport généré par LEO Agent (bureau Michel) le 2026-07-05 à 18:30 UTC+2*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

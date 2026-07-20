@@ -77,7 +77,7 @@ Après évaluation de qwen2.5:7b (❌ switch chinois, 32K contexte insuffisant) 
 
 | Modèle | Raison |
 |---|---|
-| qwen2.5:7b | ❌ Switch chinois, 32K contexte, hallucinations |
+| qwen2.5:7b | ✅ Utilisé localement via Ollama (port 11434) |
 | Gemini 2.5 Pro | ❌ Thinking tokens coûteux (96% de la sortie = pensée) |
 | Gemini 3.1 Pro | ❌ Idem — Pro models trop chers pour usage étudiant |
 | Gemini 2.0 Flash | ❌ Retiré par Google |
@@ -162,3 +162,6 @@ Règle : Gemini 3.5 n'est appelé que si DeepSeek échoue
 ---
 
 *Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 25/06/2026*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

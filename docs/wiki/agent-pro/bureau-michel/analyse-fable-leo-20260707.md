@@ -107,3 +107,6 @@ docker exec ollama ollama run fable-moe "Hello, what can you do?"
 - Rapports liés : `analyse-acces-credentials-20260630.md` (infra GPU du 30/06)
 - Modèle recommandé : https://huggingface.co/tvall43/Qwen3.6-14B-A3B-FableVibes-GGUF
 - Backup : https://huggingface.co/empero-ai/Qwable-9B-Claude-Fable-5-GGUF
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

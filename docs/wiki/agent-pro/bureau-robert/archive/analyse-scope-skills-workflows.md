@@ -2,7 +2,7 @@
 date: 2026-07-08
 bureau: bureau-robert
 version: v1
-modele: deepseek-v4-flash
+modele: qwen2.5:7b (local) avec deepseek comme provider
 tags: [analyse, scope, skills, workflows, bavi-leo, pro]
 statut: finalise
 type: analyse
@@ -78,3 +78,6 @@ Le **Bureau Robert** est l'orchestrateur du **cabinet de conseil virtuel IT**, d
 ## 📊 État
 
 Le Bureau Robert n'a pas encore de documents déposés dans AGENT-PRO (pas d'analyse PRO produite à ce jour).
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

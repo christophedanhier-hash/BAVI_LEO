@@ -218,3 +218,6 @@ type: analyse
 ---
 
 *Document mis à jour le 18/07/2026 à 10:02 — Léo 🦁*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

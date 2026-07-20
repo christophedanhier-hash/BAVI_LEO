@@ -11,7 +11,7 @@ statut: proposition
 
 ## 📊 Contexte
 
-**Bureau Michel v1.1** couvre ~38% des responsabilités réelles de Leo Copilot (5/13 domaines). L'essentiel est concentré sur n8n + Docker. Les dashboards, crons, Hermes config, Google APIs, Git, mémoire, skills, machines et budget ne sont pas couverts par des patterns de dispatch.
+**Bureau Michel v1.1** couvre ~38% des responsabilités réelles de Leo Copilot (5/13 domaines). L'essentiel est concentré sur les crons Python autonomes (ex-n8n). Les dashboards, crons, Hermes config, Google APIs, Git, mémoire, skills, machines et budget ne sont pas couverts par des patterns de dispatch.
 
 **Objectif** : étendre le skill pour couvrir 100% des domaines infra avec des patterns de dispatch conditionnel, enrichir les pitfalls avec l'expérience récente (migration 0.17.0), et intégrer le partage cross-profil avec Leo Hermes.
 
@@ -54,7 +54,7 @@ Ajout des pièges découverts depuis le 19/06 :
 ### 4. Section cross-profil 🆕
 
 Documenter la frontière Leo Copilot ↔ Leo Hermes :
-- Leo Copilot : dashboards, n8n, Drive, machines, skills, Git, mémoire
+- Leo Copilot : dashboards, Drive, crons Python, machines, skills, Git, mémoire
 - Leo Hermes : crons (default), wikis, Veille IA, backups, emails
 - Règle : ne pas modifier les crons du profil default depuis leo-copilot
 
@@ -88,3 +88,6 @@ Cette analyse a été produite directement (pas de sous-agents) — le skill am�
 ---
 
 *Analyse produite par le **Bureau Michel** — Modèle : **DeepSeek Pro** — Date : **24/06/2026***
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

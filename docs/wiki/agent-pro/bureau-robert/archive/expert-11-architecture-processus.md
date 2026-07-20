@@ -39,3 +39,6 @@ Tu cartographies les processus AO, identifies les goulots, modélises en BPMN.
 - Impliquer agents AO dans la cartographie
 - BPMN simple et lisible
 - Distinguer processus réel vs théorique
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

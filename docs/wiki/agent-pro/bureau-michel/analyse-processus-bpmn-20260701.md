@@ -68,16 +68,11 @@ graph TB
     DASHHEALTH --> ALERTE
 ```
 
-## 🛡️ Daemons n8n — Plateforme auto-contrôlée
+## 🛡️ Daemons crons Python — Plateforme auto-contrôlée
 
-La couche de contrôle est désormais dans **n8n** (pas de tokens LLM, tracing natif, exécutions traçables) :
+La couche de contrôle est désormais dans **les crons Python autonomes** (pas de tokens LLM, tracing natif, exécutions traçables) :
 
-| # | Daemon | Trigger | Action |
-|---|---|---|---|
-| 1 | **Alerte LEO** | Webhook `/leo-alert` | Forward vers Telegram |
-| 2 | **Data Freshness** | Schedule */5min | Si leo-unified.json > 15min → POST Alerte LEO |
-| 3 | **Budget Alert** | Schedule 2×/jour | Si balance < $10 → POST Alerte LEO |
-| 4 | **Cron Error Escalation** | Schedule */15min | Si cron en erreur 3× consécutives → POST Alerte LEO |
+Tous les daemons sont des scripts Python schedulés via crons gérés par leo-copilot. Voir crons actifs (39 crons).eur 3× consécutives → POST Alerte LEO |
 | 5 | **Dashboard Health** | Schedule */5min | Si dashboard HTTP ≠ 200 → POST Alerte LEO |
 
 ## ⏱️ Chronogramme
@@ -132,3 +127,6 @@ python3 /opt/data/scripts/test-all-processes.py
 | Data | Collector, Freshness, Dashboard | 3/3 ✅ |
 | Monitoring | Crons, Builds, Archives | 3/3 ✅ |
 | Services | Email, BAVI wiki | 2/2 ✅ |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -38,7 +38,7 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 | Conteneur | Image | Ports | Statut |
 |-----------|-------|-------|--------|
 | `hermes-agent` | nousresearch/hermes-agent | host | ✅ --network host |
-| `n8n` | n8nio/n8n | 5678 | ✅ HTTP 200 |
+| `n8n` | (retiré) | - | ❌ Retiré le 13/07/2026, workflows migrés vers crons Python |
 | `ollama` | ollama/ollama | 11434 | ✅ qwen2.5:7b |
 
 **Socket Docker** : ✅ accessible (RW), permet contrôle total des conteneurs.
@@ -60,6 +60,24 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 |-----------|--------|
 | **Clé API** | ✅ stockée dans `.env` |
 | **Modèle** | `gemini-2.5-flash` |
+
+### 3.3 OpenAI
+| Propriété | Valeur |
+|-----------|--------|
+| **Clé API** | ✅ stockée dans `.env` |
+| **Modèle** | gpt-4o |
+
+### 3.4 Grok
+| Propriété | Valeur |
+|-----------|--------|
+| **Clé API** | ✅ stockée dans `.env` |
+| **Modèle** | grok-2 |
+
+### 3.5 Anthropic
+| Propriété | Valeur |
+|-----------|--------|
+| **Clé API** | ✅ stockée dans `.env` |
+| **Modèle** | claude-3-opus |
 
 ### 3.3 Google (OAuth)
 | Token | Scopes | Statut |
@@ -171,3 +189,6 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 ---
 
 *Analyse générée le 30/06/2026 à 23:30 (CEST) — À valider et mettre à jour dans Bureau Michel.*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -126,3 +126,6 @@ Le guide a été écrit AVANT le crash du 30/06. Les leçons du crash (sessions 
 | 2 | Crons 25/30 | 🟢 | Audit avant correction |
 | 7 | Token Google | 🟢 | Vérifier avant d'écrire |
 | 8 | Installation | 🟢 | Vérifier doc officielle |
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

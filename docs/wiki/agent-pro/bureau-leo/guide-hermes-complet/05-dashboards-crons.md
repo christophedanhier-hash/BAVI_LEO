@@ -12,7 +12,7 @@ hide:
 ---
 
 > **Dernière mise à jour rédactionnelle :** 18/07/2026 — Léo 🦁
-> **Partie V+VI — Dashboards, Monitoring, Crons & Watchdogs :** 39 crons Hermes + 6 hôte, 1 dashboard central (4 onglets, 20 KPI), auto-heal, sync Drive ↔ GitHub | **Audit rédactionnel :** ✅ conforme | **n8n** marqué ⚠️ historique déprécié
+> **Partie V+VI — Dashboards, Monitoring, Crons & Watchdogs :** 39 crons (gérés par leo-copilot), 1 dashboard central (4 onglets, 20 KPI), auto-heal, sync Drive ↔ GitHub | **Audit rédactionnel :** ✅ conforme | **n8n** retiré le 13/07/2026
 
 # Partie V — Dashboards et Monitoring
 
@@ -1117,3 +1117,6 @@ Règle: GitHub gagne en cas de conflit.
 ---
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

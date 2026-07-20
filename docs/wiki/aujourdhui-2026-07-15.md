@@ -6,11 +6,11 @@
 
 | Métrique | Valeur |
 |----------|:------:|
-| **Crons actifs** | 37 ✅ |
+| **Crons actifs** | 39 ✅ |
 | **Crons en erreur** | 0 |
 | **Viessmann** | ⏸️ PAUSE — token expiré, pas de régénération prévue |
 | **Dashboard** | ✅ 8765 + 9119 en ligne |
-| **Gateways** | 4/4 UP (default, leo-copilot, bavi-leo, emile) |
+| **Gateways** | 5/5 UP (default, leo-copilot, bureau-robert, bavi-leo, emile) |
 
 ### Crons — Aucun problème
 
@@ -54,3 +54,6 @@ Aucune session active détectée aujourd'hui.
 ---
 
 *Généré par LEO — 15/07/2026 23:00*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

@@ -36,3 +36,6 @@ Je suis joignable sur Telegram via **@hermes_leo_bot** (profil `default`).
 
 - **Provider** : DeepSeek Flash (rapide, économique)
 - **Mémoire** : indépendante — pas de mémoire partagée avec les autres profils
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+

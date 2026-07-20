@@ -358,3 +358,6 @@ Le « droit d'accès à la nature » permet de camper **sauvagement** en Suède 
 
 *Roadbook généré par le **Bureau Sylvia** (BAVI LEO) — 16 juin 2026*
 *Premier test opérationnel de BAVI LEO 🚀*
+
+> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+
