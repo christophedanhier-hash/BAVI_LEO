@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 20/07/2026 à 11:00*
+*Généré automatiquement le 20/07/2026 à 13:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -14,11 +14,11 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 14/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 6 | N/A |
-| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 17 | 18/07/2026 |
+| [🤖 Bureau LEO — Dossiers & Analyses](bureau-leo/) | Voir le skill | 18 | 19/07/2026 |
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 49 analyse(s) sur l'ensemble des bureaux.**
+**Total : 50 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -28,6 +28,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
 | N/A | 🧭 Bureau Sylvia — Voyages | — | ~~🇮🇹 Voyage Italie — Septembre/Octobre 2026~~ ⚠️ | — | ⚠️ Non conforme |
 | N/A | 🧭 Bureau Sylvia — Voyages | — | ~~Scandinavie 2026 🚐🇪🇺🇩🇪🇸🇪🇳🇴~~ ⚠️ | — | ⚠️ Non conforme |
+| 19/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v2.0 | [Etude de marche — Achat de 2 velos electriques pliables ENGWE](bureau-leo/etude-marche-velos-electriques/) | `leo` `velo` `electrique` `pliable` `etude-marche` `engwe` `achat` `l20-boost` `zip` `p275` | ✅ Complete | [📥](bureau-leo/etude-marche-velos-electriques/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-velos-electriques.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-velos-electriques.md) |
 | 18/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v5.0 | [🦁 Guide Hermès Refactorisé — v5.0](bureau-leo/guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` `bavi` `refactored` | ✅ À jour | [📥](bureau-leo/guide-hermes-complet/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/index.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/index.md) |
 | 18/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1.0 | [Prompts NotebookLM - Presentation & Video](bureau-leo/guide-hermes-complet/09-prompts-notebooklm/) | `hermes` `guide` `notebooklm` `presentation` `video` `prompts` `strategie` | ✅ Nouveau | [📥](bureau-leo/guide-hermes-complet/09-prompts-notebooklm/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/09-prompts-notebooklm.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/09-prompts-notebooklm.md) |
 | 18/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v5.0 | [Partie VII : La partie des Dix 🎯](bureau-leo/guide-hermes-complet/06-partie-des-dix/) | `hermes` `guide` `documentation` `dix-erreurs` `commandes` `extensions` `ressources` `bavi` | ✅ À jour | [📥](bureau-leo/guide-hermes-complet/06-partie-des-dix/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/06-partie-des-dix.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/06-partie-des-dix.md) |
@@ -78,4 +79,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 20/07/2026 11:00*
+*Index consolidé généré par `agent-pro-index.py` — 20/07/2026 13:00*
