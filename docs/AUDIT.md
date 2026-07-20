@@ -1,23 +1,22 @@
 # 📋 AUDIT — Journal des corrections BAVI LEO
 
-> Dernier audit : 20/07/2026 à 06:13 (UTC+2) — 13 anomalies corrigées dans BAVI_LEO
+> Dernier audit : 20/07/2026 à 00:50 (UTC+2) — 1 anomalie corrigée dans BAVI_LEO
 
-## 20/07/2026 — Audit massif
+## 20/07/2026 — Audit rédactionnel unifié
 
-### 🔴 Erreurs factuelles (6)
-- 3× journaux : 36/37 crons → 39
-- Rapport audit Michel : 38 crons, 4 profils → 39, 5
-- BAVI pour les nuls : 4 profils → 5
-- Prompts NotebookLM : 4 bots → 5
-- Guide ch01 : deepseek-chat → deepseek-v4-pro
+### 🔴 Anomalies corrigées (1)
+- `docs/wiki/crons.md` : H5 n8n backup → leo-daily-maintenance (artefact n8n retiré)
 
-### 🟠 Obsolescences (7)
-- Guide 02 : Docker+n8n+ollama → n8n retiré
-- Guide 03 : n8n v2.26.8 Docker actif → retiré
-- Guide 05 : n8n/crons/Docker → n8n retiré
-- BPMN : Docker, n8n → n8n retiré
-- Scope skills : n8n-automation → retiré
-- skills.md : n8n service → retiré
+### ✅ Vérifications sans anomalie
+- Guide complet Hermes (09 pages) : 💚 conforme
+- Bureaux BAVI (40+ pages) : 💚 conformes (contenus d'analyse, pas d'infra)
+- Archives : 💚 volontairement non auditées (référence historique)
+- Index et guides : 💚 conformes
+
+### 📊 Stats BAVI_LEO
+- **116 fichiers audités**
+- **1 anomalie corrigée**
+- **115 fichiers sans anomalie** (99% conformes)
 
 ---
 
