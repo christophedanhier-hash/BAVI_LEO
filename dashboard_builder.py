@@ -579,6 +579,8 @@ function loadAudit() {{
     }}
     document.getElementById('audit-summary').innerHTML = s;
     
+    // Filtrer les issues vides (type=null, msg=null)
+    issues = issues.filter(function(i){{ return i.type && i.msg; }});
     var h = '';
     issues.forEach(function(i){{
       var bg = i.type==='broken_link' ? 'rgba(248,81,73,.06)' : i.type==='incoherence' ? 'rgba(210,153,34,.06)' : 'var(--card)';
