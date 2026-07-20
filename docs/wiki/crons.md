@@ -1,17 +1,17 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 20/07/2026 à 18:00**
-> Source : `profiles/leo-copilot/cron/jobs.json` (40 jobs)
+> **Généré automatiquement le 21/07/2026 à 00:00**
+> Source : `profiles/leo-copilot/cron/jobs.json` (41 jobs)
 <!-- AUTO:END header -->
 
 ## Résumé
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **40** |
+| **Crons Hermes** (tous profils, consolidé) | **41** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
-| **Total général** | **46** |
+| **Total général** | **47** |
 
 ## Liste exhaustive des crons Hermes
 
@@ -35,30 +35,31 @@
 | 14 | 📓 Journaux Quotidiens (5 vaults) | `0 23 * * *` | LLM | ✅ |
 | 15 | 📝 Audit rédactionnel unifié (2 wikis, 1 passage) | `0 6 * * *` | LLM | ✅ |
 | 16 | 📝 docs-update | `0 */4 * * *` | script | ✅ |
-| 17 | 📡 Machine KPI Collector | `*/5 * * * *` | script | ✅ |
-| 18 | 📦 Auto-Archive BAVI LEO (5min) | `every 5m` | script | ✅ |
-| 19 | 📦 Cron Log Archiver (horaire) | `15 * * * *` | script | ✅ |
-| 20 | 📧 Check Gmail — emails importants (30min) | `every 30m` | script | ✅ |
-| 21 | 📧 Email Classifier — rule-based (inbox zero) | `*/30 * * * *` | script | ✅ |
-| 22 | 📷 Surveillance caméras — mouvement → Telegram | `*/5 * * * *` | script | ✅ |
-| 23 | 🔄 Auto-commit wikis (toutes les heures) | `0 * * * *` | script | ✅ |
-| 24 | 🔄 Déploiement auto tofdan.be | `5 * * * *` | script | ✅ |
-| 25 | 🔄 Gateway Auto-Restart | `*/15 * * * *` | script | ✅ |
-| 26 | 🔄 Rebuild Wiki BAVI local | `*/15 * * * *` | script | ✅ |
-| 27 | 🔄 Rebuild Wiki Voyages local | `15 * * * *` | script | ✅ |
-| 28 | 🔄 Refresh Google Tokens (50min) | `*/50 * * * *` | script | ✅ |
-| 29 | 🔄 drive-sync | `0 * * * *` | script | ✅ |
-| 30 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script | ✅ |
-| 31 | 🔍 Audit Infra (cohérence globale) | `0 * * * *` | script | ✅ |
-| 32 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
-| 33 | 🕐 Audit Qualité Crons (journalier) | `0 7 * * *` | script | ⚠️ |
-| 34 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
-| 35 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
-| 36 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
-| 37 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
-| 38 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
-| 39 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
-| 40 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
+| 17 | 📞 Point contact LEO (4×/jour) | `0 8,11,14,17 * * *` | LLM | ✅ |
+| 18 | 📡 Machine KPI Collector | `*/5 * * * *` | script | ✅ |
+| 19 | 📦 Auto-Archive BAVI LEO (5min) | `every 5m` | script | ✅ |
+| 20 | 📦 Cron Log Archiver (horaire) | `15 * * * *` | script | ✅ |
+| 21 | 📧 Check Gmail — emails importants (30min) | `every 30m` | script | ✅ |
+| 22 | 📧 Email Classifier — rule-based (inbox zero) | `*/30 * * * *` | script | ✅ |
+| 23 | 📷 Surveillance caméras — mouvement → Telegram | `*/5 * * * *` | script | ✅ |
+| 24 | 🔄 Auto-commit wikis (toutes les heures) | `0 * * * *` | script | ✅ |
+| 25 | 🔄 Déploiement auto tofdan.be | `5 * * * *` | script | ✅ |
+| 26 | 🔄 Gateway Auto-Restart | `*/15 * * * *` | script | ✅ |
+| 27 | 🔄 Rebuild Wiki BAVI local | `*/15 * * * *` | script | ✅ |
+| 28 | 🔄 Rebuild Wiki Voyages local | `15 * * * *` | script | ✅ |
+| 29 | 🔄 Refresh Google Tokens (50min) | `*/50 * * * *` | script | ✅ |
+| 30 | 🔄 drive-sync | `0 * * * *` | script | ✅ |
+| 31 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script | ✅ |
+| 32 | 🔍 Audit Infra (cohérence globale) | `0 * * * *` | script | ✅ |
+| 33 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
+| 34 | 🕐 Audit Qualité Crons (journalier) | `0 7 * * *` | script | ⚠️ |
+| 35 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
+| 36 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
+| 37 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
+| 38 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
+| 39 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
+| 40 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
+| 41 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
 
 <!-- AUTO:END hermes-crons -->
 
@@ -73,4 +74,4 @@
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 20/07/2026 à 18:00_
+_Généré automatiquement le 21/07/2026 à 00:00_
