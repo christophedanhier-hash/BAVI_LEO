@@ -1386,6 +1386,15 @@ async def api_audit_md(request: Request):
         return Response(content=md_file.read_text(), media_type="text/markdown")
     raise HTTPException(404, detail="Pas encore d'audit")
 
+@app.get("/api/audit/crons")
+async def api_audit_crons(request: Request):
+    """Rapport d'audit qualité des crons."""
+    if not check_token(request): raise HTTPException(401)
+    audit_file = Path("/home/tofdan/.hermes/metrics/cron-quality-audit.json")
+    if audit_file.exists():
+        return JSONResponse(json.loads(audit_file.read_text()))
+    return JSONResponse({"error": "Pas encore d'audit crons", "issues": [], "audit_type": "cron-quality", "timestamp": None})
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8765)

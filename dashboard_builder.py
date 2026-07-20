@@ -547,9 +547,8 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px" id="contacts-grid">Chargement...</div>
 </div>
 <div id="tab-audit" class="panel" style="padding:16px">
-  <div id="audit-summary" style="margin-bottom:12px"></div>
-  <div id="audit-list" style="max-height:600px;overflow-y:auto"></div>
-  <div style="margin-top:8px;font-size:10px;color:var(--dim);text-align:right" id="audit-updated"></div>
+  <div id="audit-redac" style="margin-bottom:16px"></div>
+  <div id="audit-crons"></div>
 </div>
 
 <script>
@@ -558,46 +557,77 @@ function loadAudit() {{
   if(_auditLoaded) return;
   _auditLoaded = true;
   var token = new URLSearchParams(window.location.search).get('token') || 'leo-panel-2026';
+
+  // Audit rédactionnel
   fetch('/api/audit?token='+token).then(function(r){{return r.json()}}).then(function(d){{
     var issues = d.issues || [];
     var summary = d.summary || {{}};
     var icons = {{duplicate:'🔄', broken_link:'🔗', incoherence:'⚠️', missing_wiki:'❌'}};
     var labels = {{duplicate:'Doublons', broken_link:'Liens cassés', incoherence:'Incohérences', missing_wiki:'Wiki manquant'}};
     
-    var s = '<div style="display:flex;gap:12px;margin-bottom:12px;font-size:13px;flex-wrap:wrap">';
-    s += '<span style="color:var(--text)">📋 Audit IA · '+d.total_files+' fichiers · '+d.model+'</span>';
-    s += '<span style="color:var(--dim);font-size:11px">'+d.timestamp+'</span>';
+    var s = '<h3 style=\"margin:0 0 8px;padding:0;border:none;font-size:14px\">📝 Audit Rédactionnel</h3>';
+    s += '<div style=\"display:flex;gap:12px;margin-bottom:8px;font-size:12px;flex-wrap:wrap\">';
+    s += '<span style=\"color:var(--text)\">'+d.total_files+' fichiers · '+d.model+'</span>';
+    s += '<span style=\"color:var(--dim);font-size:10px\">'+d.timestamp+'</span>';
     s += '</div>';
     
     var byType = summary.by_type || {{}};
     if(Object.keys(byType).length) {{
-      s += '<div style="display:flex;gap:12px;margin-bottom:12px;font-size:12px;flex-wrap:wrap">';
+      s += '<div style=\"display:flex;gap:10px;margin-bottom:8px;font-size:11px;flex-wrap:wrap\">';
       for(var t in byType) {{
-        s += '<span style="color:'+(t==='broken_link'?'#f85149':t==='incoherence'?'#d29922':'#8b949e')+'">'+icons[t]+' '+byType[t]+' '+(labels[t]||t)+'</span>';
+        s += '<span style=\"color:'+(t==='broken_link'?'#f85149':t==='incoherence'?'#d29922':'#8b949e')+'\">'+icons[t]+' '+byType[t]+' '+(labels[t]||t)+'</span>';
       }}
       s += '</div>';
     }}
-    document.getElementById('audit-summary').innerHTML = s;
     
-    // Filtrer les issues vides (type=null, msg=null)
     issues = issues.filter(function(i){{ return i.type && i.msg; }});
-    var h = '';
-    issues.forEach(function(i){{
-      var bg = i.type==='broken_link' ? 'rgba(248,81,73,.06)' : i.type==='incoherence' ? 'rgba(210,153,34,.06)' : 'var(--card)';
-      var border = i.type==='broken_link' ? '#f85149' : i.type==='incoherence' ? '#d29922' : '#8b949e';
-      h += '<div style="background:'+bg+';border-left:3px solid '+border+';border-radius:6px;padding:8px 10px;margin-bottom:6px;font-size:12px">';
-      h += '<div style="font-weight:600;margin-bottom:3px">'+icons[i.type]+' '+(labels[i.type]||i.type)+': '+i.msg+'</div>';
-      if(i.locations) h += '<div style="font-size:10px;color:var(--dim)">'+i.locations.join(' | ')+'</div>';
-      if(i.detail) h += '<div style="font-size:10px;color:'+(i.type==='incoherence'?'#d29922':'var(--dim)')+';margin-top:2px">'+i.detail+'</div>';
-      if(i.link) h += '<div style="font-size:10px;color:#f85149;margin-top:2px">→ '+i.link+'</div>';
-      h += '</div>';
-    }});
-    if(!issues.length) h = '<div style="color:var(--green);text-align:center;padding:20px">✅ Aucune anomalie détectée</div>';
-    document.getElementById('audit-list').innerHTML = h;
-    document.getElementById('audit-updated').textContent = 'Audit: '+d.timestamp+' · '+d.model;
-    document.getElementById('audit-updated').innerHTML = 'Audit: '+d.timestamp+' · <a href=\"/api/audit/md?token='+token+'\" target=\"_blank\" style=\"color:var(--accent)\">📄 Rapport MD</a>';
-  }}).catch(function(e){{
-    document.getElementById('audit-list').innerHTML = '<div style="color:#f85149">❌ Audit non disponible</div>';
+    if(issues.length) {{
+      issues.forEach(function(i){{
+        var bg = i.type==='broken_link' ? 'rgba(248,81,73,.06)' : i.type==='incoherence' ? 'rgba(210,153,34,.06)' : 'var(--card)';
+        var border = i.type==='broken_link' ? '#f85149' : i.type==='incoherence' ? '#d29922' : '#8b949e';
+        s += '<div style=\"background:'+bg+';border-left:3px solid '+border+';border-radius:6px;padding:6px 10px;margin-bottom:4px;font-size:11px\">';
+        s += '<div style=\"font-weight:600\">'+icons[i.type]+' '+(labels[i.type]||i.type)+': '+i.msg+'</div>';
+        if(i.locations) s += '<div style=\"font-size:9px;color:var(--dim)\">'+i.locations.join(' | ')+'</div>';
+        s += '</div>';
+      }});
+    }} else {{
+      s += '<div style=\"color:var(--green);text-align:center;padding:12px;font-size:12px\">✅ Aucune anomalie</div>';
+    }}
+    s += '<hr style=\"border-color:var(--border);margin:12px 0\">';
+    document.getElementById('audit-redac').innerHTML = s;
+  }}).catch(function(){{
+    document.getElementById('audit-redac').innerHTML = '<div style=\"color:#f85149\">❌ Audit rédactionnel non disponible</div>';
+  }});
+
+  // Audit qualité crons
+  fetch('/api/audit/crons?token='+token).then(function(r){{return r.json()}}).then(function(d){{
+    var issues = d.issues || [];
+    var summary = d.summary || {{}};
+    
+    var s = '<h3 style=\"margin:0 0 8px;padding:0;border:none;font-size:14px\">🕐 Audit Qualité Crons</h3>';
+    s += '<div style=\"display:flex;gap:12px;margin-bottom:8px;font-size:12px;flex-wrap:wrap\">';
+    s += '<span style=\"color:var(--text)\">'+d.total_crons+' crons</span>';
+    s += '<span style=\"color:var(--green)\">✅ '+summary.ok+'</span>';
+    if(summary.errors) s += '<span style=\"color:#f85149\">❌ '+summary.errors+'</span>';
+    if(summary.disabled) s += '<span style=\"color:#d29922\">⏸️ '+summary.disabled+'</span>';
+    s += '<span style=\"color:var(--dim);font-size:10px\">'+d.timestamp+'</span>';
+    s += '</div>';
+    
+    if(issues.length) {{
+      issues.forEach(function(i){{
+        var color = i.severity==='error' ? '#f85149' : i.severity==='warning' ? '#d29922' : '#8b949e';
+        s += '<div style=\"background:var(--card);border-left:3px solid '+color+';border-radius:6px;padding:6px 10px;margin-bottom:4px;font-size:11px\">';
+        s += '<span style=\"font-weight:600;color:'+color+'\">'+i.severity.toUpperCase()+'</span> ';
+        s += '<span>'+i.msg+'</span>';
+        if(i.detail) s += '<div style=\"font-size:9px;color:var(--dim);margin-top:2px\">'+i.detail+'</div>';
+        s += '</div>';
+      }});
+    }} else {{
+      s += '<div style=\"color:var(--green);text-align:center;padding:12px;font-size:12px\">✅ Tous les crons sont sains</div>';
+    }}
+    document.getElementById('audit-crons').innerHTML = s;
+  }}).catch(function(){{
+    document.getElementById('audit-crons').innerHTML = '<div style=\"color:var(--dim)\">🕐 Audit crons pas encore disponible</div>';
   }});
 }}
 </script>
