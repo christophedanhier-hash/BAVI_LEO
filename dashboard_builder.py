@@ -610,6 +610,7 @@ function loadAudit() {{
     s += '<span style=\"color:var(--green)\">✅ '+summary.ok+'</span>';
     if(summary.errors) s += '<span style=\"color:#f85149\">❌ '+summary.errors+'</span>';
     if(summary.disabled) s += '<span style=\"color:#d29922\">⏸️ '+summary.disabled+'</span>';
+    if(summary.pending) s += '<span style=\"color:#8b949e\">⏳ '+summary.pending+'</span>';
     s += '<span style=\"color:var(--dim);font-size:10px\">'+d.timestamp+'</span>';
     s += '</div>';
     
