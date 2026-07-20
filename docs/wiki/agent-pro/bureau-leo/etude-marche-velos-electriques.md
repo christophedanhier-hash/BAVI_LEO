@@ -146,9 +146,57 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 | Charge max | **150 kg** 🟢 | 120 kg |
 | Pneus | 2.125" anti-crevaison | **Fat 20×4.0"** 🟢 |
 | Antivol Mtag | ✅ 🟢 | ❌ |
-| Prix | **€1,099** 🟢 | €1,149 |
+| Prix | €1,099 | €1,149 |
 
-### 3.4 ENGWE L20 Boost Combo
+### 3.4 ENGWE Engine Pro 2.0 Combo — Vrai Fat Bike 🏆
+
+**🔗 [https://engwe.com/products/enwge-engine-pro-2-0-combo](https://engwe.com/products/enwge-engine-pro-2-0-combo)**
+**🔗 Solo : [https://engwe.com/products/engine-pro-2-0](https://engwe.com/products/engine-pro-2-0)**
+**Prix Combo (2 velos) :** **€2,748.00** (au lieu de €2,998 — **€250 OFF**)
+
+| Spec | Valeur |
+|:-----|:-------|
+| **Type** | **Vrai Fat Bike** 20×4.0" tout-terrain |
+| **Moteur** | 250W hub motor |
+| **Capteur** | **Torque sensor** (premier, pas de delai) |
+| **Couple** | **75 Nm** |
+| **Suspension** | **Full suspension** (avant + arriere) 🟢 |
+| | → 87% de reduction des chocs |
+| **Freins** | **Hydrauliques** 🟢 (pas mecaniques) |
+| **Batterie** | **768 Wh — 16 Ah** 🟢 (la plus grosse) |
+| **Autonomie** | **110 km** |
+| **Transmission** | **Shimano 8 vitesses** |
+| **Pneus** | **20 × 4.0"** Fat anti-crevaison 🟢 |
+| **Pliant** | ✅ Oui, pliage en **10 secondes** |
+| **Porte-bagages** | Aluminium, **25 kg** |
+| **Ecran** | LCD haute luminosite |
+| **Eclairage** | LED avant + arriere |
+| **Pedales** | Aluminium pliantes |
+| **Poignees** | Anti-derapantes, skin-friendly |
+| **Coloris dispo** | Space Black ✅ / Midnight Blue ❌ / Mountain Green ❌ |
+| **Note** | 4.91/5 — **22 avis** |
+| **Paiement** | PayPal/Klarna (4x sans frais) |
+
+#### Points forts
+
+| Critere | Note |
+|:--------|:----:|
+| **Full suspension** | 🟢 Confort maximal, 87% chocs reduits |
+| **Freins hydrauliques** | 🟢 Puissance de freinage superieure |
+| **Batterie 768 Wh** | 🟢 La plus grosse de la gamme |
+| **Pneus Fat 4.0"** | 🟢 Vrai tout-terrain |
+| **Shimano 8 vitesses** | 🟢 |
+
+#### Points d'attention
+
+| Critere | Note |
+|:--------|:----:|
+| **Poids** | 🟡 Plus lourd que O20 (~32-34 kg) |
+| **Prix** | 🟡 **€2,748** (€600 de + que O20 Combo) |
+| **Coloris** | 🟡 Seulement Space Black dispo |
+| **Autonomie** | 🟡 110 km vs 141 km O20 Boost |
+
+### 3.5 ENGWE L20 Boost Combo
 
 **Prix :** **€2,248.00**
 - Memes specs que L20 Boost ci-dessus
@@ -202,10 +250,11 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 
 ## 4. Comparatif detaille — 2 velos ENGWE
 
-| Modele | Prix 2 velos | Eco | Poids | Batterie | Autonomie | Charge | Frein | Vitesses | Charge max |
-|:-------|:------------:|:---:|:-----:|:--------:|:---------:|:------|:------|:--------|:----------|
-| **🥇 O20 Boost Combo** | **€2,148** | **€450** | **26,5kg** | **720Wh** 🟢 | **141km** 🟢 | **3,5h** 🟢 | Disque | **Shimano 8** 🟢 | **150kg** 🟢 |
-| 🥈 L20 Boost Combo | €2,248 | €50 | 34kg | 624Wh | 126km | 6,5h | Disque | Shimano 7 | 120kg |
+| Modele | Prix 2 velos | Eco | Poids | Batterie | Autonomie | Suspension | Freins | Vitesses | Pneus |
+|:-------|:------------:|:---:|:-----:|:--------:|:---------:|:-----------|:------|:--------|:------|
+| **Engine Pro 2.0 Combo** | **€2,748** | **€250** | ~32kg | **768Wh** 🟢 | 110km | **Full** 🟢 | **Hydrauliques** 🟢 | Shimano 8 | **Fat 4.0"** 🟢 |
+| **🥇 O20 Boost Combo** | **€2,148** | **€450** | **26,5kg** 🟢 | 720Wh | **141km** 🟢 | Avant 50mm | Mecaniques | **Shimano 8** 🟢 | 2.125" |
+| 🥈 L20 Boost Combo | €2,248 | €50 | 34kg | 624Wh | 126km | Avant 50mm | Mecaniques | Shimano 7 | **Fat 4.0"** 🟢 |
 | 2× ENGWE Zip | €2,198 | — | **22kg** 🟢 | 360Wh | 120km | — | — | — | 120kg |
 | 2× L20 Standard | €2,198 | — | 34kg | 624Wh | **140km** | 6,5h | Disque | Shimano 7 | 120kg |
 | P275 SE Combo | €1,748 | **€1,250** | ~25kg | — | 100km | — | — | — | — |
@@ -284,35 +333,41 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 | Code NEWENGWE -2% | -€44.96 |
 | **Total** | **€2,203.04** |
 
+### Option D : Engine Pro 2.0 Combo (vrai fat bike)
+
+| Poste | Total |
+|:------|:-----:|
+| Engine Pro 2.0 Combo (2 velos) | €2,748.00 |
+| Code NEWENGWE -2% | -€54.96 |
+| **Total** | **€2,693.04** |
+
 ### Paiement
 
 | Option | Montant/mois | Duree |
 |:-------|:------------:|:-----:|
 | Comptant (Option A) | €2,740.08 | — |
 | Comptant (Option B) | €2,105.04 | — |
+| Comptant (Option D) | €2,693.04 | — |
 | PayPal 4x (Option B) | **€526.26** | 4 mois |
 | Klarna | Selon conditions | — |
 
 ---
 
-## 7. Verdict final
+## 8. Verdict final — Quel modele choisir ?
 
 ```text
-🏆 RECOMMANDATION : ENGWE O20 Boost Combo
+🏆 O20 Boost Combo (€2,148) — Meilleur rapport qualite-prix
+   ✅ Plus leger (26,5kg), plus d'autonomie (141km), charge rapide (3,5h)
+   ✅ Parfait pour couple, 2 velos dans un coffre
+   ❌ Pneus 2.125" (pas fat)
 
-2 velos × O20 Boost
-1 batterie 720Wh supplementaire par velo (optionnel)
-Chargeur rapide 8A (optionnel)
-3 accessoires offerts par velo (lock, tracker, rack)
-Code NEWENGWE -2%
+🥇 Engine Pro 2.0 Combo (€2,748) — Vrai Fat Bike Full Options
+   ✅ Full suspension, freins hydrauliques, batterie 768Wh
+   ✅ Pneus Fat 4.0" = vrai tout-terrain
+   ❌ Plus lourd, plus cher, autonomie 110km
 
-Prix Option A (avec batteries sup.) : ~€2,740
-Prix Option B (combo seul) :         €2,105
-
-Pourquoi le O20 Boost ?
-- Plus leger, plus d'autonomie, charge plus rapide
-- Meilleur rapport qualite-prix de la gamme
-- Parfait pour couple (2 velos dans un coffre)
+👍 Si tu preferes la LEGERTE et l'AUTONOMIE → O20 Boost Combo
+👍 Si tu veux le VRAI FAT BIKE avec suspension et freins → Engine Pro 2.0
 ```
 
 ---
@@ -323,7 +378,7 @@ Pourquoi le O20 Boost ?
 |:--------|:-----|:--------------|
 | v1.0 | 19/07/2026 | Creation initiale |
 | v2.0 | 19/07/2026 | Fiches techniques completes (8 modeles) |
-| **v3.0** | **19/07/2026** | **O20 Boost recommande + O20 Combo €2,148 + option batterie sup.** |
+| **v4.0** | **19/07/2026** | **Ajout Engine Pro 2.0 Combo (vrai fat bike, full suspension, freins hydrauliques)** |
 
 ---
 
@@ -337,4 +392,6 @@ Pourquoi le O20 Boost ?
 - https://fr.engwe.com/products/engwe-l20
 - https://fr.engwe.com/products/p275-se
 - https://engwe.com/collections/battery
+- https://engwe.com/products/enwge-engine-pro-2-0-combo
+- https://engwe.com/products/engine-pro-2-0
 - Donnees extraites le 19/07/2026
