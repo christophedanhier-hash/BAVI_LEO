@@ -24,9 +24,12 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 
 ## 2. Modele recommande 🏆 : ENGWE O20 Boost
 
+[![ENGWE O20 Boost](https://engwe.com/cdn/shop/files/ENGWEO20_5.png?crop=center&height=400&v=1779786505&width=400)](https://engwe.com/products/engwe-o20-boost)
+
 ### 2.1 ENGWE O20 Boost — Fiche technique complete
 
-**Lien :** https://engwe.com/products/engwe-o20-boost
+**🔗 Lien produit :** [https://engwe.com/products/engwe-o20-boost](https://engwe.com/products/engwe-o20-boost)
+**🎥 Video :** [ENGWE O20 Boost – Small but mighty](https://www.youtube.com/results?search_query=engwe+o20+boost+review)
 **Prix unitaire :** **€1,099.00** (au lieu de €1,299 — **-€200**)
 **Prix Combo (2 velos) :** **€2,148.00** (au lieu de €2,598 — **-€450**)
 
@@ -100,7 +103,9 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 
 ### 2.2 O20 Boost Combo (2 velos) — RECOMMANDE 🏆
 
-**Lien :** https://engwe.com/products/engwe-o20-boost-combo
+[![O20 Boost Combo](https://engwe.com/cdn/shop/files/ENGWEO20_5.png?crop=center&height=400&v=1779786505&width=400)](https://engwe.com/products/engwe-o20-boost-combo)
+
+**🔗 Lien :** [https://engwe.com/products/engwe-o20-boost-combo](https://engwe.com/products/engwe-o20-boost-combo)
 **Prix :** **€2,148.00** (au lieu de €2,598 — **€450 d'economie !**)
 
 **Particularites :**
@@ -116,15 +121,19 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 
 ### 3.1 ENGWE O20 Boost (voir section 2 ci-dessus)
 
+**🔗 [https://engwe.com/products/engwe-o20-boost](https://engwe.com/products/engwe-o20-boost)**
+**🔗 Combo : [https://engwe.com/products/engwe-o20-boost-combo](https://engwe.com/products/engwe-o20-boost-combo)**
 **€1,099** — ✅ Recommande
 
 ### 3.2 ENGWE O20 Boost Combo (2 velos)
 
+**🔗 [https://engwe.com/products/engwe-o20-boost-combo](https://engwe.com/products/engwe-o20-boost-combo)**
 **€2,148** — ✅ Recommande
 
 ### 3.3 ENGWE L20 Boost
 
-**Lien :** https://fr.engwe.com/products/l20-boost
+**🔗 [https://fr.engwe.com/products/l20-boost](https://fr.engwe.com/products/l20-boost)**
+**🔗 Combo : [https://fr.engwe.com/products/l20-boost-combo](https://fr.engwe.com/products/l20-boost-combo)**
 **Prix :** **€1,149.00**
 
 | Spec | O20 Boost | L20 Boost |
@@ -148,6 +157,7 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 
 ### 3.5 ENGWE L20 (Standard)
 
+**🔗 [https://fr.engwe.com/products/engwe-l20](https://fr.engwe.com/products/engwe-l20)**
 **Prix :** **€1,099.00**
 - Capteur de vitesse (pas de couple)
 - Pas de bouton Boost
