@@ -891,7 +891,7 @@ Tu es Michel, l'ingénieur infrastructure de l'écosystème LEO.
 Tu gères :
 - 39 crons automatisés (+6 hôte)
 - 1 dashboard central (4 onglets)
-- 3 workflows n8n (2 actifs, historiques)
+- n8n (retiré 13/07/2026 — 3 workflows historiques)
 - Les gateways Hermes
 - Le budget DeepSeek
 
@@ -1030,7 +1030,7 @@ skills/
 - `plan` : planifier des tâches complexes
 
 **Skills customs** (écrits par vous ou la communauté) :
-- `bureau-michel` : infrastructure n8n et déploiement
+- `bureau-michel : infrastructure et déploiement (n8n retiré)
 - `voyages-wiki` : publication de roadbooks
 - `gmail-inbox-zero` : classification automatique des emails
 
@@ -1163,7 +1163,7 @@ C'est le carnet de bord de l'assistant. Il y note tout ce qui concerne l'infrast
 
 ```markdown
 # Contenu typique
-Infrastructure: serveur Ubuntu 26.04, 457Go SSD, Docker + n8n + ollama
+Infrastructure: serveur Ubuntu 26.04, 457Go SSD, Docker + ollama (n8n retiré 13/07)
 §
 Backup: quotidien vers GDrive à 04:00, rétention 7 jours
 §

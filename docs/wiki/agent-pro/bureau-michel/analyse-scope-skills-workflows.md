@@ -35,7 +35,7 @@ Le **Bureau Michel** est l'orchestrateur technique de l'infrastructure et du cod
 | **machine-metrics** | Métriques machines | Collecte CPU/RAM/disque via SSH |
 | **cron-lifecycle** | Gestion crons | Planification, audit, nettoyage |
 | **doc-watch** | Doc watch | Capture état écosystème LEO toutes les 6h |
-| **n8n-automation** | n8n | Gestion API REST des workflows |
+| **n8n-automation** | ❌ Retiré 13/07/2026 | Anciennement gestion API REST workflows |
 | **self-hosted-services** | Services | Installation et gestion services auto-hébergés |
 | **deepseek-pro** | Routage Pro | Délégation automatique tâches complexes |
 | **hermes-multi-profile** | Multi-profile | Maintenance des profils Hermes |

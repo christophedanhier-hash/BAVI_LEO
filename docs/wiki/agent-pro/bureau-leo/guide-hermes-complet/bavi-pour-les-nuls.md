@@ -426,7 +426,7 @@ WATCHDOGS (supervision automatique) :
 
 ```text
 Phase 1 : Collecte (no_agent, 0 token)
-  Script Python → lit state.db 4 profils
+  Script Python → lit state.db 5 profils
                → mesure CPU/RAM/disque 3 machines
                → releve solde DeepSeek
                → ecrit JSON dans metrics/
@@ -451,7 +451,7 @@ Un seul dashboard HTML statique (Chart.js) qui regroupe 4 onglets :
 
 ```text
 ONGLET 1 : Sessions
-  - Nombre de sessions actives (4 profils)
+  - Nombre de sessions actives (5 profils)
   - Messages echanges (24h/7j/30j)
   - Tokens consommes par profil
   - Latence moyenne par provider
@@ -478,7 +478,7 @@ ONGLET 4 : Machines
 ### 6.2 Le collecteur unifie
 
 Un script Python (`collect-v2.py`) centralise toutes les donnees :
-- Lit les bases state.db des 4 profils
+- Lit les bases state.db des 5 profils
 - Collecte les metriques des 3 machines via SSH
 - Releve le solde DeepSeek via API
 - Agrege tout en un seul JSON

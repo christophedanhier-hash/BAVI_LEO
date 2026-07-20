@@ -15,7 +15,7 @@
 
 ### Crons — Aucun problème
 
-Tous les 37 crons actifs sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
+Tous les 39 crons actifs sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
 
 - Surveillance caméras : 23:00 ✅
 - Énergie HomeWizard P1 : 23:04 ✅

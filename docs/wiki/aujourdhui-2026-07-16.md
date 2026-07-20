@@ -15,7 +15,7 @@
 
 ### Crons — Aucun problème
 
-Tous les 36 crons actifs sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
+Tous les 39 crons actifs sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
 
 - Dernier run du health check : 23:02 ✅
 - Surveillance caméras : 23:05 ✅

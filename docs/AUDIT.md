@@ -1,41 +1,24 @@
-# 📝 AUDIT — BAVI_LEO
+# 📋 AUDIT — Journal des corrections BAVI LEO
 
-> Dernier audit : 19/07/2026 à 06:25 (UTC+2) — correction 52 anomalies (38→39 crons, gemini-2.5→3.5, 4→5 bots/profils)
+> Dernier audit : 20/07/2026 à 06:13 (UTC+2) — 13 anomalies corrigées dans BAVI_LEO
 
-## Résultat
+## 20/07/2026 — Audit massif
 
-| Pages auditées | Anomalies | Corrigées auto |
-|:--------------:|:---------:|:--------------:|
-| 112 fichiers | 52 (50 🟡 + 2 🟠) | 52 auto-fix |
+### 🔴 Erreurs factuelles (6)
+- 3× journaux : 36/37 crons → 39
+- Rapport audit Michel : 38 crons, 4 profils → 39, 5
+- BAVI pour les nuls : 4 profils → 5
+- Prompts NotebookLM : 4 bots → 5
+- Guide ch01 : deepseek-chat → deepseek-v4-pro
 
-## 🟠 Majeures corrigées (2/2)
-
-- ✅ **guide-hermes-complet/bavi-pour-les-nuls.md** : diagramme 4→5 profils/bots, +bureau-robert dans la table des bots, 38→39 crons
-- ✅ **guide-hermes-complet/02-configurer-assistant.md** : 4× gemini-2.5-flash → gemini-3.5-flash, 38→39 crons
-
-## 🟡 Modérées corrigées (50/50)
-
-### Correction massive 38→39 crons (46 occurrences)
-- ✅ **index.md** : ligne d'en-tête + tableau KPI + footer
-- ✅ **guide-hermes-complet/01-decouvrir-hermes.md** : 4 occurrences
-- ✅ **guide-hermes-complet/02-configurer-assistant.md** : 1 occurrence
-- ✅ **guide-hermes-complet/03-bureaux-bavi.md** : 3 occurrences
-- ✅ **guide-hermes-complet/05-dashboards-crons.md** : 3 occurrences
-- ✅ **guide-hermes-complet/06-partie-des-dix.md** : 1 occurrence
-- ✅ **guide-hermes-complet/07-annexes-cli.md** : 2 occurrences + 44→45 actifs
-- ✅ **guide-hermes-complet/09-prompts-notebooklm.md** : 3 occurrences
-- ✅ **guide-hermes-complet/bavi-pour-les-nuls.md** : 3 occurrences
-- ✅ **guide-hermes-complet/index.md** : 1 occurrence
-- ✅ **bureau-michel/presentation.md** : 1 occurrence
-
-### Correction gemini-2.5 → 3.5 (4 occurrences)
-- ✅ **guide-hermes-complet/04-skills.md** : 1×
-- ✅ **guide-hermes-complet/06-partie-des-dix.md** : 2×
-
-## Non modifiés (archives)
-
-Les fichiers dans `bureau-michel/archive/`, `bureau-robert/archive/`, et `guide-hermes-complet-archive.md` conservent leurs données historiques. Les références n8n/Docker y sont documentaires.
+### 🟠 Obsolescences (7)
+- Guide 02 : Docker+n8n+ollama → n8n retiré
+- Guide 03 : n8n v2.26.8 Docker actif → retiré
+- Guide 05 : n8n/crons/Docker → n8n retiré
+- BPMN : Docker, n8n → n8n retiré
+- Scope skills : n8n-automation → retiré
+- skills.md : n8n service → retiré
 
 ---
 
-> 🤖 Dernier audit : 19/07/2026 à 06:25 (UTC+2)
+*Journal maintenu automatiquement.*

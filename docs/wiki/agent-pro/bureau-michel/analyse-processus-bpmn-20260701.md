@@ -10,7 +10,7 @@ workflows: [auto-fix-daemon, archive-watch]
 
 # 🏗️ Architecture des Processus — Bureau Michel
 
-> Analyse BPMN v2 — 01/07/2026 19:15 — 14 crons + 3→5 workflows n8n
+> Analyse BPMN v2 — 01/07/2026 19:15 — 39 crons (n8n retiré)
 > **Statut réel : 15/15 tests OK** (test-all-processes.py)
 
 ## 🩺 Diagnostic n8n (01/07 — 19:00)
@@ -128,7 +128,7 @@ python3 /opt/data/scripts/test-all-processes.py
 
 | Couche | Tests | Statut |
 |---|---|---|
-| Infra | Docker, n8n, Ollama, Gateway, Disk, RAM | 7/7 ✅ |
+| Infra | Docker, Ollama, Gateway (n8n retiré 13/07), Disk, RAM | 7/7 ✅ |
 | Data | Collector, Freshness, Dashboard | 3/3 ✅ |
 | Monitoring | Crons, Builds, Archives | 3/3 ✅ |
 | Services | Email, BAVI wiki | 2/2 ✅ |

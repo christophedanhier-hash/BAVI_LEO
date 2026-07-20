@@ -187,7 +187,7 @@ Avec Hermès, vous pouvez utiliser **n'importe quel LLM** — et même les combi
 # Dans config.yaml
 model:
   default: deepseek-v4-flash    # Le quotidien, économique
-  delegation: deepseek-chat     # Sous-agents pour tâches complexes
+  delegation: deepseek-v4-pro     # Sous-agents pour tâches complexes
 fallback_providers:
   - provider: deepseek          # Fallback si le principal plante
     model: deepseek-v4-flash

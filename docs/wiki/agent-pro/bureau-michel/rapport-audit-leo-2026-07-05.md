@@ -11,7 +11,7 @@ bureau: leo-agent
 
 **Rédigé par :** LEO Agent (bureau Michel — Infrastructure Hermes)  
 **Date :** 2026-07-05 · **Lu par :** Christophe & Michel  
-**Statut :** ⚠️ PÉRIMÉ — Audit du 05/07/2026. Données obsolètes : n8n retiré, 38 crons (vs 18), 5 profils (vs 4), 5 gateways (vs 4). Conserver à titre d'archive historique.  
+**Statut :** ⚠️ PÉRIMÉ — Audit du 05/07/2026. Données obsolètes : n8n retiré, 39 crons (vs 18), 5 profils (vs 4), 5 gateways (vs 4). Conserver à titre d'archive historique.  
 **⚠️ Ancien résumé (05/07)** : ✅ 10/10 sources OK · ✅ 18 crons ops
 
 ---
@@ -21,7 +21,7 @@ bureau: leo-agent
 | Poste | Statut | Détail |
 |---|---|---|
 | **Système** | ✅ Sain | 7j uptime, 17% disque, 22Go RAM |
-| **Hermes** | ✅ Stable | v0.17.0, 4 profils, 4 gateways |
+| **Hermes** | ✅ Stable | v0.17.0, 5 profils, 5 gateways |
 | **Crons** | ✅ 18/18 | 17 OK · 1 déploiement tofdan (corrigé) |
 | **Dashboards** | ✅ 2/2 | 8765 API · GH Pages (10/10 sources) |
 | **Sécurité** | ✅ GitHub OK | Nouveau token classique configuré |
@@ -152,7 +152,7 @@ collect-v2.py → leo-unified.json → deploy-dashboard.py → GH Pages
 | **Token GitHub** | ✅ Renouvelé (classique, tous droits) |
 | **SSH key** | ✅ ed25519 |
 | **gh auth** | ❌ Absent |
-| **.env tokens** | ✅ 4 profils |
+| **.env tokens** | ✅ 5 profils |
 
 ---
 

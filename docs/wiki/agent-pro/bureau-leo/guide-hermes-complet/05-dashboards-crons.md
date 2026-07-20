@@ -457,7 +457,7 @@ Budget mensuel LEO (estimé):
   Gemini (fallback):                0 € (gratuit)
   Ollama (classification):          0 € (local, CPU)
   GitHub Pages (hébergement):       0 € (gratuit)
-  n8n (workflows):                  0 € (self-hosted)
+  n8n (workflows): ❌ Retiré 13/07/2026
   Total:                           ~1-3 €
 ```
 
@@ -966,7 +966,7 @@ fi
 
 ```yaml
 Toutes les 30 minutes:
-  - 🩺 Auto-heal complet       → crons, Ollama, n8n, Docker, disque, tokens
+  - 🩺 Auto-heal complet       → crons, Ollama, Docker, disque, tokens (n8n retiré)
   - 📧 Classifieur Gmail       → nouveaux emails à classer
 
 Toutes les 2 heures:

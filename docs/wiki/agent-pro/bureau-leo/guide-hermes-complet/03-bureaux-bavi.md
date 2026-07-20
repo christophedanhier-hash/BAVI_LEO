@@ -394,8 +394,8 @@ Le 30 juin, un crash système a vidé les sessions des 4 bots et cassé les gate
 
 > **📦 HISTORIQUE — Déprécié le 13/07/2026.** n8n a été remplacé par des scripts Python et l'auto-heal natif de Hermes. Les watchdogs et l'auto-heal fonctionnent désormais sans dépendance n8n.
 
-n8n était utilisé pour les workflows qui nécessitent des webhooks ou des intégrations API :
-- **n8n v2.26.8 Docker** — 3 workflows, **2 actifs** (remplacés)
+n8n était utilisé pour les workflows qui nécessitaient des webhooks ou des intégrations API :
+- **n8n v2.26.8 Docker** — ❌ RETIRÉ 13/07/2026 (3 workflows migrés vers scripts Python)
 - **3 credentials** (Google, GitHub, n8n) — désormais gérés par les scripts Hermes
 - Accès via Tailscale uniquement (`100.92.102.28:5678`)
 - **Base SQLite** dans un volume Docker dédié

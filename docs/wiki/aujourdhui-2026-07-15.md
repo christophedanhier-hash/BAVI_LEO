@@ -14,7 +14,7 @@
 
 ### Crons — Aucun problème
 
-Tous les 37 crons Hermes sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
+Tous les 39 crons Hermes sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
 
 - Dernier run du health check : 23:02 ✅
 - Surveillance caméras : 23:00 ✅
