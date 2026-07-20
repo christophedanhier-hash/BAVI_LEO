@@ -250,16 +250,16 @@ docker logs n8n -n 20
 
 ### 5.5 Scripts automatisés (déjà présents)
 
-Deux scripts sont déjà disponibles dans `/opt/data/n8n/` :
+Deux scripts sont déjà disponibles dans `~/Projets_Dev/n8n/` :
 
 - **`run-n8n.sh`** — Déploiement complet (pull + création du volume + lancement)
   ```bash
-  cat /opt/data/n8n/run-n8n.sh | ssh leo@100.92.102.28 bash
+  cat ~/Projets_Dev/n8n/run-n8n.sh | ssh leo@100.92.102.28 bash
   ```
 
 - **`update-n8n.sh`** — Mise à jour (backup SQLite + pull + recreate)
   ```bash
-  cat /opt/data/n8n/update-n8n.sh | ssh leo@100.92.102.28 bash
+  cat ~/Projets_Dev/n8n/update-n8n.sh | ssh leo@100.92.102.28 bash
   ```
 
 Ces scripts sont utilisables directement depuis le poste d'administration.
@@ -316,7 +316,7 @@ Ces scripts sont utilisables directement depuis le poste d'administration.
 
 | Risque | Probabilité | Impact | Mitigation |
 |:-------|:------------|:-------|:-----------|
-| **Perte de données (volume)** | Faible | Élevé | Backup régulier du volume Docker `n8n_data` → copie vers `/opt/data/backups/` |
+| **Perte de données (volume)** | Faible | Élevé | Backup régulier du volume Docker `n8n_data` → copie vers `~/.hermes/backups/` |
 | **Bug login 401 via Docker NAT** | N/A (option A) | N/A | Éliminé par `--network host`. Si bridge, utiliser SSH tunnel |
 | **Mise à jour cassante** | Faible | Moyen | Script `update-n8n.sh` fait backup SQLite avant pull. Vérifier les breaking changes sur github.com/n8n-io/n8n |
 | **Consommation mémoire** | Faible | Faible | n8n+Node utilise ~300 Mo. LEO a 22.94 Go. Marge confortable |
@@ -328,7 +328,7 @@ Ces scripts sont utilisables directement depuis le poste d'administration.
 
 ```bash
 # Script de sauvegarde du volume n8n (à exécuter périodiquement)
-BACKUP_DIR="/opt/data/backups/n8n"
+BACKUP_DIR="~/.hermes/backups/n8n"
 mkdir -p "$BACKUP_DIR"
 DATE=$(date +%Y%m%d_%H%M%S)
 
@@ -348,7 +348,7 @@ ls -t "$BACKUP_DIR"/n8n_data_*.tar.gz | tail -n +8 | xargs -r rm
 
 ```bash
 # Via le script existant (recommandé)
-cat /opt/data/n8n/update-n8n.sh | ssh leo@100.92.102.28 bash
+cat ~/Projets_Dev/n8n/update-n8n.sh | ssh leo@100.92.102.28 bash
 
 # Ou manuellement
 docker pull docker.n8n.io/n8nio/n8n:latest
@@ -389,7 +389,7 @@ docker exec -it n8n sh         # Shell interactif dans le conteneur
 
 ```bash
 # Script de vérification existant
-/opt/data/skills/infrastructure/system-management/scripts/check-n8n.sh
+~/Projets_Dev/skills/infrastructure/system-management/scripts/check-n8n.sh
 
 # Ou directement
 curl -sf http://localhost:5678/healthz || docker restart n8n
@@ -418,7 +418,7 @@ Justification technique :
 1. **Disponibilité immédiate** — Tous les prérequis sont déjà satisfaits. Docker Engine v26.1.5, port 5678 libre, RAM et disque largement suffisants.
 2. **Risque minimal** — Absence de conflit avec la stack existante (Hermes sur 18791/18792, Ollama sur 11434). Le mode `--network host` élimine le seul bug connu (login 401 via docker-proxy).
 3. **Maintenance quasi nulle** — Restart policy native, mise à jour en une commande (`update-n8n.sh`), volume persisté.
-4. **Scripts prêts** — Deux scripts opérationnels dans `/opt/data/n8n/` : `run-n8n.sh` (déploiement) et `update-n8n.sh` (mise à jour).
+4. **Scripts prêts** — Deux scripts opérationnels dans `~/Projets_Dev/n8n/` : `run-n8n.sh` (déploiement) et `update-n8n.sh` (mise à jour).
 5. **Levier AI potentiel** — GPU NVIDIA RTX 3050 disponible pour les workflows utilisant des modèles IA locaux via Ollama (déjà présent sur :11434).
 
 ### Actions immédiates (T0)
@@ -472,5 +472,5 @@ curl -w "\n%{http_code}" http://localhost:5678/healthz
 ---
 *Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:15 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

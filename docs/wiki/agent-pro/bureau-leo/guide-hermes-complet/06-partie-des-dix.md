@@ -104,10 +104,10 @@ Hermes v0.17.0 refuse les liens symboliques dans le dossier `scripts/`.
 
 ```bash
 # ❌ Symlink refusé
-ln -s /opt/data/scripts/backup.py /opt/data/profiles/leo-copilot/scripts/backup.py
+ln -s ~/.hermes/profiles/leo-copilot/scripts/backup.py ~/.hermes/profiles/leo-copilot/scripts/backup.py
 
 # ✅ Copie réelle
-cp /opt/data/scripts/backup.py /opt/data/profiles/leo-copilot/scripts/backup.py
+cp ~/.hermes/profiles/leo-copilot/scripts/backup.py ~/.hermes/profiles/leo-copilot/scripts/backup.py
 ```
 
 ### 8. Toujours vérifier avant de livrer
@@ -117,7 +117,7 @@ cp /opt/data/scripts/backup.py /opt/data/profiles/leo-copilot/scripts/backup.py
 curl -s -o /dev/null -w "%{http_code}" https://mon-site.com
 # → 200 ✅
 
-grep "version: 2.0" /opt/data/config.yaml
+grep "version: 2.0" ~/Projets_Dev/config.yaml
 # → trouvé ✅
 ```
 
@@ -127,10 +127,10 @@ Ne jamais faire confiance à "ça devrait marcher". Vérifiez.
 
 ```bash
 # Vérifier le contenu du backup
-tar -tzf /opt/data/backups/leo-backup-*.tar.gz | head -20
+tar -tzf ~/.hermes/backups/leo-backup-*.tar.gz | head -20
 
 # Simuler une restauration
-tar -xzf /opt/data/backups/leo-backup-*.tar.gz -C /tmp/test-restore
+tar -xzf ~/.hermes/backups/leo-backup-*.tar.gz -C /tmp/test-restore
 ```
 
 Testez vos backups. Le jour où vous en avez besoin, il est trop tard pour découvrir qu'ils sont vides.
@@ -192,7 +192,7 @@ Affiche toutes les tâches planifiées, leur état, leur prochaine exécution.
 hermes cron create \
   --name "Vérification disque" \
   --schedule "0 8 * * *" \
-  --script /opt/data/scripts/check-disk.sh \
+  --script ~/.hermes/profiles/leo-copilot/scripts/check-disk.sh \
   --no-agent
 ```
 
@@ -201,7 +201,7 @@ Le flag `--no-agent` = pas de LLM = **0€ par exécution**.
 ### 6. Voir les logs du gateway
 
 ```bash
-tail -f /opt/data/logs/gateway.log
+tail -f ~/Projets_Dev/logs/gateway.log
 ```
 
 Indispensable pour comprendre pourquoi le bot ne répond pas, ou debugger une connexion Telegram.
@@ -309,7 +309,7 @@ Trigger: Réception email → Action: Classifier avec Hermes → Sortie: Label G
 Des dashboards HTML statiques déployés sur GitHub Pages, mis à jour par des crons :
 
 ```bash
-python3 /opt/data/scripts/update_mon_dashboard.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/update_mon_dashboard.py
 cd mon-dashboard && git push
 # → En ligne en 30 secondes
 ```
@@ -318,7 +318,7 @@ cd mon-dashboard && git push
 
 ```bash
 # Cron toutes les 6h
-python3 /opt/data/scripts/drive-sync.sh
+python3 ~/.hermes/profiles/leo-copilot/scripts/drive-sync.sh
 # Google Docs → Markdown → Wiki GitHub Pages
 ```
 
@@ -335,7 +335,7 @@ mkdir -p ~/.hermes/skills/mes-skills/mon-automatisation/
 ### 8. Partage de mémoire entre profils
 
 ```bash
-ln -s /opt/data/memories/MEMORY.md /opt/data/profiles/mon-profil/memories/MEMORY.md
+ln -s ~/.hermes/memories/MEMORY.md ~/.hermes/profiles/mon-profil/memories/MEMORY.md
 ```
 
 Tous vos bots partagent la même mémoire. Ce que l'un apprend, les autres le savent.
@@ -443,5 +443,5 @@ Le meilleur endroit pour poser des questions, partager vos réalisations, et ren
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

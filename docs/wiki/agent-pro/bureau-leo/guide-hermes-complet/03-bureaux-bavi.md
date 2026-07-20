@@ -540,13 +540,13 @@ Les roadbooks sont publiés sur le **wiki Voyages** :
 ```text
 📦 github.com/christophedanhier-hash/voyages-wiki
 🌐 https://christophedanhier-hash.github.io/voyages-wiki/
-📁 /opt/data/voyages-wiki/docs/
+📁 ~/Projets_Dev/voyages-wiki/docs/
 ```
 
 Le workflow de publication est automatisé :
 
 ```bash
-cd /opt/data/voyages-wiki
+cd ~/Projets_Dev/voyages-wiki
 git add docs/NOM-DU-VOYAGE/
 git commit -m "Ajout roadbook [destination] — [dates]"
 git push origin main
@@ -953,5 +953,5 @@ flowchart TD
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

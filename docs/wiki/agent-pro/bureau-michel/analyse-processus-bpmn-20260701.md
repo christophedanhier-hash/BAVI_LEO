@@ -117,7 +117,7 @@ Toutes les alertes passent par ce webhook. Un seul point de contrôle, une seule
 ## 🧪 Suite de tests — 15/15 OK
 
 ```bash
-python3 /opt/data/scripts/test-all-processes.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/test-all-processes.py
 # ✅ 15/15 tests OK — infra, data, monitoring, services
 ```
 
@@ -128,5 +128,5 @@ python3 /opt/data/scripts/test-all-processes.py
 | Monitoring | Crons, Builds, Archives | 3/3 ✅ |
 | Services | Email, BAVI wiki | 2/2 ✅ |
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

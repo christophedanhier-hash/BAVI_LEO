@@ -179,8 +179,8 @@ hermes memory add "Christophe préfère les réponses concises" --target user
 
 ```bash
 # Créer un lien symbolique pour partager
-ln -s /opt/data/memories/MEMORY.md /opt/data/profiles/leo-copilot/memories/MEMORY.md
-ln -s /opt/data/memories/USER.md /opt/data/profiles/leo-copilot/memories/USER.md
+ln -s ~/.hermes/memories/MEMORY.md ~/.hermes/profiles/leo-copilot/memories/MEMORY.md
+ln -s ~/.hermes/memories/USER.md ~/.hermes/profiles/leo-copilot/memories/USER.md
 ```
 
 Ainsi, quand un profil apprend quelque chose, les autres en bénéficient immédiatement.
@@ -195,7 +195,7 @@ Le skill `cron` documente la planification de tâches.
 hermes cron create \
   --name "Vérification disque" \
   --schedule "0 8 * * *" \
-  --script /opt/data/scripts/check-disk.sh \
+  --script ~/.hermes/profiles/leo-copilot/scripts/check-disk.sh \
   --no-agent
 ```
 
@@ -267,7 +267,7 @@ from datetime import datetime
 
 # Collecte
 sessions = len(json.loads(subprocess.run(
-    ["cat", "/opt/data/sessions/sessions.json"],
+    ["cat", "~/Projets_Dev/sessions/sessions.json"],
     capture_output=True, text=True).output).get("sessions", []))
 
 # Génération HTML
@@ -300,10 +300,10 @@ with open("/tmp/dashboard.html", "w") as f:
 
 ```bash
 # Script de collecte + génération
-python3 /opt/data/scripts/update_budget_kpi.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/update_budget_kpi.py
 
 # Push sur GitHub Pages
-cd /opt/data/leo-dashboard && git add -A && git commit -m "màj dashboard" && git push
+cd ~/Projets_Dev/leo-dashboard && git add -A && git commit -m "màj dashboard" && git push
 ```
 
 ## Wikis : la documentation vivante
@@ -351,7 +351,7 @@ Un cron transforme automatiquement les documents Google Docs en pages de wiki :
 
 ```bash
 # Script de sync (toutes les 6h)
-python3 /opt/data/scripts/drive-sync.sh
+python3 ~/.hermes/profiles/leo-copilot/scripts/drive-sync.sh
 # Convertit les .docx en .md
 # Commit + push sur le wiki GitHub
 ```
@@ -398,7 +398,7 @@ if email.label_ids:
 ```bash
 # Clé API Google (OAuth)
 # Dans .env
-GOOGLE_TOKEN_PATH=/opt/data/google_token.json
+GOOGLE_TOKEN_PATH=~/Projets_Dev/google_token.json
 
 # Le cron est déjà configuré dans le profil leo-copilot
 # Exécution : toutes les 15 minutes
@@ -412,7 +412,7 @@ Le skill `deepseek-budget` suit la consommation de l'API DeepSeek en temps réel
 
 ```bash
 # Exécution : 08:00 et 20:00 (cron)
-python3 /opt/data/scripts/diag_budget.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/diag_budget.py
 
 # Alerte si solde < 10€
 # Push sur le dashboard LEO
@@ -483,10 +483,10 @@ docker logs mon-service --tail 20
 
 ```bash
 # Script de déploiement (maintenu pour héritage)
-bash /opt/data/scripts/run-n8n.sh
+bash ~/.hermes/profiles/leo-copilot/scripts/run-n8n.sh
 
 # Mise à jour
-bash /opt/data/scripts/update-n8n.sh
+bash ~/.hermes/profiles/leo-copilot/scripts/update-n8n.sh
 ```
 
 Le script `run-n8n.sh` configure automatiquement :
@@ -511,10 +511,10 @@ cloudflared tunnel route dns mon-tunnel mon-site.be
 
 ```bash
 # 1. Générer le HTML
-python3 /opt/data/scripts/update_mon_dashboard.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/update_mon_dashboard.py
 
 # 2. Push sur GitHub Pages
-cd /opt/data/mon-dashboard
+cd ~/Projets_Dev/mon-dashboard
 git add -A && git commit -m "màj $(date +%Y-%m-%d)" && git push
 
 # 3. Vérifier
@@ -530,7 +530,7 @@ Le skill `backup` (catégorie infrastructure) couvre la stratégie de sauvegarde
 
 ```bash
 # Tous les jours à 04:00
-python3 /opt/data/scripts/hermes-backup.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/hermes-backup.py
 
 # Ce script archive :
 # - Tous les profils (default, leo-copilot, bavi-leo, emile)
@@ -547,7 +547,7 @@ python3 /opt/data/scripts/hermes-backup.py
 
 ```bash
 # Kit de récupération d'urgence
-/opt/data/recovery-kit/
+~/Projets_Dev/recovery-kit/
 ├── rebuild.sh          # Script de reconstruction
 ├── docker-commands.md  # Commandes Docker essentielles
 └── secrets.b64         # Tokens chiffrés
@@ -570,14 +570,14 @@ fsarchiver savefs /mnt/data/recovery/couche3/leo-root.fs /dev/sda2
 
 ```bash
 # Lister les backups locaux
-ls -la /opt/data/backups/
+ls -la ~/.hermes/backups/
 
 # Vérifier le contenu d'un backup
-tar -tzf /opt/data/backups/leo-backup-YYYY-MM-DD.tar.gz | head -20
+tar -tzf ~/.hermes/backups/leo-backup-YYYY-MM-DD.tar.gz | head -20
 
 # Vérifier les backups GDrive
 # Via le dashboard ou le script
-python3 /opt/data/scripts/hermes-backup.py --check
+python3 ~/.hermes/profiles/leo-copilot/scripts/hermes-backup.py --check
 ```
 
 ## Monitoring : savoir avant que ça casse
@@ -614,7 +614,7 @@ Le rapport est livré dans le wiki en tant qu'analyse du jour (`aujourdhui-YYYY-
 
 ```bash
 # Scripts watchdogs
-/opt/data/scripts/run-all-watchdogs.sh
+~/.hermes/profiles/leo-copilot/scripts/run-all-watchdogs.sh
 # Surveille en continu :
 # - code-server (VS Code web)
 # - code-server-tunnel
@@ -630,11 +630,11 @@ Le rapport est livré dans le wiki en tant qu'analyse du jour (`aujourdhui-YYYY-
 docker ps
 
 # Logs Hermes
-tail -f /opt/data/logs/agent.log
-tail -f /opt/data/logs/gateway.log
+tail -f ~/Projets_Dev/logs/agent.log
+tail -f ~/Projets_Dev/logs/gateway.log
 
 # Logs crons
-tail -f /opt/data/profiles/leo-copilot/logs/agent.log
+tail -f ~/.hermes/profiles/leo-copilot/logs/agent.log
 
 # Dashboard de monitoring
 # → https://user.github.io/leo-global-dashboard/
@@ -716,7 +716,7 @@ Le skill `excalidraw` permet de créer des diagrammes et schémas au style "tabl
 
 ```bash
 # Générer un schéma Excalidraw
-python3 /opt/data/scripts/upload.py mon-schema.excalidraw
+python3 ~/.hermes/profiles/leo-copilot/scripts/upload.py mon-schema.excalidraw
 ```
 
 ### Exemple : architecture simple
@@ -936,19 +936,19 @@ Le skill `arxiv` permet de chercher des articles scientifiques sur Arxiv.
 ### Recherche par mot-clé
 
 ```bash
-python3 /opt/data/scripts/search_arxiv.py --query "hermes agent LLM" --max 5
+python3 ~/.hermes/profiles/leo-copilot/scripts/search_arxiv.py --query "hermes agent LLM" --max 5
 ```
 
 ### Recherche par auteur
 
 ```bash
-python3 /opt/data/scripts/search_arxiv.py --author "danhier" --max 10
+python3 ~/.hermes/profiles/leo-copilot/scripts/search_arxiv.py --author "danhier" --max 10
 ```
 
 ### Recherche par catégorie
 
 ```bash
-python3 /opt/data/scripts/search_arxiv.py --category cs.AI --sort date --max 20
+python3 ~/.hermes/profiles/leo-copilot/scripts/search_arxiv.py --category cs.AI --sort date --max 20
 ```
 
 ### Format des résultats
@@ -987,10 +987,10 @@ Le skill `llm-wiki` crée une base de connaissance interrogeable à partir de fi
 
 ```bash
 # Indexer le wiki
-python3 /opt/data/scripts/index_wiki.py /opt/data/BAVI_LEO/docs/
+python3 ~/.hermes/profiles/leo-copilot/scripts/index_wiki.py ~/Projets_Dev/BAVI_LEO/docs/
 
 # Interroger
-python3 /opt/data/scripts/query_wiki.py "Comment configurer un gateway ?"
+python3 ~/.hermes/profiles/leo-copilot/scripts/query_wiki.py "Comment configurer un gateway ?"
 ```
 
 Utile pour que Hermes puisse chercher dans sa propre documentation sans avoir tout en contexte.
@@ -1001,10 +1001,10 @@ Le skill `polymarket` interroge les marchés de prédiction Polymarket (blockcha
 
 ```bash
 # Derniers marchés
-python3 /opt/data/scripts/polymarket.py --trending
+python3 ~/.hermes/profiles/leo-copilot/scripts/polymarket.py --trending
 
 # Prix d'un marché spécifique
-python3 /opt/data/scripts/polymarket.py --slug "will-agi-exist-by-2030"
+python3 ~/.hermes/profiles/leo-copilot/scripts/polymarket.py --slug "will-agi-exist-by-2030"
 ```
 
 ## YouTube : analyser des vidéos
@@ -1013,7 +1013,7 @@ Le skill `youtube-content` extrait et analyse les transcripts de vidéos YouTube
 
 ```bash
 # Extraire le transcript
-python3 /opt/data/scripts/fetch_transcript.py https://youtu.be/VIDEO_ID
+python3 ~/.hermes/profiles/leo-copilot/scripts/fetch_transcript.py https://youtu.be/VIDEO_ID
 
 # Analyser le contenu
 # → Résumé, points clés, transcript complet
@@ -1177,7 +1177,7 @@ Basés sur l'expérience réelle de LEO :
 | 6 | Labels Gmail : ne pas réappliquer | Une seule classification par email |
 | 7 | Migration Hermes → rebuild Docker | Script `rebuild.sh` dans recovery-kit |
 | 8 | Tokens .env corrompus par le redact | Écrire via base64 |
-| 9 | sshpass → `/opt/data/bin/` pas `/tmp/` | Binaire dédié |
+| 9 | sshpass → `~/Projets_Dev/bin/` pas `/tmp/` | Binaire dédié |
 | 10 | Config v30 → migration nécessaire | `hermes config migrate` |
 
 ## Où stocker ses skills
@@ -1191,7 +1191,7 @@ Basés sur l'expérience réelle de LEO :
 ### Skills partagés entre profils
 
 ```bash
-/opt/data/skills/<categorie>/<nom>/SKILL.md
+~/Projets_Dev/skills/<categorie>/<nom>/SKILL.md
 ```
 
 ### Skills synchronisés
@@ -1258,5 +1258,5 @@ flowchart LR
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

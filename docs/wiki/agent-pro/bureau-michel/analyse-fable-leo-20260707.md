@@ -74,11 +74,11 @@ Version spécifiquement distillée pour les *actions agentiques* (outils, planif
 
 ```bash
 # Télécharger le GGUF
-wget -O /opt/data/Qwen3.6-14B-A3B-FableVibes-Q3_K_M.gguf \
+wget -O ~/Projets_Dev/Qwen3.6-14B-A3B-FableVibes-Q3_K_M.gguf \
   "https://huggingface.co/tvall43/Qwen3.6-14B-A3B-FableVibes-GGUF/resolve/main/Qwen3.6-14B-A3B-FableVibes-Q3_K_M.gguf"
 
 # Copier dans le volume Docker d'Ollama
-docker cp /opt/data/Qwen3.6-14B-A3B-FableVibes-Q3_K_M.gguf ollama:/root/.ollama/models/
+docker cp ~/Projets_Dev/Qwen3.6-14B-A3B-FableVibes-Q3_K_M.gguf ollama:/root/.ollama/models/
 
 # Importer dans Ollama
 docker exec ollama ollama create fable-moe \
@@ -108,5 +108,5 @@ docker exec ollama ollama run fable-moe "Hello, what can you do?"
 - Modèle recommandé : https://huggingface.co/tvall43/Qwen3.6-14B-A3B-FableVibes-GGUF
 - Backup : https://huggingface.co/empero-ai/Qwable-9B-Claude-Fable-5-GGUF
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

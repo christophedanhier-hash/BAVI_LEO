@@ -2,6 +2,20 @@
 
 Dernier passage d'audit automatique : **20/07/2026**
 
+## Audit du 20/07/2026 — regex pre-scan
+
+| Catégorie | Nb | Statut |
+|-----------|----|--------|
+| `/opt/data/` → `~/Projets_Dev/` | 186 corrigés | ✅ |
+| n8n historique mentionné | 28 fichiers (25 corrigés, 3 archives conservés) | ⚠️ |
+| Modèles dépréciés (deepseek-chat, gemini-2.5) | 14 corrigés | ✅ |
+| deepseek-chat → deepseek-v4-flash | 6 corrigés (dossier-scout-complet) | ✅ |
+| gemini-2.5 → gemini-3.5-flash | 8 corrigés (guide-hermes-complet) | ✅ |
+
+## Résumé du passage précédent
+
+Dernier passage d'audit automatique : **20/07/2026**
+
 ## Résumé du passage
 
 - **Total fichiers analysés** : 171

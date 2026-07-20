@@ -138,7 +138,7 @@ if tok:
 **Solution :** après avoir pushé depuis `/tmp/`, faites un `git pull` dans le repo local :
 
 ```bash
-cd /opt/data/n8n-dashboard
+cd ~/Projets_Dev/n8n-dashboard
 git pull origin main
 ```
 
@@ -202,7 +202,7 @@ Depuis le 22/06/2026, LEO a un **portail unique** qui consolide tout en une seul
 
 ```bash
 # Le cron
-🌍 Global Dashboard — H:05 → /opt/data/scripts/deploy_leo_global.py (no_agent)
+🌍 Global Dashboard — H:05 → ~/.hermes/profiles/leo-copilot/scripts/deploy_leo_global.py (no_agent)
 ```
 
 - **Usage LLM** — requêtes/jour, tokens consommés, coût estimé
@@ -351,15 +351,15 @@ Avec **39 crons Hermes + 6 crons hôte** qui tournent 24h/24 et un auto-fix-daem
 
 ```bash
 # 1. Collecte des statuts
-python3 /opt/data/scripts/collect_crons_status.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/collect_crons_status.py
 # → JSON : { "cron_id": { "status": "ok", "last_run": "...", "next_run": "..." } }
 
 # 2. Génération du dashboard
-python3 /opt/data/scripts/deploy-crons-dashboard.py
+python3 ~/.hermes/profiles/leo-copilot/scripts/deploy-crons-dashboard.py
 # → HTML avec Chart.js + tableau
 
 # 3. Push sur GitHub Pages
-cd /opt/data/crons-dashboard && git push
+cd ~/Projets_Dev/crons-dashboard && git push
 ```
 
 ### Indicateurs clés
@@ -425,7 +425,7 @@ hermes cron run <id>
 hermes cron pause <id>
 
 # Voir les erreurs récentes
-tail -50 /opt/data/logs/errors.log
+tail -50 ~/Projets_Dev/logs/errors.log
 ```
 
 ## Auto-heal : correction automatique
@@ -680,7 +680,7 @@ Depuis le 21/06/2026, un cron **agent-driven** (pas no_agent) tourne toutes les 
 **Patterns auto-réparables :**
 | Pattern | Détection | Correction |
 |---------|-----------|------------|
-| `gh` introuvable | Stderr "gh: command not found" | Patch avec chemin absolu `/opt/data/home/.local/bin/gh` |
+| `gh` introuvable | Stderr "gh: command not found" | Patch avec chemin absolu `~/Projets_Dev/home/.local/bin/gh` |
 | Dashboard 404 | HTTP != 200 | Relance le script de déploiement |
 | budget-webhook down | Process manquant | Relance via watchdog |
 | Import Python cassé | Traceback d'import | pip install dans le venv |
@@ -704,7 +704,7 @@ aux credentials GitHub. Deux solutions :
 **Solution 1 — Chemin absolu vers gh :**
 ```python
 import subprocess, os
-gh_path = "/opt/data/home/.local/bin/gh"
+gh_path = "~/Projets_Dev/home/.local/bin/gh"
 tok = os.environ.get("GH_TOKEN")
 if not tok:
     tok = subprocess.run([gh_path, "auth", "token"],
@@ -726,7 +726,7 @@ plutôt que `python3`.
 ### 🔴 Cross-device move
 
 Dans un script cron, ne pas utiliser `Path.rename()` entre `/tmp/` et
-`/opt/data/` — ces répertoires sont souvent sur des filesystems différents.
+`~/Projets_Dev/` — ces répertoires sont souvent sur des filesystems différents.
 Utilisez `shutil.move()`.
 
 ```python
@@ -763,7 +763,7 @@ Un cron horaire = un script no_agent = **0 € par exécution**.
 hermes cron create \
   --name "Dashboard Machines" \
   --schedule "0 * * * *" \
-  --script /opt/data/scripts/update_machines_kpi.py \
+  --script ~/.hermes/profiles/leo-copilot/scripts/update_machines_kpi.py \
   --no-agent
 ```
 
@@ -837,7 +837,7 @@ with open("/tmp/dashboard-machines.html", "w") as f:
 
 ```bash
 # Voir les logs du cron
-tail -20 /opt/data/profiles/leo-copilot/logs/agent.log
+tail -20 ~/.hermes/profiles/leo-copilot/logs/agent.log
 
 # Vérifier le dashboard en ligne
 curl -s https://user.github.io/leo-metrics/ | head -5
@@ -856,7 +856,7 @@ Les crons quotidiens sont les tâches lourdes qui s'exécutent une fois par jour
   Action: Archive tous les profils + config → Google Drive
   Rétention: 7 jours
   Coût: 0 € (no_agent)
-  Script: /opt/data/scripts/hermes-backup.py
+  Script: ~/.hermes/profiles/leo-copilot/scripts/hermes-backup.py
 
 07:00 — Veille IA
   Action: Collecte 15 sources RSS → analyse DeepSeek → email
@@ -892,7 +892,7 @@ Ce qui est sauvegardé:
   - credentials_vault.json  → coffre-fort des credentials
 
 Destination:
-  - Local: /opt/data/backups/
+  - Local: ~/.hermes/backups/
   - Cloud: Google Drive (Hermes_Christophe/backups/)
   
 Rétention: 7 jours
@@ -1073,18 +1073,18 @@ Wiki en ligne 🌐
 # drive-sync.sh
 
 # 1. Scanne les dossiers Drive partagés
-python3 /opt/data/scripts/drive-sync.py --scan
+python3 ~/.hermes/profiles/leo-copilot/scripts/drive-sync.py --scan
 
 # 2. Détecte les nouveaux fichiers
-python3 /opt/data/scripts/drive-sync.py --diff
+python3 ~/.hermes/profiles/leo-copilot/scripts/drive-sync.py --diff
 
 # 3. Convertit les .docx en .md
-python3 /opt/data/scripts/drive-sync.py --convert
+python3 ~/.hermes/profiles/leo-copilot/scripts/drive-sync.py --convert
 
 # 4. Commit + push
-cd /opt/data/BAVI_LEO && git add -A && git commit -m "sync Drive $(date +%Y-%m-%d)" && git push
-cd /opt/data/voyages-wiki && git add -A && git commit -m "sync Drive $(date +%Y-%m-%d)" && git push
-cd /opt/data/emile-wiki && git add -A && git commit -m "sync Drive $(date +%Y-%m-%d)" && git push
+cd ~/Projets_Dev/BAVI_LEO && git add -A && git commit -m "sync Drive $(date +%Y-%m-%d)" && git push
+cd ~/Projets_Dev/voyages-wiki && git add -A && git commit -m "sync Drive $(date +%Y-%m-%d)" && git push
+cd ~/Projets_Dev/emile-wiki && git add -A && git commit -m "sync Drive $(date +%Y-%m-%d)" && git push
 ```
 
 ## Wikis synchronisés
@@ -1118,5 +1118,5 @@ Règle: GitHub gagne en cas de conflit.
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

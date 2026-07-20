@@ -272,7 +272,7 @@ L'architecture couvre tout le cycle :
 
 ## ⑦ ARCHIVAGE
 
-- **Fichier :** `/opt/data/hermes-christophe/BAVI/AGENT-PRO/bureau-michel/analyse-bureau-memoire-20260625.md`
+- **Fichier :** `~/Projets_Dev/hermes-christophe/BAVI/AGENT-PRO/bureau-michel/analyse-bureau-memoire-20260625.md`
 - **Wiki BAVI :** Agent Pro → Bureau Michel — Infra_Hermes
 - **Dépôt à créer :** `emile-wiki` → ✅ [Créé](https://github.com/christophedanhier-hash/emile-wiki) le 26/06/2026
 - **Dossier Drive :** `bavi/bureau-emilie` → ✅ Créé et partagé avec Émile le 26/06/2026 — elle y dépose ses documents (brouillons, notes, sources)
@@ -298,17 +298,17 @@ L'architecture couvre tout le cycle :
 **URLs actives :**
 - 🤖 Bot : [@Bureau_ia_emilie_bot](https://t.me/Bureau_ia_emilie_bot)
 - 📖 Wiki : https://christophedanhier-hash.github.io/emile-wiki/ (HTTP 200)
-- 🧠 Profil : `/opt/data/profiles/emile/` (DeepSeek Flash + Gemini fallback, s6-supervisé)
+- 🧠 Profil : `~/.hermes/profiles/emile/` (DeepSeek Flash + Gemini fallback, s6-supervisé)
 - 📁 Drive : `bavi/bureau-emilie` (partagé avec Émilie Danhier)
 - 🏛️ BAVI LEO : nav `🎓 Bureau Émile — Mémoire`
 
 **Profil technique :**
 - Modèle : DeepSeek v4 Flash (primaire) → Gemini 3.5 Flash (fallback >128K)
 - Gateway : s6-supervisé (`/run/service/gateway-emile`)
-- Token : stocké dans `/opt/data/profiles/emile/.env`
-- Logs : `/opt/data/logs/gateways/emile/`
+- Token : stocké dans `~/.hermes/profiles/emile/.env`
+- Logs : `~/Projets_Dev/logs/gateways/emile/`
 
 *Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 25/06/2026, implémenté et documenté 26/06/2026*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

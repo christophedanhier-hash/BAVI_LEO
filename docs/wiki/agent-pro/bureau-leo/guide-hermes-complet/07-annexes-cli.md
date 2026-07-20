@@ -472,7 +472,7 @@ Tout nouveau cron doit être **no_agent** sauf justification explicite. Les cron
 ## Structure des fichiers
 
 ```text
-/opt/data/
+~/Projets_Dev/
 ├── config.yaml           → Configuration Hermes
 ├── .env                  → Variables d'environnement (clés API)
 ├── google_token.json     → Token OAuth Google
@@ -524,5 +524,5 @@ Tout nouveau cron doit être **no_agent** sauf justification explicite. Les cron
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 

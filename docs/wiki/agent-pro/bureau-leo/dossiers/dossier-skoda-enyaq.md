@@ -174,7 +174,7 @@ Acquisition d'une **Skoda Enyaq 60 Corporate** (2026) en leasing via **Ayvens** 
 | `Order_confirmation_to_customer_1258129.pdf` | 180 KB | Confirmation Ayvens — 2 pages |
 | `overview.pdf` | 34 KB | Devis Eneco — 2 pages |
 
-📁 Tous stockés dans `/opt/data/skoda_docs/`
+📁 Tous stockés dans `~/Projets_Dev/skoda_docs/`
 
 ---
 
@@ -210,5 +210,5 @@ Acquisition d'une **Skoda Enyaq 60 Corporate** (2026) en leasing via **Ayvens** 
 |:--------|:-----|:------------|
 | v1 | 2026-06-24 | Version initiale — dossier complet Skoda Enyaq |
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
 
