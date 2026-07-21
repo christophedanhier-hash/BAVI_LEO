@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 21/07/2026 à 06:00**
+> **Généré automatiquement le 21/07/2026 à 12:00**
 > Source : `profiles/leo-copilot/cron/jobs.json` (41 jobs)
 <!-- AUTO:END header -->
 
@@ -32,7 +32,7 @@
 | 11 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
 | 12 | 📋 Doc Watch Auto (sync documents) | `*/2 * * * *` | script | ✅ |
 | 13 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
-| 14 | 📓 Journaux Quotidiens (5 vaults) | `0 23 * * *` | LLM | ✅ |
+| 14 | 📓 Journaux Quotidiens (5 wikis + 5 vaults) | `0 23 * * *` | LLM | ✅ |
 | 15 | 📝 Audit rédactionnel unifié (2 wikis, 1 passage) | `0 6 * * *` | LLM | ✅ |
 | 16 | 📝 docs-update | `0 */4 * * *` | script | ✅ |
 | 17 | 📞 Point contact LEO (4×/jour) | `0 8,11,14,17 * * *` | LLM | ✅ |
@@ -52,7 +52,7 @@
 | 31 | 🔄 sync-skills-to-copilot | `*/30 * * * *` | script | ✅ |
 | 32 | 🔍 Audit Infra (cohérence globale) | `0 * * * *` | script | ✅ |
 | 33 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
-| 34 | 🕐 Audit Qualité Crons (journalier) | `0 7 * * *` | script | ⚠️ |
+| 34 | 🕐 Audit Qualité Crons (journalier) | `0 7 * * *` | script | ✅ |
 | 35 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
 | 36 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
 | 37 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
@@ -71,7 +71,7 @@
 | H2 | `0 23 * * * cd /home/tofdan/scripts-hermes && python3 backup-daily.py >` |
 | H3 | `30 22 * * * cd /home/tofdan/scripts-hermes && python3 dashboard/budget` |
 | H4 | `0 * * * * cd /home/tofdan/scripts-hermes && python3 dashboard/log_sess` |
-| H5 | ~~`0 2 * * * /opt/n8n-data/backup.sh`~~ n8n retiré 13/07/2026 |
+| H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 21/07/2026 à 06:00_
+_Généré automatiquement le 21/07/2026 à 12:00_
