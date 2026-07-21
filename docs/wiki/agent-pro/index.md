@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 21/07/2026 à 22:00*
+*Généré automatiquement le 21/07/2026 à 23:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 11 | 21/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 12 | 21/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 14/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 6 | N/A |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 56 analyse(s) sur l'ensemble des bureaux.**
+**Total : 57 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -34,6 +34,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [📐 Analyse Métier & Fonctionnelle — AUDIT IAM ETL SOLIDARIS](bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris/) | `analyse-metier` `analyse-fonctionnelle` `iam` `audit` `etl` `solidaris` `dev` | ✅ Finalisé | [📥](bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris.md) |
 | 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Référentiel Stratégique — Développement & IA Solidaris](bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases/) | `referentiel` `ia` `developpement` `mainframe` `cra` `phases` `strategie` `solidaris` | ✅ Finalisé | [📥](bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases.md) |
 | 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏗️ Référentiel Architecture — AUDIT IAM ETL SOLIDARIS](bureau-robert/referentiel-architecture-audit-iam-solidaris/) | `architecture` `referentiel` `iam` `audit` `etl` `solidaris` `dev` | ✅ Finalisé | [📥](bureau-robert/referentiel-architecture-audit-iam-solidaris/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/referentiel-architecture-audit-iam-solidaris.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/referentiel-architecture-audit-iam-solidaris.md) |
+| 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [Analyse et Extraction de Connaissance — Calcul Assurabilité Solidaris](bureau-robert/analyse-extraction-assurabilite-resultat/) | `analyse` `extraction` `connaissance` `mainframe` `pl1` `db2` `assurabilite` `solidaris` | ✅ Finalisé | [📥](bureau-robert/analyse-extraction-assurabilite-resultat/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-extraction-assurabilite-resultat.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-extraction-assurabilite-resultat.md) |
 | 19/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v3.0 | [Etude de marche — Achat de 2 velos electriques pliables ENGWE](bureau-leo/etude-marche-velos-electriques/) | `leo` `velo` `electrique` `pliable` `etude-marche` `engwe` `achat` `o20-boost` `l20-boost` `zip` `p275` | ✅ Complete | [📥](bureau-leo/etude-marche-velos-electriques/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-velos-electriques.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/etude-marche-velos-electriques.md) |
 | 18/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v5.0 | [🦁 Guide Hermès Refactorisé — v5.0](bureau-leo/guide-hermes-complet/) | `hermes` `guide` `documentation` `livre` `pour-les-nuls` `leo` `architecture` `bavi` `refactored` | ✅ À jour | [📥](bureau-leo/guide-hermes-complet/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/index.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/index.md) |
 | 18/07/2026 | 🤖 Bureau LEO — Dossiers & Analyses | v1.0 | [Prompts NotebookLM - Presentation & Video](bureau-leo/guide-hermes-complet/09-prompts-notebooklm/) | `hermes` `guide` `notebooklm` `presentation` `video` `prompts` `strategie` | ✅ Nouveau | [📥](bureau-leo/guide-hermes-complet/09-prompts-notebooklm/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/09-prompts-notebooklm.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-leo/guide-hermes-complet/09-prompts-notebooklm.md) |
@@ -85,4 +86,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 21/07/2026 22:00*
+*Index consolidé généré par `agent-pro-index.py` — 21/07/2026 23:00*
