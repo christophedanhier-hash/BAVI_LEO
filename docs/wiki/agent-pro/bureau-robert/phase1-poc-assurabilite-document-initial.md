@@ -3,148 +3,155 @@ date: 2026-07-21
 bureau: bureau-robert
 projet: DEV-IA-SOLIDARIS
 phase: 1
-version: v2
-tags: [phase1, poc, assurabilite, mainframe, template, methodologie, solidaris]
+version: v3
+tags: [phase1, modele-extraction, mainframe, pl1, methodologie, reutilisable, solidaris]
 statut: finalise
-type: note-initiale
+type: note-cadrage
 ---
 
-# 📋 Phase 1 — POC Calcul d'Assurabilité : Document Initial
-## Cadrage et méthodologie d'analyse mainframe (agnostique outil/modèle)
+# 🧠 Phase 1 — Modèle d'Extraction : Document de Cadrage
+## Construction d'un modèle réutilisable d'extraction de connaissance depuis les sources
 
-> **Exercice :** Reconstruction — un seul POC, sans choix de solution ou modèle
-> **Base :** Retour d'expérience des 3 POC initiaux (BOB, CG, DS)
-> **Date :** 21/07/2026 | **Version :** v2
+> **Objectif :** Créer un **modèle d'extraction systématique** capable de transformer n'importe quel code source (PL/1, COBOL, Java, etc.) en documentation business (BPMN, règles) et IT (architecture, analyse fonctionnelle).
+> **Outils cibles :** Claude Code, Codex, BOB, GitHub Copilot, Kilo Code, etc.
+> **Source :** Application Assurabilité Solidaris (PL/1 batch z/OS)
+> **Date :** 21/07/2026 | **Version :** v3
 
 ---
 
-## 1. Pourquoi repartir sur un seul POC ?
-
-Les 3 POC initiaux (BOB, Copilot, DeepSeek) ont analysé **le même code source PL/1** — la chaîne de calcul d'assurabilité Solidaris — mais avec des outils et modèles différents. Résultat : **3 livrables de qualité et contenu différents**.
-
-**Leçon apprise :** plutôt que de comparer des outils, nous allons produire **un seul POC de référence**, agnostique de l'outil ou du modèle, centré sur la qualité du livrable.
+## 1. Concept
 
 ```mermaid
 flowchart LR
-    subgraph INITIAL["3 POC initiaux"]
+    subgraph INPUT["Entrée (n'importe quelle app)"]
+        SRC[Sources dans Git/VS Code]
+    end
+
+    subgraph MODEL["🧠 Modèle d'Extraction"]
+        PROMPT[Prompts structurés]
+        TEMPLATE[Templates de livrables]
+        METHOD[Phases d'analyse]
+        REGLES[Règles d'extraction]
+    end
+
+    subgraph TOOLS["Outils au choix"]
+        CC[Claude Code]
+        CX[Codex]
         BOB[BOB]
-        COPILOT[Copilot]
-        DS[DeepSeek]
+        COP[GitHub Copilot]
+        KC[Kilo Code]
     end
 
-    subgraph UNIQUE["Nouvel exercice"]
-        REF[POC unique<br/>Calcul d'Assurabilité<br/>Agnostique]
+    subgraph OUTPUT["Livrables (business + IT)"]
+        BPMN[Processus BPMN]
+        REGLES_M[Règles métier]
+        ARCHI[Architecture applicative]
+        FONC[Analyse fonctionnelle]
     end
 
-    BOB -->|Retour d'expérience| REF
-    COPILOT -->|Leçons apprises| REF
-    DS -->|Comparaison qualité| REF
+    SRC --> MODEL
+    MODEL --> TOOLS
+    TOOLS --> OUTPUT
 ```
 
 ---
 
-## 2. Périmètre du POC unique
+## 2. Ce qu'on va produire
 
-### Chaîne batch : Calcul d'Assurabilité Solidaris
+### Lot 1 — Le Modèle (le livrable principal)
+
+| Composant | Description | Format |
+|:----------|:------------|:-------|
+| **M1 - Prompt d'extraction** | Prompt générique pour analyser du code source et extraire la connaissance | `.md` réutilisable |
+| **M2 - Templates de livrables** | Modèles pour chaque type de livrable (BPMN, architecture, règles, etc.) | `.md` avec Mermaid |
+| **M3 - Guide d'utilisation** | Comment appliquer le modèle à une nouvelle application, outil par outil | `.md` |
+| **M4 - Règles de qualité** | Critères de validation des livrables produits | `.md` |
+
+### Lot 2 — L'application à Assurabilité (la démo)
+
+| Livrable | Contenu |
+|:---------|:--------|
+| **A1 - BPMN processus métier** | Processus d'assurabilité modélisé |
+| **A2 - Règles métier extraites** | 50+ règles classées et validées |
+| **A3 - Glossaire FR/NL** | Terminologie bilingue |
+| **A4 - Architecture applicative** | Schémas des composants et dépendances |
+| **A5 - Analyse fonctionnelle** | Rôle de chaque programme, flux, traitements |
+| **A6 - Schéma des données** | Tables DB2, copybooks, relations |
+| **A7 - Matrice de dépendances** | Programme → copybook → DB2 → fichier |
+
+---
+
+## 3. Le Prompt d'extraction (M1) — version initiale
+
+Basé sur le template 16 sections de l'existant, mais refondu pour être :
+- ✅ **Agnostique** (outil, langage, application)
+- ✅ **Reproductible** (même résultat quel que soit l'outil)
+- ✅ **Complet** (business + IT)
+- ✅ **Visuel** (BPMN, schémas Mermaid)
+
+### Structure du prompt
+
+```markdown
+# MISSION : ANALYSE ET EXTRACTION DE CONNAISSANCE
+
+## Contexte
+- Application : [NOM]
+- Langage : [PL/1, COBOL, Java, etc.]
+- Sources : [chemin Git/VS Code]
+- Objectif métier : [description]
+
+## Phases d'extraction
+
+### Phase A — Cartographie
+1. Inventaire exhaustif des sources (fichiers, types, lignes)
+2. Structure du workspace (arborescence)
+3. Identification des points d'entrée (JCL, scripts, APIs)
+
+### Phase B — Extraction knowledge
+4. Extraction des flux (données, contrôle, appels)
+5. Extraction des règles métier (conditions, calculs, validations)
+6. Extraction du glossaire (termes techniques, abréviations)
+7. Extraction des dépendances (programmes, données, fichiers)
+
+### Phase C — Modélisation
+8. Modélisation BPMN des processus métier
+9. Schéma d'architecture applicative
+10. Schéma des données (entités, relations)
+11. Diagramme de flux batch/système
+
+### Phase D — Synthèse
+12. Analyse fonctionnelle par composant
+13. Analyse qualité du code
+14. Recommandations et plan d'action
+```
+
+---
+
+## 4. Déroulé de l'exercice
 
 ```mermaid
 flowchart TD
-    subgraph BATCH["Chaîne batch Assurabilité"]
-        JCL[JCL Batch - 17 fichiers]
-        PL1[Programmes PL/1 - 28 programmes<br/>57 068 lignes]
-        COPY[Copybooks - 21 fichiers]
-        DB2[Tables DB2 - 28 DCLGEN]
-    end
-
-    BATCH --> ANALYSE[Analyse 16 sections]
-    ANALYSE --> REGLES[Règles métier<br/>50+ règles]
-    ANALYSE --> GLOSSAIRE[Glossaire FR/NL]
-    ANALYSE --> QUALITE[Analyse qualité code]
-    ANALYSE --> RECO[Recommandations]
-```
-
-### Métriques clés (issues du POC BOB)
-
-| Métrique | Valeur |
-|:---------|:------:|
-| Fichiers sources inventoriés | 97 |
-| JCL batch | 17 |
-| Programmes PL/1 | 28 (57 068 lignes) |
-| Copybooks | 21 |
-| Tables DB2 (DCLGEN) | 28 |
-| Règles métier documentées | 50+ |
-| Codes retour documentés | 40+ |
-| Livrables POC BOB | 30 (~250 pages) |
-
----
-
-## 3. Méthodologie : Template 16 sections (agnostique)
-
-Le template **ne dépend d'aucun outil ni modèle**. Il est réutilisable pour toute analyse de chaîne batch mainframe.
-
-| # | Section | Objet |
-|:-:|:--------|:------|
-| **1** | Cartographie workspace | Inventaire exhaustif des sources |
-| **2** | Identification JCL | Analyse des 17 JCL batch |
-| **3** | Analyse programmes PL/1 | 28 programmes, logique métier |
-| **4** | Analyse copybooks | 21 structures de données |
-| **5** | Analyse DCLGEN DB2 | 28 tables, accès SQL |
-| **6** | Analyse routines | Routines de calcul, validation, erreur |
-| **7** | Copybooks complémentaire | Structures transverses |
-| **8** | Analyse paramètres SYSIN | Paramètres d'entrée batch |
-| **9** | Reconstitution DDL DB2 | Schéma des tables |
-| **10** | Flux de données | Entrées/sorties/dépendances |
-| **11** | Contrôles statuts rejets | Codes retour, gestion d'erreurs |
-| **12** | Règles métier | Extraction des règles codées |
-| **13** | Matrice IT/Business | Correspondance technique ↔ métier |
-| **14** | Sources manquantes | Identification des lacunes |
-| **15** | Synthèse finale | Vue consolidée + recommandations |
-| **16** | Ordinogrammes | Diagrammes des flux et traitements |
-
----
-
-## 4. Leçons des 3 POC initiaux
-
-| Aspect | BOB | Copilot | DeepSeek |
-|:-------|:---:|:-------:|:--------:|
-| Qualité analyse | ✅ Élevée | ⚠️ Moyenne | ⚠️ Moyenne |
-| Complétude 16 sections | ✅ Complète | ⚠️ Partielle | ⚠️ Partielle |
-| Règles métier extraites | ✅ 50+ | ⚠️ ~30 | ⚠️ ~25 |
-| Ordinogrammes | ✅ 20+ | ❌ Peu | ❌ Peu |
-| Qualité code | ✅ Analyse détaillée | ⚠️ Superficielle | ⚠️ Superficielle |
-| Volume livrables | ~250 pages | ~80 pages | ~60 pages |
-
-**Ce qu'on garde :** la méthode 16 sections, le niveau de détail métier, la rigueur d'analyse
-**Ce qu'on améliore :** agnostique outil/modèle, reproductibilité, qualité constante
-
----
-
-## 5. Plan de travail proposé
-
-```mermaid
-flowchart TD
-    E1[Étape 1<br/>Analyser les sources] --> E2[Étape 2<br/>Produire les 16 sections]
-    E2 --> E3[Étape 3<br/>Extraire règles métier]
-    E3 --> E4[Étape 4<br/>Glossaire FR/NL]
-    E4 --> E5[Étape 5<br/>Qualité code + recommandations]
-    E5 --> E6[Étape 6<br/>Synthèse livrables]
+    E1[Étape 1<br/>Construire le modèle<br/>Prompts + Templates] --> E2[Étape 2<br/>Sources Assurabilité<br/>dans Git/VS Code]
+    E2 --> E3[Étape 3<br/>Appliquer le modèle<br/>avec un outil au choix]
+    E3 --> E4[Étape 4<br/>Produire les livrables<br/>business + IT]
+    E4 --> E5[Étape 5<br/>Valider le modèle<br/>Reproductible ?]
+    E5 -->|Oui| FIN[✅ Modèle validé]
+    E5 -->|Non| E1
 ```
 
 ---
 
-## 6. Sources disponibles (mémoire initiale)
+## 5. Rétrospective des 3 POC — Leçons pour le modèle
 
-| Source | Emplacement |
-|:-------|:------------|
-| Code PL/1 BO | `01_Poc_Assurabilité_BOB/1_SOURCES_MAINFRAME/` |
-| JCL batch | `BOB/1_SOURCES_MAINFRAME/JCL/` |
-| Copybooks | `BOB/1_SOURCES_MAINFRAME/PL1/COPYBOOKS/` |
-| DCLGEN DB2 | `BOB/1_SOURCES_MAINFRAME/DB2/DCLGEN/` |
-| Documentation technique | `BOB/1_SOURCES_MAINFRAME/DOCUMENTATION_TECHNIQUE/` |
-| Analyses BOB existantes | `BOB/SYNTHESE_SECTION_*.md` (référence) |
+| Leçon | Impact sur le modèle |
+|:------|:---------------------|
+| 🔴 Inventaire incomplet → reprise en cascade | **Règle impérative** : inventaire exhaustif AVANT toute analyse |
+| 🟡 Qualité variable selon l'outil | **Prompts standardisés** pour garantir un niveau minimum |
+| 🟢 BOB a produit les 16 sections complètes | **Structure en phases** éprouvée, à généraliser |
+| 🟢 CG a produit des diagrammes Mermaid | **Templates Mermaid** obligatoires dans les livrables |
+| 🔴 ASCII art illisible | **Mermaid uniquement** — pas de diagrammes texte |
 
 ---
 
-*Document initial v2 produit par Robert 🏛️ — Nouvel exercice*
-*POC unique Calcul d'Assurabilité — Agnostique outil/modèle*
-*Basé sur le retour d'expérience des 3 POC initiaux (BOB, Copilot, DeepSeek)*
+*Document de cadrage v3 produit par Robert 🏛️*
+*Construction d'un modèle d'extraction réutilisable — Application démo : Assurabilité*
