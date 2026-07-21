@@ -265,7 +265,7 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 <div class="card">
   <h3>📓 Vaults Obsidian</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px">
-    {"".join(f'<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">{"🦁" if k=="leo" or k=="leo-copilot" else "🏠" if k=="default" else "🎓" if k=="emile" else "🚐"}</div><div style="font-size:14px;font-weight:700">{vv.get("notes",0)}</div><div style="font-size:9px;color:var(--dim)">{"Michel" if k=="leo-copilot" else "Léo" if k=="default" else "Émile" if k=="emile" else k}</div></div>' for k,vv in va.get("vaults",{}).items())}
+    {"".join(f'<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">{"🦁" if k=="leo" or k=="leo-copilot" else "🏠" if k=="default" else "🎓" if k=="emile" else "🚐"}</div><div style="font-size:14px;font-weight:700">{vv.get("dailies",0)}</div><div style="font-size:9px;color:var(--dim)">{"Michel" if k=="leo-copilot" else "Léo" if k=="default" else "Émile" if k=="emile" else k}</div></div>' for k,vv in va.get("vaults",{}).items())}
   </div>
   <div class="sub" style="margin-top:6px;font-size:11px">{va.get("total_dailies",0)} journaux · {va.get("total_notes",0)} notes</div>
 </div>
