@@ -49,6 +49,7 @@ d'échec des projets d'extraction.
 ### A1 — Inventaire exhaustif des sources
 Liste récursivement tous les fichiers du workspace.
 Classe-les par type :
+
 | Type | Nombre | Exemples |
 |------|--------|----------|
 | Programmes principaux | | |
@@ -101,6 +102,7 @@ Extrais TOUTES les règles métier du code :
 - Codes retour et signification
 
 Format : Tableau structuré
+
 | Règle | Description | Localisation (fichier:ligne) | Type |
 |-------|-------------|------------------------------|------|
 
@@ -112,6 +114,7 @@ Extrais tous les termes techniques et abréviations :
 - Acronymes techniques
 
 Format : Tableau bilingue si applicable
+
 | Terme | Définition | EN/NL/FR |
 |-------|------------|----------|
 
