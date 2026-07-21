@@ -211,13 +211,8 @@ flowchart LR
 
 | Ressource | Lien |
 |:----------|:-----|
-| 📁 **GDrive Racine** | `https://drive.google.com/drive/folders/1h-23v05cJCm_h2C3sqMmCSK4wTOy692h` |
-| 📁 POC Assurabilité | `01_POC_Assurabilite/` |
-| 📁 Mainframe CI/CD | `02_Mainframe_CICD/` |
-| 📁 CRA | `03_CRA_Cerveau_Reglementaire/` |
-| 📁 DEV IA CRA | `04_DEV_IA_CRA/` |
-| 📁 Rapports Stratégiques | `05_Rapports_Strategiques/` |
-| 📄 **Synthèse complète** | `05_Rapports_Strategiques/IMPACT_IA_DEVELOPPEMENT_SYNTHESE_PHASES.md` |
+| 📦 **Archive ZIP** | Transférée manuellement par Christophe |
+| 📄 **Synthèse complète** | Voir référentiel BAVI |
 
 ---
 
