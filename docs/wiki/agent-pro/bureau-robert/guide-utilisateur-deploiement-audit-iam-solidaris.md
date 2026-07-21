@@ -172,7 +172,7 @@ start_app_consultation.bat
 
 ```mermaid
 flowchart TD
-    START[Démarrage] --> RESOLVE{Résolution de la<br/>source Parquet}
+    START[Démarrage] --> RESOLVE{"Résolution de la<br/>source Parquet"}
     RESOLVE --> C1[parquet_path_candidates]
     RESOLVE --> C2[parquet_path]
     RESOLVE --> ENV[IAM_DATA_PARQUET]
