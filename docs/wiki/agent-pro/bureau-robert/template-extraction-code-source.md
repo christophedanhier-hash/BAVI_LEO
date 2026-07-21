@@ -172,6 +172,7 @@ Format : Mermaid flowchart
 
 ### D1 — Analyse fonctionnelle par composant
 Pour chaque programme/script majeur :
+
 | Programme | Rôle | Entrées | Sorties | Appels | Règles |
 |-----------|------|---------|---------|--------|--------|
 
