@@ -3,122 +3,148 @@ date: 2026-07-21
 bureau: bureau-robert
 projet: DEV-IA-SOLIDARIS
 phase: 1
-version: v1
+version: v2
 tags: [phase1, poc, assurabilite, mainframe, template, methodologie, solidaris]
 statut: finalise
 type: note-initiale
 ---
 
-# 📋 Phase 1 — POC Assurabilité : Document Initial
-## Cadrage et méthodologie d'analyse mainframe
+# 📋 Phase 1 — POC Calcul d'Assurabilité : Document Initial
+## Cadrage et méthodologie d'analyse mainframe (agnostique outil/modèle)
 
-> **Exercice :** Nouvel exercice — reconstruction structurée
-> **Base :** Mémoire initiale (GDrive `01_Poc_Développement_AO/`)
-> **Date :** 21/07/2026 | **Version :** v1
+> **Exercice :** Reconstruction — un seul POC, sans choix de solution ou modèle
+> **Base :** Retour d'expérience des 3 POC initiaux (BOB, CG, DS)
+> **Date :** 21/07/2026 | **Version :** v2
 
 ---
 
-## 1. Périmètre de la Phase 1
+## 1. Pourquoi repartir sur un seul POC ?
+
+Les 3 POC initiaux (BOB, Copilot, DeepSeek) ont analysé **le même code source PL/1** — la chaîne de calcul d'assurabilité Solidaris — mais avec des outils et modèles différents. Résultat : **3 livrables de qualité et contenu différents**.
+
+**Leçon apprise :** plutôt que de comparer des outils, nous allons produire **un seul POC de référence**, agnostique de l'outil ou du modèle, centré sur la qualité du livrable.
 
 ```mermaid
 flowchart LR
-    subgraph PHASE1["Phase 1 — POC Assurabilité"]
-        direction TB
-        BOB[Poc BOB<br/>Assurabilité]
-        CG[Poc CG<br/>Assurabilité]
-        DS[Poc DS<br/>Assurabilité]
+    subgraph INITIAL["3 POC initiaux"]
+        BOB[BOB]
+        COPILOT[Copilot]
+        DS[DeepSeek]
     end
 
-    subgraph LIVRABLES["Livrables"]
-        TEMPLATE[Template 16 sections]
-        ANALYSE[Analyses chaîne batch]
-        SOURCES[Sources mainframe]
-        GLOSSAIRE[Glossaire FR/NL]
+    subgraph UNIQUE["Nouvel exercice"]
+        REF[POC unique<br/>Calcul d'Assurabilité<br/>Agnostique]
     end
 
-    PHASE1 --> LIVRABLES
+    BOB -->|Retour d'expérience| REF
+    COPILOT -->|Leçons apprises| REF
+    DS -->|Comparaison qualité| REF
 ```
 
-### Objectif
-Produire un **corpus documentaire structuré et réutilisable** pour l'analyse de chaînes batch mainframe z/OS : règles métier, glossaire bilingue, sources, validations.
-
-### 3 sous-projets
-| Projet | Périmètre | Statut initial |
-|:-------|:-----------|:--------------:|
-| **BOB** | Assurabilité — périmètre RA-001 à RA-003 | ✅ Documenté |
-| **CG** | Assurabilité — périmètre complémentaire | ✅ Documenté |
-| **DS** | Assurabilité — périmètre complémentaire | ✅ Documenté |
-
 ---
 
-## 2. Méthodologie : Template 16 sections
+## 2. Périmètre du POC unique
 
-Le cœur de la Phase 1 est un **template méthodologique en 16 sections** pour analyser systématiquement toute chaîne batch z/OS.
-
-### Les 16 sections
-
-| # | Section | Objet |
-|:-:|:--------|:------|
-| **1** | Contexte et objectifs | Périmètre, finalité métier |
-| **2** | Inventaire des sources | Liste exhaustive fichiers (JCL, PL/1, copybooks, DCLGEN, DDL) |
-| **3** | Architecture de la chaîne | Flux batch, dépendances, enchaînement |
-| **4** | Analyse JCL | Steps, DD names, fichiers, procédures |
-| **5** | Analyse des programmes | Logique métier, règles, traitements |
-| **6** | Analyse des copybooks | Structures de données, inclusions |
-| **7** | Analyse DB2 | Tables, DCLGEN, accès SQL |
-| **8** | Règles métier | Extraction des règles codées dans PL/1 |
-| **9** | Glossaire FR/NL | Terminologie bilingue |
-| **10** | Flux de données | Entrées, sorties, dépendances |
-| **11** | Gestion des erreurs | Codes retour, traitements d'erreur |
-| **12** | Sécurité et conformité | Accès, profils, sensibilité |
-| **13** | Analyse de qualité | Complexité, maintenabilité |
-| **14** | Synthèse technique | Vue d'ensemble consolidée |
-| **15** | Recommandations | Pistes d'évolution, modernisation |
-| **16** | Annexes | Références, codes, listings |
-
----
-
-## 3. Processus d'analyse type
+### Chaîne batch : Calcul d'Assurabilité Solidaris
 
 ```mermaid
 flowchart TD
-    A[1. Inventaire sources] --> B[2. Analyse JCL]
-    B --> C[3. Analyse programmes PL/1]
-    C --> D[4. Analyse copybooks]
-    D --> E[5. Analyse DB2/DCLGEN]
-    E --> F[6. Extraction regles metier]
-    F --> G[7. Production glossaire FR/NL]
-    G --> H[8. Synthese et recommandations]
+    subgraph BATCH["Chaîne batch Assurabilité"]
+        JCL[JCL Batch - 17 fichiers]
+        PL1[Programmes PL/1 - 28 programmes<br/>57 068 lignes]
+        COPY[Copybooks - 21 fichiers]
+        DB2[Tables DB2 - 28 DCLGEN]
+    end
+
+    BATCH --> ANALYSE[Analyse 16 sections]
+    ANALYSE --> REGLES[Règles métier<br/>50+ règles]
+    ANALYSE --> GLOSSAIRE[Glossaire FR/NL]
+    ANALYSE --> QUALITE[Analyse qualité code]
+    ANALYSE --> RECO[Recommandations]
+```
+
+### Métriques clés (issues du POC BOB)
+
+| Métrique | Valeur |
+|:---------|:------:|
+| Fichiers sources inventoriés | 97 |
+| JCL batch | 17 |
+| Programmes PL/1 | 28 (57 068 lignes) |
+| Copybooks | 21 |
+| Tables DB2 (DCLGEN) | 28 |
+| Règles métier documentées | 50+ |
+| Codes retour documentés | 40+ |
+| Livrables POC BOB | 30 (~250 pages) |
+
+---
+
+## 3. Méthodologie : Template 16 sections (agnostique)
+
+Le template **ne dépend d'aucun outil ni modèle**. Il est réutilisable pour toute analyse de chaîne batch mainframe.
+
+| # | Section | Objet |
+|:-:|:--------|:------|
+| **1** | Cartographie workspace | Inventaire exhaustif des sources |
+| **2** | Identification JCL | Analyse des 17 JCL batch |
+| **3** | Analyse programmes PL/1 | 28 programmes, logique métier |
+| **4** | Analyse copybooks | 21 structures de données |
+| **5** | Analyse DCLGEN DB2 | 28 tables, accès SQL |
+| **6** | Analyse routines | Routines de calcul, validation, erreur |
+| **7** | Copybooks complémentaire | Structures transverses |
+| **8** | Analyse paramètres SYSIN | Paramètres d'entrée batch |
+| **9** | Reconstitution DDL DB2 | Schéma des tables |
+| **10** | Flux de données | Entrées/sorties/dépendances |
+| **11** | Contrôles statuts rejets | Codes retour, gestion d'erreurs |
+| **12** | Règles métier | Extraction des règles codées |
+| **13** | Matrice IT/Business | Correspondance technique ↔ métier |
+| **14** | Sources manquantes | Identification des lacunes |
+| **15** | Synthèse finale | Vue consolidée + recommandations |
+| **16** | Ordinogrammes | Diagrammes des flux et traitements |
+
+---
+
+## 4. Leçons des 3 POC initiaux
+
+| Aspect | BOB | Copilot | DeepSeek |
+|:-------|:---:|:-------:|:--------:|
+| Qualité analyse | ✅ Élevée | ⚠️ Moyenne | ⚠️ Moyenne |
+| Complétude 16 sections | ✅ Complète | ⚠️ Partielle | ⚠️ Partielle |
+| Règles métier extraites | ✅ 50+ | ⚠️ ~30 | ⚠️ ~25 |
+| Ordinogrammes | ✅ 20+ | ❌ Peu | ❌ Peu |
+| Qualité code | ✅ Analyse détaillée | ⚠️ Superficielle | ⚠️ Superficielle |
+| Volume livrables | ~250 pages | ~80 pages | ~60 pages |
+
+**Ce qu'on garde :** la méthode 16 sections, le niveau de détail métier, la rigueur d'analyse
+**Ce qu'on améliore :** agnostique outil/modèle, reproductibilité, qualité constante
+
+---
+
+## 5. Plan de travail proposé
+
+```mermaid
+flowchart TD
+    E1[Étape 1<br/>Analyser les sources] --> E2[Étape 2<br/>Produire les 16 sections]
+    E2 --> E3[Étape 3<br/>Extraire règles métier]
+    E3 --> E4[Étape 4<br/>Glossaire FR/NL]
+    E4 --> E5[Étape 5<br/>Qualité code + recommandations]
+    E5 --> E6[Étape 6<br/>Synthèse livrables]
 ```
 
 ---
 
-## 4. État initial de la mémoire
+## 6. Sources disponibles (mémoire initiale)
 
-Ce qui existe déjà dans `01_Poc_Développement_AO/` (GDrive) :
-
-| Type | Contenu |
-|:-----|:--------|
-| 📁 **BOB** | Sources PL/1, JCL, copybooks, DCLGEN, documentation technique |
-| 📁 **CG** | Sources + diagrammes + documentation |
-| 📁 **DS** | Sources + documentation |
-| 📄 **Template** | `Prompt_BOB_CG_DS.md` — template 16 sections |
-| 📄 **Comparatifs** | BOB vs Copilot vs DeepSeek — analyses comparatives |
-| 📄 **Analyses** | Synthèses section 16, ordinogrammes, qualité code |
-| 📁 **Old versions** | Archives versions antérieures |
+| Source | Emplacement |
+|:-------|:------------|
+| Code PL/1 BO | `01_Poc_Assurabilité_BOB/1_SOURCES_MAINFRAME/` |
+| JCL batch | `BOB/1_SOURCES_MAINFRAME/JCL/` |
+| Copybooks | `BOB/1_SOURCES_MAINFRAME/PL1/COPYBOOKS/` |
+| DCLGEN DB2 | `BOB/1_SOURCES_MAINFRAME/DB2/DCLGEN/` |
+| Documentation technique | `BOB/1_SOURCES_MAINFRAME/DOCUMENTATION_TECHNIQUE/` |
+| Analyses BOB existantes | `BOB/SYNTHESE_SECTION_*.md` (référence) |
 
 ---
 
-## 5. Ce qu'on va produire dans cet exercice
-
-| Livrable | Description |
-|:---------|:------------|
-| 📄 **Analyse Phase 1 consolidée** | Synthèse des 3 POC (BOB, CG, DS) |
-| 📄 **Template 16 sections amélioré** | Version ajustée de l'existant |
-| 📄 **Glossaire FR/NL** | Terminologie bilingue consolidée |
-| 📄 **Recommandations Phase 1 → Phase 2** | Transition vers l'industrialisation CI/CD |
-
----
-
-*Document initial produit par Robert 🏛️ — Nouvel exercice*
-*Basé sur la mémoire initiale GDrive `01_Poc_Développement_AO/`*
+*Document initial v2 produit par Robert 🏛️ — Nouvel exercice*
+*POC unique Calcul d'Assurabilité — Agnostique outil/modèle*
+*Basé sur le retour d'expérience des 3 POC initiaux (BOB, Copilot, DeepSeek)*
