@@ -95,7 +95,7 @@ flowchart LR
         PREPROCESS --> ENGINE[Moteur d'analyse<br/>15 modules src/]
     end
 
-    subGRAPH OUTPUT2["Livrables"]
+    subgraph OUTPUT2["Livrables"]
         ENGINE --> HTML[Dashboard HTML]
         ENGINE --> PDF[Rapport PDF]
         ENGINE --> VISU[Graphiques PNG]
@@ -192,7 +192,7 @@ flowchart TB
     DE --> RES
     ST --> RES
 
-    subGRAPH BUILD["Build & Packaging"]
+    subgraph BUILD["Build & Packaging"]
         PS[build_app_consultation.ps1] --> PI[PyInstaller<br/>onedir]
         PI --> BIN[AppConsultationAcces.exe<br/>dist_build/]
         BIN --> VER[N versions conservées]
