@@ -21,7 +21,6 @@ type: template-extraction
 
 ## Instructions pour l'outil IA
 
-```markdown
 # MISSION : ANALYSE ET EXTRACTION DE CONNAISSANCE
 
 Tu es un expert en analyse de code legacy. Ta mission est d'analyser
@@ -202,7 +201,6 @@ Pour chaque programme/script majeur :
 - ✅ L'inventaire doit être exhaustif (pas de sources oubliées)
 - ✅ Le glossaire doit couvrir tous les acronymes du code
 - ✅ La synthèse doit être compréhensible par un non-technicien
-```
 
 ---
 
