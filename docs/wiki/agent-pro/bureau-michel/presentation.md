@@ -21,7 +21,7 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 
 | Domaine | Détail |
 |:--------|:-------|
-| ⏰ **39 crons** | Veille IA, backups, budget, watchdogs, wiki sync, classification mail... |
+| ⏰ **41 crons (39 actifs)** | Veille IA, backups, budget, watchdogs, wiki sync, classification mail... |
 | 📜 **~100 scripts** | Collecte, backup, dashboard, déploiement, maintenance |
 | 🛡️ **Watchdogs** | Gateways, serveurs, machines, santé système |
 | 🚪 **Gateways** | 5 profils (default, leo-copilot, emile, bavi-leo, bureau-robert) — maintenance et stabilité |
@@ -36,7 +36,7 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 
 ## Modèle
 
-- **Providers** : DeepSeek, OpenAI, Gemini, Grok, Anthropic (selon les tâches)
+- **Providers** : deepseek (default), gemini-3.5-flash (fallback), qwen2.5:7b (Ollama local)
 - **Modèle local** : qwen2.5:7b (Ollama)
 - **Mémoire** : unifiée entre les profils default et leo-copilot
 

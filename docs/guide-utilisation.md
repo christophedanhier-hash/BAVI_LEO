@@ -31,14 +31,10 @@ Tous les documents produits par les bureaux BAVI LEO sont accessibles depuis le 
 
 | Modèle | Usage |
 |:-------|:------|
-| Modèle / Fournisseur | Usage |
-|:-------|:------|
-| **DeepSeek** | Analyses courantes et complexes |
-| **OpenAI** | Analyses complémentaires |
-| **Gemini** | Fallback |
-| **Grok** | Recherche et novveautés |
-| **Anthropic** | Sécurité et éthique |
-| **Ollama qwen2.5:7b** | Veille locale, prototypage, tests gratuits |
+| **deepseek-v4-flash** | Analyses quotidiennes par défaut |
+| **deepseek-v4-pro** | Infrastructures complexes (michel, robert) |
+| **gemini-3.5-flash** | Fallback DeepSeek |
+| **qwen2.5:7b** (Ollama local) | Veille locale, prototypage, tests gratuits |
 
 ---
 
