@@ -109,26 +109,26 @@ Le système est structuré en **12 exécutions parallèles** d'`OVR54300` (6 pou
 
 ### A2 — Structure du workspace
 
-```
+```text
 calcul-assurabilite-sources/
-├── README.md
-├── DB2/
-│   ├── DCLGEN/                    ← 28 fichiers .dclgen.pli (structures tables DB2)
-│   └── DDL_TABLES/
-│       └── DDL_TABLES_RECONSTITUES.sql
-├── DOCUMENTATION_TECHNIQUE/
-│   └── STANDARDS.txt              ← Conventions nommage datasets/jobs/userids
-├── JCL/                           ← 13 scripts JCL OPC/TWS
-│   ├── PAD82430.jcl               ← Insérer non-en-règle
-│   ├── PADPUU06.jcl               ← Appliquer droits PCH vers DB2
-│   ├── PADPUU15.jcl               ← Appliquer droits TIT vers DB2
-│   ├── PAVR#REP.jcl               ← Aiguillage E6PGEN2 → 4 fichiers
-│   ├── PAVRRPC1-6.jcl             ← Calcul droits 6 tranches PACH
-│   ├── PAVRRSAV.jcl               ← Sauvegarde résultats sur bande
-│   ├── PAVRRTI1-6.jcl             ← Calcul droits 6 tranches TIT
-└── PL1/
-    ├── COPYBOOKS/                 ← 20 copybooks PL/1 (.inc.pli)
-    └── PROGRAMMES/                ← 27 programmes PL/1 (.pli)
+|-- README.md
+|-- DB2/
+|   +-- DCLGEN/           (28 fichiers)
+|   +-- DDL_TABLES/
+|       +-- DDL_TABLES_RECONSTITUES.sql
+|-- DOCUMENTATION_TECHNIQUE/
+|   +-- STANDARDS.txt
+|-- JCL/                  (13 scripts)
+|   +-- PAD82430.jcl
+|   +-- PADPUU06.jcl
+|   +-- PADPUU15.jcl
+|   +-- PAVR#REP.jcl
+|   +-- PAVRRPC1-6.jcl
+|   +-- PAVRRSAV.jcl
+|   +-- PAVRRTI1-6.jcl
++-- PL1/
+    +-- COPYBOOKS/        (20 fichiers)
+    +-- PROGRAMMES/       (27 fichiers)
 ```
 
 ---
