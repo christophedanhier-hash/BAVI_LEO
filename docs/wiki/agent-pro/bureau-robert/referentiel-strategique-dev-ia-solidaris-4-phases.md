@@ -211,7 +211,7 @@ flowchart LR
 
 | Ressource | Lien |
 |:----------|:-----|
-| 📁 **GDrive Racine** | `https://drive.google.com/drive/folders/1ibMvR1gbO9tzYYxLuM77x7-2KJNsnKRG` |
+| 📁 **GDrive Racine** | `https://drive.google.com/drive/folders/1h-23v05cJCm_h2C3sqMmCSK4wTOy692h` |
 | 📁 POC Assurabilité | `01_POC_Assurabilite/` |
 | 📁 Mainframe CI/CD | `02_Mainframe_CICD/` |
 | 📁 CRA | `03_CRA_Cerveau_Reglementaire/` |
