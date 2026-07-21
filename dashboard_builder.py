@@ -44,12 +44,28 @@ def load_metrics():
         "ba": data.get("bavi", {}) or {},
         "bo": data.get("bots", {}) or {},
         "va": data.get("vaults", {}) or {},
+        "wi": count_wiki_journals(),
     }
+
+def count_wiki_journals():
+    """Compte les journaux dans les 5 wikis MkDocs."""
+    from pathlib import Path
+    wikis = {
+        "bavi_journals": Path("/home/tofdan/Projets_Dev/BAVI_LEO/docs"),
+        "hermes_journals": Path("/home/tofdan/Projets_Dev/hermes-wiki/docs"),
+        "oca_journals": Path("/home/tofdan/Projets_Dev/wiki-oca/docs"),
+        "emile_journals": Path("/home/tofdan/Projets_Dev/emile-wiki/docs"),
+        "voyages_journals": Path("/home/tofdan/Projets_Dev/voyages-wiki/docs"),
+    }
+    result = {}
+    for key, path in wikis.items():
+        result[key] = len(list(path.glob("journal-*.md"))) if path.exists() else 0
+    return result
 
 def build_html():
     d = load_metrics()
     s = d["s"]; b = d["b"]; c = d["c"]; i = d["i"]; n = d["n"]
-    ba = d["ba"]; bo = d["bo"]; va = d["va"]; alerts = d["alerts"]
+    ba = d["ba"]; bo = d["bo"]; va = d["va"]; wi = d["wi"]; alerts = d["alerts"]
     bots_list = bo.get("bots", []) if isinstance(bo, dict) else []
     gw_up = sum(1 for b in bots_list if b.get("online"))
     gw_total = len(bots_list)
@@ -263,11 +279,23 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 </div>
 
 <div class="card">
+  <h3>📚 Wikis MkDocs</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">🦁</div><div style="font-size:14px;font-weight:700">{wi.get("bavi_journals",0)}</div><div style="font-size:9px;color:var(--dim)">BAVI_LEO</div></div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">🤖</div><div style="font-size:14px;font-weight:700">{wi.get("hermes_journals",0)}</div><div style="font-size:9px;color:var(--dim)">Hermes</div></div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">📋</div><div style="font-size:14px;font-weight:700">{wi.get("oca_journals",0)}</div><div style="font-size:9px;color:var(--dim)">OCA</div></div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">🎓</div><div style="font-size:14px;font-weight:700">{wi.get("emile_journals",0)}</div><div style="font-size:9px;color:var(--dim)">Émile</div></div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">✈️</div><div style="font-size:14px;font-weight:700">{wi.get("voyages_journals",0)}</div><div style="font-size:9px;color:var(--dim)">Voyages</div></div>
+  </div>
+</div>
+
+<div class="card">
   <h3>📓 Vaults Obsidian</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px">
-    {"".join(f'<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">{"🦁" if k=="leo" or k=="leo-copilot" else "🏠" if k=="default" else "🎓" if k=="emile" else "🚐"}</div><div style="font-size:14px;font-weight:700">{vv.get("dailies",0)}</div><div style="font-size:9px;color:var(--dim)">{"Michel" if k=="leo-copilot" else "Léo" if k=="default" else "Émile" if k=="emile" else k}</div></div>' for k,vv in va.get("vaults",{}).items())}
+        {"".join(f'<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center"><div style="font-size:12px;font-weight:600">{"🦁" if k=="leo" or k=="leo-copilot" else "🏠" if k=="default" else "🎓" if k=="emile" else "🚐"}</div><div style="font-size:14px;font-weight:700">{vv.get("dailies",0)}</div><div style="font-size:9px;color:var(--dim)">{"Michel" if k=="leo-copilot" else "Léo" if k=="default" else "Émile" if k=="emile" else k}</div></div>' for k,vv in va.get("vaults",{}).items())}
   </div>
   <div class="sub" style="margin-top:6px;font-size:11px">{va.get("total_dailies",0)} journaux · {va.get("total_notes",0)} notes</div>
+</div>
 </div>
 </div>
 
