@@ -320,12 +320,12 @@ python -m pytest tests/ -v
 
 ```mermaid
 flowchart TB
-    START[1. Exécuter l'ETL IAM<br/>3 scripts] --> AUDIT[2. Lancer l'audit<br/>python main.py --mode all]
-    AUDIT --> CONSULT[3. Consulter les accès<br/>Streamlit / exe]
-    AUDIT --> CADASTRE[4. Mettre à jour le cadastre<br/>MAJ_Cadastre_AD.py]
-    CADASTRE --> CONTROLE[5. Contrôle post-MAJ<br/>Controle_Cadastre.py]
-    CONSULT --> EXPORT[6. Exporter les résultats<br/>CSV depuis l'interface]
-    AUDIT --> BUILD[7. (Optionnel) Builder l'app<br/>build_app_consultation.ps1]
+    START[Exécuter l'ETL IAM<br/>3 scripts] --> AUDIT[Lancer l'audit<br/>main.py --mode all]
+    AUDIT --> CONSULT[Consulter les accès<br/>Streamlit / exe]
+    AUDIT --> CADASTRE[Mettre à jour le cadastre<br/>MAJ_Cadastre_AD.py]
+    CADASTRE --> CONTROLE[Contrôle post-MAJ<br/>Controle_Cadastre.py]
+    CONSULT --> EXPORT[Exporter les résultats<br/>CSV depuis l'interface]
+    AUDIT --> BUILD[Builder l'app (opt.)<br/>build_app_consultation.ps1]
 ```
 
 ---
