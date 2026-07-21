@@ -10,8 +10,8 @@ type: etude
 
 # Etude de marche — Achat de 2 velos electriques pliables ENGWE
 
-> Source : https://engwe.com — Juillet 2026
-> Mise a jour : v3.0 — O20 Boost recommande
+> Source : https://engwe.com, https://engwe-bikes-eu.com — Juillet 2026
+> Mise a jour : v5.0 — Engine Pro 3.0 Boost ajoute
 
 ---
 
@@ -198,18 +198,56 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 | Couple | **100 Nm** |
 | Suspension | **Suspension integrale** (avant + arriere) |
 
+### 3.10 ENGWE Engine Pro 3.0 Boost 🏆
+
+**🔗 [https://engwe-bikes-eu.com/products/engine-pro-3-0-boost](https://engwe-bikes-eu.com/products/engine-pro-3-0-boost)**
+**Prix unitaire :** **€1,699.00**
+**Code promo EU :** `Newengweeu` (-2%)
+**Site :** engwe-bikes-eu.com — **livraison Belgique** ✅
+**Note :** ⭐ **4.98/5 — 181 avis**
+**Coloris :** Black, Navy Blue
+**Statut :** ✅ En stock
+
+| Spec | Valeur |
+|:-----|:-------|
+| **Moteur** | 250W hub motor brushless |
+| **Couple** | **90 Nm Boost** 🟢 |
+| **Capteur** | **Torque sensor** ultra-sensible |
+| **Suspension** | **Full suspension renforcee** (roulements avec silentblocs) 🟢 |
+| **Freins** | **Hydrauliques** 🟢 |
+| **Batterie** | **Samsung 48V 15Ah** 🟢 |
+| **Autonomie** | **130 km** (PAS, 75kg, 25°C) |
+| **Charge** | **8A fast charger → 2h** 🟢 (record gamme) |
+| **Pneus** | **20 × 4.0" Fat** anti-crevaison 🟢 |
+| **Transmission** | Shimano 7 vitesses |
+| **Pliant** | ✅ Oui |
+| **Ecran** | **TFT couleur** 🟢 |
+| **Antivol** | **Anti-theft system** : GPS tracking + detection mouvement + deverrouillage sans cle 🟢 |
+| **OTA** | **Mises a jour sans fil** 🟢 |
+| **Eclairage** | LED avant + arriere |
+| **Selle** | Ergonomique |
+| **Batterie removable** | ✅ |
+| **Garantie** | 1-2 ans (extension €169.90 optionnelle) |
+
+**Accessoires optionnels :**
+- Batterie supplementaire arriere Engine Pro : **€399** (48V13Ah)
+- U-Lock : €49.00
+- Panier avant : €29.00
+- Extension garantie 1 an : €169.90
+
 ---
 
 ## 4. Comparatif detaille — 2 velos ENGWE
 
-| Modele | Prix 2 velos | Eco | Poids | Batterie | Autonomie | Charge | Frein | Vitesses | Charge max |
-|:-------|:------------:|:---:|:-----:|:--------:|:---------:|:------|:------|:--------|:----------|
-| **🥇 O20 Boost Combo** | **€2,148** | **€450** | **26,5kg** | **720Wh** 🟢 | **141km** 🟢 | **3,5h** 🟢 | Disque | **Shimano 8** 🟢 | **150kg** 🟢 |
-| 🥈 L20 Boost Combo | €2,248 | €50 | 34kg | 624Wh | 126km | 6,5h | Disque | Shimano 7 | 120kg |
-| 2× ENGWE Zip | €2,198 | — | **22kg** 🟢 | 360Wh | 120km | — | — | — | 120kg |
-| 2× L20 Standard | €2,198 | — | 34kg | 624Wh | **140km** | 6,5h | Disque | Shimano 7 | 120kg |
-| P275 SE Combo | €1,748 | **€1,250** | ~25kg | — | 100km | — | — | — | — |
-| 2× L20 3.0 Pro | €3,398 | €200 | — | — | — | — | — | **Central** | — |
+|| Modele | Prix 2 velos | Eco | Couple | Batterie | Autonomie | Charge | Suspension | Freins | Pneus |
+|:-------|:------------:|:---:|:-----:|:--------:|:---------:|:------|:-----------|:------|:------|
+| **🥇 Engine Pro 3.0** | **€3,398** | — | **90Nm** 🟢 | **Samsung** 🟢 | 130km | **2h** 🟢 | **Full+** 🟢 | **Hydrauliques** 🟢 | **Fat 4.0"** 🟢 |
+| **🥈 Engine Pro 2.0** | **€2,748** | **€250** | 75Nm | 768Wh | 110km | 3,5h | **Full** 🟢 | **Hydrauliques** 🟢 | **Fat 4.0"** 🟢 |
+| **🥉 O20 Boost Combo** | **€2,148** | **€450** | 75Nm | 720Wh | **141km** 🟢 | 3,5h | Avant 50mm | Mecaniques | 2.125" |
+| 🏅 L20 Boost Combo | €2,248 | €50 | 75Nm | 624Wh | 126km | 6,5h | Avant 50mm | Mecaniques | **Fat 4.0"** 🟢 |
+| 2× ENGWE Zip | €2,198 | — | — | 360Wh | 120km | — | — | — | — |
+| 2× L20 Standard | €2,198 | — | — | 624Wh | 140km | 6,5h | — | Disque | — |
+| P275 SE Combo | €1,748 | **€1,250** | — | — | 100km | — | — | — | — |
 
 ---
 
@@ -276,13 +314,22 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 | **Total** | **€2,105.04** |
 | Soit par velo | **€1,052.52** |
 
-### Option C : L20 Boost Combo (si besoin fat tires)
+### Option D : Engine Pro 2.0 Combo (vrai fat bike)
 
 | Poste | Total |
 |:------|:-----:|
-| L20 Boost Combo | €2,248.00 |
-| Code NEWENGWE -2% | -€44.96 |
-| **Total** | **€2,203.04** |
+| Engine Pro 2.0 Combo (2 velos) | €2,748.00 |
+| Code NEWENGWE -2% | -€54.96 |
+| **Total** | **€2,693.04** |
+
+### Option E : 2× Engine Pro 3.0 Boost (le top du top)
+
+| Poste | Quantite | Prix unitaire | Total |
+|:------|:--------:|:-------------:|:-----:|
+| Engine Pro 3.0 Boost | 2 | €1,699.00 | €3,398.00 |
+| Batterie 48V13Ah supp. arriere | 2 | €399.00 | €798.00 |
+| Code Newengweeu **-2%** | — | — | **-€83.92** |
+| **Total** | | | **~€4,112.08** |
 
 ### Paiement
 
@@ -290,29 +337,34 @@ Recherche : rapides, pliables, bon rapport qualite-prix, marque ENGWE.
 |:-------|:------------:|:-----:|
 | Comptant (Option A) | €2,740.08 | — |
 | Comptant (Option B) | €2,105.04 | — |
+| Comptant (Option D) | €2,693.04 | — |
+| Comptant (Option E) | €4,112.08 | — |
 | PayPal 4x (Option B) | **€526.26** | 4 mois |
-| Klarna | Selon conditions | — |
 
 ---
 
 ## 7. Verdict final
 
 ```text
-🏆 RECOMMANDATION : ENGWE O20 Boost Combo
+🏆 Engine Pro 3.0 Boost (€3.398 — 2 velos) — Le top du top
+   ✅ 90 Nm, charge 2h, batterie Samsung, full suspension+
+   ✅ GPS antivol, OTA, TFT, livraison Belgique
+   ✅ 4.98/5 avec 181 avis
+   ❌ Pas de combo, ~€600/velo de plus que Pro 2.0
 
-2 velos × O20 Boost
-1 batterie 720Wh supplementaire par velo (optionnel)
-Chargeur rapide 8A (optionnel)
-3 accessoires offerts par velo (lock, tracker, rack)
-Code NEWENGWE -2%
+🥇 Engine Pro 2.0 Combo (€2.748) — Vrai Fat Bike full options
+   ✅ Full suspension, freins hydrauliques, batterie 768Wh
+   ✅ Pneus Fat 4.0", combo 2 velos, €250 OFF
+   ❌ Pas d'antivol GPS, pas d'OTA
 
-Prix Option A (avec batteries sup.) : ~€2,740
-Prix Option B (combo seul) :         €2,105
+🥉 O20 Boost Combo (€2.148) — Meilleur rapport qualite-prix
+   ✅ Plus leger (26,5kg), plus d'autonomie (141km)
+   ✅ Parfait pour couple, 2 velos dans un coffre
+   ❌ Pneus 2.125", freins mecaniques
 
-Pourquoi le O20 Boost ?
-- Plus leger, plus d'autonomie, charge plus rapide
-- Meilleur rapport qualite-prix de la gamme
-- Parfait pour couple (2 velos dans un coffre)
+👍 Si budget serre → O20 Boost Combo (€2.148)
+👍 Si vrai fat bike sans se ruiner → Engine Pro 2.0 Combo (€2.748)
+👍 Si tu veux le meilleur absolu → Engine Pro 3.0 Boost (€3.398)
 ```
 
 ---
@@ -323,7 +375,7 @@ Pourquoi le O20 Boost ?
 |:--------|:-----|:--------------|
 | v1.0 | 19/07/2026 | Creation initiale |
 | v2.0 | 19/07/2026 | Fiches techniques completes (8 modeles) |
-| **v3.0** | **19/07/2026** | **O20 Boost recommande + O20 Combo €2,148 + option batterie sup.** |
+|| **v5.0** | **20/07/2026** | **Ajout Engine Pro 3.0 Boost (90Nm, charge 2h, GPS, OTA, Samsung)** |
 
 ---
 
@@ -337,4 +389,5 @@ Pourquoi le O20 Boost ?
 - https://fr.engwe.com/products/engwe-l20
 - https://fr.engwe.com/products/p275-se
 - https://engwe.com/collections/battery
-- Donnees extraites le 19/07/2026
+- https://engwe-bikes-eu.com/products/engine-pro-3-0-boost
+- Donnees extraites le 20/07/2026
