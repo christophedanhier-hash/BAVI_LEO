@@ -1,6 +1,6 @@
 # 🧠 Analyses Agent Pro — Portail des bureaux
 
-*Généré automatiquement le 21/07/2026 à 21:00*
+*Généré automatiquement le 21/07/2026 à 22:00*
 
 Bienvenue sur le portail des analyses produites par les bureaux BAVI LEO.
 Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash, Ollama).
@@ -10,7 +10,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | Bureau | Rôle | Analyses | Dernière activité |
 |:-------|:-----|:---------|:------------------|
 | [🏗️ Bureau Gérard — Documentation T600](bureau-gerard/) | Voir le skill | 4 | 08/07/2026 |
-| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 9 | 21/07/2026 |
+| [🏛️ Bureau Robert — Conseil Stratégique IT](bureau-robert/) | Voir le skill | 11 | 21/07/2026 |
 | [💰 Bureau Sophie — Pilotage Économique & Financier](bureau-sophie/) | Voir le skill | 1 | 08/07/2026 |
 | [🔧 Bureau Michel — Automatisation & Infrastructure n8n](bureau-michel/) | Voir le skill | 11 | 14/07/2026 |
 | [🧭 Bureau Sylvia — Voyages](bureau-sylvia/) | Voir le skill | 6 | N/A |
@@ -18,7 +18,7 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 | [🩺 Bureau Virginie — Orchestration Médicale](bureau-virginie/) | Voir le skill | 3 | 11/07/2026 |
 | [🎓 Bureau Emile — Assistant Pédagogique](bureau-emile/) | Voir le skill | 2 | 08/07/2026 |
 
-**Total : 54 analyse(s) sur l'ensemble des bureaux.**
+**Total : 56 analyse(s) sur l'ensemble des bureaux.**
 
 ---
 
@@ -28,6 +28,8 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 |:-----|:-------|:--------|:------|:-----|:-------|:--------|
 | N/A | 🧭 Bureau Sylvia — Voyages | — | ~~🇮🇹 Voyage Italie — Septembre/Octobre 2026~~ ⚠️ | — | ⚠️ Non conforme |
 | N/A | 🧭 Bureau Sylvia — Voyages | — | ~~Scandinavie 2026 🚐🇪🇺🇩🇪🇸🇪🇳🇴~~ ⚠️ | — | ⚠️ Non conforme |
+| 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🧩 Template d'Extraction — Analyse de Code Source](bureau-robert/template-extraction-code-source/) | `template` `extraction` `prompt` `methodologie` `reutilisable` `mainframe` `pl1` | ✅ Finalisé | [📥](bureau-robert/template-extraction-code-source/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/template-extraction-code-source.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/template-extraction-code-source.md) |
+| 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v3 | [🧠 Phase 1 — Modèle d'Extraction : Document de Cadrage](bureau-robert/phase1-poc-assurabilite-document-initial/) | `phase1` `modele-extraction` `mainframe` `pl1` `methodologie` `reutilisable` `solidaris` | ✅ Finalisé | [📥](bureau-robert/phase1-poc-assurabilite-document-initial/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/phase1-poc-assurabilite-document-initial.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/phase1-poc-assurabilite-document-initial.md) |
 | 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [📖 Guide Utilisateur & Déploiement — AUDIT IAM ETL SOLIDARIS](bureau-robert/guide-utilisateur-deploiement-audit-iam-solidaris/) | `guide` `utilisateur` `deploiement` `iam` `audit` `etl` `solidaris` `dev` | ✅ Finalisé | [📥](bureau-robert/guide-utilisateur-deploiement-audit-iam-solidaris/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/guide-utilisateur-deploiement-audit-iam-solidaris.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/guide-utilisateur-deploiement-audit-iam-solidaris.md) |
 | 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [📐 Analyse Métier & Fonctionnelle — AUDIT IAM ETL SOLIDARIS](bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris/) | `analyse-metier` `analyse-fonctionnelle` `iam` `audit` `etl` `solidaris` `dev` | ✅ Finalisé | [📥](bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/analyse-metier-fonctionnelle-audit-iam-solidaris.md) |
 | 21/07/2026 | 🏛️ Bureau Robert — Conseil Stratégique IT | v1 | [🏛️ Référentiel Stratégique — Développement & IA Solidaris](bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases/) | `referentiel` `ia` `developpement` `mainframe` `cra` `phases` `strategie` `solidaris` | ✅ Finalisé | [📥](bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases/?print-pdf) [📦](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases.md) [🔗](https://raw.githubusercontent.com/christophedanhier-hash/BAVI_LEO/main/docs/wiki/agent-pro/bureau-robert/referentiel-strategique-dev-ia-solidaris-4-phases.md) |
@@ -83,4 +85,4 @@ Chaque bureau produit des documents via des workflows agents (DeepSeek Pro/Flash
 
 ---
 
-*Index consolidé généré par `agent-pro-index.py` — 21/07/2026 21:00*
+*Index consolidé généré par `agent-pro-index.py` — 21/07/2026 22:00*
