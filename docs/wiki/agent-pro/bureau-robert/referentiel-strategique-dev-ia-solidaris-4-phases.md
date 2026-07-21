@@ -211,8 +211,12 @@ flowchart LR
 
 | Ressource | Lien |
 |:----------|:-----|
-| 📦 **Archive ZIP** | Transférée manuellement par Christophe |
-| 📄 **Synthèse complète** | Voir référentiel BAVI |
+| 📁 **GDrive — Développement & IA** | Dans `Hermes > BAVI > bureau-robert` |
+| 📁 POC Assurabilité | `01_Poc_Développement_AO/` |
+| 📁 Mainframe CI/CD | `02_Mainframe_CICD/` |
+| 📁 CRA | `03_Cerveau_Réglémentaire_Agnostique/` |
+| 📁 DEV IA CRA | `04_DEV_IA_CRA/` |
+| 📄 **Synthèse complète** | `IMPACT_IA_DEVELOPPEMENT_SYNTHESE_PHASES.md` |
 
 ---
 
