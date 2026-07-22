@@ -68,7 +68,7 @@ Chaque bureau a son propre dossier dans `AGENT-PRO` :
 
 ```bash
 BAVI/AGENT-PRO/
-├── bureau-michel/        ← 🔧 Infrastructure
+├── michel *(anciennement bureau-michel)*/        ← 🔧 Infrastructure
 │   ├── index.md          ← Tableau de bord généré automatiquement
 │   ├── analyse-*.md      ← Analyses produites
 │   └── archive/          ← Anciennes analyses
@@ -175,7 +175,7 @@ Chaque analyse a un en-tête YAML qui permet son indexation automatique :
 ```yaml
 ---
 date: 2026-06-28
-bureau: bureau-michel
+bureau: michel *(anciennement bureau-michel)*
 version: v2
 modele: deepseek-v4-pro
 tags: [analyse, infrastructure, crons]
@@ -384,7 +384,7 @@ Le Bureau Michel suit le budget en continu via le dashboard LEO. Plutôt que de 
 
 #### Résilience post-crash (30 juin 2026)
 
-Le 30 juin, un crash système a vidé les sessions des 4 bots et cassé les gateways. Leçons :
+Le 30 juin, un crash système a vidé les sessions des 5 bots et cassé les gateways. Leçons :
 - **Backup automatisé** → GDrive toutes les 24h
 - **auto-fix-daemon** `*/5` → remplace 3 crons monitoring
 - **Mémoire partagée** par symlinks → plus de perte de contexte entre profils

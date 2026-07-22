@@ -2,6 +2,27 @@
 
 Dernier passage d'audit automatique : **22/07/2026 (18:30)**
 
+## Audit du 22/07/2026 v2 — Audit structurel complet avec corrections
+
+| Métrique | Valeur |
+|----------|--------|
+| Fichiers totaux analysés | **183** (57 hermes-wiki + 126 BAVI_LEO) |
+| Méthode | Règles locales + patchs ciblés |
+| Anomalies détectées | **35** (23 wrong, 12 outdated) |
+| Corrections appliquées | **22** (15 hermes-wiki + 7 BAVI_LEO) |
+| Anomalies restantes | **13** (archives principalement) |
+
+### Corrections BAVI_LEO
+
+| Fichier | Correction |
+|---------|-----------|
+| `index.md` | 5 profils → 8 profils |
+| `guide-hermes-complet/bavi-pour-les-nuls.md` | 5 profils → 8 profils, bureau-michel → michel, 4→5 standards |
+| `guide-hermes-complet/01-decouvrir-hermes.md` | n8n sans dépréciation → notes retrait |
+| `guide-hermes-complet/02-configurer-assistant.md` | 4 bots → 5 bots, bureau-michel → michel |
+| `guide-hermes-complet/03-bureaux-bavi.md` | 4 bots → 5 bots, bureau-michel → michel |
+| `guide-hermes-complet/04-skills.md` | bureau-michel → michel |
+
 ## Audit du 22/07/2026 — API DeepSeek V4 Flash (partiel)
 
 | Métrique | Valeur |

@@ -1007,7 +1007,7 @@ Environ **126 skills** répartis en **22 catégories** :
 ```text
 skills/
 ├── infrastructure/     ← Docker, Nginx, Cloudflare, backup
-│   └── bureau-michel/SKILL.md
+│   └── michel *(anciennement bureau-michel)*/SKILL.md
 ├── github/             ← PRs, issues, code review, auth
 ├── creative/           ← ASCII art, design, vidéo, musique
 ├── data-science/       ← Jupyter, analyse de données
@@ -1030,7 +1030,7 @@ skills/
 - `plan` : planifier des tâches complexes
 
 **Skills customs** (écrits par vous ou la communauté) :
-- `bureau-michel : infrastructure et déploiement (n8n retiré)
+- `michel *(anciennement bureau-michel)* : infrastructure et déploiement (n8n retiré)
 - `voyages-wiki` : publication de roadbooks
 - `gmail-inbox-zero` : classification automatique des emails
 
@@ -1245,7 +1245,7 @@ Wikis: BAVI_LEO=portail, hermes-christophe=source, les2→sync+push
 §
 hermes binaire: /opt/hermes/.venv/bin/hermes (pas sur PATH)
 §
-CRASH+RECONSTRUCTION 30/06: sessions vidé→4 bots crash. 
+CRASH+RECONSTRUCTION 30/06: sessions vidé→5 bots crash. 
 Backup GDrive 73.7MB téléchargé + extrait. 4 gateways relancés.
 §
 Émile 🎓: emidanhier@gmail.com, @Bureau_ia_emilie_bot

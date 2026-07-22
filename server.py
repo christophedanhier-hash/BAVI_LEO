@@ -15,7 +15,7 @@ import urllib.request
 BASE = Path("/home/tofdan/.hermes")
 BAVI_SITE = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site")
 LEO_DASHBOARD_REPO = Path("/home/tofdan/.hermes/leo-dashboard-repo")
-CRON_JOBS_FILE = Path("/home/tofdan/.hermes/profiles/leo-copilot/cron/jobs.json")
+CRON_JOBS_FILE = Path("/home/tofdan/.hermes/profiles/michel/cron/jobs.json")
 N8N_CONFIG_FILE = Path("/home/tofdan/.hermes/n8n-webhooks.json")
 METRICS_FILE = Path("/home/tofdan/.hermes/metrics/leo-unified.json")
 AUTH_TOKEN = "leo-panel-2026"
@@ -91,7 +91,7 @@ async def api_cron_run(job_id: str, request: Request):
     try:
         # Lancement asynchrone — retour immédiat
         subprocess.Popen(
-            ["/home/tofdan/.hermes/venv/bin/hermes", "cron", "run", "--profile", "leo-copilot", job_id],
+            ["/home/tofdan/.hermes/venv/bin/hermes", "cron", "run", "--profile", "michel", job_id],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
             env={**os.environ, "HOME": "/home/tofdan"}
         )
@@ -112,7 +112,7 @@ async def api_cron_toggle(job_id: str, request: Request):
         if not job:
             return {"ok": False, "error": "Job not found"}
         action = "pause" if job.get("enabled", True) else "resume"
-        r2 = subprocess.run([HERMES, "cron", action, "--profile", "leo-copilot", job_id],
+        r2 = subprocess.run([HERMES, "cron", action, "--profile", "michel", job_id],
                            capture_output=True, text=True, timeout=15,
                            env={**os.environ, "HOME": "/home/tofdan"})
         return {"ok": r2.returncode == 0, "action": action, "output": r2.stdout[:500]}
@@ -918,7 +918,7 @@ async def api_crons_logs(request: Request):
         except:
             pass
     
-    base = "/home/tofdan/.hermes/profiles/leo-copilot/cron/output"
+    base = "/home/tofdan/.hermes/profiles/michel/cron/output"
     jobs = {}
     
     for job_dir in sorted(os.listdir(base)):
@@ -1117,7 +1117,7 @@ async def api_bavi_delete(request: Request):
     
     # Regénérer l'index
     try:
-        subprocess.run([sys.executable, "/home/tofdan/.hermes/profiles/leo-copilot/scripts/agent-pro-index.py",
+        subprocess.run([sys.executable, "/home/tofdan/.hermes/profiles/michel/scripts/agent-pro-index.py",
                        "--bureau", bureau.replace("bureau-", "")],
                       capture_output=True, timeout=30)
         subprocess.run(["git", "add", "-A"], cwd=repo_dir, capture_output=True, timeout=10)

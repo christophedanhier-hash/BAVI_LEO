@@ -1226,7 +1226,7 @@ Règles d'or:
 
 | Skill | Fichier | Lignes |
 |:------|:--------|:------:|
-| `bureau-michel` | `SKILL.md` | 106 |
+| `michel *(anciennement bureau-michel)*` | `SKILL.md` | 106 |
 | `gmail-inbox-zero` | `references/classifier-script.md` | ~200 |
 | `voyages-wiki` | `SKILL.md` | ~150 |
 | `deployment` | Procédures Nginx, Docker | ~80 |

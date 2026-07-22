@@ -22,7 +22,7 @@ BAVI = **Bureaux Agentiques Virtuels - Intelligence**. C'est un ecosysteme compl
 
 Imaginez une entreprise ou :
 - Chaque employe (bureau) est un expert dans son domaine
-- Tous les employes communiquent entre eux via 4 standards (bots Telegram)
+- Tous les employes communiquent entre eux via 5 standards (bots Telegram)
 - Les procedures sont ecrites dans des fichiers (skills) : lisibles, versionnees, reutilisables
 - Les taches recurrentes sont automatisees (crons) : personne ne doit rien demander
 - Tout est visible en temps reel (dashboards)
@@ -46,14 +46,14 @@ Imaginez une entreprise ou :
                     ▼               ▼
             ┌─────────────────────────────────┐
             │     GATEWAY HERMES (s6)         │
-            │  5 profils, 5 bots Telegram     │
+            │  8 profils, 5 bots Telegram     │
             │  Supervision + auto-restart      │
             └────────┬────────────────────────┘
                      │
           ┌──────────┼──────────┬──────────┐
           ▼          ▼          ▼          ▼
     ┌─────────┐ ┌─────────┐ ┌────────┐ ┌────────┐
-    │ default │ │leo-cop.│ │bavi-leo│ │ emile  │
+    │ default │ │ michel │ │bavi-leo│ │ emile  │
     │  LEO    │ │ Michel  │ │ Sylvia │ │Pedago  │
     │ Flash   │ │V4 Pro   │ │ Flash  │ │Flash+GM│
     └────┬────┘ └────┬────┘ └───┬────┘ └───┬────┘

@@ -251,7 +251,7 @@ Avec Hermès, vous pouvez avoir **plusieurs agents indépendants** sur la même 
 | Profil | Bot Telegram | Provider | Rôle |
 |:-------|:-------------|:---------|:-----|
 | `default` | @hermes_leo_bot | DeepSeek Flash | Chat quotidien |
-| `leo-copilot` | @hermes_leo_copilot_bot | DeepSeek V4 Pro | Code, infra, n8n |
+| `leo-copilot` | @hermes_leo_copilot_bot | DeepSeek V4 Pro | Code, infra, n8n *(retiré 13/07/2026 — remplacé par crons Python)* |
 | `bavi-leo` | @bavi_leo_voyages_bot | DeepSeek Flash | Voyages camping-car |
 
 Chaque profil a son propre gateway, ses propres skills, sa propre mémoire. Et pourtant, ils peuvent partager des informations via des **symlinks** vers un fichier mémoire commun (`~/.hermes/memories/`).
@@ -306,7 +306,7 @@ Telegram ──→ Gateway Hermes ──→ Profil default ──→ DeepSeek Fl
 | Bot | Profil | Provider | Rôle | Latence | Coût |
 |:----|:-------|:---------|:-----|:-------:|:----:|
 | 🤖 @hermes_leo_bot | `default` | DeepSeek Flash | Chat quotidien | < 2s | Payant |
-| 🟪 @hermes_leo_copilot_bot | `leo-copilot` | DeepSeek V4 Pro | Code, infra, n8n | < 2s | Payant |
+| 🟪 @hermes_leo_copilot_bot | `leo-copilot` | DeepSeek V4 Pro | Code, infra, n8n *(retiré 13/07/2026 — remplacé par crons Python)* | < 2s | Payant |
 | 🧭 @bavi_leo_voyages_bot | `bavi-leo` | DeepSeek Flash | Voyages camping-car | < 2s | Payant |
 
 Chaque bot est un **profil Hermes** isolé — son propre gateway, ses propres skills, sa propre mémoire. Mais ils partagent un fichier de configuration commun et peuvent échanger des informations.
@@ -374,7 +374,7 @@ LEO a 39 crons Hermes + 6 crons hôte qui exécutent des tâches planifiées
 | Vague | Horaires | Crons |
 |:------|:---------|:------|
 | **Horaire** | H:00-H:30 staggerés | machines-kpi, budget, dashboards (4), wiki-sync |
-| **15 min** | */15 | n8n healthcheck, classifieur emails |
+| **15 min** | */15 | n8n *(retiré 13/07/2026 — remplacé par crons Python)* healthcheck, classifieur emails |
 | **2h** | */2 | auto-commit repos, dashboard-watch |
 | **Quotidien** | 06:00, 08:00, 18:00 | backup, veille IA, drive sync |
 | **Autres** | Hebdo, 6h | credentials-check, doc-watch |
