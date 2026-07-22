@@ -28,5 +28,5 @@ type: index-bibliotheque
 
 *Dernière mise à jour : 16/07/2026 par Robert 🏛️*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 

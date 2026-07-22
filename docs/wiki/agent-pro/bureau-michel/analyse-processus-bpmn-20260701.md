@@ -72,7 +72,7 @@ graph TB
 
 La couche de contrôle est désormais dans **les crons Python autonomes** (pas de tokens LLM, tracing natif, exécutions traçables) :
 
-Tous les daemons sont des scripts Python schedulés via crons gérés par leo-copilot. Voir crons actifs (39 crons).eur 3× consécutives → POST Alerte LEO |
+Tous les daemons sont des scripts Python schedulés via crons gérés par leo-copilot. Voir crons actifs (41 crons).
 | 5 | **Dashboard Health** | Schedule */5min | Si dashboard HTTP ≠ 200 → POST Alerte LEO |
 
 ## ⏱️ Chronogramme

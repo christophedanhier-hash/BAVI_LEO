@@ -1,0 +1,177 @@
+{
+  "batch": 11,
+  "files_audited": [
+    "docs/hermes/installation/windows.md",
+    "docs/hermes/interface-web.md",
+    "docs/hermes/services/gardien-drive.md",
+    "docs/hermes/services/gestion-releases.md",
+    "docs/hermes/services/n8n.md",
+    "docs/hermes/services/pre-migration-v017.md",
+    "docs/hermes/services/spotify.md",
+    "docs/hermes/skills/ch16-skills-systeme.md",
+    "docs/hermes/skills/ch19-skills-creatifs.md",
+    "docs/hermes/skills/ch20-skills-recherche.md",
+    "docs/hermes/skills/ch21-ecrire-ses-skills.md",
+    "docs/hermes/utilisation/architecture-leo.md",
+    "docs/hermes/utilisation/backup-recovery.md",
+    "docs/hermes/utilisation/bots-telegram.md",
+    "docs/hermes/utilisation/crons.md",
+    "docs/hermes/utilisation/dashboards.md"
+  ],
+  "issues": [
+    {
+      "file": "docs/hermes/interface-web.md",
+      "section": "CHANNELS — Telegram",
+      "status": "wrong",
+      "doc_says": "4 bots : default, leo-copilot, emile, bavi-leo, bureau-robert",
+      "reality": "5 bots — le doc dit '4' mais en liste 5 (bureau-robert inclus dans la liste)",
+      "fix": "Remplacer '4 bots' par '5 bots'"
+    },
+    {
+      "file": "docs/hermes/interface-web.md",
+      "section": "PROFILES — Tableau des profils",
+      "status": "wrong",
+      "doc_says": "Tableau listant 4 profils : default, leo-copilot, bavi-leo, emile",
+      "reality": "5 profils — bureau-robert est absent du tableau",
+      "fix": "Ajouter la ligne bureau-robert : deepseek-v4-flash, Conseil stratégique IT"
+    },
+    {
+      "file": "docs/hermes/interface-web.md",
+      "section": "SYSTEM — Profils actifs",
+      "status": "wrong",
+      "doc_says": "Profils actifs: 4 (default, leo-copilot, emile, bavi-leo)",
+      "reality": "5 profils actifs (default, leo-copilot, emile, bavi-leo, bureau-robert)",
+      "fix": "Remplacer '4' par '5' et ajouter bureau-robert"
+    },
+    {
+      "file": "docs/hermes/interface-web.md",
+      "section": "SYSTEM — Version Python",
+      "status": "outdated",
+      "doc_says": "Python: 3.13.5",
+      "reality": "Python 3.14.4 (vérifié sur le host LEO)",
+      "fix": "Mettre à jour vers Python: 3.14.4"
+    },
+    {
+      "file": "docs/hermes/services/gestion-releases.md",
+      "section": "1. Détection — Version actuelle",
+      "status": "outdated",
+      "doc_says": "hermes --version → v0.16.0 ; compare avec GitHub API → v0.17.0",
+      "reality": "Version actuelle > v0.17.0 (migration déjà effectuée)",
+      "fix": "Mettre à jour les versions ou marquer comme archive post-migration"
+    },
+    {
+      "file": "docs/hermes/services/gestion-releases.md",
+      "section": "5. Vérification — Checklist",
+      "status": "outdated",
+      "doc_says": "Crons OK: Dashboard global (sans précision)",
+      "reality": "41 crons au total",
+      "fix": "Ajouter le nombre de crons (41) pour référence"
+    },
+    {
+      "file": "docs/hermes/services/pre-migration-v017.md",
+      "section": "1. État actuel — Crons",
+      "status": "outdated",
+      "doc_says": "Crons leo-copilot: 38/38 ; Crons default: 0/0",
+      "reality": "41 crons gérés par leo-copilot (journal 21/07/2026)",
+      "fix": "Marquer comme document historique gelé à la date de migration, ou ajouter note 'valeur au moment de la migration v0.16→v0.17'"
+    },
+    {
+      "file": "docs/hermes/services/pre-migration-v017.md",
+      "section": "3. Vérifications croisées / 4. Plan de migration",
+      "status": "outdated",
+      "doc_says": "Les 3 gateways sont-elles joignables ? ; restart 3 gateways (default, leo-copilot, bavi-leo)",
+      "reality": "5 gateways (default, leo-copilot, bavi-leo, emile, bureau-robert)",
+      "fix": "Ajouter emile et bureau-robert ; passer de 3 à 5 gateways"
+    },
+    {
+      "file": "docs/hermes/skills/ch21-ecrire-ses-skills.md",
+      "section": "Les 21 pièges à éviter",
+      "status": "wrong",
+      "doc_says": "Titre 'Les 21 pièges à éviter' — liste numérotée de 1 à 10 seulement",
+      "reality": "Seulement 10 pièges documentés, pas 21",
+      "fix": "Soit renommer en 'Les 10 pièges à éviter', soit ajouter les 11 pièges manquants"
+    },
+    {
+      "file": "docs/hermes/utilisation/architecture-leo.md",
+      "section": "2. Dashboard — Crons",
+      "status": "outdated",
+      "doc_says": "Crons LEO (39 gérés par leo-copilot)",
+      "reality": "41 crons (journal 21/07/2026 : 41 crons, 39 OK actifs, 2 désactivés)",
+      "fix": "Mettre à jour vers 41 crons (39 actifs, 2 désactivés)"
+    },
+    {
+      "file": "docs/hermes/utilisation/architecture-leo.md",
+      "section": "7. Statistiques clés — Workflows n8n",
+      "status": "wrong",
+      "doc_says": "Workflows n8n: 3 ✅",
+      "reality": "n8n retiré le 13/07/2026 — 0 workflows actifs",
+      "fix": "Remplacer par 'Workflows n8n: 0 ❌ (retiré 13/07/2026)'"
+    },
+    {
+      "file": "docs/hermes/utilisation/architecture-leo.md",
+      "section": "7. Statistiques clés — Sources de collecte",
+      "status": "wrong",
+      "doc_says": "Sources de collecte: 9",
+      "reality": "8 sources (le diagramme et le texte listent 8 : DS budget, GitHub API, OS infra, Sessions DB, BAVI metrics, Crons, Services, Vaults). Contradiction interne avec le diagramme.",
+      "fix": "Remplacer '9' par '8' pour correspondre au diagramme et au texte"
+    },
+    {
+      "file": "docs/hermes/utilisation/architecture-leo.md",
+      "section": "7. Statistiques clés — Vaults Obsidian",
+      "status": "wrong",
+      "doc_says": "Vaults Obsidian: 4",
+      "reality": "5 vaults listés en section 5 : leo, default, emile, bavi, bureau-robert",
+      "fix": "Remplacer '4' par '5'"
+    },
+    {
+      "file": "docs/hermes/utilisation/backup-recovery.md",
+      "section": "État final (12:25) — Léo Copilote",
+      "status": "outdated",
+      "doc_says": "Léo Copilote: Gateway actif + 39 crons",
+      "reality": "41 crons au 21/07/2026",
+      "fix": "Mettre à jour vers 41 crons"
+    },
+    {
+      "file": "docs/hermes/utilisation/backup-recovery.md",
+      "section": "État final (12:25) — Tableau des services",
+      "status": "wrong",
+      "doc_says": "Tableau listant 4 services (Léo, Léo Copilote, BAVI LEO, Émile) + n8n retiré + Ollama + Wikis — bureau-robert absent",
+      "reality": "5 profils actifs incluant bureau-robert",
+      "fix": "Ajouter la ligne bureau-robert dans le tableau"
+    },
+    {
+      "file": "docs/hermes/utilisation/bots-telegram.md",
+      "section": "Post-restauration 10/07/2026 — crons restaurés",
+      "status": "outdated",
+      "doc_says": "28 crons restaurés → Maintenant 39 crons actifs",
+      "reality": "41 crons au 21/07/2026",
+      "fix": "Mettre à jour vers 41 crons"
+    },
+    {
+      "file": "docs/hermes/utilisation/dashboards.md",
+      "section": "Global Dashboard LEO — Crons",
+      "status": "outdated",
+      "doc_says": "Crons (38)",
+      "reality": "41 crons",
+      "fix": "Mettre à jour vers 41 crons"
+    },
+    {
+      "file": "docs/hermes/utilisation/dashboards.md",
+      "section": "Les dashboards de LEO — Collecte",
+      "status": "wrong",
+      "doc_says": "collect-v2.py */15",
+      "reality": "Déploiement H:10 (toutes les heures à :10), pas toutes les 15 minutes. Contredit architecture-leo.md qui dit 'H:10'",
+      "fix": "Remplacer '*/15' par 'H:10' ou clarifier que la collecte est */15 mais le déploiement est H:10"
+    },
+    {
+      "file": "docs/hermes/utilisation/dashboards.md",
+      "section": "Global Dashboard LEO — Ports",
+      "status": "outdated",
+      "doc_says": "code-server 7681",
+      "reality": "Port 7681 est le port code-server historique ; le port 8123 est aussi exposé (ground truth). 7681 est un port réel mais pas dans la vérité terrain simplifiée.",
+      "fix": "Vérifier si code-server est toujours sur 7681 ou si le port a changé (8123 dans ground truth)"
+    }
+  ],
+  "auto_fix_applied": 0,
+  "note": "Batch 11/12 — 19 problèmes détectés sur 8 fichiers (8 fichiers OK: windows.md, gardien-drive.md, n8n.md, spotify.md, ch16-skills-systeme.md, ch19-skills-creatifs.md, ch20-skills-recherche.md, crons.md). Problèmes récurrents : (1) nombre de crons obsolète (38→39→41) dans 6 fichiers, (2) bureau-robert manquant dans 4 fichiers (interface-web profiles table/system, backup-recovery état final), (3) contradictions internes dans architecture-leo.md (8 vs 9 sources, 4 vs 5 vaults), (4) décompte '4 bots' vs 5 dans interface-web.md, (5) Python 3.13.5 vs 3.14.4, (6) ch21 dit '21 pièges' mais n'en liste que 10. Aucun fix automatique appliqué (corrections nécessitent décision humaine sur les valeurs exactes)."
+}

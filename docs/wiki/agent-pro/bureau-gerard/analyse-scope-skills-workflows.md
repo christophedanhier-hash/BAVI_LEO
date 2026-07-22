@@ -26,7 +26,7 @@ Le **Bureau Gérard** est dédié à la documentation technique du projet **T600
 
 | Skill | Rôle | Usage |
 |-------|------|-------|
-| **bureau-robert** ⭐ | Skill principal | Orchestrateur — ... |
+| **bureau-gerard** ⭐ | Skill principal | Orchestrateur — ... |
 | **bureau-versioning** | Versioning analyses | Gestion des versions des docs T600 |
 
 **Expertise :** DeepSeek Flash 80% (rédaction courante), DeepSeek Pro 20% (audits complexes).
@@ -80,5 +80,5 @@ Gérard n'appelle pas d'autres bureaux actuellement. Ces documents sont archivé
 | analyse-risques-t600.md | v1 |
 | formation-operateur-t600.md | v1 |
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 

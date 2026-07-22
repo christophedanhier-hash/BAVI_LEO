@@ -60,5 +60,5 @@ type: index
 
 *Index généré manuellement — Mettre à jour à chaque nouveau document.*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 

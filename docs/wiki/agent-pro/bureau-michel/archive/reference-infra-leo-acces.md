@@ -53,7 +53,7 @@ tailscale ssh root@tofdan-system-product-name
 | Conteneur | Image | Rôle |
 |-----------|-------|------|
 | `hermes-agent` | nousresearch/hermes-agent:latest | Agent IA principal |
-| `n8n` | n8nio/n8n | Automatisation workflows |
+| `n8n` | n8nio/n8n | ❌ Retiré le 13/07/2026 — Workflows migrés vers crons Python |
 | `ollama` | ollama/ollama | LLM local (qwen2.5:7b) |
 
 ### Socket Docker (accessible depuis Hermes)

@@ -99,7 +99,7 @@ sequenceDiagram
     BOT->>DS: [Système prompt + plan + chapitre]
     
     alt Chapitre < 128K tokens
-        Compléter le diagramme (ex: retour de réponse) ou remplacer par un diagramme valide.alyse, suggestions
+        DS-->>BOT: Analyse, suggestions
     else Chapitre > 128K tokens
         BOT->>GM: [Même contexte]
         GM-->>BOT: Analyse, suggestions

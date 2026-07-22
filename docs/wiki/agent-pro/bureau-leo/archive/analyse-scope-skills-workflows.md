@@ -16,7 +16,7 @@ Le **Bureau LEO** est le bureau **fourre-tout personnel** de Christophe. Il reç
 
 | Bureau | Domaine |
 |--------|---------|
-| 🔧 **Michel** | Infrastructure Hermes, n8n, dashboards |
+| 🔧 **Michel** | Infrastructure Hermes, dashboards |
 | 🧭 **Sylvia** | Voyages, roadbooks |
 | 🎓 **Emile** | Pédagogie, études |
 | 🩺 **Virginie** | Médical |
@@ -64,5 +64,5 @@ Pas de dispatch (pas de sous-experts), pas de croisement. Production directe.
 
 Le Bureau LEO est **autonome et passif** — il stocke des analyses produites ailleurs. Il n'orchestre pas d'autres bureaux.
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 

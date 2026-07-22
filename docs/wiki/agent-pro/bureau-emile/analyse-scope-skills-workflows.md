@@ -29,7 +29,7 @@ Le **Bureau Émile** est dédié à l'accompagnement académique d'Émile pour s
 | **source-of-truth** (Drive) | Sync Drive → wiki | Conversion docx → md pour alimenter le wiki |
 | **mkdocs-wiki** | Wiki Emile | Structure MkDocs Material pour emile-wiki |
 
-**Expertise :** Qwen2.5:7b (Ollama local) + fallback vers modèles deepseek, openai, gemini, grok ou anthropic selon disponibilité.
+**Expertise :** DeepSeek Flash (primaire), Gemini 3.5 Flash (fallback), Qwen2.5:7b (Ollama local) selon disponibilité.
 
 ## 🔄 Workflows définis
 
@@ -75,5 +75,5 @@ Le **Bureau Émile** est dédié à l'accompagnement académique d'Émile pour s
 
 Le Bureau Émile fonctionne de manière **autonome** — il n'appelle pas d'autres bureaux et n'est pas appelé par eux. Pas d'interopérabilité documentée.
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 

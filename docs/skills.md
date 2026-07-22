@@ -52,7 +52,7 @@ Total : **125 skills**
 
 ---
 
-## 🏛️ BAVI LEO — 9 skills
+## 🏛️ BAVI LEO — 11 skills
 
 Les **Bureaux Agentiques Virtuels** sont le cœur métier de LEO. Chaque bureau est un agent spécialisé avec son propre rôle, ses sous-experts, et son workflow standardisé en 7 phases.
 
@@ -370,5 +370,5 @@ hermes skills list
 
 *Document mis à jour le 18/07/2026 à 11:00 — Léo 🦁 | v2*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 

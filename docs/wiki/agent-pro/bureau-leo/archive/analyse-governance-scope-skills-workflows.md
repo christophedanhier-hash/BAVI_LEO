@@ -65,8 +65,8 @@ type: analyse
 
 | Catégorie | Bureaux |
 |-----------|---------|
-| **PRO** 🏢 | bureau-robert |
-| **PRIVÉ** 🏠 | leo-copilot, default, bavi-leo, emile |ra), Virginie (Médical), Emile (Pédagogie), LEO (Personnel) |
+| **PRO** 🏢 | bureau-robert, bureau-sophie, assurance-obligatoire |
+| **PRIVÉ** 🏠 | bureau-leo, bureau-michel, bureau-sylvia, bureau-virginie, bureau-emile, bureau-gerard, bureau-connaissance |
 
 ### Distribution par profil Hermes
 
@@ -84,5 +84,5 @@ La gouvernance est le **cadre commun** utilisé par TOUS les bureaux. Elle défi
 
 Version 1.10. Skill le plus volumineux de l'écosystème (80+ KB) avec 13 fichiers de référence et 1 template.
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 

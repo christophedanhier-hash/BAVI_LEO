@@ -56,7 +56,7 @@ Contrairement aux autres bots (Sylvia pour les voyages, Michel pour l'infra, Emi
 | Skills installés | 112 |
 | Crons automatisés | 39 |
 | Emails classifiés | 3 240 |
-| Modèle | DeepSeek Flash, Qwen 2.5 7B, OpenAI, Gemini, Grok, Anthropic |
+| Modèle | DeepSeek Flash, Qwen 2.5 7B, Gemini 3.5 Flash |
 
 ---
 
@@ -118,7 +118,7 @@ graph TB
 |:----------|:------------|:-----|
 | **Agent** | Hermes Agent (profil `default`) | Exécution centrale |
 | **Modèle** | DeepSeek V4 Flash | Inférence quotidienne |
-| **Fallback** | Gemini 2.5 Flash | Si DeepSeek indisponible |
+| **Fallback** | Gemini 3.5 Flash | Si DeepSeek indisponible |
 | **Modèle local** | Ollama qwen2.5:7b | Classification emails (gratuit) |
 | **Transport** | Telegram API | Interface Christophe |
 | **Documentation** | GitHub Pages (BAVI_LEO, voyages-wiki, wiki-oca) | Wikis déployés |
@@ -330,7 +330,7 @@ pie title Repartition cout DeepSeek mensuel
 | Infrastructure Hermes | Spécialisation | 🔧 Michel |
 | Roadbooks camping-car | Spécialisation | 🧭 Sylvia |
 | Assistance mémoire | Spécialisation | 🎓 Emile |
-| Maintenance n8n | Spécialisation | 🔧 Michel |
+| Maintenance Hermes | Spécialisation | 🔧 Michel |
 | Bot voyage autonome | Profil dédié | 🤖 @bavi_leo_voyages_bot |
 
 ---
@@ -388,5 +388,5 @@ flowchart LR
 
 *Analyse produite par 🏛️ Bureau Robert — BAVI LEO*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
 
