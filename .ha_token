@@ -1,0 +1,4 @@
+# HA Long-Lived Access Token - Dashboard LEO
+# Créé le 22/07/2026
+# À conserver en sécurité - si le fichier auth de HA est vidé, ce token est perdu
+HA_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlNDFjNjVkNGRjYTU0YmJmYTgwODFlMTk0MGNmOWUwYiIsImlhdCI6MTc4NDczNjMyMSwiZXhwIjoyMTAwMDk2MzIxfQ.3BQ0hsUtJx8Qb_3WCP8hdZXniYrD7iwJZNtN9FYhTno
