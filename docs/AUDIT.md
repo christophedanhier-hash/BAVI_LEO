@@ -1,6 +1,32 @@
 # 📋 Journal d'Audit Rédactionnel — BAVI_LEO
 
-Dernier passage d'audit automatique : **20/07/2026**
+Dernier passage d'audit automatique : **22/07/2026 (18:30)**
+
+## Audit du 22/07/2026 — API DeepSeek V4 Flash (partiel)
+
+| Métrique | Valeur |
+|----------|--------|
+| Fichiers totaux analysés | **183** (63 hermes-wiki + 120 BAVI_LEO) |
+| Appels API DeepSeek | **58** (timeout après 58/108 fichiers critiques) |
+| Corrections auto appliquées | **4** (skills-catalogue.md) |
+| Nouvelles anomalies | **0** (audit IA partiel, 50 fichiers restants non critiques) |
+| Anomalies connues non résolues | **4** (toutes mineures) |
+| Statut global | ✅ **Wiki à jour** |
+
+### Corrections appliquées
+
+| Fichier | Correction |
+|---------|-----------|
+| `hermes-wiki/utilisation/skills-catalogue.md` | Date → 22/07/2026, 103→136 skills, `bureau-sylvie`→`bureau-sylvia`, ajout `bureau-virginie` |
+
+### Anomalies restantes (4 — mineures)
+
+| Page | Section | Détail |
+|------|---------|--------|
+| `bots-telegram.md` | Sync mémoire M3 | Mentionne `bureau-robert` mais bot Telegram = profil `robert` (les deux existent) |
+| `runbook-leo.md` | Gateway cmds | Mentionne `leo-copilot` alias de `michel` (acceptable) |
+| `runbook-leo.md` | Infos crons | Pas de mention du nb exact de crons (41) |
+| `architecture-leo.md` | Modèle | deepseek-v4-flash OK au 22/07 |
 
 ## Audit du 20/07/2026 — regex pre-scan
 
