@@ -1,6 +1,6 @@
 ---
 date: 2026-07-14
-bureau: bureau-robert
+bureau: bureau-michel
 version: v1.0
 modele: deepseek-v4-pro
 tags: [kilo-code, tofdan, site, prompt, astrophotographie]

@@ -6,16 +6,16 @@
 
 | Métrique | Valeur |
 |----------|:------:|
-| **Crons actifs** | 37 ✅ |
+| **Crons actifs** | 40 ✅ |
 | **Crons en erreur** | 0 |
 | **Crons désactivés** | 1 ⏸️ (Viessmann) |
 | **Viessmann** | ⏸️ PAUSE — token expiré, pas de régénération prévue |
 | **Dashboard** | ✅ 8765 + 9119 en ligne |
-| **Gateways** | 4/4 UP (default, leo-copilot, bavi-leo, emile) |
+| **Gateways** | 5/5 UP (default, leo-copilot, bureau-robert, bavi-leo, emile) |
 
 ### Crons — Aucun problème
 
-Tous les 39 crons actifs sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
+Tous les 40 crons actifs sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
 
 - Surveillance caméras : 23:00 ✅
 - Énergie HomeWizard P1 : 23:04 ✅

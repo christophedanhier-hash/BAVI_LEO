@@ -3,7 +3,7 @@ date: 2026-07-11
 bureau: bureau-virginie
 auteur: Christophe & LEO
 version: v1
-modele: qwen2.5:7b (Ollama) / provider deepseek
+modele: deepseek-v4-pro (provider deepseek)
 tags: [virginie, presentation, role, sante, medical]
 statut: 🔄 En préparation
 type: presentation
@@ -27,7 +27,7 @@ type: presentation
 
 ## Modèle
 
-- **Provider** : DeepSeek Pro (raisonnement médical)
+- **Provider** : deepseek-v4-pro (raisonnement médical)
 - **Mémoire** : indépendante
 
 > 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)

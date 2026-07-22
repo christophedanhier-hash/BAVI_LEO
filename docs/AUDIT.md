@@ -14,13 +14,16 @@ Dernier passage d'audit automatique : **20/07/2026**
 
 ## Résumé du passage précédent
 
-Dernier passage d'audit automatique : **20/07/2026**
+Dernier passage d'audit automatique : **22/07/2026**
 
 ## Résumé du passage
 
-- **Total fichiers analysés** : 171
-- **Anomalies sur ce wiki** : 20
-- **Statut global du wiki** : ⚠️ À réviser
+- **Total fichiers analysés** : 183 (hermes-wiki + BAVI_LEO combinés)
+- **Méthode** : Statique (API DeepSeek indisponible — clé expirée)
+- **Nouvelles anomalies détectées** : 0 (audit IA non réalisé)
+- **Anomalies connues non résolues** : 20 (dont 12 en archive — normal)
+- **Auto-fix appliqués** : 2 patches manuels sur hermes-wiki/bots-telegram.md
+- **Statut global du wiki** : ⚠️ 8 anomalies actives non résolues
 
 ## Anomalies détectées
 

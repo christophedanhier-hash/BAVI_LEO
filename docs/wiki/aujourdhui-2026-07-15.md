@@ -6,7 +6,7 @@
 
 | Métrique | Valeur |
 |----------|:------:|
-| **Crons actifs** | 39 ✅ |
+| **Crons actifs** | 40 ✅ |
 | **Crons en erreur** | 0 |
 | **Viessmann** | ⏸️ PAUSE — token expiré, pas de régénération prévue |
 | **Dashboard** | ✅ 8765 + 9119 en ligne |
@@ -14,7 +14,7 @@
 
 ### Crons — Aucun problème
 
-Tous les 39 crons Hermes sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
+Tous les 40 crons Hermes sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
 
 - Dernier run du health check : 23:02 ✅
 - Surveillance caméras : 23:00 ✅

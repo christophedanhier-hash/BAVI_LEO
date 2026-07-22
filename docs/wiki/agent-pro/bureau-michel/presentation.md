@@ -36,7 +36,7 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 
 ## Modèle
 
-- **Providers** : deepseek (default), gemini-3.5-flash (fallback), qwen2.5:7b (Ollama local)
+- **Providers** : deepseek (default — deepseek-v4-pro pour analyses, deepseek-v4-flash pour dialogue), qwen2.5:7b (Ollama local)
 - **Modèle local** : qwen2.5:7b (Ollama)
 - **Mémoire** : unifiée entre les profils default et leo-copilot
 
