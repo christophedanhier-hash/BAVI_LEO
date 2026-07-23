@@ -1,7 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 23/07/2026 à 06:10**
+> **Généré automatiquement le 23/07/2026 à 13:12**
 > Source : `profiles/michel/cron/jobs.json` (41 jobs)
 <!-- AUTO:END header -->
 
@@ -30,12 +30,12 @@
 | 9 | 📊 Agrégation Énergie (horaire) | `0 * * * *` | script | ✅ |
 | 10 | 📊 Synthèse Hebdomadaire LEO | `0 20 * * 0` | script | ✅ |
 | 11 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
-| 12 | 📋 Doc Watch Auto (sync documents) | `*/2 * * * *` | script | ❌ |
+| 12 | 📋 Doc Watch Auto (sync documents) | `*/2 * * * *` | script | ✅ |
 | 13 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
 | 14 | 📓 Journaux Quotidiens (5 wikis + 5 vaults) | `0 23 * * *` | LLM | ✅ |
 | 15 | 📝 Audit rédactionnel unifié (2 wikis, 1 passage) | `0 6 * * *` | LLM | ✅ |
 | 16 | 📝 docs-update | `0 */4 * * *` | script | ✅ |
-| 17 | 📞 Point contact LEO (4×/jour) | `0 8,11,14,17 * * *` | LLM | ✅ |
+| 17 | 📞 Point contact LEO (4×/jour) | `0 8,11,14,17 * * *` | script | ✅ |
 | 18 | 📡 Machine KPI Collector | `*/5 * * * *` | script | ✅ |
 | 19 | 📦 Auto-Archive BAVI LEO (5min) | `every 5m` | script | ✅ |
 | 20 | 📦 Cron Log Archiver (horaire) | `15 * * * *` | script | ✅ |
@@ -55,7 +55,7 @@
 | 34 | 🕐 Audit Qualité Crons (journalier) | `0 7 * * *` | script | ✅ |
 | 35 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
 | 36 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
-| 37 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ❌ |
+| 37 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
 | 38 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
 | 39 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
 | 40 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
@@ -74,4 +74,4 @@
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 23/07/2026 à 06:10_
+_Généré automatiquement le 23/07/2026 à 13:12_
