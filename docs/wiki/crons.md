@@ -1,17 +1,17 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 23/07/2026 à 13:12**
-> Source : `profiles/michel/cron/jobs.json` (41 jobs)
+> **Généré automatiquement le 23/07/2026 à 18:00**
+> Source : `profiles/michel/cron/jobs.json` (42 jobs)
 <!-- AUTO:END header -->
 
 ## Résumé
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **41** |
+| **Crons Hermes** (tous profils, consolidé) | **42** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
-| **Total général** | **47** |
+| **Total général** | **48** |
 
 ## Liste exhaustive des crons Hermes
 
@@ -22,7 +22,7 @@
 | 1 | Drive → Issue GitHub | `*/30 * * * *` | script | ✅ |
 | 2 | Gardien du Drive | `0 */6 * * *` | script | ✅ |
 | 3 | Save Contacts | `*/15 * * * *` | script | ✅ |
-| 4 | ⚡ Énergie — HomeWizard P1 | `*/2 * * * *` | script | ❌ |
+| 4 | ⚡ Énergie — HomeWizard P1 | `*/2 * * * *` | script | ✅ |
 | 5 | 💰 Budget Alert | `0 8,20 * * *` | script | ✅ |
 | 6 | 💾 LEO Backup quotidien → GDrive (script) | `0 6 * * *` | script | ✅ |
 | 7 | 💾 Recovery State Export → GDrive (horaire) | `30 * * * *` | script | ✅ |
@@ -54,12 +54,13 @@
 | 33 | 🔧 LEO Maintenance quotidienne | `0 3 * * *` | script | ✅ |
 | 34 | 🕐 Audit Qualité Crons (journalier) | `0 7 * * *` | script | ✅ |
 | 35 | 🖥️ Dashboards Watchdog (8765+9119) | `*/2 * * * *` | script | ✅ |
-| 36 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
-| 37 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
-| 38 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
-| 39 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
-| 40 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
-| 41 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
+| 36 | 🛡️ Gateway FD Watchdog | `0 * * * *` | script | ⚠️ |
+| 37 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
+| 38 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
+| 39 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
+| 40 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
+| 41 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
+| 42 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
 
 <!-- AUTO:END hermes-crons -->
 
@@ -74,4 +75,4 @@
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 23/07/2026 à 13:12_
+_Généré automatiquement le 23/07/2026 à 18:00_
