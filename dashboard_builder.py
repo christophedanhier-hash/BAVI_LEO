@@ -21,8 +21,20 @@ def norm_model(name):
         return "Gemini"
     if "claude" in m:
         return "Claude"
-    if "gpt" in m:
-        return "GPT"
+    if "gpt" in m or "oss" in m:
+        return "GPT-OSS"
+    if "nemotron" in m or "nvidia" in m:
+        return "Nemotron"
+    if "gemma" in m:
+        return "Gemma"
+    if "cohere" in m:
+        return "Cohere"
+    if "laguna" in m:
+        return "Laguna"
+    # OpenRouter free marker
+    if ":free" in m:
+        short = name.split("/")[-1].replace(":free","")
+        return short[:16]
     short = (name or "").split("/")[-1]
     return short[:20]
 
@@ -276,6 +288,17 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
   </div>
   <div class="progress"><div class="progress-bar" style="width:{min(100,monthly_spent/monthly_cap*100):.0f}%;background:{bgt_color}"></div></div>
   <canvas id="bhChart" height="60" style="margin-top:8px"></canvas>
+</div>
+
+<div class="card" style="border-left:3px solid #22c55e">
+  <h3>🆓 OpenRouter — Modèles gratuits <span style="font-size:11px;color:var(--green);font-weight:400">$0.00/mois</span></h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px">
+    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🤖</span><div><div style="font-size:13px;font-weight:600">GPT-OSS 20B</div><div style="font-size:10px;color:var(--dim)">Collector v2 · toutes les 15 min</div></div></div>
+    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🧠</span><div><div style="font-size:13px;font-weight:600">Gemma 4 31B</div><div style="font-size:10px;color:var(--dim)">Journaux · quotidien 23h</div></div></div>
+    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">⚡</span><div><div style="font-size:13px;font-weight:600">Nemotron 550B</div><div style="font-size:10px;color:var(--dim)">Audit · quotidien 06h</div></div></div>
+  </div>
+  <div style="margin-top:8px;font-size:11px;color:var(--dim)">🔑 OpenRouter — 14 modèles gratuits dispos · fallback automatique si DeepSeek down</div>
+  <div id="or-stats" style="margin-top:4px;font-size:10px;color:var(--dim)">Chargement...</div>
 </div>
 
 <div class="card">
@@ -1100,6 +1123,15 @@ function loadAudit() {{
         document.getElementById('log-content').innerHTML = html;
       }});
     }};
+    
+    // OpenRouter live stats
+    fetch('/api/openrouter?token='+token).then(function(r){{return r.json()}}).then(function(d){{
+      var el = document.getElementById('or-stats');
+      if(el && !d.error) {{
+        el.innerHTML = '📊 Crédits: <b>'+d.credits_total+'</b> · Utilisés: <b>'+d.credits_used+'</b> · Tokens jour: <b>'+d.usage_daily.toLocaleString()+'</b> · Coût: <b>$0.00</b>';
+      }}
+    }}).catch(function(){{}});
+    
   }}());
   </script>
 </div>

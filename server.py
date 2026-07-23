@@ -3,7 +3,7 @@
 LEO Serveur Unifié — Wiki BAVI + Dashboard + API
 Usage: .venv/bin/uvicorn server:app --host 0.0.0.0 --port 8765
 """
-import json, subprocess, os, sys, re, urllib.request, urllib.parse, shutil
+import json, subprocess, os, sys, re, time, urllib.request, urllib.parse, shutil
 from pathlib import Path
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import HTMLResponse, Response, JSONResponse, FileResponse
@@ -11,6 +11,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 import urllib.request
+
+# Charger les variables d'environnement depuis .env
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).parent / ".env")
+except Exception:
+    pass
 
 BASE = Path("/home/tofdan/.hermes")
 BAVI_SITE = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site")
@@ -39,8 +46,19 @@ def norm_model(name):
         return "Gemini"
     if "claude" in m:
         return "Claude"
-    if "gpt" in m:
-        return "GPT"
+    if "gpt" in m or "oss" in m:
+        return "GPT-OSS"
+    if "nemotron" in m or "nvidia" in m:
+        return "Nemotron"
+    if "gemma" in m:
+        return "Gemma"
+    if "cohere" in m:
+        return "Cohere"
+    if "laguna" in m:
+        return "Laguna"
+    if ":free" in m:
+        short = name.split("/")[-1].replace(":free","")
+        return short[:16]
     # Tronquer les noms longs
     short = name.split("/")[-1]
     return short[:20]
@@ -1394,6 +1412,50 @@ async def api_audit_crons(request: Request):
     if audit_file.exists():
         return JSONResponse(json.loads(audit_file.read_text()))
     return JSONResponse({"error": "Pas encore d'audit crons", "issues": [], "audit_type": "cron-quality", "timestamp": None})
+
+# ── API: OpenRouter stats ──
+_OPENROUTER_CACHE = {"data": None, "ts": 0}
+
+@app.get("/api/openrouter")
+async def api_openrouter(request: Request):
+    if not check_token(request): raise HTTPException(401)
+    now = time.time()
+    if _OPENROUTER_CACHE["data"] and (now - _OPENROUTER_CACHE["ts"]) < 300:
+        return JSONResponse(_OPENROUTER_CACHE["data"])
+    
+    KEY = os.getenv("OPENROUTER_KEY", "")
+    if not KEY:
+        return JSONResponse({"error": "OPENROUTER_KEY not set"})
+    
+    try:
+        req1 = urllib.request.Request("https://openrouter.ai/api/v1/auth/key",
+            headers={"Authorization": f"Bearer {KEY}"})
+        key_data = json.loads(urllib.request.urlopen(req1, timeout=5).read())["data"]
+        
+        req2 = urllib.request.Request("https://openrouter.ai/api/v1/credits",
+            headers={"Authorization": f"Bearer {KEY}"})
+        credit_data = json.loads(urllib.request.urlopen(req2, timeout=5).read())["data"]
+        
+        result = {
+            "free_tier": True,
+            "credits_total": credit_data["total_credits"],
+            "credits_used": credit_data["total_usage"],
+            "usage_total": key_data["usage"],
+            "usage_daily": key_data["usage_daily"],
+            "usage_weekly": key_data["usage_weekly"],
+            "usage_monthly": key_data["usage_monthly"],
+            "models": [
+                {"name": "GPT-OSS 20B", "model": "openai/gpt-oss-20b:free", "cron": "Collector v2", "schedule": "15 min"},
+                {"name": "Gemma 4 31B", "model": "google/gemma-4-31b-it:free", "cron": "Journaux", "schedule": "23h"},
+                {"name": "Nemotron 550B", "model": "nvidia/nemotron-3-ultra-550b-a55b:free", "cron": "Audit", "schedule": "06h"},
+            ],
+            "monthly_cost": 0.00
+        }
+        _OPENROUTER_CACHE["data"] = result
+        _OPENROUTER_CACHE["ts"] = now
+        return JSONResponse(result)
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=502)
 
 if __name__ == "__main__":
     import uvicorn
