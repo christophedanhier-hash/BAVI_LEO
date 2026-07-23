@@ -190,5 +190,5 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 
 *Analyse générée le 30/06/2026 à 23:30 (CEST) — À valider et mettre à jour dans Bureau Michel.*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

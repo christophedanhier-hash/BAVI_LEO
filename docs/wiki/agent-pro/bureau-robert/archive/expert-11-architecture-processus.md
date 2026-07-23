@@ -40,5 +40,5 @@ Tu cartographies les processus AO, identifies les goulots, modélises en BPMN.
 - BPMN simple et lisible
 - Distinguer processus réel vs théorique
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

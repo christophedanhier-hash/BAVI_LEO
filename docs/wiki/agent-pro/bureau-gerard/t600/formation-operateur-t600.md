@@ -772,5 +772,5 @@ Après la mise en situation, prendre 5 minutes pour :
 |:--------|:-----|:------------|
 | v1 | 2026-06-12 | Version initiale — Formation complète pour opérateurs débutants et intermédiaires : mise en route, extinction, sécurité, procédures d'urgence |
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

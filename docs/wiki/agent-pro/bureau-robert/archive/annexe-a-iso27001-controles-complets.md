@@ -434,5 +434,5 @@ TECHNOLOGIQUE (34)
 *Document produit par 🤖 Bureau LEO avec l'appui de 🏛️ Bureau Robert — Conseil Stratégique IT*
 *BAVI LEO — Juillet 2026*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

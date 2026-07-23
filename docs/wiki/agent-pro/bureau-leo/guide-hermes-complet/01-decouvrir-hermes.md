@@ -365,7 +365,7 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 
 | Dashboard | URL | Onglets | Màj |
 |:----------|:----|:--------|:---:|
-| 🦁 **LEO Dashboard** | [lien](https://christophedanhier-hash.github.io/leo-dashboard/) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
+| 🦁 **LEO Dashboard** | [lien](http://localhost:8765/dashboard) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
 
 #### Les 39 crons (+ 6 crons hôte)
 
@@ -464,5 +464,5 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

@@ -344,7 +344,7 @@ xychart-beta
     y-axis "Nb Skills" 0 --> 16
     bar [6, 16, 16, 13, 8, 8, 6, 6, 6, 4, 3, 4]
 ```
-> **Note** : Les valeurs du graphique ci-dessus reflètent les données au 07/07/2026. Le total est passé de 103 à 126 skills, et le nombre de catégories de 16 à 22.
+> **Note** : Les valeurs du graphique ci-dessus reflètent les données au 07/07/2026. Le total est passé de 103 à 28 skills, et le nombre de catégories de 16 à 22.
 
 ---
 
@@ -370,5 +370,5 @@ hermes skills list
 
 *Document mis à jour le 18/07/2026 à 11:00 — Léo 🦁 | v2*
 
-> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

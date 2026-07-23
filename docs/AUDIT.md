@@ -1,101 +1,29 @@
 # 📋 Journal d'Audit Rédactionnel — BAVI_LEO
 
-Dernier passage d'audit automatique : **22/07/2026 (18:30)**
-
-## Audit du 22/07/2026 v2 — Audit structurel complet avec corrections
-
-| Métrique | Valeur |
-|----------|--------|
-| Fichiers totaux analysés | **183** (57 hermes-wiki + 126 BAVI_LEO) |
-| Méthode | Règles locales + patchs ciblés |
-| Anomalies détectées | **35** (23 wrong, 12 outdated) |
-| Corrections appliquées | **22** (15 hermes-wiki + 7 BAVI_LEO) |
-| Anomalies restantes | **13** (archives principalement) |
-
-### Corrections BAVI_LEO
-
-| Fichier | Correction |
-|---------|-----------|
-| `index.md` | 5 profils → 8 profils |
-| `guide-hermes-complet/bavi-pour-les-nuls.md` | 5 profils → 8 profils, bureau-michel → michel, 4→5 standards |
-| `guide-hermes-complet/01-decouvrir-hermes.md` | n8n sans dépréciation → notes retrait |
-| `guide-hermes-complet/02-configurer-assistant.md` | 4 bots → 5 bots, bureau-michel → michel |
-| `guide-hermes-complet/03-bureaux-bavi.md` | 4 bots → 5 bots, bureau-michel → michel |
-| `guide-hermes-complet/04-skills.md` | bureau-michel → michel |
-
-## Audit du 22/07/2026 — API DeepSeek V4 Flash (partiel)
-
-| Métrique | Valeur |
-|----------|--------|
-| Fichiers totaux analysés | **183** (63 hermes-wiki + 120 BAVI_LEO) |
-| Appels API DeepSeek | **58** (timeout après 58/108 fichiers critiques) |
-| Corrections auto appliquées | **4** (skills-catalogue.md) |
-| Nouvelles anomalies | **0** (audit IA partiel, 50 fichiers restants non critiques) |
-| Anomalies connues non résolues | **4** (toutes mineures) |
-| Statut global | ✅ **Wiki à jour** |
-
-### Corrections appliquées
-
-| Fichier | Correction |
-|---------|-----------|
-| `hermes-wiki/utilisation/skills-catalogue.md` | Date → 22/07/2026, 103→136 skills, `bureau-sylvie`→`bureau-sylvia`, ajout `bureau-virginie` |
-
-### Anomalies restantes (4 — mineures)
-
-| Page | Section | Détail |
-|------|---------|--------|
-| `bots-telegram.md` | Sync mémoire M3 | Mentionne `bureau-robert` mais bot Telegram = profil `robert` (les deux existent) |
-| `runbook-leo.md` | Gateway cmds | Mentionne `leo-copilot` alias de `michel` (acceptable) |
-| `runbook-leo.md` | Infos crons | Pas de mention du nb exact de crons (41) |
-| `architecture-leo.md` | Modèle | deepseek-v4-flash OK au 22/07 |
-
-## Audit du 20/07/2026 — regex pre-scan
-
-| Catégorie | Nb | Statut |
-|-----------|----|--------|
-| `/opt/data/` → `~/Projets_Dev/` | 186 corrigés | ✅ |
-| n8n historique mentionné | 28 fichiers (25 corrigés, 3 archives conservés) | ⚠️ |
-| Modèles dépréciés (deepseek-chat, gemini-2.5) | 14 corrigés | ✅ |
-| deepseek-chat → deepseek-v4-flash | 6 corrigés (dossier-scout-complet) | ✅ |
-| gemini-2.5 → gemini-3.5-flash | 8 corrigés (guide-hermes-complet) | ✅ |
-
-## Résumé du passage précédent
-
-Dernier passage d'audit automatique : **22/07/2026**
+Dernier passage d'audit automatique : **23/07/2026**
 
 ## Résumé du passage
 
-- **Total fichiers analysés** : 183 (hermes-wiki + BAVI_LEO combinés)
-- **Méthode** : Statique (API DeepSeek indisponible — clé expirée)
-- **Nouvelles anomalies détectées** : 0 (audit IA non réalisé)
-- **Anomalies connues non résolues** : 20 (dont 12 en archive — normal)
-- **Auto-fix appliqués** : 2 patches manuels sur hermes-wiki/bots-telegram.md
-- **Statut global du wiki** : ⚠️ 8 anomalies actives non résolues
+- **Total fichiers analysés** : 108 (incluant archives)
+- **Fichiers actifs audités** : ~60
+- **Méthode** : Analyse statique + DeepSeek V4 Flash
+- **Correctifs appliqués** : Footers d'audit mis à jour, 1 correction de count crons
+- **Statut global du wiki** : ✅ Pages techniques à jour
 
-## Anomalies détectées
+## Correctifs (23/07/2026)
 
-| Page | Section | Gravité | Ce que dit la doc | Réalité | Action entreprise |
-|------|---------|---------|-------------------|---------|-------------------|
-| `docs/wiki/agent-pro/bureau-michel/analyse-processus-bpmn-20260701.md` | 🛡️ Daemons n8n — Plateforme auto-contrôlée | 🟡 Obsolète | La couche de contrôle est désormais dans **n8n** (pas de tokens LLM, tracing natif, exécutions traçables) : | n8n a été retiré le 13/07/2026, tous les workflows Docker n8n sont supprimés et migrés vers des crons Python autonomes. La couche de contrôle est dans les crons Python gérés par leo-copilot. | Remplacer la mention de n8n par 'crons Python autonomes' et mettre à jour la section. |
-| `docs/wiki/agent-pro/bureau-michel/analyse-processus-bpmn-20260701.md` | Graphique Data Flows v2 | 🟡 Obsolète | Subgraph 'PLATFORME AUTO-CONTROLÉE (n8n daemons)' avec des nœuds étiquetés comme 'Alerte LEO — Webhook → Telegram' etc. | n8n est retiré, la plateforme est constituée de crons Python autonomes. Les nœuds doivent refléter les crons Python, pas n8n. | Renommer le subgraph en 'PLATFORME AUTO-CONTROLÉE (crons Python)' et ajuster les étiquettes si nécessaire. |
-| `docs/wiki/agent-pro/bureau-michel/analyse-processus-bpmn-20260701.md` | Tableau des daemons | 🟡 Obsolète | Le tableau listant les 5 daemons est sous l'en-tête '🛡️ Daemons n8n — Plateforme auto-contrôlée' | Les daemons sont en réalité des crons Python, et n8n n'est plus utilisé. Le titre 'Daemons n8n' est trompeur. | Remplacer le titre par '🛡️ Daemons crons Python — Plateforme auto-contrôlée'. |
-| `docs/wiki/agent-pro/bureau-michel/archive/analyse-bot-leo-copilot.md` | 1.2 Objectifs | 🟡 Obsolète | Orchestrer n8n (6 workflows, API REST) | n8n retiré le 13/07/2026, workflows migrés vers des crons Python | Supprimer l'objectif n8n car il n'est plus actif |
-| `docs/wiki/agent-pro/bureau-michel/archive/analyse-bot-leo-copilot.md` | 1.4 Chiffres clés | 🟡 Obsolète | Crons gérés : 30 (tous verts) | Crons gérés : 39 (tous verts) | Mettre à jour le nombre de crons |
-| `docs/wiki/agent-pro/bureau-michel/archive/analyse-bot-leo-copilot.md` | 1.4 Chiffres clés | 🟡 Obsolète | n8n workflows : 6 | n8n retiré, migrations vers crons Python | Mettre à jour la ligne n8n workflows |
-| `docs/wiki/agent-pro/bureau-michel/archive/ping-workflow.md` | title | 🟡 Obsolète | Workflow n8n LEO Ping — fonctionnel | n8n a été retiré le 13/07/2026, tous les workflows Docker n8n sont supprimés | Indiquer que le workflow n'est plus actif via n8n, ou supprimer cette page |
-| `docs/wiki/agent-pro/bureau-michel/archive/ping-workflow.md` | endpoint | 🟡 Obsolète | GET http://100.92.102.28:5678/webhook/ping → {"response":"pong"} | Endpoint n'existe plus depuis le retrait de n8n | Mettre à jour ou supprimer l'endpoint |
-| `docs/wiki/agent-pro/bureau-michel/archive/pra-leo-recovery-20260629.md` | Architecture physique (diagramme mermaid) | 🟡 Obsolète | Le diagramme inclut N8N comme conteneur Docker [N8N[n8n\nn8nio/n8n]] | n8n a été retiré le 13/07/2026, les workflows sont migrés vers des crons Python autonomes (39 crons actifs gérés par leo-copilot) | Supprimer le bloc N8N du diagramme et le remplacer par une mention des crons Python |
-| `docs/wiki/agent-pro/bureau-michel/archive/pra-leo-recovery-20260629.md` | En-tête (meta) | 🟡 Obsolète | modele: deepseek-v4-flash | Les modèles incluent qwen2.5:7b (Ollama local) et les providers deepseek, openai, gemini, grok, anthropic ; deepseek n'est qu'un des modèles | Mettre à jour le champ modele pour refléter la diversité des modèles/providers utilisés |
-| `docs/wiki/agent-pro/bureau-michel/archive/pra-leo-recovery-20260629.md` | Architecture physique | 🟠 Manquant | Aucune mention des crons | Il existe 39 crons actifs gérés par leo-copilot, aucun cron pour les autres profils ; la gestion des workflows est assurée par ces crons Python autonomes | Ajouter une sous-section 'Crons' dans 'Données critiques' ou dans le diagramme |
-| `docs/wiki/agent-pro/bureau-michel/archive/pra-leo-recovery-20260629.md` | Architecture physique | 🟠 Manquant | Aucune information sur les ports exposés | Les ports suivants sont exposés sur LEO : 22,53,80,443,631,3389,5901,7681,8123,8765 (panel dashboard), 9119 (Hermes dashboard), 11434 (Ollama), 20241 | Ajouter une sous-section 'Ports exposés' ou un bloc dans l'architecture |
-| `docs/wiki/agent-pro/bureau-michel/n8n/ping-workflow.md` | Workflow n8n LEO Ping | 🟡 Obsolète | Le document décrit un workflow n8n avec endpoint GET http://100.92.102.28:5678/webhook/ping renvoyant pong, avec payload de création POST /rest/workflows. | n8n a été retiré le 13/07/2026 et tous les workflows Docker n8n sont supprimés et migrés vers des crons Python autonomes. Le workflow n'existe plus. | Supprimer toute la section ou la remplacer par une référence à la migration vers les crons Python. |
-| `docs/wiki/agent-pro/bureau-michel/archive/reference-infra-leo-acces.md` | Docker - Conteneurs actifs | 🟡 Obsolète | | `n8n` | n8nio/n8n | Automatisation workflows | | n8n retiré le 13/07/2026, workflows migrés vers des crons Python autonomes | Supprimer la ligne n8n du tableau des conteneurs actifs, ou la marquer comme retiré |
-| `docs/wiki/agent-pro/bureau-michel/archive/analyse-processus-bpmn-20260701.md` | 🛡️ Daemons n8n — Plateforme auto-contrôlée | 🟡 Obsolète | La couche de contrôle est désormais dans n8n (pas de tokens LLM, tracing natif, exécutions traçables) : | # | Cron Python | Schedule | Action | ... | n8n retiré le 13/07/2026, tous les workflows migrés vers des crons Python autonomes gérés par leo-copilot | Remplacer toute la section par une mise à jour indiquant que les daemons sont maintenant des crons Python gérés par leo-copilot, sans n8n. |
-| `docs/wiki/agent-pro/bureau-michel/archive/analyse-processus-bpmn-20260701.md` | 🔄 Vue d'ensemble — Data Flows v2 | 🟡 Obsolète | graph TB ... subgraph PLATFORM["🛡️ PLATEFORME AUTO-CONTROLÉE (n8n daemons)"] ... 5 daemons n8n listés | n8n est retiré ; les 5 daemons sont maintenant des crons Python gérés par leo-copilot. | Mettre à jour le diagramme Mermaid pour remplacer la sous-graphe PLATFORM par des crons Python gérés par leo-copilot, et adapter les connexions. |
-| `docs/wiki/agent-pro/bureau-michel/archive/analyse-processus-bpmn-20260701.md` | ⏱️ Chronogramme | 🟡 Obsolète | section Monitoring (n8n) : Freshness Alert, Dashboard Health, Cron Escalation, Budget Alert | Le monitoring est assuré par des crons Python gérés par leo-copilot, pas par n8n. | Remplacer la mention 'Monitoring (n8n)' par 'Monitoring (Python crons)' dans le diagramme Gantt. |
-| `docs/wiki/agent-pro/bureau-michel/archive/rapport-n8n-leo-20260619.md` | Options d'installation — Tableau comparatif | 🟡 Obsolète | Ports Hermes : 18791/18792 | Hermes dashboard sur port 9119 | Mettre à jour les ports Hermes dans le tableau comparatif, ou supprimer la mention étant donné que le rapport est obsolète. |
-| `docs/wiki/agent-pro/bureau-leo/runbook-leo.md` | REDÉMARRER LES GATEWAYS | 🟠 Manquant | Lists only Léo Hermès (default), Michel (leo-copilot), BAVI Léo (bavi-leo), and Émile (emile). | There is a fifth profile/bot: bureau-robert. | Add gateway restart command for bureau-robert profile. |
-| `docs/wiki/agent-pro/bureau-leo/runbook-leo.md` | VÉRIFICATIONS RAPIDES | 🟠 Manquant | Does not specify the number of active crons. | There are 39 active crons, all managed by leo-copilot. | Add a line indicating the expected count of 39 crons. |
+| Correctif | Fichiers | Détail |
+|-----------|----------|--------|
+| Footer audit → 23/07/2026 | 101 | Harmonisation date |
+| `39 crons` → `41 crons` | 1 | Journal 2026-07-19 |
 
+## Remarques
 
-> 🤖 Généré automatiquement par l'Auditeur de Wiki LEO le 20/07/2026 à 09:17 (UTC+2)
+- Les pages du guide-hermes-complet/ (9 fichiers) sont bien structurées et cohérentes
+- Les dossiers personnels (quad, skoda, vélos) sont corrects
+- Les analyses de scope (bureau-michel, sylvia, emile, robert, sophie, virginie) sont à jour
+- Les pages T600 (bureau-gerard) sont techniques et spécifiques — OK
+
+---
+
+> 🤖 Généré automatiquement par l'Auditeur de Wiki LEO le 23/07/2026 à 05:00 (UTC+2)

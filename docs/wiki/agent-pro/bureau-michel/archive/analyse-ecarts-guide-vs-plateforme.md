@@ -127,5 +127,5 @@ Le guide a été écrit AVANT le crash du 30/06. Les leçons du crash (sessions 
 | 7 | Token Google | 🟢 | Vérifier avant d'écrire |
 | 8 | Installation | 🟢 | Vérifier doc officielle |
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

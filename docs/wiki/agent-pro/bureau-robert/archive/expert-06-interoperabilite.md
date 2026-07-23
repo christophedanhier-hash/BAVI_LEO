@@ -41,5 +41,5 @@ Tu es l'expert Interopérabilité. Tu maîtrises eHealth, BCSS, MyCareNet et les
 - Échanges intermutualistes très réglementés
 - Tout changement flux nécessite validation organismes
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

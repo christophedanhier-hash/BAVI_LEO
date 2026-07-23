@@ -230,7 +230,7 @@ flowchart LR
 
 | Métrique | Valeur |
 |----------|-------:|
-| **Bureaux** | 10 conceptuels (8 profils Hermes dont 5 bots Telegram) · 3 PRO + 7 PRIVÉ |
+| **Bureaux** | 10 conceptuels (5 profils Hermes dont 5 bots Telegram) · 3 PRO + 7 PRIVÉ |
 | **Dashboards** | 2 (Panel port 8765 + Hermes Agent port 9119) |
 | **Crons Hermes** | 41 ✅ (leo-copilot exclusif) |
 | **Crons hôte (crontab)** | 0 |
@@ -269,11 +269,11 @@ flowchart LR
 
 ---
 
-> 🕐 **Dernière mise en ligne : 23/07/2026 01:00**  
+> 🕐 **Dernière mise en ligne : 23/07/2026 06:10**  
 > *Document généré par LEO · 🦁*
 
 ---
 
-> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 
 

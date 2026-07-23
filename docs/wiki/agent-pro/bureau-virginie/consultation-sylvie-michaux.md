@@ -363,5 +363,5 @@ Le tableau clinique de Sylvie est dominé par un **diabète de type 2 évolué e
 
 *Rapport généré par 🩺 Virginie — Bureau d'Orchestration Médicale BAVI LEO | 25/06/2026*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

@@ -212,5 +212,5 @@ collect-v2.py → leo-unified.json → deploy-dashboard.py → GH Pages
 
 *Rapport généré par LEO Agent (bureau Michel) le 2026-07-05 à 18:30 UTC+2*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

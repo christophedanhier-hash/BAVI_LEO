@@ -555,7 +555,7 @@ Un skill, c'est un document qui dit à Hermès : « Voici comment faire X. » Vo
 4. Vérifier que le dashboard répond HTTP 200
 ```
 
-LEO a **126 skills** répartis en 22 catégories. Chaque skill encapsule une procédure — déployer un dashboard, envoyer un email, analyser un RSS, etc. Résultat : LEO sait faire des choses qu'on ne lui a jamais montrées, parce qu'il a le mode d'emploi.
+LEO a **28 skills** répartis en 22 catégories. Chaque skill encapsule une procédure — déployer un dashboard, envoyer un email, analyser un RSS, etc. Résultat : LEO sait faire des choses qu'on ne lui a jamais montrées, parce qu'il a le mode d'emploi.
 
 > 🦁 **Exemple LEO :** Le skill `dashboard-deployment` contient toute la procédure de déploiement d'un dashboard HTML sur GitHub Pages. LEO peut déployer un nouveau dashboard en 30 secondes, sans erreur, parce que le skill lui dit exactement quoi faire.
 
@@ -687,7 +687,7 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 
 | Dashboard | URL | Onglets | Màj |
 |:----------|:----|:--------|:---:|
-| 🦁 **LEO Dashboard** | [lien](https://christophedanhier-hash.github.io/leo-dashboard/) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
+| 🦁 **LEO Dashboard** | [lien](http://localhost:8765/dashboard) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
 
 ### Les 38 crons (+ 6 crons hôte)
 
@@ -1752,7 +1752,7 @@ category: infrastructure
 
 ## L'écosystème de skills LEO
 
-Environ **126 skills** répartis en **22 catégories** :
+Environ **28 skills** répartis en **22 catégories** :
 
 ```
 skills/
@@ -4188,7 +4188,7 @@ LEO a **1 dashboard central** (4 onglets, 20 KPI, 4 charts) rafraîchi par un cr
 
 | Dashboard | Contenu | URL | Cron |
 |-----------|---------|-----|------|
-| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](https://christophedanhier-hash.github.io/leo-dashboard/) | */15 |
+| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](http://localhost:8765/dashboard) | */15 |
 
 Tous sont générés par des scripts `no_agent` — **0$ de coût LLM** par mise à jour.
 
@@ -4596,7 +4596,7 @@ Budget mensuel LEO (estimé):
   Total:                           ~1-3 €
 ```
 
-> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](https://christophedanhier-hash.github.io/leo-dashboard/).
+> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
 
 Le secret de ce coût ridicule : **Ollama pour le gratuit** (classification emails sur CPU), **Flash pour le quotidien** (quelques centimes/jour), **Pro seulement pour le complexe** (ponctuel).
 
@@ -4630,7 +4630,7 @@ coûts = {
 | Crons                | 0 € (13/14 en no_agent)      |
 ```
 
-> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](https://christophedanhier-hash.github.io/leo-dashboard/).
+> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
 
 ## Alertes
 
@@ -4821,7 +4821,7 @@ Depuis le 21/06/2026, un cron **agent-driven** (pas no_agent) tourne toutes les 
 | Import Python cassé | Traceback d'import | pip install dans le venv |
 
 **Rapport :** livré en local (plus sur Telegram). Consultez le **🌍 Global Dashboard** à
-https://christophedanhier-hash.github.io/leo-dashboard/ pour tout voir en un coup d'œil.
+http://localhost:8765/dashboard pour tout voir en un coup d'œil.
 
 ## Pièges à éviter
 
@@ -5131,7 +5131,7 @@ Le Dashboard Watch vérifie que le dashboard LEO est en ligne et à jour :
 
 ```bash
 # Vérification unique
-curl -s -o /dev/null -w "%{http_code}" https://christophedanhier-hash.github.io/leo-dashboard/
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/dashboard
 # → 200
 ```
 
@@ -6024,7 +6024,7 @@ Depuis juin 2026, certains crons critiques sont **doublés dans n8n** pour bén�
 
 | Dashboard | Technologie | Màj | Lien |
 |-----------|-------------|-----|------|
-| 🦁 **LEO Dashboard** | HTML + Chart.js (4 onglets) | */15 | [leo-dashboard](https://christophedanhier-hash.github.io/leo-dashboard/) |
+| 🦁 **LEO Dashboard** | HTML + Chart.js (4 onglets) | */15 | [leo-dashboard](http://localhost:8765/dashboard) |
 
 Tous les scripts de déploiement incluent :
 - `--allow-empty` + `run_id` dans le footer pour éviter "nothing to commit"
@@ -6442,5 +6442,5 @@ Vous avez rencontré un problème non listé ? Ouvrez une issue sur le [dépôt 
 
 *Document mis à jour le 18/07/2026 à 12:30 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

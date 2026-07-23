@@ -84,5 +84,5 @@ La gouvernance est le **cadre commun** utilisé par TOUS les bureaux. Elle défi
 
 Version 1.10. Skill le plus volumineux de l'écosystème (80+ KB) avec 13 fichiers de référence et 1 template.
 
-> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

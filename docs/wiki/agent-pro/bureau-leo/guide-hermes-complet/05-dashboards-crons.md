@@ -38,7 +38,7 @@ LEO a **1 dashboard central** (4 onglets, 20 KPI, 4 charts) rafraîchi par un cr
 
 | Dashboard | Contenu | URL | Cron |
 |-----------|---------|-----|------|
-| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](https://christophedanhier-hash.github.io/leo-dashboard/) | */15 |
+| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](http://localhost:8765/dashboard) | */15 |
 
 Tous sont générés par des scripts `no_agent` — **0$ de coût LLM** par mise à jour.
 
@@ -461,7 +461,7 @@ Budget mensuel LEO (estimé):
   Total:                           ~1-3 €
 ```
 
-> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](https://christophedanhier-hash.github.io/leo-dashboard/).
+> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
 
 Le secret de ce coût ridicule : **Ollama pour le gratuit** (classification emails sur CPU), **Flash pour le quotidien** (quelques centimes/jour), **Pro seulement pour le complexe** (ponctuel).
 
@@ -495,7 +495,7 @@ coûts = {
 | Crons                | 0 € (13/14 en no_agent)      |
 ```
 
-> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](https://christophedanhier-hash.github.io/leo-dashboard/).
+> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
 
 ## Alertes
 
@@ -686,7 +686,7 @@ Depuis le 21/06/2026, un cron **agent-driven** (pas no_agent) tourne toutes les 
 | Import Python cassé | Traceback d'import | pip install dans le venv |
 
 **Rapport :** livré en local (plus sur Telegram). Consultez le **🌍 Global Dashboard** à
-https://christophedanhier-hash.github.io/leo-dashboard/ pour tout voir en un coup d'œil.
+http://localhost:8765/dashboard pour tout voir en un coup d'œil.
 
 ## Pièges à éviter
 
@@ -1005,7 +1005,7 @@ Le Dashboard Watch vérifie que le dashboard LEO est en ligne et à jour :
 
 ```bash
 # Vérification unique
-curl -s -o /dev/null -w "%{http_code}" https://christophedanhier-hash.github.io/leo-dashboard/
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/dashboard
 # → 200
 ```
 
@@ -1118,5 +1118,5 @@ Règle: GitHub gagne en cas de conflit.
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

@@ -121,5 +121,5 @@ sudo chown -R www-data:www-data /var/www/tofdan.be/
 sudo systemctl reload nginx
 ```
 
-> 🤖 Dernier audit : 20 July 2026 à 09:14 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

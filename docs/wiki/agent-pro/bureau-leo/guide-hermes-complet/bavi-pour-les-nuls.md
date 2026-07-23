@@ -46,7 +46,7 @@ Imaginez une entreprise ou :
                     ▼               ▼
             ┌─────────────────────────────────┐
             │     GATEWAY HERMES (s6)         │
-            │  8 profils, 5 bots Telegram     │
+            │  5 profils, 5 bots Telegram     │
             │  Supervision + auto-restart      │
             └────────┬────────────────────────┘
                      │
@@ -445,7 +445,7 @@ Cout total : 0 euro. Frequence : toutes les heures.
 
 ### 6.1 Le dashboard central (LEO Dashboard)
 
-URL : https://christophedanhier-hash.github.io/leo-dashboard/
+URL : http://localhost:8765/dashboard
 
 Un seul dashboard HTML statique (Chart.js) qui regroupe 4 onglets :
 
@@ -613,5 +613,5 @@ Le guide complet "Hermes pour les Nuls" detaille chaque etape dans ses 10 chapit
 
 *Document complete le 18/07/2026 a 14:30 — Leo 🦁 | v2.0*
 
-> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 

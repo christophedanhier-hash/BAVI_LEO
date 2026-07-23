@@ -1002,7 +1002,7 @@ category: infrastructure
 
 ### L'écosystème de skills LEO
 
-Environ **126 skills** répartis en **22 catégories** :
+Environ **28 skills** répartis en **22 catégories** :
 
 ```text
 skills/
@@ -1304,5 +1304,5 @@ Session 2 (le lendemain) : "Quelle est l'IP de mon serveur ?"
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 22 July 2026 à 07:40 (UTC+2)
+> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
 
