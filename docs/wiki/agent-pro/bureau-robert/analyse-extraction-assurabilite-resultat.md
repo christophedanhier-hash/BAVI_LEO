@@ -111,24 +111,24 @@ Le système est structuré en **12 exécutions parallèles** d'`OVR54300` (6 pou
 
 ```text
 calcul-assurabilite-sources/
-|-- README.md
-|-- DB2/
-|   +-- DCLGEN/           (28 fichiers)
-|   +-- DDL_TABLES/
-|       +-- DDL_TABLES_RECONSTITUES.sql
-|-- DOCUMENTATION_TECHNIQUE/
-|   +-- STANDARDS.txt
-|-- JCL/                  (13 scripts)
-|   +-- PAD82430.jcl
-|   +-- PADPUU06.jcl
-|   +-- PADPUU15.jcl
-|   +-- PAVR#REP.jcl
-|   +-- PAVRRPC1-6.jcl
-|   +-- PAVRRSAV.jcl
-|   +-- PAVRRTI1-6.jcl
-+-- PL1/
-    +-- COPYBOOKS/        (20 fichiers)
-    +-- PROGRAMMES/       (27 fichiers)
+├── README.md
+├── DB2/
+│   ├── DCLGEN/                   (28 fichiers)
+│   └── DDL_TABLES/
+│       └── DDL_TABLES_RECONSTITUES.sql
+├── DOCUMENTATION_TECHNIQUE/
+│   └── STANDARDS.txt
+├── JCL/                          (13 scripts)
+│   ├── PAD82430.jcl
+│   ├── PADPUU06.jcl
+│   ├── PADPUU15.jcl
+│   ├── PAVR#REP.jcl
+│   ├── PAVRRPC1-6.jcl
+│   ├── PAVRRSAV.jcl
+│   └── PAVRRTI1-6.jcl
+└── PL1/
+    ├── COPYBOOKS/                (20 fichiers)
+    └── PROGRAMMES/               (27 fichiers)
 ```
 
 ---
