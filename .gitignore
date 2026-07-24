@@ -13,3 +13,6 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
+
+# Privé — données médicales (bureau-virginie)
+docs/wiki/agent-pro/.bureau-virginie/
