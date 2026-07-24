@@ -1,5 +1,6 @@
 # Build local
 site-local/
+site/
 
 # OS
 .DS_Store
@@ -14,5 +15,5 @@ __pycache__/
 .vscode/
 .idea/
 
-# Privé — données médicales (bureau-virginie)
-docs/wiki/agent-pro/.bureau-virginie/
+# Privé — données médicales
+docs/wiki/agent-pro/private-virginie/

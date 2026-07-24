@@ -1465,6 +1465,11 @@ async def api_openrouter(request: Request):
     except Exception as e:
         return JSONResponse({"error": str(e)}, status_code=502)
 
+# ── BAVI Wiki (site MkDocs local) ──
+BAVI_SITE_PATH = Path("/home/tofdan/Projets_Dev/BAVI_LEO/site")
+if BAVI_SITE_PATH.exists():
+    app.mount("/wiki", StaticFiles(directory=str(BAVI_SITE_PATH), html=True), name="bavi_wiki")
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8765)
