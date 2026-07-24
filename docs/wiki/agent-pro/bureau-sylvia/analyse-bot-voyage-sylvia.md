@@ -9,7 +9,7 @@ statut: finalise
 type: analyse
 ---
 
-# 🧭 Analyse Business & Fonctionnelle — Bot Carnet de Voyages (Sylvia)
+Modifier le titre en fonction des changements récents dans la documentation.
 
 > **Bureau :** 🏛️ Robert — Conseil Stratégique IT | **Date :** 27/06/2026
 > **Sujet :** Analyse du bot voyage BAVI LEO, modèle économique, flux fonctionnels et architecture
@@ -311,5 +311,4 @@ pie title Repartition du chiffre d affaires
 
 *Analyse produite par 🏛️ Bureau Robert — BAVI LEO*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:23 (UTC+2)

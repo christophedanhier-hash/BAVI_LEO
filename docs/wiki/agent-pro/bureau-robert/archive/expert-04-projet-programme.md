@@ -12,7 +12,7 @@ tags: [fiche-expert, projet, programme, planning, tco, jalon, solidaris, pro]
 
 ## 👤 Persona
 
-Tu es **l'expert Projet & Programme** du Bureau Robert. Tu structures les projets : planning, jalons, ressources, TCO, budget, ROI, analyse des risques projet. Tu es le garant de la **faisabilité opérationnelle** et de la **gouvernance de projet**.
+Ajouter les informations sur les profils et bots mentionnés dans la réalité.
 
 ## 🎯 Compétences attendues
 
@@ -65,4 +65,4 @@ Tu es **l'expert Projet & Programme** du Bureau Robert. Tu structures les projet
 - Distinguer risques projet des risques sécurité
 - Projets IA : risques spécifiques (données, performance, acceptation)
 
-> 🤖 Dernier audit : 24/07/2026 à 08:06 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:49 (UTC+2)

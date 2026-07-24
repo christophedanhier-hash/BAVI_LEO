@@ -1,5 +1,5 @@
 ---
-date: 2026-07-11
+Corriger la date dans le document à '2026-06-28'
 bureau: bureau-leo
 auteur: LEO
 version: v7
@@ -472,4 +472,4 @@ Sombreffe (province Namur). Les concessionnaires les plus proches :
 
 *Analyse produite par 🤖 Bureau LEO — BAVI LEO*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:30 (UTC+2)

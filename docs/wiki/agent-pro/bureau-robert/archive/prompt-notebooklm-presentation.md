@@ -7,7 +7,7 @@ statut: finalise
 type: prompt
 ---
 
-# 🏛️ Prompt NotebookLM — Présentation Stratégique IA pour Solidaris
+# 🏛️ Ajouter un titre qui reflète les sections réelles de la présentation.
 ## À coller dans NotebookLM après avoir importé les 3 sources
 
 ---
@@ -109,4 +109,4 @@ Les 3 documents suivants sont déjà importés dans le notebook :
 2. `note-strategique-predictions-amodei-20260716.md` — Prédictions IA
 3. `evolution-bureau-robert-v2-ia-business.md` — Contexte et gouvernance Robert
 
-> 🤖 Dernier audit : 24/07/2026 à 08:08 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:51 (UTC+2)

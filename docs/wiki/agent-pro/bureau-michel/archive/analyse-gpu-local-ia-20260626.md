@@ -8,7 +8,7 @@ statut: analyse
 type: analyse
 ---
 
-# Analyse — Remplacer DeepSeek Flash par un LLM local (v3.0 — Tous modèles open-source)
+Ajouter les détails suivants au titre : 'Profils: [default,emile,michel,robert,sylvia], Bots: [default,emile,michel,robert,sylvia], Modèles: qwen2.5:7b'
 
 **Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v3.0
 **Date :** 26/06/2026 | **Type :** Analyse
@@ -119,4 +119,4 @@ Le gap n'est plus de 50% comme avec les petits modèles. À 85%, la différence 
 
 *Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 26/06/2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:38 (UTC+2)

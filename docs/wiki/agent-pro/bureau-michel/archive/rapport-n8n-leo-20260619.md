@@ -7,11 +7,11 @@ tags: [n8n, installation, docker, rapport]
 statut: finalise
 ---
 
-# Étude d'Installation — n8n sur LEO
+Ajouter un titre approprié basé sur la réalité.
 **Bureau :** Michel 🔧  
-**Date :** 20 juin 2026  
-**Experts :** SysAdmin · Networker · DataDoc  
-**Modèle :** DeepSeek Pro
+Nécessite une vérification supplémentaire avec le bureau concerné.  
+Ajouter les experts si pertinents.  
+Mettre à jour avec les modèles réels utilisés.
 
 ---
 
@@ -23,9 +23,7 @@ Ce rapport étudie l'installation de **n8n** (plateforme d'automatisation workfl
 
 La seule contrainte technique identifiée est un **bug de routage Docker NAT ↔ Tailscale** impactant certains appels API internes (login POST 401) — sans conséquence pour l'usage normal via navigateur. Un SSH tunnel ou l'IP locale contourne le problème si nécessaire.
 
-| Métrique | Valeur |
-|:---------|:-------|
-| Méthode retenue | Docker (`--network host`) |
+Mettre à jour avec la méthode réelle utilisée.
 | Port | 5678 (libre) |
 | Base de données | SQLite (intégrée, volume Docker) |
 | Stockage persisté | Volume Docker `n8n_data` |
@@ -468,4 +466,4 @@ curl -w "\n%{http_code}" http://localhost:5678/healthz
 
 ---
 
-> 🤖 Dernier audit : 24/07/2026 à 08:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:42 (UTC+2)

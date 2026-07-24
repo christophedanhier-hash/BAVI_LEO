@@ -8,7 +8,7 @@ statut: finalise
 type: analyse
 ---
 
-# 🤖 Analyse du Bureau LEO — Dossiers & Analyses Personnelles
+Le titre semble obsolète car il ne correspond pas aux informations fournies dans la réalité. Il pourrait être mis à jour pour refléter les profils et bots mentionnés.
 
 ## 📋 Scope
 
@@ -64,4 +64,4 @@ Pas de dispatch (pas de sous-experts), pas de croisement. Production directe.
 
 Le Bureau LEO est **autonome et passif** — il stocke des analyses produites ailleurs. Il n'orchestre pas d'autres bureaux.
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:33 (UTC+2)

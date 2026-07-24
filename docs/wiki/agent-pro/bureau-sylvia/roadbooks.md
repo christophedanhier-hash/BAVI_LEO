@@ -26,5 +26,4 @@ type: liste
 
 > 🧭 Ces roadbooks sont hébergés sur le [wiki Carnet de Voyages](https://christophedanhier-hash.github.io/voyages-wiki/), utilisé par Tofdan et ses amis.
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:20 (UTC+2)

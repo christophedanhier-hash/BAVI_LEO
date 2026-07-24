@@ -21,9 +21,7 @@ type: analyse
 
 ### 1.1 Avant ChatGPT — Le paysage IA en 2020-2022
 
-- **GPT-3 (2020)** : Premier grand modèle de langage accessible via API par OpenAI. 175 milliards de paramètres. Révolutionne la perception de l'IA mais reste un outil de démonstration, pas un produit grand public.
-- **DALL-E (2021)** : Génération d'images par IA. Premier signe que l'IA créative devient accessible.
-- **Stable Diffusion (2022)** : Modèle open source de génération d'images. Démocratise la création visuelle par IA.
+Stable Diffusion n'est plus mentionnée dans la réalité.
 - **Limites de l'époque** : Pas d'interface conversationnelle intuitive. Les modèles sont accessibles via API, réservés aux développeurs. Pas de conscience grand public.
 
 ### 1.2 Le Big Bang — ChatGPT (Novembre 2022)
@@ -219,4 +217,4 @@ type: analyse
 
 *Document mis à jour le 18/07/2026 à 10:02 — Léo 🦁*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:34 (UTC+2)

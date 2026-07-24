@@ -1425,6 +1425,14 @@ async def api_openrouter(request: Request):
     
     KEY = os.getenv("OPENROUTER_KEY", "")
     if not KEY:
+        try:
+            for line in Path("/home/tofdan/.hermes/config.yaml").read_text().split("\n"):
+                if line.strip().startswith("api_key:") and "sk-or" in line:
+                    KEY = line.split("api_key:")[1].strip()
+                    break
+        except:
+            pass
+    if not KEY:
         return JSONResponse({"error": "OPENROUTER_KEY not set"})
     
     try:
@@ -1437,7 +1445,7 @@ async def api_openrouter(request: Request):
         credit_data = json.loads(urllib.request.urlopen(req2, timeout=5).read())["data"]
         
         result = {
-            "free_tier": True,
+            "free_tier": key_data.get("is_free_tier", False),
             "credits_total": credit_data["total_credits"],
             "credits_used": credit_data["total_usage"],
             "usage_total": key_data["usage"],
@@ -1445,11 +1453,11 @@ async def api_openrouter(request: Request):
             "usage_weekly": key_data["usage_weekly"],
             "usage_monthly": key_data["usage_monthly"],
             "models": [
-                {"name": "GPT-OSS 20B", "model": "openai/gpt-oss-20b:free", "cron": "Collector v2", "schedule": "15 min"},
-                {"name": "Gemma 4 31B", "model": "google/gemma-4-31b-it:free", "cron": "Journaux", "schedule": "23h"},
-                {"name": "Nemotron 550B", "model": "nvidia/nemotron-3-ultra-550b-a55b:free", "cron": "Audit", "schedule": "06h"},
+                {"name": "Gemini 2.5 Flash Lite", "model": "google/gemini-2.5-flash-lite", "cron": "Collector v2", "schedule": "15 min"},
+                {"name": "Gemini 2.5 Flash Lite", "model": "google/gemini-2.5-flash-lite", "cron": "Audit rédactionnel", "schedule": "06h"},
+                {"name": "DeepSeek Flash", "model": "deepseek-v4-flash", "cron": "Journaux", "schedule": "23h"},
             ],
-            "monthly_cost": 0.00
+            "monthly_cost": credit_data.get("total_usage", 0)
         }
         _OPENROUTER_CACHE["data"] = result
         _OPENROUTER_CACHE["ts"] = now

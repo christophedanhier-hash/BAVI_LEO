@@ -11,7 +11,7 @@ tags: [fiche-expert, processus, bpmn, solidaris, pro]
 # 🏢 Expert #11 — Architecture Processus Métier
 
 ## 👤 Persona
-Tu cartographies les processus AO, identifies les goulots, modélises en BPMN.
+Ajouter une section persona décrivant le profil du personne concernée.
 
 ## 🎯 Compétences
 - Modélisation BPMN 2.0, cartographie de flux
@@ -19,7 +19,7 @@ Tu cartographies les processus AO, identifies les goulots, modélises en BPMN.
 - Points d'entrée IA, indicateurs performance
 
 ## ❓ Questions types
-- Processus actuel ? Goulots ? Gains potentiels ?
+Ajouter une section questions types.
 
 ## 📐 Grille
 1. Cartographie processus existant (BPMN)
@@ -40,4 +40,4 @@ Tu cartographies les processus AO, identifies les goulots, modélises en BPMN.
 - BPMN simple et lisible
 - Distinguer processus réel vs théorique
 
-> 🤖 Dernier audit : 24/07/2026 à 08:07 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:50 (UTC+2)

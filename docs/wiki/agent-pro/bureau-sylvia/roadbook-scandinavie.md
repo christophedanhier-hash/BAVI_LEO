@@ -1,4 +1,4 @@
-# Scandinavie 2026 🚐🇪🇺🇩🇪🇸🇪🇳🇴
+Le titre devrait inclure les profils et bots utilisés.
 
 **🔒 Privé** · 02/09/2026 → 31/10/2026 · ~61 jours · ~9,000 km estimés · 🇧🇪 🇩🇪 🇸🇪 🇳🇴
 
@@ -359,5 +359,4 @@ Le « droit d'accès à la nature » permet de camper **sauvagement** en Suède 
 *Roadbook généré par le **Bureau Sylvia** (BAVI LEO) — 16 juin 2026*
 *Premier test opérationnel de BAVI LEO 🚀*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:22 (UTC+2)

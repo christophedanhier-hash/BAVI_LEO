@@ -13,7 +13,7 @@ type: runbook
 > Dernière mise à jour : 2026-07-11
 > Accessible sur GDrive : Hermes_Christophe/runbook/
 
-> **Note :** Le profil `leo-copilot` et le bot `@hermes_leo_copilot_bot` sont désormais **Michel (infra)**. Les chemins techniques (`profiles/leo-copilot/`) sont corrects et inchangés.
+Mettre à jour le document pour refléter l'état réel des profils et bots.
 
 ---
 
@@ -101,7 +101,7 @@ sudo tailscale up
 
 ## 💾 RESTAURATION COMPLÈTE DEPUIS BACKUP
 
-### Étape 1 : Récupérer le backup depuis GDrive
+Ajouter une section détaillée pour la restauration complète depuis le backup, en incluant toutes les étapes nécessaires. GDrive
 Le backup quotidien est dans `Hermes_Christophe/backups/leo-full-backup-AAAA-MM-JJ.tar.gz`
 
 ### Étape 2 : Restaurer
@@ -181,4 +181,4 @@ Si rien ne répond et que les procédures ci-dessus échouent :
 
 **Contact Christophe** : Telegram @Tofdan
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:33 (UTC+2)

@@ -86,5 +86,4 @@ Chaque roadbook est rattaché à un **propriétaire identifié** (Christophe, Pa
 
 Roadbooks actifs : Scandinavie 2026, Italie, Canet. Bot Telegram déployé et actif.
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:23 (UTC+2)

@@ -8,7 +8,7 @@ statut: analyse
 type: analyse
 ---
 
-# Analyse — Bot Telegram : DeepSeek v4 Flash + Gemini 3.5 Flash (fallback)
+Ajouter un titre basé sur le contenu de la section ① CADRAGE.
 
 **Bureau :** Michel — Infra_Hermes 🔧 | **Version :** v3.0
 **Date :** 25/06/2026 | **Type :** Analyse (①→③→⑤→⑥→⑦)
@@ -163,6 +163,4 @@ Règle : Gemini 3.5 n'est appelé que si DeepSeek échoue
 
 *Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 25/06/2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:38 (UTC+2)

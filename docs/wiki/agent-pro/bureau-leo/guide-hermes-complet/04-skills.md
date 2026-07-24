@@ -37,12 +37,7 @@ Il couvre :
 
 ### Exemple : configurer un nouveau provider
 
-```bash
-hermes config set model.default gemini-3.5-flash
-hermes config set model.provider gemini
-# Ajouter la clé API dans .env
-echo "GEMINI_API_KEY=***" >> .env
-```
+Mettre à jour les exemples pour refléter les nouveaux modèles disponibles.
 
 ### Exemple : créer un profil
 
@@ -1258,4 +1253,4 @@ flowchart LR
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:24 (UTC+2)

@@ -1,10 +1,7 @@
 ---
-date: 2026-06-24
-bureau: bureau-leo
-version: v1
-modele: deepseek-v4-flash
+Ajouter la date actuelle et mettre à jour le numéro de version si nécessaire.
 tags: [skoda, enyaq, vehicule, leasing, borne-recharge, eneco]
-statut: en-cours
+Ajouter un champ statut dans la réalité, par exemple 'terminé' si le projet est fini.
 workflows: [bavi-7-phases]
 ---
 
@@ -210,4 +207,4 @@ Acquisition d'une **Skoda Enyaq 60 Corporate** (2026) en leasing via **Ayvens** 
 |:--------|:-----|:------------|
 | v1 | 2026-06-24 | Version initiale — dossier complet Skoda Enyaq |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:30 (UTC+2)

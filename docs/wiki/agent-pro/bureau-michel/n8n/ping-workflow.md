@@ -1,8 +1,6 @@
 ---
 date: 2026-06-19
-bureau: bureau-michel
-version: v1
-modele: deepseek-v4-pro
+Mettre à jour la documentation pour refléter l'utilisation des services host.
 tags: [n8n, workflow, ping, test]
 statut: finalise
 workflows: [ping]
@@ -10,10 +8,7 @@ workflows: [ping]
 
 # ⚠️ OBSOLÈTE — n8n retiré le 13/07/2026
 #
-# Workflow n8n LEO Ping — fonctionnel
-Créé le 19/06/2026 par sous-agent DeepSeek Pro
-ID: MwT0XLeN6hFjzkxS
-Endpoint: GET http://100.92.102.28:5678/webhook/ping → {"response":"pong"}
+Supprimer les sections concernant le workflow n8n et mettre à jour la documentation pour refléter l'utilisation des services host.
 
 Solution : utiliser responseMode: "lastNode" + Set node (pas respondToWebhook)
 
@@ -72,4 +67,4 @@ Payload de création (POST /rest/workflows) :
 | v1 | 19/06/2026 | Version initiale — Workflow LEO Ping |
 *Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:01 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:45 (UTC+2)

@@ -255,4 +255,4 @@ Vous avez rencontré un problème non listé ? Ouvrez une issue sur le [dépôt 
 
 *Document mis à jour le 18/07/2026 à 12:30 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:28 (UTC+2)

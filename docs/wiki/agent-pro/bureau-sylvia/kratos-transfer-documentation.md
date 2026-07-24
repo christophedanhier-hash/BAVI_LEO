@@ -9,7 +9,7 @@ statut: finalise
 type: documentation-transfert
 ---
 
-# 🧭 Transfert de Compétence — Bot Voyage Sylvia → Kratos (à créer)
+Update the title to reflect the current state of the project.
 
 > **Document de transfert** pour que **Kratos (à créer)** (l'agent Hermès de **John**) puisse reconstruire intégralement le système **Sylvia — Agence de Voyage**
 > 
@@ -41,15 +41,7 @@ type: documentation-transfert
 
 ### 1.2 Capacités
 
-| Fonctionnalité | Description |
-|:---------------|:------------|
-| 🗺️ **Roadbooks** | Itinéraires complets étape par étape |
-| 🏕️ **Hébergements** | Campings, hôtels, locations Airbnb, aires CC, auberges |
-| 🚐 **Tous transports** | Camping-car, voiture, train, avion, moto, ferry |
-| 🗺️ **Cartes OSM** | Cartes interactives Folium/Leaflet |
-| 📄 **PDF** | Génération de roadbooks en PDF |
-| 👥 **Multi-utilisateurs** | Gestion d'un groupe Telegram avec plusieurs voyageurs |
-| 💳 **Facturation** | Abonnements + forfaits documents |
+No changes needed, the reality matches the documentation.aits documents |
 | 📧 **Emails** | Envoi de confirmations de réservation |
 
 ### 1.3 Public cible
@@ -583,5 +575,4 @@ Bienvenue sur le wiki des voyages organisés par **Kratos (à créer)** !
 *Document produit par 🤖 Bureau LEO pour transfert vers 🏛️ Kratos (à créer) (Vermès / John)*
 *BAVI LEO — Juillet 2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:24 (UTC+2)

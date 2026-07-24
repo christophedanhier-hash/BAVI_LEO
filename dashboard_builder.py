@@ -291,13 +291,13 @@ a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline
 </div>
 
 <div class="card" style="border-left:3px solid #22c55e">
-  <h3>🆓 OpenRouter — Modèles gratuits <span style="font-size:11px;color:var(--green);font-weight:400">$0.00/mois</span></h3>
+  <h3>🔗 OpenRouter <span style="font-size:11px;color:var(--green);font-weight:400" id="or-tier">Crédits</span></h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px">
-    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🤖</span><div><div style="font-size:13px;font-weight:600">GPT-OSS 20B</div><div style="font-size:10px;color:var(--dim)">Collector v2 · toutes les 15 min</div></div></div>
-    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🧠</span><div><div style="font-size:13px;font-weight:600">Gemma 4 31B</div><div style="font-size:10px;color:var(--dim)">Journaux · quotidien 23h</div></div></div>
-    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">⚡</span><div><div style="font-size:13px;font-weight:600">Nemotron 550B</div><div style="font-size:10px;color:var(--dim)">Audit · quotidien 06h</div></div></div>
+    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🤖</span><div><div style="font-size:13px;font-weight:600">Gemini 2.5 Flash Lite</div><div style="font-size:10px;color:var(--dim)">Collector · 15 min</div></div></div>
+    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🤖</span><div><div style="font-size:13px;font-weight:600">Gemini 2.5 Flash Lite</div><div style="font-size:10px;color:var(--dim)">Audit · quotidien 06h</div></div></div>
+    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🧠</span><div><div style="font-size:13px;font-weight:600">DeepSeek Flash</div><div style="font-size:10px;color:var(--dim)">Journaux · quotidien 23h</div></div></div>
   </div>
-  <div style="margin-top:8px;font-size:11px;color:var(--dim)">🔑 OpenRouter — 14 modèles gratuits dispos · fallback automatique si DeepSeek down</div>
+  <div style="margin-top:8px;font-size:11px;color:var(--dim)">🔑 10$ crédits disponibles · fallback configuré</div>
   <div id="or-stats" style="margin-top:4px;font-size:10px;color:var(--dim)">Chargement...</div>
 </div>
 
@@ -1127,8 +1127,11 @@ function loadAudit() {{
     // OpenRouter live stats
     fetch('/api/openrouter?token='+token).then(function(r){{return r.json()}}).then(function(d){{
       var el = document.getElementById('or-stats');
+      var tier = document.getElementById('or-tier');
       if(el && !d.error) {{
-        el.innerHTML = '📊 Crédits: <b>'+d.credits_total+'</b> · Utilisés: <b>'+d.credits_used+'</b> · Tokens jour: <b>'+d.usage_daily.toLocaleString()+'</b> · Coût: <b>$0.00</b>';
+        var remaining = d.credits_total - d.credits_used;
+        el.innerHTML = '📊 Crédits: <b>'+remaining.toFixed(2)+'$</b> / '+d.credits_total+'$ · Jour: <b>'+d.usage_daily.toLocaleString()+'</b> tokens';
+        if(tier) tier.textContent = d.free_tier ? 'Gratuit' : 'Crédité ('+remaining.toFixed(0)+'$)';
       }}
     }}).catch(function(){{}});
     

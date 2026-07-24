@@ -19,9 +19,7 @@ Tu es un conseiller stratégique IA spécialisé en architecture d'entreprise et
 Un document structuré avec les sections suivantes :
 
 ### SECTION 1 — Résumé exécutif pour la DSI
-- 5 points clés que le CIO doit retenir
-- Impact budgétaire immédiat
-- Décision à prendre et calendrier
+Ajouter les 5 points clés, l'impact budgétaire immédiat et le calendrier de décision.
 
 ### SECTION 2 — Analyse du modèle Copilot Credits
 - Explication technique du modèle de facturation
@@ -77,4 +75,4 @@ Un document structuré avec les sections suivantes :
 
 *Prompt généré le 16/07/2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:11 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:47 (UTC+2)

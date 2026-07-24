@@ -20,7 +20,7 @@ tags: [michel, infrastructure, crons, deploiement, contexte, pro]
 
 ## 1. Contexte général
 
-Robert est un **profil Hermes dédié** (`bureau-robert`) qui orchestre 16 experts IT & Business + 1 experte transverse (Sophie) + 1 bureau de capitalisation (Connaissance).
+Mettre à jour le contexte général pour refléter les profils réels utilisés.
 
 | Élément | Valeur |
 |:--------|:-------|
@@ -136,4 +136,4 @@ Robert est un **profil Hermes dédié** (`bureau-robert`) qui orchestre 16 exper
 *Document produit par Robert 🏛️ à destination de Michel 🛡️*
 *Juillet 2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:09 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:47 (UTC+2)

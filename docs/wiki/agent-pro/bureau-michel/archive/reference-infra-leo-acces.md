@@ -50,11 +50,7 @@ tailscale ssh root@tofdan-system-product-name
 ## 🐳 Docker
 
 ### Conteneurs actifs
-| Conteneur | Image | Rôle |
-|-----------|-------|------|
-| `hermes-agent` | nousresearch/hermes-agent:latest | Agent IA principal |
-| `n8n` | n8nio/n8n | ❌ Retiré le 13/07/2026 — Workflows migrés vers crons Python |
-| `ollama` | ollama/ollama | LLM local (qwen2.5:7b) |
+Remove the n8n container from the documentation.
 
 ### Socket Docker (accessible depuis Hermes)
 ```bash
@@ -201,4 +197,4 @@ server {
 
 *Référence stockée dans Bureau Michel — Infra_Hermes — 2026-06-27*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:41 (UTC+2)

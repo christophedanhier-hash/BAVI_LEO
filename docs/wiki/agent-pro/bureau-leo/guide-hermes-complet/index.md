@@ -5,7 +5,7 @@ auteur: LEO
 version: v5.0
 modele: deepseek-v4-flash
 tags: [hermes, guide, documentation, livre, pour-les-nuls, leo, architecture, bavi, refactored]
-statut: ✅ À jour
+Ajoutez une note indiquant que n8n a été supprimé le 13/07/2026.
 type: guide
 hide:
   - toc
@@ -56,4 +56,4 @@ Bienvenue dans le guide **Hermès pour les Nuls**, entièrement refactorisé en 
 
 *Document mis à jour le 18/07/2026 à 14:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:26 (UTC+2)

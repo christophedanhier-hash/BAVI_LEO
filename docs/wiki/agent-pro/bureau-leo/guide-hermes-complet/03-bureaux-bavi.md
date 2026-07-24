@@ -47,16 +47,7 @@ vs
 
 ### Les 10 bureaux LEO
 
-| Bureau | Rôle | Statut |
-|:-------|:-----|:------:|
-| 🔧 **Michel** | Infrastructure — crons, dashboards, système, budget | ✅ Actif |
-| 🤖 **LEO** | Hub central — analyses, dossiers personnels, emails | ✅ Actif |
-| 🧭 **Sylvia** | Voyages — roadbooks camping-car, itinéraires | ✅ Actif |
-| 🎓 **Émile** | Pédagogie — assistant mémoire universitaire | ✅ Actif |
-| 🏛️ **Robert** | Conseil stratégique IT — architectures, recommandations | ✅ Actif |
-| 💰 **Sophie** | Pilotage financier — TCO, ROI, business cases | 📝 En reconstruction |
-| 🏗️ **Gérard** | Documentation T600 — télescope automatisé | ✅ Actif |
-| 🩺 **Virginie** | Médical — consultations pluridisciplinaires | ✅ Actif |
+Mettre à jour la liste des bureaux avec les informations de réalité et inclure les détails sur les profils/bots, crons, ports, modèles, providers, fallback, dashboard_ports, ollama_url, docker. | ✅ Actif |
 | 🛡️ **AO** | Assurance obligatoire — INAMI, eHealth, MyCareNet | 📝 Structure prête |
 | 📚 **Connaissance** | Base de connaissance centralisée — bibliothèque cas IA, référentiels | ✅ Actif |
 
@@ -953,4 +944,4 @@ flowchart TD
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:27 (UTC+2)

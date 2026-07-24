@@ -45,7 +45,7 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 - **Hebdomadaire** (dimanche 20h)
 - Cron Hermes, profil `default` ou `leo-copilot`
 
-### Sources exactes à définir
+### 根据实际情况更新具体的数据源定义
 - Veille : `~/Projets_Dev/metrics/veille/raw-*.json` (7 derniers jours)
 - Budget : dashboard KPI budget
 - Métriques : à définir (base SQLite du dashboard ?)
@@ -57,7 +57,7 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 
 ---
 
-## 📝 Plan d'implémentation (à venir)
+## 📝 根据当前实际情况更新实施计划
 
 | Phase | Action | Dépendances |
 |:-----:|--------|:-----------:|
@@ -84,4 +84,4 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 - Modèle : qwen2.5:7b (Ollama, 6.1 GB, ~20 tok/s)
 - API Ollama : `http://100.92.102.28:11434/v1`
 
-> 🤖 Dernier audit : 24/07/2026 à 08:02 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:37 (UTC+2)

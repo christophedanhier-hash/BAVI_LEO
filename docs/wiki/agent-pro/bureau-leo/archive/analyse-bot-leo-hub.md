@@ -3,7 +3,7 @@ date: 2026-06-27
 bureau: bureau-robert
 auteur: LEO + Robert
 version: v1
-modele: deepseek-v4-flash
+Corriger le modèle mentionné et inclure les fournisseurs.
 tags: [robert, leo, analyse, business, bpmn, data-flow, architecture, gouvernance]
 statut: finalise
 type: analyse
@@ -388,4 +388,4 @@ flowchart LR
 
 *Analyse produite par 🏛️ Bureau Robert — BAVI LEO*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:31 (UTC+2)

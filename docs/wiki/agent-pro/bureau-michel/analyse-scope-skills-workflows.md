@@ -12,7 +12,7 @@ type: analyse
 
 ## 📋 Scope
 
-Le **Bureau Michel** est l'orchestrateur technique de l'infrastructure et du code. C'est le bureau qui **fait** — installations, scripts, Docker, réseau, debugging, gestion système. Catégorie **PRIVÉ** 🏠.
+Corriger le document pour refléter l'utilisation actuelle des technologies et des profils/bots. Catégorie **PRIVÉ** 🏠.
 
 **Périmètre fonctionnel (large) :**
 - Administration système (SysAdmin) : OS, services, Docker
@@ -93,4 +93,4 @@ Toute analyse produite par Michel est livrée **dans le wiki BAVI** (pas dans `~
 | 💰 **Sophie** | Estimation coûts infrastructure (TCO) | Appel skill `bureau-sophie` (phase ①/②) |
 | 📝 **Gérard** | Documentation technique liée au T600 | Appel skill `bureau-gerard` (phase ⑥) |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:46 (UTC+2)

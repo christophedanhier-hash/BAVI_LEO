@@ -6,13 +6,7 @@
 
 ## 👥 Contexte du voyage
 
-| | |
-|:---|:---|
-| **Voyageurs** | Christophe, Sylvie + 🐕 Nala |
-| **Véhicule** | Camping-car 8m × 2,4m (hauteur 2,5m) |
-| **Mobilité** | Sylvie : max 5-7 km/j à pied. Pas de VAE à bord — transports : à pied, taxi, bus, voiture de location |
-| **Nala** | Reste au CC climatisé pendant les visites culturelles |
-| **Équipement** | Pas de vélos à bord — location possible sur place si besoin (Lac de Garde, Venise Lido) |
+Le document doit être mis à jour avec les informations de la réalité. Les sections contexte du voyage et technos doivent être corrigées.
 
 
 ---
@@ -784,5 +778,4 @@ Sans les VAE, l'option Lido devient moins évidente. Voici les alternatives :
 
 *Document généré par Sylvia — BAVI LEO Voyages 🧭*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:21 (UTC+2)

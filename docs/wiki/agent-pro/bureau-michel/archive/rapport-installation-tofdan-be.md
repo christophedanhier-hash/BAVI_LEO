@@ -202,4 +202,4 @@ sudo chown www-data:www-data /var/www/tofdan.be/*
 
 *Rapport généré par 🐋 CodeWhale le 2026-06-27 — Stratégie bureau-robert/strategie-tofdan-be*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:59 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:44 (UTC+2)

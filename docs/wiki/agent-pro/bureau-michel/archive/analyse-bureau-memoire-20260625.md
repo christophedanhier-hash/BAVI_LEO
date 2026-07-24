@@ -30,10 +30,7 @@ type: analyse
 ## ① CADRAGE
 
 **Demande complète :**
-- Créer un bot Telegram assistant de rédaction pour le mémoire d'Émile
-- Lui fournir un wiki dédié pour accéder à ses documents
-- Alimenter le bot avec des sources structurées (plan, brouillons, références)
-- Pattern « bot voyage » de Sylvie, adapté à l'académique
+Mettre à jour le document pour inclure ces nouvelles informations.
 
 **Utilisatrice :** Émile, étudiante en sciences de l'éducation
 **Livrable final :** Mémoire de fin d'études (50-150 pages)
@@ -310,5 +307,4 @@ L'architecture couvre tout le cycle :
 
 *Analyse produite par BAVI LEO — Bureau Michel — Infra_Hermes 🔧 — 25/06/2026, implémenté et documenté 26/06/2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:43 (UTC+2)

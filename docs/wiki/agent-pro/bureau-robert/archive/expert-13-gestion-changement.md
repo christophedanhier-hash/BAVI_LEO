@@ -42,4 +42,4 @@ Tu accompagnes la transformation : impact organisationnel, adoption. Obligatoire
 - Résistances = informations
 - Accompagnement post-déploiement 3-6 mois
 
-> 🤖 Dernier audit : 24/07/2026 à 08:07 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:48 (UTC+2)

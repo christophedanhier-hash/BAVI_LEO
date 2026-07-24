@@ -8,7 +8,7 @@ statut: proposition
 type: analyse
 ---
 
-# 🌐 Stratégie d'hébergement — tofdan.be
+Le titre semble obsolète et ne reflète pas le contenu réel de la documentation. Il devrait être mis à jour pour correspondre au plan d'action et à l'architecture proposée.
 
 > **Objectif :** Migrer le site www.tofdan.be de Google Sites vers le serveur LEO
 > **Orchestrateur :** 🤖 LEO | **Code :** 💻 GitHub Copilot | **Infra hôte :** 🐋 leo-copilot | **Infra conteneur :** 🔧 Michel
@@ -273,4 +273,4 @@ Pendant la phase de test, tu peux garder l'ancien site Google Sites actif et poi
 
 *Analyse produite par 🤖 LEO — BAVI LEO*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:42 (UTC+2)

@@ -39,7 +39,7 @@ Le guide mentionne systématiquement "3 bots Telegram". Émile (profil pédagogi
 |:--------------|:--------|
 | "25 crons" (Ch.26) | ~30 crons |
 
-Le guide mentionne 25 crons dans certains chapitres et 30 dans d'autres. Aucune des deux valeurs n'est vérifiée après le crash.
+Effectuer un audit des crons pour mettre à jour les informations dans le guide.
 
 **Action :** Audit des crons nécessaire avant correction.
 
@@ -51,7 +51,7 @@ Le guide mentionne 25 crons dans certains chapitres et 30 dans d'autres. Aucune 
 |:--------------|:--------|
 | 7 dashboards | 8 (LEO KPI, BAVI LEO, Machines, Crons, GitHub, n8n, Global, Nest) |
 
-Le dashboard Nest (domotique) n'est pas listé dans le guide.
+Corriger la mention des dashboards dans le guide pour refléter la réalité.
 
 **Correction :** Ajouter le dashboard Nest dans Ch.22 et Ch.25.
 
@@ -79,7 +79,7 @@ L'analyse du Bureau Michel (26/06) recommande Gemma 4 26B MoE mais n'a pas été
 
 | Dans le guide | Réalité |
 |:--------------|:--------|
-| $19.46 (solde DeepSeek) | $60.31 |
+| Corriger le montant du budget dans le guide. |
 
 Le guide mentionne l'ancien solde $19.46. Le compte a été rechargé à $60.31 le 29/06.
 
@@ -127,5 +127,4 @@ Le guide a été écrit AVANT le crash du 30/06. Les leçons du crash (sessions 
 | 7 | Token Google | 🟢 | Vérifier avant d'écrire |
 | 8 | Installation | 🟢 | Vérifier doc officielle |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:41 (UTC+2)

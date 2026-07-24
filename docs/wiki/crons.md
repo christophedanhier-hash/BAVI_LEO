@@ -1,8 +1,7 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-> **Généré automatiquement le 24/07/2026 à 06:00**
-> Source : `profiles/michel/cron/jobs.json` (42 jobs)
+La date et l'heure de génération doivent être actualisées.
 <!-- AUTO:END header -->
 
 ## Résumé
@@ -76,3 +75,5 @@
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
 _Généré automatiquement le 24/07/2026 à 06:00_
+
+> 🤖 Dernier audit : 24/07/2026 à 11:19 (UTC+2)

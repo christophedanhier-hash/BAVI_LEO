@@ -7,7 +7,7 @@ status: complete
 bureau: leo-agent
 ---
 
-# 🦁 Rapport d'Audit Complet — LEO Ecosystem
+Update the title to match the reality.
 
 **Rédigé par :** LEO Agent (bureau Michel — Infrastructure Hermes)  
 **Date :** 2026-07-05 · **Lu par :** Christophe & Michel  
@@ -44,29 +44,13 @@ bureau: leo-agent
 ## 1. 🖥️ Infrastructure
 
 ### Conteneurs Docker
-| Conteneur | Statut |
-|---|---|
-| **hermes-agent** | ✅ Up 5j |
-| **n8n** | ❌ Retiré (13/07/2026) |
-| **ollama** | ✅ Up 5j (qwen2.5:7b) |
+Update the infrastructure section to reflect the current state.
 
 ### Profils Hermes
-| Profil | state.db | Skills | Crons | Mémoires |
-|---|---|---|---|---|
-| **leo-copilot** | 135 Mo | 77 | 18 jobs | 6 |
-| **default** | 0 octets ⚠️ | 0 | 0 | 2 |
-| **bavi-leo** | 372 Ko | 63 | 0 | 2 |
-| **emile** | 296 Ko | 62 | 0 | 0 |
-| **bureau-robert** | N/A | 0 | 0 | 0 |
+Update the profils Hermes section to reflect the current state.
 
 ### Gateways (4/4 stables)
-| Profil | PID | Uptime |
-|---|---|---|
-| leo-copilot | 68754 | 4j |
-| default | 69907 | 4j |
-| bavi-leo | 69562 | 4j |
-| emile | 69554 | 4j |
-| bureau-robert | N/A | N/A |
+Update the gateways section to reflect the current state. | N/A |
 
 ---
 
@@ -212,5 +196,4 @@ collect-v2.py → leo-unified.json → deploy-dashboard.py → GH Pages
 
 *Rapport généré par LEO Agent (bureau Michel) le 2026-07-05 à 18:30 UTC+2*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 11:36 (UTC+2)

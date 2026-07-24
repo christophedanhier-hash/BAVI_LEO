@@ -15,7 +15,7 @@ hide:
 > **Le nouveau guide est dans `guide-hermes-complet/index.md` (10 fichiers).**
 > **Dernière version avant découpage : v5.0 — 18/07/2026**
 
-# Hermès pour les Nuls 🦁 (ARCHIVE)
+Le titre devrait être mis à jour pour refléter les informations actuelles.
 
 > **Note :** Ce guide documente l'architecture au 18/07/2026. Mise à jour v5.0 : n8n retiré (13/07/2026), workflows Docker supprimés, migré vers crons Python, crons 39, Robert <nombre_actuel> experts, multi-profils, bureau Connaissance ajouté.
 
@@ -6442,4 +6442,4 @@ Vous avez rencontré un problème non listé ? Ouvrez une issue sur le [dépôt 
 
 *Document mis à jour le 18/07/2026 à 12:30 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:34 (UTC+2)

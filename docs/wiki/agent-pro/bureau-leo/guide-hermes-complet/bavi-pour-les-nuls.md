@@ -613,4 +613,4 @@ Le guide complet "Hermes pour les Nuls" detaille chaque etape dans ses 10 chapit
 
 *Document complete le 18/07/2026 a 14:30 — Leo 🦁 | v2.0*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:27 (UTC+2)

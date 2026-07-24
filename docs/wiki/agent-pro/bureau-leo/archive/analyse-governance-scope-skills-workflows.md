@@ -14,18 +14,7 @@ type: analyse
 
 **BAVI LEO Governance** est le **framework central** qui définit l'architecture, les standards et les procédures de tout l'écosystème BAVI LEO. Ce n'est pas un bureau producteur d'analyses, mais le **squelette méthodologique** de tous les bureaux.
 
-**Périmètre fonctionnel :**
-- Définition de la structure standard d'un bureau BAVI LEO
-- Grille d'audit par bureau (Orchestrateur, Sous-experts, Workflow, Interop)
-- Workflow standardisé 7 phases (obligatoire pour tous)
-- Variantes par type de livrable (analyse, rapport, note, dossier, mémoire, dashboard)
-- Patterns d'interopérabilité entre bureaux
-- Standards de documentation wiki
-- Distribution des skills par profil Hermes
-- Pricing & transparence (obligatoire sur tout livrable)
-- Audit complet de l'écosystème (checklist 8 sections)
-- Reconstruction de contenu perdu (git history)
-- Nettoyage d'écosystème (procédure de suppression)
+Le périmètre fonctionnel semble être à jour, mais il serait utile de vérifier si les éléments réels correspondent exactement aux descriptions fournies.
 
 ## 🧠 Skills utilisés
 
@@ -84,4 +73,4 @@ La gouvernance est le **cadre commun** utilisé par TOUS les bureaux. Elle défi
 
 Version 1.10. Skill le plus volumineux de l'écosystème (80+ KB) avec 13 fichiers de référence et 1 template.
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:32 (UTC+2)

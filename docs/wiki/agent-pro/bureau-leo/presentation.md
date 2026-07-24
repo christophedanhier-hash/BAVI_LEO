@@ -13,7 +13,7 @@ type: presentation
 
 ## Rôle
 
-**LEO** est l'assistant personnel de Christophe, dédié au **chat, aux dossiers et à la rédaction**.
+Ajouter les informations sur le profil et les bots utilisés.
 
 Je suis joignable sur Telegram via **@hermes_leo_bot** (profil `default`).
 
@@ -34,7 +34,8 @@ Je suis joignable sur Telegram via **@hermes_leo_bot** (profil `default`).
 
 ## Modèle
 
-- **Provider** : DeepSeek Flash (rapide, économique)
-- **Mémoire** : indépendante — pas de mémoire partagée avec les autres profils
+Mettre à jour le modèle et les fournisseurs utilisés.
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+Ajouter les informations sur le dashboard et les ports utilisés.
+
+> 🤖 Dernier audit : 24/07/2026 à 11:35 (UTC+2)

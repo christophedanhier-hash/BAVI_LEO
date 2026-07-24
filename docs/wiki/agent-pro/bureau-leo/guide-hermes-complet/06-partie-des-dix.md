@@ -356,7 +356,7 @@ Hermes supporte : **Telegram**, **Discord**, **WhatsApp**, **Slack**, **Signal**
 # Exemple : activer WhatsApp
 whatsapp:
   access_token: VOTRE_TOKEN
-  phone_number_id: "..."
+  phone_number_id: "Ajouter les commandes essentielles utilisées quotidiennement."
 ```
 
 Chaque plateforme peut avoir son propre ensemble de commandes et de permissions.
@@ -443,4 +443,4 @@ Le meilleur endroit pour poser des questions, partager vos réalisations, et ren
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:25 (UTC+2)

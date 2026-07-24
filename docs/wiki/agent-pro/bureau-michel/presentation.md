@@ -24,9 +24,7 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 | ⏰ **42 crons (39 actifs) (tous actifs)** | Veille IA, backups, budget, watchdogs, wiki sync, classification mail... |
 | 📜 **~100 scripts** | Collecte, backup, dashboard, déploiement, maintenance |
 | 🛡️ **Watchdogs** | Gateways, serveurs, machines, santé système |
-| 🚪 **Gateways** | 5 profils (default, leo-copilot, emile, bavi-leo, bureau-robert) — maintenance et stabilité |
-| 💾 **Backups** | Backup quotidien vers GDrive + rotation 7 jours |
-| 📊 **Dashboards** | KPIs, budget, machines, santé |
+Corriger les profils de gateways dans la documentation pour refléter la réalité.
 
 ## Ce que Michel ne fait pas
 
@@ -40,4 +38,4 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 - **Modèle local** : qwen2.5:7b (Ollama)
 - **Mémoire** : unifiée entre les profils default et leo-copilot
 
-> 🤖 Dernier audit : 24/07/2026 à 08:02 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:45 (UTC+2)

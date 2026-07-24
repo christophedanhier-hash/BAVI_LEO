@@ -11,7 +11,7 @@ statut: proposition
 
 ## 📊 Contexte
 
-**Bureau Michel v1.1** couvre ~38% des responsabilités réelles de Leo Copilot (5/13 domaines). L'essentiel est concentré sur les crons Python autonomes (ex-n8n). Les dashboards, crons, Hermes config, Google APIs, Git, mémoire, skills, machines et budget ne sont pas couverts par des patterns de dispatch.
+Mettre à jour l'contexte avec les informations réelles et supprimer toute référence obsolète.
 
 **Objectif** : étendre le skill pour couvrir 100% des domaines infra avec des patterns de dispatch conditionnel, enrichir les pitfalls avec l'expérience récente (migration 0.17.0), et intégrer le partage cross-profil avec Leo Hermes.
 
@@ -21,23 +21,11 @@ statut: proposition
 
 ### 1. Nouveaux sous-experts (5 → 8)
 
-| Expert | Rôle | Activer quand… |
-|--------|------|----------------|
-| **DashBuilder** 🆕 | Dashboards HTML, Chart.js, GitHub Pages | Déploiement dashboard, debug HTML, màj template |
-| **CronMaster** 🆕 | Crons Hermes, staggering, debugging | Création/audit cron, erreur récurrente, conflit horaire |
-| **GitGuardian** 🆕 | Git repos, sync, clean trees, cross-repo | Dirty files, sync Drive↔GitHub, audit repos |
+Mettre à jour la liste des nouveaux sous-experts en fonction de l'infrastructure réelle et supprimer toute référence obsolète.
 
 ### 2. Dispatch patterns étendus (3 → 10)
 
-| Scénario | Experts | Parallèle |
-|----------|---------|:---------:|
-| **Audit end-to-end** | DataDoc + CronMaster + DashBuilder + GitGuardian + Networker | ✅ (5 parallèles) |
-| **Post-migration (0.17.0)** | SysAdmin + CronMaster + Scripteur + DataDoc | ✅ |
-| **Déploiement dashboard** | DashBuilder + DevOps + DataDoc | ✅ |
-| **Debug cron** | CronMaster + Scripteur + Networker | ❌ (séquentiel) |
-| **Sync cross-profil** | Scripteur + GitGuardian + CronMaster | ❌ |
-| **Classification email** | GoogleIntegrator 🆕 + Scripteur | ❌ |
-| **Nettoyage Drive/Git** | GitGuardian + GoogleIntegrator | ✅ |
+Mettre à jour la liste des scénarios et experts en fonction de l'infrastructure réelle et supprimer toute référence obsolète.
 
 ### 3. Pitfalls enrichis (+8)
 
@@ -89,4 +77,4 @@ Cette analyse a été produite directement (pas de sous-agents) — le skill am�
 
 *Analyse produite par le **Bureau Michel** — Modèle : **DeepSeek Pro** — Date : **24/06/2026***
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:44 (UTC+2)
