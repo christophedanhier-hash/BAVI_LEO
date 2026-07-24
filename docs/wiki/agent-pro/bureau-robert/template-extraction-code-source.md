@@ -5,7 +5,7 @@ projet: DEV-IA-SOLIDARIS
 phase: 1
 version: v1
 tags: [template, extraction, prompt, methodologie, reutilisable, mainframe, pl1]
-statut: finalise
+Ajouter le statut dans la documentation.
 type: template-extraction
 ---
 
@@ -21,7 +21,7 @@ type: template-extraction
 
 ## Instructions pour l'outil IA
 
-# MISSION : ANALYSE ET EXTRACTION DE CONNAISSANCE
+Mettre à jour la section pour refléter les nouvelles informations.
 
 Tu es un expert en analyse de code legacy. Ta mission est d'analyser
 une application source et d'en extraire la connaissance business et
@@ -36,7 +36,7 @@ d'échec des projets d'extraction.
 ## CONTEXTE DU PROJET
 
 À compléter :
-- Nom du projet : [NOM]
+Ajouter les informations manquantes.
 - Langage : [PL/1, COBOL, Java, Python...]
 - Type : [Batch, Online, API, Microservice...]
 - Sources : [Chemin du workspace Git]
@@ -46,12 +46,10 @@ d'échec des projets d'extraction.
 
 ## PHASE A — CARTOGRAPHIE
 
-### A1 — Inventaire exhaustif des sources
-Liste récursivement tous les fichiers du workspace.
+Mettre à jour la section pour inclure les nouvelles informations.
 Classe-les par type :
 
-| Type | Nombre | Exemples |
-|------|--------|----------|
+Ajouter les informations sur les profils, bots, crons, ports et modèles utilisés dans le projet LEO.
 | Programmes principaux | | |
 | Programmes appelés | | |
 | Copybooks / Includes | | |
@@ -67,9 +65,7 @@ Produis l'arborescence complète des répertoires.
 
 ### A3 — Points d'entrée
 Identifie les points d'entrée de l'application :
-- Batch : JCL, scripts, planificateur
-- Online : transactions CICS, APIs, endpoints
-- Autres : triggers, files d'attente
+Ajouter les informations sur les profils, bots, crons, ports et modèles utilisés dans le projet LEO. triggers, files d'attente
 
 ---
 
@@ -234,3 +230,5 @@ Pour chaque programme/script majeur :
 
 *Template d'extraction v1 — Produit par Robert 🏛️*
 *Réutilisable pour toute application — PL/1, COBOL, Java, Python...*
+
+> 🤖 Dernier audit : 24/07/2026 à 11:57 (UTC+2)

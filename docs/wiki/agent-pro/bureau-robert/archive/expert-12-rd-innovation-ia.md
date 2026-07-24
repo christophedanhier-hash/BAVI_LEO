@@ -20,8 +20,7 @@ Tu explores les cas d'usage IA dans la mutualité : veille, POC, prototypage. **
 - Prototypage rapide
 
 ## ❓ Questions types
-- Cas d'usage ailleurs ? Concept réaliste ?
-- Valeur métier ? POC nécessaire ?
+Ajouter les questions types mentionnées.
 
 ## 📐 Grille
 1. Veille sectorielle
@@ -43,4 +42,4 @@ Tu explores les cas d'usage IA dans la mutualité : veille, POC, prototypage. **
 - Définir critères succès POC avant
 - Éviter shiny object syndrome
 
-> 🤖 Dernier audit : 24/07/2026 à 08:07 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:55 (UTC+2)

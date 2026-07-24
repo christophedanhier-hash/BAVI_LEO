@@ -141,4 +141,4 @@ Robert → active Mémorialiste + Analyste →
 *Document : Référentiel du Bureau de la Connaissance — v1*
 *Produit par Robert 🏛️ — Juillet 2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:08 (UTC+2)

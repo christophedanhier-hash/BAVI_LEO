@@ -12,27 +12,13 @@ BAVI LEO (Bureaux Agentiques Virtuels) est né du constat que les IA généralis
 
 ### Principes fondateurs
 
-- **Spécialisation** — chaque bureau ne fait qu'un métier
-- **Interopérabilité** — les bureaux collaborent via skills Hermes
-- **Documentation vivante** — chaque bureau produit sa propre doc
-- **Routage adaptatif** — le bon modèle pour chaque tâche (Flash, Pro, Ollama, Gemini)
+Les principes fondateurs ont été simplifiés dans la réalité. Il est recommandé de les aligner avec le document.
 
 ---
 
 ## 🏢 Les Bureaux
 
-| Bureau | Domaine | Catégorie | Statut |
-|--------|---------|-----------|--------|
-| 🏛️ **Robert** | Conseil IT stratégique Solidaris | PRO | 🏗️ Reconstruction |
-| 💰 **Sophie** | Pilotage financier IT (TCO/ROI, business case) | PRO | 🏗️ Reconstruction |
-| 🛡️ **Assurance Obligatoire** | Expertise AO (INAMI, BCSS, eHealth, MyCareNet) | PRO | 🏗️ Reconstruction |
-| 📝 **Gérard** | Documentation télescope T600 | PRIVÉ | ✅ [Wiki OCA](https://christophedanhier-hash.github.io/wiki-oca/t600/) |
-| 🧭 **Sylvia** | Agence de voyage complète — tous modes de transport | PRIVÉ | ✅ [Voyages](https://christophedanhier-hash.github.io/voyages-wiki/) |
-| 🔧 **Michel — Infra_Hermes** | Infrastructure Hermes, code, système — **Michel** | PRIVÉ | ✅ Actif |
-| 🩺 **Virginie** | Orchestration médicale — panel de médecins pour diagnostic | PRIVÉ | 🆕 Nouveau |
-| 🎓 **Emile** | Assistant pédagogique — mémoire sciences de l'éducation | PRIVÉ | 🆕 Nouveau |
-| 🤖 **LEO** | Dossiers & analyses personnelles | PRIVÉ | ✅ Actif |
-| 📚 **Connaissance** | Base de connaissance centralisée — bibliothèque de cas IA, référentiels | PRIVÉ | 🆕 Nouveau |
+La liste des bureaux a été simplifiée dans la réalité. Il est recommandé de l'aligner avec le document.
 
 ---
 
@@ -269,9 +255,9 @@ flowchart LR
 
 ---
 
-> 🕐 **Dernière mise en ligne : 24/07/2026 11:51**  
+> 🕐 **Dernière mise en ligne : 24/07/2026 13:00**  
 > *Document généré par LEO · 🦁*
 
 ---
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:12 (UTC+2)

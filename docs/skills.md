@@ -12,7 +12,7 @@ type: guide
 > **Dernière mise à jour rédactionnelle :** 18/07/2026 à 11:00 — Léo 🦁
 > **Dernier commit :** `3bdd456` — 18/07/2026 à 10:30
 
-# 📚 Catalogue des Skills — BAVI LEO & Hermes
+# 📚 Le titre du document devrait être mis à jour pour refléter les sections réelles du document.
 
 > **Usage** : Ce document liste et décrit tous les skills disponibles dans l'écosystème LEO.
 
@@ -370,4 +370,4 @@ hermes skills list
 
 *Document mis à jour le 18/07/2026 à 11:00 — Léo 🦁 | v2*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:10 (UTC+2)

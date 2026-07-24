@@ -81,4 +81,4 @@ type: analyse-vision
 - Toujours contextualiser les benchmarks par rapport à la taille et au secteur de Solidaris
 - Éviter les recommandations qui nécessitent des investissements irréalistes sans l'avis du Budget (5)
 
-> 🤖 Dernier audit : 24/07/2026 à 08:05 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:52 (UTC+2)

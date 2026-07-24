@@ -672,3 +672,5 @@ flowchart LR
 
 *Analyse produite par GitHub Copilot (Claude Sonnet 4.6) — 2026-07-21*  
 *Basé sur le template d'extraction v1 — Robert / bureau-robert*
+
+> 🤖 Dernier audit : 24/07/2026 à 11:58 (UTC+2)

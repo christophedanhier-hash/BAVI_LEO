@@ -16,7 +16,7 @@ type: analyse
 
 ---
 
-## 1. 🎯 Présentation
+## 1. 🎯 Corriger le titre pour refléter la section réelle.
 
 ### 1.1 Contexte
 
@@ -54,7 +54,7 @@ type: analyse
 
 ---
 
-## 2. 🏗️ Architecture technique
+## 2. 🏗️ Corriger le titre pour refléter la section réelle.
 
 ### 2.1 Diagramme d'architecture
 
@@ -300,4 +300,4 @@ flowchart LR
 
 *Analyse produite par 🏛️ Bureau Robert — BAVI LEO*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:03 (UTC+2)

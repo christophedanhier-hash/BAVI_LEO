@@ -156,4 +156,4 @@ flowchart TD
 *Document de cadrage v3 produit par Robert 🏛️*
 *Construction d'un modèle d'extraction réutilisable — Application démo : Assurabilité*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:10 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:58 (UTC+2)

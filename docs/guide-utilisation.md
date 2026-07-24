@@ -16,7 +16,7 @@ type: guide
 
 ## 🧠 Consulter un document
 
-Tous les documents produits par les bureaux BAVI LEO sont accessibles depuis le menu du wiki :
+Vérifier l'actualité des profils et bots utilisés dans les instructions.
 
 1. Cliquer sur le **bureau** concerné dans la navigation (🔧 Michel, 🧭 Sylvia, 🤖 Léo, 📝 Gérard, 🩺 Virginie, 🎓 Émile, 🏛️ Robert, 💰 Sophie, 📚 Connaissance)
 2. Le tableau liste tous les documents avec :
@@ -29,12 +29,7 @@ Tous les documents produits par les bureaux BAVI LEO sont accessibles depuis le 
 
 ### Modèles utilisés
 
-| Modèle | Usage |
-|:-------|:------|
-| **deepseek-v4-flash** | Analyses quotidiennes par défaut |
-| **deepseek-v4-pro** | Infrastructures complexes (michel, robert) |
-| **gemini-3.5-flash** | Fallback DeepSeek |
-| **qwen2.5:7b** (Ollama local) | Veille locale, prototypage, tests gratuits |
+Mettre à jour les modèles utilisés dans la documentation.
 
 ---
 
@@ -124,4 +119,4 @@ type: analyse|rapport|note|dossier|guide
 
 *Document mis à jour le 18/07/2026 à 11:00 — Léo 🦁*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:11 (UTC+2)

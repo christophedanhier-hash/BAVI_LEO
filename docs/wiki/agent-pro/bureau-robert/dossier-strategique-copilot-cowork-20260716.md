@@ -12,7 +12,7 @@ experts:
   - securite-rgpd
 ---
 
-# 🏛️ Dossier Stratégique — Microsoft Copilot Cowork
+Update the title to match the reality.
 ## Analyse des coûts, de l'utilisation et des implications pour Solidaris
 
 > **Bureau :** Robert 🏛️ — Conseil Stratégique IT & Business
@@ -439,4 +439,4 @@ flowchart TD
 *Basé sur Microsoft Copilot Credits Guide (July 2026) et CustomerCoworkEstimator.xlsx*
 *Juillet 2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:09 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:01 (UTC+2)

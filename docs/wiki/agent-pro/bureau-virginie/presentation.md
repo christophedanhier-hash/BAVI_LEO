@@ -9,7 +9,7 @@ statut: 🔄 En préparation
 type: presentation
 ---
 
-# 🩺 Bureau Virginie — Orchestration Médicale
+# 🩺 Le titre semble être obsolète et ne reflète pas les informations de la réalité. Il devrait inclure des détails sur le nombre de profils/bots, par exemple.
 
 ## Rôle
 
@@ -30,5 +30,4 @@ type: presentation
 - **Provider** : deepseek-v4-pro (raisonnement médical)
 - **Mémoire** : indépendante
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 12:04 (UTC+2)

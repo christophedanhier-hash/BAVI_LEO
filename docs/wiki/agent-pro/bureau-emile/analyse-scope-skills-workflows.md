@@ -8,11 +8,11 @@ statut: finalise
 type: analyse
 ---
 
-# 🎓 Analyse du Bureau Émile — Assistant Pédagogique
+Ajouter un titre approprié basé sur la réalité.
 
 ## 📋 Scope
 
-Le **Bureau Émile** est dédié à l'accompagnement académique d'Émile pour son mémoire de fin d'études en sciences de l'éducation. Il fait partie de la catégorie **PRIVÉ** 🏠 de l'écosystème BAVI LEO.
+Ajouter les informations manquantes sur le périmètre fonctionnel.
 
 **Périmètre fonctionnel :**
 - Relecture et correction de chapitres de mémoire
@@ -22,22 +22,13 @@ Le **Bureau Émile** est dédié à l'accompagnement académique d'Émile pour s
 
 ## 🧠 Skills utilisés
 
-| Skill | Rôle | Usage |
-|-------|------|-------|
-| **bureau-emile** ⭐ | Skill principal | Contient la personnalité, les règles, l'architecture du bureau |
-| **shared-bot-deployment** | Déploiement bot Telegram | Infrastructure du bot @Bureau_ia_emilie_bot |
-| **source-of-truth** (Drive) | Sync Drive → wiki | Conversion docx → md pour alimenter le wiki |
-| **mkdocs-wiki** | Wiki Emile | Structure MkDocs Material pour emile-wiki |
+Mettre à jour les skills avec les informations de la réalité.
 
 **Expertise :** DeepSeek Flash (primaire), Gemini 3.5 Flash (fallback), Qwen2.5:7b (Ollama local) selon disponibilité.
 
 ## 🔄 Workflows définis
 
-### Workflow standard — 7 phases BAVI (adapté)
-
-```
-① CADRAGE → ③ PRODUCTION → ⑥ LIVRABLE → ⑦ ARCHIVAGE
-```
+Ajouter les informations manquantes sur les workflows.
 
 | Phase | Description | Statut |
 |:-----:|-------------|:------:|
@@ -52,9 +43,7 @@ Le **Bureau Émile** est dédié à l'accompagnement académique d'Émile pour s
 📄 Émile écrit → 📁 Drive bavi/bureau-emilie → 🔄 Cron sync → 📝 Conversion .docx → .md → 🚀 Push emile-wiki
 ```
 
-- **Cron :** `emile-drive-sync` (toutes les heures) — à activer
-- **Conversion :** .docx → .md automatique
-- **Intermittent :** le bot charge le .md depuis le wiki pour avoir le contexte à jour
+Ajouter les informations manquantes sur les technologies utilisées. le bot charge le .md depuis le wiki pour avoir le contexte à jour
 
 ### Règle de bascule modèle
 
@@ -75,4 +64,4 @@ Le **Bureau Émile** est dédié à l'accompagnement académique d'Émile pour s
 
 Le Bureau Émile fonctionne de manière **autonome** — il n'appelle pas d'autres bureaux et n'est pas appelé par eux. Pas d'interopérabilité documentée.
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:02 (UTC+2)

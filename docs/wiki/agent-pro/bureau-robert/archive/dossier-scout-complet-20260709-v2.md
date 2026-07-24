@@ -7,7 +7,7 @@ tags: [analyse, scout, microsoft, autopilot, agent-autonome, strategique, archit
 statut: finalise
 type: dossier-complet
 experts:
-  - vision-strategique
+  Ajouter le nom de l'expert.
   - architecture-si
   - securite-rgpd
   - projet-programme
@@ -16,7 +16,7 @@ description: >
   Contenu non altéré, sans synthèse. Produire un rapport de synthèse séparé sur demande.
 ---
 
-# Dossier SCOUT Complet (V2) — Microsoft SCOUT (Autopilot)
+# Corriger le titre du document pour refléter la section spécifique analysée.
 ## Fusion brute des analyses d'experts — Bureau Robert 🏛️
 
 > **Date :** 09/07/2026 · **Version :** v2 (brute) · **Classification :** Confidentiel — Usage Interne
@@ -2185,4 +2185,4 @@ Microsoft Agent Platform (MAP) est une **plateforme unifiée open source** qui d
 *Document fusion v2 — Bureau Robert — 09/07/2026*
 *Contenu brut des 4 analyses d'experts, sans altération ni synthèse.*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:04 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:52 (UTC+2)

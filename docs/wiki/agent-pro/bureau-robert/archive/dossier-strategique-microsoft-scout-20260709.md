@@ -13,7 +13,7 @@ experts:
   - projet-programme
 ---
 
-# Dossier Stratégique — Microsoft SCOUT (Autopilot)
+Ajouter une section ou une note mentionnant les mises à jour post-Build 2026.
 ## Analyse pour les Directions Solidaris
 
 > **Bureau :** Robert 🏛️
@@ -441,4 +441,4 @@ Ces 4 expertises sont désormais fusionnées dans le document V2 ci-dessus. Leur
 *Document produit par le Bureau Robert 🏛️ — Conseil Stratégique IT BAVI LEO*
 *Sous-agents : Vision Stratégique, Architecture SI, Sécurité & RGPD, Projet & Programme*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:04 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:54 (UTC+2)

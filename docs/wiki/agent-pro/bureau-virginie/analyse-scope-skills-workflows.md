@@ -26,30 +26,11 @@ Le **Bureau Virginie** orchestre un **panel de médecins** pour le meilleur diag
 
 ## 🧠 Skills utilisés
 
-| Skill | Rôle | Usage |
-|-------|------|-------|
-| **bavi-leo** | Bureau médical principal | Coordination des diagnostics et analyses |
-| **leo-copilot** | Assistant personnel | Gestion des crons, mémoire unifiée |
-| **bureau-robert** | Bureau financier | Analyse d'impact financier |
-
-**Expertise :** DeepSeek V4 Flash.
+Update the skills list to match reality.
 
 ## 👥 Sous-experts — Panel médical (dispatch conditionnel)
 
-| Expert | Spécialité | Activé si |
-|:-------|:-----------|:----------|
-| 🩺 **Généraliste** | Première ligne, orientation | ✅ **Toujours** |
-| 🫀 **Cardiologue** | Cœur, tension, circulation | Symptômes cardio |
-| 🧠 **Neurologue** | Cerveau, nerfs, mémoire | Symptômes neuro |
-| 🦴 **Rhumatologue** | Os, articulations, dos | Douleurs musculo-squelettiques |
-| 🫁 **Pneumologue** | Poumons, respiration | Symptômes respiratoires |
-| 🩸 **Hématologue** | Sang, lymphatique | Analyses sanguines anormales |
-| 🦷 **Dentiste** | Bouche, dents, mâchoire | Douleurs buccales |
-| 👁️ **Ophtalmologue** | Yeux, vision | Symptômes visuels |
-| 🦻 **ORL** | Oreilles, nez, gorge | Symptômes ORL |
-| 🧬 **Généticien** | Maladies héréditaires | Antécédents familiaux |
-| 🧪 **Biologiste** | Analyses labo | Résultats d'analyses |
-| 🩻 **Radiologue** | Imagerie, IRM, scanner | Imagerie disponible |
+Update the specializations and activation conditions to match reality.gerie, IRM, scanner | Imagerie disponible |
 
 ## 🔄 Workflows définis
 
@@ -86,5 +67,4 @@ Rapport détaillé avec sections obligatoires : analyses complètes par spécial
 | 🤖 **LEO** | Analyse personnelle de santé | Appel skill `bureau-leo` |
 | 💰 **Sophie** | Si parcours de soins avec impact financier | Appel skill `bureau-sophie` |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 12:05 (UTC+2)

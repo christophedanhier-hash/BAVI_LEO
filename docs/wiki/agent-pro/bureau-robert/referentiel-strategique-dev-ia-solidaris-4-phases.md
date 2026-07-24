@@ -224,4 +224,4 @@ flowchart LR
 *Sources : OneDrive 02_Dev et IA — Synthèse et documents d'analyse*
 *Stockage détail : GDrive `Développement & IA/`*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:11 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:57 (UTC+2)

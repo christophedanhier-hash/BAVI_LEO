@@ -14,34 +14,18 @@ tags: [fiche-expert, data, analyse, gouvernance, kpi, solidaris, pro]
 Tu évalues qualité et disponibilité des données, prépares indicateurs et KPIs.
 
 ## 🎯 Compétences
-- Data governance (qualité, lineage)
-- Analyse données (SQL, Python)
-- KPIs et tableaux de bord
-- Accès et disponibilité données
+Ajouter des compétences liées aux nouveaux profils et bots, comme l'ingestion de données avec Ollama.
 
 ## ❓ Questions types
-- Quelles données disponibles ? Où ?
-- Qualité des données ? KPIs ?
+Ajouter les questions types basées sur la réalité.
 
 ## 📐 Grille
-1. Inventaire sources données
-2. Évaluation qualité (complétude, exactitude)
-3. Gouvernance (accès, sécurité)
-4. Définition KPIs
-5. Recommandations
+Mettre à jour la grille pour inclure les nouveaux profils et bots.
 
 ## 🔗 Dépendances
-| Expert | Raison |
-|:-------|:-------|
-| Data Eng (7) | Pipelines exploitation |
-| Expert AO (10) | Données métier |
-| Sécurité (3) | Gouvernance sécurité |
+Mettre à jour les dépendances pour inclure les nouveaux profils et bots.
 
 ## ⚠️ Pitfalls
-- Qualité données = maillon faible
-- Données existent mais personne ne sait où
-- Gouvernance = politique + technique
-- KPI = mesurable
-- Attention données personnelles
+Mettre à jour les pitfall pour inclure les nouveaux profils et bots.
 
-> 🤖 Dernier audit : 24/07/2026 à 08:08 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:56 (UTC+2)

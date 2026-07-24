@@ -24,9 +24,10 @@ workflows: [gerard-t600]
 
 **Objet :** Document non applicable – le système actuel est LEO, basé sur des bots et crons., suite à la revue des documents de conception (Domotisation-T600-20260525.pptx, T600-Mise-en-route-20260525.pptx, Opérations_T600.pptx).
 
-**Correction préalable — Topologie réseau confirmée :**
-- **PC NUC-T600** (1er étage) → alimente l'IPX800, sert de point d'entrée principal
-- **PC NUC-T600-TELE** → alimenté par l'IPX800, pilote le télescope et exécute NINA
+Le document ne mentionne pas les profils et bots actuels. Il serait utile d'y inclure : 
+
+- **Profils:** 5 (default, emile, michel, robert, sylvia)
+- **Bots:** 5 (default, emile, michel, robert, sylvia)
 
 ### Classement des risques par criticité
 
@@ -915,4 +916,4 @@ flowchart TD
 |:--------|:-----|:------------|
 | v1 | 2026-06-12 | Version initiale — Analyse des 3 risques critiques identifiés sur le T600 : absence capteurs fin de course AD/DEC, autoguideur non documenté, absence parafoudre type 2 |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:06 (UTC+2)

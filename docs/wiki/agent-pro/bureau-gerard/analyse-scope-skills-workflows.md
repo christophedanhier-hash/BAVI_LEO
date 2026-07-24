@@ -80,4 +80,4 @@ Gérard n'appelle pas d'autres bureaux actuellement. Ces documents sont archivé
 | analyse-risques-t600.md | v1 |
 | formation-operateur-t600.md | v1 |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:07 (UTC+2)

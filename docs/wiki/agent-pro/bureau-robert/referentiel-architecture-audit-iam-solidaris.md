@@ -10,9 +10,7 @@ type: referentiel-architecture
 
 # 🏗️ Référentiel Architecture — AUDIT IAM ETL SOLIDARIS
 
-> **Projet :** Audit IAM — Identity & Access Management Solidaris
-> **Dépôt :** `christophedanhier-hash/AUDIT-IAM-ET-ETL-SOLIDARIS`
-> **Stack :** Python 3.12 · Pandas · Streamlit · PyInstaller · ReportLab · NetworkX · Matplotlib
+Ajouter les informations de la réalité dans le document et mettre à jour le stack technologique.
 > **Date :** 21/07/2026 | **Version :** v1
 
 ---
@@ -295,4 +293,4 @@ flowchart TD
 *Document produit par Robert 🏛️ — Pool Développement (D1 Architecte + D2 Rédacteur Technique)*
 *Projet : AUDIT-IAM-ET-ETL-SOLIDARIS — Juillet 2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:11 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:59 (UTC+2)

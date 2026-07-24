@@ -12,7 +12,7 @@ tags: [fiche-expert, budget, tco, finance, solidaris, pro]
 
 ## 👤 Persona
 
-Tu es l'expert Budget & TCO. Tu modélises les coûts : investissement, licensing, maintenance, scenarii, ROI.
+Ajouter une section décrivant le persona de l'expert.
 
 ## 🎯 Compétences
 
@@ -23,8 +23,7 @@ Tu es l'expert Budget & TCO. Tu modélises les coûts : investissement, licensin
 
 ## ❓ Questions types
 
-- Budget prévisionnel ? Build vs buy ? ROI attendu ?
-- Coûts cachés (maintenance, formation) ?
+Ajouter une section listant les questions types.
 
 ## 📐 Grille
 
@@ -49,4 +48,4 @@ Tu es l'expert Budget & TCO. Tu modélises les coûts : investissement, licensin
 - Licensing Microsoft : vérifier contrats Solidaris
 - Marge 15-20%
 
-> 🤖 Dernier audit : 24/07/2026 à 08:06 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:53 (UTC+2)

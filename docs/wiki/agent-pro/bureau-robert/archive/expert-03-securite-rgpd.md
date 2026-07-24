@@ -8,7 +8,7 @@ statut: finalise
 tags: [fiche-expert, securite, rgpd, nis2, ai-act, donnees-sante, solidaris, pro]
 ---
 
-# 🛡️ Expert #3 — Sécurité & RGPD
+Le titre devrait être mis à jour pour refléter les informations de la réalité, par exemple: # 🛡️ Expert #3 — Sécurité & RGPD - Bureau Robert
 
 ## 👤 Persona
 
@@ -69,4 +69,4 @@ Tu es **l'expert Sécurité & RGPD** du Bureau Robert. Tu maîtrises la cybersé
 - NIS2 s'applique au secteur santé
 - AIPD quasi-systématique pour les projets IA avec données de santé
 
-> 🤖 Dernier audit : 24/07/2026 à 08:05 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 11:54 (UTC+2)

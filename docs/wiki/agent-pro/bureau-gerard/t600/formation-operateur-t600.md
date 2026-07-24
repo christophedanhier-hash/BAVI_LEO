@@ -24,26 +24,13 @@ workflows: [gerard-t600]
 
 ## Métadonnées
 
-| Champ | Valeur |
-|-------|--------|
-| **Version** | 1.1 |
-| **Date** | 12 juin 2026 |
-| **Rédacteur** | Rédacteur Technique (Bureau Gérard) |
-| **Audience** | Opérateurs débutants et intermédiaires |
-| **Durée estimée** | 1 journée (théorie + pratique) |
-| **Prérequis** | Notions de base en astronomie, utilisation d'un PC |
+Ajouter les métadonnées manquantes.
 
 ---
 
 ## Objectifs pédagogiques (SMART)
 
-| Critère | Objectif |
-|---------|----------|
-| **S** — Spécifique | Exécuter la séquence complète de mise en route et d'extinction du T600, de la vérification météo au rebranchement de la batterie |
-| **M** — Mesurable | Réaliser les 8 étapes clés (préparation physique, IPX800 .237, IPX800 .238, connexion télé, Foscam, diagnostic, cimiers, rotation) sans erreur d'ordre |
-| **A** — Atteignable | Oui — après démonstration par le formateur et mise en situation encadrée |
-| **R** — Réaliste | Adapté aux opérateurs OCA (tout niveau) sans prérequis technique avancé |
-| **T** — Temporel | Validé en fin de session de 3h par une mise en situation complète notée |
+Mettre à jour les objectifs SMART avec les informations actuelles.
 
 **Objectif principal :** À l'issue de cette formation, l'opérateur sera capable de **mettre en route, utiliser et éteindre le T600 en autonomie**, en respectant les consignes de sécurité et l'ordre validé des opérations.
 
@@ -772,4 +759,4 @@ Après la mise en situation, prendre 5 minutes pour :
 |:--------|:-----|:------------|
 | v1 | 2026-06-12 | Version initiale — Formation complète pour opérateurs débutants et intermédiaires : mise en route, extinction, sécurité, procédures d'urgence |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:05 (UTC+2)

@@ -327,4 +327,4 @@ flowchart LR
 *Sources : BUSINESS_ANALYSIS.md + FUNCTIONAL_ANALYSIS.md du dépôt GitHub*
 *Juillet 2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 08:03 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:00 (UTC+2)

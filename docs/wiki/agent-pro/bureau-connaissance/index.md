@@ -9,7 +9,7 @@ type: index
 
 # 📚 Bureau de la Connaissance — Capitalisation & Mémoire
 
-> **Bureau rattaché à :** 🏛️ Robert — Conseil Stratégique IT & Business
+Update the rattachement information to match the reality.
 > **Date de création :** 15/07/2026
 > **Mission :** Capitaliser, structurer et réutiliser la connaissance produite par les analyses du Bureau Robert et des bureaux associés.
 
@@ -60,4 +60,4 @@ type: index
 
 *Index généré manuellement — Mettre à jour à chaque nouveau document.*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:08 (UTC+2)

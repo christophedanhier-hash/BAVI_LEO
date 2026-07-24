@@ -1133,4 +1133,4 @@ catch {
 |:--------|:-----|:------------|
 | v1 | 2026-06-12 | Version initiale — Document de référence complet du système T600 : architecture matérielle, réseau, procédures de démarrage/arrêt, maintenance, dépannage, annexes techniques |
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 12:06 (UTC+2)

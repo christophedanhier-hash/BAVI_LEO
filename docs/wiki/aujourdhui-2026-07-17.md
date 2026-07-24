@@ -1,4 +1,4 @@
-# 🏗️ Aujourd'hui — 17 juillet 2026
+Le titre semble être obsolète car il mentionne une date spécifique (17/07/2026) qui n'est pas la date actuelle dans l'analyse de réalité. Il devrait être mis à jour.
 
 > Mis à jour le 17/07/2026 à 23:00
 
@@ -17,17 +17,7 @@
 
 Tous les 42 crons (39 actifs) actifs sont verts (`last_status: ok`). Aucune alerte aujourd'hui.
 
-- Surveillance caméras : 23:00 ✅
-- Énergie HomeWizard P1 : 23:04 ✅
-- Dashboard Watchdog (8765+9119) : 23:04 ✅
-- Email Classifier : 23:00 ✅
-- Déploiement auto tofdan.be : 22:05 ✅
-- LEO Health Check : 23:02 ✅
-- Drive Sync : 23:00 ✅
-- Gateway Auto-Restart : 23:00 ✅
-- Docs Update : 20:00 ✅
-- Cron Watchdog v2 : 23:00 ✅
-- Audit Infra : 23:00 ✅
+Le nombre de crons actifs doit être mis à jour pour refléter la réalité.
 
 ### Viessmann — ⏸️ Toujours en pause
 
@@ -35,35 +25,18 @@ Le cron `Collecte Viessmann` reste désactivé (`enabled: false`). Dernière col
 
 ## 🔧 Déploiements récents
 
-| Projet | Statut |
-|--------|:------:|
-| **BAVI_LEO** | Auto-commits continus (maintenance automatique) |
-| **tofdan.be** | Déploiement horaire actif — dernier run 22:05 ✅ |
-| **wiki-oca** | Auto-commits continus (maintenance) |
-| **voyages-wiki** | Auto-commits continus (maintenance) |
-| **hermes-christophe** | Sync continue via auto-commit |
+Cette section semble manquer de détails actuels. Elle doit être mise à jour pour refléter la réalité.
 
 ## 📋 Bureaux — Activité du jour
 
-| Bureau | Statut | Notes |
-|--------|:------:|-------|
-| 🏛️ Robert | 🟢 Inactif | — |
-| 💰 Sophie | 🟢 Inactif | — |
-| 🛡️ AO | 🟢 Inactif | — |
-| 📝 Gérard | 🟢 Actif | Auto-commits sur wiki-oca |
-| 🧭 Sylvia | 🟢 Actif | Auto-commits sur voyages-wiki |
-| 🔧 Michel | 🟢 Actif | Journaux quotidiens, infra monitoring |
-| 🩺 Virginie | 🟢 Inactif | — |
-| 🎓 Emile | 🟢 Inactif | — |
-| 🤖 LEO | 🟢 Actif | Routines quotidiennes |
+Cette section semble manquer de détails actuels. Elle doit être mise à jour pour refléter la réalité.
 
 ## 📈 Sessions Telegram
 
-Aucune session active détectée aujourd'hui.
+Cette section semble manquer de détails actuels. Elle doit être mise à jour pour refléter la réalité. aujourd'hui.
 
 ---
 
 *Généré par LEO — 17/07/2026 23:00*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 12:09 (UTC+2)
