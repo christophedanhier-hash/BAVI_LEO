@@ -471,5 +471,4 @@ curl -w "\n%{http_code}" http://localhost:5678/healthz
 ---
 *Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:01 (UTC+2)

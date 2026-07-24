@@ -47,3 +47,5 @@
 ---
 
 *Index généré par `agent-pro-index.py` — Éditer les fichiers source (avec frontmatter valide) pour mettre à jour.*
+
+> 🤖 Dernier audit : 24/07/2026 à 08:01 (UTC+2)

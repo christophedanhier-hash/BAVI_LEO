@@ -84,5 +84,4 @@ Produire un rapport de synthèse hebdomadaire automatique qui croise :
 - Modèle : qwen2.5:7b (Ollama, 6.1 GB, ~20 tok/s)
 - API Ollama : `http://100.92.102.28:11434/v1`
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:02 (UTC+2)

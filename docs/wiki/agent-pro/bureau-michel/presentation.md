@@ -40,5 +40,4 @@ Joignable via **@hermes_leo_copilot_bot** (profil `leo-copilot`).
 - **Modèle local** : qwen2.5:7b (Ollama)
 - **Mémoire** : unifiée entre les profils default et leo-copilot
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:02 (UTC+2)
