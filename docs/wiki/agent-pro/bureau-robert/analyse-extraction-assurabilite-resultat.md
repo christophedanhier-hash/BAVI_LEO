@@ -153,46 +153,46 @@ calcul-assurabilite-sources/
 
 ```mermaid
 flowchart TD
-    E6PGEN2["Fichier état civil\n(EM&ENV.E6PGEN2.F*.SAM)\n800 octets/enreg."] --> OVR54000
+    E6PGEN2["Fichier état civil<br/>(EM&ENV.E6PGEN2.F*.SAM)<br/>800 octets/enreg."] --> OVR54000
 
     subgraph PreTraitement["Pré-traitement — PAVR#REP"]
-        OVR54000["OVR54000\nAiguillage par chiffre clé\n(5ème chiffre n° fédéral)"]
+        OVR54000["OVR54000<br/>Aiguillage par chiffre clé<br/>(5ème chiffre n° fédéral)"]
     end
 
-    OVR54000 --> F012["F319#012\n(chiffres 0,1,2)"]
-    OVR54000 --> F345["F319#345\n(chiffres 3,4,5)"]
-    OVR54000 --> F67X["F319#67X\n(chiffres 6,7)"]
-    OVR54000 --> F89X["F319#89X\n(chiffres 8,9,autres)"]
+    OVR54000 --> F012["F319#012<br/>(chiffres 0,1,2)"]
+    OVR54000 --> F345["F319#345<br/>(chiffres 3,4,5)"]
+    OVR54000 --> F67X["F319#67X<br/>(chiffres 6,7)"]
+    OVR54000 --> F89X["F319#89X<br/>(chiffres 8,9,autres)"]
 
     subgraph CalcPCH["Calcul Personnes à Charge — PAVRRPCx (×6)"]
         direction TB
-        OVR54300_P["OVR54300\n(FICHIER=E, AFFILIE=P)"]
-        OVR843N_P["OVR843N\nDispatcher"]
-        OVR843E_P["OVR843E\nCalc. droit PACH"]
+        OVR54300_P["OVR54300<br/>(FICHIER=E, AFFILIE=P)"]
+        OVR843N_P["OVR843N<br/>Dispatcher"]
+        OVR843E_P["OVR843E<br/>Calc. droit PACH"]
         OVR54300_P --> OVR843N_P --> OVR843E_P
     end
 
     subgraph CalcTIT["Calcul Titulaires — PAVRRTIx (×6)"]
         direction TB
-        OVR54300_T["OVR54300\n(FICHIER=E, AFFILIE=T)"]
-        OVR843N_T["OVR843N\nDispatcher"]
-        OVR843O_T["OVR843O\nCalc. droit TIT"]
+        OVR54300_T["OVR54300<br/>(FICHIER=E, AFFILIE=T)"]
+        OVR843N_T["OVR843N<br/>Dispatcher"]
+        OVR843O_T["OVR843O<br/>Calc. droit TIT"]
         OVR54300_T --> OVR843N_T --> OVR843O_T
     end
 
     F012 & F345 & F67X & F89X --> CalcPCH
     F012 & F345 & F67X & F89X --> CalcTIT
 
-    CalcPCH --> AVRPACH["AVRPACH.REPR.Fxx\n(résultats PCH, 800 octets)"]
-    CalcPCH --> DROITP["DROITP.REPR.Fxx\n(droits PCH, 100 octets)"]
-    CalcTIT --> AVRTIT["AVRTIT.REPR.Fxx\n(résultats TIT, 800 octets)"]
-    CalcTIT --> DROITT["DROITT.REPR.Fxx\n(droits TIT, 100 octets)"]
+    CalcPCH --> AVRPACH["AVRPACH.REPR.Fxx<br/>(résultats PCH, 800 octets)"]
+    CalcPCH --> DROITP["DROITP.REPR.Fxx<br/>(droits PCH, 100 octets)"]
+    CalcTIT --> AVRTIT["AVRTIT.REPR.Fxx<br/>(résultats TIT, 800 octets)"]
+    CalcTIT --> DROITT["DROITT.REPR.Fxx<br/>(droits TIT, 100 octets)"]
 
-    DROITP --> AX024300_P["AX024300\nPADPUU06"]
-    DROITT --> AX024300_T["AX024300\nPADPUU15"]
-    AX024300_P & AX024300_T --> ASSU0090[("DB2\nASSU0090\nTable des droits")]
+    DROITP --> AX024300_P["AX024300<br/>PADPUU06"]
+    DROITT --> AX024300_T["AX024300<br/>PADPUU15"]
+    AX024300_P & AX024300_T --> ASSU0090[("DB2<br/>ASSU0090<br/>Table des droits")]
 
-    AVRTIT & AVRPACH & DROITT & DROITP --> PAVRRSAV["PAVRRSAV\nIDCAMS REPRO\n→ Bande EXP0093"]
+    AVRTIT & AVRPACH & DROITT & DROITP --> PAVRRSAV["PAVRRSAV<br/>IDCAMS REPRO<br/>→ Bande EXP0093"]
 ```
 
 ---
@@ -201,7 +201,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    START([Début OVR54300]) --> READCARD[Lecture CARD\ncarte de paramètres]
+    START([Début OVR54300]) --> READCARD[Lecture CARD<br/>carte de paramètres]
     READCARD --> CHKTYPE{TYPE_DASSU}
 
     CHKTYPE -->|'4'| FETCHG[FETCH OVR843G]
@@ -210,10 +210,10 @@ flowchart TD
 
     READCARD --> CHKFICHIER{FICHIER}
 
-    CHKFICHIER -->|'C' - Carte unique| BOUCLE_CARTE[Boucle carte\n par cas individuel]
-    CHKFICHIER -->|'E' - Extraction| BOUCLE_BANDE[Boucle extraction\n traitement masse]
+    CHKFICHIER -->|'C' - Carte unique| BOUCLE_CARTE[Boucle carte<br/> par cas individuel]
+    CHKFICHIER -->|'E' - Extraction| BOUCLE_BANDE[Boucle extraction<br/> traitement masse]
 
-    BOUCLE_BANDE --> CHKFED{Fédération\nexclue ?}
+    BOUCLE_BANDE --> CHKFED{"Fédération<br/>exclue ?"}
     CHKFED -->|310/327/328| LECTURE[Lecture suivante]
     CHKFED -->|non| CHKAFFILIE{AFFILIE}
 
@@ -221,17 +221,17 @@ flowchart TD
     CHKAFFILIE -->|'P' personne à charge| FILTREP[Filtre EC9006 ^= '2']
 
     FILTRET & FILTREP --> CALLROUTER{Appel routeur}
-    CALLROUTER -->|OVR843N normal| OVR843N[OVR843N\nDispatcher]
-    CALLROUTER -->|OVR843O direct| OVR843O[OVR843O\nCalc. titulaire]
+    CALLROUTER -->|OVR843N normal| OVR843N[OVR843N<br/>Dispatcher]
+    CALLROUTER -->|OVR843O direct| OVR843O[OVR843O<br/>Calc. titulaire]
 
-    OVR843N --> CHKAVR001{AVR_001\ntype assurabilité}
-    CHKAVR001 -->|0/8/9/T-X| OVR843H[OVR843H\nDroits spéciaux]
-    CHKAVR001 -->|4/5/6/7/S| OVR843G[OVR843G\nAss. complémentaire]
-    CHKAVR001 -->|AVR_005 vide| OVR843O_R[OVR843O\nTitulaire régime général]
-    CHKAVR001 -->|AVR_005 rempli| OVR843E[OVR843E\nPersonne à charge]
+    OVR843N --> CHKAVR001{"AVR_001<br/>type assurabilité"}
+    CHKAVR001 -->|0/8/9/T-X| OVR843H[OVR843H<br/>Droits spéciaux]
+    CHKAVR001 -->|4/5/6/7/S| OVR843G[OVR843G<br/>Ass. complémentaire]
+    CHKAVR001 -->|AVR_005 vide| OVR843O_R[OVR843O<br/>Titulaire régime général]
+    CHKAVR001 -->|AVR_005 rempli| OVR843E[OVR843E<br/>Personne à charge]
 
-    OVR843O_R & OVR843E --> CHKDROIT_AO{DROIT_AO = 'Y'\net statut R01/R04 ?}
-    CHKDROIT_AO -->|oui| CREATION_RECORD[Créer enregistrement\nAVRTIT ou AVRPACH\n+ DROIT]
+    OVR843O_R & OVR843E --> CHKDROIT_AO{"DROIT_AO = 'Y'<br/>et statut R01/R04 ?"}
+    CHKDROIT_AO -->|oui| CREATION_RECORD[Créer enregistrement<br/>AVRTIT ou AVRPACH<br/>+ DROIT]
     CHKDROIT_AO -->|non| LECTURE
 
     CREATION_RECORD --> LECTURE
@@ -347,11 +347,11 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    START(["🟢 Début\ncampagne annuelle"]) --> EXTRACT
+    START(["🟢 Début<br/>campagne annuelle"]) --> EXTRACT
 
     subgraph Préparation
-        EXTRACT["Extraction état civil\nE6PGEN2\n(tous affiliés)"]
-        SPLIT["OVR54000\nRépartition en 4 tranches\npar chiffre-clé fédéral"]
+        EXTRACT["Extraction état civil<br/>E6PGEN2<br/>(tous affiliés)"]
+        SPLIT["OVR54000<br/>Répartition en 4 tranches<br/>par chiffre-clé fédéral"]
         EXTRACT --> SPLIT
     end
 
@@ -359,13 +359,13 @@ flowchart LR
 
     subgraph CalcMasse["Calcul en masse (12 exécutions parallèles)"]
         direction TB
-        LIRE["Lire enregistrement\nECEXTRA2 (800o)"]
-        FILTER["Filtrer\n(fédération, type affilié)"]
-        ROUTER["OVR843N\nRouter par type assurabilité"]
-        CALC_TIT["OVR843O\nCalculer droit titulaire"]
-        CALC_PACH["OVR843E\nCalculer droit PACH"]
-        CALC_COMPL["OVR843G/H\nCalculer droit spécial/complémentaire"]
-        NEUTRAL["OVR843D\nCalculer neutralisation"]
+        LIRE["Lire enregistrement<br/>ECEXTRA2 (800o)"]
+        FILTER["Filtrer<br/>(fédération, type affilié)"]
+        ROUTER["OVR843N<br/>Router par type assurabilité"]
+        CALC_TIT["OVR843O<br/>Calculer droit titulaire"]
+        CALC_PACH["OVR843E<br/>Calculer droit PACH"]
+        CALC_COMPL["OVR843G/H<br/>Calculer droit spécial/complémentaire"]
+        NEUTRAL["OVR843D<br/>Calculer neutralisation"]
         LIRE --> FILTER --> ROUTER
         ROUTER --> CALC_TIT
         ROUTER --> CALC_PACH
@@ -376,19 +376,19 @@ flowchart LR
     CalcMasse --> WRITEOUT
 
     subgraph Écriture
-        WRITEOUT["Écrire BANDOUT\n(800o — détail)\n+ DROIT (100o — synthèse)"]
+        WRITEOUT["Écrire BANDOUT<br/>(800o — détail)<br/>+ DROIT (100o — synthèse)"]
     end
 
     WRITEOUT --> Persistance
 
     subgraph Persistance
-        DB2_UPD["AX024300\nMise à jour DB2\nASSU0090 (droits)"]
-        TRAC_UPD["AYB843N\nTracing\nASSU0091 / ASSU0112"]
-        BANDE_SAVE["IDCAMS REPRO\nSauvegarde bande\nEXP0093"]
+        DB2_UPD["AX024300<br/>Mise à jour DB2<br/>ASSU0090 (droits)"]
+        TRAC_UPD["AYB843N<br/>Tracing<br/>ASSU0091 / ASSU0112"]
+        BANDE_SAVE["IDCAMS REPRO<br/>Sauvegarde bande<br/>EXP0093"]
         DB2_UPD --> TRAC_UPD
     end
 
-    PERSISTANCE_END(["🔴 Fin\ncampagne"]) 
+    PERSISTANCE_END(["🔴 Fin<br/>campagne"]) 
     Persistance --> PERSISTANCE_END
 ```
 
@@ -399,51 +399,51 @@ flowchart LR
 ```mermaid
 flowchart TD
     subgraph Entrées["Entrées (Datasets SAM)"]
-        E6["E6PGEN2\nExtraction état civil"]
-        CARD["CARD\nCarte de contrôle"]
+        E6["E6PGEN2<br/>Extraction état civil"]
+        CARD["CARD<br/>Carte de contrôle"]
     end
 
     subgraph Orchestrateur["Couche Orchestration (Batch)"]
-        OVR54000["OVR54000\nAiguillage"]
-        OVR54300["OVR54300\nOrchestration calcul"]
+        OVR54000["OVR54000<br/>Aiguillage"]
+        OVR54300["OVR54300<br/>Orchestration calcul"]
     end
 
     subgraph MoteurCalc["Moteur de Calcul (modules FETCHABLE)"]
-        OVR843N["OVR843N\nDispatcher"]
-        OVR843O["OVR843O\nDroit Titulaire RG"]
-        OVR843E["OVR843E\nDroit PACH"]
-        OVR843G["OVR843G\nDroit Compl./Quote-part TIT"]
-        OVR843H["OVR843H\nDroit Spéciaux"]
-        OVR843D["OVR843D\nNeutralisation"]
-        OVR843F["OVR843F\nInfo famille"]
+        OVR843N["OVR843N<br/>Dispatcher"]
+        OVR843O["OVR843O<br/>Droit Titulaire RG"]
+        OVR843E["OVR843E<br/>Droit PACH"]
+        OVR843G["OVR843G<br/>Droit Compl./Quote-part TIT"]
+        OVR843H["OVR843H<br/>Droit Spéciaux"]
+        OVR843D["OVR843D<br/>Neutralisation"]
+        OVR843F["OVR843F<br/>Info famille"]
     end
 
     subgraph ServicesCommuns["Services Communs"]
-        OVJ8430["OVJ8430\nDocuments"]
-        OKX8430["OKX8430\nIndemnités"]
-        ASJ8430["ASJ8430\nMàj droits"]
-        OE98430["OE98430\nLettres"]
-        OVV840x["OVV840B/D/E/F\nCalculs périodes"]
-        Z17840N["Z17840N\nDates"]
-        Z34840N["Z34840N\nMontants"]
-        XQP8400["XQP8400\nEnv. config"]
-        XCO8400["XCO8400\nFédération config"]
+        OVJ8430["OVJ8430<br/>Documents"]
+        OKX8430["OKX8430<br/>Indemnités"]
+        ASJ8430["ASJ8430<br/>Màj droits"]
+        OE98430["OE98430<br/>Lettres"]
+        OVV840x["OVV840B/D/E/F<br/>Calculs périodes"]
+        Z17840N["Z17840N<br/>Dates"]
+        Z34840N["Z34840N<br/>Montants"]
+        XQP8400["XQP8400<br/>Env. config"]
+        XCO8400["XCO8400<br/>Fédération config"]
     end
 
     subgraph DB2["DB2 — Schéma ASSU / POPU / UITK"]
-        ASSU0090[("ASSU0090\nTable des droits")]
-        ASSU0004[("ASSU0004\nContrats")]
-        ASSU0080[("ASSU0080\nDocuments")]
-        POPU[("POPU0002/0010/0012/0014\nDonnées population")]
-        UITK[("UITK0006/0033/0132\nIndemnités")]
-        ASSU0091[("ASSU0091/0112\nTracing/Résumé")]
+        ASSU0090[("ASSU0090<br/>Table des droits")]
+        ASSU0004[("ASSU0004<br/>Contrats")]
+        ASSU0080[("ASSU0080<br/>Documents")]
+        POPU[("POPU0002/0010/0012/0014<br/>Données population")]
+        UITK[("UITK0006/0033/0132<br/>Indemnités")]
+        ASSU0091[("ASSU0091/0112<br/>Tracing/Résumé")]
     end
 
     subgraph Sorties["Sorties (Datasets SAM)"]
-        AVRTIT["AVRTIT.REPR\n(titulaires 800o)"]
-        AVRPACH["AVRPACH.REPR\n(PACH 800o)"]
-        DROITT["DROITT.REPR\n(droits TIT 100o)"]
-        DROITP["DROITP.REPR\n(droits PCH 100o)"]
+        AVRTIT["AVRTIT.REPR<br/>(titulaires 800o)"]
+        AVRPACH["AVRPACH.REPR<br/>(PACH 800o)"]
+        DROITT["DROITT.REPR<br/>(droits TIT 100o)"]
+        DROITP["DROITP.REPR<br/>(droits PCH 100o)"]
     end
 
     Entrées --> Orchestrateur
@@ -537,25 +537,25 @@ erDiagram
 flowchart LR
     subgraph Mainframe["IBM z/OS Mainframe — Solidaris"]
         subgraph JobEntries["Job Entries (TWS/OPC)"]
-            JCL_PREP["PAVR#REP\n(aiguillage)"]
-            JCL_CALC["PAVRRPCx / PAVRRTIx\n(12 jobs parallèles)"]
-            JCL_DB2["PADPUU06 / PADPUU15\n(persistance DB2)"]
-            JCL_SAV["PAVRRSAV\n(bande)"]
+            JCL_PREP["PAVR#REP<br/>(aiguillage)"]
+            JCL_CALC["PAVRRPCx / PAVRRTIx<br/>(12 jobs parallèles)"]
+            JCL_DB2["PADPUU06 / PADPUU15<br/>(persistance DB2)"]
+            JCL_SAV["PAVRRSAV<br/>(bande)"]
         end
 
         subgraph LPAR_A["Partition z/OS — Calcul"]
-            LOAD_LIB["Load Library\n(modules compilés PL/1)"]
-            WORK_DISK["DISK — Datasets Work\nAM&ENV.&OA..AVRTIT.REPR.*\nAM&ENV.&OA..AVRPACH.REPR.*\nAD&ENV.&OA..F319#*.SAM"]
+            LOAD_LIB["Load Library<br/>(modules compilés PL/1)"]
+            WORK_DISK["DISK — Datasets Work<br/>AM&ENV.&OA..AVRTIT.REPR.*<br/>AM&ENV.&OA..AVRPACH.REPR.*<br/>AD&ENV.&OA..F319#*.SAM"]
         end
 
         subgraph DB2_SUB["DB2 Subsystem"]
-            SCHEMA_ASSU["Schéma ASSU\n(ASSU0004, ASSU0009,\nASSU0080, ASSU0090…)"]
-            SCHEMA_POPU["Schéma POPU\n(POPU0002, POPU0010,\nPOPU0012, POPU0014)"]
-            SCHEMA_UITK["Schéma UITK\n(UITK0006, UITK0033, UITK0132)"]
+            SCHEMA_ASSU["Schéma ASSU<br/>(ASSU0004, ASSU0009,<br/>ASSU0080, ASSU0090…)"]
+            SCHEMA_POPU["Schéma POPU<br/>(POPU0002, POPU0010,<br/>POPU0012, POPU0014)"]
+            SCHEMA_UITK["Schéma UITK<br/>(UITK0006, UITK0033, UITK0132)"]
         end
 
-        TAPE_VAULT["VTAPE\nAKP3.EXP0093.*\n(archive bandes)"]
-        SOURCE_FEED["EM&ENV.E6PGEN2.F*.SAM\n(extraction état civil)"]
+        TAPE_VAULT["VTAPE<br/>AKP3.EXP0093.*<br/>(archive bandes)"]
+        SOURCE_FEED["EM&ENV.E6PGEN2.F*.SAM<br/>(extraction état civil)"]
     end
 
     JCL_PREP --> LOAD_LIB
