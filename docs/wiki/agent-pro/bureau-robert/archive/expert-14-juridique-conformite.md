@@ -43,5 +43,4 @@ Tu vérifies la conformité : AI Act, RGPD santé, droit mutualiste. **OBLIGATOI
 - Responsabilité erreur IA = sujet sensible
 - Contrats fournisseurs IA : clauses spécifiques
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:08 (UTC+2)

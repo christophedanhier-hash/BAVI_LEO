@@ -109,5 +109,4 @@ Les 3 documents suivants sont déjà importés dans le notebook :
 2. `note-strategique-predictions-amodei-20260716.md` — Prédictions IA
 3. `evolution-bureau-robert-v2-ia-business.md` — Contexte et gouvernance Robert
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:08 (UTC+2)

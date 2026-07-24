@@ -294,3 +294,5 @@ flowchart TD
 
 *Document produit par Robert 🏛️ — Pool Développement (D1 Architecte + D2 Rédacteur Technique)*
 *Projet : AUDIT-IAM-ET-ETL-SOLIDARIS — Juillet 2026*
+
+> 🤖 Dernier audit : 24/07/2026 à 08:11 (UTC+2)

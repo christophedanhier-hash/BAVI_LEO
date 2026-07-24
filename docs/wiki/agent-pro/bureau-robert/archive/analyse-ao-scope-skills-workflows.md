@@ -67,5 +67,4 @@ Pas de dossier dédié dans AGENT-PRO. Les livrables sont stockés dans le burea
 
 Skill actif, version 2.0. Pas encore d'analyse AO produite à ce jour.
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:03 (UTC+2)

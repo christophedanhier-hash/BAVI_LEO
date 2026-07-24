@@ -1,6 +1,6 @@
 # 🔧 Bureau Michel — Automatisation & Infrastructure n8n
 
-*Généré automatiquement le 24/07/2026 à 08:00*
+*Généré automatiquement le 24/07/2026 à 09:00*
 
 **Total : 11 analyse(s)**
 
@@ -47,5 +47,3 @@
 ---
 
 *Index généré par `agent-pro-index.py` — Éditer les fichiers source (avec frontmatter valide) pour mettre à jour.*
-
-> 🤖 Dernier audit : 24/07/2026 à 08:01 (UTC+2)

@@ -223,3 +223,5 @@ flowchart LR
 *Document référentiel produit par Robert 🏛️ — Juillet 2026*
 *Sources : OneDrive 02_Dev et IA — Synthèse et documents d'analyse*
 *Stockage détail : GDrive `Développement & IA/`*
+
+> 🤖 Dernier audit : 24/07/2026 à 08:11 (UTC+2)

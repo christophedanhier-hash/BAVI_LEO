@@ -43,5 +43,4 @@ Tu explores les cas d'usage IA dans la mutualité : veille, POC, prototypage. **
 - Définir critères succès POC avant
 - Éviter shiny object syndrome
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:07 (UTC+2)

@@ -43,5 +43,4 @@ Tu es l'expert Data Engineering & IA Ops. Pipelines, datasets, MLOps, RAG. Syst�
 - Embeddings adaptés domaine médical FR/NL
 - Prévoir scaling du volume
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:06 (UTC+2)

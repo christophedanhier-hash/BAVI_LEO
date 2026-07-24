@@ -333,3 +333,5 @@ flowchart TB
 *Document refactoré par Robert 🏛️ — Pool Développement (D2 Rédacteur Technique + D6 DevOps)*
 *Sources : GUIDE_UTILISATEUR.md + NOTICE_UTILISATEUR_APP_CONSULTATION.txt du dépôt GitHub*
 *Juillet 2026*
+
+> 🤖 Dernier audit : 24/07/2026 à 08:10 (UTC+2)

@@ -43,5 +43,4 @@ Tu crées supports, ateliers, vulgarisation IA pour équipes non techniques.
 - Adapter vocabulaire au public
 - Suivi : formation continue
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:08 (UTC+2)

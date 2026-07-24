@@ -85,5 +85,4 @@ type: analyse-architecture
 - Les schémas Mermaid sont OBLIGATOIRES pour toute proposition d'architecture
 - Tenir compte des contraintes de sécurité du secteur mutualiste belge
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:05 (UTC+2)

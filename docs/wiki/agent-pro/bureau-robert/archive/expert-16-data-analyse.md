@@ -44,5 +44,4 @@ Tu évalues qualité et disponibilité des données, prépares indicateurs et KP
 - KPI = mesurable
 - Attention données personnelles
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:08 (UTC+2)

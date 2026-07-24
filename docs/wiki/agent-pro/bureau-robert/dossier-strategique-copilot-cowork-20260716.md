@@ -439,5 +439,4 @@ flowchart TD
 *Basé sur Microsoft Copilot Credits Guide (July 2026) et CustomerCoworkEstimator.xlsx*
 *Juillet 2026*
 
-> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:09 (UTC+2)
