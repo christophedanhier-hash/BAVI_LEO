@@ -1,16 +1,17 @@
 # ⏰ Cronjobs Hermes — Inventaire complet
 
 <!-- AUTO:START header -->
-La date et l'heure de génération doivent être actualisées.
+> **Généré automatiquement le 24/07/2026 à 12:00**
+> Source : `profiles/michel/cron/jobs.json` (43 jobs)
 <!-- AUTO:END header -->
 
 ## Résumé
 
 | Catégorie | Total |
 |-----------|:-----:|
-| **Crons Hermes** (tous profils, consolidé) | **42** |
+| **Crons Hermes** (tous profils, consolidé) | **43** |
 | **Crons hôte** (crontab tofdan@172.17.0.1) | **6** |
-| **Total général** | **48** |
+| **Total général** | **49** |
 
 ## Liste exhaustive des crons Hermes
 
@@ -28,7 +29,7 @@ La date et l'heure de génération doivent être actualisées.
 | 8 | 📇 Sync Contacts Sheets | `every 120m` | script | ✅ |
 | 9 | 📊 Agrégation Énergie (horaire) | `0 * * * *` | script | ✅ |
 | 10 | 📊 Synthèse Hebdomadaire LEO | `0 20 * * 0` | script | ✅ |
-| 11 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ❌ |
+| 11 | 📊 Unified Collector v2 | `*/15 * * * *` | LLM | ✅ |
 | 12 | 📋 Doc Watch Auto (sync documents) | `*/2 * * * *` | script | ✅ |
 | 13 | 📋 doc-crons-sync | `0 */6 * * *` | script | ✅ |
 | 14 | 📓 Journaux Quotidiens (5 wikis + 5 vaults) | `0 23 * * *` | LLM | ❌ |
@@ -57,9 +58,10 @@ La date et l'heure de génération doivent être actualisées.
 | 37 | 🛡️ LEO Health Check (script) | `2,17,32,47 * * * *` | script | ✅ |
 | 38 | 🛡️ Watchdog BAVI-LEO (Sylvia) | `*/5 * * * *` | script | ✅ |
 | 39 | 🩺 Cron Watchdog v2 (logs + ownership) | `*/15 * * * *` | script | ✅ |
-| 40 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
-| 41 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
-| 42 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
+| 40 | 🩺 Doctor Michel — Audit standardisé | `*/30 * * * *` | script | ✅ |
+| 41 | 🩺 GitHub Actions Watchdog | `4,19,34,49 * * * *` | script | ✅ |
+| 42 | Collecte Viessmann | `*/5 * * * *` | LLM | ✅ |
+| 43 | 🔍 Veille IA quotidienne | `0 7 * * *` | script | ✅ |
 
 <!-- AUTO:END hermes-crons -->
 
@@ -74,6 +76,4 @@ La date et l'heure de génération doivent être actualisées.
 | H5 | `0 2 * * * /opt/n8n-data/backup.sh >> /opt/n8n-data/backups/backup.log ` |
 | H6 | `*/5 * * * * /home/tofdan/.hermes/scripts/gateway-watchdog.sh` |
 
-_Généré automatiquement le 24/07/2026 à 06:00_
-
-> 🤖 Dernier audit : 24/07/2026 à 11:19 (UTC+2)
+_Généré automatiquement le 24/07/2026 à 12:00_
