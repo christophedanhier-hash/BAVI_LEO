@@ -171,3 +171,5 @@ Endpoint : `/api/openrouter?token=leo-panel-2026` (cache 5 min)
 ---
 
 *Document généré automatiquement par Michel — BAVI_LEO*
+
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

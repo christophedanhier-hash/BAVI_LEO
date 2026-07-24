@@ -93,5 +93,4 @@ Toute analyse produite par Michel est livrée **dans le wiki BAVI** (pas dans `~
 | 💰 **Sophie** | Estimation coûts infrastructure (TCO) | Appel skill `bureau-sophie` (phase ①/②) |
 | 📝 **Gérard** | Documentation technique liée au T600 | Appel skill `bureau-gerard` (phase ⑥) |
 
-> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

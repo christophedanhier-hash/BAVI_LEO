@@ -368,9 +368,9 @@ LEO communique uniquement par **Telegram** (pas d'autre canal). L'email est util
 
 ## Tâches quotidiennes
 
-### Crons (44 actifs — 39 crons Hermes + 6 watchdogs)
+### Crons (44 actifs — 42 crons (39 actifs) Hermes + 6 watchdogs)
 
-> **Note mise à jour v5.0 :** Le système de crons est passé à **39 crons Hermes + 6 watchdogs** depuis la version v4.0 du guide. Les watchdogs (code-server, tunnels, auto-heal) sont intégrés comme crons Hermes.
+> **Note mise à jour v5.0 :** Le système de crons est passé à **42 crons (39 actifs) Hermes + 6 watchdogs** depuis la version v4.0 du guide. Les watchdogs (code-server, tunnels, auto-heal) sont intégrés comme crons Hermes.
 
 | Cron | Horaire | Type | Coût | Description |
 |------|---------|------|------|-------------|
@@ -419,7 +419,7 @@ Depuis juin 2026, certains crons critiques étaient **doublés dans n8n** pour b
 
 | Dashboard | Technologie | Màj | Lien |
 |-----------|-------------|-----|------|
-| 🦁 **LEO Dashboard** | HTML + Chart.js (4 onglets) | */15 | [leo-dashboard](http://localhost:8765/dashboard) |
+| 🦁 **LEO Dashboard** | HTML + Chart.js (4 onglets) | */15 | [leo-dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard) |
 
 Tous les scripts de déploiement incluent :
 - `--allow-empty` + `run_id` dans le footer pour éviter "nothing to commit"
@@ -524,5 +524,4 @@ Tout nouveau cron doit être **no_agent** sauf justification explicite. Les cron
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

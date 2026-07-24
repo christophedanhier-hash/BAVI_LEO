@@ -49,7 +49,7 @@ Genere un script de presentation orale en 4 parties (20-25 min) :
 
 2. Hermes Agent (5-6 min) : open source, gateway multi-plateforme, multi-providers LLM, skills modulaires, couts : DeepSeek Flash a 0.04$/M tokens, Ollama local gratuit.
 
-3. BAVI LEO (6-7 min) : 10 bureaux specialises (Michel infra 39 crons, Robert 16 experts bot Telegram, Sophie finances, Sylvia voyages), systeme 24/7, 5 bots Telegram, auto-documente.
+3. BAVI LEO (6-7 min) : 10 bureaux specialises (Michel infra 42 crons (39 actifs), Robert 16 experts bot Telegram, Sophie finances, Sylvia voyages), systeme 24/7, 5 bots Telegram, auto-documente.
 
 4. Benefices direction (5-6 min) : reduction couts operationnels, decision acceleree dashboards temps reel, capitalisation connaissance skills reutilisables, ROI 3-6 mois.
 
@@ -67,9 +67,9 @@ Acte 1 - Le constat (3-4 min) : Christophe faisait tout manuellement. Les chatbo
 
 Acte 2 - Hermes Agent (3-4 min) : plateforme open source qui transforme un LLM en assistant qui agit. Installation en 60 secondes. Pouvoirs : terminal, web, vision, skills, memoire.
 
-Acte 3 - Bureaux BAVI (4-5 min) : 10 bureaux specialises. Michel infra 39 crons, Robert 16 experts bot Telegram, Sophie budget. Fichiers markdown et skills, pas de base de donnees complexe.
+Acte 3 - Bureaux BAVI (4-5 min) : 10 bureaux specialises. Michel infra 42 crons (39 actifs), Robert 16 experts bot Telegram, Sophie budget. Fichiers markdown et skills, pas de base de donnees complexe.
 
-Acte 4 - Chiffres (3-4 min) : 39 crons plus 6 watchdogs sans intervention humaine, 5 bots Telegram simultanes, 130 skills, 16 experts DeepSeek V4, budget sous 30 euros par mois, dashboard 20 KPI temps reel.
+Acte 4 - Chiffres (3-4 min) : 42 crons (39 actifs) plus 6 watchdogs sans intervention humaine, 5 bots Telegram simultanes, 130 skills, 16 experts DeepSeek V4, budget sous 30 euros par mois, dashboard 20 KPI temps reel.
 
 Acte 5 - Conclusion (2-3 min) : LEO anticipe sans qu'on lui demande. Call to action : telechargez Hermes, lisez le guide, creez votre propre LEO.
 
@@ -84,5 +84,4 @@ Consignes : max 140 mots par minute, indications visuelles en crochets, duree pa
 
 *Document mis a jour le 18/07/2026 a 14:00 - Leo 🦁 | v1.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

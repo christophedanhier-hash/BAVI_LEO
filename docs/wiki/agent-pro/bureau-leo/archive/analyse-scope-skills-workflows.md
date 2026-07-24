@@ -64,5 +64,4 @@ Pas de dispatch (pas de sous-experts), pas de croisement. Production directe.
 
 Le Bureau LEO est **autonome et passif** — il stocke des analyses produites ailleurs. Il n'orchestre pas d'autres bureaux.
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

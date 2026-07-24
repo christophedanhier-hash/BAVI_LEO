@@ -30,7 +30,7 @@ Bienvenue dans le guide **Hermès pour les Nuls**, entièrement refactorisé en 
 | 🏛️ | **[Partie III — Les Bureaux BAVI](03-bureaux-bavi/)** | Les 10 bureaux (Michel, Sylvia, Émile, Robert, Sophie, LEO, Gérard, Virginie, Connaissance, AO) |
 | 🧠 | **[Partie IV — Skills](04-skills/)** | Skills système, productivité, DevOps, créatifs, recherche, création |
 | 📊 | **[Partie V — Dashboards & Monitoring](05-dashboards-crons/)** | Dashboards HTML, monitoring machines, alertes |
-| ⏱️ | **[Partie VI — Crons & Automatisation](05-dashboards-crons/)** | 39 crons + 6 hôte, watchdogs, auto-heal, sync Drive |
+| ⏱️ | **[Partie VI — Crons & Automatisation](05-dashboards-crons/)** | 42 crons (39 actifs) + 6 hôte, watchdogs, auto-heal, sync Drive |
 | 💡 | **[Partie VII — La Partie des Dix](06-partie-des-dix/)** | 10 erreurs, commandes, extensions, ressources |
 | 📚 | **[Annexes — CLI Reference](07-annexes-cli/)** | Référence CLI Hermès, architecture LEO, tâches quotidiennes |
 | 🚀 | **[Guide rapide & Troubleshooting](08-guide-rapide/)** | Installation, démarrage, problèmes courants |
@@ -56,5 +56,4 @@ Bienvenue dans le guide **Hermès pour les Nuls**, entièrement refactorisé en 
 
 *Document mis à jour le 18/07/2026 à 14:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

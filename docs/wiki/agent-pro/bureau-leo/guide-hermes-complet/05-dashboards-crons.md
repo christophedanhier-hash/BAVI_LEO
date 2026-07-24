@@ -12,7 +12,7 @@ hide:
 ---
 
 > **Dernière mise à jour rédactionnelle :** 18/07/2026 — Léo 🦁
-> **Partie V+VI — Dashboards, Monitoring, Crons & Watchdogs :** 39 crons (gérés par leo-copilot), 1 dashboard central (4 onglets, 20 KPI), auto-heal, sync Drive ↔ GitHub | **Audit rédactionnel :** ✅ conforme | **n8n** retiré le 13/07/2026
+> **Partie V+VI — Dashboards, Monitoring, Crons & Watchdogs :** 42 crons (39 actifs) (gérés par leo-copilot), 1 dashboard central (4 onglets, 20 KPI), auto-heal, sync Drive ↔ GitHub | **Audit rédactionnel :** ✅ conforme | **n8n** retiré le 13/07/2026
 
 # Partie V — Dashboards et Monitoring
 
@@ -38,7 +38,7 @@ LEO a **1 dashboard central** (4 onglets, 20 KPI, 4 charts) rafraîchi par un cr
 
 | Dashboard | Contenu | URL | Cron |
 |-----------|---------|-----|------|
-| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](http://localhost:8765/dashboard) | */15 |
+| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard) | */15 |
 
 Tous sont générés par des scripts `no_agent` — **0$ de coût LLM** par mise à jour.
 
@@ -327,7 +327,7 @@ nvidia-smi
 
 # Partie VI — Automatisation et Crons
 
-Avec **39 crons Hermes + 6 crons hôte** qui tournent 24h/24 et un auto-fix-daemon `*/5`, LEO est entièrement automatisé. Le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
+Avec **42 crons (39 actifs) Hermes + 6 crons hôte** qui tournent 24h/24 et un auto-fix-daemon `*/5`, LEO est entièrement automatisé. Le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
 
 ---
 
@@ -461,7 +461,7 @@ Budget mensuel LEO (estimé):
   Total:                           ~1-3 €
 ```
 
-> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
+> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard).
 
 Le secret de ce coût ridicule : **Ollama pour le gratuit** (classification emails sur CPU), **Flash pour le quotidien** (quelques centimes/jour), **Pro seulement pour le complexe** (ponctuel).
 
@@ -495,7 +495,7 @@ coûts = {
 | Crons                | 0 € (13/14 en no_agent)      |
 ```
 
-> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
+> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard).
 
 ## Alertes
 
@@ -686,7 +686,7 @@ Depuis le 21/06/2026, un cron **agent-driven** (pas no_agent) tourne toutes les 
 | Import Python cassé | Traceback d'import | pip install dans le venv |
 
 **Rapport :** livré en local (plus sur Telegram). Consultez le **🌍 Global Dashboard** à
-http://localhost:8765/dashboard pour tout voir en un coup d'œil.
+http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard pour tout voir en un coup d'œil.
 
 ## Pièges à éviter
 
@@ -775,7 +775,7 @@ Le flag `--no-agent` est essentiel : sans LLM, l'exécution est gratuite.
 Toutes les heures (minute 0):
   - Dashboard LEO KPI      → collecte sessions, tokens, budget
   - Dashboard Machines     → CPU, RAM, disque 3 machines
-  - Dashboard Crons        → statut 39 crons
+  - Dashboard Crons        → statut 42 crons (39 actifs)
   - Dashboard GitHub       → activité repos
   - Dashboard BAVI LEO     → KPIs voyages
 
@@ -1005,7 +1005,7 @@ Le Dashboard Watch vérifie que le dashboard LEO est en ligne et à jour :
 
 ```bash
 # Vérification unique
-curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/dashboard
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard
 # → 200
 ```
 
@@ -1118,5 +1118,4 @@ Règle: GitHub gagne en cas de conflit.
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

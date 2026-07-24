@@ -174,7 +174,7 @@ BUREAU         ROLE                          STATUT     MODELE
 #### 🔧 Bureau Michel (Infrastructure)
 
 Le plus gros bureau. Michel gere toute l'infrastructure technique :
-- 39 crons Hermes + 6 watchdogs (supervision)
+- 42 crons (39 actifs) Hermes + 6 watchdogs (supervision)
 - 8 sous-experts specialises :
 
 ```text
@@ -383,7 +383,7 @@ Avantage : les procedures sont **documentees, versionnees, reutilisables**. Un n
 
 ## 5. Le systeme de Crons (automatisation)
 
-### 5.1 Les 39 crons Hermes + 6 watchdogs
+### 5.1 Les 42 crons (39 actifs) Hermes + 6 watchdogs
 
 ```text
 CRONS HORAIRES (toutes les heures) :
@@ -445,7 +445,7 @@ Cout total : 0 euro. Frequence : toutes les heures.
 
 ### 6.1 Le dashboard central (LEO Dashboard)
 
-URL : http://localhost:8765/dashboard
+URL : http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard
 
 Un seul dashboard HTML statique (Chart.js) qui regroupe 4 onglets :
 
@@ -463,7 +463,7 @@ ONGLET 2 : Budget
   - Cout par bureau
 
 ONGLET 3 : Crons & Services
-  - Statut des 39 crons
+  - Statut des 42 crons (39 actifs)
   - Derniere execution reussie/echouee
   - Temps depuis dernier echec
   - Statut des 4 gateways
@@ -570,7 +570,7 @@ Contrairement a un chatbot qui oublie tout entre deux sessions, BAVI LEO apprend
 ```text
 POSTE               COUT/MOIS     NOTES
 ─────────────────────────────────────────────
-DeepSeek Flash       ~15-20 EUR     Usage quotidien, 4 bots
+DeepSeek Flash       ~15-20 EUR     Usage quotidien, 5 bots
 DeepSeek V4 Pro      ~5-10 EUR      Michel + Robert
 Ollama local         Gratuit         Qwen2.5:7b sur CPU
 Gemini fallback      Gratuit         Au-dela de 128K tokens
@@ -613,5 +613,4 @@ Le guide complet "Hermes pour les Nuls" detaille chaque etape dans ses 10 chapit
 
 *Document complete le 18/07/2026 a 14:30 — Leo 🦁 | v2.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

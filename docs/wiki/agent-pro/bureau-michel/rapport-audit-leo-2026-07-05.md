@@ -11,8 +11,8 @@ bureau: leo-agent
 
 **Rédigé par :** LEO Agent (bureau Michel — Infrastructure Hermes)  
 **Date :** 2026-07-05 · **Lu par :** Christophe & Michel  
-**Statut :** ⚠️ PÉRIMÉ — Audit du 05/07/2026. Données obsolètes : n8n retiré, 39 crons (vs 18), 5 profils (vs 4), 5 gateways (vs 4). Conserver à titre d'archive historique.  
-**⚠️ Ancien résumé (05/07)** : ✅ 10/10 sources OK · ✅ 39 crons ops · n8n retiré
+**Statut :** ⚠️ PÉRIMÉ — Audit du 05/07/2026. Données obsolètes : n8n retiré, 42 crons (39 actifs) (vs 18), 5 profils (vs 4), 5 gateways (vs 4). Conserver à titre d'archive historique.  
+**⚠️ Ancien résumé (05/07)** : ✅ 10/10 sources OK · ✅ 42 crons (39 actifs) ops · n8n retiré
 
 ---
 
@@ -23,7 +23,7 @@ bureau: leo-agent
 | **Système** | ✅ Sain | 7j uptime, 17% disque, 22Go RAM |
 | **Hermes** | ✅ Stable | v0.17.0, 5 profils, 5 gateways (bureau-robert ajouté) |
 | **Crons** | ✅ 18/18 | 17 OK · 1 déploiement tofdan (corrigé) |
-| **Dashboards** | ✅ 2/2 | 8765 API · GH Pages (10/10 sources) |
+| **Dashboards** | ✅ 2/2 | 8765 (panel) + 9119 (Hermes dashboard) API · GH Pages (10/10 sources) |
 | **Sécurité** | ✅ GitHub OK | Nouveau token classique configuré |
 | **Nettoyage** | 🔴 Recommandé | Skills dupliqués, scripts obsolètes |
 
@@ -122,7 +122,7 @@ bureau: leo-agent
 ```
 collect-v2.py → leo-unified.json → deploy-dashboard.py → GH Pages
                     ↕
-             trigger-server.py (API 8765)
+             trigger-server.py (API 8765 (panel) + 9119 (Hermes dashboard))
 ```
 
 ### Collecteurs (10/10 OK ✅)
@@ -142,7 +142,7 @@ collect-v2.py → leo-unified.json → deploy-dashboard.py → GH Pages
 ### Dashboards
 | Dashboard | Statut |
 |---|---|
-| **LEO Control Panel** (port 8765) | ✅ 18 jobs |
+| **LEO Control Panel** (port 8765 (panel) + 9119 (Hermes dashboard)) | ✅ 18 jobs |
 | **LEO Dashboard GH Pages** | ✅ 10/10 sources |
 
 ---
@@ -212,5 +212,5 @@ collect-v2.py → leo-unified.json → deploy-dashboard.py → GH Pages
 
 *Rapport généré par LEO Agent (bureau Michel) le 2026-07-05 à 18:30 UTC+2*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 

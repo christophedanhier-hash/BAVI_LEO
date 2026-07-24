@@ -31,7 +31,7 @@ type: analyse
 | Objectif | Description |
 |:---------|:------------|
 | 🏗️ **Installer & maintenir** les services système (Nginx, Cloudflare, DNS, SSL, UFW) | CodeWhale remplacé ✅ |
-| ⚙️ **Maintenir** l'infrastructure Hermes (39 crons, 8 dashboards) |
+| ⚙️ **Maintenir** l'infrastructure Hermes (42 crons (39 actifs), 8 dashboards) |
 | 🛠️ **Dépanner** les services (gateways, conteneurs, SSH, tunnels) |
 | 📊 **Surveiller** les machines (LEO, Yoga, Penguin — CPU, RAM, disque) |
 | 💰 **Suivre** le budget DeepSeek ($19,46 solde, suivi horaire) |
@@ -59,7 +59,7 @@ type: analyse
 | Machines surveillées | 3 (LEO, Yoga, Penguin) |
 | Accès système | `sudo` root complet 🔑 |
 | Services système | Nginx, Cloudflare, UFW, SSL, DNS |
-| n8n workflows | 6 |
+| n8n workflow (retiré 13/07/2026)s | 6 |
 | Skills BAVI | 4 (Michel, Emile, governance, versioning) |
 | Budget DeepSeek | $19,46 (dashboard) |
 
@@ -313,7 +313,7 @@ pie title Repartition cout DeepSeek Pro
 | **🚀 Services système** | ✅ Nouveau (v2) | Installation Nginx, Cloudflare Tunnel, DNS, UFW, SSL — remplace CodeWhale |
 | Maintenance crons (30) | ✅ Actif | Création, debug, staggering |
 | Dashboards temps réel | ✅ Actif | 8 dashboards Chart.js |
-| n8n workflows | ✅ Actif | 6 workflows, API REST |
+| n8n workflow (retiré 13/07/2026)s | ✅ Actif | 6 workflows, API REST |
 | Google APIs | ✅ Actif | Gmail, Drive, Sheets, tokens |
 | Git repos (10) | ✅ Actif | Clean trees, sync, push |
 | Hermes config | ✅ Actif | Profils, version, gateways |
@@ -392,5 +392,5 @@ flowchart LR
 
 *Analyse produite par 🏛️ Bureau Robert — BAVI LEO*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 

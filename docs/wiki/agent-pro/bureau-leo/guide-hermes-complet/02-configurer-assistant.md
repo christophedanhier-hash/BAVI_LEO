@@ -889,7 +889,7 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Michel, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 39 crons automatisés (+6 hôte)
+- 42 crons (39 actifs) automatisés (+6 hôte)
 - 1 dashboard central (4 onglets)
 - n8n (retiré 13/07/2026 — 3 workflows historiques)
 - Les gateways Hermes
@@ -1304,5 +1304,4 @@ Session 2 (le lendemain) : "Quelle est l'IP de mon serveur ?"
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

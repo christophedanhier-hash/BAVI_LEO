@@ -38,7 +38,7 @@ Ce livre vous guide pas à pas, de l'installation d'Hermes sur votre machine jus
 - **Partie III — Les Bureaux BAVI** : organiser vos connaissances avec le système de bureaux
 - **Partie IV — La Puissance des Skills** : exploiter <nombre_actuel> skills prêts à l'emploi et créer les vôtres
 - **Partie V — Dashboards et Monitoring** : visualiser tout avec 1 dashboard central (4 onglets), audit rédactionnel automatisé
-- **Partie VI — Automatisation et Crons** : faire tourner 39 crons actifs + daemon sans lever le petit doigt
+- **Partie VI — Automatisation et Crons** : faire tourner 42 crons (39 actifs) actifs + daemon sans lever le petit doigt
 - **Partie VII — La Partie des Dix** : les astuces, commandes et ressources qui sauvent
 
 ### Public visé
@@ -135,7 +135,7 @@ Ce guide est en licence libre — vous pouvez le partager, l'adapter, et l'enric
   - Plateformes : Telegram, Discord, Slack, email, et plus
 
 - **[Ch.3 — L'architecture LEO](01-decouvrir-hermes/ch03-architecture-leo.md)**
-  - Vue d'ensemble : 4 profils actifs, providers dédiés
+  - Vue d'ensemble : 5 profils actifs, providers dédiés
   - Le Gateway DeepSeek : pont entre Telegram et l'agent
   - Hiérarchie des providers : quand utiliser quoi
   - Les chiffres clés de LEO (dashboards, crons, skills)
@@ -567,7 +567,7 @@ Les crons Hermes ne sont pas de simples tâches shell. Chaque cron peut être :
 - **Un prompt LLM** — l'agent réfléchit et agit
 - **Un script + un prompt** — collecte des données puis analyse
 
-LEO a **38 crons Hermes + 6 crons hôte** dont la plupart en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
+LEO a **42 crons (39 actifs) Hermes + 6 crons hôte** dont la plupart en no_agent (0$ de consommation LLM pour les tâches répétitives) + un **auto-fix-daemon** qui tourne toutes les 15 minutes.
 
 #### 5. 🗂️ Profils et gateways parallèles
 
@@ -687,11 +687,11 @@ Tous en **HTML statique** hébergés sur **GitHub Pages** — zéro backend, zé
 
 | Dashboard | URL | Onglets | Màj |
 |:----------|:----|:--------|:---:|
-| 🦁 **LEO Dashboard** | [lien](http://localhost:8765/dashboard) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
+| 🦁 **LEO Dashboard** | [lien](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard) | Synthèse, Analyses, Infra, BAVI — 20 KPI, 4 charts | */15 |
 
-### Les 38 crons (+ 6 crons hôte)
+### Les 42 crons (39 actifs) (+ 6 crons hôte)
 
-LEO a 38 crons Hermes + 6 crons hôte qui exécutent des tâches planifiées
+LEO a 42 crons (39 actifs) Hermes + 6 crons hôte qui exécutent des tâches planifiées
 
 | Vague | Horaires | Crons |
 |:------|:---------|:------|
@@ -771,7 +771,7 @@ BAVI = l'organisation des connaissances de LEO en bureaux spécialisés :
 
 ## 📝 À retenir
 
-- LEO = 1 serveur principal + 5 bots Telegram + 1 dashboard central (9 onglets) + 38 crons + 130+ skills
+- LEO = 1 serveur principal + 5 bots Telegram + 1 dashboard central (9 onglets) + 42 crons (39 actifs) + 130+ skills
 - Tout tourne sur Hermes Agent dans un conteneur Docker supervisé par s6
 - Le secret : une organisation stricte (profils, bureaux, skills) qui permet à l'agent de gérer la complexité
 - Les erreurs du passé ont forgé les règles du présent
@@ -1013,7 +1013,7 @@ Pas de clé API, pas de compte, tout tourne chez vous.
 export GEMINI_API_KEY=votre_clé_ici
 
 # Configuration
-hermes config set model.default gemini-2.5-flash
+hermes config set model.default gemini-3.5-flash
 ```
 
 ## Vérification de l'installation
@@ -1497,7 +1497,7 @@ Gemini peut servir de provider de secours si le principal est indisponible.
 # Dans config.yaml — comme fallback
 fallback_providers:
   - provider: google
-    model: gemini-2.5-flash
+    model: gemini-3.5-flash
 ```
 
 Stockez la clé dans `.env` :
@@ -1545,7 +1545,7 @@ providers:
 
 fallback_providers:
   - provider: google
-    model: gemini-2.5-flash
+    model: gemini-3.5-flash
 ```
 
 Ce n'est pas grave si votre fichier `config.yaml` est plus ou moins complexe. L'important est qu'il fonctionne pour **vous**.
@@ -1642,7 +1642,7 @@ C'est le cœur de la personnalité du bot. Il définit qui il est, ce qu'il fait
 Tu es Michel, l'ingénieur infrastructure de l'écosystème LEO.
 
 Tu gères :
-- 38 crons automatisés (+6 hôte)
+- 42 crons (39 actifs) automatisés (+6 hôte)
 - 1 dashboard central (4 onglets)
 - 3 workflows n8n (2 actifs)
 - Les gateways Hermes
@@ -1659,7 +1659,7 @@ Exemple de configuration pour un profil spécialisé infra :
 model:
   default: deepseek-v4-pro        # Modèle puissant pour l'infra
   provider: deepseek
-fallback_providers: '[{"provider": "gemini", "model": "gemini-2.5-flash"}]'
+fallback_providers: '[{"provider": "gemini", "model": "gemini-3.5-flash"}]'
 display:
   language: fr
 timezone: Europe/Brussels
@@ -1992,7 +1992,7 @@ Wikis: BAVI_LEO=portail, hermes-christophe=source, les2→sync+push
 §
 hermes binaire: /opt/hermes/.venv/bin/hermes (pas sur PATH)
 §
-CRASH+RECONSTRUCTION 30/06: sessions vidé→4 bots crash. 
+CRASH+RECONSTRUCTION 30/06: sessions vidé→5 bots crash. 
 Backup GDrive 73.7MB téléchargé + extrait. 4 gateways relancés.
 §
 Émile 🎓: emidanhier@gmail.com, @Bureau_ia_emilie_bot
@@ -2231,7 +2231,7 @@ C'est le padron de la machine — il a accès root complet (`sudo` sans restrict
 
 ```
 Bureau Michel = l'ingénieur système de LEO
-├── 🔧 38 crons automatisés (+6 hôte)
+├── 🔧 42 crons (39 actifs) automatisés (+6 hôte)
 ├── 📊 1 dashboard central (4 onglets)
 ├── 🔄 3 workflows n8n (2 actifs)
 ├── 🌐 Nginx + Cloudflare Tunnel
@@ -2303,7 +2303,7 @@ Utilisateur ──→ tofdan.be ──→ Cloudflare ──→ Tunnel ──→ 
 |:--------|:---|:---:|:--------:|:-----|
 | **LEO** 🖥️ | Ubuntu 26.04 | 22 Go | 457 Go SSD + 1 To HDD | Serveur unique (toute la plateforme) |
 
-## Les 38 crons (+ 6 hôte)
+## Les 42 crons (39 actifs) (+ 6 hôte)
 
 Les crons sont le cœur de l'automatisation. 14 tâches planifiées tournent 24/7, complétées par un **auto-fix-daemon** `*/15` qui assure la détection rapide :
 
@@ -2371,7 +2371,7 @@ cron-metrics:
   script: collect-metrics.sh
 ```
 
-Sur 38 crons Hermes, la plupart sont en **no_agent** (0$ LLM) — seuls quelques crons (veille IA, audit) utilisent un LLM. Le coût total des crons est d'environ **quelques centimes par jour**.
+Sur 42 crons (39 actifs) Hermes, la plupart sont en **no_agent** (0$ LLM) — seuls quelques crons (veille IA, audit) utilisent un LLM. Le coût total des crons est d'environ **quelques centimes par jour**.
 
 ## Les 1 dashboard (4 onglets)
 
@@ -2411,7 +2411,7 @@ Le Bureau Michel suit le budget en continu via le dashboard LEO. Plutôt que de 
 
 ### Résilience post-crash (30 juin 2026)
 
-Le 30 juin, un crash système a vidé les sessions des 4 bots et cassé les gateways. Leçons :
+Le 30 juin, un crash système a vidé les sessions des 5 bots et cassé les gateways. Leçons :
 - **Backup automatisé** → GDrive toutes les 24h
 - **auto-fix-daemon** `*/5` → remplace 3 crons monitoring
 - **Mémoire partagée** par symlinks → plus de perte de contexte entre profils
@@ -2456,7 +2456,7 @@ Les watchdogs surveillent en continu : code-server, n8n, dashboards, tunnels. De
 |:----------|:--------:|:------------:|
 | Crons | 14 | ~0 €/j (13 no_agent) |
 | Dashboards | 1 central (4 onglets) | 0 € (GitHub Pages) |
-| n8n workflows | 3 (2 actifs) | 0 € (self-hosted) |
+| n8n workflow (retiré 13/07/2026)s | 3 (2 actifs) | 0 € (self-hosted) |
 | Machine hôte | 1 | 0 € (serveur local) |
 | DeepSeek API | Flash + Pro | ~1-3 €/mois |
 | **Total** | | **~1-3 €/mois** |
@@ -2972,7 +2972,7 @@ Il couvre :
 ### Exemple : configurer un nouveau provider
 
 ```bash
-hermes config set model.default gemini-2.5-flash
+hermes config set model.default gemini-3.5-flash
 hermes config set model.provider gemini
 # Ajouter la clé API dans .env
 echo "GEMINI_API_KEY=*** >>
@@ -4188,7 +4188,7 @@ LEO a **1 dashboard central** (4 onglets, 20 KPI, 4 charts) rafraîchi par un cr
 
 | Dashboard | Contenu | URL | Cron |
 |-----------|---------|-----|------|
-| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](http://localhost:8765/dashboard) | */15 |
+| **LEO Dashboard** | Synthèse, Analyses, Infra, BAVI | [leo-dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard) | */15 |
 
 Tous sont générés par des scripts `no_agent` — **0$ de coût LLM** par mise à jour.
 
@@ -4469,7 +4469,7 @@ nvidia-smi
 ```
 # Monitoring crons : le tableau de bord des tâches
 
-Avec 38 crons Hermes + 6 hôte qui tournent 24h/24 et un auto-fix-daemon `*/5`, le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
+Avec 42 crons (39 actifs) Hermes + 6 hôte qui tournent 24h/24 et un auto-fix-daemon `*/5`, le dashboard central synthétise tout : 20 KPI, 4 onglets (Synthèse, Analyses, Infra, BAVI), 4 charts Chart.js. Le tout dans **un seul fichier HTML statique** sur GitHub Pages.
 
 ## Le tableau de bord des crons
 
@@ -4596,7 +4596,7 @@ Budget mensuel LEO (estimé):
   Total:                           ~1-3 €
 ```
 
-> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
+> Ces chiffres sont des ordres de grandeur. Le solde et la consommation réels sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard).
 
 Le secret de ce coût ridicule : **Ollama pour le gratuit** (classification emails sur CPU), **Flash pour le quotidien** (quelques centimes/jour), **Pro seulement pour le complexe** (ponctuel).
 
@@ -4630,7 +4630,7 @@ coûts = {
 | Crons                | 0 € (13/14 en no_agent)      |
 ```
 
-> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765/dashboard).
+> Les chiffres exacts (solde, dépense quotidienne, jours restants) sont visibles en temps réel sur le [LEO Dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard).
 
 ## Alertes
 
@@ -4821,7 +4821,7 @@ Depuis le 21/06/2026, un cron **agent-driven** (pas no_agent) tourne toutes les 
 | Import Python cassé | Traceback d'import | pip install dans le venv |
 
 **Rapport :** livré en local (plus sur Telegram). Consultez le **🌍 Global Dashboard** à
-http://localhost:8765/dashboard pour tout voir en un coup d'œil.
+http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard pour tout voir en un coup d'œil.
 
 ## Pièges à éviter
 
@@ -4907,7 +4907,7 @@ Le flag `--no-agent` est essentiel : sans LLM, l'exécution est gratuite.
 Toutes les heures (minute 0):
   - Dashboard LEO KPI      → collecte sessions, tokens, budget
   - Dashboard Machines     → CPU, RAM, disque 3 machines
-  - Dashboard Crons        → statut 38 crons
+  - Dashboard Crons        → statut 42 crons (39 actifs)
   - Dashboard GitHub       → activité repos
   - Dashboard BAVI LEO     → KPIs voyages
 
@@ -5131,7 +5131,7 @@ Le Dashboard Watch vérifie que le dashboard LEO est en ligne et à jour :
 
 ```bash
 # Vérification unique
-curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/dashboard
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard
 # → 200
 ```
 
@@ -5280,7 +5280,7 @@ Si votre conversation ou document dépasse 128K tokens, DeepSeek plante.
 
 ```yaml
 # Solution : fallback Gemini (1M tokens, gratuit)
-fallback_providers: '[{"provider": "gemini", "model": "gemini-2.5-flash"}]'
+fallback_providers: '[{"provider": "gemini", "model": "gemini-3.5-flash"}]'
 ```
 
 Gemini a un contexte 8 fois plus grand — parfait pour les longs documents.
@@ -5545,7 +5545,7 @@ Tous vos bots partagent la même mémoire. Ce que l'un apprend, les autres le sa
 ## 9. Multi-modèles (routage intelligent)
 
 ```yaml
-fallback_providers: '[{"provider": "gemini", "model": "gemini-2.5-flash"}]'
+fallback_providers: '[{"provider": "gemini", "model": "gemini-3.5-flash"}]'
 ```
 
 DeepSeek pour le quotidien, Gemini pour les longs contextes (1M tokens), Ollama pour le gratuit. Le meilleur des trois mondes.
@@ -5582,7 +5582,7 @@ Le code source, les issues, les discussions. Idéal pour suivre les évolutions,
 
 🌐 **christophedanhier-hash.github.io/BAVI_LEO**
 
-La documentation complète de l'écosystème LEO : 10 bureaux, <nombre_actuel> skills, 38 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
+La documentation complète de l'écosystème LEO : 10 bureaux, <nombre_actuel> skills, 42 crons (39 actifs), 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
 
 ## 4. Le guide Hermès pour les Nuls
 
@@ -6024,7 +6024,7 @@ Depuis juin 2026, certains crons critiques sont **doublés dans n8n** pour bén�
 
 | Dashboard | Technologie | Màj | Lien |
 |-----------|-------------|-----|------|
-| 🦁 **LEO Dashboard** | HTML + Chart.js (4 onglets) | */15 | [leo-dashboard](http://localhost:8765/dashboard) |
+| 🦁 **LEO Dashboard** | HTML + Chart.js (4 onglets) | */15 | [leo-dashboard](http://localhost:8765 (panel) + 9119 (Hermes dashboard)/dashboard) |
 
 Tous les scripts de déploiement incluent :
 - `--allow-empty` + `run_id` dans le footer pour éviter "nothing to commit"
@@ -6147,7 +6147,7 @@ LEO est taillé sur mesure pour Christophe. Votre assistant aura ses propres bes
 
 **Gateway** — Le service Hermes qui fait le pont entre les plateformes de messagerie (Telegram, Discord, etc.) et l'agent. Voir Chapitre 5.
 
-**Gemini** — LLM de Google. Utilisé par LEO comme fallback gratuit (gemini-2.5-flash) et comme provider principal pour le bot leo-copilot.
+**Gemini** — LLM de Google. Utilisé par LEO comme fallback gratuit (gemini-3.5-flash) et comme provider principal pour le bot leo-copilot.
 
 **GitHub Pages** — Service d'hébergement gratuit de pages web statiques. Tous les dashboards LEO sont hébergés ici.
 
@@ -6442,5 +6442,4 @@ Vous avez rencontré un problème non listé ? Ouvrez une issue sur le [dépôt 
 
 *Document mis à jour le 18/07/2026 à 12:30 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

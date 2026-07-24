@@ -10,7 +10,7 @@ workflows: [auto-fix-daemon, archive-watch]
 
 # 🏗️ Architecture des Processus — Bureau Michel
 
-> Analyse BPMN v2 — 01/07/2026 19:15 — 39 crons (n8n retiré)
+> Analyse BPMN v2 — 01/07/2026 19:15 — 42 crons (39 actifs) (n8n retiré)
 > **Statut réel : 15/15 tests OK** (test-all-processes.py)
 
 ## 🩺 Diagnostic n8n (01/07 — 19:00)
@@ -72,7 +72,7 @@ graph TB
 
 La couche de contrôle est désormais dans **les crons Python autonomes** (pas de tokens LLM, tracing natif, exécutions traçables) :
 
-Tous les daemons sont des scripts Python schedulés via crons gérés par leo-copilot. Voir crons actifs (41 crons).
+Tous les daemons sont des scripts Python schedulés via crons gérés par leo-copilot. Voir crons actifs (42 crons (39 actifs)).
 | 5 | **Dashboard Health** | Schedule */5min | Si dashboard HTTP ≠ 200 → POST Alerte LEO |
 
 ## ⏱️ Chronogramme
@@ -128,5 +128,4 @@ python3 ~/.hermes/profiles/leo-copilot/scripts/test-all-processes.py
 | Monitoring | Crons, Builds, Archives | 3/3 ✅ |
 | Services | Email, BAVI wiki | 2/2 ✅ |
 
-> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

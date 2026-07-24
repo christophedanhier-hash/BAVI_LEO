@@ -69,5 +69,5 @@ Tu es **l'expert Sécurité & RGPD** du Bureau Robert. Tu maîtrises la cybersé
 - NIS2 s'applique au secteur santé
 - AIPD quasi-systématique pour les projets IA avec données de santé
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 

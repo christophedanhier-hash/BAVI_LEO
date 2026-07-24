@@ -108,5 +108,4 @@ docker exec ollama ollama run fable-moe "Hello, what can you do?"
 - Modèle recommandé : https://huggingface.co/tvall43/Qwen3.6-14B-A3B-FableVibes-GGUF
 - Backup : https://huggingface.co/empero-ai/Qwable-9B-Claude-Fable-5-GGUF
 
-> 🤖 Dernier audit : 20/07/2026 à 07:26 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

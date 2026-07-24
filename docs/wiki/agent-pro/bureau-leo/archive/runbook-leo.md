@@ -68,10 +68,10 @@ hermes -p emile gateway run --replace &
 ```bash
 cd /home/tofdan/Projets_Dev/BAVI_LEO
 pkill -f "uvicorn server:app"
-/home/tofdan/.hermes/venv/bin/uvicorn server:app --host 0.0.0.0 --port 8765 &
+/home/tofdan/.hermes/venv/bin/uvicorn server:app --host 0.0.0.0 --port 8765 (panel) + 9119 (Hermes dashboard) &
 ```
 
-URL : `http://100.92.102.28:8765/dashboard?token=leo-panel-2026`
+URL : `http://100.92.102.28:8765 (panel) + 9119 (Hermes dashboard)/dashboard?token=leo-panel-2026`
 
 ---
 
@@ -128,7 +128,7 @@ cp state.db /home/tofdan/.hermes/
 ps aux | grep -E "gateway run" | grep -v grep
 
 # Dashboard répond ?
-curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8765 (panel) + 9119 (Hermes dashboard)/
 
 # n8n répond ?
 curl -s http://localhost:5678/healthz
@@ -181,5 +181,4 @@ Si rien ne répond et que les procédures ci-dessus échouent :
 
 **Contact Christophe** : Telegram @Tofdan
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

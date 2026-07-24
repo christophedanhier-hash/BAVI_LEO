@@ -122,5 +122,5 @@ sudo systemctl reload nginx
 ```
 *Document mis à jour le 04/07/2026 à 00:00 — Léo 🦁*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 

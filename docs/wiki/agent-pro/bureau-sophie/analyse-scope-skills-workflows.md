@@ -72,5 +72,5 @@ Le **Bureau Sophie** est l'orchestratrice du **pôle économique et financier IT
 
 Pas encore d'analyses déposées dans `docs/wiki/agent-pro/bureau-sophie/`.
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 

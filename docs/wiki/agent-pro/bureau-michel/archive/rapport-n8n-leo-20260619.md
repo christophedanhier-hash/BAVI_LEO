@@ -350,8 +350,7 @@ cat /opt/data/n8n/update-n8n.sh | ssh leo@100.92.102.28 bash
 
 # Ou manuellement
 docker pull docker.n8n.io/n8nio/n8n:latest
-docker stop n8n && docker rm n8n
-docker run -d \
+docker stop n8n && docker rm n8n (retiré 13/07/2026) run -d \
   --name n8n \
   --restart unless-stopped \
   --network host \
@@ -469,5 +468,4 @@ curl -w "\n%{http_code}" http://localhost:5678/healthz
 
 ---
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 08:00 (UTC+2)

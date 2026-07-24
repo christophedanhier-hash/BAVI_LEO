@@ -383,7 +383,7 @@ Le code source, les issues, les discussions. Idéal pour suivre les évolutions,
 
 🌐 **christophedanhier-hash.github.io/BAVI_LEO**
 
-La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 39 crons, 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
+La documentation complète de l'écosystème LEO : 10 bureaux, 117 skills, 42 crons (39 actifs), 1 dashboard central. La preuve que Hermes peut gérer un assistant IA complet.
 
 ### 4. Le guide Hermès pour les Nuls
 
@@ -443,5 +443,4 @@ Le meilleur endroit pour poser des questions, partager vos réalisations, et ren
 
 *Document mis à jour le 18/07/2026 à 13:00 — Léo 🦁 | v5.0*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

@@ -1,6 +1,6 @@
 # 🏗️ Architecture des Processus — Bureau Michel
 
-> Analyse BPMN v2 — 01/07/2026 19:15 — 39 crons Python autonomes
+> Analyse BPMN v2 — 01/07/2026 19:15 — 42 crons (39 actifs) Python autonomes
 > **Statut réel : 15/15 tests OK** (test-all-processes.py)
 
 ## 🩺 Diagnostic n8n (01/07 — 19:00)
@@ -123,5 +123,6 @@ python3 /opt/data/scripts/test-all-processes.py
 | Monitoring | Crons, Builds, Archives | 3/3 ✅ |
 | Services | Email, BAVI wiki | 2/2 ✅ |
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

@@ -75,5 +75,4 @@ Le **Bureau Émile** est dédié à l'accompagnement académique d'Émile pour s
 
 Le Bureau Émile fonctionne de manière **autonome** — il n'appelle pas d'autres bureaux et n'est pas appelé par eux. Pas d'interopérabilité documentée.
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
-
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)

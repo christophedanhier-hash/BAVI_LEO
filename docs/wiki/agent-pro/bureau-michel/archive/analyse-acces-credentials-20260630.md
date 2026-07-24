@@ -59,7 +59,7 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 | Propriété | Valeur |
 |-----------|--------|
 | **Clé API** | ✅ stockée dans `.env` |
-| **Modèle** | `gemini-2.5-flash` |
+| **Modèle** | `gemini-3.5-flash` |
 
 ### 3.3 OpenAI
 | Propriété | Valeur |
@@ -190,5 +190,5 @@ Analyse de l'ensemble des accès, credentials et API keys nécessaires au foncti
 
 *Analyse générée le 30/06/2026 à 23:30 (CEST) — À valider et mettre à jour dans Bureau Michel.*
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 

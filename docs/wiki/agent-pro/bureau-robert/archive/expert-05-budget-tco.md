@@ -49,5 +49,5 @@ Tu es l'expert Budget & TCO. Tu modélises les coûts : investissement, licensin
 - Licensing Microsoft : vérifier contrats Solidaris
 - Marge 15-20%
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 

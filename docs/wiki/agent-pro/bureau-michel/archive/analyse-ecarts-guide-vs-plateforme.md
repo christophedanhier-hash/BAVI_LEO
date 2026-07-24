@@ -21,12 +21,12 @@ Le guide « Hermès pour les Nuls » (6 440 lignes) a été confronté à la pla
 
 | Dans le guide | Réalité |
 |:--------------|:--------|
-| 3 bots (Léo, Michel, Sylvia) | 4 bots (+ Émile 🎓) |
+| 3 bots (Léo, Michel, Sylvia) | 5 bots (+ Émile 🎓) |
 
 Le guide mentionne systématiquement "3 bots Telegram". Émile (profil pédagogique, créé le 25/06) est absent de toutes les sections.
 
 **Correction :** Ajouter Émile dans :
-- Présentation (3 bots → 4 bots)
+- Présentation (3 bots → 5 bots)
 - Tableau des profils (Ch.7)
 - Schémas d'architecture (Ch.3)
 - Chiffres clés (Ch.15)
@@ -127,5 +127,5 @@ Le guide a été écrit AVANT le crash du 30/06. Les leçons du crash (sessions 
 | 7 | Token Google | 🟢 | Vérifier avant d'écrire |
 | 8 | Installation | 🟢 | Vérifier doc officielle |
 
-> 🤖 Dernier audit : 23/07/2026 à 05:00 (UTC+2)
+> 🤖 Dernier audit : 24/07/2026 à 07:57 (UTC+2)
 
